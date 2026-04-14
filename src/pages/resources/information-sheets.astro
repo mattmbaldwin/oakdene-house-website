@@ -1,0 +1,97 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABand from '../../components/CTABand.astro';
+---
+
+<BaseLayout
+  title="Information Sheets — Oakdene House Foundation"
+  description="Oakdene House Foundation information sheets about services and support. Contact us for specific service information."
+>
+
+  <section class="simple-hero" aria-label="Information Sheets">
+    <div class="container simple-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/resources/">Resources</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Information Sheets</span>
+      </nav>
+      <h1>Information Sheets</h1>
+      <p class="simple-hero__lead">Detailed service information and guides for clients and referrers.</p>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="info-heading">
+    <div class="container">
+      <div class="placeholder-content">
+        <div class="placeholder-icon" aria-hidden="true">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <h2 id="info-heading">Coming soon</h2>
+        <p>Information sheets will be available here. If you need specific information about our services in the meantime, please contact our team directly and we will help.</p>
+        <div class="btn-group">
+          <a href="/contact/" class="btn btn--primary">Contact Us</a>
+          <a href="/resources/" class="btn btn--secondary">Back to Resources</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <CTABand
+    heading="Looking for specific service information?"
+    subheading="Our team can answer any questions about our programs and services."
+    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    secondaryBtn={{ text: 'Browse Services', href: '/services/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  .simple-hero {
+    background-color: var(--color-primary);
+    padding-block: 64px 56px;
+  }
+
+  .simple-hero__content {
+    max-width: 600px;
+  }
+
+  .simple-hero__content h1 {
+    color: var(--color-white);
+    margin-bottom: 10px;
+  }
+
+  .simple-hero__lead {
+    font-size: 1.0625rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 0;
+  }
+
+  .placeholder-content {
+    max-width: 560px;
+    text-align: center;
+    margin-inline: auto;
+    padding: 48px 32px;
+  }
+
+  .placeholder-icon {
+    color: var(--color-secondary);
+    margin-bottom: 20px;
+  }
+
+  .placeholder-content h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 14px;
+  }
+
+  .placeholder-content p {
+    font-size: 1rem;
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+</style>

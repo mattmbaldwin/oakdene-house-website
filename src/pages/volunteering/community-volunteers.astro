@@ -1,0 +1,254 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABand from '../../components/CTABand.astro';
+
+const roles = [
+  'Kitchen support',
+  'Boutique support',
+  'Laundrette support',
+  'General community program assistance',
+  'Event and activity support',
+];
+
+const lookFor = [
+  'A respectful and reliable approach',
+  'A willingness to contribute in a team environment',
+  'A commitment to Oakdene\'s values and community focus',
+];
+---
+
+<BaseLayout
+  title="Community Volunteers — Oakdene House Foundation"
+  description="Volunteer in the community at Oakdene House Foundation — supporting the Kitchen, Boutique, Laundrette and community programs in Fairfield, Western Sydney."
+  ogImage="/images/kitchen/oakdene-kitchen-volunteer-serving-with-smile.jpg"
+>
+
+  <!-- HERO -->
+  <section class="cv-hero" aria-label="Community Volunteers">
+    <div class="cv-hero__overlay" aria-hidden="true"></div>
+    <div class="container cv-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/volunteering/">Volunteering</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Community Volunteers</span>
+      </nav>
+      <h1>Community Volunteers</h1>
+      <p class="cv-hero__lead">A direct and practical way to give back to your community.</p>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section" aria-labelledby="cv-overview-heading">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">About This Role</p>
+            <h2 id="cv-overview-heading">Part of the day-to-day</h2>
+          </div>
+          <p>Community volunteers are part of the day-to-day life of Oakdene House. They support practical service delivery, help create a welcoming atmosphere and bring energy and connection to our programs.</p>
+          <p>Volunteering here is hands-on, meaningful, and valued by the people we support.</p>
+
+          <h3 class="roles-heading">Possible volunteer roles</h3>
+          <ul class="item-list">
+            {roles.map(r => <li>{r}</li>)}
+          </ul>
+        </div>
+        <div>
+          <div class="cv-image">
+            <img src="/images/kitchen/oakdene-kitchen-volunteer-serving-with-smile.jpg" alt="Smiling volunteer serving food at Oakdene Kitchen" loading="lazy" />
+          </div>
+          <div class="cv-image cv-image--second">
+            <img src="/images/kitchen/oakdene-kitchen-volunteers-with-food.jpg" alt="Volunteers preparing food at Oakdene" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE LOOK FOR -->
+  <section class="section section--tint" aria-labelledby="lookfor-heading">
+    <div class="container">
+      <div class="lookfor-inner">
+        <div class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Who We're Looking For</p>
+          <h2 id="lookfor-heading">What we look for in volunteers</h2>
+        </div>
+        <div class="lookfor-items">
+          {lookFor.map(item => (
+            <div class="lookfor-item">
+              <div class="lookfor-item__check" aria-hidden="true">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              </div>
+              <p>{item}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="apply-note">
+          <p>No formal qualifications are required. A genuine interest in supporting people and a respectful attitude are what matter most.</p>
+          <a href="/forms/" class="btn btn--primary">Apply to Volunteer</a><!-- TODO: Replace with live Jotform URL -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Ready to apply?"
+    subheading="Submit an application and our team will be in touch to discuss next steps."
+    primaryBtn={{ text: 'Apply to Volunteer', href: '/forms/' }}
+    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  .cv-hero {
+    position: relative;
+    min-height: 380px;
+    background-image: url('/images/kitchen/oakdene-kitchen-volunteer-serving-with-smile.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .cv-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.3) 0%, rgba(0,62,81,0.85) 100%);
+  }
+
+  .cv-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 56px;
+  }
+
+  .cv-hero__content h1 { color: var(--color-white); margin-bottom: 10px; }
+
+  .cv-hero__lead {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 0;
+    max-width: 520px;
+  }
+
+  .roles-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 24px 0 14px;
+  }
+
+  .item-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .item-list li {
+    padding-left: 24px;
+    position: relative;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.55;
+  }
+
+  .item-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+  }
+
+  .cv-image {
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+
+  .cv-image--second {
+    margin-top: 12px;
+  }
+
+  .cv-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* What we look for */
+  .lookfor-inner {
+    max-width: 680px;
+    margin-inline: auto;
+  }
+
+  .lookfor-items {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+
+  .lookfor-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-secondary);
+    padding: 18px 22px;
+  }
+
+  .lookfor-item__check {
+    width: 32px;
+    height: 32px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    flex-shrink: 0;
+  }
+
+  .lookfor-item p {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.55;
+    margin-bottom: 0;
+    padding-top: 6px;
+  }
+
+  .apply-note {
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-secondary);
+    padding: 24px 28px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .apply-note p {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    margin-bottom: 0;
+    line-height: 1.6;
+    flex: 1;
+    min-width: 200px;
+  }
+</style>

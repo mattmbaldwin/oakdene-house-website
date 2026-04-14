@@ -1,0 +1,285 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABand from '../../components/CTABand.astro';
+
+const offerings = [
+  'One-on-one counselling',
+  'Group sessions',
+  '12-step support',
+  'Peer support',
+  'All delivered by accredited AOD and mental health counsellors',
+  'All services are free',
+];
+---
+
+<BaseLayout
+  title="Outpatients Program — Oakdene House Foundation"
+  description="Structured rehabilitation support at Oakdene House — counselling, group sessions, 12-step and peer support, delivered by accredited AOD and mental health counsellors. Free."
+  ogImage="/images/centre/interior-img_2655.jpg"
+>
+
+  <!-- HERO -->
+  <section class="op-hero" aria-label="Outpatients Program">
+    <div class="op-hero__overlay" aria-hidden="true"></div>
+    <div class="container op-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/services/">Services</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Outpatients Program</span>
+      </nav>
+      <h1>Outpatients Program</h1>
+      <p class="op-hero__lead">A structured rehabilitation program committed to recovery.</p>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section" aria-labelledby="op-overview-heading">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">About the Program</p>
+            <h2 id="op-overview-heading">Structured support for recovery</h2>
+          </div>
+          <p>The Outpatients Program is designed for people looking for structured rehabilitation support while maintaining their living situation. Our experienced counsellors provide comprehensive, evidence-based support focused on recovery and wellbeing.</p>
+          <p>All support is delivered by accredited AOD (Alcohol and Other Drugs) and mental health counsellors, and is completely free of charge.</p>
+
+          <h3 class="section-subhead">What we offer</h3>
+          <ul class="offer-list">
+            {offerings.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div>
+          <div class="program-image">
+            <img src="/images/centre/interior-interior-2-img_2656-with-people.png" alt="Support space inside Oakdene House" loading="lazy" />
+          </div>
+          <div class="contact-card">
+            <h3>Get in touch</h3>
+            <div class="contact-card__item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+              <a href="tel:0287170999">(02) 8717 0999</a>
+            </div>
+            <div class="contact-card__item">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a>
+            </div>
+            <a href="/forms/" class="btn btn--primary contact-btn">Get Support</a><!-- TODO: Replace with live Jotform URL -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT MAKES IT DIFFERENT -->
+  <section class="section section--tint" aria-labelledby="approach-heading">
+    <div class="container">
+      <div class="approach-inner">
+        <div class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">Our Approach</p>
+          <h2 id="approach-heading">Recovery on your terms</h2>
+        </div>
+        <div class="approach-grid">
+          <div class="approach-item">
+            <div class="approach-item__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Evidence-based</h3>
+            <p>All counselling and group work is grounded in proven, accredited practice for addiction and recovery.</p>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            </div>
+            <h3>Community-centred</h3>
+            <p>You stay in your home and community. Peer connection is built alongside professional support.</p>
+          </div>
+          <div class="approach-item">
+            <div class="approach-item__icon" aria-hidden="true">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <h3>Flexible timing</h3>
+            <p>The program is structured but designed to work around the reality of your life — not the other way around.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Ready to take the next step?"
+    primaryBtn={{ text: 'Get Support', href: '/forms/' }}
+    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  .op-hero {
+    position: relative;
+    min-height: 380px;
+    background-image: url('/images/centre/interior-interior-1-with-people-img_2654.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .op-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.35) 0%, rgba(0,62,81,0.82) 100%);
+  }
+
+  .op-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 56px;
+  }
+
+  .op-hero__content h1 { color: var(--color-white); margin-bottom: 10px; }
+
+  .op-hero__lead {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 0;
+    max-width: 520px;
+  }
+
+  .section-subhead {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 24px 0 14px;
+  }
+
+  .offer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .offer-list li {
+    padding-left: 24px;
+    position: relative;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.55;
+  }
+
+  .offer-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+  }
+
+  .program-image {
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 20px;
+  }
+
+  .program-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .contact-card {
+    background-color: var(--color-tint);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-secondary);
+    padding: 24px;
+  }
+
+  .contact-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 16px;
+  }
+
+  .contact-card__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 12px;
+    font-size: 0.9375rem;
+  }
+
+  .contact-card__item svg {
+    color: var(--color-primary);
+    flex-shrink: 0;
+  }
+
+  .contact-card__item a {
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .contact-card__item a:hover {
+    text-decoration: underline;
+  }
+
+  .contact-btn {
+    margin-top: 16px;
+    width: 100%;
+    text-align: center;
+  }
+
+  /* Approach */
+  .approach-inner {
+    max-width: 840px;
+    margin-inline: auto;
+  }
+
+  .approach-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .approach-item {
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    padding: 28px 24px;
+    border: 1px solid var(--color-secondary);
+  }
+
+  .approach-item__icon {
+    color: var(--color-primary);
+    margin-bottom: 14px;
+  }
+
+  .approach-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+  }
+
+  .approach-item p {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .approach-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

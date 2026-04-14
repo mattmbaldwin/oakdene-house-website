@@ -1,0 +1,91 @@
+---
+interface Button {
+  text: string;
+  href: string;
+  variant?: 'white' | 'white-outline';
+}
+
+interface Props {
+  heading: string;
+  subheading?: string;
+  image: string;
+  imageAlt?: string;
+  buttons?: Button[];
+}
+
+const {
+  heading,
+  subheading,
+  image,
+  imageAlt = '',
+  buttons = [],
+} = Astro.props;
+---
+
+<section class="hero" style={`--hero-image: url('${image}')`} aria-label={heading}>
+  <div class="hero__overlay" aria-hidden="true"></div>
+  <div class="container hero__content">
+    <h1 class="hero__heading">{heading}</h1>
+    {subheading && <p class="hero__subheading">{subheading}</p>}
+    {buttons.length > 0 && (
+      <div class="btn-group">
+        {buttons.map(btn => (
+          <a href={btn.href} class={`btn btn--${btn.variant ?? 'white'}`}>
+            {btn.text}
+          </a>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: 520px;
+    background-image: var(--hero-image);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+  }
+
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 62, 81, 0.65);
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 80px;
+    max-width: 720px;
+  }
+
+  .hero__heading {
+    color: var(--color-white);
+    font-size: clamp(2rem, 5vw, 3.25rem);
+    font-weight: 700;
+    line-height: 1.15;
+    margin-bottom: 16px;
+  }
+
+  .hero__subheading {
+    color: rgba(255, 255, 255, 0.88);
+    font-size: clamp(1rem, 2vw, 1.1875rem);
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 580px;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      min-height: 380px;
+    }
+
+    .hero__content {
+      padding-block: 56px;
+    }
+  }
+</style>

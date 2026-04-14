@@ -1,0 +1,97 @@
+---
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  faqs: FAQ[];
+}
+
+const { faqs } = Astro.props;
+---
+
+<div class="faq-accordion">
+  {faqs.map((faq, i) => (
+    <details class="faq-item" name="faq-group">
+      <summary class="faq-item__question">
+        <span>{faq.question}</span>
+        <svg class="faq-item__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <polyline points="6 9 12 15 18 9"/>
+        </svg>
+      </summary>
+      <div class="faq-item__answer">
+        <p>{faq.answer}</p>
+      </div>
+    </details>
+  ))}
+</div>
+
+<style>
+  .faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .faq-item {
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-secondary);
+    overflow: hidden;
+    transition: box-shadow var(--transition);
+  }
+
+  .faq-item[open] {
+    box-shadow: var(--shadow-card);
+  }
+
+  .faq-item__question {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    cursor: pointer;
+    list-style: none;
+    user-select: none;
+    transition: background-color var(--transition);
+  }
+
+  .faq-item__question::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item__question:hover {
+    background-color: var(--color-tint);
+  }
+
+  .faq-item[open] .faq-item__question {
+    background-color: var(--color-tint);
+    border-bottom: 1px solid var(--color-secondary);
+  }
+
+  .faq-item__chevron {
+    color: var(--color-primary);
+    flex-shrink: 0;
+    transition: transform 0.25s ease;
+  }
+
+  .faq-item[open] .faq-item__chevron {
+    transform: rotate(180deg);
+  }
+
+  .faq-item__answer {
+    padding: 20px 24px;
+  }
+
+  .faq-item__answer p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-text);
+    margin-bottom: 0;
+  }
+</style>

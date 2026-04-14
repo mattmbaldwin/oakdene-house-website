@@ -1,0 +1,37 @@
+[
+  {
+    "name": "Lifeline",
+    "category": "Crisis Support",
+    "summary": "24-hour crisis support and suicide prevention.",
+    "phone": "13 11 14",
+    "website": "https://www.lifeline.org.au"
+  },
+  {
+    "name": "Beyond Blue",
+    "category": "Crisis Support",
+    "summary": "Support for anxiety, depression and mental health.",
+    "phone": "1300 224 636",
+    "website": "https://www.beyondblue.org.au"
+  },
+  {
+    "name": "Gambling Help Online",
+    "category": "Alcohol and Other Drug Services",
+    "summary": "Free counselling and support for gambling problems.",
+    "phone": "1800 858 858",
+    "website": "https://www.gamblinghelponline.org.au"
+  },
+  {
+    "name": "1800RESPECT",
+    "category": "Family Support",
+    "summary": "Support for family and domestic violence.",
+    "phone": "1800 737 732",
+    "website": "https://www.1800respect.org.au"
+  },
+  {
+    "name": "Salvation Army",
+    "category": "Community Support",
+    "summary": "Emergency support and practical assistance.",
+    "phone": "1300 36 36 22",
+    "website": "https://www.salvationarmy.org.au"
+  }
+]

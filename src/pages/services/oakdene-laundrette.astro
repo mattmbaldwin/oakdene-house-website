@@ -1,0 +1,380 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InfoTable from '../../components/InfoTable.astro';
+import CTABand from '../../components/CTABand.astro';
+
+const serviceRows = [
+  { label: 'Days', value: 'Tuesday to Thursday' },
+  { label: 'Hours', value: '12pm–2:30pm' },
+  { label: 'Last entry', value: '1pm' },
+  { label: 'Location', value: '1 Dale Street, Fairfield' },
+  { label: 'Cost', value: 'Free' },
+  { label: 'Email', value: '<a href="mailto:kitchen@oakdenehouse.org.au">kitchen@oakdenehouse.org.au</a>' },
+  { label: 'Phone', value: '<a href="tel:0415156100">0415 156 100</a>' },
+];
+
+const perVisit = [
+  'One load of washing',
+  'One load of drying',
+  'Laundry detergent provided',
+  'A clean, private space',
+  'Support from staff or volunteers',
+];
+
+const steps = [
+  'Check in with staff or security on arrival',
+  'Receive a washing tablet and number tag matching your machine',
+  'Load your clothes, place the tablet in the drum and press Start',
+  'When the wash finishes, move items to the dryer',
+  'Stay nearby while cycles run — visit Oakdene Kitchen while you wait',
+  'Return your number tag when finished',
+];
+---
+
+<BaseLayout
+  title="Oakdene Laundrette — Oakdene House Foundation"
+  description="Free community laundry service at 1 Dale Street, Fairfield. Open Tuesday to Thursday, 12pm–2:30pm. Last entry 1pm."
+  ogImage="/images/laundrette/laundrette-interior-1.jpg"
+>
+
+  <!-- HERO -->
+  <section class="laundry-hero" aria-label="Oakdene Laundrette">
+    <div class="laundry-hero__overlay" aria-hidden="true"></div>
+    <div class="container laundry-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/services/">Services</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Oakdene Laundrette</span>
+      </nav>
+      <h1>Oakdene Laundrette</h1>
+      <p class="laundry-hero__lead">A free community laundry service for people doing it tough.</p>
+    </div>
+  </section>
+
+  <!-- INTRO + DETAILS -->
+  <section class="section" aria-labelledby="laundry-intro-heading">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">The Service</p>
+            <h2 id="laundry-intro-heading">Clean clothes, no cost</h2>
+          </div>
+          <p>The Oakdene Laundrette provides free laundry facilities for people experiencing hardship. Whether it's a temporary situation or ongoing difficulty, everyone deserves clean clothes.</p>
+
+          <h3 class="offer-heading">What's included each visit</h3>
+          <ul class="offer-list">
+            {perVisit.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div>
+          <InfoTable rows={serviceRows} caption="Service details" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LAUNDRETTE IMAGES -->
+  <section class="laundry-images" aria-label="Oakdene Laundrette photos">
+    <div class="container">
+      <div class="image-strip">
+        <div class="image-strip__item">
+          <img src="/images/laundrette/laundrette-interior-3-washing-machines.jpg" alt="Washing machines inside the Oakdene Laundrette" loading="lazy" />
+        </div>
+        <div class="image-strip__item">
+          <img src="/images/laundrette/laundrette-interior-1-with-people.jpg" alt="Inside the Oakdene Laundrette" loading="lazy" />
+        </div>
+        <div class="image-strip__item">
+          <img src="/images/laundrette/anthony-sobb-oakdene-laundrette-1.jpg" alt="Oakdene Laundrette in use" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" aria-labelledby="how-heading">
+    <div class="container">
+      <div class="narrow">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">Your Visit</p>
+          <h2 id="how-heading">How it works</h2>
+        </div>
+        <ol class="steps-list">
+          {steps.map((step, i) => (
+            <li class="steps-list__item">
+              <div class="steps-list__number" aria-hidden="true">{i + 1}</div>
+              <p class="steps-list__text">{step}</p>
+            </li>
+          ))}
+        </ol>
+
+        <div class="eligibility-box">
+          <h3>Eligibility</h3>
+          <p>The same eligibility applies as the Oakdene Kitchen. Bring a current Centrelink Income Statement and photo ID. Your statement must show income under <strong>$1,200 per fortnight</strong>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GROUP BOOKINGS -->
+  <section class="section section--tint" aria-labelledby="group-heading">
+    <div class="container">
+      <div class="group-split">
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">For Organisations</p>
+            <h2 id="group-heading">Group laundry bookings</h2>
+          </div>
+          <p>We offer group laundry bookings outside public hours, available Tuesday to Thursday, for non-profits supporting homelessness, shelters, and group homes.</p>
+        </div>
+        <div class="group-details">
+          <div class="group-detail-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+            <span>Must be booked by a support worker who attends in person</span>
+          </div>
+          <div class="group-detail-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            <span>2-hour sessions</span>
+          </div>
+          <div class="group-detail-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>
+            <span>4 professional-grade machines available</span>
+          </div>
+          <div class="group-detail-item">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            <span>Detergent provided — free of charge</span>
+          </div>
+          <a href="/contact/" class="btn btn--primary group-btn">Book a Session</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Ready to visit or need more information?"
+    primaryBtn={{ text: 'Get Support', href: '/forms/' }}
+    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  .laundry-hero {
+    position: relative;
+    min-height: 400px;
+    background-image: url('/images/laundrette/laundrette-interior-1.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .laundry-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.35) 0%, rgba(0,62,81,0.85) 100%);
+  }
+
+  .laundry-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 56px;
+  }
+
+  .laundry-hero__content h1 { color: var(--color-white); margin-bottom: 10px; }
+
+  .laundry-hero__lead {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 0;
+    max-width: 520px;
+  }
+
+  .offer-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 24px 0 14px;
+  }
+
+  .offer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .offer-list li {
+    padding-left: 24px;
+    position: relative;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.55;
+  }
+
+  .offer-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+  }
+
+  /* Image strip */
+  .laundry-images {
+    padding-block: 0;
+    background-color: var(--color-tint);
+  }
+
+  .image-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .image-strip__item {
+    height: 280px;
+    overflow: hidden;
+  }
+
+  .image-strip__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .image-strip__item:hover img {
+    transform: scale(1.04);
+  }
+
+  /* Steps */
+  .narrow {
+    max-width: 720px;
+  }
+
+  .steps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: none;
+    margin-bottom: 32px;
+  }
+
+  .steps-list__item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px solid var(--color-secondary);
+  }
+
+  .steps-list__item:last-child {
+    border-bottom: none;
+  }
+
+  .steps-list__number {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 0.875rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .steps-list__text {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: 0;
+    padding-top: 5px;
+  }
+
+  .eligibility-box {
+    background-color: var(--color-tint);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-secondary);
+    padding: 24px 28px;
+  }
+
+  .eligibility-box h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+  }
+
+  .eligibility-box p {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Group bookings */
+  .group-split {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 56px;
+    align-items: start;
+  }
+
+  .group-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .group-detail-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  .group-detail-item svg {
+    color: var(--color-primary);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .group-btn {
+    margin-top: 8px;
+    align-self: flex-start;
+  }
+
+  @media (max-width: 900px) {
+    .group-split {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .image-strip {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 600px) {
+    .image-strip {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

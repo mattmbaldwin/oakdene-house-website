@@ -1,0 +1,32 @@
+[
+  {
+    "question": "Who can contact Oakdene?",
+    "answer": "Anyone looking for support, information, guidance, or help finding the right next step can contact Oakdene.",
+    "category": "General"
+  },
+  {
+    "question": "Do I need a formal referral?",
+    "answer": "Not always. Some supports may begin with a simple enquiry, while others may use a referral form.",
+    "category": "General"
+  },
+  {
+    "question": "Is there a cost for services?",
+    "answer": "Most of our services are free. Some community services such as the Ladies Boutique involve a small gold coin donation. We will always be upfront about any cost.",
+    "category": "General"
+  },
+  {
+    "question": "Can Oakdene help me find another service?",
+    "answer": "Yes. If Oakdene is not the right fit, we can help point you toward other services and supports in the community.",
+    "category": "General"
+  },
+  {
+    "question": "Are your services confidential?",
+    "answer": "Yes. We treat everything you share with us in confidence, in line with Australian privacy requirements.",
+    "category": "General"
+  },
+  {
+    "question": "Do you offer support in other languages?",
+    "answer": "Yes. We offer support in multiple languages. If you need an interpreter, please let us know when you contact us and we will arrange one for you.",
+    "category": "General"
+  }
+]

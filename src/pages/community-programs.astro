@@ -1,0 +1,426 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABand from '../components/CTABand.astro';
+
+const programs = [
+  {
+    heading: 'Community Support Programs',
+    description: 'Activities and supports that create routine, stability, and a sense of belonging.',
+    icon: 'people',
+  },
+  {
+    heading: 'Recovery-Focused Group Programs',
+    description: 'Programs that support reflection, accountability, practical coping, and shared progress.',
+    icon: 'heart',
+  },
+  {
+    heading: 'Practical Support Initiatives',
+    description: 'Community responses that meet real needs with care, dignity, and consistency.',
+    icon: 'hands',
+  },
+  {
+    heading: 'Volunteer and Community Engagement',
+    description: 'Opportunities for people to participate, contribute, and stay connected.',
+    icon: 'star',
+  },
+];
+
+const gains = [
+  { label: 'Stronger routine', icon: 'clock' },
+  { label: 'Greater confidence', icon: 'arrow' },
+  { label: 'Community connection', icon: 'people' },
+  { label: 'Practical progress', icon: 'check' },
+];
+
+const involvement = [
+  {
+    heading: 'Join a program',
+    body: 'Express interest directly or contact Oakdene to find out which program fits best.',
+    href: '/forms/',
+    linkText: 'Express Interest',
+  },
+  {
+    heading: 'Refer someone',
+    body: 'Workers and family members can refer using the referral form or by contacting us directly.',
+    href: '/forms/',
+    linkText: 'Submit Referral',
+  },
+  {
+    heading: 'Volunteer',
+    body: 'Want to contribute your time? We would love to hear from you.',
+    href: '/volunteering/',
+    linkText: 'Learn About Volunteering',
+  },
+];
+---
+
+<BaseLayout
+  title="Community Programs — Oakdene House Foundation"
+  description="Oakdene House community programs build connection, confidence and routine for people in Fairfield, Western Sydney. Recovery groups, practical initiatives and community engagement."
+  ogImage="/images/generic/bandw-forset-sun-beam.jpeg"
+>
+
+  <!-- HERO -->
+  <section class="cp-hero" aria-label="Community Programs">
+    <div class="cp-hero__overlay" aria-hidden="true"></div>
+    <div class="container cp-hero__content">
+      <h1>Community programs that build connection, confidence, and forward movement</h1>
+      <p class="cp-hero__lead">Oakdene's programs are designed to bring people into safe, practical, community-based spaces where support feels real and participation matters.</p>
+      <div class="btn-group">
+        <a href="/services/" class="btn btn--white">Explore Programs</a>
+        <a href="/forms/" class="btn btn--white-outline">General Enquiry</a><!-- TODO: Replace with live Jotform URL -->
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR PROGRAMS -->
+  <section class="section" aria-labelledby="programs-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">What We Offer</p>
+        <h2 id="programs-heading">Our programs</h2>
+        <p class="section-heading__lead">Oakdene runs a range of programs across four interconnected areas of community support.</p>
+      </div>
+      <div class="programs-grid">
+        {programs.map(p => (
+          <div class="program-card">
+            <div class="program-card__icon" aria-hidden="true">
+              {p.icon === 'people' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              )}
+              {p.icon === 'heart' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              )}
+              {p.icon === 'hands' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+              )}
+              {p.icon === 'star' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+              )}
+            </div>
+            <h3 class="program-card__heading">{p.heading}</h3>
+            <p class="program-card__desc">{p.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY PROGRAMS MATTER -->
+  <section class="section section--tint" aria-labelledby="why-heading">
+    <div class="container">
+      <div class="split">
+        <div class="why-image">
+          <img src="/images/centre/interior-meetings-1-img_2657.jpg" alt="People in community program session at Oakdene House" loading="lazy" />
+        </div>
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">Why Programs Matter</p>
+            <h2 id="why-heading">More than crisis response</h2>
+          </div>
+          <p class="why-text">Programs matter because support is not only about crisis response. It is also about belonging, confidence, consistency, and having spaces where people can keep turning up, reconnecting, and building a stronger everyday life.</p>
+          <p class="why-text">When people have somewhere to go and something meaningful to contribute to, they move forward.</p>
+          <a href="/services/" class="btn btn--primary">View All Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT PEOPLE GAIN -->
+  <section class="section" aria-labelledby="gains-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">The Difference</p>
+        <h2 id="gains-heading">What people gain from programs</h2>
+      </div>
+      <div class="gains-grid">
+        {gains.map(g => (
+          <div class="gain-item">
+            <div class="gain-item__icon" aria-hidden="true">
+              {g.icon === 'clock' && (
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              )}
+              {g.icon === 'arrow' && (
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              )}
+              {g.icon === 'people' && (
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              )}
+              {g.icon === 'check' && (
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+              )}
+            </div>
+            <p class="gain-item__label">{g.label}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="section section--tint" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">In Their Words</p>
+        <h2 id="testimonials-heading">What participants say</h2>
+      </div>
+      <div class="quotes-grid">
+        <blockquote class="quote-card">
+          <div class="quote-card__mark" aria-hidden="true">"</div>
+          <p>Being around others and having somewhere to go helped me get some structure back. It made a bigger difference than I expected.</p>
+          <footer class="quote-card__attribution">— Program Participant</footer>
+        </blockquote>
+        <blockquote class="quote-card">
+          <div class="quote-card__mark" aria-hidden="true">"</div>
+          <p>It felt practical and real. Not a lecture, just support that helped me keep moving.</p>
+          <footer class="quote-card__attribution">— Community Member</footer>
+        </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO GET INVOLVED -->
+  <section class="section" aria-labelledby="involved-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">Get Involved</p>
+        <h2 id="involved-heading">How to take part</h2>
+      </div>
+      <div class="involvement-grid">
+        {involvement.map(item => (
+          <div class="involvement-card">
+            <h3 class="involvement-card__heading">{item.heading}</h3>
+            <p class="involvement-card__body">{item.body}</p>
+            <a href={item.href} class="btn btn--secondary">{item.linkText}</a><!-- TODO: Replace with live Jotform URL if applicable -->
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Be part of something real"
+    primaryBtn={{ text: 'Express Interest', href: '/forms/' }}
+    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  .cp-hero {
+    position: relative;
+    min-height: 460px;
+    background-image: url('/images/generic/bandw-forset-sun-beam.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .cp-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.4) 0%, rgba(0,62,81,0.88) 100%);
+  }
+
+  .cp-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 64px;
+    max-width: 740px;
+  }
+
+  .cp-hero__content h1 {
+    color: var(--color-white);
+    margin-bottom: 16px;
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+  }
+
+  .cp-hero__lead {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 600px;
+  }
+
+  /* Programs grid */
+  .programs-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .program-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--radius-card);
+    padding: 28px 24px;
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+
+  .program-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-card);
+  }
+
+  .program-card__icon {
+    color: var(--color-primary);
+    margin-bottom: 16px;
+  }
+
+  .program-card__heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .program-card__desc {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Why matters */
+  .why-image {
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+
+  .why-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .why-text {
+    font-size: 1.0625rem;
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: 18px;
+  }
+
+  /* Gains */
+  .gains-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .gain-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 32px 20px;
+    background-color: var(--color-tint);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-secondary);
+  }
+
+  .gain-item__icon {
+    color: var(--color-primary);
+    margin-bottom: 16px;
+  }
+
+  .gain-item__label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0;
+  }
+
+  /* Testimonials */
+  .quotes-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 860px;
+    margin-inline: auto;
+  }
+
+  .quote-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-secondary);
+    border-left: 4px solid var(--color-primary);
+    padding: 28px 28px 24px;
+    margin: 0;
+    position: relative;
+  }
+
+  .quote-card__mark {
+    font-size: 4rem;
+    line-height: 1;
+    color: var(--color-secondary);
+    font-family: Georgia, serif;
+    margin-bottom: -12px;
+    display: block;
+  }
+
+  .quote-card p {
+    font-size: 1rem;
+    color: var(--color-text);
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 16px;
+  }
+
+  .quote-card__attribution {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-muted);
+  }
+
+  /* Involvement */
+  .involvement-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+
+  .involvement-card {
+    background-color: var(--color-tint);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--radius-card);
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .involvement-card__heading {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+  }
+
+  .involvement-card__body {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex: 1;
+  }
+
+  @media (max-width: 1024px) {
+    .programs-grid { grid-template-columns: repeat(2, 1fr); }
+    .gains-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 768px) {
+    .quotes-grid { grid-template-columns: 1fr; }
+    .involvement-grid { grid-template-columns: 1fr; }
+  }
+
+  @media (max-width: 600px) {
+    .programs-grid { grid-template-columns: 1fr; }
+    .gains-grid { grid-template-columns: 1fr 1fr; }
+  }
+</style>

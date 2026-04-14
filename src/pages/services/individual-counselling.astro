@@ -1,0 +1,335 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABand from '../../components/CTABand.astro';
+
+const supports = [
+  'Addiction and recovery-related concerns',
+  'Emotional wellbeing and coping',
+  'Goal setting and change planning',
+  'Support during difficult periods of transition or stress',
+];
+---
+
+<BaseLayout
+  title="Individual Counselling — Oakdene House Foundation"
+  description="Confidential, one-on-one counselling at Oakdene House for people affected by addiction and related challenges. Free. Fairfield, Western Sydney."
+  ogImage="/images/generic/bandw-oakdene-hands.jpg"
+>
+
+  <!-- HERO -->
+  <section class="ic-hero" aria-label="Individual Counselling">
+    <div class="ic-hero__overlay" aria-hidden="true"></div>
+    <div class="container ic-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/services/">Services</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Individual Counselling</span>
+      </nav>
+      <h1>Individual Counselling</h1>
+      <p class="ic-hero__lead">Confidential, one-on-one counselling for people affected by addiction and related challenges.</p>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section" aria-labelledby="ic-overview-heading">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">The Service</p>
+            <h2 id="ic-overview-heading">A space to talk openly</h2>
+          </div>
+          <p>Oakdene House offers individual counselling for people affected by addiction and related challenges. Counselling provides a confidential space to talk openly, understand what is happening and work toward realistic next steps.</p>
+          <p>All counselling sessions are free of charge.</p>
+
+          <h3 class="section-subhead">What counselling can support</h3>
+          <ul class="support-list">
+            {supports.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div>
+          <div class="approach-card">
+            <div class="approach-card__icon" aria-hidden="true">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            </div>
+            <h3>Our approach</h3>
+            <p>We aim to provide counselling that is respectful, practical and responsive to the person in front of us. Support is shaped around individual needs, not a fixed script.</p>
+
+            <div class="approach-facts">
+              <div class="approach-fact">
+                <span class="approach-fact__label">Cost</span>
+                <span class="approach-fact__value">Free</span>
+              </div>
+              <div class="approach-fact">
+                <span class="approach-fact__label">Access</span>
+                <span class="approach-fact__value">By phone, email, or form</span>
+              </div>
+              <div class="approach-fact">
+                <span class="approach-fact__label">Confidential</span>
+                <span class="approach-fact__value">Yes — all conversations are private</span>
+              </div>
+            </div>
+
+            <div class="approach-contact">
+              <a href="tel:0287170999" class="approach-contact__phone">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+                (02) 8717 0999
+              </a>
+              <a href="mailto:admin@oakdenehouse.org.au" class="approach-contact__email">admin@oakdenehouse.org.au</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="section section--tint" aria-labelledby="expect-heading">
+    <div class="container">
+      <div class="expect-inner">
+        <div class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">What to Expect</p>
+          <h2 id="expect-heading">Counselling with you, not at you</h2>
+        </div>
+        <div class="expect-grid">
+          <div class="expect-item">
+            <div class="expect-item__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            </div>
+            <h3>Listened to</h3>
+            <p>Your counsellor takes time to understand your situation before suggesting anything.</p>
+          </div>
+          <div class="expect-item">
+            <div class="expect-item__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+            </div>
+            <h3>Confidential</h3>
+            <p>Everything you share stays private. Confidentiality is fundamental to our practice.</p>
+          </div>
+          <div class="expect-item">
+            <div class="expect-item__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+            </div>
+            <h3>Practical</h3>
+            <p>Support is focused on realistic next steps and tangible progress — not just insight.</p>
+          </div>
+          <div class="expect-item">
+            <div class="expect-item__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3>Non-judgmental</h3>
+            <p>You will not be judged for your choices or circumstances. We start from where you are.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Want to arrange a counselling session?"
+    primaryBtn={{ text: 'Counselling Referral', href: '/forms/' }}
+    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  .ic-hero {
+    position: relative;
+    min-height: 380px;
+    background-image: url('/images/centre/interior-interior-2-img_2656-with-people.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .ic-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.4) 0%, rgba(0,62,81,0.88) 100%);
+  }
+
+  .ic-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 56px;
+  }
+
+  .ic-hero__content h1 { color: var(--color-white); margin-bottom: 10px; }
+
+  .ic-hero__lead {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 0;
+    max-width: 560px;
+  }
+
+  .section-subhead {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 24px 0 14px;
+  }
+
+  .support-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .support-list li {
+    padding-left: 24px;
+    position: relative;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.55;
+  }
+
+  .support-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+  }
+
+  .approach-card {
+    background-color: var(--color-tint);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-secondary);
+    padding: 28px;
+  }
+
+  .approach-card__icon {
+    color: var(--color-primary);
+    margin-bottom: 16px;
+  }
+
+  .approach-card h3 {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+  }
+
+  .approach-card p {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  .approach-facts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin: 20px 0;
+    padding: 16px 0;
+    border-top: 1px solid var(--color-secondary);
+    border-bottom: 1px solid var(--color-secondary);
+  }
+
+  .approach-fact {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 8px;
+    font-size: 0.875rem;
+  }
+
+  .approach-fact__label {
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .approach-fact__value {
+    color: var(--color-text);
+  }
+
+  .approach-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+  }
+
+  .approach-contact__phone {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .approach-contact__phone:hover { text-decoration: underline; }
+
+  .approach-contact__email {
+    font-size: 0.9375rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .approach-contact__email:hover { text-decoration: underline; }
+
+  /* Expect */
+  .expect-inner {
+    max-width: 860px;
+    margin-inline: auto;
+  }
+
+  .expect-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .expect-item {
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    padding: 24px 20px;
+    border: 1px solid var(--color-secondary);
+  }
+
+  .expect-item__icon {
+    color: var(--color-primary);
+    margin-bottom: 12px;
+  }
+
+  .expect-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+  }
+
+  .expect-item p {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 900px) {
+    .expect-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .expect-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

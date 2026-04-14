@@ -1,0 +1,282 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InfoTable from '../../components/InfoTable.astro';
+import CTABand from '../../components/CTABand.astro';
+
+const serviceRows = [
+  { label: 'Day', value: 'Every Friday' },
+  { label: 'Hours', value: '12pm–2pm' },
+  { label: 'Starting', value: '17 April 2026' },
+  { label: 'Cost', value: 'Free' },
+  { label: 'Email', value: '<a href="mailto:kitchen@oakdenehouse.org.au">kitchen@oakdenehouse.org.au</a>' },
+  { label: 'Phone', value: '<a href="tel:0415156100">0415 156 100</a>' },
+];
+
+const included = [
+  'Fresh fruit and vegetables',
+  'Canned goods',
+  'Long life milk',
+  'Cereal',
+  'Hygiene items — women\'s health, child/baby, dental (subject to availability)',
+];
+---
+
+<BaseLayout
+  title="Staple Food Packs — Oakdene House Foundation"
+  description="Free take-home grocery packs every Friday at Oakdene House, Fairfield. Includes fresh produce, pantry staples and hygiene items."
+  ogImage="/images/kitchen/oakdene-kitchen-interior-with-food-stacks.jpg"
+>
+
+  <!-- HERO -->
+  <section class="packs-hero" aria-label="Staple Food Packs">
+    <div class="packs-hero__overlay" aria-hidden="true"></div>
+    <div class="container packs-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/services/">Services</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Staple Food Packs</span>
+      </nav>
+      <h1>Staple Food Packs</h1>
+      <p class="packs-hero__lead">Take-home grocery packs for people doing it tough.</p>
+    </div>
+  </section>
+
+  <!-- INTRO + DETAILS -->
+  <section class="section" aria-labelledby="packs-intro-heading">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">About this service</p>
+            <h2 id="packs-intro-heading">Essentials to take home</h2>
+          </div>
+          <p>The Staple Food Packs service provides weekly take-home grocery packs for individuals and families experiencing food insecurity. Each pack contains a practical mix of fresh produce, pantry staples and hygiene essentials.</p>
+          <p>Packs are distributed every Friday. This service began on 17 April 2026.</p>
+
+          <h3 class="section-subhead">What's included</h3>
+          <ul class="offer-list">
+            {included.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div>
+          <InfoTable rows={serviceRows} caption="Service details" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOD IMAGE -->
+  <div class="food-image-banner">
+    <img src="/images/kitchen/kitchen-3x-staff-serving.png" alt="Oakdene Kitchen staff serving a meal" loading="lazy" />
+  </div>
+
+  <!-- RULES + ELIGIBILITY -->
+  <section class="section" aria-labelledby="rules-heading">
+    <div class="container">
+      <div class="narrow">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">Important Information</p>
+          <h2 id="rules-heading">Rules and eligibility</h2>
+        </div>
+
+        <div class="rules-grid">
+          <div class="rules-card">
+            <h3>Pack rules</h3>
+            <ul class="rules-list">
+              <li>One pack per household</li>
+              <li>Packs are limited — once given out, none are available until next week</li>
+            </ul>
+          </div>
+          <div class="rules-card">
+            <h3>Eligibility</h3>
+            <p>The same eligibility applies as the Oakdene Kitchen:</p>
+            <ul class="rules-list">
+              <li>Current Centrelink Income Statement</li>
+              <li>Photo ID (passport or drivers licence)</li>
+              <li>Income under $1,200 per fortnight</li>
+              <li>Statement must be updated monthly</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="also-note">
+          <p>Also running on Fridays — if you need further support, speak with a team member about other Oakdene services including the <a href="/services/oakdene-kitchen/">Kitchen</a>, <a href="/services/oakdene-laundrette/">Laundrette</a> and <a href="/services/individual-counselling/">Counselling</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Need to get in touch?"
+    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    secondaryBtn={{ text: 'Get Support', href: '/forms/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  .packs-hero {
+    position: relative;
+    min-height: 380px;
+    background-image: url('/images/kitchen/oakdene-kitchen-interior-with-food-stacks.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .packs-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.35) 0%, rgba(0,62,81,0.85) 100%);
+  }
+
+  .packs-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 56px;
+  }
+
+  .packs-hero__content h1 { color: var(--color-white); margin-bottom: 10px; }
+
+  .packs-hero__lead {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 0;
+    max-width: 520px;
+  }
+
+  .section-subhead {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 28px 0 14px;
+  }
+
+  .offer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .offer-list li {
+    padding-left: 24px;
+    position: relative;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.55;
+  }
+
+  .offer-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+  }
+
+  /* Image banner */
+  .food-image-banner {
+    width: 100%;
+    height: 320px;
+    overflow: hidden;
+  }
+
+  .food-image-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+
+  /* Rules */
+  .narrow {
+    max-width: 760px;
+  }
+
+  .rules-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 28px;
+  }
+
+  .rules-card {
+    background-color: var(--color-tint);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--radius-card);
+    padding: 24px;
+  }
+
+  .rules-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+  }
+
+  .rules-card p {
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+    margin-bottom: 10px;
+  }
+
+  .rules-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .rules-list li {
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  .rules-list li::before {
+    content: '—';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .also-note {
+    background-color: var(--color-tint);
+    border-radius: var(--radius-card);
+    border-left: 3px solid var(--color-primary);
+    padding: 16px 20px;
+  }
+
+  .also-note p {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .also-note a {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  @media (max-width: 600px) {
+    .rules-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

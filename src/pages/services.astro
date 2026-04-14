@@ -1,0 +1,404 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import CTABand from '../components/CTABand.astro';
+
+const categories = [
+  {
+    heading: 'Counselling and Support',
+    description: 'Person-centred support that helps people talk through challenges, make sense of what is happening, and identify the next step.',
+    icon: 'heart',
+  },
+  {
+    heading: 'Practical Assistance',
+    description: 'Support that responds to everyday pressures and community need in a respectful and accessible way.',
+    icon: 'hands',
+  },
+  {
+    heading: 'Community-Based Support',
+    description: 'Programs and activities that create routine, connection, and opportunities to keep moving forward.',
+    icon: 'people',
+  },
+  {
+    heading: 'Referral Pathways',
+    description: 'Help connecting with the right services when more specialised or longer-term support is needed.',
+    icon: 'arrow',
+  },
+];
+
+const services = [
+  {
+    title: 'Oakdene Kitchen',
+    summary: 'Free hot lunches in a safe and welcoming community space, Tuesday to Thursday.',
+    href: '/services/oakdene-kitchen/',
+    image: '/images/kitchen/kitchen-3x-staff-serving.png',
+    imageAlt: 'Oakdene Kitchen staff serving meals',
+    eyebrow: 'Practical Assistance',
+  },
+  {
+    title: 'Staple Food Packs',
+    summary: 'Weekly take-home grocery packs with fresh produce, pantry essentials and hygiene items.',
+    href: '/services/staple-food-packs/',
+    image: '/images/kitchen/oakdene-kitchen-interior-with-food-stacks.jpg',
+    imageAlt: 'Stacked food supplies at Oakdene Kitchen',
+    eyebrow: 'Practical Assistance',
+  },
+  {
+    title: 'Oakdene Laundrette',
+    summary: 'Free community laundry service with washing, drying and detergent provided.',
+    href: '/services/oakdene-laundrette/',
+    image: '/images/laundrette/laundrette-interior-1.jpg',
+    imageAlt: 'Inside the Oakdene Laundrette',
+    eyebrow: 'Practical Assistance',
+  },
+  {
+    title: 'Used Clothing Store',
+    summary: 'Free men\'s and women\'s clothing, shoes and accessories — three items per visit.',
+    href: '/services/used-clothing-store/',
+    image: '/images/boutique/boutique-interior-clothing-rack.jpg',
+    imageAlt: 'Clothing rack at the Oakdene Used Clothing Store',
+    eyebrow: 'Practical Assistance',
+  },
+  {
+    title: 'Ladies Boutique',
+    summary: 'A warm, private space offering quality clothing, salon services and community connection for women.',
+    href: '/services/ladies-boutique/',
+    image: '/images/boutique/ladies-boutique-edited.png',
+    imageAlt: 'Oakdene Ladies Boutique',
+    eyebrow: 'Community-Based Support',
+  },
+  {
+    title: 'Life Choices Program',
+    summary: 'A 6-week group program covering addiction, coping strategies, life skills and peer connection.',
+    href: '/services/life-choices-program/',
+    image: '/images/centre/interior-meetings-1-img_2657.jpg',
+    imageAlt: 'Group meeting room at Oakdene House',
+    eyebrow: 'Community-Based Support',
+  },
+  {
+    title: 'Outpatients Program',
+    summary: 'Structured rehabilitation with counselling, group sessions, 12-step support and peer mentoring.',
+    href: '/services/outpatients-program/',
+    image: '/images/centre/interior-img_2655-with-people.png',
+    imageAlt: 'Interior support space at Oakdene House',
+    imagePosition: 'center 60%',
+    eyebrow: 'Counselling and Support',
+  },
+  {
+    title: 'Individual Counselling',
+    summary: 'Confidential one-on-one counselling for people affected by addiction and related challenges.',
+    href: '/services/individual-counselling/',
+    image: '/images/centre/interior-interior-2-img_2656-with-people.png',
+    imageAlt: 'Individual counselling space at Oakdene House',
+    eyebrow: 'Counselling and Support',
+  },
+  {
+    title: 'Gambling Counselling',
+    summary: 'Free, confidential gambling counselling provided by Catholic Care — by appointment.',
+    href: '/services/gambling-counselling/',
+    image: '/images/generic/bandw-distressed-woman.jpeg',
+    imageAlt: 'Person seeking support — gambling counselling',
+    eyebrow: 'Counselling and Support',
+  },
+  {
+    title: 'AA & GA Meetings',
+    summary: 'Alcoholics Anonymous and Gamblers Anonymous meetings, including Spanish-speaking sessions.',
+    href: '/services/aa-ga-meetings/',
+    image: '/images/centre/interior-meetings-1-img_2657-v2.png',
+    imageAlt: 'Meeting room at Oakdene House',
+    eyebrow: 'Community-Based Support',
+  },
+  {
+    title: 'Financial Counselling',
+    summary: 'Free guidance for people experiencing financial hardship — managing debt, bills and planning ahead.',
+    href: '/services/financial-counselling/',
+    image: '/images/generic/bandw-business-man_distress.jpg',
+    imageAlt: 'Person experiencing financial stress',
+    eyebrow: 'Referral Pathways',
+  },
+];
+
+const steps = [
+  { number: '01', heading: 'Make Contact', body: 'Reach out by phone, email, form, or in person.' },
+  { number: '02', heading: 'Share Your Story', body: 'Tell us what is happening and what kind of help you are looking for.' },
+  { number: '03', heading: 'Get Connected', body: 'We review your enquiry and work out the most helpful next step.' },
+  { number: '04', heading: 'Move Forward', body: 'You are connected with direct support, a program, referral, or a mix of these.' },
+];
+---
+
+<BaseLayout
+  title="Services — Oakdene House Foundation"
+  description="Oakdene House Foundation offers counselling, practical support, community programs and referral pathways for people experiencing hardship in Fairfield, Western Sydney."
+  ogImage="/images/centre/interior-img_2655-with-people.png"
+>
+
+  <!-- HERO -->
+  <section class="services-hero" aria-label="Services">
+    <div class="services-hero__overlay" aria-hidden="true"></div>
+    <div class="container services-hero__content">
+      <h1>Services that respond with care, clarity, and practical support</h1>
+      <p class="services-hero__lead">Oakdene provides support that is grounded in dignity, connection, and the realities people are living with.</p>
+      <div class="btn-group">
+        <a href="/forms/" class="btn btn--white">Get Support</a><!-- TODO: Replace with live Jotform URL -->
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE OFFER -->
+  <section class="section" aria-labelledby="categories-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">What We Offer</p>
+        <h2 id="categories-heading">Four areas of support</h2>
+        <p class="section-heading__lead">Our services span practical help, counselling and community — because people's needs rarely fit neatly into one box.</p>
+      </div>
+      <div class="categories-grid">
+        {categories.map(cat => (
+          <div class="category-card">
+            <div class="category-card__icon" aria-hidden="true">
+              {cat.icon === 'heart' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              )}
+              {cat.icon === 'hands' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+              )}
+              {cat.icon === 'people' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              )}
+              {cat.icon === 'arrow' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+              )}
+            </div>
+            <h3 class="category-card__heading">{cat.heading}</h3>
+            <p class="category-card__desc">{cat.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ALL SERVICES GRID -->
+  <section class="section section--tint" aria-labelledby="all-services-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">All Services</p>
+        <h2 id="all-services-heading">Everything we offer</h2>
+      </div>
+      <div class="card-grid">
+        {services.map(s => (
+          <ServiceCard
+            title={s.title}
+            summary={s.summary}
+            href={s.href}
+            image={s.image}
+            imageAlt={s.imageAlt}
+            eyebrow={s.eyebrow}
+          />
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO GET STARTED -->
+  <section class="section" aria-labelledby="steps-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">Getting Started</p>
+        <h2 id="steps-heading">How to get started</h2>
+        <p class="section-heading__lead">Accessing support at Oakdene is straightforward. Here is what to expect.</p>
+      </div>
+      <div class="steps-grid">
+        {steps.map(step => (
+          <div class="step-item">
+            <div class="step-item__number" aria-hidden="true">{step.number}</div>
+            <h3 class="step-item__heading">{step.heading}</h3>
+            <p class="step-item__body">{step.body}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE SUPPORT -->
+  <section class="section section--tint" aria-labelledby="who-heading">
+    <div class="container">
+      <div class="who-split">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">Who We Support</p>
+          <h2 id="who-heading">You don't need to meet specific criteria</h2>
+        </div>
+        <div class="who-body">
+          <p>Oakdene supports individuals, families, carers, and community members looking for practical help, guidance, connection, or referral support. This includes people affected by addiction, hardship, homelessness, social isolation, or other major life pressures.</p>
+          <p>You do not need to meet specific criteria. If you are going through a tough time and need support, we are here.</p>
+          <a href="/forms/" class="btn btn--primary">Get Support</a><!-- TODO: Replace with live Jotform URL -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="We are here to help"
+    primaryBtn={{ text: 'Get Support', href: '/forms/' }}
+    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .services-hero {
+    position: relative;
+    min-height: 460px;
+    background-image: url('/images/centre/interior-interior-1-with-people-img_2654.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .services-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.3) 0%, rgba(0,62,81,0.85) 100%);
+  }
+
+  .services-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 64px;
+    max-width: 760px;
+  }
+
+  .services-hero__content h1 {
+    color: var(--color-white);
+    margin-bottom: 16px;
+    font-size: clamp(1.75rem, 4vw, 2.75rem);
+  }
+
+  .services-hero__lead {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.6;
+    margin-bottom: 32px;
+    max-width: 600px;
+  }
+
+  /* Category cards */
+  .categories-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+  }
+
+  .category-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--radius-card);
+    padding: 28px 24px;
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+
+  .category-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-card);
+  }
+
+  .category-card__icon {
+    color: var(--color-primary);
+    margin-bottom: 16px;
+  }
+
+  .category-card__heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+  }
+
+  .category-card__desc {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Steps */
+  .steps-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+  }
+
+  .step-item {
+    position: relative;
+  }
+
+  .step-item__number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    line-height: 1;
+    margin-bottom: 14px;
+  }
+
+  .step-item__heading {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+  }
+
+  .step-item__body {
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Who we support */
+  .who-split {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 64px;
+    align-items: start;
+  }
+
+  .who-body p {
+    font-size: 1.0625rem;
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: 20px;
+  }
+
+  .who-body .btn {
+    margin-top: 8px;
+  }
+
+  @media (max-width: 1024px) {
+    .categories-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .steps-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .who-split {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .categories-grid {
+      grid-template-columns: 1fr;
+    }
+    .steps-grid {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+</style>

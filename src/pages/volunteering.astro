@@ -1,0 +1,307 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTABand from '../components/CTABand.astro';
+
+const reasons = [
+  'Be part of a local charity making a practical difference',
+  'Support people and families in your community',
+  'Join a welcoming, values-led environment',
+  'Use your time and skills in ways that matter',
+];
+
+const types = [
+  {
+    heading: 'Community Volunteering',
+    description: 'Join our day-to-day operations — supporting the Kitchen, Boutique, Laundrette, and programs. Open to individuals who want to make a direct local contribution.',
+    href: '/volunteering/community-volunteers/',
+    image: '/images/kitchen/oakdene-kitchen-volunteer-serving-with-smile.jpg',
+    imageAlt: 'Volunteer serving food at Oakdene Kitchen',
+  },
+  {
+    heading: 'Corporate Volunteering',
+    description: 'Bring your team to Oakdene for structured volunteering days or partnership programs. A meaningful way to give back and build team purpose.',
+    href: '/volunteering/corporate-volunteering/',
+    image: '/images/kitchen/oakdene-kitchen-interior-upclose-serving.jpg',
+    imageAlt: 'Volunteers at Oakdene wrapping food',
+  },
+];
+---
+
+<BaseLayout
+  title="Volunteering — Oakdene House Foundation"
+  description="Volunteer with Oakdene House Foundation in Fairfield, Western Sydney. Community and corporate volunteering opportunities available."
+  ogImage="/images/kitchen/oakdene-kitchen-volunteer-serving-with-smile.jpg"
+>
+
+  <!-- HERO -->
+  <section class="vol-hero" aria-label="Volunteering at Oakdene">
+    <div class="vol-hero__overlay" aria-hidden="true"></div>
+    <div class="container vol-hero__content">
+      <h1>Volunteer with Oakdene House Foundation</h1>
+      <p class="vol-hero__lead">Volunteers play an important role at Oakdene House. They help create a welcoming environment, support practical programs and strengthen our connection to the community.</p>
+    </div>
+  </section>
+
+  <!-- WHY VOLUNTEER -->
+  <section class="section" aria-labelledby="why-heading">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">Why Volunteer</p>
+            <h2 id="why-heading">Make a real contribution</h2>
+          </div>
+          <p>Volunteering at Oakdene is practical, welcoming, and meaningful. Every volunteer who walks through our doors becomes part of a community that is working to make a genuine difference.</p>
+          <ul class="reasons-list">
+            {reasons.map(r => <li>{r}</li>)}
+          </ul>
+          <a href="/forms/" class="btn btn--primary">Apply to Volunteer</a><!-- TODO: Replace with live Jotform URL -->
+        </div>
+        <div>
+          <div class="vol-image">
+            <img src="/images/kitchen/oakdene-kitchen-interior-with-food-stacks.jpg" alt="Volunteer at Oakdene Kitchen serving food" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLUNTEERING TYPES -->
+  <section class="section section--tint" aria-labelledby="types-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">How You Can Volunteer</p>
+        <h2 id="types-heading">Two ways to get involved</h2>
+      </div>
+      <div class="types-grid">
+        {types.map(t => (
+          <article class="type-card">
+            <div class="type-card__image">
+              <img src={t.image} alt={t.imageAlt} loading="lazy" />
+            </div>
+            <div class="type-card__body">
+              <h3 class="type-card__heading">{t.heading}</h3>
+              <p class="type-card__desc">{t.description}</p>
+              <a href={t.href} class="btn btn--secondary">Learn More</a>
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="section" aria-labelledby="expect-heading">
+    <div class="container">
+      <div class="expect-inner">
+        <div class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">What to Expect</p>
+          <h2 id="expect-heading">Volunteering at Oakdene</h2>
+        </div>
+        <div class="expect-grid">
+          <div class="expect-item">
+            <div class="expect-item__number" aria-hidden="true">01</div>
+            <h3>Apply</h3>
+            <p>Submit a volunteer application through our form or contact us directly.</p>
+          </div>
+          <div class="expect-item">
+            <div class="expect-item__number" aria-hidden="true">02</div>
+            <h3>Meet the team</h3>
+            <p>We will have a brief conversation to understand your availability and interests.</p>
+          </div>
+          <div class="expect-item">
+            <div class="expect-item__number" aria-hidden="true">03</div>
+            <h3>Get started</h3>
+            <p>You will be welcomed into your role with support and guidance from our team.</p>
+          </div>
+          <div class="expect-item">
+            <div class="expect-item__number" aria-hidden="true">04</div>
+            <h3>Make a difference</h3>
+            <p>Your time and energy directly support people and families in the Fairfield community.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Ready to get involved?"
+    primaryBtn={{ text: 'Apply to Volunteer', href: '/forms/' }}
+    secondaryBtn={{ text: 'Partnership Enquiry', href: '/forms/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  .vol-hero {
+    position: relative;
+    min-height: 420px;
+    background-image: url('/images/kitchen/kitchen-3x-staff-serving.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .vol-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.3) 0%, rgba(0,62,81,0.85) 100%);
+  }
+
+  .vol-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 64px;
+    max-width: 680px;
+  }
+
+  .vol-hero__content h1 {
+    color: var(--color-white);
+    margin-bottom: 16px;
+  }
+
+  .vol-hero__lead {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.65;
+    margin-bottom: 0;
+  }
+
+  .reasons-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0;
+    list-style: none;
+    margin: 24px 0 32px;
+  }
+
+  .reasons-list li {
+    padding-left: 28px;
+    position: relative;
+    font-size: 1rem;
+    color: var(--color-text);
+    line-height: 1.55;
+  }
+
+  .reasons-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+  }
+
+  .vol-image {
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+
+  .vol-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Types */
+  .types-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+  }
+
+  .type-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+  }
+
+  .type-card__image {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .type-card__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .type-card:hover .type-card__image img {
+    transform: scale(1.04);
+  }
+
+  .type-card__body {
+    padding: 28px;
+  }
+
+  .type-card__heading {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+  }
+
+  .type-card__desc {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.65;
+    margin-bottom: 20px;
+  }
+
+  /* Expect steps */
+  .expect-inner {
+    max-width: 860px;
+    margin-inline: auto;
+  }
+
+  .expect-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 28px;
+  }
+
+  .expect-item {
+    text-align: center;
+  }
+
+  .expect-item__number {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+
+  .expect-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+  }
+
+  .expect-item p {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 768px) {
+    .types-grid { grid-template-columns: 1fr; }
+    .expect-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 480px) {
+    .expect-grid { grid-template-columns: 1fr; }
+  }
+</style>

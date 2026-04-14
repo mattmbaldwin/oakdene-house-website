@@ -1,0 +1,351 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CTABand from '../components/CTABand.astro';
+import ServiceCard from '../components/ServiceCard.astro';
+import TestimonialBlock from '../components/TestimonialBlock.astro';
+import FAQAccordion from '../components/FAQAccordion.astro';
+import StatsGrid from '../components/StatsGrid.astro';
+
+import allTestimonials from '../content/testimonials.json';
+import allFaqs from '../content/faqs.json';
+
+const testimonials = allTestimonials.filter(t => t.page === 'home');
+const faqs = allFaqs.slice(0, 4);
+
+const stats = [
+  { number: '5,000+', label: 'People supported each year' },
+  { number: '100+',   label: 'Community events and workshops' },
+  { number: '1,000+', label: 'Hours of one-to-one support' },
+  { number: '5,000+', label: 'Meals and practical supports delivered' },
+];
+
+const services = [
+  {
+    title: 'Counselling and Support',
+    summary: 'One-on-one support to help you understand what you are facing and find a path forward that feels achievable.',
+    href: '/services/individual-counselling/',
+    image: '/images/centre/interior-meetings-1-img_2657.jpg',
+    imageAlt: 'Oakdene Centre meeting room',
+  },
+  {
+    title: 'Life Choices Program',
+    summary: 'A 6-week group program focused on recovery, connection and building practical life skills in a supportive environment.',
+    href: '/services/life-choices-program/',
+    image: '/images/centre/interior-interior-1-with-people-img_2654.jpg',
+    imageAlt: 'Oakdene Centre interior',
+  },
+  {
+    title: 'Oakdene Kitchen',
+    summary: 'Free nutritious meals for eligible community members every Tuesday, Wednesday and Thursday, 12pm–2pm.',
+    href: '/services/oakdene-kitchen/',
+    image: '/images/kitchen/oakdene-kitchen-interior-dining-room-2-with-people.png',
+    imageAlt: 'Oakdene Kitchen interior dining room',
+  },
+  {
+    title: 'Ladies Boutique',
+    summary: 'A welcoming space offering affordable clothing and salon support for women. No woman is turned away due to financial difficulty.',
+    href: '/services/ladies-boutique/',
+    image: '/images/boutique/boutique-interior-looking-down-shop-with-people.png',
+    imageAlt: 'Oakdene Boutique interior',
+  },
+];
+
+const pathways = [
+  {
+    title: 'Counselling',
+    summary: 'Talk with someone about support, recovery, and your next steps.',
+    href: '/services/',
+  },
+  {
+    title: 'Community Programs',
+    summary: 'Explore practical programs that build connection, confidence, and consistency.',
+    href: '/community-programs/',
+  },
+  {
+    title: 'Resources',
+    summary: 'Access guides, information, and support tools you can use straight away.',
+    href: '/resources/',
+  },
+  {
+    title: 'Service Directory',
+    summary: 'Browse other services and supports in the community.',
+    href: '/service-directory/',
+  },
+];
+
+const steps = [
+  { number: '1', title: 'Connect', body: 'Reach out online, by phone, or in person.' },
+  { number: '2', title: 'Talk',    body: 'We listen, understand what is happening, and help identify needs.' },
+  { number: '3', title: 'Support', body: 'We provide direct support where we can and link to other services where needed.' },
+  { number: '4', title: 'Next Steps', body: 'We help people move forward with clearer options and stronger connection.' },
+];
+---
+
+<BaseLayout
+  title="Oakdene House Foundation — Real Support for Real Life"
+  description="Oakdene House Foundation supports people and families in Fairfield, Western Sydney affected by addiction, hardship and homelessness. Free counselling, community programs, kitchen and more."
+>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <Hero
+    heading="Practical support, real connection, and a place to take the next step."
+    subheading="Oakdene House Foundation supports people and families facing addiction, hardship, homelessness, and life challenges through practical help, counselling, community programs, and connection to the right support."
+    image="/images/hero/hero-centre-2.jpg"
+    imageAlt="Oakdene House Foundation centre exterior"
+    buttons={[
+      { text: 'Get Support',      href: '/forms/',    variant: 'white' },
+      { text: 'Explore Services', href: '/services/', variant: 'white-outline' },
+    ]}
+  />
+
+  <!-- ============================================================
+       QUICK PATHWAYS
+       ============================================================ -->
+  <section class="section" aria-labelledby="pathways-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <h2 id="pathways-heading">How can we help?</h2>
+      </div>
+      <div class="pathways-grid">
+        {pathways.map(p => (
+          <a href={p.href} class="pathway-card">
+            <h3 class="pathway-card__title">{p.title}</h3>
+            <p class="pathway-card__summary">{p.summary}</p>
+            <span class="pathway-card__arrow" aria-hidden="true">&rarr;</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MISSION — SPLIT LAYOUT
+       ============================================================ -->
+  <section class="section section--tint" aria-labelledby="mission-heading">
+    <div class="container">
+      <div class="split">
+        <div class="split__text">
+          <div class="section-heading">
+            <h2 id="mission-heading">Support that meets people where they are</h2>
+          </div>
+          <p>Oakdene is a community charity based in Fairfield, Western Sydney. We work alongside people and families with practical support, connection, and pathways to further help.</p>
+          <p>At Oakdene House, we believe real change happens when people feel safe, seen and supported. Our work brings together counselling, peer connection and practical care so people can access help that feels human, local and achievable.</p>
+          <p>From individual counselling and group recovery programs to our kitchen, laundrette and boutique, every part of Oakdene is built around restoring hope and creating pathways forward.</p>
+          <div class="btn-group" style="margin-top: 28px;">
+            <a href="/about/" class="btn btn--primary">Learn More About Us</a>
+          </div>
+        </div>
+        <div class="split__image">
+          <img
+            src="/images/hero/hero-centre-3-with-people.png"
+            alt="Oakdene House Foundation centre building exterior"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       STATS
+       ============================================================ -->
+  <section class="section section--dark" aria-label="Our impact in numbers">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">Our Impact</p>
+        <h2>Making a difference every day</h2>
+      </div>
+      <StatsGrid stats={stats} />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SERVICES PREVIEW
+       ============================================================ -->
+  <section class="section" aria-labelledby="services-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">Our Services</p>
+        <h2 id="services-heading">Support that makes a difference</h2>
+      </div>
+      <div class="card-grid services-grid">
+        {services.map(s => (
+          <ServiceCard
+            title={s.title}
+            summary={s.summary}
+            href={s.href}
+            image={s.image}
+            imageAlt={s.imageAlt}
+          />
+        ))}
+      </div>
+      <div class="section-action">
+        <a href="/services/" class="btn btn--secondary">View All Services</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       HOW WE HELP — STEPS
+       ============================================================ -->
+  <section class="section section--tint" aria-labelledby="steps-heading">
+    <div class="container">
+      <div class="split split--image-right">
+        <div class="split__image">
+          <img
+            src="/images/centre/interior-interior-2-img_2656-with-people.png"
+            alt="Oakdene House Foundation centre interior"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">Our Approach</p>
+            <h2 id="steps-heading">How support works</h2>
+          </div>
+          <ol class="steps" aria-label="How support works at Oakdene">
+            {steps.map(step => (
+              <li class="step">
+                <div class="step__number" aria-hidden="true">{step.number}</div>
+                <div class="step__content">
+                  <h3>{step.title}</h3>
+                  <p>{step.body}</p>
+                </div>
+              </li>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS
+       ============================================================ -->
+  <section class="section" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">Community Voices</p>
+        <h2 id="testimonials-heading">What people say</h2>
+      </div>
+      <TestimonialBlock quotes={testimonials} />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FAQS
+       ============================================================ -->
+  <section class="section section--tint" aria-labelledby="faq-heading">
+    <div class="container faq-container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">Questions</p>
+        <h2 id="faq-heading">Common questions</h2>
+      </div>
+      <FAQAccordion faqs={faqs} />
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL CTA
+       ============================================================ -->
+  <CTABand
+    heading="Need support or not sure where to start?"
+    subheading="Reach out to the Oakdene team and we will help you work out the best next step."
+    primaryBtn={{ text: 'Get Support', href: '/forms/' }}
+    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  /* ---- Pathways grid ---- */
+  .pathways-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .pathway-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--radius-card);
+    padding: 28px 24px;
+    text-decoration: none;
+    transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
+    position: relative;
+  }
+
+  .pathway-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-2px);
+  }
+
+  .pathway-card__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+  }
+
+  .pathway-card__summary {
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+    line-height: 1.55;
+    flex: 1;
+    margin-bottom: 20px;
+  }
+
+  .pathway-card__arrow {
+    font-size: 1.25rem;
+    color: var(--color-primary);
+    transition: transform var(--transition);
+    display: inline-block;
+  }
+
+  .pathway-card:hover .pathway-card__arrow {
+    transform: translateX(5px);
+  }
+
+  /* ---- Section action (centered button below grid) ---- */
+  .section-action {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+  }
+
+  /* ---- Services 2x2 grid ---- */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 640px) {
+    .services-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  /* ---- FAQ max-width ---- */
+  .faq-container {
+    max-width: 820px;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 900px) {
+    .pathways-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .pathways-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

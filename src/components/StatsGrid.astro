@@ -1,0 +1,21 @@
+---
+interface Stat {
+  number: string;
+  label: string;
+}
+
+interface Props {
+  stats: Stat[];
+}
+
+const { stats } = Astro.props;
+---
+
+<div class="stats-grid">
+  {stats.map(stat => (
+    <div class="stat">
+      <span class="stat__number">{stat.number}</span>
+      <span class="stat__label">{stat.label}</span>
+    </div>
+  ))}
+</div>

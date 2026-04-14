@@ -1,0 +1,410 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABand from '../../components/CTABand.astro';
+
+const schedule = [
+  { day: 'Tuesday', time: '12:00pm–1:30pm', format: 'In-person' },
+  { day: 'Tuesday', time: '5:00pm–6:30pm', format: 'Online — Zoom' },
+  { day: 'Wednesday', time: '12:00pm–1:30pm', format: 'In-person' },
+  { day: 'Thursday', time: '11:00am–12:30pm', format: 'In-person' },
+  { day: 'Friday', time: '5:00pm–6:30pm', format: 'Online — Zoom' },
+];
+
+const whatToExpect = [
+  'A structured group environment',
+  'Topics that support reflection, responsibility and personal growth',
+  'Practical strategies that can be applied in everyday life',
+  'A respectful setting that values participation, not perfection',
+];
+
+const joinSteps = [
+  {
+    heading: 'Get in Touch',
+    body: 'Call or email Oakdene to express your interest.',
+  },
+  {
+    heading: 'Have a Chat',
+    body: 'A team member will have a short conversation with you to see if the program is a good fit.',
+  },
+  {
+    heading: 'Come to First Session',
+    body: 'Join us at the first session. You will meet the group and get started.',
+  },
+];
+---
+
+<BaseLayout
+  title="Life Choices Program — Oakdene House Foundation"
+  description="A 6-week group program at Oakdene House to understand addiction, build life skills and connect with others. Multiple sessions available in-person and online."
+  ogImage="/images/centre/interior-meetings-1-img_2657.jpg"
+>
+
+  <!-- HERO -->
+  <section class="lcp-hero" aria-label="Life Choices Program">
+    <div class="lcp-hero__overlay" aria-hidden="true"></div>
+    <div class="container lcp-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/services/">Services</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Life Choices Program</span>
+      </nav>
+      <h1>Life Choices Program</h1>
+      <p class="lcp-hero__lead">A 6-week group program to help you understand addiction and build life skills.</p>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section" aria-labelledby="lcp-overview-heading">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">Program Overview</p>
+            <h2 id="lcp-overview-heading">A practical journey, together</h2>
+          </div>
+          <p>The Life Choices Program is a practical, 6-week group experience designed to help people understand addiction, learn coping strategies, build life skills, and connect with others on a similar journey.</p>
+          <p>We meet regularly, share experiences, and work toward recovery in a supportive environment.</p>
+
+          <h3 class="section-subhead">What participants can expect</h3>
+          <ul class="expect-list">
+            {whatToExpect.map(item => <li>{item}</li>)}
+          </ul>
+
+          <div class="who-box">
+            <p class="who-box__label">Who it's for</p>
+            <p>Life Choices is suitable for people who are ready to engage in a group-based program that supports change, accountability and future planning.</p>
+          </div>
+        </div>
+        <div>
+          <div class="program-image">
+            <img src="/images/centre/interior-meetings-1-img_2657-v2.png" alt="Group meeting room at Oakdene House" loading="lazy" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCHEDULE -->
+  <section class="section section--tint" aria-labelledby="schedule-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">Session Times</p>
+        <h2 id="schedule-heading">Program schedule</h2>
+        <p class="section-heading__lead">Sessions run across the week with both in-person and online options available.</p>
+      </div>
+      <div class="schedule-table-wrap">
+        <table class="schedule-table" aria-label="Life Choices Program schedule">
+          <thead>
+            <tr>
+              <th scope="col">Day</th>
+              <th scope="col">Time</th>
+              <th scope="col">Format</th>
+            </tr>
+          </thead>
+          <tbody>
+            {schedule.map(s => (
+              <tr>
+                <td>{s.day}</td>
+                <td>{s.time}</td>
+                <td>
+                  <span class={`format-badge ${s.format.includes('Online') ? 'format-badge--online' : 'format-badge--inperson'}`}>
+                    {s.format}
+                  </span>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW TO JOIN -->
+  <section class="section" aria-labelledby="join-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">Getting Started</p>
+        <h2 id="join-heading">How to join</h2>
+      </div>
+      <div class="join-steps">
+        {joinSteps.map((step, i) => (
+          <div class="join-step">
+            <div class="join-step__number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</div>
+            <h3 class="join-step__heading">{step.heading}</h3>
+            <p class="join-step__body">{step.body}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="contact-note">
+        <div class="contact-note__item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+          <a href="tel:0287170999">(02) 8717 0999</a>
+        </div>
+        <div class="contact-note__item">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Interested in Life Choices?"
+    primaryBtn={{ text: 'Program Interest', href: '/forms/' }}
+    secondaryBtn={{ text: 'Make an Enquiry', href: '/contact/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  .lcp-hero {
+    position: relative;
+    min-height: 400px;
+    background-image: url('/images/centre/interior-meetings-1-img_2657.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .lcp-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.35) 0%, rgba(0,62,81,0.85) 100%);
+  }
+
+  .lcp-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 56px;
+  }
+
+  .lcp-hero__content h1 { color: var(--color-white); margin-bottom: 10px; }
+
+  .lcp-hero__lead {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 0;
+    max-width: 520px;
+  }
+
+  .section-subhead {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 24px 0 14px;
+  }
+
+  .expect-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 24px;
+  }
+
+  .expect-list li {
+    padding-left: 24px;
+    position: relative;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.55;
+  }
+
+  .expect-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+  }
+
+  .who-box {
+    background-color: var(--color-tint);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-secondary);
+    padding: 20px 24px;
+  }
+
+  .who-box__label {
+    font-weight: 700;
+    font-size: 0.8125rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary-hover);
+    margin-bottom: 8px;
+  }
+
+  .who-box p:last-child {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .program-image {
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+
+  .program-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Schedule table */
+  .schedule-table-wrap {
+    max-width: 680px;
+    margin-inline: auto;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    border: 1px solid var(--color-secondary);
+  }
+
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    background-color: var(--color-white);
+  }
+
+  .schedule-table thead {
+    background-color: var(--color-primary);
+  }
+
+  .schedule-table thead th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-white);
+  }
+
+  .schedule-table tbody tr {
+    border-bottom: 1px solid var(--color-secondary);
+  }
+
+  .schedule-table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .schedule-table tbody tr:nth-child(even) {
+    background-color: var(--color-tint);
+  }
+
+  .schedule-table td {
+    padding: 14px 20px;
+    color: var(--color-text);
+  }
+
+  .schedule-table td:first-child {
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .format-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 0.8125rem;
+    font-weight: 600;
+  }
+
+  .format-badge--inperson {
+    background-color: #e8f4f0;
+    color: #003E51;
+  }
+
+  .format-badge--online {
+    background-color: var(--color-secondary);
+    color: var(--color-primary);
+  }
+
+  /* Join steps */
+  .join-steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+    margin-bottom: 48px;
+  }
+
+  .join-step {
+    text-align: center;
+    padding: 28px 24px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-secondary);
+  }
+
+  .join-step__number {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: var(--color-secondary);
+    margin-bottom: 12px;
+    line-height: 1;
+  }
+
+  .join-step__heading {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+  }
+
+  .join-step__body {
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Contact note */
+  .contact-note {
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .contact-note__item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.0625rem;
+    font-weight: 500;
+    color: var(--color-primary);
+  }
+
+  .contact-note__item svg {
+    color: var(--color-primary);
+  }
+
+  .contact-note__item a {
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  .contact-note__item a:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 768px) {
+    .join-steps {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

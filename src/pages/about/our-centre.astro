@@ -1,0 +1,253 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InfoTable from '../../components/InfoTable.astro';
+import CTABand from '../../components/CTABand.astro';
+
+const locationRows = [
+  { label: 'Address', value: '29 Vine St, Fairfield NSW 2165' },
+  { label: 'Phone',   value: '<a href="tel:0287170999">(02) 8717 0999</a>' },
+  { label: 'Email',   value: '<a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a>' },
+  { label: 'Parking', value: 'Fairfield RSL open air car park, corner of Vine &amp; Bertha Streets' },
+];
+
+const gallery = [
+  { src: '/images/centre/exterior-exterior-2-img_2649-with-people.png', alt: 'Oakdene House centre exterior side view' },
+  { src: '/images/centre/interior-interior-1-with-people-img_2654.jpg',  alt: 'Oakdene House centre interior main space' },
+  { src: '/images/centre/interior-meetings-1-img_2657-v2.png', alt: 'Oakdene House centre meeting room' },
+];
+
+const whatToExpect = [
+  'A warm and respectful environment',
+  'Private spaces for individual support',
+  'Group areas for programs and peer connection',
+  'Community service areas including the kitchen, laundrette and boutique',
+];
+---
+
+<BaseLayout
+  title="Our Centre — Oakdene House Foundation"
+  description="Oakdene House is a safe, welcoming and practical space in Fairfield, Western Sydney bringing together counselling rooms, group spaces and community services all in one place."
+  ogImage="/images/centre/exterior-exterior-1-img_2651.jpg"
+>
+
+  <!-- HERO -->
+  <section class="centre-hero" aria-label="Our Centre">
+    <div class="centre-hero__overlay" aria-hidden="true"></div>
+    <div class="container centre-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/about/">About</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Our Centre</span>
+      </nav>
+      <h1>Our Centre</h1>
+      <p class="centre-hero__lead">A safe, welcoming and practical space in Fairfield where people can access help in one place.</p>
+    </div>
+  </section>
+
+  <!-- INTRO + WHAT TO EXPECT -->
+  <section class="section" aria-labelledby="centre-intro-heading">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">The Space</p>
+            <h2 id="centre-intro-heading">A space built around people</h2>
+          </div>
+          <p>Oakdene House is designed to be a safe, welcoming and practical space for people seeking support. Our centre brings together counselling rooms, group spaces and community service areas so people can access help in one place.</p>
+          <h3 class="expect-heading">What visitors can expect</h3>
+          <ul class="expect-list">
+            {whatToExpect.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div class="split__image">
+          <img
+            src="/images/centre/interior-img_2655-with-people.png"
+            alt="Inside Oakdene House Foundation centre"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="section section--tint" aria-labelledby="gallery-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">The Building</p>
+        <h2 id="gallery-heading">Inside and outside our centre</h2>
+      </div>
+      <div class="centre-gallery">
+        {gallery.map((img, i) => (
+          <div class={`gallery-item gallery-item--${i + 1}`}>
+            <img src={img.src} alt={img.alt} loading="lazy" />
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="section" aria-labelledby="location-heading">
+    <div class="container">
+      <div class="split split--image-right">
+        <div class="split__image">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.61101941524!2d150.95640981079958!3d-33.87391421921127!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6b12bd8662e9407d%3A0x170a8d432084875b!2s29%20Vine%20St%2C%20Fairfield%20NSW%202165!5e0!3m2!1sen!2sau!4v1776071548440!5m2!1sen!2sau"
+            width="100%"
+            height="400"
+            style="border:0; border-radius: 12px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Oakdene House Foundation — 29 Vine St, Fairfield NSW 2165"
+          ></iframe>
+          <a
+            href="https://maps.google.com/?q=29+Vine+St+Fairfield+NSW+2165"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="maps-link"
+          >
+            Open in Google Maps
+          </a>
+        </div>
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">Find Us</p>
+            <h2 id="location-heading">Location and Access</h2>
+          </div>
+          <InfoTable rows={locationRows} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Ready to visit or get in touch?"
+    subheading="Our team is here to help. Contact us to arrange a visit or to ask any questions."
+    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    secondaryBtn={{ text: 'Get Support', href: '/forms/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .centre-hero {
+    position: relative;
+    min-height: 380px;
+    background-image: url('/images/centre/exterior-exterior-1-img_2651.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .centre-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.35) 0%, rgba(0,62,81,0.82) 100%);
+  }
+
+  .centre-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 56px;
+  }
+
+  .centre-hero__content h1 { color: var(--color-white); margin-bottom: 10px; }
+
+  .centre-hero__lead {
+    font-size: 1.0625rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 560px;
+    margin-bottom: 0;
+  }
+
+  /* Expect list */
+  .expect-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 24px 0 14px;
+  }
+
+  .expect-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .expect-list li {
+    padding-left: 24px;
+    position: relative;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.55;
+  }
+
+  .expect-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+  }
+
+  /* Gallery */
+  .centre-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .gallery-item {
+    overflow: hidden;
+    border-radius: var(--radius-card);
+    height: 260px;
+  }
+
+  .gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .gallery-item:hover img {
+    transform: scale(1.04);
+  }
+
+  /* Maps link */
+  .maps-link {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    text-decoration: none;
+  }
+
+  .maps-link:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .centre-gallery {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 480px) {
+    .centre-gallery {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

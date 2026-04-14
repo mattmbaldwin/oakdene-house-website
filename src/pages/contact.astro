@@ -1,0 +1,548 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import InfoTable from '../components/InfoTable.astro';
+import CTABand from '../components/CTABand.astro';
+
+const hoursRows = [
+  { label: 'Oakdene Kitchen',       value: 'Tuesday–Thursday, 12pm–2pm' },
+  { label: 'Staple Food Packs',     value: 'Every Friday, 12pm–2pm (commencing 17 April 2026)' },
+  { label: 'Oakdene Laundrette',    value: 'Tuesday–Thursday, 12pm–2:30pm (last entry 1pm)' },
+  { label: 'Used Clothing Store',   value: 'Tuesday–Thursday, 12pm–2pm' },
+  { label: 'Ladies Boutique',       value: 'Tuesday and Thursday, 10am–4pm (by appointment)' },
+  { label: 'Counselling',           value: 'By appointment' },
+  { label: 'Life Choices Program',  value: 'See <a href="/services/life-choices-program/">program page</a> for full schedule' },
+];
+
+const contactCards = [
+  {
+    icon: 'phone',
+    heading: 'Phone',
+    detail: '(02) 8717 0999',
+    href: 'tel:0287170999',
+    note: 'Give us a call during business hours',
+  },
+  {
+    icon: 'email',
+    heading: 'Email',
+    detail: 'admin@oakdenehouse.org.au',
+    href: 'mailto:admin@oakdenehouse.org.au',
+    note: 'Send us an email and we will get back to you',
+  },
+  {
+    icon: 'map',
+    heading: 'Visit Us',
+    detail: '29 Vine St, Fairfield NSW 2165',
+    href: null,
+    note: 'Parking via Fairfield RSL open air car park, corner of Vine and Bertha Streets',
+  },
+  {
+    icon: 'clock',
+    heading: 'Opening Hours',
+    detail: 'Monday–Friday',
+    href: null,
+    note: 'Hours to be confirmed with the Oakdene team',
+  },
+];
+---
+
+<BaseLayout
+  title="Contact Us | Oakdene House Foundation"
+  description="Get in touch with Oakdene House Foundation in Fairfield, Western Sydney. Call (02) 8717 0999 or email admin@oakdenehouse.org.au"
+  ogImage="/images/centre/exterior-exterior-1-img_2651.jpg"
+>
+
+  <!-- HERO -->
+  <Hero
+    heading="Contact Oakdene House Foundation"
+    subheading="Whether you are looking for support, information, a referral pathway, or community connection — we are here to help."
+    image="/images/centre/exterior-exterior-2-img_2649-with-people.png"
+    imageAlt="Oakdene House Foundation centre exterior"
+    buttons={[
+      { text: 'Need Help Now', href: '/need-help-now/', variant: 'white-outline' },
+    ]}
+  />
+
+  <!-- CONTACT CARDS -->
+  <section class="section" aria-labelledby="contact-options-heading">
+    <div class="container">
+      <h2 id="contact-options-heading" class="visually-hidden">Contact options</h2>
+      <div class="contact-cards">
+
+        <div class="contact-card">
+          <div class="contact-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+          </div>
+          <p class="contact-card__heading">Phone</p>
+          <a href="tel:0287170999" class="contact-card__detail">(02) 8717 0999</a>
+          <p class="contact-card__note">Give us a call during business hours</p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          </div>
+          <p class="contact-card__heading">Email</p>
+          <a href="mailto:admin@oakdenehouse.org.au" class="contact-card__detail contact-card__detail--small">admin@oakdenehouse.org.au</a>
+          <p class="contact-card__note">Send us an email and we will get back to you</p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <p class="contact-card__heading">Visit Us</p>
+          <p class="contact-card__detail contact-card__detail--small">29 Vine St, Fairfield NSW 2165</p>
+          <p class="contact-card__note">Parking via Fairfield RSL open air car park, corner of Vine and Bertha Streets</p>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <p class="contact-card__heading">Opening Hours</p>
+          <p class="contact-card__detail contact-card__detail--small">Monday–Friday</p>
+          <p class="contact-card__note">Hours to be confirmed with the Oakdene team</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE-SPECIFIC CONTACTS -->
+  <section class="section section--tint" aria-labelledby="service-contacts-heading">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-heading__eyebrow">Service Contacts</p>
+        <h2 id="service-contacts-heading">Service-specific contacts</h2>
+      </div>
+      <div class="service-contacts">
+        <div class="service-contact-card">
+          <h3>Kitchen, Food Packs, Laundrette &amp; Used Clothing Store</h3>
+          <div class="service-contact-card__links">
+            <a href="mailto:kitchen@oakdenehouse.org.au">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              kitchen@oakdenehouse.org.au
+            </a>
+            <a href="tel:0415156100">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+              0415 156 100
+            </a>
+          </div>
+        </div>
+        <div class="service-contact-card">
+          <h3>Ladies Boutique</h3>
+          <div class="service-contact-card__links">
+            <a href="mailto:boutique@oakdenehouse.org.au">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              boutique@oakdenehouse.org.au
+            </a>
+            <a href="tel:0415156100">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+              0415 156 100
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICE HOURS -->
+  <section class="section" aria-labelledby="hours-heading">
+    <div class="container hours-container">
+      <div class="section-heading">
+        <p class="section-heading__eyebrow">When We're Open</p>
+        <h2 id="hours-heading">Service hours</h2>
+      </div>
+      <InfoTable rows={hoursRows} />
+    </div>
+  </section>
+
+  <!-- LANGUAGE SUPPORT + POSTAL + ABN -->
+  <section class="section section--tint" aria-labelledby="extra-info-heading">
+    <div class="container">
+      <h2 id="extra-info-heading" class="visually-hidden">Additional information</h2>
+      <div class="extra-info-grid">
+
+        <div class="extra-info-card">
+          <div class="extra-info-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          </div>
+          <h3>Language Support</h3>
+          <p>We offer support in multiple languages. If you need an interpreter, please let us know when you contact us and we will arrange one for you.</p>
+        </div>
+
+        <div class="extra-info-card">
+          <div class="extra-info-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+          </div>
+          <h3>Postal Address</h3>
+          <p>PO Box 988<br />Fairfield NSW 1860</p>
+          <p class="abn-line">ABN: 19 103 155 024 &nbsp;|&nbsp; Registered Charity</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MAP -->
+  <section class="section" aria-labelledby="map-heading">
+    <div class="container">
+      <div class="section-heading">
+        <p class="section-heading__eyebrow">Find Us</p>
+        <h2 id="map-heading">Getting here</h2>
+      </div>
+      <!-- TODO: Add Google Maps embed for 29 Vine St, Fairfield NSW 2165 -->
+      <div class="map-placeholder" role="img" aria-label="Map placeholder — Google Maps embed to be added">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <p>29 Vine St, Fairfield NSW 2165</p>
+        <p class="map-placeholder__sub">Map coming soon</p>
+        <a
+          href="https://maps.google.com/?q=29+Vine+St+Fairfield+NSW+2165"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn--secondary"
+          style="font-size: 0.875rem; padding: 9px 18px;"
+        >
+          Open in Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY FORM -->
+  <section class="section section--tint" aria-labelledby="form-heading">
+    <div class="container form-container">
+      <div class="section-heading">
+        <p class="section-heading__eyebrow">Get in Touch</p>
+        <h2 id="form-heading">Send us a message</h2>
+        <p class="section-heading__lead">Use this form for general questions about Oakdene, our services, volunteering, or partnership opportunities.</p>
+      </div>
+
+      <!-- TODO: Embed Jotform General Enquiry form here -->
+      <div class="form-placeholder" aria-label="Contact form — to be replaced by live Jotform embed">
+        <p class="form-placeholder__note">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          Online form coming soon — replace with live Jotform embed
+        </p>
+        <div class="form-placeholder__fields">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fp-first">First name</label>
+              <input id="fp-first" type="text" placeholder="First name" disabled aria-disabled="true" />
+            </div>
+            <div class="form-field">
+              <label for="fp-last">Last name</label>
+              <input id="fp-last" type="text" placeholder="Last name" disabled aria-disabled="true" />
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="fp-email">Email</label>
+              <input id="fp-email" type="email" placeholder="Email address" disabled aria-disabled="true" />
+            </div>
+            <div class="form-field">
+              <label for="fp-phone">Phone <span class="form-field__optional">(optional)</span></label>
+              <input id="fp-phone" type="tel" placeholder="Phone number" disabled aria-disabled="true" />
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="fp-reason">Reason for enquiry</label>
+            <input id="fp-reason" type="text" placeholder="e.g. Services, Volunteering, Partnership" disabled aria-disabled="true" />
+          </div>
+          <div class="form-field">
+            <label for="fp-message">Message</label>
+            <textarea id="fp-message" rows="5" placeholder="Your message" disabled aria-disabled="true"></textarea>
+          </div>
+          <button class="btn btn--primary" disabled aria-disabled="true">Submit</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Need support right now?"
+    subheading="If you need immediate help, visit our Need Help Now page for crisis lines and emergency contacts."
+    primaryBtn={{ text: 'Need Help Now', href: '/need-help-now/' }}
+    secondaryBtn={{ text: 'Get Support', href: '/forms/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  /* Contact cards */
+  .contact-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .contact-card {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--radius-card);
+    padding: 28px 24px;
+    text-align: center;
+    box-shadow: var(--shadow-card);
+  }
+
+  .contact-card__icon {
+    color: var(--color-primary);
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .contact-card__heading {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+  }
+
+  .contact-card__detail {
+    display: block;
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color var(--transition);
+  }
+
+  .contact-card__detail:hover {
+    color: var(--color-primary-hover);
+  }
+
+  .contact-card__detail--small {
+    font-size: 0.9375rem;
+  }
+
+  .contact-card__note {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    line-height: 1.5;
+    margin-bottom: 0;
+  }
+
+  /* Service contacts */
+  .service-contacts {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .service-contact-card {
+    background: var(--color-white);
+    border-radius: var(--radius-card);
+    padding: 24px 28px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .service-contact-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 14px;
+  }
+
+  .service-contact-card__links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .service-contact-card__links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9375rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+
+  .service-contact-card__links a:hover {
+    color: var(--color-primary-hover);
+  }
+
+  /* Hours */
+  .hours-container {
+    max-width: 760px;
+  }
+
+  /* Extra info grid */
+  .extra-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 760px;
+  }
+
+  .extra-info-card {
+    background: var(--color-white);
+    border-radius: var(--radius-card);
+    padding: 28px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .extra-info-card__icon {
+    color: var(--color-primary);
+    margin-bottom: 14px;
+  }
+
+  .extra-info-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+  }
+
+  .extra-info-card p {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.6;
+  }
+
+  .abn-line {
+    font-size: 0.8125rem !important;
+    color: var(--color-muted) !important;
+    margin-top: 8px;
+  }
+
+  /* Map placeholder */
+  .map-placeholder {
+    background-color: var(--color-tint);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-secondary);
+    padding: 56px 32px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    text-align: center;
+    color: var(--color-primary);
+    min-height: 280px;
+  }
+
+  .map-placeholder p {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 0;
+  }
+
+  .map-placeholder__sub {
+    font-size: 0.875rem !important;
+    font-weight: 400 !important;
+    color: var(--color-muted) !important;
+  }
+
+  /* Form */
+  .form-container {
+    max-width: 760px;
+  }
+
+  .form-placeholder {
+    background: var(--color-white);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-secondary);
+    padding: 32px;
+  }
+
+  .form-placeholder__note {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.875rem;
+    color: var(--color-primary);
+    font-weight: 500;
+    background-color: var(--color-secondary);
+    padding: 10px 16px;
+    border-radius: var(--radius-btn);
+    margin-bottom: 28px;
+  }
+
+  .form-placeholder__fields {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .form-field label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .form-field__optional {
+    font-weight: 400;
+    color: var(--color-muted);
+  }
+
+  .form-field input,
+  .form-field textarea {
+    font-family: var(--font-body);
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+    background-color: var(--color-tint);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--radius-btn);
+    padding: 12px 14px;
+    width: 100%;
+    resize: vertical;
+    cursor: not-allowed;
+  }
+
+  .form-field textarea {
+    min-height: 120px;
+  }
+
+  .form-placeholder .btn {
+    align-self: flex-start;
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .contact-cards { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .contact-cards { grid-template-columns: 1fr; }
+    .service-contacts { grid-template-columns: 1fr; }
+    .extra-info-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>

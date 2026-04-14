@@ -1,0 +1,281 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InfoTable from '../../components/InfoTable.astro';
+import CTABand from '../../components/CTABand.astro';
+
+const serviceRows = [
+  { label: 'Days', value: 'Tuesday, Wednesday, Thursday' },
+  { label: 'Hours', value: '12pm–2pm' },
+  { label: 'Location', value: 'Inside the Laundrette, 1 Dale Street, Fairfield' },
+  { label: 'Cost', value: 'Free' },
+  { label: 'Email', value: '<a href="mailto:kitchen@oakdenehouse.org.au">kitchen@oakdenehouse.org.au</a>' },
+  { label: 'Phone', value: '<a href="tel:0415156100">0415 156 100</a>' },
+];
+
+const guidelines = [
+  '3 items per visit',
+  'One visit per week',
+  'No trying on clothing',
+  'No returns once taken',
+  'One person in the room at a time',
+  'Door must remain open',
+];
+---
+
+<BaseLayout
+  title="Used Clothing Store — Oakdene House Foundation"
+  description="Free men's and women's clothing, shoes and accessories at Oakdene's Used Clothing Store, inside the Laundrette at 1 Dale Street, Fairfield."
+  ogImage="/images/boutique/boutique-interior-clothing-rack.jpg"
+>
+
+  <!-- HERO -->
+  <section class="clothing-hero" aria-label="Used Clothing Store">
+    <div class="clothing-hero__overlay" aria-hidden="true"></div>
+    <div class="container clothing-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/services/">Services</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Used Clothing Store</span>
+      </nav>
+      <h1>Oakdene Used Clothing Store</h1>
+      <p class="clothing-hero__lead">Free clothing for people doing it tough.</p>
+    </div>
+  </section>
+
+  <!-- INTRO + DETAILS -->
+  <section class="section" aria-labelledby="clothing-intro-heading">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">The Service</p>
+            <h2 id="clothing-intro-heading">Clothing with dignity</h2>
+          </div>
+          <p>The Oakdene Used Clothing Store offers free men's and women's clothing, shoes, and accessories to people experiencing hardship. The store is located inside our Laundrette at 1 Dale Street, Fairfield.</p>
+          <p>We believe access to clean, decent clothing is a basic necessity, and we are here to help without judgment.</p>
+
+          <div class="guidelines-card">
+            <h3>Visit guidelines</h3>
+            <ul class="guidelines-list">
+              {guidelines.map(g => <li>{g}</li>)}
+            </ul>
+          </div>
+        </div>
+        <div>
+          <InfoTable rows={serviceRows} caption="Service details" />
+          <div class="eligibility-box">
+            <h3>Eligibility</h3>
+            <p>The same eligibility applies as the Oakdene Kitchen and Laundrette — a current Centrelink Income Statement and photo ID showing income under $1,200 per fortnight.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CLOTHING IMAGES -->
+  <section class="clothing-images" aria-label="Clothing store photos">
+    <div class="image-pair">
+      <div class="image-pair__item">
+        <img src="/images/boutique/boutique-interior-looking-down-shop-with-people.png" alt="Clothing rack at the Oakdene Used Clothing Store" loading="lazy" />
+      </div>
+      <div class="image-pair__item">
+        <img src="/images/boutique/boutique-interior-close-up-bag-warmer.png" alt="Close up view of clothing at Oakdene" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ALSO AVAILABLE NOTE -->
+  <section class="section" aria-label="Related services">
+    <div class="container">
+      <div class="also-available">
+        <div class="also-available__icon" aria-hidden="true">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+        </div>
+        <div>
+          <p class="also-available__heading">Also on the same days</p>
+          <p>The Oakdene Laundrette and Oakdene Kitchen operate on the same days and hours. You can access all three services on a single visit.</p>
+          <div class="btn-group">
+            <a href="/services/oakdene-laundrette/" class="btn btn--secondary">Laundrette</a>
+            <a href="/services/oakdene-kitchen/" class="btn btn--secondary">Kitchen</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Have questions about the store?"
+    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    secondaryBtn={{ text: 'Get Support', href: '/forms/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  .clothing-hero {
+    position: relative;
+    min-height: 380px;
+    background-image: url('/images/boutique/boutique-interior-clothing-rack.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .clothing-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.35) 0%, rgba(0,62,81,0.85) 100%);
+  }
+
+  .clothing-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 56px;
+  }
+
+  .clothing-hero__content h1 { color: var(--color-white); margin-bottom: 10px; }
+
+  .clothing-hero__lead {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 0;
+    max-width: 520px;
+  }
+
+  .guidelines-card {
+    background-color: var(--color-tint);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--radius-card);
+    padding: 24px 28px;
+    margin-top: 28px;
+  }
+
+  .guidelines-card h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 14px;
+  }
+
+  .guidelines-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .guidelines-list li {
+    padding-left: 24px;
+    position: relative;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  .guidelines-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+  }
+
+  .eligibility-box {
+    background-color: var(--color-tint);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-secondary);
+    padding: 24px 28px;
+    margin-top: 20px;
+  }
+
+  .eligibility-box h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+  }
+
+  .eligibility-box p {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Images */
+  .clothing-images {
+    background-color: var(--color-tint);
+  }
+
+  .image-pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4px;
+  }
+
+  .image-pair__item {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+  }
+
+  .image-pair__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .image-pair__item:hover img {
+    transform: scale(1.04);
+  }
+
+  /* Also available */
+  .also-available {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    background-color: var(--color-tint);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-secondary);
+    padding: 28px 32px;
+    max-width: 680px;
+  }
+
+  .also-available__icon {
+    color: var(--color-primary);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .also-available__heading {
+    font-weight: 600;
+    font-size: 0.9375rem;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .also-available p:last-of-type {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    margin-bottom: 16px;
+    line-height: 1.6;
+  }
+
+  @media (max-width: 600px) {
+    .image-pair {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

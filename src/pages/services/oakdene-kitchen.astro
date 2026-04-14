@@ -1,0 +1,391 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InfoTable from '../../components/InfoTable.astro';
+import CTABand from '../../components/CTABand.astro';
+
+const serviceRows = [
+  { label: 'Days', value: 'Tuesday, Wednesday, Thursday' },
+  { label: 'Hours', value: '12pm–2pm' },
+  { label: 'Location', value: '9/2 Dale Street, Fairfield' },
+  { label: 'Cost', value: 'Free' },
+  { label: 'Email', value: '<a href="mailto:kitchen@oakdenehouse.org.au">kitchen@oakdenehouse.org.au</a>' },
+  { label: 'Phone', value: '<a href="tel:0415156100">0415 156 100</a>' },
+];
+
+const whatWeOffer = [
+  'Free hot lunch',
+  'Friendly, safe space to eat together',
+  'Connection with staff, volunteers and community supports',
+  'Information about other Oakdene programs',
+];
+---
+
+<BaseLayout
+  title="Oakdene Kitchen — Oakdene House Foundation"
+  description="Free hot lunches Tuesday to Thursday at Oakdene Kitchen, 9/2 Dale Street, Fairfield. Open to people experiencing hardship."
+  ogImage="/images/kitchen/oakdene-kitchen-exterior-line-up.jpg"
+>
+
+  <!-- HERO -->
+  <section class="kitchen-hero" aria-label="Oakdene Kitchen">
+    <div class="kitchen-hero__overlay" aria-hidden="true"></div>
+    <div class="container kitchen-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/services/">Services</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Oakdene Kitchen</span>
+      </nav>
+      <h1>Oakdene Kitchen</h1>
+      <p class="kitchen-hero__lead">Hot, nutritious meals in a safe and welcoming space.</p>
+      <div class="btn-group">
+        <a href="/forms/" class="btn btn--white">Request Help</a><!-- TODO: Replace with live Jotform URL -->
+        <a href="/volunteering/" class="btn btn--white-outline">Volunteer</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO + SERVICE DETAILS -->
+  <section class="section" aria-labelledby="kitchen-intro-heading">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">About the Kitchen</p>
+            <h2 id="kitchen-intro-heading">A welcoming meal and a friendly face</h2>
+          </div>
+          <p>The Oakdene Kitchen provides free hot lunches to people doing it tough. We believe everyone deserves access to a warm, nutritious meal in a safe environment — and a chance to connect with others.</p>
+          <p class="who-label">Who it's for</p>
+          <p>People experiencing food insecurity, on low income, homeless or at risk, or anyone doing it tough.</p>
+
+          <h3 class="offer-heading">What we offer</h3>
+          <ul class="offer-list">
+            {whatWeOffer.map(item => <li>{item}</li>)}
+          </ul>
+        </div>
+        <div>
+          <InfoTable rows={serviceRows} caption="Service details" />
+          <div class="motto-box">
+            <p>"Feed the people, stay alive"</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- IMAGE STRIP -->
+  <section class="kitchen-images" aria-label="Oakdene Kitchen photos">
+    <div class="container">
+      <div class="image-strip">
+        <div class="image-strip__item">
+          <img src="/images/kitchen/oakdene-kitchen-interior-dining-room-with-people.png" alt="Inside the Oakdene Kitchen dining room" loading="lazy" />
+        </div>
+        <div class="image-strip__item">
+          <img src="/images/kitchen/oakdene-kitchen-interior-volunteer-serving.jpg" alt="Volunteer serving meals at Oakdene Kitchen" loading="lazy" />
+        </div>
+        <div class="image-strip__item">
+          <img src="/images/kitchen/kitchen-3x-staff-serving.png" alt="Oakdene Kitchen volunteers with prepared food" loading="lazy" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS -->
+  <section class="section" aria-labelledby="how-heading">
+    <div class="container">
+      <div class="narrow">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">Your First Visit</p>
+          <h2 id="how-heading">How it works</h2>
+        </div>
+        <p>On your first visit, one of our team members will sit down with you to find out more about your situation and needs so we can understand how to support you best.</p>
+
+        <!-- ELIGIBILITY -->
+        <div class="eligibility-box">
+          <h3>Eligibility</h3>
+          <p>Bring a current Centrelink Income Statement and photo ID (passport or drivers licence) to every visit. Your statement must be updated monthly and show you receive under <strong>$1,200 per fortnight</strong>.</p>
+        </div>
+
+        <!-- IMPORTANT NOTE -->
+        <div class="callout-box callout-box--warning">
+          <div class="callout-box__icon" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div>
+            <p class="callout-box__heading">Important note</p>
+            <p>If you choose to use Oakdene Kitchen support, you will no longer be able to be a member of Fairfield RSL.</p>
+          </div>
+        </div>
+
+        <!-- COMMUNITY GUIDELINES -->
+        <div class="guidelines-box">
+          <h3>Community guidelines</h3>
+          <p>We ask that you treat others with respect. Aggressive or abusive behaviour is not accepted. Staff may refuse entry if guidelines are not followed.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VOLUNTEER CALLOUT -->
+  <section class="section section--tint volunteer-section" aria-labelledby="volunteer-heading">
+    <div class="container">
+      <div class="volunteer-split">
+        <div class="volunteer-image">
+          <img src="/images/kitchen/oakdene-kitchen-volunteer-serving-with-smile.jpg" alt="Smiling Oakdene Kitchen volunteer serving food" loading="lazy" />
+        </div>
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">Get Involved</p>
+            <h2 id="volunteer-heading">Volunteer with the Kitchen</h2>
+          </div>
+          <p>We are always looking for volunteers to help us run the Kitchen. Whether it is helping prepare food, serving meals, or providing a friendly presence — every contribution makes a real difference.</p>
+          <p>If you would like to get involved, please get in touch.</p>
+          <div class="btn-group">
+            <a href="/volunteering/" class="btn btn--primary">Learn About Volunteering</a>
+            <a href="/contact/" class="btn btn--secondary">Contact Us</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Want to get involved?"
+    primaryBtn={{ text: 'Volunteer', href: '/volunteering/' }}
+    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  .kitchen-hero {
+    position: relative;
+    min-height: 420px;
+    background-image: url('/images/kitchen/img_9394-kitchen-entrance-with-people.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .kitchen-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.3) 0%, rgba(0,62,81,0.85) 100%);
+  }
+
+  .kitchen-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 56px;
+  }
+
+  .kitchen-hero__content h1 { color: var(--color-white); margin-bottom: 10px; }
+
+  .kitchen-hero__lead {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 28px;
+    max-width: 520px;
+  }
+
+  .who-label {
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: 24px;
+    margin-bottom: 4px;
+    font-size: 0.9375rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .offer-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 24px 0 14px;
+  }
+
+  .offer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .offer-list li {
+    padding-left: 24px;
+    position: relative;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.55;
+  }
+
+  .offer-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+  }
+
+  .motto-box {
+    margin-top: 20px;
+    padding: 18px 24px;
+    background-color: var(--color-primary);
+    border-radius: var(--radius-card);
+    color: var(--color-white);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    font-style: italic;
+  }
+
+  .motto-box p { margin-bottom: 0; }
+
+  /* Image strip */
+  .kitchen-images {
+    padding-block: 8px 0;
+    background-color: var(--color-tint);
+  }
+
+  .image-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 4px;
+  }
+
+  .image-strip__item {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+  }
+
+  .image-strip__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .image-strip__item:hover img {
+    transform: scale(1.04);
+  }
+
+  /* How it works */
+  .narrow {
+    max-width: 720px;
+  }
+
+  .eligibility-box {
+    background-color: var(--color-tint);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-secondary);
+    padding: 24px 28px;
+    margin: 28px 0;
+  }
+
+  .eligibility-box h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+  }
+
+  .eligibility-box p {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  .callout-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    border-radius: var(--radius-card);
+    padding: 20px 24px;
+    margin: 20px 0;
+  }
+
+  .callout-box--warning {
+    background-color: #fff8e1;
+    border: 1px solid #f0c040;
+    border-left: 4px solid #e6a800;
+  }
+
+  .callout-box--warning .callout-box__icon {
+    color: #c88000;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .callout-box__heading {
+    font-weight: 700;
+    color: var(--color-text);
+    font-size: 0.9375rem;
+    margin-bottom: 4px;
+  }
+
+  .callout-box p:last-child {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    margin-bottom: 0;
+    line-height: 1.6;
+  }
+
+  .guidelines-box {
+    border-top: 1px solid var(--color-secondary);
+    padding-top: 24px;
+    margin-top: 8px;
+  }
+
+  .guidelines-box h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+  }
+
+  .guidelines-box p {
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Volunteer section */
+  .volunteer-split {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 56px;
+    align-items: center;
+  }
+
+  .volunteer-image {
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+
+  .volunteer-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  @media (max-width: 900px) {
+    .volunteer-split {
+      grid-template-columns: 1fr;
+    }
+    .image-strip {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

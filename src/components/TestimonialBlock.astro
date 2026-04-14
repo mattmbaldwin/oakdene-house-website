@@ -1,0 +1,84 @@
+---
+interface Quote {
+  quote: string;
+  attribution: string;
+}
+
+interface Props {
+  quotes: Quote[];
+}
+
+const { quotes } = Astro.props;
+---
+
+<div class="testimonial-block">
+  {quotes.map(item => (
+    <blockquote class="testimonial-item">
+      <p class="testimonial-item__quote">{item.quote}</p>
+      <footer class="testimonial-item__attribution">
+        <cite>&mdash; {item.attribution}</cite>
+      </footer>
+    </blockquote>
+  ))}
+</div>
+
+<style>
+  .testimonial-block {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+  }
+
+  .testimonial-item {
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    border-left: 4px solid var(--color-primary);
+    padding: 28px 28px 24px;
+    box-shadow: var(--shadow-card);
+    margin: 0;
+  }
+
+  .testimonial-item__quote {
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    font-style: italic;
+    margin-bottom: 16px;
+    position: relative;
+  }
+
+  .testimonial-item__quote::before {
+    content: '\201C';
+    font-size: 3rem;
+    line-height: 0;
+    vertical-align: -0.6em;
+    color: var(--color-secondary);
+    margin-right: 4px;
+    font-style: normal;
+  }
+
+  .testimonial-item__attribution {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  .testimonial-item__attribution cite {
+    font-style: normal;
+  }
+
+  /* On dark section backgrounds */
+  :global(.section--dark) .testimonial-item {
+    background-color: rgba(255, 255, 255, 0.06);
+    border-left-color: var(--color-secondary);
+    box-shadow: none;
+  }
+
+  :global(.section--dark) .testimonial-item__quote {
+    color: rgba(255, 255, 255, 0.88);
+  }
+
+  :global(.section--dark) .testimonial-item__attribution {
+    color: var(--color-secondary);
+  }
+</style>

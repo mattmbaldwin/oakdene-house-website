@@ -1,0 +1,426 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CTABand from '../components/CTABand.astro';
+---
+
+<BaseLayout
+  title="About Oakdene House Foundation"
+  description="Oakdene House Foundation is a Western Sydney charity supporting people and families affected by addiction, hardship and homelessness through practical help, counselling and community connection."
+  ogImage="/images/centre/exterior-exterior-1-img_2651.jpg"
+>
+
+  <!-- HERO -->
+  <Hero
+    heading="About Oakdene House Foundation"
+    subheading="A community charity grounded in practical support, dignity, connection, and real pathways forward."
+    image="/images/centre/exterior-exterior-1-img_2651.jpg"
+    imageAlt="Oakdene House Foundation centre exterior"
+    buttons={[
+      { text: 'Meet Our Team', href: '/about/our-team/', variant: 'white' },
+      { text: 'Contact Us',    href: '/contact/',        variant: 'white-outline' },
+    ]}
+  />
+
+  <!-- SUBPAGE NAVIGATION -->
+  <section class="section subpage-nav-section" aria-label="About section pages">
+    <div class="container">
+      <div class="subpage-nav-grid">
+
+        <a href="/about/the-oakdene-story/" class="subpage-nav-card">
+          <div class="subpage-nav-card__image-wrap">
+            <img src="/images/about/oakdene-tree-hero-colour.jpg" alt="The Oakdene tree" loading="lazy" />
+          </div>
+          <div class="subpage-nav-card__body">
+            <h3>The Oakdene Story</h3>
+            <p>Where we come from and what the oak tree means to us.</p>
+            <span class="subpage-nav-card__arrow" aria-hidden="true">Read the story &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/about/our-team/" class="subpage-nav-card">
+          <div class="subpage-nav-card__image-wrap">
+            <img src="/images/team/colour-mark-facing-camera.jpg" alt="Oakdene team member" loading="lazy" style="object-position: center 30%;" />
+          </div>
+          <div class="subpage-nav-card__body">
+            <h3>Our Team</h3>
+            <p>The people behind the work at Oakdene House.</p>
+            <span class="subpage-nav-card__arrow" aria-hidden="true">Meet the team &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/about/our-board/" class="subpage-nav-card">
+          <div class="subpage-nav-card__image-wrap subpage-nav-card__image-wrap--icon">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="subpage-nav-card__body">
+            <h3>Our Board</h3>
+            <p>Governance and strategic direction for Oakdene House.</p>
+            <span class="subpage-nav-card__arrow" aria-hidden="true">Meet the board &rarr;</span>
+          </div>
+        </a>
+
+        <a href="/about/our-centre/" class="subpage-nav-card">
+          <div class="subpage-nav-card__image-wrap">
+            <img src="/images/centre/interior-interior-1-with-people-img_2654.jpg" alt="Oakdene House centre interior" loading="lazy" />
+          </div>
+          <div class="subpage-nav-card__body">
+            <h3>Our Centre</h3>
+            <p>A welcoming space in Fairfield for support, connection and community.</p>
+            <span class="subpage-nav-card__arrow" aria-hidden="true">See our centre &rarr;</span>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO WE ARE -->
+  <section class="section" aria-labelledby="who-heading">
+    <div class="container who-container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">Who We Are</p>
+        <h2 id="who-heading">A community charity built around real life</h2>
+      </div>
+      <p class="who-lead">Oakdene House Foundation is a Western Sydney charity that supports people and families affected by addiction, hardship, homelessness, and other life challenges. Our work is shaped by the belief that support should be respectful, practical, and accessible, especially when life feels unstable or overwhelming.</p>
+    </div>
+  </section>
+
+  <!-- MISSION / VISION / VALUES -->
+  <section class="section section--tint" aria-labelledby="mvv-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">What Drives Us</p>
+        <h2 id="mvv-heading">Mission, Vision and Values</h2>
+      </div>
+
+      <div class="mvv-top">
+        <div class="mvv-card mvv-card--dark">
+          <p class="mvv-card__label">Our Mission</p>
+          <p class="mvv-card__text">To support people and families through practical help, connection, and pathways that strengthen wellbeing, dignity, and community belonging.</p>
+        </div>
+        <div class="mvv-card mvv-card--light">
+          <p class="mvv-card__label">Our Vision</p>
+          <p class="mvv-card__text">A community where people facing hardship are met with respect, support, and genuine opportunities to move forward.</p>
+        </div>
+      </div>
+
+      <h3 class="values-subheading">Our Values</h3>
+      <div class="values-grid">
+        <div class="value-card">
+          <div class="value-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <h4>Dignity</h4>
+          <p>We treat every person with respect and without judgment.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h4>Practical Support</h4>
+          <p>We focus on what helps in real life, not just what sounds good on paper.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <h4>Connection</h4>
+          <p>We believe people do better when they feel seen, supported, and part of a community.</p>
+        </div>
+        <div class="value-card">
+          <div class="value-card__icon" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="none" fill="none"/><path d="M8 12s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/><circle cx="12" cy="12" r="10"/></svg>
+          </div>
+          <h4>Hope</h4>
+          <p>We stay focused on progress, possibilities, and the next step.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR APPROACH -->
+  <section class="section" aria-labelledby="approach-heading">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">How We Work</p>
+            <h2 id="approach-heading">Our Approach</h2>
+          </div>
+          <p>Oakdene works in a way that is practical, person-centred, and community-based. We meet people where they are, help respond to immediate needs, and create pathways into longer-term support where needed.</p>
+          <p>We do not see people as problems to be fixed. We see people as capable of change when they have the right support, the right environment and the right relationships around them.</p>
+        </div>
+        <div class="split__image">
+          <img
+            src="/images/centre/interior-meetings-1-img_2657.jpg"
+            alt="Inside Oakdene House Foundation centre"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE DO -->
+  <section class="section section--tint" aria-labelledby="whatwedo-heading">
+    <div class="container">
+      <div class="split split--image-right">
+        <div class="split__image">
+          <img
+            src="/images/centre/interior-interior-2-img_2656-with-people.png"
+            alt="Oakdene House Foundation community space"
+            loading="lazy"
+          />
+        </div>
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">Our Work</p>
+            <h2 id="whatwedo-heading">What We Do</h2>
+          </div>
+          <ul class="what-list">
+            <li>Addiction counselling and recovery-focused support</li>
+            <li>The Life Choices group program</li>
+            <li>Peer support through GA and AA meetings</li>
+            <li>Community access through Oakdene Kitchen, Oakdene Laundrette and Oakdene Boutique</li>
+            <li>Volunteer pathways for people who want to give back</li>
+            <li>Financial counselling</li>
+          </ul>
+          <div class="btn-group" style="margin-top: 28px;">
+            <a href="/services/" class="btn btn--primary">Explore Our Services</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Want to know more?"
+    primaryBtn={{ text: 'Explore Our Services', href: '/services/' }}
+    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  /* Subpage nav */
+  .subpage-nav-section {
+    padding-block: 56px;
+    background-color: var(--color-tint);
+  }
+
+  .subpage-nav-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .subpage-nav-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-white);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    text-decoration: none;
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+
+  .subpage-nav-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-3px);
+  }
+
+  .subpage-nav-card__image-wrap {
+    height: 160px;
+    overflow: hidden;
+    background-color: var(--color-tint);
+  }
+
+  .subpage-nav-card__image-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+
+  .subpage-nav-card:hover .subpage-nav-card__image-wrap img {
+    transform: scale(1.04);
+  }
+
+  .subpage-nav-card__image-wrap--icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-primary);
+    opacity: 0.35;
+  }
+
+  .subpage-nav-card__body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .subpage-nav-card__body h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 6px;
+  }
+
+  .subpage-nav-card__body p {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    line-height: 1.5;
+    flex: 1;
+    margin-bottom: 12px;
+  }
+
+  .subpage-nav-card__arrow {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    transition: gap var(--transition);
+  }
+
+  /* Who We Are */
+  .who-container {
+    max-width: 760px;
+  }
+
+  .who-lead {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-text);
+    text-align: center;
+    margin-bottom: 0;
+  }
+
+  /* Mission / Vision */
+  .mvv-top {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .mvv-card {
+    padding: 32px;
+    border-radius: var(--radius-card);
+  }
+
+  .mvv-card--dark {
+    background-color: var(--color-primary);
+  }
+
+  .mvv-card--light {
+    background-color: var(--color-white);
+    border: 1px solid var(--color-secondary);
+    box-shadow: var(--shadow-card);
+  }
+
+  .mvv-card__label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+
+  .mvv-card--dark .mvv-card__label { color: var(--color-secondary); }
+  .mvv-card--light .mvv-card__label { color: var(--color-primary); opacity: 0.65; }
+
+  .mvv-card__text {
+    font-size: 1rem;
+    line-height: 1.65;
+    margin-bottom: 0;
+  }
+
+  .mvv-card--dark .mvv-card__text { color: rgba(255,255,255,0.9); }
+  .mvv-card--light .mvv-card__text { color: var(--color-text); }
+
+  /* Values */
+  .values-subheading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.8125rem;
+  }
+
+  .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .value-card {
+    background: var(--color-white);
+    border-radius: var(--radius-card);
+    padding: 28px 24px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .value-card__icon {
+    color: var(--color-primary);
+    margin-bottom: 14px;
+  }
+
+  .value-card h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+  }
+
+  .value-card p {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    line-height: 1.55;
+    margin-bottom: 0;
+  }
+
+  /* What We Do */
+  .what-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .what-list li {
+    padding-left: 24px;
+    position: relative;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.55;
+  }
+
+  .what-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 9px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+  }
+
+  /* Responsive */
+  @media (max-width: 960px) {
+    .subpage-nav-grid { grid-template-columns: repeat(2, 1fr); }
+    .values-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (max-width: 640px) {
+    .subpage-nav-grid { grid-template-columns: 1fr; }
+    .mvv-top { grid-template-columns: 1fr; }
+    .values-grid { grid-template-columns: 1fr; }
+  }
+</style>

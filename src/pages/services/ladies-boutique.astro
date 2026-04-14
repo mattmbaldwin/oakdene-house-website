@@ -1,0 +1,473 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InfoTable from '../../components/InfoTable.astro';
+import CTABand from '../../components/CTABand.astro';
+
+const serviceRows = [
+  { label: 'Days', value: 'Tuesday and Thursday' },
+  { label: 'Hours', value: '10am–4pm' },
+  { label: 'Access', value: 'By appointment only' },
+  { label: 'Cost', value: '$2 clothing / $5 salon' },
+  { label: 'Email', value: '<a href="mailto:boutique@oakdenehouse.org.au">boutique@oakdenehouse.org.au</a>' },
+  { label: 'Phone', value: '<a href="tel:0415156100">0415 156 100</a>' },
+];
+
+const offerings = [
+  {
+    heading: 'Clothing Hub',
+    description: 'A real shopping experience with quality clothing and accessories selected with care.',
+    icon: 'clothing',
+  },
+  {
+    heading: 'Salon Services',
+    description: 'Professional wash, cut, and blow-dry. No colouring or styling.',
+    icon: 'salon',
+  },
+  {
+    heading: 'Private Space',
+    description: 'A private fitting space where you can browse and try items in comfort.',
+    icon: 'private',
+  },
+  {
+    heading: 'Community',
+    description: 'Connection with other women and staff in a supportive environment.',
+    icon: 'community',
+  },
+];
+
+const financialIndicators = [
+  'Behind on rent',
+  'Skipping meals',
+  '3 or more children',
+  'Disability caring burden',
+  'Limited disposable income',
+];
+---
+
+<BaseLayout
+  title="Ladies Boutique — Oakdene House Foundation"
+  description="Oakdene Ladies Boutique offers clothing, salon services and a private, supportive space for women doing it tough. By appointment, Tuesday and Thursday."
+  ogImage="/images/boutique/boutique-exterior-window.jpg"
+>
+
+  <!-- HERO -->
+  <section class="boutique-hero" aria-label="Ladies Boutique">
+    <div class="boutique-hero__overlay" aria-hidden="true"></div>
+    <div class="container boutique-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/services/">Services</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Ladies Boutique</span>
+      </nav>
+      <h1>Oakdene Ladies Boutique</h1>
+      <p class="boutique-hero__lead">A warm, private and supportive space for women who are doing it tough.</p>
+      <div class="btn-group">
+        <a href="/forms/" class="btn btn--white">Submit Referral</a><!-- TODO: Replace with live Jotform URL -->
+        <a href="/forms/" class="btn btn--white-outline">Make an Enquiry</a><!-- TODO: Replace with live Jotform URL -->
+      </div>
+    </div>
+  </section>
+
+  <!-- INTRO + DETAILS -->
+  <section class="section" aria-labelledby="boutique-intro-heading">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">About the Boutique</p>
+            <h2 id="boutique-intro-heading">Support for women, by women</h2>
+          </div>
+          <p>The Oakdene Ladies Boutique is a warm, private and supportive space designed for women who are doing it tough. We offer more than just clothing — we offer an experience that treats women with dignity and care.</p>
+          <p>Appointments are available Tuesday and Thursday, and access is by referral or self-referral.</p>
+          <div class="motto-tag">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+            <span>Support for Women by Women</span>
+          </div>
+        </div>
+        <div>
+          <InfoTable rows={serviceRows} caption="Service details" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT WE OFFER -->
+  <section class="section section--tint" aria-labelledby="offerings-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">What We Offer</p>
+        <h2 id="offerings-heading">Everything in one welcoming space</h2>
+      </div>
+      <div class="offerings-grid">
+        {offerings.map(o => (
+          <div class="offering-card">
+            <div class="offering-card__icon" aria-hidden="true">
+              {o.icon === 'clothing' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.38 3.46L16 2a4 4 0 0 1-8 0L3.62 3.46a2 2 0 0 0-1.34 2.23l.58 3.57a1 1 0 0 0 .99.84H6v10c0 1.1.9 2 2 2h8a2 2 0 0 0 2-2V10h2.15a1 1 0 0 0 .99-.84l.58-3.57a2 2 0 0 0-1.34-2.23z"/></svg>
+              )}
+              {o.icon === 'salon' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 7c0 4.4-3.6 8-8 8a8 8 0 0 1-8-8c0-4.4 3.6-8 8-8s8 3.6 8 8z"/><line x1="12" y1="15" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+              )}
+              {o.icon === 'private' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              )}
+              {o.icon === 'community' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              )}
+            </div>
+            <h3 class="offering-card__heading">{o.heading}</h3>
+            <p class="offering-card__desc">{o.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- BOUTIQUE IMAGES -->
+  <section class="boutique-gallery" aria-label="Boutique photos">
+    <div class="gallery-grid">
+      <div class="gallery-grid__item gallery-grid__item--tall">
+        <img src="/images/boutique/boutique-interior-1.jpg" alt="Inside the Oakdene Ladies Boutique" loading="lazy" />
+      </div>
+      <div class="gallery-grid__item">
+        <img src="/images/boutique/boutique-interior-hair-area.jpg" alt="Salon area at the Oakdene Ladies Boutique" loading="lazy" />
+      </div>
+      <div class="gallery-grid__item">
+        <img src="/images/boutique/boutique-interior-shelves-clothing.jpg" alt="Clothing shelves inside the boutique" loading="lazy" />
+      </div>
+      <div class="gallery-grid__item">
+        <img src="/images/boutique/boutique-interior-looking-down-shop.jpg" alt="Looking down the boutique floor" loading="lazy" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ELIGIBILITY -->
+  <section class="section" aria-labelledby="eligibility-heading">
+    <div class="container">
+      <div class="narrow">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">Who Can Access</p>
+          <h2 id="eligibility-heading">Eligibility and access</h2>
+        </div>
+
+        <div class="eligibility-row">
+          <div class="eligibility-card">
+            <h3>Automatic eligibility</h3>
+            <p>You are automatically eligible if you meet any of these:</p>
+            <ul class="elig-list">
+              <li>Receiving Centrelink under $1,200/fortnight <strong>and</strong> hold a concession card</li>
+              <li>You have been referred by a service or professional</li>
+              <li>You are in crisis</li>
+            </ul>
+          </div>
+          <div class="eligibility-card">
+            <h3>Financial stress assessment</h3>
+            <p>We will chat with you if 2 or more of these apply:</p>
+            <ul class="elig-list">
+              {financialIndicators.map(f => <li>{f}</li>)}
+            </ul>
+          </div>
+        </div>
+
+        <div class="visit-note">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          <p>Maximum <strong>2 visits per 12 months per household</strong>. Emergency override possible with staff approval.</p>
+        </div>
+
+        <h3 class="how-access-heading">How to access</h3>
+        <p>You can be referred from services, health professionals, schools, or DV services. Self-referral is also welcome — simply get in touch to make an appointment.</p>
+
+        <!-- ACCESS PROMISE -->
+        <div class="access-promise">
+          <div class="access-promise__icon" aria-hidden="true">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </div>
+          <div>
+            <p class="access-promise__heading">Our access promise</p>
+            <p>We believe in access. If cost is a barrier, please speak with us. <strong>No woman will be turned away due to financial difficulty.</strong></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Ready to visit or make a referral?"
+    primaryBtn={{ text: 'Submit Referral', href: '/forms/' }}
+    secondaryBtn={{ text: 'Make an Enquiry', href: '/contact/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  .boutique-hero {
+    position: relative;
+    min-height: 420px;
+    background-image: url('/images/boutique/boutique-exterior-window.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .boutique-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.3) 0%, rgba(0,62,81,0.85) 100%);
+  }
+
+  .boutique-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 56px;
+  }
+
+  .boutique-hero__content h1 { color: var(--color-white); margin-bottom: 10px; }
+
+  .boutique-hero__lead {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 28px;
+    max-width: 540px;
+  }
+
+  .motto-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--color-tint);
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-top: 24px;
+  }
+
+  /* Offerings */
+  .offerings-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .offering-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    padding: 28px 24px;
+    border: 1px solid var(--color-secondary);
+    transition: border-color var(--transition), box-shadow var(--transition);
+  }
+
+  .offering-card:hover {
+    border-color: var(--color-primary);
+    box-shadow: var(--shadow-card);
+  }
+
+  .offering-card__icon {
+    color: var(--color-primary);
+    margin-bottom: 14px;
+  }
+
+  .offering-card__heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+  }
+
+  .offering-card__desc {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Gallery */
+  .boutique-gallery {
+    background-color: var(--color-tint);
+  }
+
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 4px;
+  }
+
+  .gallery-grid__item {
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+  }
+
+  .gallery-grid__item--tall {
+    grid-row: 1 / 3;
+    aspect-ratio: auto;
+  }
+
+  .gallery-grid__item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+  }
+
+  .gallery-grid__item:hover img {
+    transform: scale(1.04);
+  }
+
+  /* Eligibility */
+  .narrow {
+    max-width: 760px;
+  }
+
+  .eligibility-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+  }
+
+  .eligibility-card {
+    background-color: var(--color-tint);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--radius-card);
+    padding: 24px;
+  }
+
+  .eligibility-card h3 {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+  }
+
+  .eligibility-card p {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    margin-bottom: 12px;
+  }
+
+  .elig-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 0;
+    list-style: none;
+  }
+
+  .elig-list li {
+    padding-left: 20px;
+    position: relative;
+    font-size: 0.875rem;
+    color: var(--color-text);
+    line-height: 1.5;
+  }
+
+  .elig-list li::before {
+    content: '–';
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: 600;
+  }
+
+  .visit-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    background-color: var(--color-tint);
+    border-radius: var(--radius-btn);
+    padding: 14px 18px;
+    margin-bottom: 24px;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+  }
+
+  .visit-note svg {
+    color: var(--color-primary);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .visit-note p {
+    margin-bottom: 0;
+    line-height: 1.5;
+  }
+
+  .how-access-heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 0 0 10px;
+  }
+
+  .access-promise {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--radius-card);
+    padding: 24px 28px;
+    margin-top: 28px;
+  }
+
+  .access-promise__icon {
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .access-promise__heading {
+    font-weight: 700;
+    font-size: 0.9375rem;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+  }
+
+  .access-promise p:last-child {
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    margin-bottom: 0;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .access-promise strong {
+    color: var(--color-white);
+  }
+
+  @media (max-width: 1024px) {
+    .offerings-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  @media (max-width: 768px) {
+    .eligibility-row {
+      grid-template-columns: 1fr;
+    }
+    .gallery-grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .gallery-grid__item--tall {
+      grid-column: 1 / -1;
+      grid-row: auto;
+      aspect-ratio: 16 / 9;
+    }
+  }
+
+  @media (max-width: 600px) {
+    .offerings-grid {
+      grid-template-columns: 1fr;
+    }
+    .gallery-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

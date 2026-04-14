@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABand from '../../components/CTABand.astro';
+---
+
+<BaseLayout
+  title="The Oakdene Story — Oakdene House Foundation"
+  description="The Oakdene is an evergreen Holm Oak in Fairfield planted in 1842 — struck by lightning yet still growing. The living symbol of hardship, endurance and healing behind Oakdene House Foundation."
+  ogImage="/images/about/colour-oakdene-tree-panorama.jpg"
+>
+
+  <!-- HERO -->
+  <section class="story-hero" aria-label="The Oakdene Story">
+    <div class="story-hero__overlay" aria-hidden="true"></div>
+    <div class="container story-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/about/">About</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">The Oakdene Story</span>
+      </nav>
+      <h1>The Oakdene Story</h1>
+      <p class="story-hero__lead">A story of hardship, endurance and healing — rooted in Fairfield since 1842.</p>
+    </div>
+  </section>
+
+  <!-- STORY — SPLIT -->
+  <section class="section" aria-labelledby="story-heading">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">The Oak</p>
+            <h2 id="story-heading">A tree that endured</h2>
+          </div>
+          <p>The Oakdene is an evergreen Holm Oak in Fairfield, planted in 1842. During a storm, the tree was split down the middle by lightning. It is visibly divided into two parts, but continues to grow evergreen. The story of the Oakdene is one of hardship, endurance and healing. It shows that difficult times and broken pasts can be overcome, and that we can all continue to grow.</p>
+          <p>Oakdene House was built on a simple idea — that people facing addiction, hardship and social disconnection deserve a place where they can be welcomed, supported and treated with dignity.</p>
+          <p>Over time, Oakdene has grown into a community hub that blends professional support with practical care. What began as a place of help has become a place of belonging for many people who need stability, encouragement and a pathway forward.</p>
+          <p>Today, Oakdene House supports individuals and families through addiction services, counselling, group programs and community-based supports. Our work reflects the needs of the local community and continues to evolve through partnership, listening and lived experience.</p>
+        </div>
+        <div class="split__image">
+          <img
+            src="/images/about/oakdene-tree-sunlight.jpg"
+            alt="Sunlight through the leaves of the Oakdene tree in Fairfield"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TREE IMAGE STRIP -->
+  <div class="tree-strip" aria-hidden="true">
+    <div class="tree-strip__image">
+      <div style="border-radius: 12px; overflow: hidden; width: 100%; height: 100%;">
+        <img src="/images/about/bandw-oakdene-tree-bottom.jpg" alt="" loading="lazy" />
+      </div>
+    </div>
+    <div class="tree-strip__image">
+      <div style="border-radius: 12px; overflow: hidden; width: 100%; height: 100%;">
+        <img src="/images/about/bandw-oakdene-tree-leaves-and-base.jpg" alt="" loading="lazy" />
+      </div>
+    </div>
+    <div class="tree-strip__image">
+      <div style="border-radius: 12px; overflow: hidden; width: 100%; height: 100%;">
+        <img src="/images/about/bandwoakdene-tree-panorama.jpg" alt="" loading="lazy" />
+      </div>
+    </div>
+  </div>
+
+  <!-- WHY THIS MATTERS -->
+  <section class="section section--dark" aria-labelledby="why-heading">
+    <div class="container why-container">
+      <p class="section-heading__eyebrow">Why It Matters</p>
+      <blockquote class="why-quote">
+        <p id="why-heading">"Many people do not need more judgement. They need a door that is open, a person who will listen and support that makes sense in real life. Oakdene aims to be that place."</p>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Learn more about our services"
+    primaryBtn={{ text: 'Explore Services', href: '/services/' }}
+    secondaryBtn={{ text: 'About Oakdene', href: '/about/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  /* Hero */
+  .story-hero {
+    position: relative;
+    min-height: 420px;
+    background-image: url('/images/about/oakdene-tree-hero-colour.jpg');
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .story-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.3) 0%, rgba(0,62,81,0.78) 100%);
+  }
+
+  .story-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 56px;
+  }
+
+  .story-hero__content h1 {
+    color: var(--color-white);
+    margin-bottom: 12px;
+  }
+
+  .story-hero__lead {
+    font-size: 1.0625rem;
+    color: rgba(255,255,255,0.85);
+    max-width: 520px;
+    margin-bottom: 0;
+  }
+
+  /* Story body text */
+  .split p {
+    font-size: 1.0625rem;
+    line-height: 1.75;
+  }
+
+  .split__image img {
+    object-position: center center;
+  }
+
+  /* Tree strip */
+  .tree-strip {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    height: 420px;
+    background-color: var(--color-tint);
+    padding: var(--section-padding-desktop) 1.5rem;
+    gap: 12px;
+  }
+
+  .tree-strip__image {
+    overflow: hidden;
+    border-radius: var(--radius-card);
+  }
+
+  .tree-strip__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: opacity var(--transition);
+  }
+
+  .tree-strip__image:hover img {
+    opacity: 1;
+  }
+
+  /* Why quote */
+  .why-container {
+    max-width: 720px;
+    text-align: center;
+  }
+
+  .why-quote {
+    margin: 20px 0 0;
+  }
+
+  .why-quote p {
+    font-size: clamp(1.125rem, 3vw, 1.5rem);
+    font-weight: 500;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.92);
+    font-style: italic;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 640px) {
+    .tree-strip {
+      grid-template-columns: 1fr;
+      height: auto;
+      padding: var(--section-padding-mobile) 1.5rem;
+    }
+
+    .tree-strip__image {
+      height: 200px;
+    }
+  }
+</style>

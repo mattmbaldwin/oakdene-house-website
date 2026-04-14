@@ -1,0 +1,301 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABand from '../../components/CTABand.astro';
+
+const meetingTypes = [
+  'Alcoholics Anonymous (AA) meetings',
+  'Gamblers Anonymous (GA) meetings',
+  'Spanish-speaking AA meetings',
+  '12 Step and Traditions meetings',
+];
+
+const whatToExpect = [
+  'A supportive peer environment',
+  'Shared experience and mutual encouragement',
+  'A confidential space focused on recovery and accountability',
+];
+---
+
+<BaseLayout
+  title="AA & GA Meetings — Oakdene House Foundation"
+  description="Alcoholics Anonymous and Gamblers Anonymous meetings at Oakdene House, Fairfield — including Spanish-speaking sessions. Free and open to all."
+  ogImage="/images/centre/interior-meetings-1-img_2657.jpg"
+>
+
+  <!-- HERO -->
+  <section class="aa-hero" aria-label="AA and GA Meetings">
+    <div class="aa-hero__overlay" aria-hidden="true"></div>
+    <div class="container aa-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/services/">Services</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">AA &amp; GA Meetings</span>
+      </nav>
+      <h1>AA &amp; GA Meetings</h1>
+      <p class="aa-hero__lead">Alcoholics Anonymous and Gamblers Anonymous meetings at Oakdene House.</p>
+    </div>
+  </section>
+
+  <!-- OVERVIEW -->
+  <section class="section" aria-labelledby="aa-overview-heading">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">What We Host</p>
+            <h2 id="aa-overview-heading">A space for recovery and connection</h2>
+          </div>
+          <p>We provide a safe, supportive space for people in recovery. Meetings are facilitated by experienced members and follow AA and GA traditions.</p>
+
+          <h3 class="section-subhead">Meetings hosted at Oakdene</h3>
+          <ul class="meeting-list">
+            {meetingTypes.map(m => <li>{m}</li>)}
+          </ul>
+
+          <h3 class="section-subhead">What to expect</h3>
+          <ul class="expect-list">
+            {whatToExpect.map(e => <li>{e}</li>)}
+          </ul>
+        </div>
+        <div>
+          <div class="meetings-image">
+            <img src="/images/centre/interior-meetings-1-img_2657.jpg" alt="Meeting room at Oakdene House" loading="lazy" />
+          </div>
+          <div class="schedule-note">
+            <div class="schedule-note__icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            </div>
+            <div>
+              <p class="schedule-note__heading">Current schedule</p>
+              <p>Contact Oakdene for the current schedule of meetings, times, and locations.</p>
+              <div class="schedule-contact">
+                <a href="tel:0287170999" class="schedule-phone">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+                  (02) 8717 0999
+                </a>
+                <a href="mailto:admin@oakdenehouse.org.au" class="schedule-email">admin@oakdenehouse.org.au</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT AA AND GA -->
+  <section class="section section--tint" aria-labelledby="about-heading">
+    <div class="container">
+      <div class="about-inner">
+        <div class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">About the Programs</p>
+          <h2 id="about-heading">12-step peer support</h2>
+        </div>
+        <div class="about-grid">
+          <div class="about-card">
+            <h3>Alcoholics Anonymous (AA)</h3>
+            <p>AA is a fellowship of people who share their experience, strength and hope with each other to solve their common problem and help others to recover from alcoholism. Membership is open to anyone with a desire to stop drinking.</p>
+            <p>We host both English and Spanish-speaking AA meetings at Oakdene.</p>
+          </div>
+          <div class="about-card">
+            <h3>Gamblers Anonymous (GA)</h3>
+            <p>GA is a fellowship of people who share their experience, strength and hope with each other so they may solve their common problem and help others to recover from a gambling problem.</p>
+            <p>GA meetings provide a structured peer environment built on the 12-step model of recovery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Want to find out more?"
+    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    secondaryBtn={{ text: 'Get Support', href: '/forms/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  .aa-hero {
+    position: relative;
+    min-height: 380px;
+    background-image: url('/images/centre/interior-meetings-1-img_2657-v2.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .aa-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.35) 0%, rgba(0,62,81,0.85) 100%);
+  }
+
+  .aa-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 56px;
+  }
+
+  .aa-hero__content h1 { color: var(--color-white); margin-bottom: 10px; }
+
+  .aa-hero__lead {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 0;
+    max-width: 520px;
+  }
+
+  .section-subhead {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin: 24px 0 14px;
+  }
+
+  .meeting-list,
+  .expect-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 8px;
+  }
+
+  .meeting-list li,
+  .expect-list li {
+    padding-left: 24px;
+    position: relative;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.55;
+  }
+
+  .meeting-list li::before,
+  .expect-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+  }
+
+  .meetings-image {
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
+    margin-bottom: 20px;
+  }
+
+  .meetings-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .schedule-note {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background-color: var(--color-tint);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-secondary);
+    border-left: 3px solid var(--color-primary);
+    padding: 20px 24px;
+  }
+
+  .schedule-note__icon {
+    color: var(--color-primary);
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .schedule-note__heading {
+    font-weight: 700;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-primary);
+    margin-bottom: 6px;
+  }
+
+  .schedule-note p:nth-child(2) {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    margin-bottom: 12px;
+    line-height: 1.5;
+  }
+
+  .schedule-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .schedule-phone,
+  .schedule-email {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .schedule-phone:hover,
+  .schedule-email:hover { text-decoration: underline; }
+
+  /* About grid */
+  .about-inner {
+    max-width: 860px;
+    margin-inline: auto;
+  }
+
+  .about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+
+  .about-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    padding: 28px 24px;
+    border: 1px solid var(--color-secondary);
+    border-top: 3px solid var(--color-primary);
+  }
+
+  .about-card h3 {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+  }
+
+  .about-card p {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  .about-card p:last-child {
+    margin-bottom: 0;
+    color: var(--color-muted);
+  }
+
+  @media (max-width: 600px) {
+    .about-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

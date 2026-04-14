@@ -1,0 +1,173 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Thank You — Oakdene House Foundation"
+  description="Thank you for contacting Oakdene House Foundation. We will be in touch as soon as possible."
+>
+
+  <section class="thankyou" aria-label="Thank you confirmation">
+    <div class="container thankyou__inner">
+      <div class="thankyou__icon" aria-hidden="true">
+        <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+      </div>
+      <h1>Thank you for getting in touch</h1>
+      <p class="thankyou__sub">We have received your message and will be in touch as soon as possible.</p>
+      <p class="thankyou__body">If your enquiry is urgent, please call us directly on <a href="tel:0287170999">(02) 8717 0999</a>. Our team is available Monday to Friday during business hours.</p>
+
+      <div class="next-steps" aria-label="What happens next">
+        <h2 class="next-steps__heading">What happens next</h2>
+        <div class="next-steps__list">
+          <div class="next-step">
+            <div class="next-step__number" aria-hidden="true">1</div>
+            <p>We will review your message within 2 business days</p>
+          </div>
+          <div class="next-step">
+            <div class="next-step__number" aria-hidden="true">2</div>
+            <p>A member of our team will contact you to follow up</p>
+          </div>
+          <div class="next-step">
+            <div class="next-step__number" aria-hidden="true">3</div>
+            <p>If you need immediate support, please visit our <a href="/need-help-now/">Need Help Now</a> page</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="thankyou__actions">
+        <a href="/" class="btn btn--primary">Back to Home</a>
+        <a href="/need-help-now/" class="btn btn--secondary">Need Help Now</a>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .thankyou {
+    min-height: calc(100vh - 200px);
+    display: flex;
+    align-items: center;
+    padding-block: 80px;
+    background-color: var(--color-tint);
+  }
+
+  .thankyou__inner {
+    max-width: 600px;
+    text-align: center;
+  }
+
+  .thankyou__icon {
+    color: var(--color-primary);
+    margin-bottom: 20px;
+  }
+
+  .thankyou h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    color: var(--color-primary);
+    margin-bottom: 14px;
+  }
+
+  .thankyou__sub {
+    font-size: 1.125rem;
+    color: var(--color-text);
+    line-height: 1.65;
+    margin-bottom: 12px;
+  }
+
+  .thankyou__body {
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+
+  .thankyou__body a {
+    color: var(--color-primary);
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .thankyou__body a:hover {
+    text-decoration: underline;
+  }
+
+  /* Next steps */
+  .next-steps {
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    border: 1px solid var(--color-secondary);
+    padding: 28px 32px;
+    margin-bottom: 32px;
+    text-align: left;
+  }
+
+  .next-steps__heading {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.8125rem;
+  }
+
+  .next-steps__list {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .next-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .next-step__number {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-white);
+    font-weight: 700;
+    font-size: 0.8125rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+
+  .next-step p {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.55;
+    margin-bottom: 0;
+    padding-top: 4px;
+  }
+
+  .next-step a {
+    color: var(--color-primary);
+    font-weight: 500;
+    text-decoration: none;
+  }
+
+  .next-step a:hover {
+    text-decoration: underline;
+  }
+
+  .thankyou__actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 480px) {
+    .thankyou__actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+</style>

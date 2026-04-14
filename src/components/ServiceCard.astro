@@ -1,0 +1,128 @@
+---
+interface Props {
+  title: string;
+  summary: string;
+  href: string;
+  image?: string;
+  imageAlt?: string;
+  imagePosition?: string;
+  icon?: string;
+  eyebrow?: string;
+}
+
+const {
+  title,
+  summary,
+  href,
+  image,
+  imageAlt = '',
+  imagePosition,
+  icon,
+  eyebrow,
+} = Astro.props;
+---
+
+<article class="service-card">
+  {image && (
+    <a href={href} tabindex="-1" aria-hidden="true">
+      <img class="service-card__image" src={image} alt={imageAlt} loading="lazy" style={imagePosition ? `object-position: ${imagePosition};` : undefined} />
+    </a>
+  )}
+  {!image && icon && (
+    <div class="service-card__icon-wrap" aria-hidden="true">
+      <img src={icon} alt="" width="40" height="40" loading="lazy" />
+    </div>
+  )}
+  <div class="service-card__body">
+    {eyebrow && <p class="service-card__eyebrow">{eyebrow}</p>}
+    <h3 class="service-card__title">
+      <a href={href} class="service-card__title-link">{title}</a>
+    </h3>
+    <p class="service-card__summary">{summary}</p>
+    <a href={href} class="card__link" aria-label={`Learn more about ${title}`}>
+      Learn more &rarr;
+    </a>
+  </div>
+</article>
+
+<style>
+  .service-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: box-shadow var(--transition), transform var(--transition);
+    border-top: 3px solid transparent;
+  }
+
+  .service-card:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-3px);
+    border-top-color: var(--color-primary);
+  }
+
+  .service-card__image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    display: block;
+  }
+
+  .service-card__icon-wrap {
+    padding: 24px 24px 0;
+  }
+
+  .service-card__body {
+    padding: 24px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
+  .service-card__eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-primary-hover);
+    margin-bottom: 8px;
+  }
+
+  .service-card__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.3;
+  }
+
+  .service-card__title-link {
+    color: var(--color-primary);
+    text-decoration: none;
+    transition: color var(--transition);
+  }
+
+  .service-card__title-link:hover {
+    color: var(--color-primary-hover);
+  }
+
+  /* Extend the click area of the title link to cover the card */
+  .service-card__title-link::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+
+  .service-card {
+    position: relative;
+  }
+
+  .service-card__summary {
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+    line-height: 1.55;
+    margin-bottom: 20px;
+    flex: 1;
+  }
+</style>
