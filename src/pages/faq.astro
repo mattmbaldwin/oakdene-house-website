@@ -551,6 +551,8 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   /* ---- Category blocks ---- */
   .faq-category {
     margin-bottom: 52px;
+    /* scroll-margin-top on the anchor target (this div), not the child h2 */
+    scroll-margin-top: 100px;
   }
 
   .faq-cat-heading {
@@ -560,7 +562,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 16px;
     padding-bottom: 12px;
     border-bottom: 2px solid var(--color-secondary);
-    scroll-margin-top: 88px;
   }
 
   /* ---- Accordion group container ---- */
@@ -623,8 +624,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
   /* ---- Chevron ---- */
   .faq-chevron {
     flex-shrink: 0;
-    color: var(--color-primary);
-    opacity: 0.7;
+    /* Set stroke directly as a CSS property (overrides SVG presentation attribute)
+       rather than relying on color → currentColor, which can be unreliable with
+       Astro scoped styles on inline SVG elements */
+    stroke: var(--color-primary);
+    fill: none;
+    opacity: 0.75;
     transition: transform 200ms ease;
   }
 
