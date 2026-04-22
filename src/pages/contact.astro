@@ -101,8 +101,8 @@ const contactCards = [
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <p class="contact-card__heading">Opening Hours</p>
-          <p class="contact-card__detail contact-card__detail--small">Monday–Friday</p>
-          <p class="contact-card__note">Hours to be confirmed with the Oakdene team</p>
+          <p class="contact-card__detail contact-card__detail--small">Monday to Friday</p>
+          <p class="contact-card__note">9:00am – 5:00pm</p>
         </div>
 
       </div>
@@ -192,19 +192,23 @@ const contactCards = [
         <p class="section-heading__eyebrow">Find Us</p>
         <h2 id="map-heading">Getting here</h2>
       </div>
-      <!-- TODO: Add Google Maps embed for 29 Vine St, Fairfield NSW 2165 -->
-      <div class="map-placeholder" role="img" aria-label="Map placeholder — Google Maps embed to be added">
-        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-        <p>29 Vine St, Fairfield NSW 2165</p>
-        <p class="map-placeholder__sub">Map coming soon</p>
+      <iframe
+        src="https://maps.google.com/maps?q=29+Vine+St+Fairfield+NSW+2165&output=embed&z=16"
+        class="contact-map"
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Map showing Oakdene House Foundation at 29 Vine Street, Fairfield NSW 2165"
+        aria-label="Interactive map showing Oakdene House Foundation at 29 Vine Street, Fairfield NSW 2165"
+      ></iframe>
+      <div class="map-directions">
         <a
-          href="https://maps.google.com/?q=29+Vine+St+Fairfield+NSW+2165"
+          href="https://www.google.com/maps/dir/?api=1&destination=29+Vine+St+Fairfield+NSW+2165"
           target="_blank"
           rel="noopener noreferrer"
-          class="btn btn--secondary"
-          style="font-size: 0.875rem; padding: 9px 18px;"
+          class="map-directions__link"
         >
-          Open in Google Maps
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+          Get directions
         </a>
       </div>
     </div>
@@ -415,33 +419,36 @@ const contactCards = [
     margin-top: 8px;
   }
 
-  /* Map placeholder */
-  .map-placeholder {
-    background-color: var(--color-tint);
+  /* Map embed */
+  .contact-map {
+    width: 100%;
+    height: 380px;
+    border: none;
     border-radius: var(--radius-card);
-    border: 1px solid var(--color-secondary);
-    padding: 56px 32px;
+    display: block;
+  }
+
+  .map-directions {
+    margin-top: 12px;
     display: flex;
-    flex-direction: column;
+    justify-content: flex-end;
+  }
+
+  .map-directions__link {
+    display: inline-flex;
     align-items: center;
-    justify-content: center;
-    gap: 12px;
-    text-align: center;
+    gap: 6px;
+    font-size: 0.875rem;
+    font-weight: 500;
     color: var(--color-primary);
-    min-height: 280px;
+    text-decoration: none;
+    transition: color var(--transition);
   }
 
-  .map-placeholder p {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-primary);
-    margin-bottom: 0;
-  }
-
-  .map-placeholder__sub {
-    font-size: 0.875rem !important;
-    font-weight: 400 !important;
-    color: var(--color-muted) !important;
+  .map-directions__link:hover {
+    color: var(--color-link-hover);
+    text-decoration: underline;
+    text-underline-offset: 2px;
   }
 
   /* Form */
