@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import CTABand from '../components/CTABand.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CTABand from '../../../components/CTABand.astro';
 
 const reasons = [
   'Be part of a local charity making a practical difference',
@@ -13,14 +13,14 @@ const types = [
   {
     heading: 'Community Volunteering',
     description: 'Join our day-to-day operations — supporting the Kitchen, Boutique, Laundrette, and programs. Open to individuals who want to make a direct local contribution.',
-    href: '/volunteering/community-volunteers/',
+    href: '/community-programs/volunteering/community-volunteers/',
     image: '/images/kitchen/oakdene-kitchen-volunteer-serving-with-smile.jpg',
     imageAlt: 'Volunteer serving food at Oakdene Kitchen',
   },
   {
     heading: 'Corporate Volunteering',
     description: 'Bring your team to Oakdene for structured volunteering days or partnership programs. A meaningful way to give back and build team purpose.',
-    href: '/volunteering/corporate-volunteering/',
+    href: '/community-programs/volunteering/corporate-volunteering/',
     image: '/images/kitchen/oakdene-kitchen-interior-upclose-serving.jpg',
     imageAlt: 'Volunteers at Oakdene wrapping food',
   },
@@ -37,6 +37,13 @@ const types = [
   <section class="vol-hero" aria-label="Volunteering at Oakdene">
     <div class="vol-hero__overlay" aria-hidden="true"></div>
     <div class="container vol-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/community-programs/">Community Programs</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Volunteering</span>
+      </nav>
       <h1>Volunteer with Oakdene House Foundation</h1>
       <p class="vol-hero__lead">Volunteers play an important role at Oakdene House. They help create a welcoming environment, support practical programs and strengthen our connection to the community.</p>
     </div>

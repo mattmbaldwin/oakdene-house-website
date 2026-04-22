@@ -1,0 +1,292 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import CTABand from '../../components/CTABand.astro';
+---
+
+<BaseLayout
+  title="Make a Referral — Oakdene House Foundation"
+  description="Self-referral, family referral, or professional referral to Oakdene House Foundation. We'll be in touch within 2 business days."
+  ogImage="/images/generic/bandw-forset-sun-beam.jpeg"
+>
+
+  <!-- HERO -->
+  <section class="referral-hero" aria-label="Make a Referral">
+    <div class="referral-hero__overlay" aria-hidden="true"></div>
+    <div class="container referral-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/services/">Services</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Make a Referral</span>
+      </nav>
+      <h1>Make a referral to Oakdene House</h1>
+      <p class="referral-hero__lead">Self-referral, family referral, or professional referral — we'll be in touch within 2 business days.</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="section" aria-labelledby="referral-intro-heading">
+    <div class="container">
+      <div class="referral-layout">
+
+        <!-- Main column -->
+        <div class="referral-main">
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">Submit a Referral</p>
+            <h2 id="referral-intro-heading">Who can use this form?</h2>
+          </div>
+          <p class="referral-intro">This form is for anyone referring someone to Oakdene — whether you're referring yourself, a family member, or a client as a professional worker. Complete the form below and our team will review your referral and be in touch within 2 business days. If the situation is urgent, please also call us on <a href="tel:0287170999">(02) 8717 0999</a>. Everything you share is confidential and handled in line with our privacy policy.</p>
+
+          <!-- Jotform placeholder -->
+          <div class="form-placeholder" aria-label="Referral form loading area">
+            <div class="form-placeholder__inner">
+              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+              <p>Referral form — embedding coming soon</p>
+            </div>
+          </div><!-- TODO: Replace with live Jotform URL -->
+        </div>
+
+        <!-- Sidebar -->
+        <aside class="referral-sidebar">
+          <div class="urgent-box">
+            <div class="urgent-box__icon" aria-hidden="true">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+            </div>
+            <h3>Need urgent help?</h3>
+            <p>If you or someone else is in crisis right now, please don't wait for this referral to be processed. Visit our <a href="/need-help-now/">Need Help Now page</a> for 24-hour crisis support lines.</p>
+            <a href="/need-help-now/" class="btn btn--primary btn--block">Need Help Now</a>
+          </div>
+
+          <div class="contact-box">
+            <h3>Prefer to call?</h3>
+            <p>Our team is available during business hours to take your call.</p>
+            <a href="tel:0287170999" class="contact-box__phone">(02) 8717 0999</a>
+            <p class="contact-box__or">or email</p>
+            <a href="mailto:admin@oakdenehouse.org.au" class="contact-box__email">admin@oakdenehouse.org.au</a>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Not sure if you need a referral?"
+    subheading="Contact us directly and we'll help you work out the best way to access support."
+    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    secondaryBtn={{ text: 'Need Help Now', href: '/need-help-now/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  .referral-hero {
+    position: relative;
+    min-height: 380px;
+    background-image: url('/images/generic/bandw-forset-sun-beam.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .referral-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.4) 0%, rgba(0,62,81,0.88) 100%);
+  }
+
+  .referral-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 56px;
+    max-width: 740px;
+  }
+
+  .referral-hero__content h1 {
+    color: var(--color-white);
+    margin-bottom: 12px;
+  }
+
+  .referral-hero__lead {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.88);
+    line-height: 1.6;
+    margin-bottom: 0;
+    max-width: 580px;
+  }
+
+  /* Two-column layout */
+  .referral-layout {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 48px;
+    align-items: flex-start;
+  }
+
+  /* Intro text */
+  .referral-intro {
+    font-size: 1.0625rem;
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+
+  .referral-intro a {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  /* Form placeholder */
+  .form-placeholder {
+    border: 2px dashed #C6D6E3;
+    border-radius: var(--radius-card);
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-tint);
+  }
+
+  .form-placeholder__inner {
+    text-align: center;
+    color: var(--color-muted);
+    padding: 40px;
+  }
+
+  .form-placeholder__inner svg {
+    display: block;
+    margin: 0 auto 16px;
+    opacity: 0.45;
+  }
+
+  .form-placeholder__inner p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-muted);
+    margin-bottom: 0;
+  }
+
+  /* Sidebar */
+  .referral-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: sticky;
+    top: 96px;
+  }
+
+  /* Urgent box */
+  .urgent-box {
+    background-color: var(--color-primary);
+    border-radius: var(--radius-card);
+    padding: 28px;
+    color: rgba(255,255,255,0.9);
+  }
+
+  .urgent-box__icon {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 14px;
+  }
+
+  .urgent-box h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-white);
+    margin-bottom: 12px;
+  }
+
+  .urgent-box p {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    margin-bottom: 20px;
+    color: rgba(255,255,255,0.85);
+  }
+
+  .urgent-box p a {
+    color: var(--color-white);
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  .btn--block {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background-color: var(--color-white);
+    color: var(--color-primary);
+    border-color: var(--color-white);
+  }
+
+  .btn--block:hover {
+    background-color: rgba(255,255,255,0.9);
+    border-color: rgba(255,255,255,0.9);
+  }
+
+  /* Contact box */
+  .contact-box {
+    background-color: var(--color-tint);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--radius-card);
+    padding: 24px 28px;
+  }
+
+  .contact-box h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 8px;
+  }
+
+  .contact-box p {
+    font-size: 0.9rem;
+    color: var(--color-muted);
+    margin-bottom: 14px;
+    line-height: 1.5;
+  }
+
+  .contact-box__phone {
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    margin-bottom: 6px;
+  }
+
+  .contact-box__phone:hover {
+    color: var(--color-primary-hover);
+  }
+
+  .contact-box__or {
+    font-size: 0.8125rem;
+    color: var(--color-muted);
+    margin: 0 0 6px;
+  }
+
+  .contact-box__email {
+    font-size: 0.9rem;
+    color: var(--color-primary);
+    text-decoration: none;
+    font-weight: 500;
+    word-break: break-all;
+  }
+
+  .contact-box__email:hover {
+    text-decoration: underline;
+  }
+
+  @media (max-width: 900px) {
+    .referral-layout {
+      grid-template-columns: 1fr;
+    }
+
+    .referral-sidebar {
+      position: static;
+    }
+  }
+</style>

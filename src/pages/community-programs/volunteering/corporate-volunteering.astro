@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import CTABand from '../../components/CTABand.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CTABand from '../../../components/CTABand.astro';
 
 const opportunities = [
   'Team volunteering days',
@@ -23,7 +23,9 @@ const opportunities = [
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <a href="/volunteering/">Volunteering</a>
+        <a href="/community-programs/">Community Programs</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/community-programs/volunteering/">Volunteering</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">Corporate Volunteering</span>
       </nav>
