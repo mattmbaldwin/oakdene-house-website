@@ -9,51 +9,7 @@ const currentYear = new Date().getFullYear();
     <div class="container">
       <div class="footer-grid">
 
-        <!-- Brand column -->
-        <div class="footer-brand">
-          <a href="/" class="footer-logo" aria-label="Oakdene House Foundation — home">
-            <img
-              src="/images/logos/oakdene-hero-logo.png"
-              alt="Oakdene House Foundation"
-              height="52"
-            />
-          </a>
-          <p class="footer-tagline">
-            Supporting people and families facing addiction, hardship, homelessness,
-            and life challenges in Fairfield, Western Sydney. We walk alongside you
-            with practical support, dignity, and care.
-          </p>
-          <div class="footer-social">
-            <a
-              href="#"
-              class="social-link"
-              aria-label="Oakdene House Foundation on Facebook"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <!-- Facebook icon -->
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
-              </svg>
-            </a>
-            <a
-              href="#"
-              class="social-link"
-              aria-label="Oakdene House Foundation on Instagram"
-              rel="noopener noreferrer"
-              target="_blank"
-            >
-              <!-- Instagram icon -->
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
-                <circle cx="12" cy="12" r="4"/>
-                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
-              </svg>
-            </a>
-          </div>
-        </div>
-
-        <!-- About links -->
+        <!-- Column 1: About -->
         <div class="footer-col">
           <h3 class="footer-col__heading">About</h3>
           <ul class="footer-links" role="list">
@@ -65,45 +21,63 @@ const currentYear = new Date().getFullYear();
           </ul>
         </div>
 
-        <!-- Services links -->
+        <!-- Column 2: Services -->
         <div class="footer-col">
           <h3 class="footer-col__heading">Services</h3>
           <ul class="footer-links" role="list">
-            <li><a href="/services/individual-counselling/">Counselling</a></li>
-            <li><a href="/services/life-choices-program/">Life Choices</a></li>
-            <li><a href="/services/oakdene-kitchen/">Kitchen</a></li>
-            <li><a href="/services/oakdene-laundrette/">Laundrette</a></li>
-            <li><a href="/services/ladies-boutique/">Boutique</a></li>
-            <li><a href="/services/">All Services</a></li>
+            <li><a href="/services/individual-counselling/">Individual Counselling</a></li>
+            <li><a href="/services/life-choices-program/">Life Choices Program</a></li>
+            <li><a href="/services/gambling-counselling/">Gambling Counselling</a></li>
+            <li><a href="/services/outpatients-program/">Outpatients Program</a></li>
+            <li><a href="/services/aa-ga-meetings/">AA &amp; GA Meetings</a></li>
+            <li><a href="/services/" class="footer-link--all">All Services</a></li>
           </ul>
         </div>
 
-        <!-- Get Help links -->
+        <!-- Column 3: Community Programs -->
+        <div class="footer-col">
+          <h3 class="footer-col__heading">Community Programs</h3>
+          <ul class="footer-links" role="list">
+            <li><a href="/services/oakdene-kitchen/">Oakdene Kitchen</a></li>
+            <li><a href="/services/oakdene-laundrette/">Oakdene Laundrette</a></li>
+            <li><a href="/services/ladies-boutique/">Ladies Boutique</a></li>
+            <li><a href="/services/staple-food-packs/">Staple Food Packs</a></li>
+            <li><a href="/community-programs/volunteering/">Volunteering</a></li>
+            <li><a href="/community-programs/" class="footer-link--all">All Community Programs</a></li>
+          </ul>
+        </div>
+
+        <!-- Column 4: Get Help -->
         <div class="footer-col">
           <h3 class="footer-col__heading">Get Help</h3>
           <ul class="footer-links" role="list">
-            <li><a href="/forms/">Get Support</a></li>
+            <li><a href="/contact/">Contact</a></li>
             <li><a href="/need-help-now/">Need Help Now</a></li>
-            <li><a href="/forms/">Referral Form</a></li>
-            <li><a href="/community-programs/volunteering/">Volunteer</a></li>
+            <li><a href="/services/referral/">Make a Referral</a></li>
+            <li><a href="/faq/">FAQ</a></li>
+            <li><a href="/support-us/">Donate</a></li>
           </ul>
         </div>
 
-        <!-- Contact details -->
+        <!-- Column 5: Contact -->
         <div class="footer-col">
           <h3 class="footer-col__heading">Contact</h3>
           <ul class="footer-contact" role="list">
             <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
-              <a href="tel:0287170999">(02) 8717 0999</a>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
+              <a href="tel:+61287170999">(02) 8717 0999</a>
             </li>
             <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
               <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a>
             </li>
             <li>
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>29 Vine St, Fairfield NSW 2165</span>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>29 Vine Street, Fairfield NSW 2165</span>
+            </li>
+            <li>
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+              <span>PO Box 988, Fairfield NSW 1860</span>
             </li>
           </ul>
         </div>
@@ -112,20 +86,61 @@ const currentYear = new Date().getFullYear();
     </div>
   </div>
 
-  <!-- Bottom bar -->
+  <!-- Bottom row -->
   <div class="footer-bottom">
     <div class="container footer-bottom__inner">
-      <p class="footer-bottom__legal">
-        ABN 90 151 950 926 &nbsp;|&nbsp; Registered Charity &nbsp;|&nbsp;
-        &copy; {currentYear} Oakdene House Foundation. All rights reserved.
-      </p>
-      <p class="footer-bottom__links">
-        <a href="/contact/">Contact</a>
-        <span aria-hidden="true">|</span>
-        <a href="/resources/">Resources</a>
-        <span aria-hidden="true">|</span>
-        <a href="/need-help-now/">Need Help Now</a>
-      </p>
+
+      <div class="footer-bottom__left">
+        <a href="/" class="footer-bottom-logo" aria-label="Oakdene House Foundation — home">
+          <img
+            src="/images/logos/oakdene-hero-logo.png"
+            alt="Oakdene House Foundation"
+            height="28"
+          />
+        </a>
+        <div class="footer-bottom__legal">
+          <span>ABN 90 151 950 926</span>
+          <span class="footer-dot" aria-hidden="true">&middot;</span>
+          <span>Registered Charity</span>
+          <span class="footer-dot" aria-hidden="true">&middot;</span>
+          <a href="/privacy-policy/">Privacy Policy</a>
+          <span class="footer-dot" aria-hidden="true">&middot;</span>
+          <a href="/terms-of-use/">Terms of Use</a>
+          <span class="footer-dot" aria-hidden="true">&middot;</span>
+          <a href="/accessibility/">Accessibility</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom__right">
+        <p class="footer-copyright">&copy; {currentYear} Oakdene House Foundation. All rights reserved.</p>
+        <div class="footer-social">
+          <a
+            href="#"
+            class="social-link"
+            aria-label="Oakdene House Foundation on Facebook"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+            </svg>
+          </a>
+          <a
+            href="#"
+            class="social-link"
+            aria-label="Oakdene House Foundation on Instagram"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="4"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+
     </div>
   </div>
 </footer>
@@ -142,115 +157,77 @@ const currentYear = new Date().getFullYear();
     background-color: #C6D6E3;
   }
 
+  /* ---- Main grid ---- */
   .footer-main {
-    padding-block: 64px 48px;
+    padding-block: 64px 52px;
   }
 
-  /* Grid */
   .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
-    gap: 48px;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 40px;
   }
 
-  /* Brand */
-  .footer-brand {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .footer-logo img {
-    height: 52px;
-    width: auto;
-    object-fit: contain;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
-  }
-
-  .footer-tagline {
-    font-size: 0.9rem;
-    line-height: 1.65;
-    color: rgba(255, 255, 255, 0.75);
-    margin-bottom: 0;
-  }
-
-  /* Social */
-  .footer-social {
-    display: flex;
-    gap: 12px;
-  }
-
-  .social-link {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 38px;
-    height: 38px;
-    border-radius: 50%;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    color: rgba(255, 255, 255, 0.75);
-    transition: background-color var(--transition), color var(--transition), border-color var(--transition);
-    text-decoration: none;
-  }
-
-  .social-link:hover {
-    background-color: rgba(255, 255, 255, 0.12);
-    color: var(--color-white);
-    border-color: rgba(255, 255, 255, 0.5);
-  }
-
-  /* Column headings */
+  /* ---- Column headings ---- */
   .footer-col__heading {
     font-size: 0.8125rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
     color: var(--color-white);
-    margin-bottom: 16px;
+    margin-bottom: 18px;
   }
 
-  /* Nav links */
+  /* ---- Nav link lists ---- */
   .footer-links {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 11px;
   }
 
   .footer-links a {
-    font-size: 0.9375rem;
-    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.72);
     text-decoration: none;
     transition: color var(--transition);
+    line-height: 1.35;
   }
 
   .footer-links a:hover {
     color: var(--color-white);
   }
 
-  /* Contact items */
+  /* "All X" links — slightly brighter to signal overview */
+  .footer-links a.footer-link--all {
+    color: rgba(255, 255, 255, 0.88);
+    font-weight: 500;
+    margin-top: 2px;
+  }
+
+  /* ---- Contact column ---- */
   .footer-contact {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 13px;
   }
 
   .footer-contact li {
     display: flex;
-    gap: 10px;
+    gap: 9px;
     align-items: flex-start;
-    font-size: 0.9375rem;
-    color: rgba(255, 255, 255, 0.75);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.72);
+    line-height: 1.45;
   }
 
   .footer-contact svg {
     flex-shrink: 0;
     margin-top: 2px;
-    opacity: 0.7;
+    opacity: 0.65;
   }
 
   .footer-contact a {
-    color: rgba(255, 255, 255, 0.75);
+    color: rgba(255, 255, 255, 0.72);
     text-decoration: none;
     transition: color var(--transition);
   }
@@ -259,7 +236,7 @@ const currentYear = new Date().getFullYear();
     color: var(--color-white);
   }
 
-  /* Bottom bar */
+  /* ---- Bottom row ---- */
   .footer-bottom {
     border-top: 1px solid rgba(255, 255, 255, 0.12);
     padding-block: 20px;
@@ -267,75 +244,158 @@ const currentYear = new Date().getFullYear();
 
   .footer-bottom__inner {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    justify-content: space-between;
+    gap: 20px;
     flex-wrap: wrap;
-    gap: 12px;
+  }
+
+  /* Left: logo + legal text */
+  .footer-bottom__left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+    min-width: 0;
+  }
+
+  .footer-bottom-logo img {
+    height: 28px;
+    width: auto;
+    object-fit: contain;
+    filter: brightness(0) invert(1);
+    opacity: 0.7;
+    display: block;
+    flex-shrink: 0;
   }
 
   .footer-bottom__legal {
-    font-size: 0.8125rem;
-    color: rgba(255, 255, 255, 0.5);
-    margin-bottom: 0;
-  }
-
-  .footer-bottom__links {
     display: flex;
-    gap: 10px;
     align-items: center;
-    font-size: 0.8125rem;
-    color: rgba(255, 255, 255, 0.4);
-    margin-bottom: 0;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.48);
   }
 
-  .footer-bottom__links a {
-    color: rgba(255, 255, 255, 0.55);
+  .footer-bottom__legal span {
+    white-space: nowrap;
+  }
+
+  .footer-bottom__legal a {
+    color: rgba(255, 255, 255, 0.52);
     text-decoration: none;
+    white-space: nowrap;
     transition: color var(--transition);
   }
 
-  .footer-bottom__links a:hover {
+  .footer-bottom__legal a:hover {
     color: var(--color-white);
   }
 
-  /* Responsive */
-  @media (max-width: 1024px) {
+  .footer-dot {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 0.75rem;
+    line-height: 1;
+  }
+
+  /* Right: copyright + social */
+  .footer-bottom__right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-shrink: 0;
+  }
+
+  .footer-copyright {
+    font-size: 0.8rem;
+    color: rgba(255, 255, 255, 0.48);
+    margin-bottom: 0;
+    white-space: nowrap;
+  }
+
+  /* Social icons */
+  .footer-social {
+    display: flex;
+    gap: 8px;
+    flex-shrink: 0;
+  }
+
+  .social-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+  }
+
+  .social-link:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    color: var(--color-white);
+    border-color: rgba(255, 255, 255, 0.45);
+  }
+
+  /* ---- Responsive ---- */
+
+  /* Tablet: 3 columns */
+  @media (max-width: 1100px) {
     .footer-grid {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    .footer-brand {
-      grid-column: 1 / -1;
-      flex-direction: row;
-      align-items: flex-start;
-      flex-wrap: wrap;
-      gap: 32px;
-    }
-
-    .footer-tagline {
-      max-width: 480px;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 36px;
     }
   }
 
+  /* Small tablet: 2 columns */
   @media (max-width: 640px) {
     .footer-grid {
       grid-template-columns: 1fr 1fr;
+      gap: 32px;
     }
 
-    .footer-brand {
-      flex-direction: column;
-      gap: 16px;
-    }
-
-    .footer-bottom__inner {
-      flex-direction: column;
-      align-items: flex-start;
+    .footer-main {
+      padding-block: 48px 40px;
     }
   }
 
-  @media (max-width: 400px) {
+  /* Mobile: single column, bottom row stacks centred */
+  @media (max-width: 420px) {
     .footer-grid {
       grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 760px) {
+    .footer-bottom__inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 14px;
+    }
+
+    .footer-bottom__left {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-bottom__legal {
+      justify-content: center;
+    }
+
+    .footer-bottom__right {
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-copyright {
+      white-space: normal;
+      text-align: center;
     }
   }
 </style>
