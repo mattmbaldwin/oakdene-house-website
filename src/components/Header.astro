@@ -1,12 +1,43 @@
 ---
 const pathname = Astro.url.pathname;
 
-const navLinks = [
+const servicesLinks = [
+  { label: 'Individual Counselling',  href: '/services/individual-counselling/' },
+  { label: 'Gambling Counselling',    href: '/services/gambling-counselling/' },
+  { label: 'Life Choices Program',    href: '/services/life-choices-program/' },
+  { label: 'Outpatients Program',     href: '/services/outpatients-program/' },
+  { label: 'AA & GA Meetings',        href: '/services/aa-ga-meetings/' },
+  { label: 'Financial Counselling',   href: '/services/financial-counselling/' },
+  { label: 'Oakdene Kitchen',         href: '/services/oakdene-kitchen/' },
+  { label: 'Staple Food Packs',       href: '/services/staple-food-packs/' },
+  { label: 'Oakdene Laundrette',      href: '/services/oakdene-laundrette/' },
+  { label: 'Ladies Boutique',         href: '/services/ladies-boutique/' },
+  { label: 'Used Clothing Store',     href: '/services/used-clothing-store/' },
+] as const;
+
+const communityLinks = [
+  { label: 'Oakdene Kitchen',         href: '/services/oakdene-kitchen/' },
+  { label: 'Staple Food Packs',       href: '/services/staple-food-packs/' },
+  { label: 'Oakdene Laundrette',      href: '/services/oakdene-laundrette/' },
+  { label: 'Ladies Boutique',         href: '/services/ladies-boutique/' },
+  { label: 'Used Clothing Store',     href: '/services/used-clothing-store/' },
+  { label: 'Financial Counselling',   href: '/services/financial-counselling/' },
+  { separator: true as const },
+  { label: 'Volunteering',            href: '/community-programs/volunteering/' },
+];
+
+type DropdownItem = { label: string; href: string } | { separator: true };
+
+const navLinks: Array<{
+  label: string;
+  href: string;
+  id?: string;
+  dropdown?: DropdownItem[];
+}> = [
   { label: 'Home',               href: '/' },
   { label: 'About',              href: '/about/' },
-  { label: 'Services',           href: '/services/' },
-  { label: 'Community Programs', href: '/community-programs/' },
-  { label: 'Volunteering',       href: '/community-programs/volunteering/' },
+  { label: 'Services',           href: '/services/',         id: 'services',   dropdown: servicesLinks },
+  { label: 'Community Programs', href: '/community-programs/', id: 'community', dropdown: communityLinks },
   { label: 'Resources',          href: '/resources/' },
   { label: 'Service Directory',  href: '/service-directory/' },
   { label: 'Contact',            href: '/contact/' },
@@ -30,7 +61,33 @@ function isActive(href: string) {
 
     <nav class="header-nav" aria-label="Main navigation">
       <ul class="nav-list" role="list">
-        {navLinks.map(link => (
+        {navLinks.map(link => link.dropdown ? (
+          <li class="nav-item--dropdown" id={`nav-${link.id}`}>
+            <a
+              href={link.href}
+              class={`nav-link nav-link--dropdown-trigger ${isActive(link.href) ? 'nav-link--active' : ''}`}
+              aria-current={isActive(link.href) ? 'page' : undefined}
+              aria-expanded="false"
+              aria-haspopup="true"
+            >
+              {link.label}
+              <svg class="dropdown-chevron" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <ul class="dropdown-menu" role="menu" aria-label={link.label}>
+              {link.dropdown.map(item => 'separator' in item ? (
+                <li class="dropdown-separator" role="none" aria-hidden="true"></li>
+              ) : (
+                <li role="none">
+                  <a
+                    href={item.href}
+                    role="menuitem"
+                    class={isActive(item.href) ? 'dropdown-item--active' : ''}
+                  >{item.label}</a>
+                </li>
+              ))}
+            </ul>
+          </li>
+        ) : (
           <li>
             <a
               href={link.href}
@@ -69,7 +126,31 @@ function isActive(href: string) {
   <div class="mobile-drawer__inner">
     <nav aria-label="Mobile navigation">
       <ul class="mobile-nav-list" role="list">
-        {navLinks.map(link => (
+        {navLinks.map(link => link.dropdown ? (
+          <li class="mobile-expandable" id={`mob-${link.id}`}>
+            <button
+              class={`mobile-expandable-trigger ${isActive(link.href) ? 'mobile-expandable-trigger--active' : ''}`}
+              aria-expanded="false"
+              aria-controls={`mob-${link.id}-subnav`}
+            >
+              <span>{link.label}</span>
+              <svg class="mobile-chevron" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="mobile-subnav" id={`mob-${link.id}-subnav`} role="group">
+              <a href={link.href} class="mobile-subnav__overview">
+                All {link.label}
+              </a>
+              {link.dropdown.map(item => 'separator' in item ? (
+                <div class="mobile-subnav__sep" aria-hidden="true"></div>
+              ) : (
+                <a
+                  href={item.href}
+                  class={`mobile-subnav__link ${isActive(item.href) ? 'mobile-subnav__link--active' : ''}`}
+                >{item.label}</a>
+              ))}
+            </div>
+          </li>
+        ) : (
           <li>
             <a
               href={link.href}
@@ -159,6 +240,86 @@ function isActive(href: string) {
   .nav-link--active {
     color: var(--color-primary);
     font-weight: 600;
+  }
+
+  /* ---- Dropdown trigger ---- */
+  .nav-item--dropdown {
+    position: relative;
+  }
+
+  .nav-link--dropdown-trigger {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .dropdown-chevron {
+    flex-shrink: 0;
+    transition: transform 0.2s ease;
+    opacity: 0.6;
+  }
+
+  .nav-item--dropdown.is-open .dropdown-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* ---- Dropdown menu ---- */
+  .dropdown-menu {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    min-width: 220px;
+    max-width: 320px;
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    box-shadow: 0 4px 24px rgba(0, 62, 81, 0.14);
+    padding: 6px;
+    list-style: none;
+    z-index: 500;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity 0.15s ease, transform 0.15s ease, visibility 0.15s ease;
+  }
+
+  .nav-item--dropdown.is-open .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .dropdown-menu a[role="menuitem"] {
+    display: block;
+    padding: 9px 14px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    text-decoration: none;
+    border-radius: 6px;
+    white-space: nowrap;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    outline: none;
+  }
+
+  .dropdown-menu a[role="menuitem"]:hover,
+  .dropdown-menu a[role="menuitem"]:focus-visible {
+    background-color: var(--color-tint);
+    color: #002d3b;
+  }
+
+  .dropdown-menu a[role="menuitem"]:focus-visible {
+    box-shadow: inset 0 0 0 2px var(--color-primary);
+  }
+
+  .dropdown-item--active {
+    font-weight: 600;
+    background-color: var(--color-tint);
+  }
+
+  .dropdown-separator {
+    height: 1px;
+    background-color: var(--color-secondary);
+    margin: 6px 8px;
   }
 
   /* ---- Header CTAs ---- */
@@ -257,7 +418,7 @@ function isActive(href: string) {
   .mobile-nav-list {
     display: flex;
     flex-direction: column;
-    gap: 4px;
+    gap: 2px;
     margin-bottom: 32px;
   }
 
@@ -279,6 +440,92 @@ function isActive(href: string) {
     font-weight: 600;
   }
 
+  /* ---- Mobile expandable (accordion) ---- */
+  .mobile-expandable-trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 12px 14px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text);
+    border-radius: 6px;
+    text-align: left;
+    transition: color var(--transition), background-color var(--transition);
+  }
+
+  .mobile-expandable-trigger:hover,
+  .mobile-expandable-trigger--active {
+    color: var(--color-primary);
+    background-color: var(--color-tint);
+    font-weight: 600;
+  }
+
+  .mobile-chevron {
+    flex-shrink: 0;
+    color: var(--color-muted);
+    transition: transform 0.2s ease;
+  }
+
+  .mobile-expandable.is-open .mobile-chevron {
+    transform: rotate(180deg);
+  }
+
+  .mobile-subnav {
+    display: none;
+    flex-direction: column;
+    padding: 4px 0 8px 14px;
+  }
+
+  .mobile-expandable.is-open .mobile-subnav {
+    display: flex;
+  }
+
+  .mobile-subnav__overview {
+    display: block;
+    padding: 9px 14px 12px;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--color-primary);
+    text-decoration: none;
+    border-bottom: 1px solid var(--color-secondary);
+    margin-bottom: 4px;
+    transition: color var(--transition);
+  }
+
+  .mobile-subnav__overview:hover {
+    color: #002d3b;
+  }
+
+  .mobile-subnav__link {
+    display: block;
+    padding: 9px 14px;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    text-decoration: none;
+    border-radius: 6px;
+    transition: color var(--transition), background-color var(--transition);
+  }
+
+  .mobile-subnav__link:hover,
+  .mobile-subnav__link--active {
+    color: var(--color-primary);
+    background-color: var(--color-tint);
+    font-weight: 500;
+  }
+
+  .mobile-subnav__sep {
+    height: 1px;
+    background-color: var(--color-secondary);
+    margin: 4px 14px;
+  }
+
+  /* ---- Mobile drawer CTAs ---- */
   .mobile-drawer__ctas {
     display: flex;
     flex-direction: column;
@@ -321,7 +568,7 @@ function isActive(href: string) {
 </style>
 
 <script>
-  // Scroll: add .scrolled class
+  // ---- Scroll: add .scrolled class ----
   const header = document.getElementById('site-header');
   const onScroll = () => {
     if (header) header.classList.toggle('scrolled', window.scrollY > 8);
@@ -329,7 +576,88 @@ function isActive(href: string) {
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
-  // Mobile drawer toggle
+  // ---- Desktop dropdowns ----
+  const dropdownItems = document.querySelectorAll<HTMLElement>('.nav-item--dropdown');
+  const closeTimers = new Map<HTMLElement, ReturnType<typeof setTimeout>>();
+
+  function openDropdown(li: HTMLElement) {
+    // Close any other open dropdown first
+    dropdownItems.forEach(other => { if (other !== li) closeDropdownNow(other); });
+    clearTimeout(closeTimers.get(li));
+    li.classList.add('is-open');
+    li.querySelector<HTMLElement>('.nav-link--dropdown-trigger')?.setAttribute('aria-expanded', 'true');
+  }
+
+  function scheduleClose(li: HTMLElement) {
+    closeTimers.set(li, setTimeout(() => closeDropdownNow(li), 150));
+  }
+
+  function closeDropdownNow(li: HTMLElement) {
+    clearTimeout(closeTimers.get(li));
+    li.classList.remove('is-open');
+    li.querySelector<HTMLElement>('.nav-link--dropdown-trigger')?.setAttribute('aria-expanded', 'false');
+  }
+
+  function closeAllDropdowns() {
+    dropdownItems.forEach(li => closeDropdownNow(li));
+  }
+
+  dropdownItems.forEach(li => {
+    const trigger = li.querySelector<HTMLAnchorElement>('.nav-link--dropdown-trigger');
+    const menuItems = Array.from(li.querySelectorAll<HTMLAnchorElement>('.dropdown-menu a[role="menuitem"]'));
+
+    // Hover bridge: open on enter, delayed close on leave
+    li.addEventListener('mouseenter', () => openDropdown(li));
+    li.addEventListener('mouseleave', () => scheduleClose(li));
+
+    // Keyboard on trigger: ↓ opens and focuses first item
+    trigger?.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'ArrowDown') {
+        e.preventDefault();
+        openDropdown(li);
+        menuItems[0]?.focus();
+      }
+      if (e.key === 'Escape') {
+        closeDropdownNow(li);
+      }
+    });
+
+    // Keyboard within menu items
+    menuItems.forEach((item, i) => {
+      item.addEventListener('keydown', (e: KeyboardEvent) => {
+        if (e.key === 'ArrowDown') {
+          e.preventDefault();
+          menuItems[i + 1]?.focus();
+        } else if (e.key === 'ArrowUp') {
+          e.preventDefault();
+          if (i === 0) trigger?.focus();
+          else menuItems[i - 1]?.focus();
+        } else if (e.key === 'Escape') {
+          closeDropdownNow(li);
+          trigger?.focus();
+        }
+      });
+
+      // Close when focus leaves the dropdown entirely
+      item.addEventListener('blur', () => {
+        setTimeout(() => {
+          if (!li.contains(document.activeElement)) closeDropdownNow(li);
+        }, 0);
+      });
+    });
+  });
+
+  // Close all on outside click
+  document.addEventListener('click', (e: MouseEvent) => {
+    if (!(e.target as Element).closest('.nav-item--dropdown')) closeAllDropdowns();
+  });
+
+  // Close all on Escape (global fallback)
+  document.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key === 'Escape') closeAllDropdowns();
+  });
+
+  // ---- Mobile drawer toggle ----
   const hamburger = document.getElementById('hamburger');
   const drawer = document.getElementById('mobile-drawer');
   const overlay = document.getElementById('mobile-overlay');
@@ -353,13 +681,35 @@ function isActive(href: string) {
   }
 
   hamburger?.addEventListener('click', () => {
-    const isOpen = hamburger.classList.contains('is-open');
-    isOpen ? closeMenu() : openMenu();
+    hamburger.classList.contains('is-open') ? closeMenu() : openMenu();
   });
 
   overlay?.addEventListener('click', closeMenu);
 
-  document.addEventListener('keydown', (e) => {
+  document.addEventListener('keydown', (e: KeyboardEvent) => {
     if (e.key === 'Escape') closeMenu();
+  });
+
+  // ---- Mobile accordions ----
+  const mobileExpandables = document.querySelectorAll<HTMLElement>('.mobile-expandable');
+
+  mobileExpandables.forEach(item => {
+    const trigger = item.querySelector<HTMLButtonElement>('.mobile-expandable-trigger');
+
+    trigger?.addEventListener('click', () => {
+      const isOpen = item.classList.contains('is-open');
+
+      // Close all accordions
+      mobileExpandables.forEach(other => {
+        other.classList.remove('is-open');
+        other.querySelector<HTMLButtonElement>('.mobile-expandable-trigger')?.setAttribute('aria-expanded', 'false');
+      });
+
+      // Toggle this one
+      if (!isOpen) {
+        item.classList.add('is-open');
+        trigger.setAttribute('aria-expanded', 'true');
+      }
+    });
   });
 </script>
