@@ -1,0 +1,194 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Accessibility — Oakdene House Foundation"
+  description="Oakdene House Foundation Accessibility Statement — our commitment to making our website and services accessible to everyone."
+>
+
+  <!-- HERO -->
+  <section class="legal-hero" aria-label="Accessibility">
+    <div class="container legal-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Accessibility</span>
+      </nav>
+      <h1>Accessibility</h1>
+    </div>
+  </section>
+
+  <!-- DOCUMENT BODY -->
+  <section class="section" aria-label="Accessibility statement content">
+    <div class="container">
+      <div class="doc-wrap">
+
+        <!-- Date -->
+        <div class="doc-meta">
+          <p><em>Last updated: [Launch date to be inserted]</em></p>
+        </div>
+
+        <!-- Intro -->
+        <div class="doc-section">
+          <p>Oakdene House Foundation is committed to making our website accessible to everyone, including people with disabilities.</p>
+        </div>
+
+        <!-- Our commitment -->
+        <div class="doc-section" id="our-commitment">
+          <h2>Our commitment</h2>
+          <p>We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards across our website. We are continuously working to improve accessibility and welcome feedback from people who use assistive technologies.</p>
+        </div>
+
+        <!-- What we've done -->
+        <div class="doc-section" id="what-weve-done">
+          <h2>What we've done</h2>
+          <p>Our website includes:</p>
+          <ul>
+            <li>Semantic HTML throughout for better screen reader compatibility</li>
+            <li>Descriptive alt text on images</li>
+            <li>Keyboard navigation support</li>
+            <li>Sufficient colour contrast (WCAG AA)</li>
+            <li>Resizable text without loss of functionality</li>
+            <li>Skip-to-content links on every page</li>
+            <li>Clear, plain-language content</li>
+            <li>Logical heading structure</li>
+            <li>Labels and instructions on all form fields</li>
+          </ul>
+        </div>
+
+        <!-- Known limitations -->
+        <div class="doc-section" id="known-limitations">
+          <h2>Known limitations</h2>
+          <p>We're honest about where we haven't got there yet:</p>
+          <ul>
+            <li>Some older PDF resources may not be fully accessible. If you need an accessible version of any document, please <a href="/contact/">contact us</a> and we'll provide one.</li>
+            <li>Third-party embedded forms (Jotform) and payment tools (Stripe) follow their own accessibility standards, which may differ slightly from ours.</li>
+            <li>Video content, if added in future, will include captions — please let us know if you find any without.</li>
+          </ul>
+        </div>
+
+        <!-- Accessibility at our centre -->
+        <div class="doc-section" id="at-our-centre">
+          <h2>Accessibility at our centre</h2>
+          <p>Our centre at 29 Vine Street, Fairfield has:</p>
+          <ul>
+            <li>Step-free access to the main entrance</li>
+            <li>Accessible parking via the Fairfield RSL car park on the corner of Vine and Bertha Streets</li>
+            <li>Staff trained to support people with a range of accessibility needs</li>
+            <li>Interpreter services available on request — please let us know when you <a href="/contact/">contact us</a></li>
+          </ul>
+          <p>If you have specific accessibility requirements for a visit or appointment, please <a href="/contact/">contact us</a> ahead of time so we can make sure everything is in place.</p>
+        </div>
+
+        <!-- Need our help? -->
+        <div class="doc-section" id="need-our-help">
+          <h2>Need our help?</h2>
+          <p>If you have trouble accessing any part of our website or any of our services, please let us know. We're happy to provide information or support in the format that works best for you — large print, plain text, over the phone, or in person.</p>
+          <p>Email: <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a></p>
+          <p>Phone: <a href="tel:+61287170999">(02) 8717 0999</a></p>
+          <p>We aim to respond to accessibility feedback within 2 business days.</p>
+        </div>
+
+        <!-- Reporting an issue -->
+        <div class="doc-section" id="reporting-an-issue">
+          <h2>Reporting an issue</h2>
+          <p>If you encounter an accessibility barrier on our website, please tell us:</p>
+          <ul>
+            <li>The page you were on (the URL is helpful)</li>
+            <li>What you were trying to do</li>
+            <li>What happened</li>
+            <li>The assistive technology or device you were using, if relevant</li>
+          </ul>
+          <p>We take accessibility seriously and will work to fix issues as quickly as we can.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ---- Hero ---- */
+  .legal-hero {
+    background-color: var(--color-primary);
+    padding-block: 52px 44px;
+  }
+
+  .legal-hero h1 {
+    color: var(--color-white);
+    margin-bottom: 0;
+  }
+
+  /* ---- Document wrapper ---- */
+  .doc-wrap {
+    max-width: 760px;
+    margin-inline: auto;
+  }
+
+  /* ---- Date metadata ---- */
+  .doc-meta {
+    padding: 18px 22px;
+    background-color: var(--color-tint);
+    border-left: 3px solid var(--color-secondary);
+    border-radius: 0 var(--radius-card) var(--radius-card) 0;
+    margin-bottom: 36px;
+  }
+
+  .doc-meta p {
+    margin-bottom: 0;
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+  }
+
+  /* ---- Document sections ---- */
+  .doc-section {
+    margin-bottom: 48px;
+  }
+
+  .doc-section:last-child {
+    margin-bottom: 0;
+  }
+
+  .doc-section h2 {
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--color-secondary);
+    scroll-margin-top: 88px;
+  }
+
+  .doc-section p {
+    font-size: 1rem;
+    color: var(--color-text);
+    line-height: 1.72;
+    margin-bottom: 16px;
+  }
+
+  .doc-section p:last-child {
+    margin-bottom: 0;
+  }
+
+  .doc-section ul {
+    padding-left: 22px;
+    margin-bottom: 16px;
+  }
+
+  .doc-section li {
+    font-size: 1rem;
+    color: var(--color-text);
+    line-height: 1.65;
+    margin-bottom: 7px;
+  }
+
+  .doc-section a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color var(--transition);
+  }
+
+  .doc-section a:hover {
+    color: var(--color-link-hover);
+  }
+</style>
