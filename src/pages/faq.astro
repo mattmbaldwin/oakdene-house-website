@@ -1,0 +1,737 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="FAQ — Oakdene House Foundation"
+  description="Frequently asked questions about Oakdene House Foundation's services, programs, volunteering, donations, and more."
+>
+
+  <!-- HERO -->
+  <section class="faq-hero" aria-label="FAQ">
+    <div class="container faq-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">FAQ</span>
+      </nav>
+      <h1>Frequently asked questions</h1>
+      <p class="faq-hero__subtitle">Quick answers to the questions we hear most often. If you can't find what you're looking for, reach out — we're here to help.</p>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <section class="section" aria-label="FAQ content">
+    <div class="container">
+      <div class="faq-wrap">
+
+        <!-- JUMPLINKS -->
+        <nav class="faq-jumplinks" aria-label="Jump to FAQ category">
+          <a href="#cat-a">A. Getting support</a>
+          <a href="#cat-b">B. Counselling and clinical services</a>
+          <a href="#cat-c">C. Community programs</a>
+          <a href="#cat-d">D. Volunteering</a>
+          <a href="#cat-e">E. Donations and partnerships</a>
+          <a href="#cat-f">F. About Oakdene</a>
+          <a href="#cat-g">G. Privacy and information</a>
+        </nav>
+
+        <!-- Search filter could be added here in future - likely client-side JS filtering question titles and answers. Currently the chatbot will fulfil the search role. -->
+
+        <!-- ============================================================
+             CATEGORY A — Getting support
+             ============================================================ -->
+        <div class="faq-category" id="cat-a">
+          <h2 class="faq-cat-heading">A. Getting support</h2>
+          <div class="faq-group">
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-a-1-content" id="faq-a-1-btn">
+                <span class="faq-question">Who can access Oakdene's services?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-a-1-content" role="region" aria-labelledby="faq-a-1-btn">
+                <div class="faq-content-inner">
+                  <p>Anyone facing challenges with addiction, hardship, homelessness, or other life pressures can contact us. You don't need to meet specific criteria — if you're going through a difficult time and want support, we're here.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-a-2-content" id="faq-a-2-btn">
+                <span class="faq-question">Do I need a referral?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-a-2-content" role="region" aria-labelledby="faq-a-2-btn">
+                <div class="faq-content-inner">
+                  <p>Not always. Some services (like the Kitchen, Laundrette, and Boutique) are drop-in and don't need a referral. For counselling and the Life Choices program, a referral helps us understand your situation, but you can also refer yourself directly.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-a-3-content" id="faq-a-3-btn">
+                <span class="faq-question">How do I make a referral?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-a-3-content" role="region" aria-labelledby="faq-a-3-btn">
+                <div class="faq-content-inner">
+                  <p>Use our online <a href="/services/referral/">referral form</a> or call <a href="tel:+61287170999">(02) 8717 0999</a>. Referrals can come from the person seeking support, a family member, or a professional (GP, case worker, corrections officer, etc.).</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-a-4-content" id="faq-a-4-btn">
+                <span class="faq-question">How long does it take to hear back after I contact you?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-a-4-content" role="region" aria-labelledby="faq-a-4-btn">
+                <div class="faq-content-inner">
+                  <p>We aim to respond to all enquiries within 2 business days. If you need help urgently, please call us directly on <a href="tel:+61287170999">(02) 8717 0999</a>, or see our <a href="/need-help-now/">Need Help Now page</a> for 24/7 crisis lines.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-a-5-content" id="faq-a-5-btn">
+                <span class="faq-question">Is everything confidential?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-a-5-content" role="region" aria-labelledby="faq-a-5-btn">
+                <div class="faq-content-inner">
+                  <p>Yes. What you share with an Oakdene counsellor or staff member is confidential, with a few important exceptions we're required by law to disclose (serious risk of harm to yourself or others, subpoena, or child protection concerns). Your counsellor will explain this at your first session.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-a-6-content" id="faq-a-6-btn">
+                <span class="faq-question">Is there a cost?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-a-6-content" role="region" aria-labelledby="faq-a-6-btn">
+                <div class="faq-content-inner">
+                  <p>Most Oakdene services are free. Some community services (like the Ladies Boutique) ask for a gold coin donation. We'll always be upfront about any cost before you start.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ============================================================
+             CATEGORY B — Counselling and clinical services
+             ============================================================ -->
+        <div class="faq-category" id="cat-b">
+          <h2 class="faq-cat-heading">B. Counselling and clinical services</h2>
+          <div class="faq-group">
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-b-1-content" id="faq-b-1-btn">
+                <span class="faq-question">What kind of counselling do you offer?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-b-1-content" role="region" aria-labelledby="faq-b-1-btn">
+                <div class="faq-content-inner">
+                  <p>We offer individual counselling, gambling counselling (via Catholic Care), and group programs. Our counsellors have specialist training in addiction, recovery, trauma, and mental health.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-b-2-content" id="faq-b-2-btn">
+                <span class="faq-question">How long are counselling sessions?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-b-2-content" role="region" aria-labelledby="faq-b-2-btn">
+                <div class="faq-content-inner">
+                  <p>Typically 50–60 minutes. Your counsellor will talk with you about frequency — weekly, fortnightly, or as needed.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-b-3-content" id="faq-b-3-btn">
+                <span class="faq-question">What is the Life Choices Program?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-b-3-content" role="region" aria-labelledby="faq-b-3-btn">
+                <div class="faq-content-inner">
+                  <p>A 6-week group program focused on recovery, life skills, and peer connection. See the <a href="/services/life-choices-program/">Life Choices page</a> for details.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-b-4-content" id="faq-b-4-btn">
+                <span class="faq-question">What is the Outpatients Program?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-b-4-content" role="region" aria-labelledby="faq-b-4-btn">
+                <div class="faq-content-inner">
+                  <p>A structured rehabilitation program combining counselling, group sessions, 12-step support, and peer mentoring. See the <a href="/services/outpatients-program/">Outpatients Program page</a> for details.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-b-5-content" id="faq-b-5-btn">
+                <span class="faq-question">Do you offer support in languages other than English?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-b-5-content" role="region" aria-labelledby="faq-b-5-btn">
+                <div class="faq-content-inner">
+                  <p>Yes. Several of our staff speak languages other than English, and we can arrange an interpreter if you let us know when you contact us. Our AA / GA meetings include Spanish-speaking sessions.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ============================================================
+             CATEGORY C — Community programs
+             ============================================================ -->
+        <div class="faq-category" id="cat-c">
+          <h2 class="faq-cat-heading">C. Community programs</h2>
+          <div class="faq-group">
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-c-1-content" id="faq-c-1-btn">
+                <span class="faq-question">When is the Kitchen open?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-c-1-content" role="region" aria-labelledby="faq-c-1-btn">
+                <div class="faq-content-inner">
+                  <p>Tuesday, Wednesday, and Thursday, 12pm–2pm. Free nutritious meals are available to eligible community members.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-c-2-content" id="faq-c-2-btn">
+                <span class="faq-question">When is the Laundrette open?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-c-2-content" role="region" aria-labelledby="faq-c-2-btn">
+                <div class="faq-content-inner">
+                  <p>Tuesday to Thursday, 12pm–2:30pm (last entry 1pm). Washing, drying, and detergent are provided free.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-c-3-content" id="faq-c-3-btn">
+                <span class="faq-question">Can I get food to take home?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-c-3-content" role="region" aria-labelledby="faq-c-3-btn">
+                <div class="faq-content-inner">
+                  <p>Yes. Staple Food Packs are available every Friday, 12pm–2pm.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-c-4-content" id="faq-c-4-btn">
+                <span class="faq-question">What is the Ladies Boutique?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-c-4-content" role="region" aria-labelledby="faq-c-4-btn">
+                <div class="faq-content-inner">
+                  <p>A warm, private space offering quality clothing and salon services for women, by appointment. No woman is turned away due to financial difficulty.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-c-5-content" id="faq-c-5-btn">
+                <span class="faq-question">Do I need to book?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-c-5-content" role="region" aria-labelledby="faq-c-5-btn">
+                <div class="faq-content-inner">
+                  <p>Most drop-in community services don't need a booking during open hours. Ladies Boutique and counselling are by appointment.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ============================================================
+             CATEGORY D — Volunteering
+             ============================================================ -->
+        <div class="faq-category" id="cat-d">
+          <h2 class="faq-cat-heading">D. Volunteering</h2>
+          <div class="faq-group">
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-d-1-content" id="faq-d-1-btn">
+                <span class="faq-question">How do I apply to volunteer?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-d-1-content" role="region" aria-labelledby="faq-d-1-btn">
+                <div class="faq-content-inner">
+                  <p>Submit our <a href="/community-programs/volunteering/">volunteer application form</a>. We'll get back to you within 2 business days to arrange a brief conversation.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-d-2-content" id="faq-d-2-btn">
+                <span class="faq-question">Do I need experience?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-d-2-content" role="region" aria-labelledby="faq-d-2-btn">
+                <div class="faq-content-inner">
+                  <p>No. We value willingness, reliability, and a caring approach more than prior experience. We'll support you in your role.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-d-3-content" id="faq-d-3-btn">
+                <span class="faq-question">Can my workplace / team volunteer together?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-d-3-content" role="region" aria-labelledby="faq-d-3-btn">
+                <div class="faq-content-inner">
+                  <p>Yes — we offer structured corporate volunteering days. See the <a href="/community-programs/volunteering/corporate-volunteering/">Corporate Volunteering page</a> or get in touch.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-d-4-content" id="faq-d-4-btn">
+                <span class="faq-question">Will I need a police check?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-d-4-content" role="region" aria-labelledby="faq-d-4-btn">
+                <div class="faq-content-inner">
+                  <p>For some volunteer roles (especially those involving clients or children), yes. We'll discuss this during your application.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ============================================================
+             CATEGORY E — Donations and partnerships
+             ============================================================ -->
+        <div class="faq-category" id="cat-e">
+          <h2 class="faq-cat-heading">E. Donations and partnerships</h2>
+          <div class="faq-group">
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-e-1-content" id="faq-e-1-btn">
+                <span class="faq-question">Is my donation tax-deductible?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-e-1-content" role="region" aria-labelledby="faq-e-1-btn">
+                <div class="faq-content-inner">
+                  <p>Yes — donations of $2 or more are tax-deductible, subject to our DGR status.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-e-2-content" id="faq-e-2-btn">
+                <span class="faq-question">Can I set up a regular monthly donation?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-e-2-content" role="region" aria-labelledby="faq-e-2-btn">
+                <div class="faq-content-inner">
+                  <p>Yes — see our <a href="/support-us/">Support Us page</a> for one-off or monthly giving options.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-e-3-content" id="faq-e-3-btn">
+                <span class="faq-question">How do I cancel a monthly donation?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-e-3-content" role="region" aria-labelledby="faq-e-3-btn">
+                <div class="faq-content-inner">
+                  <p>Email <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a> or use the cancellation link in your donation email.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-e-4-content" id="faq-e-4-btn">
+                <span class="faq-question">How are donations used?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-e-4-content" role="region" aria-labelledby="faq-e-4-btn">
+                <div class="faq-content-inner">
+                  <p>Oakdene operates lean. Over 90% of donations go directly to service delivery.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-e-5-content" id="faq-e-5-btn">
+                <span class="faq-question">My company wants to partner with Oakdene. Who do I contact?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-e-5-content" role="region" aria-labelledby="faq-e-5-btn">
+                <div class="faq-content-inner">
+                  <p>Email <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a> or use the <a href="/contact/">contact form</a> and select "Partnership or organisation enquiry".</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ============================================================
+             CATEGORY F — About Oakdene
+             ============================================================ -->
+        <div class="faq-category" id="cat-f">
+          <h2 class="faq-cat-heading">F. About Oakdene</h2>
+          <div class="faq-group">
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-f-1-content" id="faq-f-1-btn">
+                <span class="faq-question">Where are you located?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-f-1-content" role="region" aria-labelledby="faq-f-1-btn">
+                <div class="faq-content-inner">
+                  <p>29 Vine Street, Fairfield NSW 2165. Parking is available via the Fairfield RSL open-air car park at the corner of Vine and Bertha Streets.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-f-2-content" id="faq-f-2-btn">
+                <span class="faq-question">What are your opening hours?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-f-2-content" role="region" aria-labelledby="faq-f-2-btn">
+                <div class="faq-content-inner">
+                  <p>The centre is open Monday to Friday during business hours. Individual services have their own hours — see the <a href="/contact/">Contact page</a> for the full schedule.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-f-3-content" id="faq-f-3-btn">
+                <span class="faq-question">Are you a registered charity?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-f-3-content" role="region" aria-labelledby="faq-f-3-btn">
+                <div class="faq-content-inner">
+                  <p>Yes. Oakdene House Foundation is a registered Australian charity with the ACNC. ABN 90 151 950 926.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-f-4-content" id="faq-f-4-btn">
+                <span class="faq-question">Is Oakdene religiously affiliated?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-f-4-content" role="region" aria-labelledby="faq-f-4-btn">
+                <div class="faq-content-inner">
+                  <p>Oakdene's services are open to everyone regardless of religion, background, or beliefs.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- ============================================================
+             CATEGORY G — Privacy and information
+             ============================================================ -->
+        <div class="faq-category" id="cat-g">
+          <h2 class="faq-cat-heading">G. Privacy and information</h2>
+          <div class="faq-group">
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-g-1-content" id="faq-g-1-btn">
+                <span class="faq-question">How do you handle my personal information?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-g-1-content" role="region" aria-labelledby="faq-g-1-btn">
+                <div class="faq-content-inner">
+                  <p>See our <a href="/privacy-policy/">Privacy Policy</a>. In short: we collect only what we need to support you, keep it secure, and don't share it without your consent except where required by law.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-btn" aria-expanded="false" aria-controls="faq-g-2-content" id="faq-g-2-btn">
+                <span class="faq-question">Can I see what information you hold about me?</span>
+                <svg class="faq-chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="faq-content" id="faq-g-2-content" role="region" aria-labelledby="faq-g-2-btn">
+                <div class="faq-content-inner">
+                  <p>Yes — you can request access to your records at any time. Contact us at <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a>.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- SIGN-OFF -->
+        <div class="faq-signoff">
+          <h2 class="faq-signoff__heading">Still can't find what you're looking for?</h2>
+          <div class="faq-signoff__btns">
+            <a href="/contact/" class="btn btn--primary">Contact us</a>
+            <a href="tel:+61287170999" class="btn btn--secondary">Call (02) 8717 0999</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  /* ---- Hero ---- */
+  .faq-hero {
+    background-color: var(--color-primary);
+    padding-block: 52px 44px;
+  }
+
+  .faq-hero h1 {
+    color: var(--color-white);
+    margin-bottom: 14px;
+  }
+
+  .faq-hero__subtitle {
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.0625rem;
+    line-height: 1.6;
+    max-width: 600px;
+    margin-bottom: 0;
+  }
+
+  /* ---- Page wrapper ---- */
+  .faq-wrap {
+    max-width: 860px;
+    margin-inline: auto;
+  }
+
+  /* ---- Jumplinks ---- */
+  .faq-jumplinks {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 40px;
+  }
+
+  .faq-jumplinks a {
+    display: inline-flex;
+    align-items: center;
+    padding: 6px 14px;
+    border: 1.5px solid var(--color-primary);
+    border-radius: 20px;
+    color: var(--color-primary);
+    font-size: 0.875rem;
+    font-weight: 500;
+    text-decoration: none;
+    white-space: nowrap;
+    transition: background-color var(--transition), color var(--transition);
+  }
+
+  .faq-jumplinks a:hover {
+    background-color: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  /* ---- Category blocks ---- */
+  .faq-category {
+    margin-bottom: 52px;
+  }
+
+  .faq-cat-heading {
+    font-size: 1.1875rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 16px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--color-secondary);
+    scroll-margin-top: 88px;
+  }
+
+  /* ---- Accordion group container ---- */
+  .faq-group {
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--radius-card);
+    overflow: hidden;
+  }
+
+  /* ---- Individual accordion item ---- */
+  .faq-item {
+    border-bottom: 1px solid var(--color-secondary);
+  }
+
+  .faq-item:last-child {
+    border-bottom: none;
+  }
+
+  /* ---- Question button ---- */
+  .faq-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 24px;
+    background-color: var(--color-white);
+    border: none;
+    cursor: pointer;
+    text-align: left;
+    min-height: 64px;
+    transition: background-color var(--transition);
+  }
+
+  .faq-btn:hover {
+    background-color: var(--color-tint);
+  }
+
+  .faq-btn:focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: -3px;
+  }
+
+  .faq-item.is-open .faq-btn {
+    background-color: var(--color-tint);
+  }
+
+  /* ---- Question text ---- */
+  .faq-question {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    line-height: 1.45;
+  }
+
+  .faq-item.is-open .faq-question {
+    color: var(--color-primary);
+  }
+
+  /* ---- Chevron ---- */
+  .faq-chevron {
+    flex-shrink: 0;
+    color: var(--color-primary);
+    opacity: 0.7;
+    transition: transform 200ms ease;
+  }
+
+  .faq-item.is-open .faq-chevron {
+    transform: rotate(180deg);
+  }
+
+  /* ---- Answer panel — grid-template-rows animation ---- */
+  .faq-content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 200ms ease;
+  }
+
+  .faq-item.is-open .faq-content {
+    grid-template-rows: 1fr;
+  }
+
+  /* min-height: 0 is required for the 0fr grid trick to work */
+  .faq-content-inner {
+    min-height: 0;
+    overflow: hidden;
+    background-color: var(--color-tint);
+    border-top: 1px solid var(--color-secondary);
+  }
+
+  .faq-content-inner p {
+    padding: 16px 24px 24px 24px;
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+    line-height: 1.72;
+    margin: 0;
+  }
+
+  .faq-content-inner a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color var(--transition);
+  }
+
+  .faq-content-inner a:hover {
+    color: var(--color-link-hover);
+  }
+
+  /* ---- Sign-off block ---- */
+  .faq-signoff {
+    margin-top: 64px;
+    padding: 48px 40px;
+    background-color: var(--color-tint);
+    border-radius: var(--radius-card);
+    text-align: center;
+    border: 1px solid var(--color-secondary);
+  }
+
+  .faq-signoff__heading {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 24px;
+  }
+
+  .faq-signoff__btns {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 600px) {
+    .faq-btn {
+      padding: 18px 18px;
+      min-height: 56px;
+    }
+
+    .faq-content-inner p {
+      padding: 14px 18px 20px 18px;
+    }
+
+    .faq-signoff {
+      padding: 36px 24px;
+    }
+
+    .faq-signoff__heading {
+      font-size: 1.25rem;
+    }
+  }
+</style>
+
+<script>
+  const faqItems = document.querySelectorAll<HTMLElement>('.faq-item');
+
+  // MULTI-OPEN accordion: each button toggles ONLY its own panel.
+  // Clicking question X does NOT close any other open questions.
+  // This is intentional — the more common exclusive-accordion pattern (where
+  // opening one item closes all others) is deliberately NOT used here.
+  // Each item operates independently.
+
+  faqItems.forEach(item => {
+    const btn = item.querySelector<HTMLButtonElement>('.faq-btn');
+    if (!btn) return;
+
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      item.classList.toggle('is-open', !isOpen);
+    });
+  });
+</script>
