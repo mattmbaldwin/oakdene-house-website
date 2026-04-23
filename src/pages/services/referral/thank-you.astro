@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Referral Received — Oakdene House Foundation"
+  description="Your referral to Oakdene House Foundation has been received. Someone from the team will be in touch within 2 business days."
+  ogImage="/images/generic/bandw-forset-sun-beam.jpeg"
+>
+
+  <!-- HERO -->
+  <section class="ty-hero" aria-label="Referral received">
+    <div class="ty-hero__overlay" aria-hidden="true"></div>
+    <div class="container ty-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/services/">Services</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/services/referral/">Make a Referral</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Thank You</span>
+      </nav>
+      <h1>Thanks — we've received your referral</h1>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="section" aria-label="What happens next">
+    <div class="container">
+      <div class="ty-body">
+        <p>Someone from the Oakdene team will be in touch within 2 business days. If the situation changes or becomes urgent, please call us on <a href="tel:0287170999">(02) 8717 0999</a> during business hours. For 24-hour crisis support, visit our <a href="/need-help-now/">Need Help Now</a> page.</p>
+        <div class="ty-actions">
+          <a href="/" class="btn btn--primary">Back to Home</a>
+          <a href="/need-help-now/" class="btn btn--secondary">Need Help Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .ty-hero {
+    position: relative;
+    min-height: 320px;
+    background-image: url('/images/generic/bandw-forset-sun-beam.jpeg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .ty-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.4) 0%, rgba(0,62,81,0.88) 100%);
+  }
+
+  .ty-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 56px;
+    max-width: 740px;
+  }
+
+  .ty-hero__content h1 {
+    color: var(--color-white);
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+
+  .ty-body {
+    max-width: 640px;
+    margin-inline: auto;
+    text-align: center;
+    padding-block: 20px;
+  }
+
+  .ty-body p {
+    font-size: 1.125rem;
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+
+  .ty-body a {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  .ty-body a:hover {
+    color: var(--color-primary-hover);
+  }
+
+  .ty-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 480px) {
+    .ty-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+</style>

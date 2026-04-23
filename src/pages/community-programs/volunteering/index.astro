@@ -62,7 +62,7 @@ const types = [
           <ul class="reasons-list">
             {reasons.map(r => <li>{r}</li>)}
           </ul>
-          <a href="/community-programs/volunteering/" class="btn btn--primary">Apply to Volunteer</a><!-- TODO: Replace with live Jotform URL -->
+          <a href="#volunteer-form" class="btn btn--primary">Apply to Volunteer</a>
         </div>
         <div>
           <div class="vol-image">
@@ -131,10 +131,32 @@ const types = [
     </div>
   </section>
 
+  <!-- VOLUNTEER FORM -->
+  <section class="section section--tint" id="volunteer-form" aria-labelledby="vol-form-heading">
+    <div class="container">
+      <div class="vol-form-inner">
+        <h2 id="vol-form-heading">Apply to volunteer</h2>
+        <p class="vol-form-intro">We'd love to hear from you. Fill in the form below and we'll get back to you within 2 business days to arrange a quick conversation about your interests and availability. You don't need prior experience — we value willingness, reliability, and a caring approach more than anything else.</p>
+        <iframe
+          id="JotFormIFrame-260837985458072"
+          title="Volunteer application — Oakdene House Foundation"
+          src="https://form.jotform.com/260837985458072"
+          class="jotform-embed"
+          frameborder="0"
+          scrolling="no"
+          loading="lazy"
+          allow="geolocation; microphone; camera; fullscreen"
+        ></iframe>
+        <script is:inline src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script is:inline>window.jotformEmbedHandler("iFrameId=JotFormIFrame-260837985458072", "https://form.jotform.com/");</script>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <CTABand
     heading="Ready to get involved?"
-    primaryBtn={{ text: 'Apply to Volunteer', href: '/community-programs/volunteering/' }}
+    primaryBtn={{ text: 'Apply to Volunteer', href: '#volunteer-form' }}
     secondaryBtn={{ text: 'Partnership Enquiry', href: '/contact/' }}
     dark={true}
   />
@@ -310,5 +332,32 @@ const types = [
 
   @media (max-width: 480px) {
     .expect-grid { grid-template-columns: 1fr; }
+  }
+
+  /* Volunteer form section */
+  .vol-form-inner {
+    max-width: 760px;
+    margin-inline: auto;
+  }
+
+  .vol-form-inner h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 16px;
+  }
+
+  .vol-form-intro {
+    font-size: 1.0625rem;
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: 32px;
+  }
+
+  .jotform-embed {
+    display: block;
+    width: 100%;
+    min-height: 539px;
+    border: none;
   }
 </style>

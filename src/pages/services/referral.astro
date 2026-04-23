@@ -26,25 +26,28 @@ import CTABand from '../../components/CTABand.astro';
   </section>
 
   <!-- MAIN CONTENT -->
-  <section class="section" aria-labelledby="referral-intro-heading">
+  <section class="section" aria-label="Referral form">
     <div class="container">
       <div class="referral-layout">
 
         <!-- Main column -->
         <div class="referral-main">
-          <div class="section-heading">
-            <p class="section-heading__eyebrow">Submit a Referral</p>
-            <h2 id="referral-intro-heading">Who can use this form?</h2>
-          </div>
-          <p class="referral-intro">This form is for anyone referring someone to Oakdene — whether you're referring yourself, a family member, or a client as a professional worker. Complete the form below and our team will review your referral and be in touch within 2 business days. If the situation is urgent, please also call us on <a href="tel:0287170999">(02) 8717 0999</a>. Everything you share is confidential and handled in line with our privacy policy.</p>
+          <p class="referral-intro">This form is for anyone referring someone to Oakdene — whether you're referring yourself, a family member, or a client as a professional worker. Complete the form below and our team will review your referral and be in touch within 2 business days. If the situation is urgent, please also call us on <a href="tel:0287170999">(02) 8717 0999</a>.</p>
+          <p class="referral-intro referral-intro--privacy"><em>Everything you share is confidential and handled in line with our <a href="/privacy-policy/">privacy policy</a>.</em></p>
 
-          <!-- Jotform placeholder -->
-          <div class="form-placeholder" aria-label="Referral form loading area">
-            <div class="form-placeholder__inner">
-              <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
-              <p>Referral form — embedding coming soon</p>
-            </div>
-          </div><!-- TODO: Replace with live Jotform URL -->
+          <!-- Jotform embed — referral form ID 253010226998054 -->
+          <iframe
+            id="JotFormIFrame-253010226998054"
+            title="Referral form — Oakdene House Foundation"
+            src="https://form.jotform.com/253010226998054"
+            class="jotform-embed"
+            frameborder="0"
+            scrolling="no"
+            loading="lazy"
+            allow="geolocation; microphone; camera; fullscreen"
+          ></iframe>
+          <script is:inline src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+          <script is:inline>window.jotformEmbedHandler("iFrameId=JotFormIFrame-253010226998054", "https://form.jotform.com/");</script>
         </div>
 
         <!-- Sidebar -->
@@ -140,34 +143,25 @@ import CTABand from '../../components/CTABand.astro';
     font-weight: 500;
   }
 
-  /* Form placeholder */
-  .form-placeholder {
-    border: 2px dashed #C6D6E3;
-    border-radius: var(--radius-card);
-    min-height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-tint);
-  }
-
-  .form-placeholder__inner {
-    text-align: center;
-    color: var(--color-muted);
-    padding: 40px;
-  }
-
-  .form-placeholder__inner svg {
+  /* Form embed */
+  .jotform-embed {
     display: block;
-    margin: 0 auto 16px;
-    opacity: 0.45;
+    width: 100%;
+    min-height: 539px;
+    border: none;
   }
 
-  .form-placeholder__inner p {
-    font-size: 1rem;
-    font-weight: 500;
+  /* Privacy sentence */
+  .referral-intro--privacy {
+    font-size: 0.9375rem;
     color: var(--color-muted);
-    margin-bottom: 0;
+    margin-top: -16px;
+    margin-bottom: 28px;
+  }
+
+  .referral-intro--privacy a {
+    color: var(--color-primary);
+    font-weight: 500;
   }
 
   /* Sidebar */

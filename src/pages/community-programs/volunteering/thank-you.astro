@@ -1,0 +1,109 @@
+---
+import BaseLayout from '../../../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Thanks for Applying — Oakdene House Foundation"
+  description="Thanks for applying to volunteer with Oakdene House Foundation. We'll be in touch within 2 business days."
+  ogImage="/images/kitchen/oakdene-kitchen-volunteer-serving-with-smile.jpg"
+>
+
+  <!-- HERO -->
+  <section class="ty-hero" aria-label="Volunteer application received">
+    <div class="ty-hero__overlay" aria-hidden="true"></div>
+    <div class="container ty-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/community-programs/">Community Programs</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/community-programs/volunteering/">Volunteering</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Thank You</span>
+      </nav>
+      <h1>Thanks for applying to volunteer with Oakdene</h1>
+    </div>
+  </section>
+
+  <!-- CONTENT -->
+  <section class="section" aria-label="What happens next">
+    <div class="container">
+      <div class="ty-body">
+        <p>We'll be in touch within 2 business days to arrange a brief chat. In the meantime, feel free to explore our <a href="/services/">services</a> and <a href="/community-programs/">community programs</a> — it's a good way to get a feel for how Oakdene works. If you have questions in the meantime, call us on <a href="tel:0287170999">(02) 8717 0999</a> or email <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a>.</p>
+        <div class="ty-actions">
+          <a href="/" class="btn btn--primary">Back to Home</a>
+          <a href="/services/" class="btn btn--secondary">Explore Services</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
+
+<style>
+  .ty-hero {
+    position: relative;
+    min-height: 320px;
+    background-image: url('/images/kitchen/oakdene-kitchen-volunteer-serving-with-smile.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .ty-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.3) 0%, rgba(0,62,81,0.88) 100%);
+  }
+
+  .ty-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 56px;
+    max-width: 740px;
+  }
+
+  .ty-hero__content h1 {
+    color: var(--color-white);
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+
+  .ty-body {
+    max-width: 640px;
+    margin-inline: auto;
+    text-align: center;
+    padding-block: 20px;
+  }
+
+  .ty-body p {
+    font-size: 1.125rem;
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: 40px;
+  }
+
+  .ty-body a {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  .ty-body a:hover {
+    color: var(--color-primary-hover);
+  }
+
+  .ty-actions {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 480px) {
+    .ty-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+</style>
