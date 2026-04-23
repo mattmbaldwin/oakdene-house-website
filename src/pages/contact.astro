@@ -217,50 +217,131 @@ const contactCards = [
   <!-- ENQUIRY FORM -->
   <section class="section section--tint" aria-labelledby="form-heading">
     <div class="container form-container">
-      <div class="section-heading">
-        <p class="section-heading__eyebrow">Get in Touch</p>
-        <h2 id="form-heading">Send us a message</h2>
-        <p class="section-heading__lead">Use this form for general questions about Oakdene, our services, volunteering, or partnership opportunities.</p>
+
+      <h2 id="form-heading">We'd love to hear from you</h2>
+      <p class="form-intro">Whether you're looking for support, interested in one of our programs, considering a partnership, or just want to know more about Oakdene — send us a message and we'll be in touch within 2 business days.</p>
+
+      <!-- Success state -->
+      <div class="form-success" id="form-success" hidden tabindex="-1">
+        <p class="form-success__heading"><strong>Thanks — your message has been sent. We'll be in touch within 2 business days.</strong></p>
+        <p>If you need support urgently, please call us on <a href="tel:+61287170999">(02) 8717 0999</a> during business hours, or visit our <a href="/need-help-now/">Need Help Now</a> page for 24/7 support.</p>
       </div>
 
-      <!-- TODO: Embed Jotform General Enquiry form here -->
-      <div class="form-placeholder" aria-label="Contact form — to be replaced by live Jotform embed">
-        <p class="form-placeholder__note">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          Online form coming soon — replace with live Jotform embed
-        </p>
-        <div class="form-placeholder__fields">
-          <div class="form-row">
-            <div class="form-field">
-              <label for="fp-first">First name</label>
-              <input id="fp-first" type="text" placeholder="First name" disabled aria-disabled="true" />
-            </div>
-            <div class="form-field">
-              <label for="fp-last">Last name</label>
-              <input id="fp-last" type="text" placeholder="Last name" disabled aria-disabled="true" />
-            </div>
-          </div>
-          <div class="form-row">
-            <div class="form-field">
-              <label for="fp-email">Email</label>
-              <input id="fp-email" type="email" placeholder="Email address" disabled aria-disabled="true" />
-            </div>
-            <div class="form-field">
-              <label for="fp-phone">Phone <span class="form-field__optional">(optional)</span></label>
-              <input id="fp-phone" type="tel" placeholder="Phone number" disabled aria-disabled="true" />
-            </div>
-          </div>
-          <div class="form-field">
-            <label for="fp-reason">Reason for enquiry</label>
-            <input id="fp-reason" type="text" placeholder="e.g. Services, Volunteering, Partnership" disabled aria-disabled="true" />
-          </div>
-          <div class="form-field">
-            <label for="fp-message">Message</label>
-            <textarea id="fp-message" rows="5" placeholder="Your message" disabled aria-disabled="true"></textarea>
-          </div>
-          <button class="btn btn--primary" disabled aria-disabled="true">Submit</button>
+      <!-- Form-level error banner (populated by JS; hidden via :empty when blank) -->
+      <div class="form-error-banner" id="form-error-banner" role="alert" aria-live="assertive" tabindex="-1"></div>
+
+      <form id="contact-form" class="contact-form" novalidate>
+
+        <!-- Honeypot: hidden from sighted users and screen readers; bots fill it in -->
+        <div class="contact-honeypot" aria-hidden="true">
+          <label for="website">Leave this blank</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
         </div>
-      </div>
+
+        <div class="form-row">
+          <div class="form-field" id="field-first-name">
+            <label for="first-name">First name <span class="form-field__req" aria-hidden="true">*</span></label>
+            <input
+              id="first-name"
+              name="first_name"
+              type="text"
+              autocomplete="given-name"
+              aria-required="true"
+              aria-describedby="first-name-error"
+            />
+            <p class="form-field__error" id="first-name-error" role="alert"></p>
+          </div>
+          <div class="form-field" id="field-last-name">
+            <label for="last-name">Last name <span class="form-field__req" aria-hidden="true">*</span></label>
+            <input
+              id="last-name"
+              name="last_name"
+              type="text"
+              autocomplete="family-name"
+              aria-required="true"
+              aria-describedby="last-name-error"
+            />
+            <p class="form-field__error" id="last-name-error" role="alert"></p>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field" id="field-email">
+            <label for="email">Email <span class="form-field__req" aria-hidden="true">*</span></label>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              autocomplete="email"
+              aria-required="true"
+              aria-describedby="email-error"
+            />
+            <p class="form-field__error" id="email-error" role="alert"></p>
+          </div>
+          <div class="form-field">
+            <label for="phone">Phone <span class="form-field__optional">(optional)</span></label>
+            <input
+              id="phone"
+              name="phone"
+              type="tel"
+              autocomplete="tel"
+            />
+          </div>
+        </div>
+
+        <div class="form-field" id="field-reason">
+          <label for="reason">Reason for enquiry <span class="form-field__req" aria-hidden="true">*</span></label>
+          <select
+            id="reason"
+            name="reason"
+            aria-required="true"
+            aria-describedby="reason-error"
+          >
+            <option value="" disabled selected>Select a reason…</option>
+            <option value="general">General enquiry</option>
+            <option value="counselling">Counselling or support</option>
+            <option value="community-programs">Community programs</option>
+            <option value="program-interest">Program interest — I'd like to join a program</option>
+            <option value="volunteering">Volunteering</option>
+            <option value="partnership">Partnership or organisation enquiry</option>
+            <option value="donation">Donation or fundraising</option>
+            <option value="media">Media enquiry</option>
+            <option value="other">Other</option>
+          </select>
+          <p class="form-field__error" id="reason-error" role="alert"></p>
+        </div>
+
+        <div class="form-field" id="field-message">
+          <label for="message">Message <span class="form-field__req" aria-hidden="true">*</span></label>
+          <textarea
+            id="message"
+            name="message"
+            rows="6"
+            aria-required="true"
+            aria-describedby="message-error"
+          ></textarea>
+          <p class="form-field__error" id="message-error" role="alert"></p>
+        </div>
+
+        <div class="form-field form-field--checkbox" id="field-consent">
+          <div class="checkbox-wrapper">
+            <input
+              type="checkbox"
+              id="consent"
+              name="consent"
+              aria-required="true"
+              aria-describedby="consent-error"
+            />
+            <label for="consent">I understand my enquiry will be handled in line with Oakdene's <a href="/privacy-policy/">privacy policy</a>.</label>
+          </div>
+          <p class="form-field__error" id="consent-error" role="alert"></p>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" id="submit-btn" class="btn btn--primary">Send message</button>
+        </div>
+
+      </form>
     </div>
   </section>
 
@@ -273,6 +354,127 @@ const contactCards = [
     dark={true}
   />
 
+<script is:inline>
+(function () {
+  // URL pre-fill: ?reason=<slug> pre-selects the dropdown
+  var validReasons = ['general','counselling','community-programs','program-interest',
+    'volunteering','partnership','donation','media','other'];
+  var slug = new URLSearchParams(window.location.search).get('reason');
+  if (slug && validReasons.indexOf(slug) !== -1) {
+    var sel = document.getElementById('reason');
+    if (sel) sel.value = slug;
+  }
+
+  var form      = document.getElementById('contact-form');
+  var submitBtn = document.getElementById('submit-btn');
+  var successEl = document.getElementById('form-success');
+  var errorBanner = document.getElementById('form-error-banner');
+  if (!form) return;
+
+  // Required field definitions
+  var fields = [
+    { id: 'first-name', wrId: 'field-first-name', errId: 'first-name-error', msg: 'Please enter your first name.'                     },
+    { id: 'last-name',  wrId: 'field-last-name',  errId: 'last-name-error',  msg: 'Please enter your last name.'                      },
+    { id: 'email',      wrId: 'field-email',       errId: 'email-error',      msg: 'Please enter a valid email address.'               },
+    { id: 'reason',     wrId: 'field-reason',      errId: 'reason-error',     msg: 'Please select a reason for your enquiry.'          },
+    { id: 'message',    wrId: 'field-message',     errId: 'message-error',    msg: 'Please enter a message.'                          },
+    { id: 'consent',    wrId: 'field-consent',     errId: 'consent-error',    msg: 'Please confirm you have read the privacy policy.'  },
+  ];
+
+  function isValid(el) {
+    if (el.type === 'checkbox') return el.checked;
+    if (el.type === 'email')    return el.value.trim() !== '' && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(el.value);
+    if (el.tagName === 'SELECT') return el.value !== '';
+    return el.value.trim() !== '';
+  }
+
+  function setError(f, msg) {
+    var el = document.getElementById(f.id);
+    var wr = document.getElementById(f.wrId);
+    var er = document.getElementById(f.errId);
+    if (!el || !wr || !er) return;
+    er.textContent = msg;
+    wr.classList.add('form-field--error');
+    el.setAttribute('aria-invalid', 'true');
+  }
+
+  function clearError(f) {
+    var el = document.getElementById(f.id);
+    var wr = document.getElementById(f.wrId);
+    var er = document.getElementById(f.errId);
+    if (!el || !wr || !er) return;
+    er.textContent = '';
+    wr.classList.remove('form-field--error');
+    el.removeAttribute('aria-invalid');
+  }
+
+  function validate() {
+    var first = null;
+    fields.forEach(function (f) {
+      var el = document.getElementById(f.id);
+      if (!el) return;
+      if (!isValid(el)) { setError(f, f.msg); if (!first) first = el; }
+      else clearError(f);
+    });
+    if (first) first.focus();
+    return !first;
+  }
+
+  // Clear individual field errors as the user corrects them
+  fields.forEach(function (f) {
+    var el = document.getElementById(f.id);
+    if (!el) return;
+    var evts = el.type === 'checkbox' ? ['change'] : ['input', 'change'];
+    evts.forEach(function (evt) {
+      el.addEventListener(evt, function () { if (isValid(el)) clearError(f); });
+    });
+  });
+
+  // Submit handler
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    errorBanner.innerHTML = '';
+
+    if (!validate()) return;
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Sending\u2026';
+
+    var fd = new FormData(form);
+    try {
+      var res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          first_name: fd.get('first_name'),
+          last_name:  fd.get('last_name'),
+          email:      fd.get('email'),
+          phone:      fd.get('phone') || '',
+          reason:     fd.get('reason'),
+          message:    fd.get('message'),
+          website:    fd.get('website') || '',
+        }),
+      });
+
+      if (!res.ok) throw new Error('non-200');
+
+      form.hidden = true;
+      successEl.hidden = false;
+      successEl.focus();
+
+    } catch (_) {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send message';
+      errorBanner.innerHTML =
+        'Sorry, something went wrong sending your message. Please call us on ' +
+        '<a href="tel:+61287170999">(02)\u00a08717\u00a00999</a> or email ' +
+        '<a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a> ' +
+        'and we\u2019ll get back to you.';
+      errorBanner.focus();
+    }
+  });
+}());
+</script>
 </BaseLayout>
 
 <style>
@@ -451,35 +653,38 @@ const contactCards = [
     text-underline-offset: 2px;
   }
 
-  /* Form */
+  /* ── Form ──────────────────────────────────────────── */
   .form-container {
     max-width: 760px;
   }
 
-  .form-placeholder {
-    background: var(--color-white);
-    border-radius: var(--radius-card);
-    border: 1px solid var(--color-secondary);
-    padding: 32px;
-  }
-
-  .form-placeholder__note {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 0.875rem;
+  .form-container > h2 {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    font-weight: 600;
     color: var(--color-primary);
-    font-weight: 500;
-    background-color: var(--color-secondary);
-    padding: 10px 16px;
-    border-radius: var(--radius-btn);
-    margin-bottom: 28px;
+    margin-bottom: 16px;
   }
 
-  .form-placeholder__fields {
+  .form-intro {
+    font-size: 1.0625rem;
+    color: var(--color-text);
+    line-height: 1.7;
+    margin-bottom: 36px;
+  }
+
+  .contact-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+  }
+
+  /* Honeypot: off-screen, invisible to sighted users and AT */
+  .contact-honeypot {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
   }
 
   .form-row {
@@ -488,6 +693,7 @@ const contactCards = [
     gap: 16px;
   }
 
+  /* Field wrapper */
   .form-field {
     display: flex;
     flex-direction: column;
@@ -505,28 +711,183 @@ const contactCards = [
     color: var(--color-muted);
   }
 
-  .form-field input,
+  .form-field__req {
+    color: var(--color-primary);
+    margin-left: 1px;
+  }
+
+  /* Text inputs, select, textarea */
+  .form-field input:not([type="checkbox"]),
+  .form-field select,
   .form-field textarea {
     font-family: var(--font-body);
     font-size: 0.9375rem;
-    color: var(--color-muted);
+    color: var(--color-text);
     background-color: var(--color-tint);
-    border: 1px solid var(--color-secondary);
+    border: 1.5px solid var(--color-secondary);
     border-radius: var(--radius-btn);
-    padding: 12px 14px;
+    padding: 11px 14px;
     width: 100%;
-    resize: vertical;
-    cursor: not-allowed;
+    transition: border-color var(--transition), box-shadow var(--transition);
+    appearance: none;
+    -webkit-appearance: none;
   }
 
   .form-field textarea {
-    min-height: 120px;
+    min-height: 140px;
+    resize: vertical;
   }
 
-  .form-placeholder .btn {
-    align-self: flex-start;
-    opacity: 0.5;
-    cursor: not-allowed;
+  /* Select: custom chevron */
+  .form-field select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23003E51' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 40px;
+    cursor: pointer;
+  }
+
+  /* Focus states */
+  .form-field input:not([type="checkbox"]):focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(0, 62, 81, 0.12);
+  }
+
+  /* Per-field error state */
+  .form-field--error input:not([type="checkbox"]),
+  .form-field--error select,
+  .form-field--error textarea {
+    border-color: #c0392b;
+  }
+
+  .form-field--error input:not([type="checkbox"]):focus,
+  .form-field--error select:focus,
+  .form-field--error textarea:focus {
+    border-color: #c0392b;
+    box-shadow: 0 0 0 3px rgba(192, 57, 43, 0.12);
+  }
+
+  .form-field__error {
+    font-size: 0.8125rem;
+    color: #c0392b;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  .form-field__error:empty {
+    display: none;
+  }
+
+  /* Checkbox */
+  .form-field--checkbox {
+    gap: 4px;
+  }
+
+  .checkbox-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+  }
+
+  .checkbox-wrapper input[type="checkbox"] {
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    margin-top: 2px;
+    accent-color: var(--color-primary);
+    cursor: pointer;
+  }
+
+  .checkbox-wrapper label {
+    font-size: 0.9375rem;
+    font-weight: 400;
+    color: var(--color-text);
+    cursor: pointer;
+    line-height: 1.55;
+  }
+
+  .checkbox-wrapper label a {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  .checkbox-wrapper label a:hover {
+    color: var(--color-primary-hover);
+  }
+
+  .form-field--checkbox.form-field--error .checkbox-wrapper input[type="checkbox"] {
+    outline: 2px solid #c0392b;
+    outline-offset: 2px;
+  }
+
+  /* Submit */
+  .form-actions {
+    padding-top: 4px;
+  }
+
+  /* Form-level error banner */
+  .form-error-banner {
+    background-color: #fff0ee;
+    border: 1px solid #f5c5bf;
+    border-radius: var(--radius-btn);
+    padding: 14px 18px;
+    font-size: 0.9375rem;
+    color: #7b2a22;
+    line-height: 1.6;
+    margin-bottom: 8px;
+  }
+
+  .form-error-banner:empty {
+    display: none;
+  }
+
+  .form-error-banner a {
+    color: #7b2a22;
+    font-weight: 500;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+
+  /* Success message */
+  .form-success {
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    padding: 36px;
+    box-shadow: var(--shadow-card);
+  }
+
+  .form-success:focus {
+    outline: none;
+  }
+
+  .form-success__heading {
+    font-size: 1.125rem;
+    line-height: 1.5;
+    color: var(--color-text);
+    margin-bottom: 14px;
+  }
+
+  .form-success__heading strong {
+    color: var(--color-primary);
+  }
+
+  .form-success p:last-child {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.65;
+    margin-bottom: 0;
+  }
+
+  .form-success a {
+    color: var(--color-primary);
+    font-weight: 500;
+  }
+
+  .form-success a:hover {
+    color: var(--color-primary-hover);
   }
 
   .visually-hidden {
