@@ -458,7 +458,9 @@ const contactCards = [
 
       if (!res.ok) throw new Error('non-200');
 
-      form.hidden = true;
+      form.style.display = 'none';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Send message';
       successEl.hidden = false;
       successEl.focus();
 
