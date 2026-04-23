@@ -79,7 +79,7 @@ User agent: ${ua}`;
       },
       body: JSON.stringify({
         from:     env.CONTACT_EMAIL_FROM,
-        to:       [env.CONTACT_EMAIL_TO],
+        to:       env.CONTACT_EMAIL_TO,
         reply_to: email.trim(),
         subject:  `New contact form submission: ${reason.trim()}`,
         html:     htmlBody,
