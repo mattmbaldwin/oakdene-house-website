@@ -36,13 +36,13 @@ const involvement = [
   {
     heading: 'Join a program',
     body: 'Express interest directly or contact Oakdene to find out which program fits best.',
-    href: '/forms/',
+    href: '/contact/?reason=program-interest',
     linkText: 'Express Interest',
   },
   {
     heading: 'Refer someone',
     body: 'Workers and family members can refer using the referral form or by contacting us directly.',
-    href: '/forms/',
+    href: '/services/referral/',
     linkText: 'Submit Referral',
   },
   {
@@ -68,7 +68,7 @@ const involvement = [
       <p class="cp-hero__lead">Oakdene's programs are designed to bring people into safe, practical, community-based spaces where support feels real and participation matters.</p>
       <div class="btn-group">
         <a href="/services/" class="btn btn--white">Explore Programs</a>
-        <a href="/forms/" class="btn btn--white-outline">General Enquiry</a><!-- TODO: Replace with live Jotform URL -->
+        <a href="/contact/" class="btn btn--white-outline">General Enquiry</a><!-- TODO: Replace with live Jotform URL -->
       </div>
     </div>
   </section>
@@ -201,7 +201,7 @@ const involvement = [
   <!-- CTA -->
   <CTABand
     heading="Be part of something real"
-    primaryBtn={{ text: 'Express Interest', href: '/forms/' }}
+    primaryBtn={{ text: 'Express Interest', href: '/contact/?reason=program-interest' }}
     secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
     dark={true}
   />
