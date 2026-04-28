@@ -1,14 +1,12 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import CTABand from '../../components/CTABand.astro';
-
-const placeholderCount = 6;
 ---
 
 <BaseLayout
   title="Our Board — Oakdene House Foundation"
   description="Oakdene House Foundation is guided by a committed Board providing governance, oversight and strategic direction for our community charity in Fairfield, Western Sydney."
   ogImage="/images/centre/exterior-exterior-1-img_2651.jpg"
+  noindex={true}
 >
 
   <!-- HERO -->
@@ -22,59 +20,16 @@ const placeholderCount = 6;
         <span aria-current="page">Our Board</span>
       </nav>
       <h1>Our Board</h1>
-      <p class="board-hero__lead">Governance, oversight and strategic direction for Oakdene House Foundation.</p>
     </div>
   </section>
 
-  <!-- INTRO -->
-  <section class="section" aria-labelledby="board-intro-heading">
-    <div class="container intro-container">
-      <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Governance</p>
-        <h2 id="board-intro-heading">How we are governed</h2>
-      </div>
-      <p class="intro-lead">Oakdene House is guided by a committed Board that provides governance, oversight and strategic direction. Our Board supports the organisation to remain focused on its mission, accountable in its work and responsive to community need.</p>
+  <!-- HOLDING MESSAGE -->
+  <section class="section" aria-label="Board profiles">
+    <div class="container holding-container">
+      <h2>Board profiles</h2>
+      <p>Our Board profiles are currently being updated. For Board enquiries, please contact us at <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a> or call <a href="tel:+61287170999">(02) 8717 0999</a>.</p>
     </div>
   </section>
-
-  <!-- BOARD PLACEHOLDERS -->
-  <section class="section section--tint" aria-label="Board members">
-    <div class="container">
-      <div class="placeholder-notice" role="note">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-        <p>Board member profiles to be supplied by Oakdene before launch.</p>
-      </div>
-      <div class="board-grid">
-        {Array.from({ length: placeholderCount }).map(() => (
-          <div class="board-card">
-            <div class="board-card__avatar" aria-hidden="true">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-            </div>
-            <div class="board-card__lines">
-              <div class="board-card__line board-card__line--name"></div>
-              <div class="board-card__line board-card__line--role"></div>
-            </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- CLOSING -->
-  <section class="section" aria-labelledby="board-closing-heading">
-    <div class="container closing-container">
-      <h2 id="board-closing-heading" class="visually-hidden">Board closing statement</h2>
-      <p class="closing-text">Our Board helps ensure that Oakdene House remains sustainable, values-led and focused on meaningful impact in the community.</p>
-    </div>
-  </section>
-
-  <!-- CTA -->
-  <CTABand
-    heading="Learn more about Oakdene House Foundation"
-    primaryBtn={{ text: 'About Oakdene', href: '/about/' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
-    dark={true}
-  />
 
 </BaseLayout>
 
@@ -85,118 +40,34 @@ const placeholderCount = 6;
     padding-block: 72px 64px;
   }
 
-  .board-hero__content h1 { color: var(--color-white); margin-bottom: 10px; }
-
-  .board-hero__lead {
-    font-size: 1.0625rem;
-    color: rgba(255,255,255,0.85);
-    max-width: 500px;
+  .board-hero__content h1 {
+    color: var(--color-white);
     margin-bottom: 0;
   }
 
-  /* Intro */
-  .intro-container {
-    max-width: 720px;
+  /* Holding message */
+  .holding-container {
+    max-width: 680px;
   }
 
-  .intro-lead {
-    font-size: 1.0625rem;
-    line-height: 1.7;
-    color: var(--color-text);
-    text-align: center;
-    margin-bottom: 0;
+  .holding-container h2 {
+    margin-bottom: 16px;
   }
 
-  /* Notice */
-  .placeholder-notice {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    background-color: var(--color-secondary);
-    border-radius: var(--radius-btn);
-    padding: 14px 20px;
-    margin-bottom: 32px;
-    color: var(--color-primary);
-    font-size: 0.9375rem;
-  }
-
-  .placeholder-notice p {
-    margin-bottom: 0;
-    font-weight: 500;
-  }
-
-  /* Board grid */
-  .board-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
-
-  .board-card {
-    background: var(--color-white);
-    border-radius: var(--radius-card);
-    box-shadow: var(--shadow-card);
-    padding: 24px;
-    display: flex;
-    align-items: center;
-    gap: 16px;
-    opacity: 0.55;
-  }
-
-  .board-card__avatar {
-    width: 52px;
-    height: 52px;
-    border-radius: 50%;
-    background-color: var(--color-tint);
-    border: 2px solid var(--color-secondary);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--color-primary);
-    flex-shrink: 0;
-  }
-
-  .board-card__lines {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .board-card__line {
-    height: 12px;
-    border-radius: 4px;
-    background-color: var(--color-secondary);
-  }
-
-  .board-card__line--name { width: 70%; }
-  .board-card__line--role { width: 50%; background-color: var(--color-tint); }
-
-  /* Closing */
-  .closing-container {
-    max-width: 620px;
-    text-align: center;
-  }
-
-  .closing-text {
+  .holding-container p {
     font-size: 1.0625rem;
     line-height: 1.7;
     color: var(--color-text);
-    margin-bottom: 0;
   }
 
-  .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    padding: 0;
-    margin: -1px;
-    overflow: hidden;
-    clip: rect(0, 0, 0, 0);
-    white-space: nowrap;
-    border: 0;
+  .holding-container a {
+    color: var(--color-primary);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    transition: color var(--transition);
   }
 
-  @media (max-width: 768px) { .board-grid { grid-template-columns: repeat(2, 1fr); } }
-  @media (max-width: 480px) { .board-grid { grid-template-columns: 1fr; } }
+  .holding-container a:hover {
+    color: var(--color-link-hover);
+  }
 </style>

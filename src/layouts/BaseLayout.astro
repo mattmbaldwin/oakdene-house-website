@@ -8,12 +8,14 @@ interface Props {
   title: string;
   description?: string;
   ogImage?: string;
+  noindex?: boolean;
 }
 
 const {
   title,
   description = 'Oakdene House Foundation supports people and families affected by addiction, hardship, homelessness, and life challenges in Fairfield, Western Sydney.',
   ogImage = '/images/hero/hero-centre-1.jpg',
+  noindex = false,
 } = Astro.props;
 
 const siteUrl = 'https://oakdenehouse.org.au';
@@ -27,6 +29,7 @@ const ogImageUrl = new URL(ogImage, siteUrl).href;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex" />}
 
     <!-- Canonical -->
     <link rel="canonical" href={canonicalUrl} />
