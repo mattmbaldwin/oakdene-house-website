@@ -8,20 +8,14 @@ const servicesLinks = [
   { label: 'Outpatients Program',     href: '/services/outpatients-program/' },
   { label: 'AA & GA Meetings',        href: '/services/aa-ga-meetings/' },
   { label: 'Financial Counselling',   href: '/services/financial-counselling/' },
-  { label: 'Oakdene Kitchen',         href: '/services/oakdene-kitchen/' },
-  { label: 'Staple Food Packs',       href: '/services/staple-food-packs/' },
-  { label: 'Oakdene Laundrette',      href: '/services/oakdene-laundrette/' },
-  { label: 'Ladies Boutique',         href: '/services/ladies-boutique/' },
-  { label: 'Used Clothing Store',     href: '/services/used-clothing-store/' },
-] as const;
+];
 
 const communityLinks = [
-  { label: 'Oakdene Kitchen',         href: '/services/oakdene-kitchen/' },
-  { label: 'Staple Food Packs',       href: '/services/staple-food-packs/' },
-  { label: 'Oakdene Laundrette',      href: '/services/oakdene-laundrette/' },
-  { label: 'Ladies Boutique',         href: '/services/ladies-boutique/' },
-  { label: 'Used Clothing Store',     href: '/services/used-clothing-store/' },
-  { label: 'Financial Counselling',   href: '/services/financial-counselling/' },
+  { label: 'Oakdene Kitchen',         href: '/community-programs/oakdene-kitchen/' },
+  { label: 'Staple Food Packs',       href: '/community-programs/staple-food-packs/' },
+  { label: 'Oakdene Laundrette',      href: '/community-programs/oakdene-laundrette/' },
+  { label: 'Ladies Boutique',         href: '/community-programs/ladies-boutique/' },
+  { label: 'Used Clothing Store',     href: '/community-programs/used-clothing-store/' },
   { separator: true as const },
   { label: 'Volunteering',            href: '/community-programs/volunteering/' },
 ];
@@ -36,7 +30,7 @@ const navLinks: Array<{
 }> = [
   { label: 'Home',               href: '/' },
   { label: 'About',              href: '/about/' },
-  { label: 'Services',           href: '/services/',         id: 'services',   dropdown: servicesLinks },
+  { label: 'Addiction Support',   href: '/services/',         id: 'services',   dropdown: servicesLinks },
   { label: 'Community Programs', href: '/community-programs/', id: 'community', dropdown: communityLinks },
   { label: 'Resources',          href: '/resources/' },
   { label: 'Service Directory',  href: '/service-directory/' },

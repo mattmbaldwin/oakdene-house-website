@@ -5,18 +5,13 @@ import CTABand from '../components/CTABand.astro';
 
 const categories = [
   {
-    heading: 'Counselling and Support',
+    heading: 'Counselling & One-on-One Support',
     description: 'Person-centred support that helps people talk through challenges, make sense of what is happening, and identify the next step.',
     icon: 'heart',
   },
   {
-    heading: 'Practical Assistance',
-    description: 'Support that responds to everyday pressures and community need in a respectful and accessible way.',
-    icon: 'hands',
-  },
-  {
-    heading: 'Community-Based Support',
-    description: 'Programs and activities that create routine, connection, and opportunities to keep moving forward.',
+    heading: 'Group & Recovery Programs',
+    description: 'Structured group programs that build accountability, coping skills, and peer connection across the recovery journey.',
     icon: 'people',
   },
   {
@@ -27,46 +22,6 @@ const categories = [
 ];
 
 const services = [
-  {
-    title: 'Oakdene Kitchen',
-    summary: 'Free hot lunches in a safe and welcoming community space, Tuesday to Thursday.',
-    href: '/services/oakdene-kitchen/',
-    image: '/images/kitchen/kitchen-3x-staff-serving.png',
-    imageAlt: 'Oakdene Kitchen staff serving meals',
-    eyebrow: 'Practical Assistance',
-  },
-  {
-    title: 'Staple Food Packs',
-    summary: 'Weekly take-home grocery packs with fresh produce, pantry essentials and hygiene items.',
-    href: '/services/staple-food-packs/',
-    image: '/images/kitchen/oakdene-kitchen-interior-with-food-stacks.jpg',
-    imageAlt: 'Stacked food supplies at Oakdene Kitchen',
-    eyebrow: 'Practical Assistance',
-  },
-  {
-    title: 'Oakdene Laundrette',
-    summary: 'Free community laundry service with washing, drying and detergent provided.',
-    href: '/services/oakdene-laundrette/',
-    image: '/images/laundrette/laundrette-interior-1.jpg',
-    imageAlt: 'Inside the Oakdene Laundrette',
-    eyebrow: 'Practical Assistance',
-  },
-  {
-    title: 'Used Clothing Store',
-    summary: 'Free men\'s and women\'s clothing, shoes and accessories — three items per visit.',
-    href: '/services/used-clothing-store/',
-    image: '/images/boutique/boutique-interior-clothing-rack.jpg',
-    imageAlt: 'Clothing rack at the Oakdene Used Clothing Store',
-    eyebrow: 'Practical Assistance',
-  },
-  {
-    title: 'Ladies Boutique',
-    summary: 'A warm, private space offering quality clothing, salon services and community connection for women.',
-    href: '/services/ladies-boutique/',
-    image: '/images/boutique/ladies-boutique-edited.png',
-    imageAlt: 'Oakdene Ladies Boutique',
-    eyebrow: 'Community-Based Support',
-  },
   {
     title: 'Life Choices Program',
     summary: 'A 6-week group program covering addiction, coping strategies, life skills and peer connection.',
@@ -136,8 +91,8 @@ const steps = [
   <section class="services-hero" aria-label="Services">
     <div class="services-hero__overlay" aria-hidden="true"></div>
     <div class="container services-hero__content">
-      <h1>Services that respond with care, clarity, and practical support</h1>
-      <p class="services-hero__lead">Oakdene provides support that is grounded in dignity, connection, and the realities people are living with.</p>
+      <h1>Addiction support that meets people where they are</h1>
+      <p class="services-hero__lead">Oakdene provides structured addiction support — counselling, group programs, peer meetings, and financial guidance — for people working through gambling, alcohol, and other dependencies.</p>
       <div class="btn-group">
         <a href="/contact/" class="btn btn--white">Get Support</a><!-- TODO: Replace with live Jotform URL -->
       </div>
@@ -149,8 +104,8 @@ const steps = [
     <div class="container">
       <div class="section-heading section-heading--center">
         <p class="section-heading__eyebrow">What We Offer</p>
-        <h2 id="categories-heading">Four areas of support</h2>
-        <p class="section-heading__lead">Our services span practical help, counselling and community — because people's needs rarely fit neatly into one box.</p>
+        <h2 id="categories-heading">Six services across the recovery journey</h2>
+        <p class="section-heading__lead">From individual counselling to peer support and financial guidance — the full spectrum of addiction recovery in one place.</p>
       </div>
       <div class="categories-grid">
         {categories.map(cat => (
@@ -158,9 +113,6 @@ const steps = [
             <div class="category-card__icon" aria-hidden="true">
               {cat.icon === 'heart' && (
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
-              )}
-              {cat.icon === 'hands' && (
-                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
               )}
               {cat.icon === 'people' && (
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
@@ -288,7 +240,7 @@ const steps = [
   /* Category cards */
   .categories-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
 

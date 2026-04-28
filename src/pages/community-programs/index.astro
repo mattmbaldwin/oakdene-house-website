@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
+import ServiceCard from '../../components/ServiceCard.astro';
 
 const programs = [
   {
@@ -30,6 +31,49 @@ const gains = [
   { label: 'Greater confidence', icon: 'arrow' },
   { label: 'Community connection', icon: 'people' },
   { label: 'Practical progress', icon: 'check' },
+];
+
+const practicalServices = [
+  {
+    title: 'Oakdene Kitchen',
+    summary: 'Free hot lunches in a safe and welcoming community space, Tuesday to Thursday.',
+    href: '/community-programs/oakdene-kitchen/',
+    image: '/images/kitchen/kitchen-3x-staff-serving.png',
+    imageAlt: 'Oakdene Kitchen staff serving meals',
+    eyebrow: 'Practical Assistance',
+  },
+  {
+    title: 'Staple Food Packs',
+    summary: 'Weekly take-home grocery packs with fresh produce, pantry essentials and hygiene items.',
+    href: '/community-programs/staple-food-packs/',
+    image: '/images/kitchen/oakdene-kitchen-interior-with-food-stacks.jpg',
+    imageAlt: 'Stacked food supplies at Oakdene Kitchen',
+    eyebrow: 'Practical Assistance',
+  },
+  {
+    title: 'Oakdene Laundrette',
+    summary: 'Free community laundry service with washing, drying and detergent provided.',
+    href: '/community-programs/oakdene-laundrette/',
+    image: '/images/laundrette/laundrette-interior-1.jpg',
+    imageAlt: 'Inside the Oakdene Laundrette',
+    eyebrow: 'Practical Assistance',
+  },
+  {
+    title: 'Used Clothing Store',
+    summary: "Free men's and women's clothing, shoes and accessories — three items per visit.",
+    href: '/community-programs/used-clothing-store/',
+    image: '/images/boutique/boutique-interior-clothing-rack.jpg',
+    imageAlt: 'Clothing rack at the Oakdene Used Clothing Store',
+    eyebrow: 'Practical Assistance',
+  },
+  {
+    title: 'Ladies Boutique',
+    summary: 'A warm, private space offering quality clothing, salon services and community connection for women.',
+    href: '/community-programs/ladies-boutique/',
+    image: '/images/boutique/ladies-boutique-edited.png',
+    imageAlt: 'Oakdene Ladies Boutique',
+    eyebrow: 'Community Support',
+  },
 ];
 
 const involvement = [
@@ -175,6 +219,29 @@ const involvement = [
           <p>It felt practical and real. Not a lecture, just support that helped me keep moving.</p>
           <footer class="quote-card__attribution">— Community Member</footer>
         </blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRACTICAL COMMUNITY SERVICES -->
+  <section class="section section--tint" aria-labelledby="practical-services-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">Open to the Community</p>
+        <h2 id="practical-services-heading">Practical support services</h2>
+        <p class="section-heading__lead">Free, accessible services that meet everyday needs with dignity and care — no referral required.</p>
+      </div>
+      <div class="card-grid">
+        {practicalServices.map(s => (
+          <ServiceCard
+            title={s.title}
+            summary={s.summary}
+            href={s.href}
+            image={s.image}
+            imageAlt={s.imageAlt}
+            eyebrow={s.eyebrow}
+          />
+        ))}
       </div>
     </div>
   </section>
