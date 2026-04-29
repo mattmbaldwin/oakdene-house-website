@@ -1,3 +1,8 @@
+// Required env vars:
+//   RESEND_API_KEY        — Resend API bearer token
+//   CONTACT_EMAIL_FROM    — verified sender address for Resend
+//   CONTACT_EMAIL_TO      — recipient address for form submissions
+//   TURNSTILE_SECRET_KEY  — Cloudflare Turnstile secret key
 export async function onRequestPost(context) {
   const { request, env } = context;
 
@@ -10,13 +15,14 @@ export async function onRequestPost(context) {
   }
 
   const {
-    first_name = '',
-    last_name  = '',
-    email      = '',
-    phone      = '',
-    reason     = '',
-    message    = '',
-    website    = '',
+    first_name     = '',
+    last_name      = '',
+    email          = '',
+    phone          = '',
+    reason         = '',
+    message        = '',
+    website        = '',
+    turnstileToken = '',
   } = body;
 
   // Honeypot: non-empty website field = bot — fake success, no email sent
@@ -27,6 +33,22 @@ export async function onRequestPost(context) {
   // Required field validation
   if (!str(first_name) || !str(last_name) || !str(email) || !str(reason) || !str(message)) {
     return json(400, { success: false, error: 'Missing required fields.' });
+  }
+
+  // Turnstile verification
+  const turnstileVerify = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams({
+      secret:   env.TURNSTILE_SECRET_KEY,
+      response: turnstileToken,
+      remoteip: request.headers.get('CF-Connecting-IP') || '',
+    }),
+  });
+  const verifyResult = await turnstileVerify.json();
+  if (!verifyResult.success) {
+    console.error('Turnstile verification failed:', verifyResult['error-codes']);
+    return json(403, { success: false, error: 'Security check failed. Please refresh and try again.' });
   }
 
   // Basic email format sanity check

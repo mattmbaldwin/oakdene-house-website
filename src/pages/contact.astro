@@ -337,6 +337,10 @@ const contactCards = [
           <p class="form-field__error" id="consent-error" role="alert"></p>
         </div>
 
+        <div class="form-field form-field--turnstile">
+          <div class="cf-turnstile" data-sitekey="0x4AAAAAADFd373EZuMIVXX0" data-theme="light"></div>
+        </div>
+
         <div class="form-actions">
           <button type="submit" id="submit-btn" class="btn btn--primary">Send message</button>
         </div>
@@ -354,6 +358,7 @@ const contactCards = [
     dark={true}
   />
 
+<script is:inline src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <script is:inline>
 (function () {
   // URL pre-fill: ?reason=<slug> pre-selects the dropdown
@@ -437,6 +442,19 @@ const contactCards = [
 
     if (!validate()) return;
 
+    // Turnstile: ensure the widget has produced a token before submitting
+    var turnstileToken = document.querySelector('[name="cf-turnstile-response"]')?.value;
+    if (!turnstileToken) {
+      errorBanner.innerHTML =
+        'Security check could not be completed. This may be caused by an ad-blocker or network issue. ' +
+        'Please disable any blockers and refresh, or contact us directly on ' +
+        '<a href="tel:+61287170999">(02)\u00a08717\u00a00999</a> or at ' +
+        '<a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a>.';
+      errorBanner.focus();
+      if (window.turnstile) window.turnstile.reset();
+      return;
+    }
+
     submitBtn.disabled = true;
     submitBtn.textContent = 'Sending\u2026';
 
@@ -446,13 +464,14 @@ const contactCards = [
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          first_name: fd.get('first_name'),
-          last_name:  fd.get('last_name'),
-          email:      fd.get('email'),
-          phone:      fd.get('phone') || '',
-          reason:     fd.get('reason'),
-          message:    fd.get('message'),
-          website:    fd.get('website') || '',
+          first_name:     fd.get('first_name'),
+          last_name:      fd.get('last_name'),
+          email:          fd.get('email'),
+          phone:          fd.get('phone') || '',
+          reason:         fd.get('reason'),
+          message:        fd.get('message'),
+          website:        fd.get('website') || '',
+          turnstileToken: turnstileToken,
         }),
       });
 
@@ -467,6 +486,7 @@ const contactCards = [
     } catch (_) {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Send message';
+      if (window.turnstile) window.turnstile.reset();
       errorBanner.innerHTML =
         'Sorry, something went wrong sending your message. Please call us on ' +
         '<a href="tel:+61287170999">(02)\u00a08717\u00a00999</a> or email ' +
@@ -823,6 +843,11 @@ const contactCards = [
   .form-field--checkbox.form-field--error .checkbox-wrapper input[type="checkbox"] {
     outline: 2px solid #c0392b;
     outline-offset: 2px;
+  }
+
+  /* Turnstile widget */
+  .form-field--turnstile {
+    min-height: 65px; /* reserve space while the iframe loads */
   }
 
   /* Submit */
