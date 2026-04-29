@@ -14,10 +14,10 @@ const testimonials = allTestimonials.filter(t => t.page === 'home');
 const faqs = allFaqs.slice(0, 4);
 
 const stats = [
-  { number: '5,000+', label: 'People supported each year' },
-  { number: '100+',   label: 'Community events and workshops' },
-  { number: '1,000+', label: 'Hours of one-to-one support' },
-  { number: '5,000+', label: 'Meals and practical supports delivered' },
+  { number: '5,000+',    label: 'Meals and food packs delivered annually' },
+  { number: '$250,000',  label: 'Value of supplies provided annually' },
+  { number: '2,000+',    label: 'Individuals impacted' },
+  { number: '25',        label: 'Local organisation partnerships' },
 ];
 
 const services = [
@@ -159,6 +159,7 @@ const steps = [
         <h2>Making a difference every day</h2>
       </div>
       <StatsGrid stats={stats} />
+      <p class="stats-note">Over 60% of participants seek continued assistance after treatment or counselling at our addiction centre.</p>
     </div>
   </section>
 
@@ -329,6 +330,16 @@ const steps = [
     .services-grid {
       grid-template-columns: 1fr;
     }
+  }
+
+  /* ---- Stats supporting note ---- */
+  .stats-note {
+    text-align: center;
+    color: var(--color-white);
+    opacity: 0.85;
+    margin-top: 28px;
+    font-size: 0.9375rem;
+    line-height: 1.6;
   }
 
   /* ---- FAQ max-width ---- */
