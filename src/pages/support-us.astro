@@ -63,12 +63,9 @@ const donationFaqs = [
 
         <!-- LEFT: GiveNow embed -->
         <div class="donate-embed-card">
-          <!-- TODO: Replace this placeholder with GiveNow iframe embed once cause is approved. Embed code from GiveNow OrgHQ → Manage Causes → Support Oakdene House → Embed. -->
-          <div class="givenow-placeholder">
-            <h2>Donate now</h2>
-            <p class="placeholder-message">Our secure donation form is being prepared. It will appear here as soon as our donation platform completes its final review (usually within 2 business days).</p>
-            <p class="placeholder-detail">In the meantime, you can give via direct deposit, cheque, or workplace giving — see options on the right.</p>
-          </div>
+          <script is:inline src="https://www.givenow.com.au/js/iframe-resizer/iframeResizer.min.js?version=4.3.2.1"></script>
+          <div style="padding:1px"><iframe id="cause11851" class="gn-iframe" src="https://www.givenow.com.au/embed/Y2F1c2VpZD0xMTg1MSZkb21haW49b2FrZGVuZS1ob3VzZS13ZWJzaXRlLnBhZ2VzLmRldiZ0b2tlbj0xMTg1MTo0ZDViZTJiMjBiN2FkZTZh" style="width:1px;min-width:100%;border:0;height:882px;" data-offset-bonus="0"></iframe></div>
+          <script is:inline>iFrameResize({checkOrigin:false,onScroll:function(){var element = document.getElementById("cause11851");var offsetBonus=element.getAttribute("data-offset-bonus");if(typeof offsetBonus !== typeof undefined){var offset=element.getBoundingClientRect().top-document.body.getBoundingClientRect().top;window.scrollTo({ top: offset-offsetBonus, behavior: 'smooth' });return false;}}}, "#cause11851")</script>
         </div>
 
         <!-- RIGHT: Other ways to give -->
