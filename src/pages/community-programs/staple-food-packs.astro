@@ -66,15 +66,12 @@ const included = [
     </div>
   </section>
 
-  <!-- PARTNERSHIP CALLOUT -->
-  <section class="partnership-callout">
+  <!-- PARTNERSHIP STRIP -->
+  <section class="partnership-strip">
     <div class="container">
-      <div class="partnership-card">
-        <p class="eyebrow">In partnership with</p>
-        <div class="partnership-logo">
-          <img src="/images/logos/partners/ozharvest-logo-yellow.jpeg" alt="OzHarvest logo" />
-        </div>
-        <p class="partnership-credit">OzHarvest is Australia's leading food rescue organisation, redistributing surplus food to people in need.</p>
+      <div class="partnership-strip__inner">
+        <p class="partnership-strip__label">In partnership with</p>
+        <img src="/images/logos/partners/ozharvest-logo-yellow.jpeg" alt="OzHarvest" class="partnership-strip__logo" />
       </div>
     </div>
   </section>
@@ -286,47 +283,36 @@ const included = [
     font-weight: 500;
   }
 
-  /* Partnership callout */
-  .partnership-callout {
-    padding: 3rem 0;
-    background: var(--color-tint);
+  /* Partnership strip */
+  .partnership-strip {
+    padding: 1.75rem 0;
+    background: var(--color-white);
+    border-top: 1px solid rgba(0,0,0,0.06);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
   }
 
-  .partnership-card {
-    max-width: 720px;
+  .partnership-strip__inner {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 1.25rem;
+    max-width: 1100px;
     margin: 0 auto;
-    text-align: center;
-    padding: 2rem;
   }
 
-  .partnership-card .eyebrow {
-    font-size: 0.8125rem;
-    font-weight: 700;
+  .partnership-strip__label {
+    font-size: 0.75rem;
+    font-weight: 600;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: var(--color-primary);
-    margin-bottom: 1.25rem;
+    color: var(--color-muted);
+    margin: 0;
   }
 
-  .partnership-logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1.25rem;
-  }
-
-  .partnership-logo img {
-    max-height: 80px;
+  .partnership-strip__logo {
+    height: 48px;
     width: auto;
     display: block;
-  }
-
-  .partnership-credit {
-    font-size: 0.95rem;
-    color: var(--color-muted);
-    max-width: 480px;
-    margin: 0 auto;
-    line-height: 1.5;
   }
 
   @media (max-width: 600px) {
@@ -334,12 +320,12 @@ const included = [
       grid-template-columns: 1fr;
     }
 
-    .partnership-logo img {
-      max-height: 60px;
+    .partnership-strip__inner {
+      gap: 1rem;
     }
 
-    .partnership-callout {
-      padding: 2rem 0;
+    .partnership-strip__logo {
+      height: 40px;
     }
   }
 </style>
