@@ -58,20 +58,14 @@ const included = [
           <ul class="offer-list">
             {included.map(item => <li>{item}</li>)}
           </ul>
+          <div class="ozharvest-credit">
+            <p>Supplied through</p>
+            <img src="/images/logos/partners/ozharvest-logo-yellow.jpeg" alt="OzHarvest" class="ozharvest-credit__logo" />
+          </div>
         </div>
         <div>
           <InfoTable rows={serviceRows} caption="Service details" />
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PARTNERSHIP STRIP -->
-  <section class="partnership-strip">
-    <div class="container">
-      <div class="partnership-strip__inner">
-        <p class="partnership-strip__label">In partnership with</p>
-        <img src="/images/logos/partners/ozharvest-logo-yellow.jpeg" alt="OzHarvest" class="partnership-strip__logo" />
       </div>
     </div>
   </section>
@@ -283,34 +277,23 @@ const included = [
     font-weight: 500;
   }
 
-  /* Partnership strip */
-  .partnership-strip {
-    padding: 1.75rem 0;
-    background: var(--color-white);
-    border-top: 1px solid rgba(0,0,0,0.06);
-    border-bottom: 1px solid rgba(0,0,0,0.06);
-  }
-
-  .partnership-strip__inner {
+  /* OzHarvest inline credit */
+  .ozharvest-credit {
+    margin-top: 1.5rem;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
-    gap: 1.25rem;
-    max-width: 1100px;
-    margin: 0 auto;
+    gap: 0.75rem;
   }
 
-  .partnership-strip__label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
+  .ozharvest-credit p {
+    font-size: 0.875rem;
     color: var(--color-muted);
     margin: 0;
+    font-weight: 500;
   }
 
-  .partnership-strip__logo {
-    height: 48px;
+  .ozharvest-credit__logo {
+    height: 32px;
     width: auto;
     display: block;
   }
@@ -318,14 +301,6 @@ const included = [
   @media (max-width: 600px) {
     .rules-grid {
       grid-template-columns: 1fr;
-    }
-
-    .partnership-strip__inner {
-      gap: 1rem;
-    }
-
-    .partnership-strip__logo {
-      height: 40px;
     }
   }
 </style>
