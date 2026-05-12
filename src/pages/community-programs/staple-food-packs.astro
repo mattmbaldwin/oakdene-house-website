@@ -66,6 +66,19 @@ const included = [
     </div>
   </section>
 
+  <!-- PARTNERSHIP CALLOUT -->
+  <section class="partnership-callout">
+    <div class="container">
+      <div class="partnership-card">
+        <p class="eyebrow">In partnership with</p>
+        <div class="partnership-logo">
+          <img src="/images/logos/partners/ozharvest-logo-yellow.jpeg" alt="OzHarvest logo" />
+        </div>
+        <p class="partnership-credit">OzHarvest is Australia's leading food rescue organisation, redistributing surplus food to people in need.</p>
+      </div>
+    </div>
+  </section>
+
   <!-- FOOD IMAGE -->
   <div class="food-image-banner">
     <img src="/images/kitchen/kitchen-3x-staff-serving.png" alt="Oakdene Kitchen staff serving a meal" loading="lazy" />
@@ -273,9 +286,60 @@ const included = [
     font-weight: 500;
   }
 
+  /* Partnership callout */
+  .partnership-callout {
+    padding: 3rem 0;
+    background: var(--color-tint);
+  }
+
+  .partnership-card {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem;
+  }
+
+  .partnership-card .eyebrow {
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--color-primary);
+    margin-bottom: 1.25rem;
+  }
+
+  .partnership-logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.25rem;
+  }
+
+  .partnership-logo img {
+    max-height: 80px;
+    width: auto;
+    display: block;
+  }
+
+  .partnership-credit {
+    font-size: 0.95rem;
+    color: var(--color-muted);
+    max-width: 480px;
+    margin: 0 auto;
+    line-height: 1.5;
+  }
+
   @media (max-width: 600px) {
     .rules-grid {
       grid-template-columns: 1fr;
+    }
+
+    .partnership-logo img {
+      max-height: 60px;
+    }
+
+    .partnership-callout {
+      padding: 2rem 0;
     }
   }
 </style>
