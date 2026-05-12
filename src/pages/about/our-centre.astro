@@ -124,6 +124,19 @@ const whatToExpect = [
     </div>
   </section>
 
+  <!-- DIRECTIONS DOWNLOAD -->
+  <section class="directions-download">
+    <div class="container">
+      <div class="directions-card">
+        <h3>Finding us can be tricky</h3>
+        <p>Oakdene House sits behind Fairfield RSL — easy to miss if you don't know where to look. Download our directions guide for photos, maps, and step-by-step instructions.</p>
+        <a href="/downloads/getting-to-oakdene-house.pdf" class="btn btn--primary" download>
+          Download directions (PDF)
+        </a>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <CTABand
     heading="Ready to visit or get in touch?"
@@ -237,6 +250,33 @@ const whatToExpect = [
 
   .maps-link:hover {
     text-decoration: underline;
+  }
+
+  /* Directions download */
+  .directions-download {
+    padding: 3rem 0 4rem;
+  }
+
+  .directions-card {
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 2rem;
+    background: var(--color-tint);
+    border-left: 4px solid var(--color-primary);
+    border-radius: var(--radius-card);
+  }
+
+  .directions-card h3 {
+    margin-top: 0;
+    margin-bottom: 0.75rem;
+    color: var(--color-primary);
+  }
+
+  .directions-card p {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
   }
 
   @media (max-width: 900px) {
