@@ -3,13 +3,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
 
 const schedule = [
-  { day: 'Tuesday', time: '11:00am – 1:15pm', format: 'In-person', audience: 'Mixed', notes: 'Starts 26 May 2026' },
-  { day: 'Tuesday', time: '11:00am – 12:15pm', format: 'In-person', audience: 'Ladies Only', notes: '' },
-  { day: 'Tuesday', time: '1:00pm – 2:15pm', format: 'In-person', audience: 'Men Only', notes: '' },
-  { day: 'Tuesday', time: '4:00pm – 5:30pm', format: 'Online via Zoom', audience: 'Mixed', notes: '' },
-  { day: 'Wednesday', time: '11:00am – 12:30pm', format: 'In-person', audience: 'Mixed', notes: 'Starts 13 May 2026' },
-  { day: 'Thursday', time: '11:00am – 12:30pm', format: 'In-person', audience: 'Mixed', notes: '' },
-  { day: 'Friday', time: '5:00pm – 6:30pm', format: 'Online via Zoom', audience: 'Mixed', notes: '' },
+  { day: 'Monday', time: '11:00am – 1:15pm', format: 'In-person', audience: 'Mixed' },
+  { day: 'Tuesday', time: '11:00am – 12:15pm', format: 'In-person', audience: 'Ladies Only' },
+  { day: 'Tuesday', time: '1:00pm – 2:15pm', format: 'In-person', audience: 'Men Only' },
+  { day: 'Tuesday', time: '4:00pm – 5:30pm', format: 'Online via Zoom', audience: 'Mixed' },
+  { day: 'Wednesday', time: '11:00am – 12:30pm', format: 'In-person', audience: 'Mixed' },
+  { day: 'Thursday', time: '11:00am – 12:30pm', format: 'In-person', audience: 'Mixed' },
+  { day: 'Friday', time: '5:00pm – 6:30pm', format: 'Online via Zoom', audience: 'Mixed' },
 ];
 
 const whatToExpect = [
@@ -105,7 +105,6 @@ const joinSteps = [
                 <th scope="col">Time</th>
                 <th scope="col">Format</th>
                 <th scope="col">Audience</th>
-                <th scope="col">Notes</th>
               </tr>
             </thead>
             <tbody>
@@ -119,7 +118,6 @@ const joinSteps = [
                     </span>
                   </td>
                   <td>{s.audience}</td>
-                  <td>{s.notes}</td>
                 </tr>
               ))}
             </tbody>
@@ -282,7 +280,7 @@ const joinSteps = [
     border-radius: var(--radius-card);
     overflow: hidden;
     border: 1px solid var(--color-secondary);
-    min-width: 600px;
+    min-width: 480px;
   }
 
   .schedule-table {
