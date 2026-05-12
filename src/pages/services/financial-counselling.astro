@@ -101,7 +101,10 @@ const serviceRows = [
 
           <p>Financial counsellors work independently and in the best interests of the client, providing free, confidential, and non-judgemental support. Financial counselling in Australia is supported nationally by Financial Counselling Australia (FCA), the peak body representing the profession.</p>
 
-          <!-- TODO: FCA logo placement here — Simon to provide logo file. Should sit visually anchored near this paragraph. -->
+          <div class="fca-credit">
+            <p>Accredited member of</p>
+            <img src="/images/logos/partners/fca-logo-slim.png" alt="Financial Counselling Australia" class="fca-credit__logo" />
+          </div>
         </div>
       </div>
     </div>
@@ -221,5 +224,26 @@ const serviceRows = [
 
   .approach-content p:last-of-type {
     margin-bottom: 0;
+  }
+
+  /* FCA accreditation credit */
+  .fca-credit {
+    margin-top: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .fca-credit p {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    margin: 0;
+    font-weight: 500;
+  }
+
+  .fca-credit__logo {
+    height: 70px;
+    width: auto;
+    display: block;
   }
 </style>
