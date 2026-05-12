@@ -3,13 +3,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
 
 const schedule = [
-  { day: 'Tuesday', time: '11:00am – 1:15pm', format: 'In-person', speciality: 'Starts 26 May 2026' },
-  { day: 'Tuesday', time: '11:00am – 12:15pm', format: 'In-person', speciality: 'Ladies Only' },
-  { day: 'Tuesday', time: '1:00pm – 2:15pm', format: 'In-person', speciality: 'Men Only' },
-  { day: 'Tuesday', time: '4:00pm – 5:30pm', format: 'Online via Zoom', speciality: '' },
-  { day: 'Wednesday', time: '11:00am – 12:30pm', format: 'In-person', speciality: 'Starts 13 May 2026' },
-  { day: 'Thursday', time: '11:00am – 12:30pm', format: 'In-person', speciality: '' },
-  { day: 'Friday', time: '5:00pm – 6:30pm', format: 'Online via Zoom', speciality: '' },
+  { day: 'Tuesday', time: '11:00am – 1:15pm', format: 'In-person', audience: 'Mixed', notes: 'Starts 26 May 2026' },
+  { day: 'Tuesday', time: '11:00am – 12:15pm', format: 'In-person', audience: 'Ladies Only', notes: '' },
+  { day: 'Tuesday', time: '1:00pm – 2:15pm', format: 'In-person', audience: 'Men Only', notes: '' },
+  { day: 'Tuesday', time: '4:00pm – 5:30pm', format: 'Online via Zoom', audience: 'Mixed', notes: '' },
+  { day: 'Wednesday', time: '11:00am – 12:30pm', format: 'In-person', audience: 'Mixed', notes: 'Starts 13 May 2026' },
+  { day: 'Thursday', time: '11:00am – 12:30pm', format: 'In-person', audience: 'Mixed', notes: '' },
+  { day: 'Friday', time: '5:00pm – 6:30pm', format: 'Online via Zoom', audience: 'Mixed', notes: '' },
 ];
 
 const whatToExpect = [
@@ -96,31 +96,35 @@ const joinSteps = [
         <h2 id="schedule-heading">Program schedule</h2>
         <p class="section-heading__lead">Sessions run across the week with both in-person and online options available.</p>
       </div>
-      <div class="schedule-table-wrap">
-        <table class="schedule-table" aria-label="Life Choices Program schedule">
-          <thead>
-            <tr>
-              <th scope="col">Day</th>
-              <th scope="col">Time</th>
-              <th scope="col">Format</th>
-              <th scope="col">Speciality</th>
-            </tr>
-          </thead>
-          <tbody>
-            {schedule.map(s => (
+      <div class="schedule-scroll">
+        <div class="schedule-table-wrap">
+          <table class="schedule-table" aria-label="Life Choices Program schedule">
+            <thead>
               <tr>
-                <td>{s.day}</td>
-                <td>{s.time}</td>
-                <td>
-                  <span class={`format-badge ${s.format.includes('Online') ? 'format-badge--online' : 'format-badge--inperson'}`}>
-                    {s.format}
-                  </span>
-                </td>
-                <td>{s.speciality}</td>
+                <th scope="col">Day</th>
+                <th scope="col">Time</th>
+                <th scope="col">Format</th>
+                <th scope="col">Audience</th>
+                <th scope="col">Notes</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {schedule.map(s => (
+                <tr>
+                  <td>{s.day}</td>
+                  <td>{s.time}</td>
+                  <td>
+                    <span class={`format-badge ${s.format.includes('Online') ? 'format-badge--online' : 'format-badge--inperson'}`}>
+                      {s.format}
+                    </span>
+                  </td>
+                  <td>{s.audience}</td>
+                  <td>{s.notes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </section>
@@ -268,12 +272,17 @@ const joinSteps = [
   }
 
   /* Schedule table */
-  .schedule-table-wrap {
-    max-width: 680px;
+  .schedule-scroll {
+    overflow-x: auto;
+    max-width: 860px;
     margin-inline: auto;
+  }
+
+  .schedule-table-wrap {
     border-radius: var(--radius-card);
     overflow: hidden;
     border: 1px solid var(--color-secondary);
+    min-width: 600px;
   }
 
   .schedule-table {
