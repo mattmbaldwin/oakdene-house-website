@@ -59,6 +59,39 @@ const schedule = [
     </div>
   </section>
 
+  <!-- CURRENT GROUP DETAILS -->
+  <section class="section" aria-labelledby="schedule-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">Schedule</p>
+        <h2 id="schedule-heading">Current group details</h2>
+        <p class="section-heading__lead">Groups run weekly during term time.</p>
+      </div>
+      <div class="schedule-scroll">
+        <div class="schedule-table-wrap">
+          <table class="schedule-table" aria-label="DBT group schedule">
+            <thead>
+              <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Time</th>
+                <th scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {schedule.map(row => (
+                <tr>
+                  <td>{row.day}</td>
+                  <td>{row.time}</td>
+                  <td>{row.notes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- WHAT THE GROUP COVERS -->
   <section class="section section--tint" aria-labelledby="skills-heading">
     <div class="container">
@@ -126,39 +159,6 @@ const schedule = [
           <p>Our DBT groups are structured, supportive, and practical. Sessions combine discussion, skill-building, reflection, and guided exercises that can be applied in everyday life.</p>
           <p>The focus is not on judgement or forcing people to share more than they are comfortable with. Many people find relief simply being in a room where others understand what it feels like to struggle.</p>
           <p>Groups are facilitated by experienced mental health professionals who work from a compassionate, respectful, and person-centred approach.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- CURRENT GROUP DETAILS -->
-  <section class="section" aria-labelledby="schedule-heading">
-    <div class="container">
-      <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Schedule</p>
-        <h2 id="schedule-heading">Current group details</h2>
-        <p class="section-heading__lead">Groups run weekly during term time.</p>
-      </div>
-      <div class="schedule-scroll">
-        <div class="schedule-table-wrap">
-          <table class="schedule-table" aria-label="DBT group schedule">
-            <thead>
-              <tr>
-                <th scope="col">Day</th>
-                <th scope="col">Time</th>
-                <th scope="col">Notes</th>
-              </tr>
-            </thead>
-            <tbody>
-              {schedule.map(row => (
-                <tr>
-                  <td>{row.day}</td>
-                  <td>{row.time}</td>
-                  <td>{row.notes}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
         </div>
       </div>
     </div>
