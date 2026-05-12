@@ -3,11 +3,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
 
 const schedule = [
-  { day: 'Tuesday', time: '12:00pm–1:30pm', format: 'In-person' },
-  { day: 'Tuesday', time: '5:00pm–6:30pm', format: 'Online — Zoom' },
-  { day: 'Wednesday', time: '12:00pm–1:30pm', format: 'In-person' },
-  { day: 'Thursday', time: '11:00am–12:30pm', format: 'In-person' },
-  { day: 'Friday', time: '5:00pm–6:30pm', format: 'Online — Zoom' },
+  { day: 'Tuesday', time: '11:00am – 1:15pm', format: 'In-person', speciality: 'Starts 26 May 2026' },
+  { day: 'Tuesday', time: '11:00am – 12:15pm', format: 'In-person', speciality: 'Ladies Only' },
+  { day: 'Tuesday', time: '1:00pm – 2:15pm', format: 'In-person', speciality: 'Men Only' },
+  { day: 'Tuesday', time: '4:00pm – 5:30pm', format: 'Online via Zoom', speciality: '' },
+  { day: 'Wednesday', time: '11:00am – 12:30pm', format: 'In-person', speciality: 'Starts 13 May 2026' },
+  { day: 'Thursday', time: '11:00am – 12:30pm', format: 'In-person', speciality: '' },
+  { day: 'Friday', time: '5:00pm – 6:30pm', format: 'Online via Zoom', speciality: '' },
 ];
 
 const whatToExpect = [
@@ -101,6 +103,7 @@ const joinSteps = [
               <th scope="col">Day</th>
               <th scope="col">Time</th>
               <th scope="col">Format</th>
+              <th scope="col">Speciality</th>
             </tr>
           </thead>
           <tbody>
@@ -113,6 +116,7 @@ const joinSteps = [
                     {s.format}
                   </span>
                 </td>
+                <td>{s.speciality}</td>
               </tr>
             ))}
           </tbody>
