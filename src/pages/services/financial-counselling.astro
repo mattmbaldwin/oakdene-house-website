@@ -5,18 +5,12 @@ import CTABand from '../../components/CTABand.astro';
 
 const serviceRows = [
   { label: 'Cost', value: 'Free' },
-  { label: 'Access', value: 'By referral or contact us' },
+  { label: 'Access', value: 'By appointment — no referral needed' },
   { label: 'Location', value: 'Oakdene Centre, 29 Vine Street, Fairfield' },
   { label: 'Phone', value: '<a href="tel:0287170999">(02) 8717 0999</a>' },
   { label: 'Email', value: '<a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a>' },
 ];
 
-const helpWith = [
-  'Understanding your financial options',
-  'Managing debt',
-  'Dealing with bills and expenses',
-  'Planning for the future',
-];
 ---
 
 <BaseLayout
@@ -50,12 +44,25 @@ const helpWith = [
             <p class="section-heading__eyebrow">The Service</p>
             <h2 id="fc-overview-heading">Practical help for financial pressure</h2>
           </div>
-          <p>Financial difficulties can affect every part of life. Oakdene's financial counselling service offers free, practical guidance to help people understand their options and take steps toward greater stability.</p>
-          <p>Whether you are dealing with debt, falling behind on bills, or feeling overwhelmed by financial stress — we are here to help you work through it.</p>
+          <p>At Oakdene House Foundation, we understand that financial stress and mental health are often deeply connected. Money worries can affect sleep, relationships, confidence, physical health, and recovery from addiction or gambling harm. For many people, financial pressure becomes one of the biggest barriers to stability and wellbeing.</p>
 
-          <h3 class="section-subhead">What we help with</h3>
-          <ul class="help-list">
-            {helpWith.map(item => <li>{item}</li>)}
+          <p>Our Financial Counselling Service provides free, confidential support from a qualified Financial Counsellor for individuals and families experiencing financial hardship, debt stress, gambling-related financial impacts, housing insecurity, or difficulty managing day-to-day costs.</p>
+
+          <p>This is not a budgeting app or a quick advice session. Financial counselling is a professional support service focused on helping people understand their situation, reduce pressure, and regain a sense of control.</p>
+
+          <h3 class="section-subhead">What a Financial Counsellor can help with</h3>
+
+          <ul class="offer-list">
+            <li>Debt and overdue bills</li>
+            <li>Gambling-related financial harm</li>
+            <li>Rent or mortgage stress</li>
+            <li>Utility disconnections and payment plans</li>
+            <li>Credit cards, personal loans, and buy-now-pay-later debt</li>
+            <li>Centrelink and financial hardship issues</li>
+            <li>Negotiating with creditors</li>
+            <li>Financial stress linked to addiction or mental health challenges</li>
+            <li>Creating practical financial plans</li>
+            <li>Referrals to emergency relief and community supports</li>
           </ul>
 
           <div class="access-note">
@@ -74,42 +81,27 @@ const helpWith = [
     </div>
   </section>
 
-  <!-- WHAT FINANCIAL COUNSELLING IS -->
-  <section class="section section--tint" aria-labelledby="what-heading">
+  <!-- OUR APPROACH + FCA ACCREDITATION -->
+  <section class="section section--tint" aria-labelledby="approach-heading">
     <div class="container">
       <div class="what-inner">
-        <div class="section-heading section-heading--center">
-          <p class="section-heading__eyebrow">What Is Financial Counselling?</p>
-          <h2 id="what-heading">Not a loan — real guidance</h2>
-          <p class="section-heading__lead">Financial counselling is a professional service that helps people in financial difficulty understand their rights and options. It is different from financial planning or advice.</p>
-        </div>
-        <div class="what-grid">
-          <div class="what-item">
-            <div class="what-item__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 8 16 12 12 16"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
-            </div>
-            <h3>Know your rights</h3>
-            <p>Understand what creditors can and cannot do, and how to protect yourself from unfair practices.</p>
-          </div>
-          <div class="what-item">
-            <div class="what-item__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
-            </div>
-            <h3>Manage debt</h3>
-            <p>Get practical strategies to negotiate with creditors, manage repayments and reduce financial stress.</p>
-          </div>
-          <div class="what-item">
-            <div class="what-item__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            </div>
-            <h3>Plan ahead</h3>
-            <p>Work toward a budget and financial plan that reflects your real situation and goals.</p>
-          </div>
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">A Practical and Compassionate Approach</p>
+          <h2 id="approach-heading">Support without lectures or judgement</h2>
         </div>
 
-        <div class="free-note">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
-          <p>This service is completely <strong>free of charge</strong>. Financial counselling at Oakdene is available to anyone experiencing hardship — you do not need to be an existing client.</p>
+        <div class="approach-content">
+          <p>Financial counselling at Oakdene is delivered in a respectful, non-judgemental way. Many people avoid seeking help because of shame, embarrassment, or fear about their financial situation. Our role is not to lecture or criticise. It is to help reduce pressure, improve understanding, and support practical next steps.</p>
+
+          <p>Where needed, financial counselling can also work alongside our counselling, recovery, and support programs to provide more holistic care. This is particularly important for people affected by gambling harm, addiction, relationship breakdown, or periods of significant emotional distress.</p>
+
+          <h3 class="section-subhead">Qualified and Professional Support</h3>
+
+          <p>All financial counselling services at Oakdene House Foundation are delivered by a qualified Financial Counsellor with experience supporting people facing complex financial and personal challenges. Our Financial Counsellor is professionally registered and operates in line with Australian financial counselling standards and ethical requirements.</p>
+
+          <p>Financial counsellors work independently and in the best interests of the client, providing free, confidential, and non-judgemental support. Financial counselling in Australia is supported nationally by Financial Counselling Australia (FCA), the peak body representing the profession.</p>
+
+          <!-- TODO: FCA logo placement here — Simon to provide logo file. Should sit visually anchored near this paragraph. -->
         </div>
       </div>
     </div>
@@ -165,7 +157,7 @@ const helpWith = [
     margin: 24px 0 14px;
   }
 
-  .help-list {
+  .offer-list {
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -174,7 +166,7 @@ const helpWith = [
     margin-bottom: 28px;
   }
 
-  .help-list li {
+  .offer-list li {
     padding-left: 24px;
     position: relative;
     font-size: 0.9375rem;
@@ -182,7 +174,7 @@ const helpWith = [
     line-height: 1.55;
   }
 
-  .help-list li::before {
+  .offer-list li::before {
     content: '';
     position: absolute;
     left: 0;
@@ -214,72 +206,20 @@ const helpWith = [
     margin-bottom: 16px;
   }
 
-  /* What is */
+  /* Approach section */
   .what-inner {
     max-width: 860px;
     margin-inline: auto;
   }
 
-  .what-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    margin-bottom: 32px;
-  }
-
-  .what-item {
-    background-color: var(--color-white);
-    border-radius: var(--radius-card);
-    padding: 24px 20px;
-    border: 1px solid var(--color-secondary);
-  }
-
-  .what-item__icon {
-    color: var(--color-primary);
-    margin-bottom: 12px;
-  }
-
-  .what-item h3 {
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--color-primary);
-    margin-bottom: 8px;
-  }
-
-  .what-item p {
-    font-size: 0.9rem;
-    color: var(--color-muted);
-    line-height: 1.6;
-    margin-bottom: 0;
-  }
-
-  .free-note {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    background-color: var(--color-white);
-    border-radius: var(--radius-card);
-    border: 1px solid var(--color-secondary);
-    border-left: 3px solid var(--color-primary);
-    padding: 18px 22px;
+  .approach-content p {
     font-size: 0.9375rem;
     color: var(--color-text);
     line-height: 1.6;
+    margin-bottom: 18px;
   }
 
-  .free-note svg {
-    color: var(--color-primary);
-    flex-shrink: 0;
-    margin-top: 2px;
-  }
-
-  .free-note p {
+  .approach-content p:last-of-type {
     margin-bottom: 0;
-  }
-
-  @media (max-width: 768px) {
-    .what-grid {
-      grid-template-columns: 1fr;
-    }
   }
 </style>
