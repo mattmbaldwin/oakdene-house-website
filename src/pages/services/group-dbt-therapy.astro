@@ -1,0 +1,356 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import InfoTable from '../../components/InfoTable.astro';
+import CTABand from '../../components/CTABand.astro';
+
+const serviceRows = [
+  { label: 'Cost', value: 'Free' },
+  { label: 'Access', value: 'By appointment — contact to discuss suitability' },
+  { label: 'Location', value: 'Oakdene Centre, 29 Vine Street, Fairfield' },
+  { label: 'Phone', value: '(02) 8717 0999' },
+  { label: 'Email', value: 'admin@oakdenehouse.org.au' },
+];
+
+const schedule = [
+  { day: 'Wednesday', time: '1:00pm – 2:15pm', notes: 'Starts 13 May 2026' },
+];
+---
+
+<BaseLayout
+  title="Group DBT Therapy — Oakdene House Foundation"
+  description="Group Dialectical Behaviour Therapy at Oakdene House Foundation — practical, evidence-based skills for managing emotions, relationships, and recovery."
+  ogImage="/images/centre/interior-meetings-1-img_2657-v2.png"
+>
+
+  <!-- HERO -->
+  <!-- TODO: Replace with dedicated DBT hero image when Simon supplies one. Currently reusing AA/GA meetings group room image. -->
+  <section class="dbt-hero" aria-label="Group DBT Therapy">
+    <div class="dbt-hero__overlay" aria-hidden="true"></div>
+    <div class="container dbt-hero__content">
+      <nav class="breadcrumb" aria-label="Breadcrumb">
+        <a href="/">Home</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <a href="/services/">Services</a>
+        <span class="breadcrumb__sep" aria-hidden="true">/</span>
+        <span aria-current="page">Group DBT Therapy</span>
+      </nav>
+      <h1>Group DBT Therapy</h1>
+      <p class="dbt-hero__lead">Practical skills for managing emotions, relationships, and life's harder moments.</p>
+    </div>
+  </section>
+
+  <!-- INTRO + SERVICE DETAILS -->
+  <section class="section" aria-labelledby="dbt-overview-heading">
+    <div class="container">
+      <div class="split">
+        <div>
+          <div class="section-heading">
+            <p class="section-heading__eyebrow">About this service</p>
+            <h2 id="dbt-overview-heading">Skills for the harder moments</h2>
+          </div>
+          <p>At Oakdene House Foundation, our Group Dialectical Behaviour Therapy (DBT) program supports people who feel emotionally overwhelmed, stuck in unhealthy patterns, or constantly pulled between wanting things to change and struggling to know how.</p>
+          <p>DBT is a practical, evidence-based therapy that helps people build skills to better manage emotions, relationships, stress, impulsive behaviours, and difficult thoughts. It was originally developed to support people experiencing intense emotional distress, but is now widely used across mental health, addiction recovery, trauma support, and wellbeing programs.</p>
+          <p>Our group program focuses on learning real-world tools in a safe, supportive environment alongside others who are working through similar challenges.</p>
+        </div>
+        <div>
+          <InfoTable rows={serviceRows} caption="Service details" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT THE GROUP COVERS -->
+  <section class="section section--tint" aria-labelledby="skills-heading">
+    <div class="container">
+      <div class="skills-inner">
+        <div class="section-heading section-heading--center">
+          <p class="section-heading__eyebrow">What the Group Covers</p>
+          <h2 id="skills-heading">Four core skill areas</h2>
+          <p class="section-heading__lead">The DBT group focuses on four practical skill areas — each one builds on the others.</p>
+        </div>
+        <div class="skills-grid">
+          <div class="skill-item">
+            <h3>Mindfulness</h3>
+            <p>Learning how to slow down, stay present, and become more aware of thoughts, emotions, and reactions without immediately acting on them.</p>
+          </div>
+          <div class="skill-item">
+            <h3>Distress Tolerance</h3>
+            <p>Building practical ways to get through difficult moments without making things worse through impulsive behaviours, substance use, gambling, anger, or withdrawal.</p>
+          </div>
+          <div class="skill-item">
+            <h3>Emotion Regulation</h3>
+            <p>Understanding emotions more clearly and learning strategies to reduce emotional overwhelm and increase stability.</p>
+          </div>
+          <div class="skill-item">
+            <h3>Interpersonal Effectiveness</h3>
+            <p>Developing healthier communication, boundaries, conflict management, and relationship skills.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO THE GROUP MAY HELP -->
+  <section class="section" aria-labelledby="who-heading">
+    <div class="container">
+      <div class="dbt-narrow">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">Who It Can Help</p>
+          <h2 id="who-heading">You don't need a formal diagnosis to take part</h2>
+        </div>
+        <p>The DBT group may benefit people who are experiencing:</p>
+        <ul class="offer-list">
+          <li>Emotional highs and lows</li>
+          <li>Anxiety or chronic stress</li>
+          <li>Anger or frustration that feels hard to control</li>
+          <li>Addiction or gambling-related struggles</li>
+          <li>Relationship difficulties</li>
+          <li>Impulsive behaviours</li>
+          <li>Feelings of shame, emptiness, or isolation</li>
+          <li>Difficulty coping during conflict or distress</li>
+        </ul>
+        <p class="closing-note">You do not need a formal diagnosis to participate.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT TO EXPECT -->
+  <section class="section section--tint" aria-labelledby="expect-heading">
+    <div class="container">
+      <div class="dbt-narrow">
+        <div class="section-heading">
+          <p class="section-heading__eyebrow">What to Expect</p>
+          <h2 id="expect-heading">Structured, supportive, and practical</h2>
+        </div>
+        <div class="expect-body">
+          <p>Our DBT groups are structured, supportive, and practical. Sessions combine discussion, skill-building, reflection, and guided exercises that can be applied in everyday life.</p>
+          <p>The focus is not on judgement or forcing people to share more than they are comfortable with. Many people find relief simply being in a room where others understand what it feels like to struggle.</p>
+          <p>Groups are facilitated by experienced mental health professionals who work from a compassionate, respectful, and person-centred approach.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRENT GROUP DETAILS -->
+  <section class="section" aria-labelledby="schedule-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">Schedule</p>
+        <h2 id="schedule-heading">Current group details</h2>
+        <p class="section-heading__lead">Groups run weekly during term time.</p>
+      </div>
+      <div class="schedule-scroll">
+        <div class="schedule-table-wrap">
+          <table class="schedule-table" aria-label="DBT group schedule">
+            <thead>
+              <tr>
+                <th scope="col">Day</th>
+                <th scope="col">Time</th>
+                <th scope="col">Notes</th>
+              </tr>
+            </thead>
+            <tbody>
+              {schedule.map(row => (
+                <tr>
+                  <td>{row.day}</td>
+                  <td>{row.time}</td>
+                  <td>{row.notes}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <CTABand
+    heading="Want to know if the DBT group is right for you?"
+    subheading="Contact our team to discuss whether the group may be suitable. You don't have to have everything figured out before getting in touch."
+    primaryBtn={{ text: 'Submit a Request', href: '/services/referral/' }}
+    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    dark={true}
+  />
+
+</BaseLayout>
+
+<style>
+  .dbt-hero {
+    position: relative;
+    min-height: 380px;
+    background-image: url('/images/centre/interior-meetings-1-img_2657-v2.png');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: flex-end;
+  }
+
+  .dbt-hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, rgba(0,62,81,0.35) 0%, rgba(0,62,81,0.85) 100%);
+  }
+
+  .dbt-hero__content {
+    position: relative;
+    z-index: 1;
+    padding-block: 56px;
+  }
+
+  .dbt-hero__content h1 { color: var(--color-white); margin-bottom: 10px; }
+
+  .dbt-hero__lead {
+    font-size: 1.125rem;
+    color: rgba(255,255,255,0.88);
+    margin-bottom: 0;
+    max-width: 520px;
+  }
+
+  /* Skills grid (4-card, same pattern as gambling-counselling impact grid) */
+  .skills-inner {
+    max-width: 860px;
+    margin-inline: auto;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  .skill-item {
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    padding: 24px;
+    border: 1px solid var(--color-secondary);
+  }
+
+  .skill-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 10px;
+  }
+
+  .skill-item p {
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  /* Who it can help + What to expect narrow sections */
+  .dbt-narrow {
+    max-width: 720px;
+  }
+
+  .offer-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0;
+    list-style: none;
+    margin-bottom: 20px;
+  }
+
+  .offer-list li {
+    padding-left: 24px;
+    position: relative;
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.55;
+  }
+
+  .offer-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+  }
+
+  .closing-note {
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+    line-height: 1.6;
+    margin-bottom: 0;
+  }
+
+  .expect-body p {
+    font-size: 0.9375rem;
+    color: var(--color-text);
+    line-height: 1.6;
+    margin-bottom: 18px;
+  }
+
+  .expect-body p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Schedule table */
+  .schedule-scroll {
+    overflow-x: auto;
+    max-width: 720px;
+    margin-inline: auto;
+  }
+
+  .schedule-table-wrap {
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    border: 1px solid var(--color-secondary);
+    min-width: 480px;
+  }
+
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    background-color: var(--color-white);
+  }
+
+  .schedule-table thead {
+    background-color: var(--color-primary);
+  }
+
+  .schedule-table thead th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-white);
+  }
+
+  .schedule-table tbody tr {
+    border-bottom: 1px solid var(--color-secondary);
+  }
+
+  .schedule-table tbody tr:last-child {
+    border-bottom: none;
+  }
+
+  .schedule-table tbody tr:nth-child(even) {
+    background-color: var(--color-tint);
+  }
+
+  .schedule-table td {
+    padding: 14px 20px;
+    color: var(--color-text);
+  }
+
+  .schedule-table td:first-child {
+    font-weight: 600;
+    color: var(--color-primary);
+  }
+
+  @media (max-width: 600px) {
+    .skills-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
