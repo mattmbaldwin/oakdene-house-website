@@ -14,6 +14,17 @@ const whatToExpect = [
   'Shared experience and mutual encouragement',
   'A confidential space focused on recovery and accountability',
 ];
+
+const gaSchedule = [
+  { day: 'Monday', time: '1:00pm – 2:00pm', notes: 'Starts 15 June 2026' },
+  { day: 'Wednesday', time: '7:00pm – 8:30pm', notes: '' },
+  { day: 'Friday', time: '12:00pm – 1:30pm', notes: '' },
+];
+
+const aaSchedule = [
+  { day: 'Tuesday', time: '5:00pm – 6:00pm', notes: 'Spanish Speaking' },
+  { day: 'Thursday', time: '1:00pm – 2:30pm', notes: '' },
+];
 ---
 
 <BaseLayout
@@ -69,7 +80,7 @@ const whatToExpect = [
             </div>
             <div>
               <p class="schedule-note__heading">Current schedule</p>
-              <p>Contact Oakdene for the current schedule of meetings, times, and locations.</p>
+              <p>See the full schedule of meetings below. New members are welcome and walk-ins are accepted.</p>
               <div class="schedule-contact">
                 <a href="tel:0287170999" class="schedule-phone">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
@@ -102,6 +113,69 @@ const whatToExpect = [
             <h3>Gamblers Anonymous (GA)</h3>
             <p>GA is a fellowship of people who share their experience, strength and hope with each other so they may solve their common problem and help others to recover from a gambling problem.</p>
             <p>GA meetings provide a structured peer environment built on the 12-step model of recovery.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MEETING SCHEDULE -->
+  <section class="section section--tint meetings-schedule" aria-labelledby="schedule-heading">
+    <div class="container">
+      <div class="section-heading section-heading--center">
+        <p class="section-heading__eyebrow">Schedule</p>
+        <h2 id="schedule-heading">Meeting times at Oakdene</h2>
+        <p class="section-heading__lead">New members are welcome and walk-ins are accepted. Meetings run weekly except where noted.</p>
+      </div>
+
+      <div class="schedule-block">
+        <h3 class="schedule-block__heading">Gamblers Anonymous (GA)</h3>
+        <div class="schedule-scroll">
+          <div class="schedule-table-wrap">
+            <table class="schedule-table" aria-label="GA meeting schedule">
+              <thead>
+                <tr>
+                  <th scope="col">Day</th>
+                  <th scope="col">Time</th>
+                  <th scope="col">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                {gaSchedule.map(row => (
+                  <tr>
+                    <td>{row.day}</td>
+                    <td>{row.time}</td>
+                    <td>{row.notes}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="schedule-block">
+        <h3 class="schedule-block__heading">Alcoholics Anonymous (AA)</h3>
+        <div class="schedule-scroll">
+          <div class="schedule-table-wrap">
+            <table class="schedule-table" aria-label="AA meeting schedule">
+              <thead>
+                <tr>
+                  <th scope="col">Day</th>
+                  <th scope="col">Time</th>
+                  <th scope="col">Notes</th>
+                </tr>
+              </thead>
+              <tbody>
+                {aaSchedule.map(row => (
+                  <tr>
+                    <td>{row.day}</td>
+                    <td>{row.time}</td>
+                    <td>{row.notes}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
           </div>
         </div>
       </div>
@@ -297,5 +371,83 @@ const whatToExpect = [
     .about-grid {
       grid-template-columns: 1fr;
     }
+  }
+
+  /* Meeting schedule section */
+  .meetings-schedule .section-heading {
+    max-width: 720px;
+    margin-inline: auto;
+    margin-bottom: 2.5rem;
+  }
+
+  .schedule-block {
+    max-width: 860px;
+    margin-inline: auto;
+    margin-bottom: 2.5rem;
+  }
+
+  .schedule-block:last-child {
+    margin-bottom: 0;
+  }
+
+  .schedule-block__heading {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .schedule-scroll {
+    overflow-x: auto;
+  }
+
+  .schedule-table-wrap {
+    min-width: 480px;
+    border-radius: var(--radius-card);
+    overflow: hidden;
+    border: 1px solid var(--color-secondary);
+  }
+
+  .schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.9375rem;
+    background-color: var(--color-white);
+  }
+
+  .schedule-table thead {
+    background-color: var(--color-primary);
+  }
+
+  .schedule-table thead th {
+    padding: 14px 20px;
+    text-align: left;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-white);
+  }
+
+  .schedule-table tbody tr {
+    border-bottom: 1px solid var(--color-secondary);
+  }
+
+  .schedule-table tbody tr:last-child td {
+    border-bottom: none;
+  }
+
+  .schedule-table tbody tr:nth-child(even) {
+    background-color: var(--color-tint);
+  }
+
+  .schedule-table td {
+    padding: 14px 20px;
+    color: var(--color-text);
+  }
+
+  .schedule-table td:first-child {
+    font-weight: 600;
+    color: var(--color-primary);
   }
 </style>
