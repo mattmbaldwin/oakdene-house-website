@@ -57,6 +57,21 @@ const ogImageUrl = new URL(ogImage, siteUrl).href;
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <title>{title}</title>
+
+    <!--
+      Google Analytics 4, served first-party via Cloudflare's Google tag gateway.
+      The tag loads from /metrics on this domain rather than googletagmanager.com;
+      Cloudflare proxies it through to Google. The gateway is configured on the
+      zone, so this path only resolves in production - in local dev it 404s and
+      no hits are sent, which is what we want.
+    -->
+    <script is:inline async src="/metrics/gtag/js?id=G-LGB2GV15KV"></script>
+    <script is:inline>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() { dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-LGB2GV15KV');
+    </script>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
