@@ -1,0 +1,27 @@
+{
+  "serviceName": "Aylward Game Solicitors – Parramatta",
+  "organisation": "Aylward Game Solicitors – Parramatta",
+  "category": "Legal / Justice",
+  "categoryGroup": "Legal & Justice",
+  "serviceType": "Legal / Justice Support",
+  "contact": {
+    "phone": "02 9633 2555",
+    "email": "info@aylwardgame.com.au",
+    "website": "https://www.aylwardgame.com.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

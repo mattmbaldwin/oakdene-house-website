@@ -1,0 +1,42 @@
+{
+  "seo__browser_title": "Gambling Counselling — Oakdene House Foundation",
+  "seo__search_description": "Free, confidential gambling counselling at Oakdene House, provided by Catholic Care. By appointment. Fairfield, Western Sydney.",
+  "hero__title": "Gambling Counselling",
+  "hero__intro": "Free, confidential one-on-one counselling for people affected by gambling.",
+  "overview__eyebrow": "About this service",
+  "overview__heading": "Support without judgment",
+  "overview__text": "Oakdene offers free, confidential one-on-one gambling counselling delivered by our team. Our counsellors are specially trained and experienced in addiction counselling, supporting people affected by gambling and helping them work through their challenges with dignity and respect.",
+  "overview__text_2": "Counselling is delivered by appointment on a one-to-one basis. All conversations are confidential and non-judgmental.",
+  "overview__text_3": "Cost",
+  "overview__text_4": "Free",
+  "overview__text_5": "Access",
+  "overview__text_6": "By appointment",
+  "overview__text_7": "Confidential",
+  "overview__text_8": "Yes — all sessions are private",
+  "overview__button": "admin@oakdenehouse.org.au",
+  "overview__image_alt": "Person finding support through counselling",
+  "overview__text_9": "24-hour support line",
+  "overview__text_10": "If you need to talk right now, the Gambling Help Line is free and available 24 hours a day.",
+  "overview__button_2": "1800 858 858",
+  "what_we_address__eyebrow": "How We Help",
+  "what_we_address__heading": "Understanding the impact of gambling",
+  "what_we_address__intro": "Gambling can affect every part of a person's life. Our counsellors work with you across all of it.",
+  "what_we_address__subheading": "Financial pressure",
+  "what_we_address__text": "Debt, loss of income, and financial instability are common consequences. Counselling helps you understand your options and plan ahead. Our [Financial Counselling](/services/financial-counselling/) service can also help with gambling-related financial harm, debt, and money stress.",
+  "what_we_address__subheading_2": "Relationships",
+  "what_we_address__text_2": "Gambling can strain family and personal relationships. We support honest conversations and rebuilding trust.",
+  "what_we_address__subheading_3": "Mental wellbeing",
+  "what_we_address__text_3": "Shame, anxiety and depression often accompany problem gambling. Counselling provides a space to process these experiences.",
+  "what_we_address__subheading_4": "Recovery planning",
+  "what_we_address__text_4": "We help you identify goals, build strategies and develop a personalised path forward.",
+  "cta__heading": "Take the first step",
+  "cta__subheading": "You do not have to figure this out alone. Reach out and we will arrange an appointment.",
+  "cta__primarybtn": {
+    "text": "Counselling Referral",
+    "href": "/services/referral/"
+  },
+  "cta__secondarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  }
+}

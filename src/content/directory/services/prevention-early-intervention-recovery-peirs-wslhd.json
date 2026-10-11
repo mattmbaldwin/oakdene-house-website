@@ -1,0 +1,29 @@
+{
+  "serviceName": "Prevention Early Intervention Recovery (PEIRS)",
+  "organisation": "WSLHD",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "02 9840 3549 (admin), 1800 011 511 (Client intake), 02 9377 6000 (DCJ)",
+    "email": "peirs@wslhd.health.nsw.gov.au",
+    "website": "https://www.wslhd.health.nsw.gov.au/Mental-Health-Services/How-we-help/Community-Services/acute-intervention"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/WesternSydneyLocalHealthDistrict/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,47 @@
+{
+  "seo__browser_title": "Staple Food Packs — Oakdene House Foundation",
+  "seo__search_description": "Free take-home grocery packs every Friday at Oakdene House, Fairfield. Includes fresh produce, pantry staples and hygiene items.",
+  "hero__title": "Staple Food Packs",
+  "hero__intro": "Take-home grocery packs for people doing it tough.",
+  "intro_details__eyebrow": "About this service",
+  "intro_details__heading": "Essentials to take home",
+  "intro_details__text": "In collaboration with OzHarvest, we provide free staple food packs to people experiencing financial hardship. Packs include fresh produce, pantry essentials and hygiene items where available.",
+  "intro_details__text_2": "Packs are distributed every Friday.",
+  "intro_details__subheading": "What's included",
+  "intro_details__text_3": "Supplied through",
+  "intro_details__image_alt": "OzHarvest",
+  "intro_details__caption": "Service details",
+  "food_image__image_alt": "Oakdene Kitchen staff serving a meal",
+  "rules_eligibility__eyebrow": "Important Information",
+  "rules_eligibility__heading": "Rules and eligibility",
+  "rules_eligibility__subheading": "Pack rules",
+  "rules_eligibility__list": [
+    "One pack per household",
+    "Packs are limited — once given out, none are available until next week"
+  ],
+  "rules_eligibility__subheading_2": "Eligibility",
+  "rules_eligibility__text": "The same eligibility applies as the Oakdene Kitchen:",
+  "rules_eligibility__list_2": [
+    "Current Centrelink Income Statement",
+    "Photo ID (passport or drivers licence)",
+    "Income under $1,200 per fortnight",
+    "Statement must be updated monthly"
+  ],
+  "rules_eligibility__text_2": "Also running on Fridays — if you need further support, speak with a team member about other Oakdene services including the [Kitchen](/community-programs/oakdene-kitchen/), [Laundrette](/community-programs/oakdene-laundrette/) and [Counselling](/services/individual-counselling/).",
+  "cta__heading": "Need to get in touch?",
+  "cta__primarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "cta__secondarybtn": {
+    "text": "Get Support",
+    "href": "/contact/"
+  },
+  "data__included": [
+    "Fresh fruit and vegetables",
+    "Canned goods",
+    "Long life milk",
+    "Cereal",
+    "Hygiene items — women's health, child/baby, dental (subject to availability)"
+  ]
+}

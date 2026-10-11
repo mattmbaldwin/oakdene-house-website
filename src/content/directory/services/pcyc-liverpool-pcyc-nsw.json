@@ -1,0 +1,29 @@
+{
+  "serviceName": "PCYC Liverpool",
+  "organisation": "PCYC NSW",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Youth programs / crime prevention",
+  "contact": {
+    "phone": "(02) 9601 1466",
+    "email": "liverpool@pcycnsw.org.au",
+    "website": "https://www.pcycnsw.org.au/liverpool/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/pcycnsw/"
+  },
+  "location": {
+    "suburb": "Liverpool",
+    "lga": "Liverpool",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=PCYC%20NSW"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (PCYC NSW)"
+}

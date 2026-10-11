@@ -1,0 +1,30 @@
+{
+  "serviceName": "Uniting Counselling and Mediation Fairfield",
+  "organisation": "Uniting",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "1800 864 846",
+    "email": "ask@uniting.org",
+    "website": "https://www.uniting.org/services/counselling-mediation/facility/uniting-counselling-and-mediation-frc-fairfield"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/unitingnswact/",
+    "linkedin": "https://www.linkedin.com/company/uniting-nsw-act/"
+  },
+  "location": {
+    "suburb": "Fairfield",
+    "lga": "Fairfield",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "78 722 562 218",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Uniting%20NSW.ACT"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,44 +1,20 @@
 ---
+import programs from '../../content/programs.json';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
+import pageText from '../../content/pages/services-life-choices-program.json';
 
-const schedule = [
-  { day: 'Monday', time: '11:00am – 12:15pm', format: 'In-person', audience: '' },
-  { day: 'Tuesday', time: '11:00am – 12:15pm', format: 'In-person', audience: 'Ladies Only' },
-  { day: 'Tuesday', time: '1:00pm – 2:15pm', format: 'In-person', audience: 'Men Only' },
-  { day: 'Tuesday', time: '4:00pm – 5:30pm', format: 'Online / Zoom Only', audience: '' },
-  { day: 'Wednesday', time: '11:00am – 12:30pm', format: 'In-person', audience: '' },
-  { day: 'Thursday', time: '11:00am – 12:30pm', format: 'In-person', audience: '' },
-  { day: 'Friday', time: '5:00pm – 6:30pm', format: 'In-person', audience: '' },
-];
+const schedule = programs.life_choices.schedule;
 
-const whatToExpect = [
-  'A structured group environment',
-  'Topics that support reflection, responsibility and personal growth',
-  'Practical strategies that can be applied in everyday life',
-  'A respectful setting that values participation, not perfection',
-];
+const whatToExpect = pageText.data__what_to_expect;
 
-const joinSteps = [
-  {
-    heading: 'Get in Touch',
-    body: 'Call or email Oakdene to express your interest.',
-  },
-  {
-    heading: 'Have a Chat',
-    body: 'A team member will have a short conversation with you to see if the program is a good fit.',
-  },
-  {
-    heading: 'Come to First Session',
-    body: 'Join us at the first session. You will meet the group and get started.',
-  },
-];
+const joinSteps = pageText.data__join_steps;
 ---
 
 <BaseLayout
-  title="Life Choices Program — Oakdene House Foundation"
-  description="A 6-week group program at Oakdene House to understand addiction, build life skills and connect with others. Multiple sessions available in-person and online."
-  ogImage="/images/centre/outside-meeting-2.png"
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
+  ogImage="/images/centre/outside-meeting-2.jpg"
 >
 
   <!-- HERO -->
@@ -52,8 +28,8 @@ const joinSteps = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">Life Choices Program</span>
       </nav>
-      <h1>Life Choices Program</h1>
-      <p class="lcp-hero__lead">A 6-week group program to help you understand addiction and build life skills.</p>
+      <h1>{pageText.hero__title}</h1>
+      <p class="lcp-hero__lead">{pageText.hero__intro}</p>
     </div>
   </section>
 
@@ -63,25 +39,25 @@ const joinSteps = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">Program Overview</p>
-            <h2 id="lcp-overview-heading">Life Choices</h2>
+            <p class="section-heading__eyebrow">{pageText.overview__eyebrow}</p>
+            <h2 id="lcp-overview-heading">{pageText.overview__heading}</h2>
           </div>
-          <p>The Life Choices Program is a practical, 6-week group experience designed to help people understand addiction, learn coping strategies, build life skills, and connect with others on a similar journey.</p>
-          <p>We meet regularly, share experiences, and work toward recovery in a supportive environment.</p>
+          <p>{pageText.overview__text}</p>
+          <p>{pageText.overview__text_2}</p>
 
-          <h3 class="section-subhead">What participants can expect</h3>
+          <h3 class="section-subhead">{pageText.overview__subheading}</h3>
           <ul class="expect-list">
             {whatToExpect.map(item => <li>{item}</li>)}
           </ul>
 
           <div class="who-box">
-            <p class="who-box__label">Who it's for</p>
-            <p>Life Choices is suitable for people who are ready to engage in a group-based program that supports change, accountability and future planning.</p>
+            <p class="who-box__label">{pageText.overview__text_3}</p>
+            <p>{pageText.overview__text_4}</p>
           </div>
         </div>
         <div>
           <div class="program-image">
-            <img src="/images/centre/interior-meetings-1-img_2657-v2.png" alt="Group meeting room at Oakdene House" loading="lazy" />
+            <img src="/images/centre/interior-meetings-1-img_2657-v2.jpg" alt={pageText.overview__image_alt} loading="lazy" />
           </div>
         </div>
       </div>
@@ -92,19 +68,19 @@ const joinSteps = [
   <section class="section section--tint" aria-labelledby="schedule-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Session Times</p>
-        <h2 id="schedule-heading">Program schedule</h2>
-        <p class="section-heading__lead">Sessions run across the week with both in-person and online options available.</p>
+        <p class="section-heading__eyebrow">{pageText.schedule__eyebrow}</p>
+        <h2 id="schedule-heading">{pageText.schedule__heading}</h2>
+        <p class="section-heading__lead">{pageText.schedule__intro}</p>
       </div>
       <div class="schedule-scroll">
         <div class="schedule-table-wrap">
           <table class="schedule-table" aria-label="Life Choices Program schedule">
             <thead>
               <tr>
-                <th scope="col">Day</th>
-                <th scope="col">Time</th>
-                <th scope="col">Format</th>
-                <th scope="col">Audience</th>
+                <th scope="col">{pageText.schedule__cell}</th>
+                <th scope="col">{pageText.schedule__cell_2}</th>
+                <th scope="col">{pageText.schedule__cell_3}</th>
+                <th scope="col">{pageText.schedule__cell_4}</th>
               </tr>
             </thead>
             <tbody>
@@ -131,8 +107,8 @@ const joinSteps = [
   <section class="section" aria-labelledby="join-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Getting Started</p>
-        <h2 id="join-heading">How to join</h2>
+        <p class="section-heading__eyebrow">{pageText.how_to_join__eyebrow}</p>
+        <h2 id="join-heading">{pageText.how_to_join__heading}</h2>
       </div>
       <div class="join-steps">
         {joinSteps.map((step, i) => (
@@ -147,11 +123,11 @@ const joinSteps = [
       <div class="contact-note">
         <div class="contact-note__item">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
-          <a href="tel:0287170999">(02) 8717 0999</a>
+          <a href="tel:0287170999">{pageText.how_to_join__button}</a>
         </div>
         <div class="contact-note__item">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a>
+          <a href="mailto:admin@oakdenehouse.org.au">{pageText.how_to_join__button_2}</a>
         </div>
       </div>
     </div>
@@ -159,9 +135,9 @@ const joinSteps = [
 
   <!-- CTA -->
   <CTABand
-    heading="Interested in Life Choices?"
-    primaryBtn={{ text: 'Program Interest', href: '/contact/?reason=program-interest' }}
-    secondaryBtn={{ text: 'Make an Enquiry', href: '/contact/' }}
+    heading={pageText.cta__heading}
+    primaryBtn={pageText.cta__primarybtn}
+    secondaryBtn={pageText.cta__secondarybtn}
     dark={true}
   />
 
@@ -171,11 +147,17 @@ const joinSteps = [
   .lcp-hero {
     position: relative;
     min-height: 400px;
-    background-image: url('/images/centre/outside-meeting-2.png');
+    background-image: url('/images/centre/outside-meeting-2.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    .lcp-hero {
+      background-image: url('/images/centre/outside-meeting-2-1080.jpg');
+    }
   }
 
   .lcp-hero__overlay {
@@ -404,13 +386,13 @@ const joinSteps = [
     color: var(--color-primary);
   }
 
-  .contact-note__item a {
+  .contact-note__item :global(a) {
     color: var(--color-primary);
     text-decoration: none;
     font-weight: 600;
   }
 
-  .contact-note__item a:hover {
+  .contact-note__item :global(a:hover) {
     text-decoration: underline;
   }
 

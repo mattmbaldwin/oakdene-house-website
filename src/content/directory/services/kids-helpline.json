@@ -1,0 +1,30 @@
+{
+  "serviceName": "Kids Helpline",
+  "organisation": "Kids Helpline",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "1800 55 1800",
+    "email": "admin@yourtown.com.au",
+    "website": "https://kidshelpline.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/kidshelplineau/",
+    "instagram": "https://www.instagram.com/kidshelplineau/"
+  },
+  "location": {
+    "suburb": "N/A — National service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "50 009 660 897",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=yourtown"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": "ACNC (via yourtown); healthdirect; DSS Service Finder"
+}

@@ -1,0 +1,31 @@
+{
+  "serviceName": "OzHarvest Western Sydney",
+  "organisation": "OzHarvest Western Sydney",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Material Aid / Resource Support",
+  "contact": {
+    "phone": "(02) 9888 3437",
+    "email": "info@ozharvest.org",
+    "website": "https://www.ozharvest.org/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/OzHarvest/",
+    "instagram": "https://www.instagram.com/ozharvest/",
+    "linkedin": "https://www.linkedin.com/company/ozharvest/"
+  },
+  "location": {
+    "suburb": "Wetherill Park",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": "46 569 098 754",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=OzHarvest"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (ABN 46 569 098 754); Ask Izzy; Foodbank network"
+}

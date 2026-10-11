@@ -1,0 +1,29 @@
+{
+  "serviceName": "South Western Sydney PHN",
+  "organisation": "South Western Sydney PHN",
+  "category": "Health System",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Primary care coordination",
+  "contact": {
+    "phone": "02 8667 8000",
+    "email": "info@swsphn.com.au",
+    "website": "https://www.swsphn.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/SWSPHN/"
+  },
+  "location": {
+    "suburb": "Liverpool",
+    "lga": "Multi-LGA (South Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": "47 165 565 519",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=South%20Western%20Sydney%20Primary%20Health%20Network"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

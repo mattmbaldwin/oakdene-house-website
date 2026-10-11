@@ -1,0 +1,30 @@
+{
+  "serviceName": "Blacktown Hills Youth Homelessness Service",
+  "organisation": "MacKillop Family Services",
+  "category": "Housing / Homelessness",
+  "categoryGroup": "Housing & Homelessness",
+  "serviceType": "Housing / Homelessness Support",
+  "contact": {
+    "phone": "02 8881 4800",
+    "email": "referral@mackillop.org.au",
+    "website": "https://www.mackillop.org.au/programs/blacktown-hills-youth-homelessness-service"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/MacKillopFamilyServices/",
+    "linkedin": "https://www.linkedin.com/company/mackillop-family-services/"
+  },
+  "location": {
+    "suburb": "Blacktown",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "79 005 304 432",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=MacKillop%20Family%20Services"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

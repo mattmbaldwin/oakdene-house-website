@@ -1,32 +1,19 @@
 ---
+import programs from '../../content/programs.json';
+import { inline } from '../../lib/format';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import InfoTable from '../../components/InfoTable.astro';
 import CTABand from '../../components/CTABand.astro';
+import pageText from '../../content/pages/community-programs-used-clothing-store.json';
 
-const serviceRows = [
-  { label: 'Days', value: 'Tuesday, Wednesday, Thursday' },
-  { label: 'Hours', value: '12pm–2pm' },
-  { label: 'Location', value: 'Inside the Laundrette, 1 Dale Street, Fairfield' },
-  { label: 'Cost', value: 'Free' },
-  { label: 'Email', value: '<a href="mailto:kitchen@oakdenehouse.org.au">kitchen@oakdenehouse.org.au</a>' },
-  { label: 'Phone', value: '<a href="tel:0415156100">0415 156 100</a>' },
-];
+const serviceRows = programs.used_clothing_store.rows.map((row) => ({ label: row.label, value: inline(row.value) }));
 
-const guidelines = [
-  '3 items per visit',
-  'One visit per month',
-  'Clothing cannot be tried on',
-  'No returns once taken',
-  'One person in the room at a time',
-  'Door must remain open',
-  'Access will be managed by the staff onsite',
-  'Items are not available by request and based on donations received',
-];
+const guidelines = pageText.data__guidelines;
 ---
 
 <BaseLayout
-  title="Used Clothing Store — Oakdene House Foundation"
-  description="Free men's and women's clothing, shoes and accessories at Oakdene's Used Clothing Store, inside the Laundrette at 1 Dale Street, Fairfield."
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
   ogImage="/images/boutique/boutique-interior-clothing-rack.jpg"
 >
 
@@ -41,8 +28,8 @@ const guidelines = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">Used Clothing Store</span>
       </nav>
-      <h1>Oakdene Used Clothing Store</h1>
-      <p class="clothing-hero__lead">Free clothing for people doing it tough.</p>
+      <h1>{pageText.hero__title}</h1>
+      <p class="clothing-hero__lead">{pageText.hero__intro}</p>
     </div>
   </section>
 
@@ -52,24 +39,24 @@ const guidelines = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">The Service</p>
-            <h2 id="clothing-intro-heading">Clothing with dignity</h2>
+            <p class="section-heading__eyebrow">{pageText.intro_details__eyebrow}</p>
+            <h2 id="clothing-intro-heading">{pageText.intro_details__heading}</h2>
           </div>
-          <p>The Oakdene Used Clothing Store offers free men's and women's clothing, shoes, and accessories to people experiencing hardship. The store is located inside our Laundrette at 1 Dale Street, Fairfield.</p>
-          <p>We believe access to clean, decent clothing is a basic necessity, and we are here to help without judgment.</p>
+          <p>{pageText.intro_details__text}</p>
+          <p>{pageText.intro_details__text_2}</p>
 
           <div class="guidelines-card">
-            <h3>Visit guidelines</h3>
+            <h3>{pageText.intro_details__subheading}</h3>
             <ul class="guidelines-list">
               {guidelines.map(g => <li>{g}</li>)}
             </ul>
           </div>
         </div>
         <div>
-          <InfoTable rows={serviceRows} caption="Service details" />
+          <InfoTable rows={serviceRows} caption={pageText.intro_details__caption} />
           <div class="eligibility-box">
-            <h3>Eligibility</h3>
-            <p>The same eligibility applies as the Oakdene Kitchen and Laundrette — a current Centrelink Income Statement and photo ID showing income under $1,200 per fortnight.</p>
+            <h3>{pageText.intro_details__subheading_2}</h3>
+            <p>{pageText.intro_details__text_3}</p>
           </div>
         </div>
       </div>
@@ -80,10 +67,10 @@ const guidelines = [
   <section class="clothing-images" aria-label="Clothing store photos">
     <div class="image-pair">
       <div class="image-pair__item">
-        <img src="/images/boutique/boutique-interior-looking-down-shop-with-people.png" alt="Clothing rack at the Oakdene Used Clothing Store" loading="lazy" />
+        <img src="/images/boutique/boutique-interior-looking-down-shop-with-people.jpg" alt={pageText.clothing_images__image_alt} loading="lazy" />
       </div>
       <div class="image-pair__item">
-        <img src="/images/boutique/boutique-interior-close-up-bag-warmer.png" alt="Close up view of clothing at Oakdene" loading="lazy" />
+        <img src="/images/boutique/boutique-interior-close-up-bag-warmer.jpg" alt={pageText.clothing_images__image_alt_2} loading="lazy" />
       </div>
     </div>
   </section>
@@ -96,11 +83,11 @@ const guidelines = [
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         </div>
         <div>
-          <p class="also-available__heading">Also on the same days</p>
-          <p>The Oakdene Laundrette and Oakdene Kitchen operate on the same days and hours. You can access all three services on a single visit.</p>
+          <p class="also-available__heading">{pageText.also_available_note__text}</p>
+          <p>{pageText.also_available_note__text_2}</p>
           <div class="btn-group">
-            <a href="/community-programs/oakdene-laundrette/" class="btn btn--secondary">Laundrette</a>
-            <a href="/community-programs/oakdene-kitchen/" class="btn btn--secondary">Kitchen</a>
+            <a href="/community-programs/oakdene-laundrette/" class="btn btn--secondary">{pageText.also_available_note__button}</a>
+            <a href="/community-programs/oakdene-kitchen/" class="btn btn--secondary">{pageText.also_available_note__button_2}</a>
           </div>
         </div>
       </div>
@@ -109,9 +96,9 @@ const guidelines = [
 
   <!-- CTA -->
   <CTABand
-    heading="Have questions about the store?"
-    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
-    secondaryBtn={{ text: 'Get Support', href: '/contact/' }}
+    heading={pageText.cta__heading}
+    primaryBtn={pageText.cta__primarybtn}
+    secondaryBtn={pageText.cta__secondarybtn}
     dark={true}
   />
 
@@ -126,6 +113,12 @@ const guidelines = [
     background-position: center;
     display: flex;
     align-items: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    .clothing-hero {
+      background-image: url('/images/boutique/boutique-interior-clothing-rack-1080.jpg');
+    }
   }
 
   .clothing-hero__overlay {

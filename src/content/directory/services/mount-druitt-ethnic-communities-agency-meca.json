@@ -1,0 +1,27 @@
+{
+  "serviceName": "Mount Druitt Ethnic Communities Agency (MECA)",
+  "organisation": "Mount Druitt Ethnic Communities Agency (MECA)",
+  "category": "Migrant Support",
+  "categoryGroup": "Migrant & Multicultural",
+  "serviceType": "Settlement / Multicultural Support",
+  "contact": {
+    "phone": "(02) 9625 9300",
+    "email": "info@meca.org.au",
+    "website": "https://www.meca.org.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Mount Druitt",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Mount%20Druitt%20Ethnic%20Communities%20Agency%20%28MECA%29"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

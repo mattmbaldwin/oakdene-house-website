@@ -1,0 +1,146 @@
+{
+  "seo__browser_title": "Oakdene House Foundation — Real Support for Real Life",
+  "seo__search_description": "Oakdene House Foundation supports people and families in Fairfield, Western Sydney affected by addiction, hardship and homelessness. Free counselling, community programs, kitchen and more.",
+  "hero__heading": "Practical support, real connection, and a place to take the next step.",
+  "hero__subheading": "Oakdene House Foundation supports people and families facing addiction, hardship, homelessness, and life challenges through practical help, counselling, community programs, and connection to the right support.",
+  "hero__image_alt": "Oakdene House Foundation centre exterior",
+  "hero__buttons": [
+    {
+      "text": "Get Support",
+      "href": "/contact/",
+      "variant": "white"
+    },
+    {
+      "text": "Explore Services",
+      "href": "/services/",
+      "variant": "white-outline"
+    }
+  ],
+  "quick_pathways__heading": "How can we help?",
+  "mission__heading": "Support that meets people where they are",
+  "mission__text": "Oakdene is a community charity based in Fairfield, Western Sydney. We work alongside people and families with practical support, connection, and pathways to further help.",
+  "mission__text_2": "At Oakdene House, we believe real change happens when people feel safe, seen and supported. Our work brings together counselling, peer connection and practical care so people can access help that feels human, local and achievable.",
+  "mission__text_3": "From individual counselling and group recovery programs to our kitchen, laundrette and boutique, every part of Oakdene is built around restoring hope and creating pathways forward.",
+  "mission__button": "Learn More About Us",
+  "mission__image_alt": "Oakdene House Foundation centre building exterior",
+  "stats__eyebrow": "Our Impact",
+  "stats__heading": "Making a difference every day",
+  "stats__text": "Over 60% of participants seek continued assistance after treatment or counselling at our addiction centre.",
+  "services_preview__eyebrow": "Our Services",
+  "services_preview__heading": "Support that makes a difference",
+  "services_preview__button": "View All Services",
+  "how_we_help__image_alt": "Oakdene House Foundation centre interior",
+  "how_we_help__eyebrow": "Our Approach",
+  "how_we_help__heading": "How support works",
+  "testimonials__eyebrow": "Community Voices",
+  "testimonials__heading": "What people say",
+  "faqs__eyebrow": "Questions",
+  "faqs__heading": "Common questions",
+  "video__eyebrow": "Watch",
+  "video__heading": "Our story",
+  "video__intro": "Hear from people in recovery, our counsellors and the people who started Oakdene House.",
+  "video__label": "Play video: Oakdene House Foundation, our story",
+  "video__button": "Watch with transcript",
+  "final_cta__heading": "Need support or not sure where to start?",
+  "final_cta__subheading": "Reach out to the Oakdene team and we will help you work out the best next step.",
+  "final_cta__primarybtn": {
+    "text": "Get Support",
+    "href": "/contact/"
+  },
+  "final_cta__secondarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "data__stats": [
+    {
+      "number": "5,000+",
+      "label": "Meals and food packs delivered annually"
+    },
+    {
+      "number": "$250,000",
+      "label": "Value of supplies provided annually"
+    },
+    {
+      "number": "5,000+",
+      "label": "Individuals impacted"
+    },
+    {
+      "number": "25",
+      "label": "Local organisation partnerships"
+    }
+  ],
+  "data__services": [
+    {
+      "title": "Counselling and Support",
+      "summary": "One-on-one support to help you understand what you are facing and find a path forward that feels achievable.",
+      "href": "/services/individual-counselling/",
+      "image": "/images/centre/interior-meetings-1-img_2657.jpg",
+      "imageAlt": "Oakdene Centre meeting room"
+    },
+    {
+      "title": "Life Choices Program",
+      "summary": "A 6-week group program focused on recovery, connection and building practical life skills in a supportive environment.",
+      "href": "/services/life-choices-program/",
+      "image": "/images/centre/interior-interior-1-with-people-img_2654.jpg",
+      "imageAlt": "Oakdene Centre interior"
+    },
+    {
+      "title": "Oakdene Kitchen",
+      "summary": "Free nutritious meals for eligible community members every Tuesday, Wednesday and Thursday, 12pm–2pm.",
+      "href": "/community-programs/oakdene-kitchen/",
+      "image": "/images/kitchen/oakdene-kitchen-around-table.jpg",
+      "imageAlt": "Oakdene Kitchen interior dining room"
+    },
+    {
+      "title": "Ladies Boutique",
+      "summary": "A welcoming space offering affordable clothing and salon support for women. No woman is turned away due to financial difficulty.",
+      "href": "/community-programs/ladies-boutique/",
+      "image": "/images/boutique/boutique-interior-looking-down-shop-with-people.jpg",
+      "imageAlt": "Oakdene Boutique interior"
+    }
+  ],
+  "data__pathways": [
+    {
+      "title": "Counselling",
+      "summary": "Talk with someone about support, recovery, and your next steps.",
+      "href": "/services/"
+    },
+    {
+      "title": "Community Programs",
+      "summary": "Explore practical programs that build connection, confidence, and consistency.",
+      "href": "/community-programs/"
+    },
+    {
+      "title": "Resources",
+      "summary": "Access guides, information, and support tools you can use straight away.",
+      "href": "/resources/"
+    },
+    {
+      "title": "Service Directory",
+      "summary": "Browse other services and supports in the community.",
+      "href": "/service-directory/"
+    }
+  ],
+  "data__steps": [
+    {
+      "number": "1",
+      "title": "Connect",
+      "body": "Reach out online, by phone, or in person."
+    },
+    {
+      "number": "2",
+      "title": "Talk",
+      "body": "We listen, understand what is happening, and help identify needs."
+    },
+    {
+      "number": "3",
+      "title": "Support",
+      "body": "We provide direct support where we can and link to other services where needed."
+    },
+    {
+      "number": "4",
+      "title": "Next Steps",
+      "body": "We help people move forward with clearer options and stronger connection."
+    }
+  ]
+}

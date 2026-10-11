@@ -1,0 +1,29 @@
+{
+  "serviceName": "Karabi Community & Development Services Inc - Seven Hills",
+  "organisation": "Karabi Community & Development Services Inc - Seven Hills",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "02 9688 1084",
+    "email": "admin@karabi.org.au",
+    "website": "http://www.karabi.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/KarabiCommunity/"
+  },
+  "location": {
+    "suburb": "Seven Hills",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Karabi%20Community%20%26%20Development%20Services%20Inc"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

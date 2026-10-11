@@ -1,0 +1,27 @@
+{
+  "serviceName": "ADHD Foundation Australia",
+  "organisation": "ADHD Foundation Australia",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1300 393 919",
+    "email": "support@adhdfoundation.org.au",
+    "website": "https://adhdfoundation.org.au/helpline"
+  },
+  "social": {},
+  "location": {
+    "suburb": "N/A — Australia-wide service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=ADHD%20Foundation%20Australia"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

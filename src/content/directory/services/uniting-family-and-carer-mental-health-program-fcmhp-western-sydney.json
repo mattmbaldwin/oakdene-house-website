@@ -1,0 +1,30 @@
+{
+  "serviceName": "Uniting Family and Carer Mental Health Program (FCMHP): Western Sydney",
+  "organisation": "Uniting",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 8599 4880",
+    "email": "fcmhinfows@uniting.org",
+    "website": "https://www.uniting.org/services/mental-health/facility/family-and-carers-mental-health-program-fcmh-western-sydney"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/unitingnswact/",
+    "linkedin": "https://www.linkedin.com/company/uniting-nsw-act/"
+  },
+  "location": {
+    "suburb": "Seven Hills",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "78 722 562 218",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Uniting%20NSW.ACT"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

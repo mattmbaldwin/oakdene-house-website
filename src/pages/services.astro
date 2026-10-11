@@ -2,107 +2,30 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ServiceCard from '../components/ServiceCard.astro';
 import CTABand from '../components/CTABand.astro';
+import pageText from '../content/pages/services.json';
+import { inlineMarkdown } from '../lib/format';
 
-const categories = [
-  {
-    heading: 'Counselling & One-on-One Support',
-    description: 'Person-centred support that helps people talk through challenges, make sense of what is happening, and identify the next step.',
-    icon: 'heart',
-  },
-  {
-    heading: 'Group & Recovery Programs',
-    description: 'Structured group programs that build accountability, coping skills, and peer connection across the recovery journey.',
-    icon: 'people',
-  },
-  {
-    heading: 'Referral Pathways',
-    description: 'Help connecting with the right services when more specialised or longer-term support is needed.',
-    icon: 'arrow',
-  },
-];
+const categories = pageText.data__categories;
 
-const services = [
-  {
-    title: 'Life Choices Program',
-    summary: 'A 6-week group program covering addiction, coping strategies, life skills and peer connection.',
-    href: '/services/life-choices-program/',
-    image: '/images/centre/outside-meeting.png',
-    imageAlt: 'Group meeting room at Oakdene House',
-    eyebrow: 'Community-Based Support',
-  },
-  {
-    title: 'Group DBT Therapy',
-    summary: 'Practical, evidence-based skills for managing emotions, relationships, and difficult moments.',
-    href: '/services/group-dbt-therapy/',
-    image: '/images/dbt/dbt-hero-photo.png',
-    imageAlt: 'Group meeting room at Oakdene House',
-    eyebrow: 'Counselling and Support',
-  },
-  {
-    title: 'Outpatients Program',
-    summary: 'Structured rehabilitation with counselling, group sessions, 12-step support and peer mentoring.',
-    href: '/services/outpatients-program/',
-    image: '/images/centre/interior-img_2655-with-people.png',
-    imageAlt: 'Interior support space at Oakdene House',
-    imagePosition: 'center 60%',
-    eyebrow: 'Counselling and Support',
-  },
-  {
-    title: 'Individual Counselling',
-    summary: 'Confidential one-on-one counselling for people affected by addiction and related challenges.',
-    href: '/services/individual-counselling/',
-    image: '/images/centre/interior-interior-2-img_2656-with-people.png',
-    imageAlt: 'Individual counselling space at Oakdene House',
-    eyebrow: 'Counselling and Support',
-  },
-  {
-    title: 'Gambling Counselling',
-    summary: 'Free, confidential gambling counselling provided by Catholic Care — by appointment.',
-    href: '/services/gambling-counselling/',
-    image: '/images/generic/colour-distressed-woman.png',
-    imageAlt: 'Person seeking support — gambling counselling',
-    eyebrow: 'Counselling and Support',
-  },
-  {
-    title: 'AA & GA Meetings',
-    summary: 'Alcoholics Anonymous and Gamblers Anonymous meetings, including Spanish-speaking sessions.',
-    href: '/services/aa-ga-meetings/',
-    image: '/images/centre/interior-meetings-1-img_2657-v2.png',
-    imageAlt: 'Meeting room at Oakdene House',
-    eyebrow: 'Community-Based Support',
-  },
-  {
-    title: 'Financial Counselling',
-    summary: 'Free guidance for people experiencing financial hardship — managing debt, bills and planning ahead.',
-    href: '/services/financial-counselling/',
-    image: '/images/generic/colour-business-man_distress.png',
-    imageAlt: 'Person experiencing financial stress',
-    eyebrow: 'Referral Pathways',
-  },
-];
+const services = pageText.data__services;
 
-const steps = [
-  { number: '01', heading: 'Make Contact', body: 'Reach out by phone, email, form, or in person.' },
-  { number: '02', heading: 'Share Your Story', body: 'Tell us what is happening and what kind of help you are looking for.' },
-  { number: '03', heading: 'Get Connected', body: 'We review your enquiry and work out the most helpful next step.' },
-  { number: '04', heading: 'Move Forward', body: 'You are connected with direct support, a program, referral, or a mix of these.' },
-];
+const steps = pageText.data__steps;
 ---
 
 <BaseLayout
-  title="Services — Oakdene House Foundation"
-  description="Oakdene House Foundation offers counselling, practical support, community programs and referral pathways for people experiencing hardship in Fairfield, Western Sydney."
-  ogImage="/images/centre/interior-img_2655-with-people.png"
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
+  ogImage="/images/centre/interior-img_2655-with-people.jpg"
 >
 
   <!-- HERO -->
   <section class="services-hero" aria-label="Services">
     <div class="services-hero__overlay" aria-hidden="true"></div>
     <div class="container services-hero__content">
-      <h1>Addiction support that meets people where they are</h1>
-      <p class="services-hero__lead">Oakdene provides structured addiction support — counselling, group programs, peer meetings, and financial guidance — for people working through gambling, alcohol, and other dependencies. <strong>Our team specialises in gambling and alcohol dependency, with experienced counsellors trained in these areas.</strong></p>
+      <h1>{pageText.hero__title}</h1>
+      <p class="services-hero__lead" set:html={inlineMarkdown(pageText.hero__intro)}></p>
       <div class="btn-group">
-        <a href="/contact/" class="btn btn--white">Get Support</a><!-- TODO: Replace with live Jotform URL -->
+        <a href="/contact/" class="btn btn--white">{pageText.hero__button}</a><!-- TODO: Replace with live Jotform URL -->
       </div>
     </div>
   </section>
@@ -111,9 +34,9 @@ const steps = [
   <section class="section" aria-labelledby="categories-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">What We Offer</p>
-        <h2 id="categories-heading">Seven services across the recovery journey</h2>
-        <p class="section-heading__lead">From individual counselling to peer support and financial guidance — the full spectrum of addiction recovery in one place.</p>
+        <p class="section-heading__eyebrow">{pageText.what_we_offer__eyebrow}</p>
+        <h2 id="categories-heading">{pageText.what_we_offer__heading}</h2>
+        <p class="section-heading__lead">{pageText.what_we_offer__intro}</p>
       </div>
       <div class="categories-grid">
         {categories.map(cat => (
@@ -141,8 +64,8 @@ const steps = [
   <section class="section section--tint" aria-labelledby="all-services-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">All Services</p>
-        <h2 id="all-services-heading">Everything we offer</h2>
+        <p class="section-heading__eyebrow">{pageText.all_services_grid__eyebrow}</p>
+        <h2 id="all-services-heading">{pageText.all_services_grid__heading}</h2>
       </div>
       <div class="card-grid">
         {services.map(s => (
@@ -163,9 +86,9 @@ const steps = [
   <section class="section" aria-labelledby="steps-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Getting Started</p>
-        <h2 id="steps-heading">How to get started</h2>
-        <p class="section-heading__lead">Accessing support at Oakdene is straightforward. Here is what to expect.</p>
+        <p class="section-heading__eyebrow">{pageText.how_to_get_started__eyebrow}</p>
+        <h2 id="steps-heading">{pageText.how_to_get_started__heading}</h2>
+        <p class="section-heading__lead">{pageText.how_to_get_started__intro}</p>
       </div>
       <div class="steps-grid">
         {steps.map(step => (
@@ -184,13 +107,13 @@ const steps = [
     <div class="container">
       <div class="who-split">
         <div class="section-heading">
-          <p class="section-heading__eyebrow">Who We Support</p>
-          <h2 id="who-heading">You don't need to meet specific criteria</h2>
+          <p class="section-heading__eyebrow">{pageText.who_we_support__eyebrow}</p>
+          <h2 id="who-heading">{pageText.who_we_support__heading}</h2>
         </div>
         <div class="who-body">
-          <p>Oakdene supports individuals, families, carers, and community members looking for practical help, guidance, connection, or referral support. This includes people affected by addiction, hardship, homelessness, social isolation, or other major life pressures.</p>
-          <p>You do not need to meet specific criteria. If you are going through a tough time and need support, we are here.</p>
-          <a href="/contact/" class="btn btn--primary">Get Support</a><!-- TODO: Replace with live Jotform URL -->
+          <p>{pageText.who_we_support__text}</p>
+          <p>{pageText.who_we_support__text_2}</p>
+          <a href="/contact/" class="btn btn--primary">{pageText.who_we_support__button}</a><!-- TODO: Replace with live Jotform URL -->
         </div>
       </div>
     </div>
@@ -198,9 +121,9 @@ const steps = [
 
   <!-- CTA -->
   <CTABand
-    heading="We are here to help"
-    primaryBtn={{ text: 'Get Support', href: '/contact/' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={pageText.cta__heading}
+    primaryBtn={pageText.cta__primarybtn}
+    secondaryBtn={pageText.cta__secondarybtn}
     dark={true}
   />
 

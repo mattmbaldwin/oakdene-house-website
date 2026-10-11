@@ -1,0 +1,30 @@
+{
+  "serviceName": "CORE Community Services",
+  "organisation": "CORE Community Services",
+  "category": "Migrant Support",
+  "categoryGroup": "Migrant & Multicultural",
+  "serviceType": "Settlement / Multicultural Support",
+  "contact": {
+    "phone": "(02) 9727 0477",
+    "email": "info@core.org.au",
+    "website": "https://www.core.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/COREcommunityservices/",
+    "linkedin": "https://www.linkedin.com/company/core-community-services/"
+  },
+  "location": {
+    "suburb": "Fairfield",
+    "lga": "Fairfield",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "91 002 893 928",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=CORE%20Community%20Services"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (ABN 91 002 893 928); Settlement Services Programme"
+}

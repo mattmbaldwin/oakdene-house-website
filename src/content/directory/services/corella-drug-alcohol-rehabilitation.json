@@ -1,0 +1,27 @@
+{
+  "serviceName": "Corella Drug & Alcohol Rehabilitation",
+  "organisation": "Corella Drug & Alcohol Rehabilitation",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Residential Rehabilitation",
+  "contact": {
+    "phone": "(02) 9616 8401",
+    "email": null,
+    "website": "https://www.swslhd.health.nsw.gov.au/drughealth/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Lake Macquarie",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Corella%20Drug%20%26%20Alcohol%20Rehabilitation"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

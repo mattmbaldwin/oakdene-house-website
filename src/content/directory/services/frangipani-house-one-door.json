@@ -1,0 +1,30 @@
+{
+  "serviceName": "Frangipani House",
+  "organisation": "One Door",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9689 2600",
+    "email": "frangipanihouse@onedoor.org.au",
+    "website": "https://www.onedoor.org.au/our-services/ndis-services/frangipani-house"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/OneDoorMentalHealth/",
+    "linkedin": "https://www.linkedin.com/company/one-door-mental-health/"
+  },
+  "location": {
+    "suburb": "Harris Park",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "71 002 442 248",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=One%20Door%20Mental%20Health"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,29 @@
+{
+  "serviceName": "Benelong’s Haven",
+  "organisation": "Benelong’s Haven",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Residential Rehabilitation",
+  "contact": {
+    "phone": "(02) 6562 4554",
+    "email": "admin@benelongshaven.com.au",
+    "website": "https://benelongshaven.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/BenelongsHaven/"
+  },
+  "location": {
+    "suburb": "Kempsey",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Benelong%27s%20Haven"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (Aboriginal-controlled); NSW Health AOD service directory"
+}

@@ -1,0 +1,65 @@
+{
+  "seo__browser_title": "Group DBT Therapy — Oakdene House Foundation",
+  "seo__search_description": "Group Dialectical Behaviour Therapy at Oakdene House Foundation — practical, evidence-based skills for managing emotions, relationships, and recovery.",
+  "hero__title": "Group DBT Therapy",
+  "hero__intro": "Practical skills for managing emotions, relationships, and life's harder moments.",
+  "intro_service_details__eyebrow": "About this service",
+  "intro_service_details__heading": "Skills for the harder moments",
+  "intro_service_details__text": "At Oakdene House Foundation, our Group Dialectical Behaviour Therapy (DBT) program supports people who feel emotionally overwhelmed, stuck in unhealthy patterns, or constantly pulled between wanting things to change and struggling to know how.",
+  "intro_service_details__text_2": "DBT is a practical, evidence-based therapy that helps people build skills to better manage emotions, relationships, stress, impulsive behaviours, and difficult thoughts. It was originally developed to support people experiencing intense emotional distress, but is now widely used across mental health, addiction recovery, trauma support, and wellbeing programs.",
+  "intro_service_details__text_3": "Our group program focuses on learning real-world tools in a safe, supportive environment alongside others who are working through similar challenges.",
+  "intro_service_details__caption": "Service details",
+  "current_group_details__eyebrow": "Schedule",
+  "current_group_details__heading": "Current group details",
+  "current_group_details__intro": "Groups run weekly during term time.",
+  "current_group_details__cell": "Day",
+  "current_group_details__cell_2": "Time",
+  "current_group_details__cell_3": "Notes",
+  "what_the_group_covers__eyebrow": "What the Group Covers",
+  "what_the_group_covers__heading": "Four core skill areas",
+  "what_the_group_covers__intro": "The DBT group focuses on four practical skill areas — each one builds on the others.",
+  "what_the_group_covers__subheading": "Mindfulness",
+  "what_the_group_covers__text": "Learning how to slow down, stay present, and become more aware of thoughts, emotions, and reactions without immediately acting on them.",
+  "what_the_group_covers__subheading_2": "Distress Tolerance",
+  "what_the_group_covers__text_2": "Building practical ways to get through difficult moments without making things worse through impulsive behaviours, substance use, gambling, anger, or withdrawal.",
+  "what_the_group_covers__subheading_3": "Emotion Regulation",
+  "what_the_group_covers__text_3": "Understanding emotions more clearly and learning strategies to reduce emotional overwhelm and increase stability.",
+  "what_the_group_covers__subheading_4": "Interpersonal Effectiveness",
+  "what_the_group_covers__text_4": "Developing healthier communication, boundaries, conflict management, and relationship skills.",
+  "who_the_group_may_help__eyebrow": "Who It Can Help",
+  "who_the_group_may_help__heading": "You don't need a formal diagnosis to take part",
+  "who_the_group_may_help__text": "The DBT group may benefit people who are experiencing:",
+  "who_the_group_may_help__list": [
+    "Emotional highs and lows",
+    "Anxiety or chronic stress",
+    "Anger or frustration that feels hard to control",
+    "Addiction or gambling-related struggles",
+    "Relationship difficulties",
+    "Impulsive behaviours",
+    "Feelings of shame, emptiness, or isolation",
+    "Difficulty coping during conflict or distress"
+  ],
+  "who_the_group_may_help__text_2": "You do not need a formal diagnosis to participate.",
+  "what_to_expect__eyebrow": "What to Expect",
+  "what_to_expect__heading": "Structured, supportive, and practical",
+  "what_to_expect__text": "Our DBT groups are structured, supportive, and practical. Sessions combine discussion, skill-building, reflection, and guided exercises that can be applied in everyday life.",
+  "what_to_expect__text_2": "The focus is not on judgement or forcing people to share more than they are comfortable with. Many people find relief simply being in a room where others understand what it feels like to struggle.",
+  "what_to_expect__text_3": "Groups are facilitated by experienced mental health professionals who work from a compassionate, respectful, and person-centred approach.",
+  "cta__heading": "Want to know if the DBT group is right for you?",
+  "cta__subheading": "Contact our team to discuss whether the group may be suitable. You don't have to have everything figured out before getting in touch.",
+  "cta__primarybtn": {
+    "text": "Submit a Request",
+    "href": "/services/referral/"
+  },
+  "cta__secondarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "data__schedule": [
+    {
+      "day": "Wednesday",
+      "time": "1:00pm – 2:15pm",
+      "notes": "Starts 13 May 2026"
+    }
+  ]
+}

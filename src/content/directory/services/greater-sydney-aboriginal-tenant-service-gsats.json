@@ -1,0 +1,27 @@
+{
+  "serviceName": "Greater Sydney Aboriginal Tenant Service (GSATS)",
+  "organisation": "Greater Sydney Aboriginal Tenant Service (GSATS)",
+  "category": "Aboriginal Health",
+  "categoryGroup": "Aboriginal Services",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9569 1288",
+    "email": "gsats@atsnsw.org.au",
+    "website": "https://www.atsnsw.org.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Lakemba",
+    "lga": "Canterbury-Bankstown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Greater%20Sydney%20Aboriginal%20Tenant%20Service%20%28GSATS%29"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": "Operates under Aboriginal Tenants Service NSW (ATS); funded by NSW Department of Communities and Justice"
+}

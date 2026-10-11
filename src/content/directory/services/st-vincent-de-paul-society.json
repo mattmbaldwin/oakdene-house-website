@@ -1,0 +1,30 @@
+{
+  "serviceName": "St Vincent de Paul Society",
+  "organisation": "St Vincent de Paul Society",
+  "category": "Migrant Support",
+  "categoryGroup": "Migrant & Multicultural",
+  "serviceType": "Emergency assistance",
+  "contact": {
+    "phone": "13 VINNIES (13 8466 437)",
+    "email": null,
+    "website": "https://www.vinnies.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/VinniesNSW/",
+    "instagram": "https://www.instagram.com/vinniesnsw/"
+  },
+  "location": {
+    "suburb": "Multiple",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": "91 161 127 340",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=St%20Vincent%20de%20Paul%20Society%20NSW"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

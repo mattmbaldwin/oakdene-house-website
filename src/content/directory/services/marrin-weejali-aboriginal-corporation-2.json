@@ -1,0 +1,29 @@
+{
+  "serviceName": "Marrin Weejali Aboriginal Corporation",
+  "organisation": "Marrin Weejali",
+  "category": "Aboriginal Health",
+  "categoryGroup": "Aboriginal Services",
+  "serviceType": "AOD counselling / Aboriginal health",
+  "contact": {
+    "phone": "(02) 9628 3031",
+    "email": "info@marrinweejali.org.au",
+    "website": "https://marrinweejali.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/MarrinWeejaliAboriginalCorporation/"
+  },
+  "location": {
+    "suburb": "Blackett",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "73 058 458 040",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Marrin%20Weejali%20Aboriginal%20Corporation"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": "ACNC (ABN 73 058 458 040); NSW Health AOD service directory; AH&MRC"
+}

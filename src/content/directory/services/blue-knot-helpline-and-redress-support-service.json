@@ -1,0 +1,30 @@
+{
+  "serviceName": "Blue Knot Helpline and Redress Support Service",
+  "organisation": "Blue Knot Helpline and Redress Support Service",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "1300 657 380",
+    "email": "helpline@blueknot.org.au",
+    "website": "https://blueknot.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/blueknotfoundation/",
+    "instagram": "https://www.instagram.com/blueknotfoundation/"
+  },
+  "location": {
+    "suburb": "N/A — National service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "91 004 714 794",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Blue%20Knot%20Foundation"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,27 @@
+{
+  "serviceName": "Womens Domestic Violence Court Advocacy Program - North-West Sydney",
+  "organisation": "Blacktown Women and Girl's Health Centre",
+  "category": "Domestic Violence",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Legal / Justice Support",
+  "contact": {
+    "phone": "(02) 4577 6847",
+    "email": "wdvcas@bwagh.org.au",
+    "website": "https://womensandgirls.org.au/whats-on/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Blacktown",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Blacktown%20Women%20and%20Girl%27s%20Health%20Centre"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

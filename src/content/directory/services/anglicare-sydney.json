@@ -1,0 +1,30 @@
+{
+  "serviceName": "Anglicare Sydney",
+  "organisation": "Anglicare Sydney",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Family support",
+  "contact": {
+    "phone": "1300 651 728",
+    "email": "counselling@anglicare.org.au",
+    "website": "https://www.anglicare.org.au/community/family-relationship-services/youth-support/#:~:text=Blacktown%20Child%20Adolescent%20and%20Family,under%20Targeted%20Earlier%20Intervention%20funding."
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/AnglicareSydney/",
+    "linkedin": "https://www.linkedin.com/company/anglicare-sydney/"
+  },
+  "location": {
+    "suburb": "Mt Druitt",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "39 922 553 215",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Anglicare%20Sydney"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

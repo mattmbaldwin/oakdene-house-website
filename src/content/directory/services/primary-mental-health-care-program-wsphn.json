@@ -1,0 +1,29 @@
+{
+  "serviceName": "Primary Mental Health Care Program",
+  "organisation": "WSPHN",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "8811 7100",
+    "email": "mentalhealth@wentwest.com.au",
+    "website": "https://wentwest.com.au/health-professionals/programs-and-priorities/mental-health/primary-mental-health-care-services/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/wentwest.au/"
+  },
+  "location": {
+    "suburb": "Dependent on provider",
+    "lga": null,
+    "coverage": "Varies"
+  },
+  "identifiers": {
+    "abn": "97 138 388 410",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=WentWest%20%E2%80%93%20Western%20Sydney%20PHN"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

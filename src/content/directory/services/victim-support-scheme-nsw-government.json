@@ -1,0 +1,27 @@
+{
+  "serviceName": "Victim Support Scheme",
+  "organisation": "NSW Government",
+  "category": "Health / Community Service",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1800 633 063",
+    "email": "vs@dcj.nsw.gov.au- external sitela",
+    "website": "https://victimsservices.justice.nsw.gov.au/how-can-we-help-you/victims-support-scheme.html"
+  },
+  "social": {},
+  "location": {
+    "suburb": "N/A — National service (administered NSW)",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

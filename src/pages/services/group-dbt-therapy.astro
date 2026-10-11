@@ -1,25 +1,20 @@
 ---
+import programs from '../../content/programs.json';
+import { inline } from '../../lib/format';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import InfoTable from '../../components/InfoTable.astro';
 import CTABand from '../../components/CTABand.astro';
+import pageText from '../../content/pages/services-group-dbt-therapy.json';
 
-const serviceRows = [
-  { label: 'Cost', value: 'Free' },
-  { label: 'Access', value: 'By appointment — contact to discuss suitability' },
-  { label: 'Location', value: 'Oakdene Centre, 29 Vine Street, Fairfield' },
-  { label: 'Phone', value: '(02) 8717 0999' },
-  { label: 'Email', value: 'admin@oakdenehouse.org.au' },
-];
+const serviceRows = programs.group_dbt_therapy.rows.map((row) => ({ label: row.label, value: inline(row.value) }));
 
-const schedule = [
-  { day: 'Wednesday', time: '1:00pm – 2:15pm', notes: 'Starts 13 May 2026' },
-];
+const schedule = pageText.data__schedule;
 ---
 
 <BaseLayout
-  title="Group DBT Therapy — Oakdene House Foundation"
-  description="Group Dialectical Behaviour Therapy at Oakdene House Foundation — practical, evidence-based skills for managing emotions, relationships, and recovery."
-  ogImage="/images/dbt/dbt-hero-photo.png"
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
+  ogImage="/images/dbt/dbt-hero-photo.jpg"
 >
 
   <!-- HERO -->
@@ -33,8 +28,8 @@ const schedule = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">Group DBT Therapy</span>
       </nav>
-      <h1>Group DBT Therapy</h1>
-      <p class="dbt-hero__lead">Practical skills for managing emotions, relationships, and life's harder moments.</p>
+      <h1>{pageText.hero__title}</h1>
+      <p class="dbt-hero__lead">{pageText.hero__intro}</p>
     </div>
   </section>
 
@@ -44,15 +39,15 @@ const schedule = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">About this service</p>
-            <h2 id="dbt-overview-heading">Skills for the harder moments</h2>
+            <p class="section-heading__eyebrow">{pageText.intro_service_details__eyebrow}</p>
+            <h2 id="dbt-overview-heading">{pageText.intro_service_details__heading}</h2>
           </div>
-          <p>At Oakdene House Foundation, our Group Dialectical Behaviour Therapy (DBT) program supports people who feel emotionally overwhelmed, stuck in unhealthy patterns, or constantly pulled between wanting things to change and struggling to know how.</p>
-          <p>DBT is a practical, evidence-based therapy that helps people build skills to better manage emotions, relationships, stress, impulsive behaviours, and difficult thoughts. It was originally developed to support people experiencing intense emotional distress, but is now widely used across mental health, addiction recovery, trauma support, and wellbeing programs.</p>
-          <p>Our group program focuses on learning real-world tools in a safe, supportive environment alongside others who are working through similar challenges.</p>
+          <p>{pageText.intro_service_details__text}</p>
+          <p>{pageText.intro_service_details__text_2}</p>
+          <p>{pageText.intro_service_details__text_3}</p>
         </div>
         <div>
-          <InfoTable rows={serviceRows} caption="Service details" />
+          <InfoTable rows={serviceRows} caption={pageText.intro_service_details__caption} />
         </div>
       </div>
     </div>
@@ -62,18 +57,18 @@ const schedule = [
   <section class="section" aria-labelledby="schedule-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Schedule</p>
-        <h2 id="schedule-heading">Current group details</h2>
-        <p class="section-heading__lead">Groups run weekly during term time.</p>
+        <p class="section-heading__eyebrow">{pageText.current_group_details__eyebrow}</p>
+        <h2 id="schedule-heading">{pageText.current_group_details__heading}</h2>
+        <p class="section-heading__lead">{pageText.current_group_details__intro}</p>
       </div>
       <div class="schedule-scroll">
         <div class="schedule-table-wrap">
           <table class="schedule-table" aria-label="DBT group schedule">
             <thead>
               <tr>
-                <th scope="col">Day</th>
-                <th scope="col">Time</th>
-                <th scope="col">Notes</th>
+                <th scope="col">{pageText.current_group_details__cell}</th>
+                <th scope="col">{pageText.current_group_details__cell_2}</th>
+                <th scope="col">{pageText.current_group_details__cell_3}</th>
               </tr>
             </thead>
             <tbody>
@@ -96,26 +91,26 @@ const schedule = [
     <div class="container">
       <div class="skills-inner">
         <div class="section-heading section-heading--center">
-          <p class="section-heading__eyebrow">What the Group Covers</p>
-          <h2 id="skills-heading">Four core skill areas</h2>
-          <p class="section-heading__lead">The DBT group focuses on four practical skill areas — each one builds on the others.</p>
+          <p class="section-heading__eyebrow">{pageText.what_the_group_covers__eyebrow}</p>
+          <h2 id="skills-heading">{pageText.what_the_group_covers__heading}</h2>
+          <p class="section-heading__lead">{pageText.what_the_group_covers__intro}</p>
         </div>
         <div class="skills-grid">
           <div class="skill-item">
-            <h3>Mindfulness</h3>
-            <p>Learning how to slow down, stay present, and become more aware of thoughts, emotions, and reactions without immediately acting on them.</p>
+            <h3>{pageText.what_the_group_covers__subheading}</h3>
+            <p>{pageText.what_the_group_covers__text}</p>
           </div>
           <div class="skill-item">
-            <h3>Distress Tolerance</h3>
-            <p>Building practical ways to get through difficult moments without making things worse through impulsive behaviours, substance use, gambling, anger, or withdrawal.</p>
+            <h3>{pageText.what_the_group_covers__subheading_2}</h3>
+            <p>{pageText.what_the_group_covers__text_2}</p>
           </div>
           <div class="skill-item">
-            <h3>Emotion Regulation</h3>
-            <p>Understanding emotions more clearly and learning strategies to reduce emotional overwhelm and increase stability.</p>
+            <h3>{pageText.what_the_group_covers__subheading_3}</h3>
+            <p>{pageText.what_the_group_covers__text_3}</p>
           </div>
           <div class="skill-item">
-            <h3>Interpersonal Effectiveness</h3>
-            <p>Developing healthier communication, boundaries, conflict management, and relationship skills.</p>
+            <h3>{pageText.what_the_group_covers__subheading_4}</h3>
+            <p>{pageText.what_the_group_covers__text_4}</p>
           </div>
         </div>
       </div>
@@ -127,21 +122,14 @@ const schedule = [
     <div class="container">
       <div class="dbt-narrow">
         <div class="section-heading">
-          <p class="section-heading__eyebrow">Who It Can Help</p>
-          <h2 id="who-heading">You don't need a formal diagnosis to take part</h2>
+          <p class="section-heading__eyebrow">{pageText.who_the_group_may_help__eyebrow}</p>
+          <h2 id="who-heading">{pageText.who_the_group_may_help__heading}</h2>
         </div>
-        <p>The DBT group may benefit people who are experiencing:</p>
+        <p>{pageText.who_the_group_may_help__text}</p>
         <ul class="offer-list">
-          <li>Emotional highs and lows</li>
-          <li>Anxiety or chronic stress</li>
-          <li>Anger or frustration that feels hard to control</li>
-          <li>Addiction or gambling-related struggles</li>
-          <li>Relationship difficulties</li>
-          <li>Impulsive behaviours</li>
-          <li>Feelings of shame, emptiness, or isolation</li>
-          <li>Difficulty coping during conflict or distress</li>
-        </ul>
-        <p class="closing-note">You do not need a formal diagnosis to participate.</p>
+{pageText.who_the_group_may_help__list.map((item) => <li>{item}</li>)}
+</ul>
+        <p class="closing-note">{pageText.who_the_group_may_help__text_2}</p>
       </div>
     </div>
   </section>
@@ -151,13 +139,13 @@ const schedule = [
     <div class="container">
       <div class="dbt-narrow">
         <div class="section-heading">
-          <p class="section-heading__eyebrow">What to Expect</p>
-          <h2 id="expect-heading">Structured, supportive, and practical</h2>
+          <p class="section-heading__eyebrow">{pageText.what_to_expect__eyebrow}</p>
+          <h2 id="expect-heading">{pageText.what_to_expect__heading}</h2>
         </div>
         <div class="expect-body">
-          <p>Our DBT groups are structured, supportive, and practical. Sessions combine discussion, skill-building, reflection, and guided exercises that can be applied in everyday life.</p>
-          <p>The focus is not on judgement or forcing people to share more than they are comfortable with. Many people find relief simply being in a room where others understand what it feels like to struggle.</p>
-          <p>Groups are facilitated by experienced mental health professionals who work from a compassionate, respectful, and person-centred approach.</p>
+          <p>{pageText.what_to_expect__text}</p>
+          <p>{pageText.what_to_expect__text_2}</p>
+          <p>{pageText.what_to_expect__text_3}</p>
         </div>
       </div>
     </div>
@@ -165,10 +153,10 @@ const schedule = [
 
   <!-- CTA -->
   <CTABand
-    heading="Want to know if the DBT group is right for you?"
-    subheading="Contact our team to discuss whether the group may be suitable. You don't have to have everything figured out before getting in touch."
-    primaryBtn={{ text: 'Submit a Request', href: '/services/referral/' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={pageText.cta__heading}
+    subheading={pageText.cta__subheading}
+    primaryBtn={pageText.cta__primarybtn}
+    secondaryBtn={pageText.cta__secondarybtn}
     dark={true}
   />
 
@@ -178,11 +166,17 @@ const schedule = [
   .dbt-hero {
     position: relative;
     min-height: 380px;
-    background-image: url('/images/dbt/dbt-hero-photo.png');
+    background-image: url('/images/dbt/dbt-hero-photo.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    .dbt-hero {
+      background-image: url('/images/dbt/dbt-hero-photo-1080.jpg');
+    }
   }
 
   .dbt-hero__overlay {

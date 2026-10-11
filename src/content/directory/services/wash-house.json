@@ -1,0 +1,29 @@
+{
+  "serviceName": "WASH House",
+  "organisation": "WASH House",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9677 1962",
+    "email": "admin@washhouse.org.au.",
+    "website": "https://www.washhouse.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/TheWASHHouse/"
+  },
+  "location": {
+    "suburb": "Mt Druitt",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "92 002 832 137",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=The%20WASH%20House%20Inc."
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

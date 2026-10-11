@@ -1,0 +1,27 @@
+{
+  "serviceName": "Mount Druitt Community Health Centre",
+  "organisation": "Mount Druitt Community Health Centre",
+  "category": "Community Health",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Primary health services",
+  "contact": {
+    "phone": "(02) 9621 7000",
+    "email": null,
+    "website": null
+  },
+  "social": {},
+  "location": {
+    "suburb": "Mount Druitt",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Mount%20Druitt%20Community%20Health%20Centre"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

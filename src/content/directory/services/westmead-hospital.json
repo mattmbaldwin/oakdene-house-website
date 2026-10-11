@@ -1,0 +1,27 @@
+{
+  "serviceName": "Westmead Hospital",
+  "organisation": "Westmead Hospital",
+  "category": "Health",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Public hospital",
+  "contact": {
+    "phone": "(02) 9845 5000",
+    "email": "westmead@wslhd.health.nsw.gov.au",
+    "website": "https://www.wslhd.health.nsw.gov.au/services/hospitals/westmead"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Westmead",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

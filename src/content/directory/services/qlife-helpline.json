@@ -1,0 +1,29 @@
+{
+  "serviceName": "Qlife Helpline",
+  "organisation": "Qlife Helpline",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "1800 184 527",
+    "email": "ask@qlife.org.au.",
+    "website": "https://qlife.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/QLifeAU/"
+  },
+  "location": {
+    "suburb": "Telehealth",
+    "lga": null,
+    "coverage": "Telehealth"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=QLife%20%28Switchboard%20Victoria%29"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

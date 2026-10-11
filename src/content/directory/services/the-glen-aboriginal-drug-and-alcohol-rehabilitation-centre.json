@@ -1,0 +1,29 @@
+{
+  "serviceName": "The Glen – Aboriginal Drug and Alcohol Rehabilitation Centre",
+  "organisation": "The Glen – Aboriginal Drug and Alcohol Rehabilitation Centre",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Residential Rehabilitation",
+  "contact": {
+    "phone": "02 4373 4490",
+    "email": "info@theglen.org.au",
+    "website": "https://www.theglen.org.au"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/TheGlenCentre/"
+  },
+  "location": {
+    "suburb": "Central Coast",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "55 138 953 552",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=The%20Glen%20Aboriginal%20Drug%20%26%20Alcohol%20Rehabilitation%20Centre"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,29 @@
+{
+  "serviceName": "Teen Challenge NSW",
+  "organisation": "Teen Challenge NSW",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Residential Rehabilitation",
+  "contact": {
+    "phone": "02 9567 1800",
+    "email": "info@teenchallengesydney.org.au",
+    "website": "https://www.teenchallengesydney.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/TeenChallengeNSW/"
+  },
+  "location": {
+    "suburb": "Sydney",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "47 002 916 074",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Teen%20Challenge%20NSW"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

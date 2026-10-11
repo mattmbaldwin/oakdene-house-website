@@ -1,0 +1,27 @@
+{
+  "serviceName": "GambleAware Parramatta",
+  "organisation": "University of Sydney",
+  "category": "Health / Community Service",
+  "categoryGroup": "Other Support",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1800 482 482",
+    "email": "gambleaware@sydney.edu.au",
+    "website": "https://www.sydney.edu.au/brain-mind/our-clinics/gambling-treatment-clinic.html"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

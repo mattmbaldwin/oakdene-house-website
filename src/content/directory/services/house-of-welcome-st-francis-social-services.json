@@ -1,0 +1,30 @@
+{
+  "serviceName": "House of Welcome",
+  "organisation": "St Francis Social Services",
+  "category": "Migrant Support",
+  "categoryGroup": "Migrant & Multicultural",
+  "serviceType": "Settlement / Asylum seeker support",
+  "contact": {
+    "phone": "(02) 9727 9290",
+    "email": "info@houseofwelcome.com.au",
+    "website": "https://houseofwelcome.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/houseofwelcomeau/",
+    "instagram": "https://www.instagram.com/houseofwelcomeau/"
+  },
+  "location": {
+    "suburb": "Carramar",
+    "lga": "Fairfield",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=St%20Francis%20Social%20Services%20%28House%20of%20Welcome%29"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (St Francis Social Services); Refugee Council of Australia"
+}

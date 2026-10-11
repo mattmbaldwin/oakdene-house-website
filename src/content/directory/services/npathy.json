@@ -1,0 +1,29 @@
+{
+  "serviceName": "NPathy",
+  "organisation": "NPathy",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1300 672 849",
+    "email": "info@npathy.com.au",
+    "website": "https://npathy.com.au/"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/npathy/"
+  },
+  "location": {
+    "suburb": null,
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=NPathy"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "AHPRA-registered provider"
+}

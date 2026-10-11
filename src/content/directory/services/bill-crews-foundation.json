@@ -1,0 +1,29 @@
+{
+  "serviceName": "Bill Crews Foundation",
+  "organisation": "Bill Crews Foundation",
+  "category": "Housing / Homelessness",
+  "categoryGroup": "Housing & Homelessness",
+  "serviceType": "Housing / Homelessness Support",
+  "contact": {
+    "phone": "02 9310 5622",
+    "email": "hello@billcrews.org.au",
+    "website": "https://billcrews.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/BillCrewsCharity/"
+  },
+  "location": {
+    "suburb": "Alexandria",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "37 089 098 252",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Bill%20Crews%20Charitable%20Trust"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,29 @@
+{
+  "serviceName": "Granville Multicultural Community Centre",
+  "organisation": "GMCC",
+  "category": "Migrant Support",
+  "categoryGroup": "Migrant & Multicultural",
+  "serviceType": "Settlement / Community Support",
+  "contact": {
+    "phone": "(02) 9637 7600",
+    "email": "admin@gmcc.org.au",
+    "website": "https://gmcc.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/GranvilleMCC/"
+  },
+  "location": {
+    "suburb": "Granville",
+    "lga": "Cumberland",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Granville%20Multicultural%20Community%20Centre"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC"
+}

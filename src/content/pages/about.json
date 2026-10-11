@@ -1,0 +1,95 @@
+{
+  "seo__browser_title": "About Oakdene House Foundation",
+  "seo__search_description": "Oakdene House Foundation is a Western Sydney charity supporting people and families affected by addiction, hardship and homelessness through practical help, counselling and community connection.",
+  "hero__heading": "About Oakdene House Foundation",
+  "hero__subheading": "A community charity grounded in practical support, dignity, connection, and real pathways forward.",
+  "hero__image_alt": "Oakdene House Foundation centre exterior",
+  "hero__buttons": [
+    {
+      "text": "Meet Our Team",
+      "href": "/about/our-team/",
+      "variant": "white"
+    },
+    {
+      "text": "Contact Us",
+      "href": "/contact/",
+      "variant": "white-outline"
+    }
+  ],
+  "subpage_navigation__image_alt": "The Oakdene tree",
+  "subpage_navigation__heading": "The Oakdene Story",
+  "subpage_navigation__text": "Where we come from and what the oak tree means to us.",
+  "subpage_navigation__text_2": "Read the story →",
+  "subpage_navigation__image_alt_2": "Oakdene team member",
+  "subpage_navigation__heading_2": "Our Team",
+  "subpage_navigation__text_3": "The people behind the work at Oakdene House.",
+  "subpage_navigation__text_4": "Meet the team →",
+  "subpage_navigation__image_alt_3": "Oakdene House centre interior",
+  "subpage_navigation__heading_3": "Our Centre",
+  "subpage_navigation__text_5": "A welcoming space in Fairfield for support, connection and community.",
+  "subpage_navigation__text_6": "See our centre →",
+  "who_we_are__eyebrow": "Who We Are",
+  "who_we_are__heading": "A community charity built around real life",
+  "who_we_are__intro": "Oakdene House Foundation is based in Western Sydney but supports people and families across the greater Sydney region affected by addiction, hardship, homelessness, and other life challenges. Our work is shaped by the belief that support should be respectful, practical, and accessible, especially when life feels unstable or overwhelming.",
+  "impact__eyebrow": "Our Impact",
+  "impact__heading": "Our year in numbers",
+  "mission_vision_values__eyebrow": "What Drives Us",
+  "mission_vision_values__heading": "Mission, Vision and Values",
+  "mission_vision_values__text": "Our Mission",
+  "mission_vision_values__text_2": "To support people and families through practical help, connection, and pathways that strengthen wellbeing, dignity, and community belonging.",
+  "mission_vision_values__text_3": "Our Vision",
+  "mission_vision_values__text_4": "A community where people facing hardship are met with respect, support, and genuine opportunities to move forward.",
+  "mission_vision_values__subheading": "Our Values",
+  "mission_vision_values__subheading_2": "Dignity",
+  "mission_vision_values__text_5": "We treat every person with respect and without judgment.",
+  "mission_vision_values__subheading_3": "Practical Support",
+  "mission_vision_values__text_6": "We focus on what helps in real life, not just what sounds good on paper.",
+  "mission_vision_values__subheading_4": "Connection",
+  "mission_vision_values__text_7": "We believe people do better when they feel seen, supported, and part of a community.",
+  "mission_vision_values__subheading_5": "Hope",
+  "mission_vision_values__text_8": "We stay focused on progress, possibilities, and the next step.",
+  "our_approach__eyebrow": "How We Work",
+  "our_approach__heading": "Our Approach",
+  "our_approach__text": "Oakdene works in a way that is practical, person-centred, and community-based. We meet people where they are, help respond to immediate needs, and create pathways into longer-term support where needed.",
+  "our_approach__text_2": "We do not see people as problems to be fixed. We see people as capable of change when they have the right support, the right environment and the right relationships around them.",
+  "our_approach__image_alt": "Inside Oakdene House Foundation centre",
+  "what_we_do__image_alt": "Oakdene House Foundation community space",
+  "what_we_do__eyebrow": "Our Work",
+  "what_we_do__heading": "What We Do",
+  "what_we_do__list": [
+    "Addiction counselling and recovery-focused support",
+    "The Life Choices group program",
+    "Peer support through GA and AA meetings",
+    "Community access through Oakdene Kitchen, Oakdene Laundrette and Oakdene Boutique",
+    "Volunteer pathways for people who want to give back",
+    "Financial counselling"
+  ],
+  "what_we_do__button": "Explore Our Services",
+  "cta__heading": "Want to know more?",
+  "cta__primarybtn": {
+    "text": "Explore Our Services",
+    "href": "/services/"
+  },
+  "cta__secondarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "data__stats": [
+    {
+      "number": "5,000+",
+      "label": "People supported each year"
+    },
+    {
+      "number": "100+",
+      "label": "Community events and workshops"
+    },
+    {
+      "number": "1,000+",
+      "label": "Hours of one-to-one support"
+    },
+    {
+      "number": "5,000+",
+      "label": "Meals and practical supports delivered"
+    }
+  ]
+}

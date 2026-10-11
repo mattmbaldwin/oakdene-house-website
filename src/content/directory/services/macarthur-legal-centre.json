@@ -1,0 +1,29 @@
+{
+  "serviceName": "Macarthur Legal Centre",
+  "organisation": "Macarthur Legal Centre",
+  "category": "Legal / Justice",
+  "categoryGroup": "Legal & Justice",
+  "serviceType": "Legal / Justice Support",
+  "contact": {
+    "phone": "02 4627 4600",
+    "email": "info@macarthurlaw.org.au",
+    "website": "https://www.macarthurlaw.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/MacarthurLegal/"
+  },
+  "location": {
+    "suburb": "Campbelltown",
+    "lga": "Multi-LGA (South Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": "98 002 949 322",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Macarthur%20Legal%20Centre"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

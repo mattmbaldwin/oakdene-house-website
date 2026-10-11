@@ -1,0 +1,27 @@
+{
+  "serviceName": "The Magistrates Early Referral into Treatment (MERIT) Program",
+  "organisation": "Local Court of NSW",
+  "category": "Health / Community Service",
+  "categoryGroup": "Legal & Justice",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1800 250 015",
+    "email": "merit@localcourt.nsw.gov.au",
+    "website": "https://localcourt.nsw.gov.au/sentencing--orders-and-appeals/sentencing-in-criminal-cases/diversion-programs/the-merit-program.html"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Blacktown, Mt Druitt, and Parramatta",
+    "lga": "Multi-LGA (Blacktown + Cumberland)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

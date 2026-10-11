@@ -1,0 +1,30 @@
+{
+  "serviceName": "SANE Australia Support Line",
+  "organisation": "SANE Australia",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "1800 187 263",
+    "email": "getsupport@sane.org",
+    "website": "https://www.sane.org/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/SANEAustralia/",
+    "instagram": "https://www.instagram.com/saneaustralia/"
+  },
+  "location": {
+    "suburb": "N/A — Telehealth",
+    "lga": null,
+    "coverage": "Telehealth"
+  },
+  "identifiers": {
+    "abn": "92 006 533 606",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=SANE%20Australia"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

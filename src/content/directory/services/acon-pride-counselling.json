@@ -1,0 +1,31 @@
+{
+  "serviceName": "ACON Pride Counselling",
+  "organisation": "ACON Pride Counselling",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "02 9206 2000",
+    "email": "con@acon.org.au",
+    "website": "https://www.acon.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/aconhealth/",
+    "instagram": "https://www.instagram.com/aconhealth/",
+    "linkedin": "https://www.linkedin.com/company/acon-health/"
+  },
+  "location": {
+    "suburb": "Surry Hills",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "38 136 883 915",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=ACON%20Health"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

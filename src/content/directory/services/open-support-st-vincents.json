@@ -1,0 +1,29 @@
+{
+  "serviceName": "Open Support - St Vincents",
+  "organisation": "St Vincents",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 8382 6430",
+    "email": "info@opensupport.org.au",
+    "website": "https://opensupport.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/OpenSupportSVHA/"
+  },
+  "location": {
+    "suburb": "Darlinghurst",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "94 002 020 213",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Open%20Support%20%28St%20Vincent%27s%20Health%29"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

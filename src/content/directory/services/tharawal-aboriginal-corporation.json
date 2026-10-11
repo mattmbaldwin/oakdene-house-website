@@ -1,0 +1,29 @@
+{
+  "serviceName": "Tharawal Aboriginal Corporation",
+  "organisation": "Tharawal Aboriginal Corporation",
+  "category": "Aboriginal Health",
+  "categoryGroup": "Aboriginal Services",
+  "serviceType": "Aboriginal medical & community services",
+  "contact": {
+    "phone": "(02) 4628 4837",
+    "email": "reception@tacams.com.au",
+    "website": "https://www.tacams.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/Tharawal/"
+  },
+  "location": {
+    "suburb": "Airds",
+    "lga": "Campbelltown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "60 605 175 854",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Tharawal%20Aboriginal%20Corporation"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": "ACNC; NACCHO; AH&MRC"
+}

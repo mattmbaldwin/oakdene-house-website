@@ -1,0 +1,30 @@
+{
+  "serviceName": "Parent Line NSW",
+  "organisation": "CatholicCare Sydney",
+  "category": "Health / Community Service",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1300 1300 52",
+    "email": "info@parentline.org.au",
+    "website": "https://www.parentline.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/parentlinensw/",
+    "linkedin": "https://www.linkedin.com/company/catholiccare-sydney/"
+  },
+  "location": {
+    "suburb": "Sydney",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "12 466 426 656",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=CatholicCare%20Sydney"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "DCJ NSW funded; healthdirect"
+}

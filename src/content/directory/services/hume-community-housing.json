@@ -1,0 +1,30 @@
+{
+  "serviceName": "Hume Community Housing",
+  "organisation": "Hume Community Housing",
+  "category": "Housing / Homelessness",
+  "categoryGroup": "Housing & Homelessness",
+  "serviceType": "Community housing provider",
+  "contact": {
+    "phone": "1800 004 300",
+    "email": "info@humehousing.com.au",
+    "website": "https://humehousing.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/HumeCommunityHousing/",
+    "linkedin": "https://www.linkedin.com/company/hume-community-housing/"
+  },
+  "location": {
+    "suburb": "Fairfield",
+    "lga": "Fairfield",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "14 081 753 869",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Hume%20Community%20Housing%20Association"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "Community Housing Industry Association NSW; ACNC"
+}

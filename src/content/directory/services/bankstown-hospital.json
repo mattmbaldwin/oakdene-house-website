@@ -1,0 +1,27 @@
+{
+  "serviceName": "Bankstown Hospital",
+  "organisation": "Bankstown Hospital",
+  "category": "Health",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Public hospital",
+  "contact": {
+    "phone": "(02) 9707 2000",
+    "email": "bankstown@sswahs.nsw.gov.au",
+    "website": "https://www.sswahs.nsw.gov.au/services/hospitals/bankstown"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Bankstown",
+    "lga": "Multi-LGA (South Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

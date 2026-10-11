@@ -1,0 +1,29 @@
+{
+  "serviceName": "North West Community Services Youth and Adult Counselling",
+  "organisation": "North West Community Services",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "(02) 9627 3622",
+    "email": "info@nwcs.org.au",
+    "website": "https://nwcs.org.au/whatson/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/NWCommunityServices/"
+  },
+  "location": {
+    "suburb": "Riverstone",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=North%20West%20Community%20Services"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

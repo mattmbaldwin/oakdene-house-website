@@ -1,28 +1,19 @@
 ---
+import programs from '../../content/programs.json';
+import { inline } from '../../lib/format';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import InfoTable from '../../components/InfoTable.astro';
 import CTABand from '../../components/CTABand.astro';
+import pageText from '../../content/pages/community-programs-oakdene-kitchen.json';
 
-const serviceRows = [
-  { label: 'Days', value: 'Tuesday, Wednesday, Thursday' },
-  { label: 'Hours', value: '12pm–2pm' },
-  { label: 'Location', value: '9/2 Dale Street, Fairfield' },
-  { label: 'Cost', value: 'Free' },
-  { label: 'Email', value: '<a href="mailto:kitchen@oakdenehouse.org.au">kitchen@oakdenehouse.org.au</a>' },
-  { label: 'Phone', value: '<a href="tel:0415156100">0415 156 100</a>' },
-];
+const serviceRows = programs.oakdene_kitchen.rows.map((row) => ({ label: row.label, value: inline(row.value) }));
 
-const whatWeOffer = [
-  'Free hot lunch',
-  'Friendly, safe space to eat together',
-  'Connection with staff, volunteers and community supports',
-  'Information about other Oakdene programs',
-];
+const whatWeOffer = pageText.data__what_we_offer;
 ---
 
 <BaseLayout
-  title="Oakdene Kitchen — Oakdene House Foundation"
-  description="Free hot lunches Tuesday to Thursday at Oakdene Kitchen, 9/2 Dale Street, Fairfield. Open to people experiencing hardship."
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
   ogImage="/images/kitchen/oakdene-kitchen-exterior-line-up.jpg"
 >
 
@@ -37,11 +28,11 @@ const whatWeOffer = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">Oakdene Kitchen</span>
       </nav>
-      <h1>Oakdene Kitchen</h1>
-      <p class="kitchen-hero__lead">Hot, nutritious meals in a safe and welcoming space.</p>
+      <h1>{pageText.hero__title}</h1>
+      <p class="kitchen-hero__lead">{pageText.hero__intro}</p>
       <div class="btn-group">
-        <a href="/contact/" class="btn btn--white">Request Help</a><!-- TODO: Replace with live Jotform URL -->
-        <a href="/community-programs/volunteering/" class="btn btn--white-outline">Volunteer</a>
+        <a href="/contact/" class="btn btn--white">{pageText.hero__button}</a><!-- TODO: Replace with live Jotform URL -->
+        <a href="/community-programs/volunteering/" class="btn btn--white-outline">{pageText.hero__button_2}</a>
       </div>
     </div>
   </section>
@@ -52,22 +43,22 @@ const whatWeOffer = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">About the Kitchen</p>
-            <h2 id="kitchen-intro-heading">A welcoming meal and a friendly face</h2>
+            <p class="section-heading__eyebrow">{pageText.intro_service_details__eyebrow}</p>
+            <h2 id="kitchen-intro-heading">{pageText.intro_service_details__heading}</h2>
           </div>
-          <p>The Oakdene Kitchen provides free hot lunches to people doing it tough. We believe everyone deserves access to a warm, nutritious meal in a safe environment — and a chance to connect with others.</p>
-          <p class="who-label">Who it's for</p>
-          <p>People experiencing food insecurity, on low income, homeless or at risk, or anyone doing it tough.</p>
+          <p>{pageText.intro_service_details__text}</p>
+          <p class="who-label">{pageText.intro_service_details__text_2}</p>
+          <p>{pageText.intro_service_details__text_3}</p>
 
-          <h3 class="offer-heading">What we offer</h3>
+          <h3 class="offer-heading">{pageText.intro_service_details__subheading}</h3>
           <ul class="offer-list">
             {whatWeOffer.map(item => <li>{item}</li>)}
           </ul>
         </div>
         <div>
-          <InfoTable rows={serviceRows} caption="Service details" />
+          <InfoTable rows={serviceRows} caption={pageText.intro_service_details__caption} />
           <div class="motto-box">
-            <p>"Feed the people, stay alive"</p>
+            <p>{pageText.intro_service_details__text_4}</p>
           </div>
         </div>
       </div>
@@ -79,13 +70,13 @@ const whatWeOffer = [
     <div class="container">
       <div class="image-strip">
         <div class="image-strip__item">
-          <img src="/images/kitchen/kitchen-3x-staff-serving.png" alt="Oakdene Kitchen volunteers with prepared food" loading="lazy" />
+          <img src="/images/kitchen/kitchen-3x-staff-serving.jpg" alt={pageText.image_strip__image_alt} loading="lazy" />
         </div>
         <div class="image-strip__item">
-          <img src="/images/kitchen/oakdene-kitchen-community-table.png" alt="Inside the Oakdene Kitchen dining room" loading="lazy" />
+          <img src="/images/kitchen/oakdene-kitchen-community-table.jpg" alt={pageText.image_strip__image_alt_2} loading="lazy" />
         </div>
         <div class="image-strip__item">
-          <img src="/images/kitchen/oakdene-kitchen-interior-volunteer-serving.jpg" alt="Volunteer serving meals at Oakdene Kitchen" loading="lazy" />
+          <img src="/images/kitchen/oakdene-kitchen-interior-volunteer-serving.jpg" alt={pageText.image_strip__image_alt_3} loading="lazy" />
         </div>
       </div>
     </div>
@@ -96,19 +87,17 @@ const whatWeOffer = [
     <div class="container">
       <div class="narrow">
         <div class="section-heading">
-          <p class="section-heading__eyebrow">Your First Visit</p>
-          <h2 id="how-heading">How it works</h2>
+          <p class="section-heading__eyebrow">{pageText.how_it_works__eyebrow}</p>
+          <h2 id="how-heading">{pageText.how_it_works__heading}</h2>
         </div>
-        <p>On your first visit, one of our team members will sit down with you to find out more about your situation and needs so we can understand how to support you best.</p>
+        <p>{pageText.how_it_works__text}</p>
 
         <!-- ELIGIBILITY -->
         <div class="eligibility-box">
-          <h3>Eligibility</h3>
+          <h3>{pageText.eligibility__subheading}</h3>
           <ul class="offer-list">
-            <li>Current Centrelink statement showing total income below $1,200 per fortnight, including any other subsidies or rental support shown on the statement</li>
-            <li>Proof of ID with photo-based evidence (driver's licence, passport, etc.)</li>
-            <li>Updated statement to be provided monthly showing any changes to income or benefits</li>
-          </ul>
+{pageText.eligibility__list.map((item) => <li>{item}</li>)}
+</ul>
         </div>
 
         <!-- IMPORTANT NOTE -->
@@ -117,15 +106,15 @@ const whatWeOffer = [
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           </div>
           <div>
-            <p class="callout-box__heading">Important note</p>
-            <p>If you choose to use Oakdene Kitchen support, you will no longer be able to be a member of Fairfield RSL.</p>
+            <p class="callout-box__heading">{pageText.important_note__text}</p>
+            <p>{pageText.important_note__text_2}</p>
           </div>
         </div>
 
         <!-- COMMUNITY GUIDELINES -->
         <div class="guidelines-box">
-          <h3>Community guidelines</h3>
-          <p>We ask that you treat others with respect. Aggressive or abusive behaviour is not accepted. Staff may refuse entry if guidelines are not followed.</p>
+          <h3>{pageText.community_guidelines__subheading}</h3>
+          <p>{pageText.community_guidelines__text}</p>
         </div>
       </div>
     </div>
@@ -136,18 +125,18 @@ const whatWeOffer = [
     <div class="container">
       <div class="volunteer-split">
         <div class="volunteer-image">
-          <img src="/images/volunteers/oakdene-volunteer-kitchen-2.png" alt="Oakdene Kitchen volunteer" loading="lazy" />
+          <img src="/images/volunteers/oakdene-volunteer-kitchen-2.jpg" alt={pageText.volunteer_callout__image_alt} loading="lazy" />
         </div>
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">Get Involved</p>
-            <h2 id="volunteer-heading">Volunteer with the Kitchen</h2>
+            <p class="section-heading__eyebrow">{pageText.volunteer_callout__eyebrow}</p>
+            <h2 id="volunteer-heading">{pageText.volunteer_callout__heading}</h2>
           </div>
-          <p>We are always looking for volunteers to help us run the Kitchen. Whether it is helping prepare food, serving meals, or providing a friendly presence — every contribution makes a real difference.</p>
-          <p>If you would like to get involved, please get in touch.</p>
+          <p>{pageText.volunteer_callout__text}</p>
+          <p>{pageText.volunteer_callout__text_2}</p>
           <div class="btn-group">
-            <a href="/community-programs/volunteering/" class="btn btn--primary">Learn About Volunteering</a>
-            <a href="/contact/" class="btn btn--secondary">Contact Us</a>
+            <a href="/community-programs/volunteering/" class="btn btn--primary">{pageText.volunteer_callout__button}</a>
+            <a href="/contact/" class="btn btn--secondary">{pageText.volunteer_callout__button_2}</a>
           </div>
         </div>
       </div>
@@ -156,9 +145,9 @@ const whatWeOffer = [
 
   <!-- CTA -->
   <CTABand
-    heading="Want to get involved?"
+    heading={pageText.cta__heading}
     primaryBtn={{ text: 'Volunteer', href: '/community-programs/volunteering/' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    secondaryBtn={pageText.cta__secondarybtn}
     dark={true}
   />
 
@@ -168,7 +157,7 @@ const whatWeOffer = [
   .kitchen-hero {
     position: relative;
     min-height: 420px;
-    background-image: url('/images/kitchen/oakdene-kitchen-exterior-line-up-final.png');
+    background-image: url('/images/kitchen/oakdene-kitchen-exterior-line-up-final.jpg');
     background-size: cover;
     background-position: center;
     display: flex;

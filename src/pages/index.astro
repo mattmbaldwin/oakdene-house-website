@@ -7,100 +7,38 @@ import TestimonialBlock from '../components/TestimonialBlock.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import StatsGrid from '../components/StatsGrid.astro';
 import VideoPlayer from '../components/VideoPlayer.astro';
+import pageText from '../content/pages/home.json';
 
 import allTestimonials from '../content/testimonials.json';
 import allFaqs from '../content/faqs.json';
 import video from '../../docs/video-launch/content/video.json';
 
-const testimonials = allTestimonials.filter(t => t.page === 'home');
-const faqs = allFaqs.slice(0, 4);
+const testimonials = allTestimonials.testimonials.filter(t => t.page === 'home');
+const faqs = allFaqs.homepage.slice(0, 4);
 
-const stats = [
-  { number: '5,000+',    label: 'Meals and food packs delivered annually' },
-  { number: '$250,000',  label: 'Value of supplies provided annually' },
-  { number: '5,000+',    label: 'Individuals impacted' },
-  { number: '25',        label: 'Local organisation partnerships' },
-];
+const stats = pageText.data__stats;
 
-const services = [
-  {
-    title: 'Counselling and Support',
-    summary: 'One-on-one support to help you understand what you are facing and find a path forward that feels achievable.',
-    href: '/services/individual-counselling/',
-    image: '/images/centre/interior-meetings-1-img_2657.jpg',
-    imageAlt: 'Oakdene Centre meeting room',
-  },
-  {
-    title: 'Life Choices Program',
-    summary: 'A 6-week group program focused on recovery, connection and building practical life skills in a supportive environment.',
-    href: '/services/life-choices-program/',
-    image: '/images/centre/interior-interior-1-with-people-img_2654.jpg',
-    imageAlt: 'Oakdene Centre interior',
-  },
-  {
-    title: 'Oakdene Kitchen',
-    summary: 'Free nutritious meals for eligible community members every Tuesday, Wednesday and Thursday, 12pm–2pm.',
-    href: '/community-programs/oakdene-kitchen/',
-    image: '/images/kitchen/oakdene-kitchen-around-table.png',
-    imageAlt: 'Oakdene Kitchen interior dining room',
-  },
-  {
-    title: 'Ladies Boutique',
-    summary: 'A welcoming space offering affordable clothing and salon support for women. No woman is turned away due to financial difficulty.',
-    href: '/community-programs/ladies-boutique/',
-    image: '/images/boutique/boutique-interior-looking-down-shop-with-people.png',
-    imageAlt: 'Oakdene Boutique interior',
-  },
-];
+const services = pageText.data__services;
 
-const pathways = [
-  {
-    title: 'Counselling',
-    summary: 'Talk with someone about support, recovery, and your next steps.',
-    href: '/services/',
-  },
-  {
-    title: 'Community Programs',
-    summary: 'Explore practical programs that build connection, confidence, and consistency.',
-    href: '/community-programs/',
-  },
-  {
-    title: 'Resources',
-    summary: 'Access guides, information, and support tools you can use straight away.',
-    href: '/resources/',
-  },
-  {
-    title: 'Service Directory',
-    summary: 'Browse other services and supports in the community.',
-    href: '/service-directory/',
-  },
-];
+const pathways = pageText.data__pathways;
 
-const steps = [
-  { number: '1', title: 'Connect', body: 'Reach out online, by phone, or in person.' },
-  { number: '2', title: 'Talk',    body: 'We listen, understand what is happening, and help identify needs.' },
-  { number: '3', title: 'Support', body: 'We provide direct support where we can and link to other services where needed.' },
-  { number: '4', title: 'Next Steps', body: 'We help people move forward with clearer options and stronger connection.' },
-];
+const steps = pageText.data__steps;
 ---
 
 <BaseLayout
-  title="Oakdene House Foundation — Real Support for Real Life"
-  description="Oakdene House Foundation supports people and families in Fairfield, Western Sydney affected by addiction, hardship and homelessness. Free counselling, community programs, kitchen and more."
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
 >
 
   <!-- ============================================================
        HERO
        ============================================================ -->
   <Hero
-    heading="Practical support, real connection, and a place to take the next step."
-    subheading="Oakdene House Foundation supports people and families facing addiction, hardship, homelessness, and life challenges through practical help, counselling, community programs, and connection to the right support."
+    heading={pageText.hero__heading}
+    subheading={pageText.hero__subheading}
     image="/images/hero/hero-centre-2.jpg"
-    imageAlt="Oakdene House Foundation centre exterior"
-    buttons={[
-      { text: 'Get Support',      href: '/contact/',    variant: 'white' },
-      { text: 'Explore Services', href: '/services/', variant: 'white-outline' },
-    ]}
+    imageAlt={pageText.hero__image_alt}
+    buttons={pageText.hero__buttons}
   />
 
   <!-- ============================================================
@@ -109,7 +47,7 @@ const steps = [
   <section class="section" aria-labelledby="pathways-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <h2 id="pathways-heading">How can we help?</h2>
+        <h2 id="pathways-heading">{pageText.quick_pathways__heading}</h2>
       </div>
       <div class="pathways-grid">
         {pathways.map(p => (
@@ -131,19 +69,19 @@ const steps = [
       <div class="split">
         <div class="split__text">
           <div class="section-heading">
-            <h2 id="mission-heading">Support that meets people where they are</h2>
+            <h2 id="mission-heading">{pageText.mission__heading}</h2>
           </div>
-          <p>Oakdene is a community charity based in Fairfield, Western Sydney. We work alongside people and families with practical support, connection, and pathways to further help.</p>
-          <p>At Oakdene House, we believe real change happens when people feel safe, seen and supported. Our work brings together counselling, peer connection and practical care so people can access help that feels human, local and achievable.</p>
-          <p>From individual counselling and group recovery programs to our kitchen, laundrette and boutique, every part of Oakdene is built around restoring hope and creating pathways forward.</p>
+          <p>{pageText.mission__text}</p>
+          <p>{pageText.mission__text_2}</p>
+          <p>{pageText.mission__text_3}</p>
           <div class="btn-group" style="margin-top: 28px;">
-            <a href="/about/" class="btn btn--primary">Learn More About Us</a>
+            <a href="/about/" class="btn btn--primary">{pageText.mission__button}</a>
           </div>
         </div>
         <div class="split__image">
           <img
-            src="/images/hero/hero-centre-3-with-people.png"
-            alt="Oakdene House Foundation centre building exterior"
+            src="/images/hero/hero-centre-3-with-people.jpg"
+            alt={pageText.mission__image_alt}
             loading="lazy"
           />
         </div>
@@ -157,11 +95,11 @@ const steps = [
   <section class="section section--dark" aria-label="Our impact in numbers">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Our Impact</p>
-        <h2>Making a difference every day</h2>
+        <p class="section-heading__eyebrow">{pageText.stats__eyebrow}</p>
+        <h2>{pageText.stats__heading}</h2>
       </div>
       <StatsGrid stats={stats} />
-      <p class="stats-note">Over 60% of participants seek continued assistance after treatment or counselling at our addiction centre.</p>
+      <p class="stats-note">{pageText.stats__text}</p>
     </div>
   </section>
 
@@ -171,8 +109,8 @@ const steps = [
   <section class="section" aria-labelledby="services-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Our Services</p>
-        <h2 id="services-heading">Support that makes a difference</h2>
+        <p class="section-heading__eyebrow">{pageText.services_preview__eyebrow}</p>
+        <h2 id="services-heading">{pageText.services_preview__heading}</h2>
       </div>
       <div class="card-grid services-grid">
         {services.map(s => (
@@ -186,7 +124,7 @@ const steps = [
         ))}
       </div>
       <div class="section-action">
-        <a href="/services/" class="btn btn--secondary">View All Services</a>
+        <a href="/services/" class="btn btn--secondary">{pageText.services_preview__button}</a>
       </div>
     </div>
   </section>
@@ -199,15 +137,15 @@ const steps = [
       <div class="split split--image-right">
         <div class="split__image">
           <img
-            src="/images/centre/interior-interior-2-img_2656-with-people.png"
-            alt="Oakdene House Foundation centre interior"
+            src="/images/centre/interior-interior-2-img_2656-with-people.jpg"
+            alt={pageText.how_we_help__image_alt}
             loading="lazy"
           />
         </div>
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">Our Approach</p>
-            <h2 id="steps-heading">How support works</h2>
+            <p class="section-heading__eyebrow">{pageText.how_we_help__eyebrow}</p>
+            <h2 id="steps-heading">{pageText.how_we_help__heading}</h2>
           </div>
           <ol class="steps" aria-label="How support works at Oakdene">
             {steps.map(step => (
@@ -231,8 +169,8 @@ const steps = [
   <section class="section" aria-labelledby="testimonials-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Community Voices</p>
-        <h2 id="testimonials-heading">What people say</h2>
+        <p class="section-heading__eyebrow">{pageText.testimonials__eyebrow}</p>
+        <h2 id="testimonials-heading">{pageText.testimonials__heading}</h2>
       </div>
       <TestimonialBlock quotes={testimonials} />
     </div>
@@ -244,8 +182,8 @@ const steps = [
   <section class="section section--tint" aria-labelledby="faq-heading">
     <div class="container faq-container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Questions</p>
-        <h2 id="faq-heading">Common questions</h2>
+        <p class="section-heading__eyebrow">{pageText.faqs__eyebrow}</p>
+        <h2 id="faq-heading">{pageText.faqs__heading}</h2>
       </div>
       <FAQAccordion faqs={faqs} />
     </div>
@@ -257,18 +195,18 @@ const steps = [
   <section class="section" aria-labelledby="video-heading">
     <div class="container video-container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Watch</p>
-        <h2 id="video-heading">Our story</h2>
-        <p class="section-heading__lead">Hear from people in recovery, our counsellors and the people who started Oakdene House.</p>
+        <p class="section-heading__eyebrow">{pageText.video__eyebrow}</p>
+        <h2 id="video-heading">{pageText.video__heading}</h2>
+        <p class="section-heading__lead">{pageText.video__intro}</p>
       </div>
       <VideoPlayer
         youtubeId={video.youtube_id}
         title={video.title}
         thumbnail={video.thumbnail_path.replace(/^public/, '')}
-        label="Play video: Oakdene House Foundation, our story"
+        label={pageText.video__label}
       />
       <div class="section-action">
-        <a href={video.watch_page_path} class="btn btn--secondary" id="video-transcript-link">Watch with transcript</a>
+        <a href={video.watch_page_path} class="btn btn--secondary" id="video-transcript-link">{pageText.video__button}</a>
       </div>
     </div>
   </section>
@@ -277,10 +215,10 @@ const steps = [
        FINAL CTA
        ============================================================ -->
   <CTABand
-    heading="Need support or not sure where to start?"
-    subheading="Reach out to the Oakdene team and we will help you work out the best next step."
-    primaryBtn={{ text: 'Get Support', href: '/contact/' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={pageText.final_cta__heading}
+    subheading={pageText.final_cta__subheading}
+    primaryBtn={pageText.final_cta__primarybtn}
+    secondaryBtn={pageText.final_cta__secondarybtn}
     dark={true}
   />
 

@@ -1,0 +1,29 @@
+{
+  "serviceName": "Family Drug Support Australia Helpline",
+  "organisation": "Family Drug Support Australia Helpline",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "1300 368 186",
+    "email": "admin@fds.org.au",
+    "website": "https://www.fds.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/FamilyDrugSupport/"
+  },
+  "location": {
+    "suburb": "N/A - National service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "29 084 414 533",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Family%20Drug%20Support%20Australia"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

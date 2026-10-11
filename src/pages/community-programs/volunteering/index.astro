@@ -1,36 +1,17 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CTABand from '../../../components/CTABand.astro';
+import pageText from '../../../content/pages/community-programs-volunteering.json';
 
-const reasons = [
-  'Be part of a local charity making a practical difference',
-  'Support people and families in your community',
-  'Join a welcoming, values-led environment',
-  'Use your time and skills in ways that matter',
-];
+const reasons = pageText.data__reasons;
 
-const types = [
-  {
-    heading: 'Community Volunteering',
-    description: 'Join our day-to-day operations — supporting the Kitchen, Boutique, Laundrette, and programs. Open to individuals who want to make a direct local contribution.',
-    href: '/community-programs/volunteering/community-volunteers/',
-    image: '/images/volunteers/oakdene-volunteer-kitchen-2.png',
-    imageAlt: 'Volunteer serving food at Oakdene Kitchen',
-  },
-  {
-    heading: 'Corporate Volunteering',
-    description: 'Bring your team to Oakdene for structured volunteering days or partnership programs. A meaningful way to give back and build team purpose.',
-    href: '/community-programs/volunteering/corporate-volunteering/',
-    image: '/images/volunteers/oakdene-volunteer-kitchen-3.png',
-    imageAlt: 'Volunteers at Oakdene wrapping food',
-  },
-];
+const types = pageText.data__types;
 ---
 
 <BaseLayout
-  title="Volunteering — Oakdene House Foundation"
-  description="Volunteer with Oakdene House Foundation in Fairfield, Western Sydney. Community and corporate volunteering opportunities available."
-  ogImage="/images/volunteers/oakdene-volunteer-kitchen-1.png"
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
+  ogImage="/images/volunteers/oakdene-volunteer-kitchen-1.jpg"
 >
 
   <!-- HERO -->
@@ -44,8 +25,8 @@ const types = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">Volunteering</span>
       </nav>
-      <h1 id="vol-hero-heading">Volunteer with Oakdene House Foundation</h1>
-      <p class="vol-hero__lead">Volunteers play an important role at Oakdene House. They help create a welcoming environment, support practical programs and strengthen our connection to the community.</p>
+      <h1 id="vol-hero-heading">{pageText.hero__title}</h1>
+      <p class="vol-hero__lead">{pageText.hero__intro}</p>
     </div>
   </section>
 
@@ -55,18 +36,18 @@ const types = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">Why Volunteer</p>
-            <h2 id="why-heading">Make a real contribution</h2>
+            <p class="section-heading__eyebrow">{pageText.why_volunteer__eyebrow}</p>
+            <h2 id="why-heading">{pageText.why_volunteer__heading}</h2>
           </div>
-          <p>Volunteering at Oakdene is practical, welcoming, and meaningful. Every volunteer who walks through our doors becomes part of a community that is working to make a genuine difference.</p>
+          <p>{pageText.why_volunteer__text}</p>
           <ul class="reasons-list">
             {reasons.map(r => <li>{r}</li>)}
           </ul>
-          <a href="#volunteer-form" class="btn btn--primary">Apply to Volunteer</a>
+          <a href="#volunteer-form" class="btn btn--primary">{pageText.why_volunteer__button}</a>
         </div>
         <div>
           <div class="vol-image">
-            <img src="/images/kitchen/oakdene-kitchen-interior-with-food-stacks.jpg" alt="Volunteer at Oakdene Kitchen serving food" loading="lazy" />
+            <img src="/images/kitchen/oakdene-kitchen-interior-with-food-stacks.jpg" alt={pageText.why_volunteer__image_alt} loading="lazy" />
           </div>
         </div>
       </div>
@@ -77,8 +58,8 @@ const types = [
   <section class="section section--tint" aria-labelledby="types-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">How You Can Volunteer</p>
-        <h2 id="types-heading">Two ways to get involved</h2>
+        <p class="section-heading__eyebrow">{pageText.volunteering_types__eyebrow}</p>
+        <h2 id="types-heading">{pageText.volunteering_types__heading}</h2>
       </div>
       <div class="types-grid">
         {types.map(t => (
@@ -102,29 +83,29 @@ const types = [
     <div class="container">
       <div class="expect-inner">
         <div class="section-heading section-heading--center">
-          <p class="section-heading__eyebrow">What to Expect</p>
-          <h2 id="expect-heading">Volunteering at Oakdene</h2>
+          <p class="section-heading__eyebrow">{pageText.what_to_expect__eyebrow}</p>
+          <h2 id="expect-heading">{pageText.what_to_expect__heading}</h2>
         </div>
         <div class="expect-grid">
           <div class="expect-item">
             <div class="expect-item__number" aria-hidden="true">01</div>
-            <h3>Apply</h3>
-            <p>Submit a volunteer application through our form or contact us directly.</p>
+            <h3>{pageText.what_to_expect__subheading}</h3>
+            <p>{pageText.what_to_expect__text}</p>
           </div>
           <div class="expect-item">
             <div class="expect-item__number" aria-hidden="true">02</div>
-            <h3>Meet the team</h3>
-            <p>We will have a brief conversation to understand your availability and interests.</p>
+            <h3>{pageText.what_to_expect__subheading_2}</h3>
+            <p>{pageText.what_to_expect__text_2}</p>
           </div>
           <div class="expect-item">
             <div class="expect-item__number" aria-hidden="true">03</div>
-            <h3>Get started</h3>
-            <p>You will be welcomed into your role with support and guidance from our team.</p>
+            <h3>{pageText.what_to_expect__subheading_3}</h3>
+            <p>{pageText.what_to_expect__text_3}</p>
           </div>
           <div class="expect-item">
             <div class="expect-item__number" aria-hidden="true">04</div>
-            <h3>Make a difference</h3>
-            <p>Your time and energy directly support people and families in the Fairfield community.</p>
+            <h3>{pageText.what_to_expect__subheading_4}</h3>
+            <p>{pageText.what_to_expect__text_4}</p>
           </div>
         </div>
       </div>
@@ -135,8 +116,8 @@ const types = [
   <section class="section section--tint" id="volunteer-form" aria-labelledby="vol-form-heading">
     <div class="container">
       <div class="vol-form-inner">
-        <h2 id="vol-form-heading">Apply to volunteer</h2>
-        <p class="vol-form-intro">We'd love to hear from you. Fill in the form below and we'll get back to you within 2 business days to arrange a quick conversation about your interests and availability. You don't need prior experience — we value willingness, reliability, and a caring approach more than anything else.</p>
+        <h2 id="vol-form-heading">{pageText.volunteer_form__heading}</h2>
+        <p class="vol-form-intro">{pageText.volunteer_form__intro}</p>
         <iframe
           id="JotFormIFrame-260837985458072"
           title="Volunteer application — Oakdene House Foundation"
@@ -154,9 +135,9 @@ const types = [
 
   <!-- CTA -->
   <CTABand
-    heading="Ready to get involved?"
-    primaryBtn={{ text: 'Apply to Volunteer', href: '#volunteer-form' }}
-    secondaryBtn={{ text: 'Partnership Enquiry', href: '/contact/' }}
+    heading={pageText.cta__heading}
+    primaryBtn={pageText.cta__primarybtn}
+    secondaryBtn={pageText.cta__secondarybtn}
     dark={true}
   />
 
@@ -166,7 +147,7 @@ const types = [
   .vol-hero {
     position: relative;
     min-height: 420px;
-    background-image: url('/images/volunteers/oakdene-volunteer-kitchen-1.png');
+    background-image: url('/images/volunteers/oakdene-volunteer-kitchen-1.jpg');
     background-size: cover;
     background-position: center;
     display: flex;

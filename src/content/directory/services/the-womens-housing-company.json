@@ -1,0 +1,30 @@
+{
+  "serviceName": "The Women’s Housing Company",
+  "organisation": "The Women’s Housing Company",
+  "category": "Housing / Homelessness",
+  "categoryGroup": "Housing & Homelessness",
+  "serviceType": "Housing / Homelessness Support",
+  "contact": {
+    "phone": "(02) 8202 9100",
+    "email": "info@whc.org.au",
+    "website": "https://www.womenshousingcompany.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/womenshousingcompany/",
+    "linkedin": "https://www.linkedin.com/company/the-women-s-housing-company/"
+  },
+  "location": {
+    "suburb": "Surry Hills",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=The%20Women%E2%80%99s%20Housing%20Company"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC; Community Housing Industry Association NSW"
+}

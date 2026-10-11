@@ -1,0 +1,139 @@
+{
+  "seo__browser_title": "Community Programs — Oakdene House Foundation",
+  "seo__search_description": "Oakdene House community programs build connection, confidence and routine for people in Fairfield, Western Sydney. Recovery groups, practical initiatives and community engagement.",
+  "hero__title": "Community programs that build connection, confidence, and forward movement",
+  "hero__intro": "Oakdene's programs are designed to bring people into safe, practical, community-based spaces where support feels real and participation matters.",
+  "hero__button": "Explore Programs",
+  "hero__button_2": "General Enquiry",
+  "our_programs__eyebrow": "What We Offer",
+  "our_programs__heading": "Our programs",
+  "our_programs__intro": "Oakdene runs a range of programs across four interconnected areas of community support.",
+  "why_programs_matter__image_alt": "People in community program session at Oakdene House",
+  "why_programs_matter__eyebrow": "Why Programs Matter",
+  "why_programs_matter__heading": "More than crisis response",
+  "why_programs_matter__text": "Programs matter because support is not only about crisis response. It is also about belonging, confidence, consistency, and having spaces where people can keep turning up, reconnecting, and building a stronger everyday life.",
+  "why_programs_matter__text_2": "When people have somewhere to go and something meaningful to contribute to, they move forward.",
+  "why_programs_matter__button": "View All Services",
+  "what_people_gain__eyebrow": "The Difference",
+  "what_people_gain__heading": "What people gain from programs",
+  "testimonials__eyebrow": "In Their Words",
+  "testimonials__heading": "What participants say",
+  "testimonials__text": "Being around others and having somewhere to go helped me get some structure back. It made a bigger difference than I expected.",
+  "testimonials__text_2": "It felt practical and real. Not a lecture, just support that helped me keep moving.",
+  "practical_community_services__eyebrow": "Open to the Community",
+  "practical_community_services__heading": "Practical support services",
+  "practical_community_services__intro": "Free, accessible services that meet everyday needs with dignity and care — no referral required.",
+  "how_to_get_involved__eyebrow": "Get Involved",
+  "how_to_get_involved__heading": "How to take part",
+  "cta__heading": "Be part of something real",
+  "cta__primarybtn": {
+    "text": "Express Interest",
+    "href": "/contact/?reason=program-interest"
+  },
+  "cta__secondarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "data__programs": [
+    {
+      "heading": "Community Support Programs",
+      "description": "Activities and supports that create routine, stability, and a sense of belonging.",
+      "icon": "people"
+    },
+    {
+      "heading": "Recovery-Focused Group Programs",
+      "description": "Programs that support reflection, accountability, practical coping, and shared progress.",
+      "icon": "heart"
+    },
+    {
+      "heading": "Practical Support Initiatives",
+      "description": "Community responses that meet real needs with care, dignity, and consistency.",
+      "icon": "hands"
+    },
+    {
+      "heading": "Volunteer and Community Engagement",
+      "description": "Opportunities for people to participate, contribute, and stay connected.",
+      "icon": "star"
+    }
+  ],
+  "data__gains": [
+    {
+      "label": "Stronger routine",
+      "icon": "clock"
+    },
+    {
+      "label": "Greater confidence",
+      "icon": "arrow"
+    },
+    {
+      "label": "Community connection",
+      "icon": "people"
+    },
+    {
+      "label": "Practical progress",
+      "icon": "check"
+    }
+  ],
+  "data__practical_services": [
+    {
+      "title": "Oakdene Kitchen",
+      "summary": "Free hot lunches in a safe and welcoming community space, Tuesday to Thursday.",
+      "href": "/community-programs/oakdene-kitchen/",
+      "image": "/images/kitchen/kitchen-3x-staff-serving.jpg",
+      "imageAlt": "Oakdene Kitchen staff serving meals",
+      "eyebrow": "Practical Assistance"
+    },
+    {
+      "title": "Staple Food Packs",
+      "summary": "Weekly take-home grocery packs with fresh produce, pantry essentials and hygiene items.",
+      "href": "/community-programs/staple-food-packs/",
+      "image": "/images/kitchen/oakdene-kitchen-interior-with-food-stacks.jpg",
+      "imageAlt": "Stacked food supplies at Oakdene Kitchen",
+      "eyebrow": "Practical Assistance"
+    },
+    {
+      "title": "Oakdene Laundrette",
+      "summary": "Free community laundry service with washing, drying and detergent provided.",
+      "href": "/community-programs/oakdene-laundrette/",
+      "image": "/images/laundrette/laundrette-interior-1.jpg",
+      "imageAlt": "Inside the Oakdene Laundrette",
+      "eyebrow": "Practical Assistance"
+    },
+    {
+      "title": "Used Clothing Store",
+      "summary": "Free men's and women's clothing, shoes and accessories — three items per visit.",
+      "href": "/community-programs/used-clothing-store/",
+      "image": "/images/boutique/boutique-interior-clothing-rack.jpg",
+      "imageAlt": "Clothing rack at the Oakdene Used Clothing Store",
+      "eyebrow": "Practical Assistance"
+    },
+    {
+      "title": "Ladies Boutique",
+      "summary": "A warm, private space offering quality clothing, salon services and community connection for women.",
+      "href": "/community-programs/ladies-boutique/",
+      "image": "/images/boutique/ladies-boutique-edited.jpg",
+      "imageAlt": "Oakdene Ladies Boutique",
+      "eyebrow": "Community Support"
+    }
+  ],
+  "data__involvement": [
+    {
+      "heading": "Join a program",
+      "body": "Express interest directly or contact Oakdene to find out which program fits best.",
+      "href": "/contact/?reason=program-interest",
+      "linkText": "Express Interest"
+    },
+    {
+      "heading": "Refer someone",
+      "body": "Workers and family members can refer using the referral form or by contacting us directly.",
+      "href": "/services/referral/",
+      "linkText": "Submit Referral"
+    },
+    {
+      "heading": "Volunteer",
+      "body": "Want to contribute your time? We would love to hear from you.",
+      "href": "/community-programs/volunteering/",
+      "linkText": "Learn About Volunteering"
+    }
+  ]
+}

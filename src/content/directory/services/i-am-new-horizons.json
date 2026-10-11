@@ -1,0 +1,30 @@
+{
+  "serviceName": "I.Am",
+  "organisation": "New Horizons",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1300 426 4373",
+    "email": "iam@newhorizons.org.au",
+    "website": "https://www.newhorizons.org.au/i-am-support-lives-here/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/NewHorizonsAU/",
+    "linkedin": "https://www.linkedin.com/company/new-horizons-australia/"
+  },
+  "location": {
+    "suburb": "Mount Druitt",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "31 000 026 161",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=New%20Horizons"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

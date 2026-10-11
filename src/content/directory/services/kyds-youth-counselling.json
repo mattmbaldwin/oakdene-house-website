@@ -1,0 +1,29 @@
+{
+  "serviceName": "KYDS Youth Counselling",
+  "organisation": "KYDS Youth Counselling",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "9416 0900",
+    "email": "info@kyds.org.au",
+    "website": "https://www.kyds.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/KYDSyouthcounselling/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "20 105 706 056",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=KYDS%20Youth%20Development%20Service"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,27 @@
+{
+  "serviceName": "Immigration Women's Speak Out",
+  "organisation": "Immigration Women's Speak Out",
+  "category": "Health / Community Service",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9635 8022",
+    "email": "info@speakout.org.au",
+    "website": "https://www.speakout.org.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Harris Park",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Immigration%20Women%27s%20Speak%20Out"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

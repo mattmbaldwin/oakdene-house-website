@@ -1,0 +1,29 @@
+{
+  "serviceName": "My Blue Sky",
+  "organisation": "My Blue Sky",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "Call: +61 2 9514 8115\n SMS text: +61 481 070 844",
+    "email": "help@mybluesky.org.au",
+    "website": "https://mybluesky.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/MyBlueSkyForcedMarriage/"
+  },
+  "location": {
+    "suburb": "Surry Hills",
+    "lga": "Inner West",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=My%20Blue%20Sky"
+  },
+  "flags": {
+    "aod": true,
+    "legal": true
+  },
+  "listedIn": "ACNC (via Anti-Slavery Australia, UTS); DSS Service Finder"
+}

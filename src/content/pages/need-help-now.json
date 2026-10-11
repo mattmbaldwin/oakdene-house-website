@@ -1,0 +1,86 @@
+{
+  "seo__browser_title": "Need Help Now? | Oakdene House Foundation",
+  "seo__search_description": "If you need support right now, help is available. Crisis lines, emergency contacts, and Oakdene House contact details.",
+  "hero__title": "Need help right now?",
+  "hero__intro": "You are not alone. Help is available 24 hours a day.",
+  "emergency__text": "If you are in immediate danger",
+  "emergency__text_2": "Call [000](tel:000)",
+  "crisis_helplines__heading": "Crisis support lines",
+  "crisis_helplines__intro": "These services are available around the clock, any day of the year.",
+  "talk_to_oakdene__heading": "Talk to Oakdene",
+  "talk_to_oakdene__text": "If you need to speak with someone at Oakdene during business hours, please call us directly. We can help connect you with the right support.",
+  "talk_to_oakdene__text_2": "Email: [admin@oakdenehouse.org.au](mailto:admin@oakdenehouse.org.au)",
+  "talk_to_oakdene__text_3": "We also offer support in multiple languages. If you need an interpreter, please let us know when you call.",
+  "talk_to_oakdene__subheading": "Business hours",
+  "talk_to_oakdene__text_4": "Our team is available Monday to Friday during business hours.",
+  "talk_to_oakdene__text_5": "For outside-hours support please use the crisis lines listed on this page.",
+  "final_note__text": "Oakdene House is not a crisis line. For immediate emergencies always call **000**. For 24-hour crisis support, please use the helplines above.",
+  "data__helplines": [
+    {
+      "name": "Lifeline",
+      "phone": "13 11 14",
+      "tel": "131114",
+      "description": "24/7 crisis and suicide prevention"
+    },
+    {
+      "name": "Suicide Call Back Service",
+      "phone": "1300 659 467",
+      "tel": "1300659467",
+      "description": "24/7 for anyone affected by suicide"
+    },
+    {
+      "name": "Beyond Blue",
+      "phone": "1300 22 4636",
+      "tel": "1300224636",
+      "description": "24/7 anxiety, depression, mental health"
+    },
+    {
+      "name": "Kids Helpline",
+      "phone": "1800 55 1800",
+      "tel": "1800551800",
+      "description": "24/7 counselling for ages 5–25"
+    },
+    {
+      "name": "MensLine Australia",
+      "phone": "1300 78 99 78",
+      "tel": "1300789978",
+      "description": "24/7 support for men"
+    },
+    {
+      "name": "13YARN",
+      "phone": "13 92 76",
+      "tel": "139276",
+      "description": "24/7 Aboriginal & Torres Strait Islander support"
+    },
+    {
+      "name": "1800RESPECT",
+      "phone": "1800 737 732",
+      "tel": "1800737732",
+      "description": "24/7 family and domestic violence"
+    },
+    {
+      "name": "NSW Mental Health Line",
+      "phone": "1800 011 511",
+      "tel": "1800011511",
+      "description": "24/7 mental health triage"
+    },
+    {
+      "name": "Gambling Help",
+      "phone": "1800 858 858",
+      "tel": "1800858858",
+      "description": "24/7 gambling counselling"
+    },
+    {
+      "name": "AA Helpline",
+      "phone": "1300 222 222",
+      "tel": "1300222222",
+      "description": "Alcoholics Anonymous"
+    },
+    {
+      "name": "Salvo Connect",
+      "phone": "1300 36 36 22",
+      "tel": "1300363622",
+      "description": "Emergency support and practical assistance"
+    }
+  ]
+}

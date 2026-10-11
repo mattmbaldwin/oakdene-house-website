@@ -1,0 +1,41 @@
+{
+  "seo__browser_title": "Outpatients Program — Oakdene House Foundation",
+  "seo__search_description": "Structured rehabilitation support at Oakdene House — counselling, group sessions, 12-step and peer support, delivered by accredited AOD and mental health counsellors. Free.",
+  "hero__title": "Outpatients Program",
+  "hero__intro": "A structured rehabilitation program committed to recovery.",
+  "overview__eyebrow": "About the Program",
+  "overview__heading": "Structured support for recovery",
+  "overview__text": "The Outpatients Program is designed for people looking for structured rehabilitation support while maintaining their living situation. Our experienced counsellors provide comprehensive, evidence-based support focused on recovery and wellbeing.",
+  "overview__text_2": "All support is delivered by accredited AOD (Alcohol and Other Drugs) and mental health counsellors, and is completely free of charge.",
+  "overview__subheading": "What we offer",
+  "overview__image_alt": "Support space inside Oakdene House",
+  "overview__subheading_2": "Get in touch",
+  "overview__button": "(02) 8717 0999",
+  "overview__button_2": "admin@oakdenehouse.org.au",
+  "overview__button_3": "Get Support",
+  "what_makes_it_different__eyebrow": "Our Approach",
+  "what_makes_it_different__heading": "Recovery on your terms",
+  "what_makes_it_different__subheading": "Evidence-based",
+  "what_makes_it_different__text": "All counselling and group work is grounded in proven, accredited practice for addiction and recovery.",
+  "what_makes_it_different__subheading_2": "Community-centred",
+  "what_makes_it_different__text_2": "You stay in your home and community. Peer connection is built alongside professional support.",
+  "what_makes_it_different__subheading_3": "Flexible timing",
+  "what_makes_it_different__text_3": "The program is structured but designed to work around the reality of your life — not the other way around.",
+  "cta__heading": "Ready to take the next step?",
+  "cta__primarybtn": {
+    "text": "Get Support",
+    "href": "/contact/"
+  },
+  "cta__secondarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "data__offerings": [
+    "One-on-one counselling",
+    "Group sessions",
+    "12-step support",
+    "Peer support",
+    "All delivered by accredited AOD and mental health counsellors",
+    "All services are free"
+  ]
+}

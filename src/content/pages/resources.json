@@ -1,0 +1,67 @@
+{
+  "seo__browser_title": "Resources — Oakdene House Foundation",
+  "seo__search_description": "Browse practical guides, support information, and downloadable resources from Oakdene House Foundation, Fairfield, Western Sydney.",
+  "hero__title": "Resources that are practical, clear, and easy to use",
+  "hero__intro": "Browse guides, support information, and helpful materials you can access straight away.",
+  "featured_resources__eyebrow": "Featured Resources",
+  "featured_resources__heading": "Guides and information packs",
+  "featured_resources__intro": "All resources are free to access and download.",
+  "available_resources__eyebrow": "Browse",
+  "available_resources__heading": "Available resources",
+  "available_resources__label": "Play video: Oakdene House Foundation, our story",
+  "available_resources__text": "Our story",
+  "available_resources__button": "Watch with transcript",
+  "available_resources__title": "One Day at a Time 01: An introduction to Dr Rob Hunter",
+  "available_resources__label_2": "Play video: One Day at a Time 01, an introduction to Dr Rob Hunter",
+  "available_resources__text_2": "One Day at a Time 01: An introduction to Dr Rob Hunter",
+  "available_resources__text_3": "All resources are free. If you cannot find what you are looking for, [contact our team](/contact/) and we will help.",
+  "cta__heading": "Need more support?",
+  "cta__primarybtn": {
+    "text": "Get Support",
+    "href": "/contact/"
+  },
+  "cta__secondarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "data__featured": [
+    {
+      "title": "Getting Support Guide",
+      "description": "A clear guide to understanding what support is available and how to access it.",
+      "icon": "book"
+    },
+    {
+      "title": "Referral Information Pack",
+      "description": "Information for workers, health professionals, and community partners about referring to Oakdene.",
+      "icon": "share"
+    },
+    {
+      "title": "Community Support Guide",
+      "description": "A directory of community services, supports, and resources in Western Sydney.",
+      "icon": "map"
+    },
+    {
+      "title": "Wellbeing and Recovery Tools",
+      "description": "Practical tools, worksheets, and exercises to support your wellbeing and recovery journey.",
+      "icon": "heart"
+    }
+  ],
+  "data__available_resources": [
+    {
+      "label": "Flyers and brochures",
+      "href": "/resources/flyers-and-brochures/"
+    },
+    {
+      "label": "Information sheets",
+      "href": "/resources/information-sheets/"
+    },
+    {
+      "label": "Referral form",
+      "href": "/services/referral/"
+    },
+    {
+      "label": "Volunteer application",
+      "href": "/community-programs/volunteering/"
+    }
+  ]
+}

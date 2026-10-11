@@ -1,0 +1,27 @@
+{
+  "serviceName": "Mount Druitt Hospital",
+  "organisation": "Mount Druitt Hospital",
+  "category": "Health",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Public hospital",
+  "contact": {
+    "phone": "(02) 8881 8888",
+    "email": "mountdruitt@wslhd.health.nsw.gov.au",
+    "website": "https://www.wslhd.health.nsw.gov.au/services/hospitals/mountdruitt"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Mount Druitt",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

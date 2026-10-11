@@ -1,0 +1,29 @@
+{
+  "serviceName": "Taldumande",
+  "organisation": "Taldumande",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "02 9460 3777",
+    "email": "administration@taldumande.org.au",
+    "website": "https://www.taldumande.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/TaldumandeYouthServices/"
+  },
+  "location": {
+    "suburb": "St Leonards",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "76 002 850 671",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Taldumande%20Youth%20Services"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

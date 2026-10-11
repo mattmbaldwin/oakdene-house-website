@@ -1,0 +1,29 @@
+{
+  "serviceName": "Women's and Girls' Emergency Centre",
+  "organisation": "Women's and Girls' Emergency Centre",
+  "category": "Health / Community Service",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9319 4088",
+    "email": "intake@wagec.org.au",
+    "website": "https://www.wagec.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/WomensAndGirlsEmergencyCentre/"
+  },
+  "location": {
+    "suburb": "Redfern",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "67 002 793 081",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Women%27s%20and%20Girls%27%20Emergency%20Centre"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

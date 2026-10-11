@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
 import VideoPlayer from '../../components/VideoPlayer.astro';
+import pageText from '../../content/pages/about-the-oakdene-story.json';
 
 // Video details come from the launch pack, read at build time only.
 import video from '../../../docs/video-launch/content/video.json';
@@ -10,8 +11,8 @@ const videoThumbnail = video.thumbnail_path.replace(/^public/, '');
 ---
 
 <BaseLayout
-  title="The Oakdene Story — Oakdene House Foundation"
-  description="The Oakdene is an evergreen Holm Oak in Fairfield planted in 1842 — struck by lightning yet still growing. The living symbol of hardship, endurance and healing behind Oakdene House Foundation."
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
   ogImage="/images/about/colour-oakdene-tree-panorama.jpg"
 >
 
@@ -26,8 +27,8 @@ const videoThumbnail = video.thumbnail_path.replace(/^public/, '');
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">The Oakdene Story</span>
       </nav>
-      <h1>The Oakdene Story</h1>
-      <p class="story-hero__lead">A story of hardship, endurance and healing — rooted in Fairfield since 1842.</p>
+      <h1>{pageText.hero__title}</h1>
+      <p class="story-hero__lead">{pageText.hero__intro}</p>
     </div>
   </section>
 
@@ -37,18 +38,18 @@ const videoThumbnail = video.thumbnail_path.replace(/^public/, '');
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">The Oak</p>
-            <h2 id="story-heading">A tree that endured</h2>
+            <p class="section-heading__eyebrow">{pageText.story__eyebrow}</p>
+            <h2 id="story-heading">{pageText.story__heading}</h2>
           </div>
-          <p>The Oakdene is an evergreen Holm Oak in Fairfield, planted in 1842. During a storm, the tree was split down the middle by lightning. It is visibly divided into two parts, but continues to grow evergreen. The story of the Oakdene is one of hardship, endurance and healing. It shows that difficult times and broken pasts can be overcome, and that we can all continue to grow.</p>
-          <p>Oakdene House was built on a simple idea — that people facing addiction, hardship and social disconnection deserve a place where they can be welcomed, supported and treated with dignity.</p>
-          <p>Over time, Oakdene has grown into a community hub that blends professional support with practical care. What began as a place of help has become a place of belonging for many people who need stability, encouragement and a pathway forward.</p>
-          <p>Today, Oakdene House supports individuals and families through addiction services, counselling, group programs and community-based supports. Our work reflects the needs of the local community and continues to evolve through partnership, listening and lived experience.</p>
+          <p>{pageText.story__text}</p>
+          <p>{pageText.story__text_2}</p>
+          <p>{pageText.story__text_3}</p>
+          <p>{pageText.story__text_4}</p>
         </div>
         <div class="split__image">
           <img
             src="/images/about/oakdene-tree-sunlight.jpg"
-            alt="Sunlight through the leaves of the Oakdene tree in Fairfield"
+            alt={pageText.story__image_alt}
             loading="lazy"
           />
         </div>
@@ -79,18 +80,18 @@ const videoThumbnail = video.thumbnail_path.replace(/^public/, '');
   <section class="section" aria-labelledby="watch-heading">
     <div class="container story-video">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Our Film</p>
-        <h2 id="watch-heading">Watch our story</h2>
-        <p class="section-heading__lead">People in recovery, our counsellors and our founding chairman talk about what support at Oakdene House means to them.</p>
+        <p class="section-heading__eyebrow">{pageText.watch_our_story__eyebrow}</p>
+        <h2 id="watch-heading">{pageText.watch_our_story__heading}</h2>
+        <p class="section-heading__lead">{pageText.watch_our_story__intro}</p>
       </div>
       <VideoPlayer
         youtubeId={video.youtube_id}
         title={video.title}
         thumbnail={videoThumbnail}
-        label="Play video: Oakdene House Foundation, our story"
+        label={pageText.watch_our_story__label}
       />
       <p class="story-video__link">
-        <a href={video.watch_page_path}>Watch with the full transcript</a>
+        <a href={video.watch_page_path}>{pageText.watch_our_story__button}</a>
       </p>
     </div>
   </section>
@@ -98,18 +99,18 @@ const videoThumbnail = video.thumbnail_path.replace(/^public/, '');
   <!-- WHY THIS MATTERS -->
   <section class="section section--dark" aria-labelledby="why-heading">
     <div class="container why-container">
-      <p class="section-heading__eyebrow">Why It Matters</p>
+      <p class="section-heading__eyebrow">{pageText.why_this_matters__eyebrow}</p>
       <blockquote class="why-quote">
-        <p id="why-heading">"Many people do not need more judgement. They need a door that is open, a person who will listen and support that makes sense in real life. Oakdene aims to be that place."</p>
+        <p id="why-heading">{pageText.why_this_matters__text}</p>
       </blockquote>
     </div>
   </section>
 
   <!-- CTA -->
   <CTABand
-    heading="Learn more about our services"
-    primaryBtn={{ text: 'Explore Services', href: '/services/' }}
-    secondaryBtn={{ text: 'About Oakdene', href: '/about/' }}
+    heading={pageText.cta__heading}
+    primaryBtn={pageText.cta__primarybtn}
+    secondaryBtn={pageText.cta__secondarybtn}
     dark={true}
   />
 
@@ -173,7 +174,7 @@ const videoThumbnail = video.thumbnail_path.replace(/^public/, '');
     text-align: center;
   }
 
-  .story-video__link a {
+  .story-video__link :global(a) {
     font-weight: 600;
     color: var(--color-primary);
     text-decoration: underline;
@@ -181,7 +182,7 @@ const videoThumbnail = video.thumbnail_path.replace(/^public/, '');
     transition: color var(--transition);
   }
 
-  .story-video__link a:hover {
+  .story-video__link :global(a:hover) {
     color: var(--color-link-hover);
   }
 

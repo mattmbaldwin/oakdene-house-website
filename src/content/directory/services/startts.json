@@ -1,0 +1,30 @@
+{
+  "serviceName": "STARTTS",
+  "organisation": "STARTTS",
+  "category": "Domestic Violence",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "(02) 9854 7300",
+    "email": "stts-startts@health.nsw.gov.au",
+    "website": "https://www.startts.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/STARTTS.NSW/",
+    "linkedin": "https://www.linkedin.com/company/startts/"
+  },
+  "location": {
+    "suburb": "Auburn",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,27 @@
+{
+  "serviceName": "Macquarie Law Group",
+  "organisation": "Macquarie Law Group",
+  "category": "Legal / Justice",
+  "categoryGroup": "Legal & Justice",
+  "serviceType": "Criminal Defence Law",
+  "contact": {
+    "phone": "02 9570 0430",
+    "email": "admin@mlglaw.com.au",
+    "website": "https://www.mlglaw.com.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Sydney",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

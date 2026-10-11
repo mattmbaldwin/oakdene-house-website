@@ -1,0 +1,27 @@
+{
+  "serviceName": "Griefline",
+  "organisation": "Griefline",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "(02) 8043 4965",
+    "email": "intake@griefline.org.au",
+    "website": "https://griefline.org.au/get-help/integrating-grief-program/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Sydney",
+    "lga": "Inner West",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Griefline"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

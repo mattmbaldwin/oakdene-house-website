@@ -1,0 +1,30 @@
+{
+  "serviceName": "NSW Sexual Violence Helpline",
+  "organisation": "Full Stop Australia",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "1800 424 017",
+    "email": "support@fullstop.org.au",
+    "website": "https://fullstop.org.au/get-help/our-services"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/FullStopAustralia/",
+    "instagram": "https://www.instagram.com/fullstopaus/"
+  },
+  "location": {
+    "suburb": "N/A — National service",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "20 081 188 800",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Full%20Stop%20Australia"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

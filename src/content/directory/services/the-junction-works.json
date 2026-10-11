@@ -1,0 +1,29 @@
+{
+  "serviceName": "The Junction Works",
+  "organisation": "The Junction Works",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Youth & community development",
+  "contact": {
+    "phone": "(02) 9607 7392",
+    "email": "info@junctionworks.org",
+    "website": "https://junctionworks.org/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/JunctionWorks/"
+  },
+  "location": {
+    "suburb": "Glenfield",
+    "lga": "Campbelltown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=The%20Junction%20Works"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC; NSW DCJ funded"
+}

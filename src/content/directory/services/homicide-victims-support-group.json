@@ -1,0 +1,29 @@
+{
+  "serviceName": "Homicide Victims Support Group",
+  "organisation": "Homicide Victims Support Group",
+  "category": "Health / Community Service",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Legal / Justice Support",
+  "contact": {
+    "phone": "02 8833 8400 (General Enquiries), 1800 191 777 (24 hour Hotline)",
+    "email": "info@hvsgnsw.org.au",
+    "website": "https://hvsgnsw.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/HomicideVictimsSupportGroup/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "78 002 803 614",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Homicide%20Victims%20Support%20Group"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,10 +1,12 @@
 ---
+import pageText from '../content/pages/thankyou.json';
+import { inlineMarkdown } from '../lib/format';
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Thank You — Oakdene House Foundation"
-  description="Thank you for contacting Oakdene House Foundation. We will be in touch as soon as possible."
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
 >
 
   <section class="thankyou" aria-label="Thank you confirmation">
@@ -12,31 +14,31 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <div class="thankyou__icon" aria-hidden="true">
         <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
       </div>
-      <h1>Thank you for getting in touch</h1>
-      <p class="thankyou__sub">We have received your message and will be in touch as soon as possible.</p>
-      <p class="thankyou__body">If your enquiry is urgent, please call us directly on <a href="tel:0287170999">(02) 8717 0999</a>. Our team is available Monday to Friday during business hours.</p>
+      <h1>{pageText.thank_you_confirmation__title}</h1>
+      <p class="thankyou__sub">{pageText.thank_you_confirmation__text}</p>
+      <p class="thankyou__body" set:html={inlineMarkdown(pageText.thank_you_confirmation__text_2)}></p>
 
       <div class="next-steps" aria-label="What happens next">
-        <h2 class="next-steps__heading">What happens next</h2>
+        <h2 class="next-steps__heading">{pageText.thank_you_confirmation__heading}</h2>
         <div class="next-steps__list">
           <div class="next-step">
             <div class="next-step__number" aria-hidden="true">1</div>
-            <p>We will review your message within 2 business days</p>
+            <p>{pageText.thank_you_confirmation__text_3}</p>
           </div>
           <div class="next-step">
             <div class="next-step__number" aria-hidden="true">2</div>
-            <p>A member of our team will contact you to follow up</p>
+            <p>{pageText.thank_you_confirmation__text_4}</p>
           </div>
           <div class="next-step">
             <div class="next-step__number" aria-hidden="true">3</div>
-            <p>If you need immediate support, please visit our <a href="/need-help-now/">Need Help Now</a> page</p>
+            <p set:html={inlineMarkdown(pageText.thank_you_confirmation__text_5)}></p>
           </div>
         </div>
       </div>
 
       <div class="thankyou__actions">
-        <a href="/" class="btn btn--primary">Back to Home</a>
-        <a href="/need-help-now/" class="btn btn--secondary">Need Help Now</a>
+        <a href="/" class="btn btn--primary">{pageText.thank_you_confirmation__button}</a>
+        <a href="/need-help-now/" class="btn btn--secondary">{pageText.thank_you_confirmation__button_2}</a>
       </div>
     </div>
   </section>
@@ -82,13 +84,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     margin-bottom: 40px;
   }
 
-  .thankyou__body a {
+  .thankyou__body :global(a) {
     color: var(--color-primary);
     font-weight: 600;
     text-decoration: none;
   }
 
-  .thankyou__body a:hover {
+  .thankyou__body :global(a:hover) {
     text-decoration: underline;
   }
 
@@ -147,13 +149,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     padding-top: 4px;
   }
 
-  .next-step a {
+  .next-step :global(a) {
     color: var(--color-primary);
     font-weight: 500;
     text-decoration: none;
   }
 
-  .next-step a:hover {
+  .next-step :global(a:hover) {
     text-decoration: underline;
   }
 

@@ -1,0 +1,29 @@
+{
+  "serviceName": "Rosie's Place",
+  "organisation": "Rosie's Place",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9625 2599",
+    "email": "info@rosiesplace.com.au",
+    "website": "https://www.rosiesplace.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/rosiesplace/"
+  },
+  "location": {
+    "suburb": "Rooty Hill",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Rosie%27s%20Place"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

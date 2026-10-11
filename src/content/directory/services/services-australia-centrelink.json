@@ -1,0 +1,29 @@
+{
+  "serviceName": "Services Australia – Centrelink",
+  "organisation": "Services Australia – Centrelink",
+  "category": "Migrant Support",
+  "categoryGroup": "Migrant & Multicultural",
+  "serviceType": "Financial assistance",
+  "contact": {
+    "phone": "13 23 17",
+    "email": null,
+    "website": "https://www.servicesaustralia.gov.au/centrelink"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/ServicesAustralia/"
+  },
+  "location": {
+    "suburb": "Multiple",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

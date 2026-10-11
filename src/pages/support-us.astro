@@ -3,110 +3,87 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import FAQAccordion from '../components/FAQAccordion.astro';
 import CTABand from '../components/CTABand.astro';
+import pageText from '../content/pages/support-us.json';
+import { inlineMarkdown } from '../lib/format';
 
-const donationFaqs = [
-  {
-    question: 'Is my donation tax-deductible?',
-    answer: 'Yes — donations of $2 or more to Oakdene are tax-deductible.',
-  },
-  {
-    question: 'How will I receive a receipt?',
-    answer: "You'll receive a receipt by email immediately after your donation is processed.",
-  },
-  {
-    question: 'How do I cancel a monthly donation?',
-    answer: 'You can cancel anytime by emailing admin@oakdenehouse.org.au or using the cancellation link in your donation email.',
-  },
-  {
-    question: 'Is my payment secure?',
-    answer: 'Yes. Payments are processed by GiveNow, a registered Australian donations platform. Oakdene does not see or store your card details.',
-  },
-  {
-    question: 'Can I donate in memory of someone?',
-    answer: "Yes — there's a field on the donation form. We'll include the tribute in our records and any acknowledgement you request.",
-  },
-  {
-    question: 'What percentage of my donation goes to services?',
-    answer: 'Over 90% of donated funds go directly to service delivery — the Kitchen, counselling, programs, and community support.',
-  },
-];
+const donationFaqs = pageText.data__donation_faqs;
 ---
 
 <BaseLayout
-  title="Support Oakdene House"
-  description="Help Oakdene House provide practical, dignified support to people and families facing addiction, hardship and homelessness in Sydney. Donations of $2 or more are tax-deductible."
-  ogImage="/images/hero/hero-support-us.png"
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
+  ogImage="/images/hero/hero-support-us.jpg"
   noindex={true}
 >
 
   <!-- HERO -->
   <Hero
-    heading="Your support changes real lives"
-    subheading="Every donation to Oakdene House goes directly into practical support for people and families in our community. Whether you give once or become a monthly supporter, your contribution helps someone take the next step."
-    image="/images/hero/hero-support-us.png"
-    imageAlt="Community members supported by Oakdene House Foundation"
+    heading={pageText.hero__heading}
+    subheading={pageText.hero__subheading}
+    image="/images/hero/hero-support-us.jpg"
+    imageAlt={pageText.hero__image_alt}
     buttons={[]}
   />
 
   <!-- INTRO -->
   <section class="section" aria-labelledby="intro-heading">
     <div class="container intro-container">
-      <h2 id="intro-heading" class="visually-hidden">About your donation</h2>
-      <p class="intro-text">Oakdene House Foundation has been part of Sydney's recovery community for over 30 years. We provide free counselling, transitional housing, and community programs to people and families facing addiction, hardship and homelessness. Your donation keeps those services running.</p>
+      <h2 id="intro-heading" class="visually-hidden">{pageText.intro__heading}</h2>
+      <p class="intro-text">{pageText.intro__intro}</p>
     </div>
   </section>
 
   <!-- DONATE + OTHER WAYS TO GIVE -->
   <section class="section section--tint" aria-labelledby="donate-heading">
     <div class="container">
-      <h2 id="donate-heading" class="visually-hidden">Donate</h2>
+      <h2 id="donate-heading" class="visually-hidden">{pageText.donate_other_ways_to_give__heading}</h2>
       <div class="donate-columns">
 
         <!-- LEFT: GiveNow embed -->
         <div class="donate-embed-card">
-          <h2>Donate now</h2>
+          <h2>{pageText.left__heading}</h2>
           <script is:inline src="https://www.givenow.com.au/js/iframe-resizer/iframeResizer.min.js?version=4.3.2.1"></script>
-          <div style="padding:1px"><iframe id="cause11851" class="gn-iframe" src="https://www.givenow.com.au/embed/Y2F1c2VpZD0xMTg1MSZkb21haW49b2FrZGVuZS1ob3VzZS13ZWJzaXRlLnBhZ2VzLmRldiZ0b2tlbj0xMTg1MTo0ZDViZTJiMjBiN2FkZTZh" style="width:1px;min-width:100%;border:0;height:882px;" data-offset-bonus="0"></iframe></div>
+          <div style="padding:1px"><iframe id="cause11851" class="gn-iframe" title="Donation form (GiveNow)" src="https://www.givenow.com.au/embed/Y2F1c2VpZD0xMTg1MSZkb21haW49b2FrZGVuZS1ob3VzZS13ZWJzaXRlLnBhZ2VzLmRldiZ0b2tlbj0xMTg1MTo0ZDViZTJiMjBiN2FkZTZh" style="width:1px;min-width:100%;border:0;height:882px;" data-offset-bonus="0"></iframe></div>
           <script is:inline>iFrameResize({checkOrigin:false,onScroll:function(){var element = document.getElementById("cause11851");var offsetBonus=element.getAttribute("data-offset-bonus");if(typeof offsetBonus !== typeof undefined){var offset=element.getBoundingClientRect().top-document.body.getBoundingClientRect().top;window.scrollTo({ top: offset-offsetBonus, behavior: 'smooth' });return false;}}}, "#cause11851")</script>
         </div>
 
         <!-- RIGHT: Other ways to give -->
         <aside class="donate-sidebar" aria-label="Other ways to give">
           <div class="donate-sidebar__inner">
-            <h3 class="donate-sidebar__heading">Other ways to give</h3>
+            <h3 class="donate-sidebar__heading">{pageText.right__subheading}</h3>
 
             <div class="give-method">
-              <h4>Direct deposit</h4>
+              <h4>{pageText.right__subheading_2}</h4>
               <dl class="give-method__details">
-                <dt>BSB</dt>
-                <dd>012-292</dd>
-                <dt>Account</dt>
-                <dd>83563664</dd>
-                <dt>Account name</dt>
-                <dd>Oakdene House Foundation</dd>
-                <dt>Reference</dt>
-                <dd>Your name</dd>
+                <dt>{pageText.right__cell}</dt>
+                <dd>{pageText.right__cell_2}</dd>
+                <dt>{pageText.right__cell_3}</dt>
+                <dd>{pageText.right__cell_4}</dd>
+                <dt>{pageText.right__cell_5}</dt>
+                <dd>{pageText.right__cell_6}</dd>
+                <dt>{pageText.right__cell_7}</dt>
+                <dd>{pageText.right__cell_8}</dd>
               </dl>
             </div>
 
             <div class="give-method">
-              <h4>Cheque</h4>
-              <p>Made payable to <strong>Oakdene House Foundation</strong> and posted to PO Box 988, Fairfield NSW 1860.</p>
+              <h4>{pageText.right__subheading_3}</h4>
+              <p set:html={inlineMarkdown(pageText.right__text)}></p>
             </div>
 
             <div class="give-method">
-              <h4>Workplace giving</h4>
-              <p>Many employers offer payroll giving and matched donation schemes. Contact <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a> and we'll help set it up.</p>
+              <h4>{pageText.right__subheading_4}</h4>
+              <p set:html={inlineMarkdown(pageText.right__text_2)}></p>
             </div>
 
             <div class="give-method">
-              <h4>Leave a gift in your will</h4>
-              <p>Including Oakdene in your will is a meaningful way to support people and families for generations to come. Get in touch for a confidential conversation.</p>
+              <h4>{pageText.right__subheading_5}</h4>
+              <p>{pageText.right__text_3}</p>
             </div>
 
             <div class="give-method give-method--last">
-              <h4>Corporate partnership</h4>
-              <p>Interested in a longer-term partnership? Reach out via our <a href="/contact/">contact form</a> or email <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a> directly.</p>
+              <h4>{pageText.right__subheading_6}</h4>
+              <p set:html={inlineMarkdown(pageText.right__text_4)}></p>
             </div>
           </div>
         </aside>
@@ -118,10 +95,10 @@ const donationFaqs = [
   <!-- ASSURANCE -->
   <section class="section" aria-labelledby="assurance-heading">
     <div class="container assurance-container">
-      <h2 id="assurance-heading" class="visually-hidden">Donation assurance</h2>
-      <p class="assurance-text"><em>Every contribution — large or small — helps Oakdene keep our doors open, our kitchen running, and our counsellors available for the people who need them most.</em></p>
-      <p class="assurance-text"><em>Donations of $2 or more are tax-deductible.</em></p>
-      <p class="assurance-credentials">Registered Australian charity &middot; ABN 90 151 950 926 &middot; Donations processed securely by GiveNow</p>
+      <h2 id="assurance-heading" class="visually-hidden">{pageText.assurance__heading}</h2>
+      <p class="assurance-text" set:html={inlineMarkdown(pageText.assurance__text)}></p>
+      <p class="assurance-text" set:html={inlineMarkdown(pageText.assurance__text_2)}></p>
+      <p class="assurance-credentials">{pageText.assurance__text_3}</p>
     </div>
   </section>
 
@@ -129,7 +106,7 @@ const donationFaqs = [
   <section class="section section--tint" aria-labelledby="faq-heading">
     <div class="container faq-container">
       <div class="section-heading">
-        <h2 id="faq-heading">Frequently asked questions about donations</h2>
+        <h2 id="faq-heading">{pageText.faq__heading}</h2>
       </div>
       <FAQAccordion faqs={donationFaqs} />
     </div>
@@ -137,9 +114,9 @@ const donationFaqs = [
 
   <!-- CTA -->
   <CTABand
-    heading="Need to talk to someone first?"
-    subheading="If you'd prefer to discuss a donation, partnership, or leave a gift in your will, our team is here to help."
-    primaryBtn={{ text: 'Contact us', href: '/contact/' }}
+    heading={pageText.cta__heading}
+    subheading={pageText.cta__subheading}
+    primaryBtn={pageText.cta__primarybtn}
     dark={false}
   />
 
@@ -241,14 +218,14 @@ const donationFaqs = [
     margin-bottom: 0;
   }
 
-  .give-method p a {
+  .give-method p :global(a) {
     color: var(--color-primary);
     font-weight: 500;
     text-decoration: none;
     transition: color var(--transition);
   }
 
-  .give-method p a:hover {
+  .give-method p :global(a:hover) {
     color: var(--color-primary-hover);
     text-decoration: underline;
     text-underline-offset: 2px;

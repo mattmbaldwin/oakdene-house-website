@@ -1,0 +1,31 @@
+{
+  "serviceName": "Lifeline Helpline",
+  "organisation": "Lifeline Helpline",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "13 11 14",
+    "email": "info@lifeline.org.au",
+    "website": "https://www.lifeline.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/lifelineaustralia/",
+    "instagram": "https://www.instagram.com/lifelineaustralia/",
+    "linkedin": "https://www.linkedin.com/company/lifeline-australia/"
+  },
+  "location": {
+    "suburb": "N/A — National service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "84 081 031 263",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Lifeline%20Australia"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC; healthdirect; Ask Izzy"
+}

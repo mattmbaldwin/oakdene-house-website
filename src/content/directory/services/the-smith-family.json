@@ -1,0 +1,29 @@
+{
+  "serviceName": "The Smith Family",
+  "organisation": "The Smith Family",
+  "category": "Family Support",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Education support",
+  "contact": {
+    "phone": "1300 050 576",
+    "email": "contact@thesmithfamily.org.au",
+    "website": "https://www.thesmithfamily.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/TheSmithFamilyAustralia/"
+  },
+  "location": {
+    "suburb": "Camperdown",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "28 000 030 179",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=The%20Smith%20Family"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

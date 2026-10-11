@@ -1,0 +1,30 @@
+{
+  "serviceName": "Wesley Mission Western Sydney",
+  "organisation": "Wesley Mission Western Sydney",
+  "category": "Migrant Support",
+  "categoryGroup": "Migrant & Multicultural",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "(02) 9620 2260",
+    "email": "parramatta@wesleymission.org.au",
+    "website": "https://www.wesleymission.org.au"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/wesleymission/",
+    "linkedin": "https://www.linkedin.com/company/wesley-mission/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": "42 164 655 145",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Wesley%20Mission"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

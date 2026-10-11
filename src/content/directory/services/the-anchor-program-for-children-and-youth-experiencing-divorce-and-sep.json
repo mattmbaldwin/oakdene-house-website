@@ -1,0 +1,30 @@
+{
+  "serviceName": "The Anchor - Program for Children and Youth experiencing divorce and separation",
+  "organisation": "Uniting",
+  "category": "Health / Community Service",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1800 864 846",
+    "email": "ask@uniting.org",
+    "website": "https://www.uniting.org/services/theanchor-home"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/unitingnswact/",
+    "linkedin": "https://www.linkedin.com/company/uniting-nsw-act/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": "78 722 562 218",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Uniting%20NSW.ACT"
+  },
+  "flags": {
+    "aod": true,
+    "legal": true
+  },
+  "listedIn": null
+}

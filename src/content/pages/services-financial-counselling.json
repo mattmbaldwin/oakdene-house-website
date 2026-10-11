@@ -1,0 +1,48 @@
+{
+  "seo__browser_title": "Financial Counselling — Oakdene House Foundation",
+  "seo__search_description": "Free financial counselling at Oakdene House for people experiencing hardship. Help with debt, bills, expenses and financial planning in Fairfield, Western Sydney.",
+  "hero__title": "Financial Counselling",
+  "hero__intro": "Free guidance for people experiencing financial hardship.",
+  "overview__eyebrow": "The Service",
+  "overview__heading": "Practical help for financial pressure",
+  "overview__text": "At Oakdene House Foundation, we understand that financial stress and mental health are often deeply connected. Money worries can affect sleep, relationships, confidence, physical health, and recovery from addiction or gambling harm. For many people, financial pressure becomes one of the biggest barriers to stability and wellbeing.",
+  "overview__text_2": "Our Financial Counselling Service provides free, confidential support from a qualified Financial Counsellor for individuals and families experiencing financial hardship, debt stress, gambling-related financial impacts, housing insecurity, or difficulty managing day-to-day costs.",
+  "overview__text_3": "This is not a budgeting app or a quick advice session. Financial counselling is a professional support service focused on helping people understand their situation, reduce pressure, and regain a sense of control.",
+  "overview__subheading": "What a Financial Counsellor can help with",
+  "overview__list": [
+    "Debt and overdue bills",
+    "Gambling-related financial harm",
+    "Rent or mortgage stress",
+    "Utility disconnections and payment plans",
+    "Credit cards, personal loans, and buy-now-pay-later debt",
+    "Centrelink and financial hardship issues",
+    "Negotiating with creditors",
+    "Financial stress linked to addiction or mental health challenges",
+    "Creating practical financial plans",
+    "Referrals to emergency relief and community supports"
+  ],
+  "overview__subheading_2": "How to access",
+  "overview__text_4": "You can access financial counselling through a referral form, by phone, or by email. No prior referral from another service is required.",
+  "overview__button": "Submit a Request",
+  "overview__button_2": "Contact Us",
+  "overview__caption": "Service details",
+  "our_approach_fca_accreditation__eyebrow": "A Practical and Compassionate Approach",
+  "our_approach_fca_accreditation__heading": "Support without lectures or judgement",
+  "our_approach_fca_accreditation__text": "Financial counselling at Oakdene is delivered in a respectful, non-judgemental way. Many people avoid seeking help because of shame, embarrassment, or fear about their financial situation. Our role is not to lecture or criticise. It is to help reduce pressure, improve understanding, and support practical next steps.",
+  "our_approach_fca_accreditation__text_2": "Where needed, financial counselling can also work alongside our counselling, recovery, and support programs to provide more holistic care. This is particularly important for people affected by gambling harm, addiction, relationship breakdown, or periods of significant emotional distress.",
+  "our_approach_fca_accreditation__subheading": "Qualified and Professional Support",
+  "our_approach_fca_accreditation__text_3": "All financial counselling services at Oakdene House Foundation are delivered by a qualified Financial Counsellor with experience supporting people facing complex financial and personal challenges. Our Financial Counsellor is professionally registered and operates in line with Australian financial counselling standards and ethical requirements.",
+  "our_approach_fca_accreditation__text_4": "Financial counsellors work independently and in the best interests of the client, providing free, confidential, and non-judgemental support. Financial counselling in Australia is supported nationally by Financial Counselling Australia (FCA), the peak body representing the profession.",
+  "our_approach_fca_accreditation__text_5": "Accredited member of",
+  "our_approach_fca_accreditation__image_alt": "Financial Counselling Australia",
+  "cta__heading": "Need help with finances?",
+  "cta__subheading": "Get in touch to arrange a session. We will start from where you are.",
+  "cta__primarybtn": {
+    "text": "Submit a Request",
+    "href": "/services/referral/"
+  },
+  "cta__secondarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  }
+}

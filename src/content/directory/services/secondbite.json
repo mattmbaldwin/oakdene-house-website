@@ -1,0 +1,31 @@
+{
+  "serviceName": "SecondBite",
+  "organisation": "SecondBite",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Material Aid / Resource Support",
+  "contact": {
+    "phone": null,
+    "email": "info@secondbite.org",
+    "website": "https://www.secondbite.org/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/SecondBite/",
+    "instagram": "https://www.instagram.com/secondbite/",
+    "linkedin": "https://www.linkedin.com/company/secondbite/"
+  },
+  "location": {
+    "suburb": null,
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "84 124 967 938",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=SecondBite"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC; Ask Izzy"
+}

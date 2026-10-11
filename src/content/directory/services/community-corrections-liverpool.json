@@ -1,0 +1,27 @@
+{
+  "serviceName": "Community Corrections Liverpool",
+  "organisation": "Community Corrections Liverpool",
+  "category": "Legal / Justice",
+  "categoryGroup": "Legal & Justice",
+  "serviceType": "Legal / Justice Support",
+  "contact": {
+    "phone": "02 8709 8800",
+    "email": null,
+    "website": "https://www.dcj.nsw.gov.au/justice-housing-and-homelessness/corrective-services-nsw/community-corrections.html"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Liverpool",
+    "lga": "Multi-LGA (South Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

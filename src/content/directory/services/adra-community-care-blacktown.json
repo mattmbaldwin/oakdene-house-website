@@ -1,0 +1,29 @@
+{
+  "serviceName": "ADRA Community Care Blacktown",
+  "organisation": "ADRA Community Care Blacktown",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "02 9622 7188",
+    "email": "clinical@adrablacktown.com.au",
+    "website": "https://adrablacktown.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/ADRA.Australia/"
+  },
+  "location": {
+    "suburb": "Blacktown",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "85 109 435 618",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Adventist%20Development%20%26%20Relief%20Agency%20Australia%20%28ADRA%29"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,29 @@
+{
+  "serviceName": "Diamond Women",
+  "organisation": "Diamond Women",
+  "category": "Health / Community Service",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1300 851 592",
+    "email": "info@diamondwomen.com.au",
+    "website": "https://www.diamondwomen.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/DiamondWomenSupportServices/"
+  },
+  "location": {
+    "suburb": "Castle Hill",
+    "lga": "The Hills",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "90 612 470 075",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Diamond%20Women"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

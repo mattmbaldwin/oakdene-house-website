@@ -1,0 +1,27 @@
+{
+  "serviceName": "Witness to War - National Multilingual Telephone Hotline",
+  "organisation": "The Forum of Australian Services to Survivors of Torture and Trauma",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1800 845 198",
+    "email": null,
+    "website": "https://www.fasstt.org.au/witness-to-war/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "N/A — National service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=The%20Forum%20of%20Australian%20Services%20to%20Survivors%20of%20Torture%20and%20Trauma"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

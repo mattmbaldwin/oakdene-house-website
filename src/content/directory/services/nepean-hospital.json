@@ -1,0 +1,27 @@
+{
+  "serviceName": "Nepean Hospital",
+  "organisation": "Nepean Hospital",
+  "category": "Health",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Public hospital",
+  "contact": {
+    "phone": "(02) 4734 2000",
+    "email": "nepean@wslhd.health.nsw.gov.au",
+    "website": "https://www.wslhd.health.nsw.gov.au/services/hospitals/nepean"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Penrith",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

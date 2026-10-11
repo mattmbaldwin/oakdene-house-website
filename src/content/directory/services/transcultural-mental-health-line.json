@@ -1,0 +1,27 @@
+{
+  "serviceName": "Transcultural Mental Health Line",
+  "organisation": "Transcultural Mental Health Line",
+  "category": "Migrant Support",
+  "categoryGroup": "Migrant & Multicultural",
+  "serviceType": "Settlement / Multicultural Support",
+  "contact": {
+    "phone": "1800 648 911",
+    "email": "tmhc@health.nsw.gov.au",
+    "website": "https://www.dhi.health.nsw.gov.au/transcultural-mental-health-centre-tmhc/transcultural-mental-health-line"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Westmead",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

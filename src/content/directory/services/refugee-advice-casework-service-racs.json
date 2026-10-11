@@ -1,0 +1,30 @@
+{
+  "serviceName": "Refugee Advice & Casework Service (RACS)",
+  "organisation": "RACS",
+  "category": "Legal / Justice",
+  "categoryGroup": "Legal & Justice",
+  "serviceType": "Refugee/asylum legal advice",
+  "contact": {
+    "phone": "(02) 8355 7227",
+    "email": "admin@racs.org.au",
+    "website": "https://www.racs.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/RefugeeAdviceandCaseworkService/",
+    "linkedin": "https://www.linkedin.com/company/refugee-advice-casework-service/"
+  },
+  "location": {
+    "suburb": "Surry Hills",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "92 173 040 826",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Refugee%20Advice%20%26%20Casework%20Service"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": "ACNC; Community Legal Centres NSW"
+}

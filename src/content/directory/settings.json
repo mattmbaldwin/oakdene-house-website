@@ -1,0 +1,444 @@
+{
+  "meta": {
+    "version": "v6",
+    "lastVerified": "2026-04-29",
+    "generatedAt": "2026-04-30",
+    "source": "Oakdene_Service_Directory_updated.xlsx (Simon, 29 Apr 2026)",
+    "description": "ABN + ACNC links + complete socials",
+    "notes": [
+      "Filter primarily on categoryGroup (8 buckets); category (22) is a finer secondary cut.",
+      "Filter primarily on coverage; lga is supplementary and often null for national/statewide services.",
+      "flags.aod and flags.legal are present in the source data but their accuracy has not been verified — do not surface as user-facing filters in v1.",
+      "social media may contain any of: facebook, instagram, linkedin, twitter, youtube, tiktok."
+    ]
+  },
+  "categoryGroups": [
+    {
+      "name": "Health & Community",
+      "mappedCategories": [
+        "Community Health",
+        "Community Services",
+        "Community Support",
+        "Community support",
+        "Health",
+        "Health / Community Service",
+        "Health Advice",
+        "Health System",
+        "Hospital / Health"
+      ]
+    },
+    {
+      "name": "Mental Health & AOD",
+      "mappedCategories": [
+        "Addiction",
+        "Drug & Alcohol",
+        "Health / Community Service",
+        "Mental Health"
+      ]
+    },
+    {
+      "name": "Family, Children & DV",
+      "mappedCategories": [
+        "Child Protection",
+        "Domestic Violence",
+        "Family Support",
+        "Health / Community Service"
+      ]
+    },
+    {
+      "name": "Legal & Justice",
+      "mappedCategories": [
+        "Health / Community Service",
+        "Legal / Justice"
+      ]
+    },
+    {
+      "name": "Housing & Homelessness",
+      "mappedCategories": [
+        "Health / Community Service",
+        "Housing / Homelessness"
+      ]
+    },
+    {
+      "name": "Migrant & Multicultural",
+      "mappedCategories": [
+        "Health / Community Service",
+        "Migrant Support"
+      ]
+    },
+    {
+      "name": "Aboriginal Services",
+      "mappedCategories": [
+        "Aboriginal Health",
+        "Health / Community Service"
+      ]
+    },
+    {
+      "name": "Other Support",
+      "mappedCategories": [
+        "Clothing support",
+        "Gambling Support",
+        "Health / Community Service",
+        "Referral Directory"
+      ]
+    }
+  ],
+  "coverageTiers": [
+    {
+      "name": "Local",
+      "definition": "Single LGA in/near Western Sydney"
+    },
+    {
+      "name": "Regional",
+      "definition": "Multi-LGA region (e.g. Western Sydney, SW Sydney)"
+    },
+    {
+      "name": "Statewide",
+      "definition": "NSW-wide service"
+    },
+    {
+      "name": "National",
+      "definition": "Australia-wide service / national helpline"
+    },
+    {
+      "name": "Telehealth",
+      "definition": "Telehealth-only service"
+    },
+    {
+      "name": "Other NSW",
+      "definition": "NSW location outside Western Sydney"
+    },
+    {
+      "name": "Varies",
+      "definition": "Coverage depends on provider/program"
+    },
+    {
+      "name": "Unknown",
+      "definition": "Coverage could not be determined from source data"
+    }
+  ],
+  "lgaTiers": [
+    {
+      "name": "<empty>",
+      "description": "No specific LGA — service is national/statewide/online"
+    },
+    {
+      "name": "Blacktown",
+      "description": "Western Sydney — largest LGA in NSW"
+    },
+    {
+      "name": "Multi-LGA (Western Sydney)",
+      "description": "Spans multiple WS LGAs"
+    },
+    {
+      "name": "Parramatta",
+      "description": "Western Sydney — central CBD"
+    },
+    {
+      "name": "Sydney",
+      "description": "City of Sydney CBD"
+    },
+    {
+      "name": "Multi-LGA (South Western Sydney)",
+      "description": "Spans multiple SW Sydney LGAs"
+    },
+    {
+      "name": "Cumberland",
+      "description": "Western Sydney — Auburn / Merrylands area"
+    },
+    {
+      "name": "The Hills",
+      "description": "Greater Western Sydney — Hills district"
+    },
+    {
+      "name": "Canterbury-Bankstown",
+      "description": "South-West Sydney"
+    },
+    {
+      "name": "Inner West",
+      "description": "Inner Sydney — Marrickville/Leichhardt"
+    },
+    {
+      "name": "Penrith",
+      "description": "Western Sydney — outer west"
+    },
+    {
+      "name": "Fairfield",
+      "description": "South-Western Sydney"
+    },
+    {
+      "name": "Multi-LGA (Blacktown + Cumberland)",
+      "description": "Two-LGA service"
+    },
+    {
+      "name": "Multi-LGA (Nepean/Blue Mtns/Blacktown/Hills)",
+      "description": "Outer-WS multi-LGA service"
+    },
+    {
+      "name": "Hawkesbury",
+      "description": "Outer NW Sydney"
+    },
+    {
+      "name": "Other NSW",
+      "description": "Outside Greater Sydney"
+    },
+    {
+      "name": "Campbelltown",
+      "description": "Macarthur region"
+    },
+    {
+      "name": "Multi-LGA (Parramatta + Cumberland)",
+      "description": "Two-LGA service"
+    }
+  ],
+  "otherDirectories": [
+    {
+      "name": "Ask Izzy",
+      "operator": "Infoxchange",
+      "url": "https://askizzy.org.au/",
+      "coverage": "National",
+      "bestFor": "Homelessness, food, health, money, family violence, legal — searchable by suburb",
+      "notes": "Free, anonymous. Used by frontline workers across Australia. SMS-friendly."
+    },
+    {
+      "name": "healthdirect Service Finder",
+      "operator": "Healthdirect Australia (Cwlth)",
+      "url": "https://www.healthdirect.gov.au/australian-health-services",
+      "coverage": "National",
+      "bestFor": "GPs, pharmacies, hospitals, mental health, women's health, allied health",
+      "notes": "Government-funded; verified clinical services."
+    },
+    {
+      "name": "DSS Service Finder",
+      "operator": "Department of Social Services",
+      "url": "https://servicefinder.dss.gov.au/",
+      "coverage": "National",
+      "bestFor": "DSS-funded services: family/relationship, settlement, financial counselling, problem gambling",
+      "notes": "Authoritative for federally-funded community services."
+    },
+    {
+      "name": "My Aged Care Service Finder",
+      "operator": "Department of Health and Aged Care",
+      "url": "https://www.myagedcare.gov.au/find-a-provider",
+      "coverage": "National",
+      "bestFor": "Aged care providers, home care, residential care",
+      "notes": "Required gateway for Cwlth-subsidised aged care."
+    },
+    {
+      "name": "NDIS Provider Finder",
+      "operator": "National Disability Insurance Agency",
+      "url": "https://www.ndis.gov.au/participants/working-providers/find-registered-provider",
+      "coverage": "National",
+      "bestFor": "NDIS-registered disability service providers",
+      "notes": "Filter by suburb/postcode and support type."
+    },
+    {
+      "name": "ACNC Charity Register",
+      "operator": "Australian Charities and Not-for-profits Commission",
+      "url": "https://www.acnc.gov.au/charity",
+      "coverage": "National",
+      "bestFor": "Verifying any registered charity (financials, governance, ABN, contact)",
+      "notes": "Use to confirm an org is a legitimate, currently-funded charity."
+    },
+    {
+      "name": "ABN Lookup",
+      "operator": "Australian Business Register",
+      "url": "https://abr.business.gov.au/",
+      "coverage": "National",
+      "bestFor": "Confirming any business/charity ABN, trading name, GST status",
+      "notes": "Free public register."
+    },
+    {
+      "name": "Carer Gateway",
+      "operator": "Department of Social Services",
+      "url": "https://www.carergateway.gov.au/",
+      "coverage": "National",
+      "bestFor": "Unpaid family/friend carer support — counselling, peer support, planning",
+      "notes": "Centralised carer-support entry point."
+    },
+    {
+      "name": "WentWest — Western Sydney PHN HealthPathways",
+      "operator": "WentWest Ltd",
+      "url": "https://wentwest.com.au/",
+      "coverage": "Western Sydney",
+      "bestFor": "GP clinical pathways, WS-specific care navigation",
+      "notes": "Primarily for GPs; some public-facing service info."
+    },
+    {
+      "name": "South Western Sydney PHN Services",
+      "operator": "South Western Sydney PHN",
+      "url": "https://www.swsphn.com.au/",
+      "coverage": "South Western Sydney",
+      "bestFor": "Mental health, AOD, chronic disease services across SWS",
+      "notes": "PHN-commissioned services directory."
+    },
+    {
+      "name": "Western Sydney Local Health District (WSLHD)",
+      "operator": "NSW Health",
+      "url": "https://www.wslhd.health.nsw.gov.au/",
+      "coverage": "Blacktown, Cumberland, The Hills, Parramatta, Auburn",
+      "bestFor": "Public hospitals, community health, drug health, mental health",
+      "notes": "Service directory under 'Our Services'."
+    },
+    {
+      "name": "South Western Sydney Local Health District (SWSLHD)",
+      "operator": "NSW Health",
+      "url": "https://www.swslhd.health.nsw.gov.au/",
+      "coverage": "Bankstown, Liverpool, Fairfield, Campbelltown, Camden, Wingecarribee, Wollondilly",
+      "bestFor": "Public hospitals, community health, refugee health, drug health",
+      "notes": "Refugee Health Service is listed under SWSLHD."
+    },
+    {
+      "name": "Community Legal Centres NSW",
+      "operator": "CLCNSW",
+      "url": "https://www.clcnsw.org.au/",
+      "coverage": "NSW",
+      "bestFor": "Free legal advice — DV, tenancy, immigration, debt, criminal",
+      "notes": "Find a centre by suburb."
+    },
+    {
+      "name": "LawAccess NSW",
+      "operator": "Legal Aid NSW",
+      "url": "https://www.legalaid.nsw.gov.au/ways-to-get-help/lawaccess-nsw",
+      "coverage": "NSW",
+      "bestFor": "Free legal phone advice / referrals (1300 888 529)",
+      "notes": "Triage to community legal centres or Legal Aid."
+    },
+    {
+      "name": "NSW Health AOD Service Directory",
+      "operator": "NSW Ministry of Health",
+      "url": "https://yourroom.health.nsw.gov.au/getting-help/Pages/find-a-service.aspx",
+      "coverage": "NSW",
+      "bestFor": "Drug & alcohol treatment — detox, rehab, counselling, opioid treatment",
+      "notes": "Filter by suburb/postcode and service type."
+    },
+    {
+      "name": "AH&MRC — Aboriginal Health & Medical Research Council",
+      "operator": "AH&MRC NSW/ACT",
+      "url": "https://www.ahmrc.org.au/",
+      "coverage": "NSW/ACT",
+      "bestFor": "Aboriginal Community Controlled Health Services (ACCHS)",
+      "notes": "Members include Marrin Weejali, Tharawal, AMS Western Sydney."
+    },
+    {
+      "name": "NACCHO Member Map",
+      "operator": "National Aboriginal Community Controlled Health Organisation",
+      "url": "https://www.naccho.org.au/find-a-service/",
+      "coverage": "National",
+      "bestFor": "Aboriginal Community Controlled Health Services",
+      "notes": "AH&MRC member orgs roll up here."
+    },
+    {
+      "name": "Refugee Council of Australia — Service Directory",
+      "operator": "Refugee Council of Australia",
+      "url": "https://www.refugeecouncil.org.au/services-and-support/",
+      "coverage": "National",
+      "bestFor": "Refugee/asylum-seeker support, settlement, casework, legal",
+      "notes": "Curated list maintained by RCOA."
+    },
+    {
+      "name": "Settlement Services Programme directory",
+      "operator": "Department of Home Affairs",
+      "url": "https://www.homeaffairs.gov.au/about-us/our-portfolios/multicultural-framework/services",
+      "coverage": "National",
+      "bestFor": "SCS-funded settlement services for new migrants",
+      "notes": "Lists SSI, CORE, MDSI, Auburn Diversity, etc."
+    },
+    {
+      "name": "Carer Gateway",
+      "operator": "Department of Social Services",
+      "url": "https://www.carergateway.gov.au/find-services",
+      "coverage": "National",
+      "bestFor": "Carer support — emergency respite, counselling, peer support",
+      "notes": "Regional partner network across NSW."
+    },
+    {
+      "name": "headspace Centres Map",
+      "operator": "headspace National",
+      "url": "https://headspace.org.au/headspace-centres/",
+      "coverage": "National",
+      "bestFor": "Youth (12-25) mental health centres",
+      "notes": "WS sites: Castle Hill, Mount Druitt, Liverpool."
+    },
+    {
+      "name": "1800RESPECT Service Finder",
+      "operator": "Medibank Health Solutions",
+      "url": "https://www.1800respect.org.au/help-and-support/finding-and-using-services",
+      "coverage": "National",
+      "bestFor": "DV/sexual assault crisis support and referrals",
+      "notes": "24/7 line: 1800 737 732."
+    },
+    {
+      "name": "DV Connect / DV Line NSW",
+      "operator": "NSW Government / Domestic Violence Line",
+      "url": "https://www.facs.nsw.gov.au/domestic-violence/get-help",
+      "coverage": "NSW",
+      "bestFor": "DV crisis support and refuge referrals (1800 656 463)",
+      "notes": "24/7 NSW DV statewide line."
+    },
+    {
+      "name": "Link2Home NSW",
+      "operator": "DCJ NSW",
+      "url": "https://www.facs.nsw.gov.au/housing/help/ways/are-you-homeless",
+      "coverage": "NSW",
+      "bestFor": "Homelessness intake — temporary accommodation, refuges",
+      "notes": "Phone: 1800 152 152, 24/7."
+    },
+    {
+      "name": "Service NSW Community Services Directory",
+      "operator": "Service NSW",
+      "url": "https://www.service.nsw.gov.au/",
+      "coverage": "NSW",
+      "bestFor": "Government services, concessions, family support",
+      "notes": "Search by life event."
+    },
+    {
+      "name": "Community Builders NSW",
+      "operator": "DCJ NSW",
+      "url": "https://www.facs.nsw.gov.au/community/programs/community-builders",
+      "coverage": "NSW",
+      "bestFor": "Locally-funded community services by LGA",
+      "notes": "DCJ-funded community development programs."
+    },
+    {
+      "name": "My Community Directory",
+      "operator": "Community Information Support Service",
+      "url": "https://www.mycommunitydirectory.com.au/",
+      "coverage": "National",
+      "bestFor": "Local services by suburb, including small/grassroots orgs",
+      "notes": "Free, searchable by postcode."
+    },
+    {
+      "name": "Volunteering NSW Directory",
+      "operator": "The Centre for Volunteering",
+      "url": "https://www.volunteering.com.au/",
+      "coverage": "NSW",
+      "bestFor": "Volunteer-involving organisations + opportunities",
+      "notes": "Many orgs in the directory rely on volunteers."
+    },
+    {
+      "name": "NCOSS Member Directory",
+      "operator": "Council of Social Service of NSW",
+      "url": "https://www.ncoss.org.au/",
+      "coverage": "NSW",
+      "bestFor": "Peak body members across the NSW community sector",
+      "notes": "WSCF and DVNSW are NCOSS members."
+    },
+    {
+      "name": "MHCC NSW — Mental Health Coordinating Council",
+      "operator": "MHCC",
+      "url": "https://www.mhcc.org.au/",
+      "coverage": "NSW",
+      "bestFor": "Community mental health sector members + workforce resources",
+      "notes": "Neami, One Door, Aftercare etc. are MHCC members."
+    },
+    {
+      "name": "Wayback Machine",
+      "operator": "Internet Archive",
+      "url": "https://web.archive.org/",
+      "coverage": "Global",
+      "bestFor": "Recovering historical websites for orgs that have closed/moved",
+      "notes": "Useful when an org's current site is down — search by domain."
+    }
+  ]
+}

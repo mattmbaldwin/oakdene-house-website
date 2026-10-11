@@ -1,0 +1,29 @@
+{
+  "serviceName": "DV West",
+  "organisation": "DV West",
+  "category": "Domestic Violence",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 4732 2318",
+    "email": "info@dvwest.org.au",
+    "website": "https://www.dvwest.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/DVWestSydney/"
+  },
+  "location": {
+    "suburb": "Penrith",
+    "lga": "Multi-LGA (Nepean/Blue Mtns/Blacktown/Hills)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=DV%20West"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

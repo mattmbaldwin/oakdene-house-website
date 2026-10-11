@@ -1,0 +1,30 @@
+{
+  "serviceName": "headspace Castle Hill",
+  "organisation": "Flourish Australia",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "(02) 9393 9800",
+    "email": "headspace.castlehill@flourishaustralia.org.au",
+    "website": "https://headspace.org.au/headspace-centres/castle-hill/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/FlourishAustraliaMH/",
+    "linkedin": "https://www.linkedin.com/company/flourish-australia/"
+  },
+  "location": {
+    "suburb": "Castle Hill",
+    "lga": "The Hills",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "28 002 095 332",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Flourish%20Australia"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

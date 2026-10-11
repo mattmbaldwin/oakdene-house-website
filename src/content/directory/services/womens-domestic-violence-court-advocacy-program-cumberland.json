@@ -1,0 +1,27 @@
+{
+  "serviceName": "Womens Domestic Violence Court Advocacy Program - Cumberland",
+  "organisation": "Womens Domestic Violence Court Advocacy Program - Cumberland",
+  "category": "Domestic Violence",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Legal / Justice Support",
+  "contact": {
+    "phone": "(02) 8833 0922",
+    "email": "cumberland.wdvcas@wsclc.org.au",
+    "website": "https://www.wsclc.org.au/programs/cumberland-womens-domestic-violence-court-advocacy-service-cwdvcas/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Cumberland",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

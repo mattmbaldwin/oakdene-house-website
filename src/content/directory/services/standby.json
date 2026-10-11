@@ -1,0 +1,30 @@
+{
+  "serviceName": "Standby",
+  "organisation": "Standby",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1300 789 900",
+    "email": "hello@standby.org.au",
+    "website": "https://www.standby.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/StandBySupport/",
+    "instagram": "https://www.instagram.com/standbysupport/"
+  },
+  "location": {
+    "suburb": "Canberra",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Standby"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (via United Synergies); DSS Service Finder"
+}

@@ -1,0 +1,27 @@
+{
+  "serviceName": "WHOS – Sydney Detox",
+  "organisation": "WHOS – Sydney Detox",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Detox Unit",
+  "contact": {
+    "phone": "Online",
+    "email": "Online",
+    "website": "https://www.whos.org.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Sydney",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

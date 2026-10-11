@@ -1,0 +1,30 @@
+{
+  "serviceName": "ReachOut Australia",
+  "organisation": "ReachOut Australia",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Online youth mental health support",
+  "contact": {
+    "phone": null,
+    "email": "info@reachout.com.au",
+    "website": "https://au.reachout.com/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/ReachOutAUS/",
+    "instagram": "https://www.instagram.com/reachout_aus/"
+  },
+  "location": {
+    "suburb": "N/A — National online service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "27 075 428 787",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=ReachOut%20Australia%20%28Inspire%20Foundation%29"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (ABN 27 075 428 787); headspace partner"
+}

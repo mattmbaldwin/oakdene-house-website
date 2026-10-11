@@ -1,0 +1,27 @@
+{
+  "serviceName": "Astor Legal – Parramatta",
+  "organisation": "Astor Legal – Parramatta",
+  "category": "Legal / Justice",
+  "categoryGroup": "Legal & Justice",
+  "serviceType": "Legal / Justice Support",
+  "contact": {
+    "phone": "02 9891 3000",
+    "email": "enquiries@astorlegal.com.au",
+    "website": "https://www.astorlegal.com.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

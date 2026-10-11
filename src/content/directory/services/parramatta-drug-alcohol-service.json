@@ -1,0 +1,27 @@
+{
+  "serviceName": "Parramatta Drug & Alcohol Service",
+  "organisation": "Parramatta Drug & Alcohol Service",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Treatment",
+  "contact": {
+    "phone": "02 8860 2565",
+    "email": "inquiry@wslhd.health.nsw.gov.au",
+    "website": "https://www.wslhd.health.nsw.gov.au/Drug-Health"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Parramatta%20Drug%20%26%20Alcohol%20Service"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

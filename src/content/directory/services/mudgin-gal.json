@@ -1,0 +1,27 @@
+{
+  "serviceName": "Mudgin-Gal",
+  "organisation": "Mudgin-Gal",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9698 1173",
+    "email": "reception@mudgin-gal.org.au",
+    "website": "https://www.mudgin-gal.org.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Chippendale",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Mudgin-Gal"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

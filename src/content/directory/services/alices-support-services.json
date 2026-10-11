@@ -1,0 +1,27 @@
+{
+  "serviceName": "Alice’s Support Services",
+  "organisation": "Alice’s Support Services",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9622-9791",
+    "email": "info@alices.org.au",
+    "website": "https://alicessupportservices.com.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Westpoint Blacktown",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Alice%E2%80%99s%20Support%20Services"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

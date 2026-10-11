@@ -1,0 +1,29 @@
+{
+  "serviceName": "WHOs Hub - Lilyfield",
+  "organisation": "WHOs Hub - Lilyfield",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 8572 7457",
+    "email": "lilyfield.hub@whos.com.au",
+    "website": "https://whos.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/WHOSorgau/"
+  },
+  "location": {
+    "suburb": "Lilyfield",
+    "lga": "Inner West",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "33 002 873 580",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=We%20Help%20Ourselves%20%28WHOS%29"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

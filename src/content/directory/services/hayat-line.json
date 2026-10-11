@@ -1,0 +1,27 @@
+{
+  "serviceName": "Hayat Line",
+  "organisation": "Hayat Line",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1300 993 398",
+    "email": "info@missionofhope.org.au",
+    "website": "https://missionofhope.org.au/hayat-line/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "N/A — National service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Hayat%20Line"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "Operated by Australian Arab Muslim Association"
+}

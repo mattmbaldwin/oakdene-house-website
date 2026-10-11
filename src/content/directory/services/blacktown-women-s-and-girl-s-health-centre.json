@@ -1,0 +1,29 @@
+{
+  "serviceName": "Blacktown Women's and Girl's Health Centre",
+  "organisation": "Blacktown Women's and Girl's Health Centre",
+  "category": "Health / Community Service",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9831 2070",
+    "email": "info@womensandgirls.org.au",
+    "website": "https://womensandgirls.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/BWGHC/"
+  },
+  "location": {
+    "suburb": "Blacktown",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "44 097 691 345",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Blacktown%20Women%27s%20and%20Girls%27%20Health%20Centre"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

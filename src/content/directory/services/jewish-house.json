@@ -1,0 +1,29 @@
+{
+  "serviceName": "Jewish House",
+  "organisation": "Jewish House",
+  "category": "Housing / Homelessness",
+  "categoryGroup": "Housing & Homelessness",
+  "serviceType": "Housing / Homelessness Support",
+  "contact": {
+    "phone": "02 8904 5151",
+    "email": "enquiries@jewishhouse.org.au",
+    "website": "https://www.jewishhouse.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/JewishHouseAU/"
+  },
+  "location": {
+    "suburb": "Maroubra",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "79 089 070 010",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Jewish%20House"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

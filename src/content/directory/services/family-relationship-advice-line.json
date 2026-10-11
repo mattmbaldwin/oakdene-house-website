@@ -1,0 +1,27 @@
+{
+  "serviceName": "Family Relationship Advice Line",
+  "organisation": "Family Relationship Advice Line",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1800 050 321",
+    "email": "info@familyrelationships.gov.au",
+    "website": "https://www.familyrelationships.gov.au/talk-someone/advice-line"
+  },
+  "social": {},
+  "location": {
+    "suburb": "N/A — National service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Family%20Relationship%20Advice%20Line"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

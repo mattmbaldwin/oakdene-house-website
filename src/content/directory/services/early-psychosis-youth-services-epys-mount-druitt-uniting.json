@@ -1,0 +1,27 @@
+{
+  "serviceName": "Early Psychosis Youth Services (EPYS) Mount Druitt",
+  "organisation": "Uniting",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "02 8881 2500",
+    "email": "headspacemtdruitt@uniting.org",
+    "website": "https://www.uniting.org/services/mental-health/facility/headspace-early-psychosis-mt-druitt"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Mount Druitt",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

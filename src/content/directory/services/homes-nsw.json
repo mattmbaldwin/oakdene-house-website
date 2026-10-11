@@ -1,0 +1,27 @@
+{
+  "serviceName": "Homes NSW",
+  "organisation": "Homes NSW",
+  "category": "Housing / Homelessness",
+  "categoryGroup": "Housing & Homelessness",
+  "serviceType": "Housing / Homelessness Support",
+  "contact": {
+    "phone": "1800 422 322",
+    "email": "contact@homes.nsw.gov.au",
+    "website": "https://www.nsw.gov.au/departments-and-agencies/homes-nsw"
+  },
+  "social": {},
+  "location": {
+    "suburb": "NSW",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

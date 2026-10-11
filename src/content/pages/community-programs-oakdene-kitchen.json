@@ -1,0 +1,50 @@
+{
+  "seo__browser_title": "Oakdene Kitchen — Oakdene House Foundation",
+  "seo__search_description": "Free hot lunches Tuesday to Thursday at Oakdene Kitchen, 9/2 Dale Street, Fairfield. Open to people experiencing hardship.",
+  "hero__title": "Oakdene Kitchen",
+  "hero__intro": "Hot, nutritious meals in a safe and welcoming space.",
+  "hero__button": "Request Help",
+  "hero__button_2": "Volunteer",
+  "intro_service_details__eyebrow": "About the Kitchen",
+  "intro_service_details__heading": "A welcoming meal and a friendly face",
+  "intro_service_details__text": "The Oakdene Kitchen provides free hot lunches to people doing it tough. We believe everyone deserves access to a warm, nutritious meal in a safe environment — and a chance to connect with others.",
+  "intro_service_details__text_2": "Who it's for",
+  "intro_service_details__text_3": "People experiencing food insecurity, on low income, homeless or at risk, or anyone doing it tough.",
+  "intro_service_details__subheading": "What we offer",
+  "intro_service_details__caption": "Service details",
+  "intro_service_details__text_4": "\"Feed the people, stay alive\"",
+  "image_strip__image_alt": "Oakdene Kitchen volunteers with prepared food",
+  "image_strip__image_alt_2": "Inside the Oakdene Kitchen dining room",
+  "image_strip__image_alt_3": "Volunteer serving meals at Oakdene Kitchen",
+  "how_it_works__eyebrow": "Your First Visit",
+  "how_it_works__heading": "How it works",
+  "how_it_works__text": "On your first visit, one of our team members will sit down with you to find out more about your situation and needs so we can understand how to support you best.",
+  "eligibility__subheading": "Eligibility",
+  "eligibility__list": [
+    "Current Centrelink statement showing total income below $1,200 per fortnight, including any other subsidies or rental support shown on the statement",
+    "Proof of ID with photo-based evidence (driver's licence, passport, etc.)",
+    "Updated statement to be provided monthly showing any changes to income or benefits"
+  ],
+  "important_note__text": "Important note",
+  "important_note__text_2": "If you choose to use Oakdene Kitchen support, you will no longer be able to be a member of Fairfield RSL.",
+  "community_guidelines__subheading": "Community guidelines",
+  "community_guidelines__text": "We ask that you treat others with respect. Aggressive or abusive behaviour is not accepted. Staff may refuse entry if guidelines are not followed.",
+  "volunteer_callout__image_alt": "Oakdene Kitchen volunteer",
+  "volunteer_callout__eyebrow": "Get Involved",
+  "volunteer_callout__heading": "Volunteer with the Kitchen",
+  "volunteer_callout__text": "We are always looking for volunteers to help us run the Kitchen. Whether it is helping prepare food, serving meals, or providing a friendly presence — every contribution makes a real difference.",
+  "volunteer_callout__text_2": "If you would like to get involved, please get in touch.",
+  "volunteer_callout__button": "Learn About Volunteering",
+  "volunteer_callout__button_2": "Contact Us",
+  "cta__heading": "Want to get involved?",
+  "cta__secondarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "data__what_we_offer": [
+    "Free hot lunch",
+    "Friendly, safe space to eat together",
+    "Connection with staff, volunteers and community supports",
+    "Information about other Oakdene programs"
+  ]
+}

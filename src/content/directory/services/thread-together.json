@@ -1,0 +1,31 @@
+{
+  "serviceName": "Thread Together",
+  "organisation": "Thread Together",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Material Aid / Resource Support",
+  "contact": {
+    "phone": null,
+    "email": "info@threadtogether.org",
+    "website": "https://www.threadtogether.org/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/threadtogether/",
+    "instagram": "@threadtogether",
+    "linkedin": "https://www.linkedin.com/company/thread-together/"
+  },
+  "location": {
+    "suburb": null,
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "39 161 856 624",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Thread%20Together"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (ABN 39 161 856 624); Ask Izzy"
+}

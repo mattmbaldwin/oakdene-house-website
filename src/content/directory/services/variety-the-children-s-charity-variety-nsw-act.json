@@ -1,0 +1,30 @@
+{
+  "serviceName": "Variety - The Children's Charity",
+  "organisation": "Variety NSW/ACT",
+  "category": "Community Support",
+  "categoryGroup": "Other Support",
+  "serviceType": "Children with disability/illness support",
+  "contact": {
+    "phone": "(02) 9819 1000",
+    "email": "info@varietynsw.org.au",
+    "website": "https://www.variety.org.au/nsw/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/VarietyAustralia/",
+    "instagram": "https://www.instagram.com/varietynsw/"
+  },
+  "location": {
+    "suburb": "North Ryde",
+    "lga": null,
+    "coverage": "Unknown"
+  },
+  "identifiers": {
+    "abn": "88 057 535 707",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Variety%20NSW/ACT%20%E2%80%94%20The%20Children%27s%20Charity"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (ABN 88 057 535 707)"
+}

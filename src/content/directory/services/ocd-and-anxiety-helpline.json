@@ -1,0 +1,29 @@
+{
+  "serviceName": "OCD and Anxiety Helpline",
+  "organisation": "OCD and Anxiety Helpline",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "1300 269 438 or 03 9830 0533",
+    "email": "admin@arcvic.org.au",
+    "website": "https://arcvic.org.au/our-services/helpline/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/OCDAnxietyHelp/"
+  },
+  "location": {
+    "suburb": "N/A — National service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "12 081 419 706",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=OCD%20%26%20Anxiety%20Helpline%20%28Mental%20Health%20Foundation%20Australia%29"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,27 @@
+{
+  "serviceName": "Community Restorative Centre AOD Transition Program",
+  "organisation": "Community Restorative Centre",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9288 8700",
+    "email": "aod.transition@crcnsw.org.au",
+    "website": "https://www.crcnsw.org.au/services/alcohol-and-other-drugs-support/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Canterbury",
+    "lga": "Canterbury-Bankstown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Community%20Restorative%20Centre"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

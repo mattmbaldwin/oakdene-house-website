@@ -1,0 +1,27 @@
+{
+  "serviceName": "Gidget Foundation",
+  "organisation": "Mix of private and public funding",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1300 851 758",
+    "email": "Not provided",
+    "website": "https://www.gidgetfoundation.org.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Westmead",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Mix%20of%20private%20and%20public%20funding"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

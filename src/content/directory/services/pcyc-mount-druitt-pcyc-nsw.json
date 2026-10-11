@@ -1,0 +1,29 @@
+{
+  "serviceName": "PCYC Mount Druitt",
+  "organisation": "PCYC NSW",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Youth programs / crime prevention",
+  "contact": {
+    "phone": "(02) 9625 8888",
+    "email": "mountdruitt@pcycnsw.org.au",
+    "website": "https://www.pcycnsw.org.au/mount-druitt/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/pcycnsw/"
+  },
+  "location": {
+    "suburb": "Mount Druitt",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=PCYC%20NSW"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (PCYC NSW)"
+}

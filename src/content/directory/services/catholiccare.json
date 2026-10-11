@@ -1,0 +1,30 @@
+{
+  "serviceName": "CatholicCare",
+  "organisation": "CatholicCare",
+  "category": "Family Support",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Family services",
+  "contact": {
+    "phone": "1300 1300 52",
+    "email": "parentline@catholiccare.org.au",
+    "website": "https://www.parentline.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/CatholicCareSydney/",
+    "linkedin": "https://www.linkedin.com/company/catholiccare-sydney/"
+  },
+  "location": {
+    "suburb": "Sydney",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "12 466 426 656",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=CatholicCare%20Sydney"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

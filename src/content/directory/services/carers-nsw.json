@@ -1,0 +1,30 @@
+{
+  "serviceName": "Carers NSW",
+  "organisation": "Carers NSW",
+  "category": "Community Support",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Carer information / referral / support",
+  "contact": {
+    "phone": "1800 242 636",
+    "email": "contact@carersnsw.org.au",
+    "website": "https://www.carersnsw.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/CarersNSW/",
+    "linkedin": "https://www.linkedin.com/company/carers-nsw/"
+  },
+  "location": {
+    "suburb": "Hurstville",
+    "lga": null,
+    "coverage": "Unknown"
+  },
+  "identifiers": {
+    "abn": "45 461 578 247",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Carers%20NSW"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC; DSS Service Finder; Carer Gateway partner"
+}

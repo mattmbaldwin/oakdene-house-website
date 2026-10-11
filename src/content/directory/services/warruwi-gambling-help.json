@@ -1,0 +1,27 @@
+{
+  "serviceName": "Warruwi Gambling Help",
+  "organisation": "Warruwi Gambling Help",
+  "category": "Gambling Support",
+  "categoryGroup": "Other Support",
+  "serviceType": "Gambling Counselling",
+  "contact": {
+    "phone": "(02) 4023 8080",
+    "email": "warruwi@optusnet.com.au",
+    "website": "https://aboriginalsafegambling.com.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Wollongong",
+    "lga": "Other NSW",
+    "coverage": "Other NSW"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Warruwi%20Gambling%20Help%20%28Aboriginal-controlled%29"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

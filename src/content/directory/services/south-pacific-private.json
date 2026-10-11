@@ -1,0 +1,27 @@
+{
+  "serviceName": "South Pacific Private",
+  "organisation": "South Pacific Private",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Residential Rehabilitation",
+  "contact": {
+    "phone": "02 9949 9000",
+    "email": "contact@southpacificprivate.com.au",
+    "website": "https://www.southpacificprivate.com.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Curl Curl",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,30 @@
+{
+  "serviceName": "yourtown Western Sydney",
+  "organisation": "yourtown Western Sydney",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "0466 351 993",
+    "email": null,
+    "website": "https://www.yourtown.com.au/employment/jobseeker/locations/sydneygreaterwest"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/yourtownAustralia/",
+    "linkedin": "https://www.linkedin.com/company/yourtown-au/"
+  },
+  "location": {
+    "suburb": "St Marys",
+    "lga": "Penrith",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "50 009 660 897",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=yourtown"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

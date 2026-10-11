@@ -1,0 +1,29 @@
+{
+  "serviceName": "Mounties Care",
+  "organisation": "Mounties Group",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Aged care / community programs",
+  "contact": {
+    "phone": "(02) 8825 0700",
+    "email": "info@mountiescare.com.au",
+    "website": "https://www.mountiescare.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/MountiesCare/"
+  },
+  "location": {
+    "suburb": "Mount Pritchard",
+    "lga": "Fairfield",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "27 097 590 363",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Mounties%20Care"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC; My Aged Care"
+}

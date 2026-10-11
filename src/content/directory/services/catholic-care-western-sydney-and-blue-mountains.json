@@ -1,0 +1,29 @@
+{
+  "serviceName": "Catholic Care Western Sydney and Blue Mountains",
+  "organisation": "Catholic Care Western Sydney and Blue Mountains",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 8843 2500",
+    "email": "enquiries@catholiccarewsbm.org.au",
+    "website": "https://catholiccarewsbm.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/CatholicCareSydney/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Cumberland",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "12 466 426 656",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=CatholicCare%20Sydney"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

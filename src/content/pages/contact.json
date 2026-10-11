@@ -1,0 +1,58 @@
+{
+  "seo__browser_title": "Contact Us | Oakdene House Foundation",
+  "seo__search_description": "Get in touch with Oakdene House Foundation in Fairfield, Western Sydney. Call (02) 8717 0999 or email admin@oakdenehouse.org.au",
+  "hero__heading": "Contact Oakdene House Foundation",
+  "hero__subheading": "Whether you are looking for support, information, a referral pathway, or community connection — we are here to help.",
+  "hero__image_alt": "Oakdene House Foundation centre exterior",
+  "hero__buttons": [
+    {
+      "text": "Need Help Now",
+      "href": "/need-help-now/",
+      "variant": "white-outline"
+    }
+  ],
+  "contact_cards__heading": "Contact options",
+  "contact_cards__text": "Phone",
+  "contact_cards__button": "(02) 8717 0999",
+  "contact_cards__text_2": "Give us a call during business hours",
+  "contact_cards__text_3": "Email",
+  "contact_cards__button_2": "admin@oakdenehouse.org.au",
+  "contact_cards__text_4": "Send us an email and we will get back to you",
+  "contact_cards__text_5": "Visit Us",
+  "contact_cards__text_6": "29 Vine St, Fairfield NSW 2165",
+  "contact_cards__text_7": "Parking via Fairfield RSL open air car park, corner of Vine and Bertha Streets",
+  "contact_cards__text_8": "Opening Hours",
+  "contact_cards__text_9": "Monday to Friday",
+  "contact_cards__text_10": "9:00am – 5:00pm",
+  "contact_cards__text_11": "Some programs run outside these hours. Check each program page for times.",
+  "service_specific_contacts__eyebrow": "Service Contacts",
+  "service_specific_contacts__heading": "Service-specific contacts",
+  "service_specific_contacts__subheading": "Kitchen, Food Packs, Laundrette & Used Clothing Store",
+  "service_specific_contacts__subheading_2": "Ladies Boutique",
+  "service_hours__eyebrow": "When We're Open",
+  "service_hours__heading": "Service hours",
+  "language_support_postal_abn__heading": "Additional information",
+  "language_support_postal_abn__subheading": "Language Support",
+  "language_support_postal_abn__text": "We offer support in multiple languages. If you need an interpreter, please let us know when you contact us and we will arrange one for you.",
+  "language_support_postal_abn__subheading_2": "Postal Address",
+  "language_support_postal_abn__text_2": "PO Box 988<br>Fairfield NSW 1860",
+  "language_support_postal_abn__text_3": "ABN: 90 151 950 926  |  Registered Charity",
+  "map__eyebrow": "Find Us",
+  "map__heading": "Getting here",
+  "enquiry_form__heading": "We'd love to hear from you",
+  "enquiry_form__intro": "Whether you're looking for support, interested in one of our programs, considering a partnership, or just want to know more about Oakdene — send us a message and we'll be in touch within 2 business days.",
+  "contact_form__success_heading": "**Thanks — your message has been sent. We'll be in touch within 2 business days.**",
+  "contact_form__success_message": "If you need support urgently, please call us on [(02) 8717 0999](tel:+61287170999) during business hours, or visit our [Need Help Now](/need-help-now/) page for 24/7 support.",
+  "contact_form__consent": "I understand my enquiry will be handled in line with Oakdene's [privacy policy](/privacy-policy/).",
+  "contact_form__submit_button": "Send message",
+  "cta__heading": "Need support right now?",
+  "cta__subheading": "If you need immediate help, visit our Need Help Now page for crisis lines and emergency contacts.",
+  "cta__primarybtn": {
+    "text": "Need Help Now",
+    "href": "/need-help-now/"
+  },
+  "cta__secondarybtn": {
+    "text": "Get Support",
+    "href": "/contact/"
+  }
+}

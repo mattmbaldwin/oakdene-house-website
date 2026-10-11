@@ -1,0 +1,29 @@
+{
+  "serviceName": "Community Junction Inc",
+  "organisation": "Community Junction Inc",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Neighbourhood support",
+  "contact": {
+    "phone": "(02) 9622 2599",
+    "email": "info@communityjunction.org.au",
+    "website": "https://www.communityjunction.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/CommunityJunctionInc/"
+  },
+  "location": {
+    "suburb": "Mount Druitt",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Community%20Junction%20Inc"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC; Mt Druitt service directory"
+}

@@ -1,0 +1,30 @@
+{
+  "serviceName": "Karitane Carramar",
+  "organisation": "Karitane Carramar",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9794 2300",
+    "email": "info@karitane.com.au",
+    "website": "https://karitane.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/Karitane/",
+    "instagram": "https://www.instagram.com/karitane_org/"
+  },
+  "location": {
+    "suburb": "Carramar",
+    "lga": "Fairfield",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "25 109 879 638",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Karitane"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

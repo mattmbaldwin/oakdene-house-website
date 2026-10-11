@@ -1,0 +1,30 @@
+{
+  "serviceName": "Uniting Youth Enhanced Support Service (YESS): Western Sydney",
+  "organisation": "Uniting",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1800 937 776",
+    "email": "yess@uniting.org",
+    "website": "https://www.uniting.org/services/mental-health/facility/yess-youth-enhanced-support-service-yess-western-sydney"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/unitingnswact/",
+    "linkedin": "https://www.linkedin.com/company/uniting-nsw-act/"
+  },
+  "location": {
+    "suburb": "Oatlands",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "78 722 562 218",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Uniting%20NSW.ACT"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

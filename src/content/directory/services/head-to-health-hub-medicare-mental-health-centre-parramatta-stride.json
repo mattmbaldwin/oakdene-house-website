@@ -1,0 +1,30 @@
+{
+  "serviceName": "Head to Health Hub/Medicare Mental Health Centre Parramatta",
+  "organisation": "Stride",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "1800 595 212",
+    "email": "intake.parramattaheadtohealth@stride.com.au",
+    "website": "https://www.headtohealth.gov.au/service/parramatta-head-to-health-16684"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/strideMH/",
+    "linkedin": "https://www.linkedin.com/company/strideau/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "67 088 519 030",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Stride%20%28formerly%20Aftercare%29"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

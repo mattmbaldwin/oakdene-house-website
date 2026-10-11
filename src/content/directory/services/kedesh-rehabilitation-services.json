@@ -1,0 +1,30 @@
+{
+  "serviceName": "Kedesh Rehabilitation Services",
+  "organisation": "Kedesh Rehabilitation Services",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Residential Rehabilitation",
+  "contact": {
+    "phone": "(02) 4257 1110",
+    "email": "info@kedesh.org.au",
+    "website": "https://kedesh.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/Kedesh.Australia/",
+    "linkedin": "https://www.linkedin.com/company/kedesh-rehabilitation-services/"
+  },
+  "location": {
+    "suburb": "Sydney",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "86 165 124 716",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Kedesh%20Rehabilitation%20Services"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": "ACNC (ABN 86 165 124 716); NSW Health AOD service directory"
+}

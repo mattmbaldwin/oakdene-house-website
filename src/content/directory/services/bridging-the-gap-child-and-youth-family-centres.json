@@ -1,0 +1,27 @@
+{
+  "serviceName": "Bridging the Gap Child and Youth Family Centres",
+  "organisation": "Bridging the Gap Child and Youth Family Centres",
+  "category": "Health / Community Service",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9673 1211",
+    "email": "admin@btg.org.au",
+    "website": "https://www.btg.org.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "St Marys",
+    "lga": "Penrith",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Bridging%20the%20Gap%20Child%20and%20Youth%20Family%20Centres"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

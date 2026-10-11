@@ -1,0 +1,23 @@
+{
+  "seo__browser_title": "Our Team — Oakdene House Foundation",
+  "seo__search_description": "Meet the Oakdene House Foundation team — dedicated people working across counselling, program delivery, operations and practical support in Fairfield, Western Sydney.",
+  "hero__title": "Our Team",
+  "hero__intro": "The people behind the work at Oakdene House.",
+  "intro__eyebrow": "The People",
+  "intro__heading": "Experienced, caring and community-focused",
+  "intro__intro": "Our team brings together care, experience and a deep commitment to community. We work across counselling, program delivery, operations and practical support, with a shared focus on creating a safe and respectful environment for every person who walks through our doors.",
+  "patrons__eyebrow": "Our Patrons",
+  "patrons__heading": "Our Patrons",
+  "closing__heading": "Closing statement",
+  "closing__text": "Behind every Oakdene service is a team that believes support should feel human, respectful and real. We are proud to walk alongside the people and families we serve.",
+  "cta__heading": "Get in touch with our team",
+  "cta__subheading": "We are here to help. Reach out and we will find the right next step together.",
+  "cta__primarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "cta__secondarybtn": {
+    "text": "Get Support",
+    "href": "/contact/"
+  }
+}

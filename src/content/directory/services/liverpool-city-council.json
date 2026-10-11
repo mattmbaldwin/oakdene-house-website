@@ -1,0 +1,29 @@
+{
+  "serviceName": "Liverpool City Council",
+  "organisation": "Liverpool City Council",
+  "category": "Community Services",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community programs",
+  "contact": {
+    "phone": "(02) 8824 5555",
+    "email": "council@liverpool.nsw.gov.au",
+    "website": "https://www.liverpool.nsw.gov.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/LiverpoolCityCouncil/"
+  },
+  "location": {
+    "suburb": "Liverpool",
+    "lga": "Multi-LGA (South Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,29 @@
+{
+  "serviceName": "We Help Ourselves – Blacktown",
+  "organisation": "We Help Ourselves – Blacktown",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Outpatient support",
+  "contact": {
+    "phone": "02 8850 3600",
+    "email": "blacktown@whos.org.au",
+    "website": "https://www.whos.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/WHOSorgau/"
+  },
+  "location": {
+    "suburb": "Blacktown",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": "33 002 873 580",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=We%20Help%20Ourselves%20%28WHOS%29"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

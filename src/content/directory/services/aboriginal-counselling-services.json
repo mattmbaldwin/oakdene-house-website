@@ -1,0 +1,27 @@
+{
+  "serviceName": "Aboriginal Counselling Services",
+  "organisation": "Aboriginal Counselling",
+  "category": "Aboriginal Health",
+  "categoryGroup": "Aboriginal Services",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "(02) 4707 7989",
+    "email": "Admin@aboriginalcounsellingservices.com.au",
+    "website": "http://www.aboriginalcounsellingservices.com.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Penrith",
+    "lga": "Penrith",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Aboriginal%20Counselling%20Services%20%28private%20practice%29"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,27 @@
+{
+  "serviceName": "Aboriginal Medical Service Western Sydney",
+  "organisation": "AMS Western Sydney",
+  "category": "Aboriginal Health",
+  "categoryGroup": "Aboriginal Services",
+  "serviceType": "Aboriginal Health Support",
+  "contact": {
+    "phone": "(02) 9631 9999",
+    "email": "admin@amswestsydney.com.au",
+    "website": "https://www.amswestsydney.com.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Western Sydney",
+    "lga": "Blacktown",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": "57 064 132 005",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Aboriginal%20Medical%20Service%20Western%20Sydney"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

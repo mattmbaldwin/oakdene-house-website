@@ -1,0 +1,27 @@
+{
+  "serviceName": "Cumberland Hospital",
+  "organisation": "Cumberland Hospital",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Psychiatric services",
+  "contact": {
+    "phone": "02 8866 6000",
+    "email": "cumberland-hospital@health.nsw.gov.au",
+    "website": "https://www.wslhd.health.nsw.gov.au/services-clinics/cumberland-hospital"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Westmead",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

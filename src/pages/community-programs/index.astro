@@ -2,105 +2,20 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
+import pageText from '../../content/pages/community-programs.json';
 
-const programs = [
-  {
-    heading: 'Community Support Programs',
-    description: 'Activities and supports that create routine, stability, and a sense of belonging.',
-    icon: 'people',
-  },
-  {
-    heading: 'Recovery-Focused Group Programs',
-    description: 'Programs that support reflection, accountability, practical coping, and shared progress.',
-    icon: 'heart',
-  },
-  {
-    heading: 'Practical Support Initiatives',
-    description: 'Community responses that meet real needs with care, dignity, and consistency.',
-    icon: 'hands',
-  },
-  {
-    heading: 'Volunteer and Community Engagement',
-    description: 'Opportunities for people to participate, contribute, and stay connected.',
-    icon: 'star',
-  },
-];
+const programs = pageText.data__programs;
 
-const gains = [
-  { label: 'Stronger routine', icon: 'clock' },
-  { label: 'Greater confidence', icon: 'arrow' },
-  { label: 'Community connection', icon: 'people' },
-  { label: 'Practical progress', icon: 'check' },
-];
+const gains = pageText.data__gains;
 
-const practicalServices = [
-  {
-    title: 'Oakdene Kitchen',
-    summary: 'Free hot lunches in a safe and welcoming community space, Tuesday to Thursday.',
-    href: '/community-programs/oakdene-kitchen/',
-    image: '/images/kitchen/kitchen-3x-staff-serving.png',
-    imageAlt: 'Oakdene Kitchen staff serving meals',
-    eyebrow: 'Practical Assistance',
-  },
-  {
-    title: 'Staple Food Packs',
-    summary: 'Weekly take-home grocery packs with fresh produce, pantry essentials and hygiene items.',
-    href: '/community-programs/staple-food-packs/',
-    image: '/images/kitchen/oakdene-kitchen-interior-with-food-stacks.jpg',
-    imageAlt: 'Stacked food supplies at Oakdene Kitchen',
-    eyebrow: 'Practical Assistance',
-  },
-  {
-    title: 'Oakdene Laundrette',
-    summary: 'Free community laundry service with washing, drying and detergent provided.',
-    href: '/community-programs/oakdene-laundrette/',
-    image: '/images/laundrette/laundrette-interior-1.jpg',
-    imageAlt: 'Inside the Oakdene Laundrette',
-    eyebrow: 'Practical Assistance',
-  },
-  {
-    title: 'Used Clothing Store',
-    summary: "Free men's and women's clothing, shoes and accessories — three items per visit.",
-    href: '/community-programs/used-clothing-store/',
-    image: '/images/boutique/boutique-interior-clothing-rack.jpg',
-    imageAlt: 'Clothing rack at the Oakdene Used Clothing Store',
-    eyebrow: 'Practical Assistance',
-  },
-  {
-    title: 'Ladies Boutique',
-    summary: 'A warm, private space offering quality clothing, salon services and community connection for women.',
-    href: '/community-programs/ladies-boutique/',
-    image: '/images/boutique/ladies-boutique-edited.png',
-    imageAlt: 'Oakdene Ladies Boutique',
-    eyebrow: 'Community Support',
-  },
-];
+const practicalServices = pageText.data__practical_services;
 
-const involvement = [
-  {
-    heading: 'Join a program',
-    body: 'Express interest directly or contact Oakdene to find out which program fits best.',
-    href: '/contact/?reason=program-interest',
-    linkText: 'Express Interest',
-  },
-  {
-    heading: 'Refer someone',
-    body: 'Workers and family members can refer using the referral form or by contacting us directly.',
-    href: '/services/referral/',
-    linkText: 'Submit Referral',
-  },
-  {
-    heading: 'Volunteer',
-    body: 'Want to contribute your time? We would love to hear from you.',
-    href: '/community-programs/volunteering/',
-    linkText: 'Learn About Volunteering',
-  },
-];
+const involvement = pageText.data__involvement;
 ---
 
 <BaseLayout
-  title="Community Programs — Oakdene House Foundation"
-  description="Oakdene House community programs build connection, confidence and routine for people in Fairfield, Western Sydney. Recovery groups, practical initiatives and community engagement."
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
   ogImage="/images/generic/bandw-forset-sun-beam.jpeg"
 >
 
@@ -108,11 +23,11 @@ const involvement = [
   <section class="cp-hero" aria-label="Community Programs">
     <div class="cp-hero__overlay" aria-hidden="true"></div>
     <div class="container cp-hero__content">
-      <h1>Community programs that build connection, confidence, and forward movement</h1>
-      <p class="cp-hero__lead">Oakdene's programs are designed to bring people into safe, practical, community-based spaces where support feels real and participation matters.</p>
+      <h1>{pageText.hero__title}</h1>
+      <p class="cp-hero__lead">{pageText.hero__intro}</p>
       <div class="btn-group">
-        <a href="/services/" class="btn btn--white">Explore Programs</a>
-        <a href="/contact/" class="btn btn--white-outline">General Enquiry</a><!-- TODO: Replace with live Jotform URL -->
+        <a href="/services/" class="btn btn--white">{pageText.hero__button}</a>
+        <a href="/contact/" class="btn btn--white-outline">{pageText.hero__button_2}</a><!-- TODO: Replace with live Jotform URL -->
       </div>
     </div>
   </section>
@@ -121,9 +36,9 @@ const involvement = [
   <section class="section" aria-labelledby="programs-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">What We Offer</p>
-        <h2 id="programs-heading">Our programs</h2>
-        <p class="section-heading__lead">Oakdene runs a range of programs across four interconnected areas of community support.</p>
+        <p class="section-heading__eyebrow">{pageText.our_programs__eyebrow}</p>
+        <h2 id="programs-heading">{pageText.our_programs__heading}</h2>
+        <p class="section-heading__lead">{pageText.our_programs__intro}</p>
       </div>
       <div class="programs-grid">
         {programs.map(p => (
@@ -155,16 +70,16 @@ const involvement = [
     <div class="container">
       <div class="split">
         <div class="why-image">
-          <img src="/images/centre/interior-meetings-1-img_2657.jpg" alt="People in community program session at Oakdene House" loading="lazy" />
+          <img src="/images/centre/interior-meetings-1-img_2657.jpg" alt={pageText.why_programs_matter__image_alt} loading="lazy" />
         </div>
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">Why Programs Matter</p>
-            <h2 id="why-heading">More than crisis response</h2>
+            <p class="section-heading__eyebrow">{pageText.why_programs_matter__eyebrow}</p>
+            <h2 id="why-heading">{pageText.why_programs_matter__heading}</h2>
           </div>
-          <p class="why-text">Programs matter because support is not only about crisis response. It is also about belonging, confidence, consistency, and having spaces where people can keep turning up, reconnecting, and building a stronger everyday life.</p>
-          <p class="why-text">When people have somewhere to go and something meaningful to contribute to, they move forward.</p>
-          <a href="/services/" class="btn btn--primary">View All Services</a>
+          <p class="why-text">{pageText.why_programs_matter__text}</p>
+          <p class="why-text">{pageText.why_programs_matter__text_2}</p>
+          <a href="/services/" class="btn btn--primary">{pageText.why_programs_matter__button}</a>
         </div>
       </div>
     </div>
@@ -174,8 +89,8 @@ const involvement = [
   <section class="section" aria-labelledby="gains-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">The Difference</p>
-        <h2 id="gains-heading">What people gain from programs</h2>
+        <p class="section-heading__eyebrow">{pageText.what_people_gain__eyebrow}</p>
+        <h2 id="gains-heading">{pageText.what_people_gain__heading}</h2>
       </div>
       <div class="gains-grid">
         {gains.map(g => (
@@ -205,18 +120,18 @@ const involvement = [
   <section class="section section--tint" aria-labelledby="testimonials-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">In Their Words</p>
-        <h2 id="testimonials-heading">What participants say</h2>
+        <p class="section-heading__eyebrow">{pageText.testimonials__eyebrow}</p>
+        <h2 id="testimonials-heading">{pageText.testimonials__heading}</h2>
       </div>
       <div class="quotes-grid">
         <blockquote class="quote-card">
           <div class="quote-card__mark" aria-hidden="true">"</div>
-          <p>Being around others and having somewhere to go helped me get some structure back. It made a bigger difference than I expected.</p>
+          <p>{pageText.testimonials__text}</p>
           <footer class="quote-card__attribution">— Program Participant</footer>
         </blockquote>
         <blockquote class="quote-card">
           <div class="quote-card__mark" aria-hidden="true">"</div>
-          <p>It felt practical and real. Not a lecture, just support that helped me keep moving.</p>
+          <p>{pageText.testimonials__text_2}</p>
           <footer class="quote-card__attribution">— Community Member</footer>
         </blockquote>
       </div>
@@ -227,9 +142,9 @@ const involvement = [
   <section class="section section--tint" aria-labelledby="practical-services-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Open to the Community</p>
-        <h2 id="practical-services-heading">Practical support services</h2>
-        <p class="section-heading__lead">Free, accessible services that meet everyday needs with dignity and care — no referral required.</p>
+        <p class="section-heading__eyebrow">{pageText.practical_community_services__eyebrow}</p>
+        <h2 id="practical-services-heading">{pageText.practical_community_services__heading}</h2>
+        <p class="section-heading__lead">{pageText.practical_community_services__intro}</p>
       </div>
       <div class="card-grid">
         {practicalServices.map(s => (
@@ -250,8 +165,8 @@ const involvement = [
   <section class="section" aria-labelledby="involved-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Get Involved</p>
-        <h2 id="involved-heading">How to take part</h2>
+        <p class="section-heading__eyebrow">{pageText.how_to_get_involved__eyebrow}</p>
+        <h2 id="involved-heading">{pageText.how_to_get_involved__heading}</h2>
       </div>
       <div class="involvement-grid">
         {involvement.map(item => (
@@ -267,9 +182,9 @@ const involvement = [
 
   <!-- CTA -->
   <CTABand
-    heading="Be part of something real"
-    primaryBtn={{ text: 'Express Interest', href: '/contact/?reason=program-interest' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={pageText.cta__heading}
+    primaryBtn={pageText.cta__primarybtn}
+    secondaryBtn={pageText.cta__secondarybtn}
     dark={true}
   />
 
@@ -284,6 +199,12 @@ const involvement = [
     background-position: center;
     display: flex;
     align-items: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    .cp-hero {
+      background-image: url('/images/generic/bandw-forset-sun-beam-1080.jpeg');
+    }
   }
 
   .cp-hero__overlay {

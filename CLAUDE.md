@@ -25,9 +25,9 @@ Adding the Oakdene video (produced by Lead Story) to the homepage and a new watc
 - Framework: Astro 6 — static output only
 - Styling: Plain CSS with custom properties — NO Tailwind, NO CSS frameworks
 - Hosting: Cloudflare Pages, built from Git (see Build and deploy)
-- CMS: Decap CMS planned (for staff content editing via browser), not yet configured
+- CMS: Decap CMS 3.16.3, self-hosted in public/admin/decap/ (see Content editor)
 - Forms: Jotform embeds for referral and volunteering. The Contact page form is the one exception (see Forms)
-- No database and no server-side rendering. The only server code is the Cloudflare Pages Function in functions/api/contact.js
+- No database and no server-side rendering. The only server code is the Cloudflare Pages Functions in functions/api/: contact.js (Contact form) and auth.js and callback.js (content editor sign-in)
 
 ## Build and deploy
 - The live site is published by the Cloudflare Pages project `oakdene-house-website` in Matt Baldwin's Cloudflare account (the account that also holds the oakdenehouse.org.au domain). That project builds from mattmbaldwin/oakdene-house-website, main branch. This repository, Simon-HubEasy/oakdene-house-website, is a fork of it
@@ -47,6 +47,8 @@ Node 22.12 or later.
 - npm run dev (local server at localhost:4321)
 - npm run build (outputs to dist/)
 - npm run preview (serves dist/)
+- npm run images (makes the phone-sized copies of photos; run it after adding or replacing a photo and commit the new files)
+- npm run cms:pages (rebuilds the full editor's Page text forms in public/admin/pages.js; run it after adding, renaming or removing page text fields)
 
 ## Checks
 - There are no test, lint or type check scripts. npm run build is the only automated check today
@@ -198,13 +200,13 @@ All images are in public/images/ and served from /images/
 ## Impact stats — use these exact numbers
 Both sets are confirmed by Simon. Updated 9 October 2026: individuals figure is 5,000+ on both the homepage and About page.
 
-Homepage set (src/pages/index.astro):
+Homepage set (src/content/pages/home.json, data__stats):
 - 5,000+ Meals and food packs delivered annually
 - $250,000 Value of supplies provided annually
 - 5,000+ Individuals impacted
 - 25 Local organisation partnerships
 
-Second set (available for other pages):
+Second set (About page, src/content/pages/about.json, data__stats):
 - 5,000+ People supported each year
 - 100+ Community events and workshops
 - 1,000+ Hours of one-to-one support
@@ -232,8 +234,14 @@ Second set (available for other pages):
 - All page files: lowercase with hyphens (e.g. life-choices-program.astro)
 - All component files: PascalCase (e.g. ServiceCard.astro)
 - Shared client-side scripts: src/scripts/ (TypeScript modules imported by component and page <script> tags)
+- Build-time helpers: src/lib/ (TypeScript used in page and component frontmatter, such as format.ts)
 - All content files: JSON in src/content/. Exception: the video watch page reads video.json and transcript.txt from docs/video-launch/content/ at build time, so the launch pack stays the single source
-- Images served from /images/ (files live in public/images/)
+- Page text: every page's words live in src/content/pages/<page>.json (home.json, about-our-team.json and so on), read in the page as pageText. Keys are section__role (hero__heading, mission__text_2, data__steps); the editor labels come from them ("Hero: Heading"). Layout, classes and links between pages stay in the .astro file. When you add or change text on a page, put the words in that page's JSON file, not in the template, then run npm run cms:pages so the full editor shows the field
+- Page text that may contain bold, italics or links is rendered with inlineMarkdown() (src/lib/format.ts) through set:html. Scoped page CSS does not reach elements inside set:html, so rules for links, bold and spans inside such text use :global(), for example .intro :global(a:hover)
+- Images served from /images/ (files live in public/images/). New photos go in as JPEG, no more than 1920px on the long edge, quality around 80. Keep PNG only for images that need transparency, such as logos
+- Phone-sized photos: npm run images (scripts/image-sizes.mjs) writes name-640.jpg and name-1080.jpg next to each photo and lists them in src/content/image-sizes.json. At build time integrations/responsive-images.mjs adds srcset and sizes to every <img> that has copies, so pages keep plain src paths. Hero.astro uses the 1080 copy on screens up to 768px, and page banners set in CSS have a matching max-width: 768px rule. The Oakdene Story banner keeps the full-size panorama on purpose, because the 1080 copy is too short for a tall phone banner
+- brand-assets/ holds the master files (full-size original photos, logo design files such as .ai and .eps, PDFs and the outline icon set). It is tracked in Git but never published, so pages must not link to it. To use a master on the site, export a web copy into public/images/ (JPEG, 1920px max) and run npm run images. assets-original/ is a separate local-only folder on Simon's Mac (in .gitignore) used by scripts/archive-assets.sh
+- integrations/ holds local Astro integrations (build hooks). It sits outside src/ because Astro loads it from astro.config.mjs
 - PDFs in public/downloads/
 - Never use inline styles — always CSS classes or custom properties
 - Never use !important
@@ -297,8 +305,18 @@ Live Jotform embeds are on the referral and volunteering pages. For any new form
 ## Google Maps
 Contact page needs a Google Maps embed for 29 Vine St, Fairfield NSW 2165. Use a placeholder comment: <!-- TODO: Add Google Maps embed code -->
 
-## Decap CMS
-Config in public/admin/config.yml. Staff edit via /admin/ in browser.
+## Content editor (Decap CMS)
+- Two screens, both at the live address: /admin/ is the full editor (Simon), /admin/staff/ is the staff editor. Settings for both are in public/admin/config.js (there is no config.yml). The full editor also loads public/admin/pages.js, the Page text collection, which is generated by npm run cms:pages (scripts/cms-pages.mjs) from src/content/pages/. Never edit pages.js by hand
+- Staff editor covers: Program days and times (src/content/programs.json), Team and board (team.json, board.json), FAQs and testimonials (faqs.json, testimonials.json), Service Directory (one file per service in src/content/directory/services/, plus directory/settings.json) and Resources (resources.json, PDFs in public/downloads/). The full editor has all of these plus the page text
+- Both screens use Decap's editorial workflow: every change is saved as a draft on a cms/ branch, and only goes live when a full editor sets it to Ready and publishes. public/admin/staff/staff.js hides the Publish, Unpublish and Delete published entry buttons on the staff screen. This is a convenience, not a lock: anyone with write access could publish from /admin/
+- Where it saves depends on the address (config.js): oakdenehouse.org.au saves to mattmbaldwin/oakdene-house-website main, which publishes the live site; the test copy (*.pages.dev) saves to Simon-HubEasy/oakdene-house-website main; localhost uses local files through npx decap-server
+- Sign-in is GitHub. functions/api/auth.js and callback.js run the GitHub OAuth flow. Each Cloudflare Pages project needs GITHUB_CLIENT_ID (text) and GITHUB_CLIENT_SECRET (secret) from a GitHub OAuth app whose callback URL is https://<that site>/api/callback. Editors need a GitHub account with write access to the repository the screen saves to
+- Editors type plain text. src/lib/format.ts turns it into HTML: inline() for short values (emails and Australian phone numbers become links, [text](/link/) makes a link), inlineMarkdown() for page text and markdown() for longer text such as FAQ answers. Links to other sites open in a new tab. Markdown allows raw HTML, which is acceptable because only people with write access to the repository can sign in
+- Decap does not keep the order of keys in JSON files it saves. That is harmless; compare files by content, not by line diff
+- Decap file collections: don't give a file the same name as one of its fields (it then loads empty)
+- Setup steps (GitHub OAuth apps, Cloudflare settings, collaborators) are in docs/cms/setup.md; the staff how-to is docs/cms/staff-guide.md
+- Once the live editor is in use, content changes land directly in Matt's main. Sync the fork (Sync fork on GitHub, or git pull upstream main) before starting code work, or the next pull request to Matt will conflict
+- To upgrade Decap, replace public/admin/decap/ with the dist/ files (decap-cms.js, the numbered *.decap-cms.js chunks, the .wasm files and the licence) from the new decap-cms npm package, then test both screens
 
 ## Build status checklist
 - [x] CLAUDE.md created
@@ -318,6 +336,6 @@ Config in public/admin/config.yml. Staff edit via /admin/ in browser.
 - [x] Need Help Now built
 - [x] Contact page built
 - [x] 404 and Thank You pages built
-- [ ] Decap CMS configured
-- [ ] Images optimised for web
+- [ ] Decap CMS configured (editor and page text built; sign-in needs the GitHub OAuth app and Matt's settings)
+- [x] Images optimised for web (the images in use, October 2026)
 - [x] Deployed to Cloudflare Pages (from mattmbaldwin/oakdene-house-website; see Build and deploy)

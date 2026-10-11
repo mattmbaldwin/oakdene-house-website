@@ -1,0 +1,30 @@
+{
+  "serviceName": "STARTTS - Carramar",
+  "organisation": "NSW Service for the Treatment and Rehabilitation of Torture and Trauma Survivors",
+  "category": "Migrant Support",
+  "categoryGroup": "Migrant & Multicultural",
+  "serviceType": "Refugee trauma counselling",
+  "contact": {
+    "phone": "(02) 9794 1900",
+    "email": "stts-startts@health.nsw.gov.au",
+    "website": "https://www.startts.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/STARTTS.NSW/",
+    "linkedin": "https://www.linkedin.com/company/startts/"
+  },
+  "location": {
+    "suburb": "Carramar",
+    "lga": "Fairfield",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "NSW Health affiliated; FASSTT network; healthdirect"
+}

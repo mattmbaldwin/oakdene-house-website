@@ -1,0 +1,29 @@
+{
+  "serviceName": "Turning Point",
+  "organisation": "Turning Point",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Addiction treatment",
+  "contact": {
+    "phone": "Online only",
+    "email": "contact@turningpoint.org.au",
+    "website": "https://www.counsellingonline.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/TurningPointAUS/"
+  },
+  "location": {
+    "suburb": "Victoria",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Turning%20Point%20%28Eastern%20Health%29"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

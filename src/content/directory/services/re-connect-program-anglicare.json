@@ -1,0 +1,27 @@
+{
+  "serviceName": "Re-Connect Program - Anglicare",
+  "organisation": "Anglicare",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 8841 8611",
+    "email": "reconnect@anglicaresyd.org.au",
+    "website": "Explore Youth Support Services (Job Ready, Reconnect) and Programs (On Track) | Anglicare Sydney | Anglicare"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Mt Druitt",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Anglicare"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

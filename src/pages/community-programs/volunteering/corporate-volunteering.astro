@@ -1,19 +1,15 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CTABand from '../../../components/CTABand.astro';
+import pageText from '../../../content/pages/community-programs-volunteering-corporate-volunteering.json';
 
-const opportunities = [
-  'Team volunteering days',
-  'Support for community program activities',
-  'Donation drives or practical project support',
-  'Partnership opportunities linked to skills or service delivery',
-];
+const opportunities = pageText.data__opportunities;
 ---
 
 <BaseLayout
-  title="Corporate Volunteering — Oakdene House Foundation"
-  description="Bring your team to Oakdene House Foundation for corporate volunteering days or community partnerships. Based in Fairfield, Western Sydney."
-  ogImage="/images/volunteers/oakdene-volunteer-kitchen-3a.png"
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
+  ogImage="/images/volunteers/oakdene-volunteer-kitchen-3a.jpg"
 >
 
   <!-- HERO -->
@@ -29,8 +25,8 @@ const opportunities = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">Corporate Volunteering</span>
       </nav>
-      <h1>Corporate Volunteering</h1>
-      <p class="corp-hero__lead">A practical way for organisations to support the local community with purpose and impact.</p>
+      <h1>{pageText.hero__title}</h1>
+      <p class="corp-hero__lead">{pageText.hero__intro}</p>
     </div>
   </section>
 
@@ -40,27 +36,27 @@ const opportunities = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">About This Program</p>
-            <h2 id="corp-overview-heading">Make it meaningful for your team</h2>
+            <p class="section-heading__eyebrow">{pageText.overview__eyebrow}</p>
+            <h2 id="corp-overview-heading">{pageText.overview__heading}</h2>
           </div>
-          <p>Corporate volunteering offers organisations a practical way to support the local community while building team connection and purpose. Oakdene House can work with businesses and groups to create volunteering opportunities that are useful, well-organised and meaningful.</p>
-          <p>Whether it is a one-day volunteering event or an ongoing partnership, we will work with you to find the right fit.</p>
+          <p>{pageText.overview__text}</p>
+          <p>{pageText.overview__text_2}</p>
 
-          <h3 class="opps-heading">Potential opportunities</h3>
+          <h3 class="opps-heading">{pageText.overview__subheading}</h3>
           <ul class="opps-list">
             {opportunities.map(o => <li>{o}</li>)}
           </ul>
         </div>
         <div class="corp-aside">
           <div class="corp-image">
-            <img src="/images/kitchen/oakdene-kitchen-volunteers-wrappimg-bread.jpg" alt="Volunteers working together at Oakdene" loading="lazy" />
+            <img src="/images/kitchen/oakdene-kitchen-volunteers-wrappimg-bread.jpg" alt={pageText.overview__image_alt} loading="lazy" />
           </div>
           <div class="contact-prompt">
-            <h3>Get in touch</h3>
-            <p>If your organisation is interested in supporting Oakdene House through volunteering or partnership, please contact us to discuss suitable options.</p>
+            <h3>{pageText.overview__subheading_2}</h3>
+            <p>{pageText.overview__text_3}</p>
             <div class="btn-group">
-              <a href="/contact/" class="btn btn--primary">Partnership Enquiry</a><!-- TODO: Replace with live Jotform URL -->
-              <a href="/contact/" class="btn btn--secondary">Contact Us</a>
+              <a href="/contact/" class="btn btn--primary">{pageText.overview__button}</a><!-- TODO: Replace with live Jotform URL -->
+              <a href="/contact/" class="btn btn--secondary">{pageText.overview__button_2}</a>
             </div>
           </div>
         </div>
@@ -73,30 +69,30 @@ const opportunities = [
     <div class="container">
       <div class="why-inner">
         <div class="section-heading section-heading--center">
-          <p class="section-heading__eyebrow">Why Oakdene?</p>
-          <h2 id="why-heading">A genuine community impact</h2>
+          <p class="section-heading__eyebrow">{pageText.why_partner_with_oakdene__eyebrow}</p>
+          <h2 id="why-heading">{pageText.why_partner_with_oakdene__heading}</h2>
         </div>
         <div class="why-grid">
           <div class="why-item">
             <div class="why-item__icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
-            <h3>Trusted local charity</h3>
-            <p>Oakdene House has served the Fairfield community since 2011, with a strong track record of practical and respectful support.</p>
+            <h3>{pageText.why_partner_with_oakdene__subheading}</h3>
+            <p>{pageText.why_partner_with_oakdene__text}</p>
           </div>
           <div class="why-item">
             <div class="why-item__icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </div>
-            <h3>Structured and purposeful</h3>
-            <p>We work with your organisation to ensure volunteering days are well-organised, rewarding, and genuinely useful.</p>
+            <h3>{pageText.why_partner_with_oakdene__subheading_2}</h3>
+            <p>{pageText.why_partner_with_oakdene__text_2}</p>
           </div>
           <div class="why-item">
             <div class="why-item__icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <h3>Team connection</h3>
-            <p>Working together on something meaningful builds team morale and a shared sense of purpose beyond the workplace.</p>
+            <h3>{pageText.why_partner_with_oakdene__subheading_3}</h3>
+            <p>{pageText.why_partner_with_oakdene__text_3}</p>
           </div>
         </div>
       </div>
@@ -105,10 +101,10 @@ const opportunities = [
 
   <!-- CTA -->
   <CTABand
-    heading="Interested in a corporate partnership?"
-    subheading="Contact our team to discuss how your organisation can get involved."
-    primaryBtn={{ text: 'Partnership Enquiry', href: '/contact/' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={pageText.cta__heading}
+    subheading={pageText.cta__subheading}
+    primaryBtn={pageText.cta__primarybtn}
+    secondaryBtn={pageText.cta__secondarybtn}
     dark={true}
   />
 
@@ -118,11 +114,17 @@ const opportunities = [
   .corp-hero {
     position: relative;
     min-height: 380px;
-    background-image: url('/images/volunteers/oakdene-volunteer-kitchen-3a.png');
+    background-image: url('/images/volunteers/oakdene-volunteer-kitchen-3a.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    .corp-hero {
+      background-image: url('/images/volunteers/oakdene-volunteer-kitchen-3a-1080.jpg');
+    }
   }
 
   .corp-hero__overlay {

@@ -1,0 +1,29 @@
+{
+  "serviceName": "We Help Ourselves (WHOS) – Lilyfield",
+  "organisation": "We Help Ourselves (WHOS) – Lilyfield",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Residential Rehabilitation",
+  "contact": {
+    "phone": "02 9560 2000",
+    "email": "lilyfield@whos.org.au",
+    "website": "https://www.whos.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/WHOSorgau/"
+  },
+  "location": {
+    "suburb": "Lilyfield",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "33 002 873 580",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=We%20Help%20Ourselves%20%28WHOS%29"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

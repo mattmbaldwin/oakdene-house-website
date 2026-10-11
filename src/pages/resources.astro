@@ -3,48 +3,24 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import CTABand from '../components/CTABand.astro';
 import VideoPlayer from '../components/VideoPlayer.astro';
 import video from '../../docs/video-launch/content/video.json';
+import pageText from '../content/pages/resources.json';
+import { inlineMarkdown } from '../lib/format';
 
-const featured = [
-  {
-    title: 'Getting Support Guide',
-    description: 'A clear guide to understanding what support is available and how to access it.',
-    icon: 'book',
-  },
-  {
-    title: 'Referral Information Pack',
-    description: 'Information for workers, health professionals, and community partners about referring to Oakdene.',
-    icon: 'share',
-  },
-  {
-    title: 'Community Support Guide',
-    description: 'A directory of community services, supports, and resources in Western Sydney.',
-    icon: 'map',
-  },
-  {
-    title: 'Wellbeing and Recovery Tools',
-    description: 'Practical tools, worksheets, and exercises to support your wellbeing and recovery journey.',
-    icon: 'heart',
-  },
-];
+const featured = pageText.data__featured;
 
-const availableResources = [
-  { label: 'Flyers and brochures', href: '/resources/flyers-and-brochures/' },
-  { label: 'Information sheets', href: '/resources/information-sheets/' },
-  { label: 'Referral form', href: '/services/referral/' },
-  { label: 'Volunteer application', href: '/community-programs/volunteering/' },
-];
+const availableResources = pageText.data__available_resources;
 ---
 
 <BaseLayout
-  title="Resources — Oakdene House Foundation"
-  description="Browse practical guides, support information, and downloadable resources from Oakdene House Foundation, Fairfield, Western Sydney."
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
 >
 
   <!-- HERO — dark teal, no image -->
   <section class="res-hero" aria-label="Resources">
     <div class="container res-hero__content">
-      <h1>Resources that are practical, clear, and easy to use</h1>
-      <p class="res-hero__lead">Browse guides, support information, and helpful materials you can access straight away.</p>
+      <h1>{pageText.hero__title}</h1>
+      <p class="res-hero__lead">{pageText.hero__intro}</p>
     </div>
   </section>
 
@@ -52,9 +28,9 @@ const availableResources = [
   <section class="section" aria-labelledby="featured-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Featured Resources</p>
-        <h2 id="featured-heading">Guides and information packs</h2>
-        <p class="section-heading__lead">All resources are free to access and download.</p>
+        <p class="section-heading__eyebrow">{pageText.featured_resources__eyebrow}</p>
+        <h2 id="featured-heading">{pageText.featured_resources__heading}</h2>
+        <p class="section-heading__lead">{pageText.featured_resources__intro}</p>
       </div>
       <div class="resources-grid">
         {featured.map(r => (
@@ -87,8 +63,8 @@ const availableResources = [
     <div class="container">
       <div class="available-inner">
         <div class="section-heading">
-          <p class="section-heading__eyebrow">Browse</p>
-          <h2 id="available-heading">Available resources</h2>
+          <p class="section-heading__eyebrow">{pageText.available_resources__eyebrow}</p>
+          <h2 id="available-heading">{pageText.available_resources__heading}</h2>
         </div>
         <ul class="resource-links" role="list">
           {availableResources.map(r => (
@@ -115,20 +91,20 @@ const availableResources = [
                     youtubeId={video.youtube_id}
                     title={video.title}
                     thumbnail={video.thumbnail_path.replace(/^public/, '')}
-                    label="Play video: Oakdene House Foundation, our story"
+                    label={pageText.available_resources__label}
                   />
-                  <p class="video-item__title">Our story</p>
-                  <p class="video-item__meta">Hear from people in recovery, our counsellors and the people who started Oakdene House. <a href={video.watch_page_path}>Watch with transcript</a></p>
+                  <p class="video-item__title">{pageText.available_resources__text}</p>
+                  <p class="video-item__meta">Hear from people in recovery, our counsellors and the people who started Oakdene House. <a href={video.watch_page_path}>{pageText.available_resources__button}</a></p>
                 </div>
 
                 <div class="video-item video-item--last">
                   <VideoPlayer
                     youtubeId="lauQgtpYYGk"
-                    title="One Day at a Time 01: An introduction to Dr Rob Hunter"
+                    title={pageText.available_resources__title}
                     thumbnail="/images/video/one-day-at-a-time-01-thumb.jpg"
-                    label="Play video: One Day at a Time 01, an introduction to Dr Rob Hunter"
+                    label={pageText.available_resources__label_2}
                   />
-                  <p class="video-item__title">One Day at a Time 01: An introduction to Dr Rob Hunter</p>
+                  <p class="video-item__title">{pageText.available_resources__text_2}</p>
                 </div>
                 <a
                   href="https://www.youtube.com/@oakdenehousefoundati"
@@ -146,7 +122,7 @@ const availableResources = [
 
         <div class="resource-note">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          <p>All resources are free. If you cannot find what you are looking for, <a href="/contact/">contact our team</a> and we will help.</p>
+          <p set:html={inlineMarkdown(pageText.available_resources__text_3)}></p>
         </div>
       </div>
     </div>
@@ -154,9 +130,9 @@ const availableResources = [
 
   <!-- CTA -->
   <CTABand
-    heading="Need more support?"
-    primaryBtn={{ text: 'Get Support', href: '/contact/' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={pageText.cta__heading}
+    primaryBtn={pageText.cta__primarybtn}
+    secondaryBtn={pageText.cta__secondarybtn}
     dark={true}
   />
 
@@ -315,7 +291,7 @@ const availableResources = [
     margin-bottom: 0;
   }
 
-  .resource-note a {
+  .resource-note :global(a) {
     color: var(--color-primary);
     font-weight: 500;
   }
@@ -378,7 +354,7 @@ const availableResources = [
     color: var(--color-muted);
   }
 
-  .video-item__meta a {
+  .video-item__meta :global(a) {
     font-weight: 600;
     text-decoration: underline;
     text-underline-offset: 3px;

@@ -1,0 +1,66 @@
+{
+  "seo__browser_title": "Support Oakdene House",
+  "seo__search_description": "Help Oakdene House provide practical, dignified support to people and families facing addiction, hardship and homelessness in Sydney. Donations of $2 or more are tax-deductible.",
+  "hero__heading": "Your support changes real lives",
+  "hero__subheading": "Every donation to Oakdene House goes directly into practical support for people and families in our community. Whether you give once or become a monthly supporter, your contribution helps someone take the next step.",
+  "hero__image_alt": "Community members supported by Oakdene House Foundation",
+  "intro__heading": "About your donation",
+  "intro__intro": "Oakdene House Foundation has been part of Sydney's recovery community for over 30 years. We provide free counselling, transitional housing, and community programs to people and families facing addiction, hardship and homelessness. Your donation keeps those services running.",
+  "donate_other_ways_to_give__heading": "Donate",
+  "left__heading": "Donate now",
+  "right__subheading": "Other ways to give",
+  "right__subheading_2": "Direct deposit",
+  "right__cell": "BSB",
+  "right__cell_2": "012-292",
+  "right__cell_3": "Account",
+  "right__cell_4": "83563664",
+  "right__cell_5": "Account name",
+  "right__cell_6": "Oakdene House Foundation",
+  "right__cell_7": "Reference",
+  "right__cell_8": "Your name",
+  "right__subheading_3": "Cheque",
+  "right__text": "Made payable to **Oakdene House Foundation** and posted to PO Box 988, Fairfield NSW 1860.",
+  "right__subheading_4": "Workplace giving",
+  "right__text_2": "Many employers offer payroll giving and matched donation schemes. Contact [admin@oakdenehouse.org.au](mailto:admin@oakdenehouse.org.au) and we'll help set it up.",
+  "right__subheading_5": "Leave a gift in your will",
+  "right__text_3": "Including Oakdene in your will is a meaningful way to support people and families for generations to come. Get in touch for a confidential conversation.",
+  "right__subheading_6": "Corporate partnership",
+  "right__text_4": "Interested in a longer-term partnership? Reach out via our [contact form](/contact/) or email [admin@oakdenehouse.org.au](mailto:admin@oakdenehouse.org.au) directly.",
+  "assurance__heading": "Donation assurance",
+  "assurance__text": "*Every contribution — large or small — helps Oakdene keep our doors open, our kitchen running, and our counsellors available for the people who need them most.*",
+  "assurance__text_2": "*Donations of $2 or more are tax-deductible.*",
+  "assurance__text_3": "Registered Australian charity · ABN 90 151 950 926 · Donations processed securely by GiveNow",
+  "faq__heading": "Frequently asked questions about donations",
+  "cta__heading": "Need to talk to someone first?",
+  "cta__subheading": "If you'd prefer to discuss a donation, partnership, or leave a gift in your will, our team is here to help.",
+  "cta__primarybtn": {
+    "text": "Contact us",
+    "href": "/contact/"
+  },
+  "data__donation_faqs": [
+    {
+      "question": "Is my donation tax-deductible?",
+      "answer": "Yes — donations of $2 or more to Oakdene are tax-deductible."
+    },
+    {
+      "question": "How will I receive a receipt?",
+      "answer": "You'll receive a receipt by email immediately after your donation is processed."
+    },
+    {
+      "question": "How do I cancel a monthly donation?",
+      "answer": "You can cancel anytime by emailing admin@oakdenehouse.org.au or using the cancellation link in your donation email."
+    },
+    {
+      "question": "Is my payment secure?",
+      "answer": "Yes. Payments are processed by GiveNow, a registered Australian donations platform. Oakdene does not see or store your card details."
+    },
+    {
+      "question": "Can I donate in memory of someone?",
+      "answer": "Yes — there's a field on the donation form. We'll include the tribute in our records and any acknowledgement you request."
+    },
+    {
+      "question": "What percentage of my donation goes to services?",
+      "answer": "Over 90% of donated funds go directly to service delivery — the Kitchen, counselling, programs, and community support."
+    }
+  ]
+}

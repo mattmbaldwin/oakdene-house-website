@@ -1,0 +1,30 @@
+{
+  "serviceName": "Lives Lived Well",
+  "organisation": "Lives Lived Well",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Residential Rehabilitation",
+  "contact": {
+    "phone": "1800 114 338",
+    "email": "contact@liveslivedwell.com.au",
+    "website": "https://www.liveslivedwell.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/LivesLivedWell/",
+    "linkedin": "https://www.linkedin.com/company/lives-lived-well/"
+  },
+  "location": {
+    "suburb": "Multiple",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "12 086 397 904",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Lives%20Lived%20Well"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,29 @@
+{
+  "serviceName": "Monarch Mental Health Group",
+  "organisation": "Monarch Mental Health Group",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1800 118 474",
+    "email": "info@monarchmentalhealth.com.au",
+    "website": "https://www.mmhg.com.au/monarch/contact-us"
+  },
+  "social": {
+    "linkedin": "https://www.linkedin.com/company/monarch-mental-health-group/"
+  },
+  "location": {
+    "suburb": "Sydney",
+    "lga": null,
+    "coverage": "Other NSW"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "Australian TMS Coalition; AHPRA-registered providers"
+}

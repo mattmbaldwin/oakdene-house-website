@@ -1,0 +1,27 @@
+{
+  "serviceName": "Young Wellbeings",
+  "organisation": "X",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "Online",
+    "email": "Online",
+    "website": null
+  },
+  "social": {},
+  "location": {
+    "suburb": "N/A — Online service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=X"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,27 @@
+{
+  "serviceName": "Blacktown Early Access Team (BEAT)",
+  "organisation": "WSLHD",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "02 9881 1735, 1800 011 511 (Intake-NSW MH Line)",
+    "email": "beat@wslhd.health.nsw.gov.au",
+    "website": "https://www.wslhd.health.nsw.gov.au/Mental-Health-Services/How-we-help/Community-Services/acute-intervention"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Mount Druitt",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

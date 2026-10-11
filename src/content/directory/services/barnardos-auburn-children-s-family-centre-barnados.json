@@ -1,0 +1,30 @@
+{
+  "serviceName": "Barnardos Auburn Children's Family Centre",
+  "organisation": "Barnados",
+  "category": "Health / Community Service",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "02 8752 0300",
+    "email": "acfc@barnardos.org.au",
+    "website": "https://www.barnardos.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/BarnardosAustralia/",
+    "linkedin": "https://www.linkedin.com/company/barnardos-australia/"
+  },
+  "location": {
+    "suburb": "Auburn",
+    "lga": "Cumberland",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "18 068 557 906",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Barnardos%20Australia"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

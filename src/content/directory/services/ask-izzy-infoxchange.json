@@ -1,0 +1,31 @@
+{
+  "serviceName": "Ask Izzy (Infoxchange)",
+  "organisation": "Ask Izzy (Infoxchange)",
+  "category": "Referral Directory",
+  "categoryGroup": "Other Support",
+  "serviceType": "Service directory",
+  "contact": {
+    "phone": "Online",
+    "email": "Online",
+    "website": "https://askizzy.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/AskIzzyAustralia/",
+    "instagram": "https://www.instagram.com/askizzy/",
+    "linkedin": "https://www.linkedin.com/company/infoxchange/"
+  },
+  "location": {
+    "suburb": "N/A — National online directory",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "71 080 350 956",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Infoxchange"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (Infoxchange ABN 71 080 350 956)"
+}

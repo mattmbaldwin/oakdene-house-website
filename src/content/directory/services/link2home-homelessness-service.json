@@ -1,0 +1,27 @@
+{
+  "serviceName": "Link2Home Homelessness Service",
+  "organisation": "Link2Home Homelessness Service",
+  "category": "Housing / Homelessness",
+  "categoryGroup": "Housing & Homelessness",
+  "serviceType": "Housing / Homelessness Support",
+  "contact": {
+    "phone": "1800 152 152",
+    "email": "link2home@communities.nsw.gov.au",
+    "website": "https://www.nsw.gov.au/housing-and-construction/social-affordable/emergency-housing/homelessness"
+  },
+  "social": {},
+  "location": {
+    "suburb": "NSW",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

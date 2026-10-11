@@ -1,0 +1,30 @@
+{
+  "serviceName": "Uniting Women2Home: Kelly's Cottage",
+  "organisation": "Uniting",
+  "category": "Health / Community Service",
+  "categoryGroup": "Housing & Homelessness",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1800 152 152",
+    "email": null,
+    "website": "https://www.uniting.org/services/housing-and-homelessness/facility/kellys-cottage"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/unitingnswact/",
+    "linkedin": "https://www.linkedin.com/company/uniting-nsw-act/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "78 722 562 218",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Uniting%20NSW.ACT"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

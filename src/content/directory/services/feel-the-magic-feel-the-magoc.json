@@ -1,0 +1,31 @@
+{
+  "serviceName": "Feel the Magic",
+  "organisation": "Feel the Magoc",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1300 488 866",
+    "email": "info@feelthemagic.org.au",
+    "website": "https://feelthemagic.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/feelthemagicfoundation/",
+    "instagram": "https://www.instagram.com/feelthemagicfoundation/",
+    "linkedin": "https://www.linkedin.com/company/feel-the-magic-foundation/"
+  },
+  "location": {
+    "suburb": "Bondi Junction",
+    "lga": null,
+    "coverage": "Unknown"
+  },
+  "identifiers": {
+    "abn": "92 169 717 489",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Feel%20the%20Magic%20Foundation"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": "ACNC charity register; Ask Izzy"
+}

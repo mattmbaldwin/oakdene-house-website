@@ -1,0 +1,30 @@
+{
+  "serviceName": "The Way Back NSW",
+  "organisation": "Neami",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "03 8691 5300",
+    "email": "Dependent on location",
+    "website": "https://www.neaminational.org.au/programs/the-way-back/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/NeamiNational/",
+    "linkedin": "https://www.linkedin.com/company/neami-national/"
+  },
+  "location": {
+    "suburb": "Hurstville, Seven Hills, Merrylands",
+    "lga": "Multi-LGA (Blacktown + Cumberland)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": "52 105 082 460",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Neami%20National"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

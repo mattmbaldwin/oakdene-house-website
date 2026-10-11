@@ -1,0 +1,27 @@
+{
+  "serviceName": "Sydney Detox and Rehab",
+  "organisation": "Sydney Detox and Rehab",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Detox / Rehabilitation",
+  "contact": {
+    "phone": "Online",
+    "email": "Online",
+    "website": "https://sydneydetoxandrecovery.com.au"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Sydney",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": true,
+    "legal": true
+  },
+  "listedIn": null
+}

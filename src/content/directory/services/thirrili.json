@@ -1,0 +1,29 @@
+{
+  "serviceName": "Thirrili",
+  "organisation": "Thirrili",
+  "category": "Health / Community Service",
+  "categoryGroup": "Aboriginal Services",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1800 805 801",
+    "email": "info@thirrili.com.au",
+    "website": "https://thirrili.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/thirrili.org/"
+  },
+  "location": {
+    "suburb": null,
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "85 632 011 796",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Thirrili%20Ltd"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": "ACNC; NIAA-funded postvention service"
+}

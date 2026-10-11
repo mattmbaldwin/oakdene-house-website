@@ -1,0 +1,29 @@
+{
+  "serviceName": "SAGE Community Services",
+  "organisation": "SAGE Community Services",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9636 8437",
+    "email": "admin@sagecommunity.org.au",
+    "website": "https://sagecommunity.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/SAGEcommunityservices/"
+  },
+  "location": {
+    "suburb": "Pendle Hill",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=SAGE%20Community%20Services"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

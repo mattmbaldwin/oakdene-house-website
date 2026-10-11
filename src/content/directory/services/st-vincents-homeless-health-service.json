@@ -1,0 +1,27 @@
+{
+  "serviceName": "St Vincent’s Homeless Health Service",
+  "organisation": "St Vincent’s Homeless Health Service",
+  "category": "Housing / Homelessness",
+  "categoryGroup": "Housing & Homelessness",
+  "serviceType": "Housing / Homelessness Support",
+  "contact": {
+    "phone": "02 8382 1111",
+    "email": "svdp-ceo@svdpsydney.org.au",
+    "website": "https://www.svdpsydney.org.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Darlinghurst",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=St%20Vincent%E2%80%99s%20Homeless%20Health%20Service"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

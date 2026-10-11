@@ -1,0 +1,49 @@
+{
+  "seo__browser_title": "Our Centre — Oakdene House Foundation",
+  "seo__search_description": "Oakdene House is a safe, welcoming and practical space in Fairfield, Western Sydney bringing together counselling rooms, group spaces and community services all in one place.",
+  "hero__title": "Our Centre",
+  "hero__intro": "A safe, welcoming and practical space in Fairfield where people can access help in one place.",
+  "intro_what_to_expect__eyebrow": "The Space",
+  "intro_what_to_expect__heading": "A space built around people",
+  "intro_what_to_expect__text": "Oakdene House is designed to be a safe, welcoming and practical space for people seeking support. Our centre brings together counselling rooms, group spaces and community service areas so people can access help in one place.",
+  "intro_what_to_expect__subheading": "What visitors can expect",
+  "intro_what_to_expect__image_alt": "Inside Oakdene House Foundation centre",
+  "gallery__eyebrow": "The Building",
+  "gallery__heading": "Inside and outside our centre",
+  "location__button": "Open in Google Maps",
+  "location__eyebrow": "Find Us",
+  "location__heading": "Location and Access",
+  "directions_download__subheading": "Finding us can be tricky",
+  "directions_download__text": "Oakdene House sits behind Fairfield RSL — easy to miss if you don't know where to look. Download our directions guide for photos, maps, and step-by-step instructions.",
+  "directions_download__button": "Download directions (PDF)",
+  "cta__heading": "Ready to visit or get in touch?",
+  "cta__subheading": "Our team is here to help. Contact us to arrange a visit or to ask any questions.",
+  "cta__primarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "cta__secondarybtn": {
+    "text": "Get Support",
+    "href": "/contact/"
+  },
+  "data__gallery": [
+    {
+      "src": "/images/centre/exterior-exterior-2-img_2649-with-people.jpg",
+      "alt": "Oakdene House centre exterior side view"
+    },
+    {
+      "src": "/images/centre/interior-interior-1-with-people-img_2654.jpg",
+      "alt": "Oakdene House centre interior main space"
+    },
+    {
+      "src": "/images/centre/interior-meetings-1-img_2657-v2.jpg",
+      "alt": "Oakdene House centre meeting room"
+    }
+  ],
+  "data__what_to_expect": [
+    "A warm and respectful environment",
+    "Private spaces for individual support",
+    "Group areas for programs and peer connection",
+    "Community service areas including the kitchen, laundrette and boutique"
+  ]
+}

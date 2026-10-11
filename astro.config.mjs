@@ -1,6 +1,7 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import responsiveImages from './integrations/responsive-images.mjs';
 
 // Pages left out of the sitemap: error and form thank-you pages, plus pages
 // that already carry a noindex tag (our-board, support-us).
@@ -21,5 +22,6 @@ export default defineConfig({
     sitemap({
       filter: (page) => !SITEMAP_EXCLUDE.includes(new URL(page).pathname),
     }),
+    responsiveImages(),
   ],
 });

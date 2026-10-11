@@ -1,0 +1,30 @@
+{
+  "serviceName": "Uniting",
+  "organisation": "Uniting",
+  "category": "Family Support",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Family services",
+  "contact": {
+    "phone": "(02) 8599 4840",
+    "email": "CPS@uniting.org",
+    "website": "https://www.uniting.org/services/mental-health/facility/commonwealth-psychosocial-support-program"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/unitingnswact/",
+    "linkedin": "https://www.linkedin.com/company/uniting-nsw-act/"
+  },
+  "location": {
+    "suburb": "Oatlands",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "78 722 562 218",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Uniting%20NSW.ACT"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

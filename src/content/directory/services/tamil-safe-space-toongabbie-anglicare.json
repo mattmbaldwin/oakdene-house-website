@@ -1,0 +1,27 @@
+{
+  "serviceName": "Tamil Safe Space Toongabbie",
+  "organisation": "Anglicare",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "Not provided",
+    "email": "Not provided",
+    "website": "https://tamilsafespace.org.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Toongabbie",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Anglicare"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

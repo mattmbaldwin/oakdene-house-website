@@ -1,0 +1,29 @@
+{
+  "serviceName": "Multicultural NSW",
+  "organisation": "Multicultural NSW",
+  "category": "Migrant Support",
+  "categoryGroup": "Migrant & Multicultural",
+  "serviceType": "Multicultural support",
+  "contact": {
+    "phone": "1800 618 581",
+    "email": "enquiries@multicultural.nsw.gov.au",
+    "website": "https://www.multicultural.nsw.gov.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/multiculturalnsw/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

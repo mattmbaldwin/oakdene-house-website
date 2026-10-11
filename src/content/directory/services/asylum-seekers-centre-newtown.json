@@ -1,0 +1,30 @@
+{
+  "serviceName": "Asylum Seekers Centre - Newtown",
+  "organisation": "Asylum Seekers Centre - Newtown",
+  "category": "Health / Community Service",
+  "categoryGroup": "Migrant & Multicultural",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9078 1900",
+    "email": "info@asylumseekerscentre.org.au",
+    "website": "https://asylumseekerscentre.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/asylumseekerscentre/",
+    "linkedin": "https://www.linkedin.com/company/asylum-seekers-centre/"
+  },
+  "location": {
+    "suburb": "Newtown",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "90 117 110 943",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Asylum%20Seekers%20Centre"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

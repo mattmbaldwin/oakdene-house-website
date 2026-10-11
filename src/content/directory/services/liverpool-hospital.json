@@ -1,0 +1,27 @@
+{
+  "serviceName": "Liverpool Hospital",
+  "organisation": "Liverpool Hospital",
+  "category": "Health",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Public hospital",
+  "contact": {
+    "phone": "(02) 8738 8000",
+    "email": "liverpool@sswahs.nsw.gov.au",
+    "website": "https://www.sswahs.nsw.gov.au/services/hospitals/liverpool"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Liverpool",
+    "lga": "Multi-LGA (South Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

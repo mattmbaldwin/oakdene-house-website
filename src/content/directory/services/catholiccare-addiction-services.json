@@ -1,0 +1,30 @@
+{
+  "serviceName": "CatholicCare Addiction Services",
+  "organisation": "CatholicCare Addiction Services",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": null,
+    "email": null,
+    "website": "https://www.catholiccare.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/CatholicCareAustralia/",
+    "linkedin": "https://www.linkedin.com/company/catholiccare-australia/"
+  },
+  "location": {
+    "suburb": "Sydney",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

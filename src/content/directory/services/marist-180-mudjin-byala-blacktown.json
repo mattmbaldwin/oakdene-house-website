@@ -1,0 +1,29 @@
+{
+  "serviceName": "Marist 180 - Mudjin Byala Blacktown",
+  "organisation": "Marist 180 - Mudjin Byala Blacktown",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "02 9672 9200, 02 9672 9288 (Referrals)",
+    "email": "referrals@m180.org.au \ninfo@m180.org.au",
+    "website": "https://www.marist180.org.au/mudjin-byala"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/Marist180/"
+  },
+  "location": {
+    "suburb": "Hebersham",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "11 008 595 879",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Marist180"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

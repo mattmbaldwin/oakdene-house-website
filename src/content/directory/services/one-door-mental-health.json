@@ -1,0 +1,30 @@
+{
+  "serviceName": "One Door Mental Health",
+  "organisation": "One Door Mental Health",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Psychosocial recovery / family support",
+  "contact": {
+    "phone": "1800 843 539",
+    "email": "info@onedoor.org.au",
+    "website": "https://www.onedoor.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/OneDoorMentalHealth/",
+    "linkedin": "https://www.linkedin.com/company/one-door-mental-health/"
+  },
+  "location": {
+    "suburb": "Gladesville",
+    "lga": null,
+    "coverage": "Unknown"
+  },
+  "identifiers": {
+    "abn": "71 002 442 248",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=One%20Door%20Mental%20Health"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (ABN 71 002 442 248); MHCC"
+}

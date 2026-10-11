@@ -1,0 +1,27 @@
+{
+  "serviceName": "Liverpool Drug Health Service",
+  "organisation": "Liverpool Drug Health Service",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community treatment",
+  "contact": {
+    "phone": "02 8739 1000",
+    "email": "inquiry@swslhd.health.nsw.gov.au",
+    "website": "https://www.swslhd.health.nsw.gov.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Liverpool",
+    "lga": "Multi-LGA (South Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Liverpool%20Drug%20Health%20Service"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

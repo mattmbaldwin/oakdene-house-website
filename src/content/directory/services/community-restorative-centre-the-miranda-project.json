@@ -1,0 +1,27 @@
+{
+  "serviceName": "Community Restorative Centre - The Miranda Project",
+  "organisation": "Community Restorative Centre",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9288 8700",
+    "email": "miranda.referral@crcnsw.org.au",
+    "website": "https://www.crcnsw.org.au/services/miranda-project/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Canterbury",
+    "lga": "Canterbury-Bankstown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Community%20Restorative%20Centre"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

@@ -1,0 +1,29 @@
+{
+  "serviceName": "Nepean Community & Neighbourhood Services",
+  "organisation": "Nepean Community & Neighbourhood Services",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Neighbourhood support",
+  "contact": {
+    "phone": "(02) 4722 7800",
+    "email": "info@nepeanservices.org.au",
+    "website": "https://www.nepeanservices.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/NepeanCNS/"
+  },
+  "location": {
+    "suburb": "Penrith",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": "55 619 459 091",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Nepean%20Community%20%26%20Neighbourhood%20Services"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

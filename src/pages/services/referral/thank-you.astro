@@ -1,10 +1,12 @@
 ---
+import pageText from '../../../content/pages/services-referral-thank-you.json';
+import { inlineMarkdown } from '../../../lib/format';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 ---
 
 <BaseLayout
-  title="Referral Received — Oakdene House Foundation"
-  description="Your referral to Oakdene House Foundation has been received. Someone from the team will be in touch within 2 business days."
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
   ogImage="/images/generic/bandw-forset-sun-beam.jpeg"
 >
 
@@ -21,7 +23,7 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">Thank You</span>
       </nav>
-      <h1>Thanks — we've received your referral</h1>
+      <h1>{pageText.hero__title}</h1>
     </div>
   </section>
 
@@ -29,10 +31,10 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
   <section class="section" aria-label="What happens next">
     <div class="container">
       <div class="ty-body">
-        <p>Someone from the Oakdene team will be in touch within 2 business days. If the situation changes or becomes urgent, please call us on <a href="tel:0287170999">(02) 8717 0999</a> during business hours. For 24-hour crisis support, visit our <a href="/need-help-now/">Need Help Now</a> page.</p>
+        <p set:html={inlineMarkdown(pageText.content__text)}></p>
         <div class="ty-actions">
-          <a href="/" class="btn btn--primary">Back to Home</a>
-          <a href="/need-help-now/" class="btn btn--secondary">Need Help Now</a>
+          <a href="/" class="btn btn--primary">{pageText.content__button}</a>
+          <a href="/need-help-now/" class="btn btn--secondary">{pageText.content__button_2}</a>
         </div>
       </div>
     </div>
@@ -49,6 +51,12 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     background-position: center;
     display: flex;
     align-items: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    .ty-hero {
+      background-image: url('/images/generic/bandw-forset-sun-beam-1080.jpeg');
+    }
   }
 
   .ty-hero__overlay {
@@ -84,12 +92,12 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
     margin-bottom: 40px;
   }
 
-  .ty-body a {
+  .ty-body :global(a) {
     color: var(--color-primary);
     font-weight: 500;
   }
 
-  .ty-body a:hover {
+  .ty-body :global(a:hover) {
     color: var(--color-primary-hover);
   }
 

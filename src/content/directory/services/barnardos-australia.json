@@ -1,0 +1,30 @@
+{
+  "serviceName": "Barnardos Australia",
+  "organisation": "Barnardos Australia",
+  "category": "Child Protection",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Family support",
+  "contact": {
+    "phone": "(02) 9841 8000",
+    "email": "contact@barnardos.org.au",
+    "website": "https://www.barnardos.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/BarnardosAustralia/",
+    "linkedin": "https://www.linkedin.com/company/barnardos-australia/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "18 068 557 906",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Barnardos%20Australia"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

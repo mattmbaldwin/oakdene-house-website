@@ -1,0 +1,27 @@
+{
+  "serviceName": "National and Association for Loss and Grief (NALAG)",
+  "organisation": "National and Association for Loss and Grief (NALAG)",
+  "category": "Health / Community Service",
+  "categoryGroup": "Other Support",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "02 6882 9222",
+    "email": "info@nalag.org.au",
+    "website": "https://nalag.org.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Goulburn",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=National%20and%20Association%20for%20Loss%20and%20Grief%20%28NALAG%29"
+  },
+  "flags": {
+    "aod": true,
+    "legal": true
+  },
+  "listedIn": null
+}

@@ -1,0 +1,29 @@
+{
+  "serviceName": "Junaya",
+  "organisation": "Junaya",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9621 3922",
+    "email": "info@junaya.org.au",
+    "website": "https://junaya.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/JunayaWomensRefuge/"
+  },
+  "location": {
+    "suburb": "Blacktown",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "13 001 833 471",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Junaya%20Family%20Development%20Services"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,29 @@
+{
+  "serviceName": "St John of God Richmond Hospital Detox Unit",
+  "organisation": "St John of God Richmond Hospital",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Detox Unit",
+  "contact": {
+    "phone": "02 4570 6000",
+    "email": "Online",
+    "website": "https://www.sjog.org.au"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/SJOGAustralia/"
+  },
+  "location": {
+    "suburb": "North Richmond",
+    "lga": "Hawkesbury",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "12 645 053 461",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=St%20John%20of%20God%20Health%20Care"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,31 @@
+{
+  "serviceName": "Suicide Callback Service",
+  "organisation": "Lifeline",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "1300 659 467",
+    "email": null,
+    "website": "https://www.suicidecallbackservice.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/SuicideCallBackService/",
+    "instagram": "https://www.instagram.com/lifelineaustralia/",
+    "linkedin": "https://www.linkedin.com/company/lifeline-australia/"
+  },
+  "location": {
+    "suburb": "N/A — National service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "84 081 031 263",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Lifeline%20Australia"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": "ACNC (via On the Line); healthdirect"
+}

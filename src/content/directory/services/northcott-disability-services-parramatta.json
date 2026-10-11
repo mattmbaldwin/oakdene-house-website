@@ -1,0 +1,30 @@
+{
+  "serviceName": "Northcott Disability Services - Parramatta",
+  "organisation": "Northcott",
+  "category": "Community Services",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Disability support / NDIS services",
+  "contact": {
+    "phone": "(02) 9890 0100",
+    "email": "enquiries@northcott.com.au",
+    "website": "https://www.northcott.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/Northcott/",
+    "linkedin": "https://www.linkedin.com/company/northcott/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "87 302 064 152",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Northcott"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "NDIS Provider Finder; ACNC"
+}

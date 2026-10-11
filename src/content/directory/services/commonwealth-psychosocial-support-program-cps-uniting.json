@@ -1,0 +1,27 @@
+{
+  "serviceName": "Commonwealth Psychosocial Support program (CPS) - Uniting",
+  "organisation": "Uniting",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 8599 4840",
+    "email": "CPS@uniting.org",
+    "website": "https://www.uniting.org/services/mental-health/facility/commonwealth-psychosocial-support-program"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Oatlands",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

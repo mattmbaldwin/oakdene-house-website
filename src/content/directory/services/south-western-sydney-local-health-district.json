@@ -1,0 +1,29 @@
+{
+  "serviceName": "South Western Sydney Local Health District",
+  "organisation": "South Western Sydney Local Health District",
+  "category": "Hospital / Health",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Public health services",
+  "contact": {
+    "phone": "02 9616 6000",
+    "email": "lhd-communications@swsLHD.health.nsw.gov.au",
+    "website": "https://www.swslhd.health.nsw.gov.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/SouthWesternSydneyLocalHealthDistrict/"
+  },
+  "location": {
+    "suburb": "Liverpool",
+    "lga": "Multi-LGA (South Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

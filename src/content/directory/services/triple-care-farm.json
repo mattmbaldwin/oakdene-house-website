@@ -1,0 +1,29 @@
+{
+  "serviceName": "Triple Care Farm",
+  "organisation": "Triple Care Farm",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Residential Rehabilitation",
+  "contact": {
+    "phone": "(02) 4630 7600",
+    "email": "info@missionaustralia.com.au",
+    "website": "https://www.missionaustralia.com.au/services/alcohol-other-drug-rehabilitation/triple-care-farm"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/MissionAustralia/"
+  },
+  "location": {
+    "suburb": "Central Coast",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Triple%20Care%20Farm"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "Run by Mission Australia (ACNC ABN 15 000 002 522)"
+}

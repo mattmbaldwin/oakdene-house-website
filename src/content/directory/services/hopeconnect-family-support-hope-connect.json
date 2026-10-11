@@ -1,0 +1,27 @@
+{
+  "serviceName": "HopeConnect Family Support",
+  "organisation": "Hope Connect",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "9638 7955",
+    "email": "admin@hopeconnect.org.au",
+    "website": "https://www.hopeconnect.org.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Telopea",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Hope%20Connect"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

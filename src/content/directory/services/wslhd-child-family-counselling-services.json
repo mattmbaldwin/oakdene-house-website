@@ -1,0 +1,29 @@
+{
+  "serviceName": "WSLHD Child & Family Counselling Services",
+  "organisation": "WSLHD",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "1800 600 681 - CRS line \n9881 1352 - Sarah Radcliffe, Out of Home Care Coordinator",
+    "email": "Not provided",
+    "website": "https://www.wslhd.health.nsw.gov.au/Integrated-and-Community-Health/Child-Family-Health/child-and-family-health-counselling"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/WesternSydneyLocalHealthDistrict/"
+  },
+  "location": {
+    "suburb": "Westmead",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

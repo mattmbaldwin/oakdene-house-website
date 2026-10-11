@@ -1,0 +1,29 @@
+{
+  "serviceName": "St John of God - Raphael Services",
+  "organisation": "St John of God Outreach Services",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1800 292 292",
+    "email": "nsw.raphael@sjog.org.au",
+    "website": "https://www.sjog.org.au/our-services/community-and-youth-services/st-john-of-god-raphael-services"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/SJOGAustralia/"
+  },
+  "location": {
+    "suburb": "Blacktown",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "12 645 053 461",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=St%20John%20of%20God%20Health%20Care"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

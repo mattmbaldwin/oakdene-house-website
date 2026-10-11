@@ -1,0 +1,29 @@
+{
+  "serviceName": "Cumberland Multicultural Community Services",
+  "organisation": "CMCS",
+  "category": "Migrant Support",
+  "categoryGroup": "Migrant & Multicultural",
+  "serviceType": "Settlement / Aged care / Community Support",
+  "contact": {
+    "phone": "(02) 9637 7600",
+    "email": "admin@cmcs.com.au",
+    "website": "https://www.cmcs.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/CMCSau/"
+  },
+  "location": {
+    "suburb": "Granville",
+    "lga": "Cumberland",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Cumberland%20Multicultural%20Community%20Services"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC; My Aged Care"
+}

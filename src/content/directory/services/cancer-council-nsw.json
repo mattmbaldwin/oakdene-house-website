@@ -1,0 +1,31 @@
+{
+  "serviceName": "Cancer Council NSW",
+  "organisation": "Cancer Council NSW",
+  "category": "Health",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Cancer support / Information line",
+  "contact": {
+    "phone": "13 11 20",
+    "email": "feedback@nswcc.org.au",
+    "website": "https://www.cancercouncil.com.au/nsw/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/cancercouncilnsw/",
+    "instagram": "https://www.instagram.com/cancercouncilnsw/",
+    "linkedin": "https://www.linkedin.com/company/cancer-council-nsw/"
+  },
+  "location": {
+    "suburb": "Woolloomooloo",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "51 116 463 846",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Cancer%20Council%20NSW"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (ABN 51 116 463 846); healthdirect"
+}

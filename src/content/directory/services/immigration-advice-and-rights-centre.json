@@ -1,0 +1,30 @@
+{
+  "serviceName": "Immigration Advice and Rights Centre",
+  "organisation": "Immigration Advice and Rights Centre",
+  "category": "Health / Community Service",
+  "categoryGroup": "Migrant & Multicultural",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 8234 0700",
+    "email": "admin@iarc.org.au",
+    "website": "https://iarc.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/IARCSydney/",
+    "linkedin": "https://www.linkedin.com/company/immigration-advice-and-rights-centre/"
+  },
+  "location": {
+    "suburb": "Sydney",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "70 184 538 117",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Immigration%20Advice%20and%20Rights%20Centre"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": "Community Legal Centres NSW; ACNC"
+}

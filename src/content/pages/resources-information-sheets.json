@@ -1,0 +1,16 @@
+{
+  "seo__browser_title": "Information Sheets — Oakdene House Foundation",
+  "seo__search_description": "Oakdene House Foundation information sheets about services and support. Contact us for specific service information.",
+  "information_sheets__title": "Information Sheets",
+  "information_sheets__intro": "Detailed service information and guides for clients and referrers.",
+  "information_sheets__heading": "Looking for specific service information?",
+  "information_sheets__subheading": "Our team can answer any questions about our programs and services.",
+  "information_sheets__primarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "information_sheets__secondarybtn": {
+    "text": "Browse Services",
+    "href": "/services/"
+  }
+}

@@ -1,11 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import pageText from '../../content/pages/services-referral.json';
+import { inlineMarkdown } from '../../lib/format';
 import CTABand from '../../components/CTABand.astro';
 ---
 
 <BaseLayout
-  title="Make a Referral — Oakdene House Foundation"
-  description="Self-referral, family referral, or professional referral to Oakdene House Foundation. We'll be in touch within 2 business days."
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
   ogImage="/images/generic/bandw-forset-sun-beam.jpeg"
 >
 
@@ -20,8 +22,8 @@ import CTABand from '../../components/CTABand.astro';
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">Make a Referral</span>
       </nav>
-      <h1>Make a referral to Oakdene House</h1>
-      <p class="referral-hero__lead">Self-referral, family referral, or professional referral — we'll be in touch within 2 business days.</p>
+      <h1>{pageText.hero__title}</h1>
+      <p class="referral-hero__lead">{pageText.hero__intro}</p>
     </div>
   </section>
 
@@ -32,8 +34,8 @@ import CTABand from '../../components/CTABand.astro';
 
         <!-- Main column -->
         <div class="referral-main">
-          <p class="referral-intro">This form is for anyone referring someone to Oakdene — whether you're referring yourself, a family member, or a client as a professional worker. Complete the form below and our team will review your referral and be in touch within 2 business days. If the situation is urgent, please also call us on <a href="tel:0287170999">(02) 8717 0999</a>.</p>
-          <p class="referral-intro referral-intro--privacy"><em>Everything you share is confidential and handled in line with our <a href="/privacy-policy/">privacy policy</a>.</em></p>
+          <p class="referral-intro" set:html={inlineMarkdown(pageText.main_column__intro)}></p>
+          <p class="referral-intro referral-intro--privacy" set:html={inlineMarkdown(pageText.main_column__intro_2)}></p>
 
           <!-- Jotform embed — referral form ID 253010226998054 -->
           <iframe
@@ -55,17 +57,17 @@ import CTABand from '../../components/CTABand.astro';
             <div class="urgent-box__icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
             </div>
-            <h2>Need urgent help?</h2>
-            <p>If you or someone else is in crisis right now, please don't wait for this referral to be processed. Visit our <a href="/need-help-now/">Need Help Now page</a> for 24-hour crisis support lines.</p>
-            <a href="/need-help-now/" class="btn btn--primary btn--block">Need Help Now</a>
+            <h2>{pageText.sidebar__heading}</h2>
+            <p set:html={inlineMarkdown(pageText.sidebar__text)}></p>
+            <a href="/need-help-now/" class="btn btn--primary btn--block">{pageText.sidebar__button}</a>
           </div>
 
           <div class="contact-box">
-            <h2>Prefer to call?</h2>
-            <p>Our team is available during business hours to take your call.</p>
-            <a href="tel:0287170999" class="contact-box__phone">(02) 8717 0999</a>
-            <p class="contact-box__or">or email</p>
-            <a href="mailto:admin@oakdenehouse.org.au" class="contact-box__email">admin@oakdenehouse.org.au</a>
+            <h2>{pageText.sidebar__heading_2}</h2>
+            <p>{pageText.sidebar__text_2}</p>
+            <a href="tel:0287170999" class="contact-box__phone">{pageText.sidebar__button_2}</a>
+            <p class="contact-box__or">{pageText.sidebar__text_3}</p>
+            <a href="mailto:admin@oakdenehouse.org.au" class="contact-box__email">{pageText.sidebar__button_3}</a>
           </div>
         </aside>
 
@@ -75,10 +77,10 @@ import CTABand from '../../components/CTABand.astro';
 
   <!-- CTA -->
   <CTABand
-    heading="Not sure if you need a referral?"
-    subheading="Contact us directly and we'll help you work out the best way to access support."
-    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
-    secondaryBtn={{ text: 'Need Help Now', href: '/need-help-now/' }}
+    heading={pageText.cta__heading}
+    subheading={pageText.cta__subheading}
+    primaryBtn={pageText.cta__primarybtn}
+    secondaryBtn={pageText.cta__secondarybtn}
     dark={true}
   />
 
@@ -93,6 +95,12 @@ import CTABand from '../../components/CTABand.astro';
     background-position: center;
     display: flex;
     align-items: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    .referral-hero {
+      background-image: url('/images/generic/bandw-forset-sun-beam-1080.jpeg');
+    }
   }
 
   .referral-hero__overlay {
@@ -137,7 +145,7 @@ import CTABand from '../../components/CTABand.astro';
     margin-bottom: 36px;
   }
 
-  .referral-intro a {
+  .referral-intro :global(a) {
     color: var(--color-primary);
     font-weight: 500;
   }
@@ -158,7 +166,7 @@ import CTABand from '../../components/CTABand.astro';
     margin-bottom: 28px;
   }
 
-  .referral-intro--privacy a {
+  .referral-intro--privacy :global(a) {
     color: var(--color-primary);
     font-weight: 500;
   }
@@ -199,7 +207,7 @@ import CTABand from '../../components/CTABand.astro';
     color: rgba(255,255,255,0.85);
   }
 
-  .urgent-box p a {
+  .urgent-box p :global(a) {
     color: var(--color-white);
     font-weight: 600;
     text-decoration: underline;

@@ -1,0 +1,29 @@
+{
+  "serviceName": "Dress for Success Sydney",
+  "organisation": "Dress for Success Sydney",
+  "category": "Clothing support",
+  "categoryGroup": "Other Support",
+  "serviceType": "Material Aid / Resource Support",
+  "contact": {
+    "phone": "(02) 8211 3290",
+    "email": "sydney@dressforsuccess.org.au",
+    "website": "https://sydney.dressforsuccess.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/DressforSuccessSydneyInc/"
+  },
+  "location": {
+    "suburb": "Sydney",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "23 099 525 906",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Dress%20for%20Success%20Sydney"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

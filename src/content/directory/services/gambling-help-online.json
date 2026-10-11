@@ -1,0 +1,27 @@
+{
+  "serviceName": "Gambling Help Online",
+  "organisation": "Gambling Help Online",
+  "category": "Gambling Support",
+  "categoryGroup": "Other Support",
+  "serviceType": "Gambling Counselling",
+  "contact": {
+    "phone": "1800 858 858",
+    "email": null,
+    "website": "https://www.gamblinghelponline.org.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "N/A — Online service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

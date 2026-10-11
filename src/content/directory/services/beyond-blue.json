@@ -1,0 +1,31 @@
+{
+  "serviceName": "Beyond Blue",
+  "organisation": "Beyond Blue",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Mental health support",
+  "contact": {
+    "phone": "1300 224 636",
+    "email": "info@beyondblue.org.au",
+    "website": "https://www.beyondblue.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/beyondblue/",
+    "instagram": "https://www.instagram.com/beyondblueofficial/",
+    "linkedin": "https://www.linkedin.com/company/beyond-blue/"
+  },
+  "location": {
+    "suburb": "Australia",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "87 093 865 840",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Beyond%20Blue"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC; healthdirect; DSS Service Finder"
+}

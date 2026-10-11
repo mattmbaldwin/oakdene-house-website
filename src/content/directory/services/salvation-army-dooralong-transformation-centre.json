@@ -1,0 +1,27 @@
+{
+  "serviceName": "Salvation Army – Dooralong Transformation Centre",
+  "organisation": "Salvation Army – Dooralong Transformation Centre",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Residential Rehabilitation",
+  "contact": {
+    "phone": "(02) 9393 9800",
+    "email": "headfyrst@salvationarmy.org.au",
+    "website": "https://www.salvationarmy.org.au/youthlink/headfyrst/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Central Coast",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "64 472 238 127",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=The%20Salvation%20Army%20%E2%80%94%20Dooralong%20Transformation%20Centre"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

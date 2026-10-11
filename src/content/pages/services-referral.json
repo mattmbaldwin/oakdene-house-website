@@ -1,0 +1,26 @@
+{
+  "seo__browser_title": "Make a Referral — Oakdene House Foundation",
+  "seo__search_description": "Self-referral, family referral, or professional referral to Oakdene House Foundation. We'll be in touch within 2 business days.",
+  "hero__title": "Make a referral to Oakdene House",
+  "hero__intro": "Self-referral, family referral, or professional referral — we'll be in touch within 2 business days.",
+  "main_column__intro": "This form is for anyone referring someone to Oakdene — whether you're referring yourself, a family member, or a client as a professional worker. Complete the form below and our team will review your referral and be in touch within 2 business days. If the situation is urgent, please also call us on [(02) 8717 0999](tel:0287170999).",
+  "main_column__intro_2": "*Everything you share is confidential and handled in line with our [privacy policy](/privacy-policy/).*",
+  "sidebar__heading": "Need urgent help?",
+  "sidebar__text": "If you or someone else is in crisis right now, please don't wait for this referral to be processed. Visit our [Need Help Now page](/need-help-now/) for 24-hour crisis support lines.",
+  "sidebar__button": "Need Help Now",
+  "sidebar__heading_2": "Prefer to call?",
+  "sidebar__text_2": "Our team is available during business hours to take your call.",
+  "sidebar__button_2": "(02) 8717 0999",
+  "sidebar__text_3": "or email",
+  "sidebar__button_3": "admin@oakdenehouse.org.au",
+  "cta__heading": "Not sure if you need a referral?",
+  "cta__subheading": "Contact us directly and we'll help you work out the best way to access support.",
+  "cta__primarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "cta__secondarybtn": {
+    "text": "Need Help Now",
+    "href": "/need-help-now/"
+  }
+}

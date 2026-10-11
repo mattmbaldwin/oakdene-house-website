@@ -1,0 +1,29 @@
+{
+  "serviceName": "PCYC Bankstown",
+  "organisation": "PCYC NSW",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Youth programs / crime prevention",
+  "contact": {
+    "phone": "(02) 9708 0466",
+    "email": "bankstown@pcycnsw.org.au",
+    "website": "https://www.pcycnsw.org.au/bankstown/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/pcycnsw/"
+  },
+  "location": {
+    "suburb": "Bankstown",
+    "lga": "Canterbury-Bankstown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=PCYC%20NSW"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (PCYC NSW)"
+}

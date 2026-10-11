@@ -1,0 +1,29 @@
+{
+  "serviceName": "Sydney Criminal Lawyers – Parramatta",
+  "organisation": "Sydney Criminal Lawyers – Parramatta",
+  "category": "Legal / Justice",
+  "categoryGroup": "Legal & Justice",
+  "serviceType": "Legal / Justice Support",
+  "contact": {
+    "phone": "02 9891 0314",
+    "email": "info@sydneycriminallawyers.com.au",
+    "website": "https://www.sydneycriminallawyers.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/sydneycriminallawyers/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "NSW Law Society registry"
+}

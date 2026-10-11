@@ -1,0 +1,29 @@
+{
+  "serviceName": "Ivy House Healthcare Forensic Reporting Services",
+  "organisation": "Ivy House",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "419465647",
+    "email": "declan@ivyhousehealthcare.com.au",
+    "website": "https://www.ivyhousehealthcare.com.au/our-fees/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/IvyHouseDV/"
+  },
+  "location": {
+    "suburb": "Wollongong",
+    "lga": null,
+    "coverage": "Other NSW"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Ivy%20House"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

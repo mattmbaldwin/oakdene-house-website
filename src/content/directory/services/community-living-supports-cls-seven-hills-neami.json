@@ -1,0 +1,30 @@
+{
+  "serviceName": "Community Living Supports (CLS) Seven Hills",
+  "organisation": "NEAMI",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 8416 1100",
+    "email": "sevenhills@neaminational.org.au",
+    "website": "https://www.neaminational.org.au/services/neami-seven-hills/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/NeamiNational/",
+    "linkedin": "https://www.linkedin.com/company/neami-national/"
+  },
+  "location": {
+    "suburb": "Seven Hills",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "52 105 082 460",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Neami%20National"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

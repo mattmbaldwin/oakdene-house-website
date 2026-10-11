@@ -1,0 +1,29 @@
+{
+  "serviceName": "Linking Hearts",
+  "organisation": "Linking Hearts",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "0412 549 524\n02 9786 4404",
+    "email": "info@linkinghearts.org.au",
+    "website": "https://linkinghearts.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/linkingheartsAU/"
+  },
+  "location": {
+    "suburb": "Lakemba",
+    "lga": "Canterbury-Bankstown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Linking%20Hearts"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

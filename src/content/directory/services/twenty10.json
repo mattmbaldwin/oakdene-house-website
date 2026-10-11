@@ -1,0 +1,29 @@
+{
+  "serviceName": "Twenty10",
+  "organisation": "Twenty10",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 8594 9555",
+    "email": "info@twenty10.org.au",
+    "website": "https://twenty10.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/twenty10glcs/"
+  },
+  "location": {
+    "suburb": "Chippendale",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "31 002 727 859",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Twenty10%20incorporating%20GLCS%20NSW"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

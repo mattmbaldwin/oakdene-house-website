@@ -1,0 +1,27 @@
+{
+  "serviceName": "NSW Health – Mental Health Access Line",
+  "organisation": "NSW Health – Mental Health Access Line",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Statewide intake",
+  "contact": {
+    "phone": "02 8093 6778",
+    "email": "vinnies@vinnies.org.au",
+    "website": "https://www.health.nsw.gov.au/aod/resources/Factsheets/ccc-program-factsheet.pdf\n\nhttps://www.vinnies.org.au/nsw/find-help/cccp/continuing-coordinated-care-program-western-sydney"
+  },
+  "social": {},
+  "location": {
+    "suburb": "NSW",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

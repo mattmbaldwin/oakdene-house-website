@@ -1,0 +1,52 @@
+{
+  "seo__browser_title": "Accessibility — Oakdene House Foundation",
+  "seo__search_description": "Oakdene House Foundation Accessibility Statement — our commitment to making our website and services accessible to everyone.",
+  "hero__title": "Accessibility",
+  "date__text": "*Last updated: \\[Launch date to be inserted\\]*",
+  "intro__text": "Oakdene House Foundation is committed to making our website accessible to everyone, including people with disabilities.",
+  "our_commitment__heading": "Our commitment",
+  "our_commitment__text": "We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards across our website. We are continuously working to improve accessibility and welcome feedback from people who use assistive technologies.",
+  "what_we_ve_done__heading": "What we've done",
+  "what_we_ve_done__text": "Our website includes:",
+  "what_we_ve_done__list": [
+    "Semantic HTML throughout for better screen reader compatibility",
+    "Descriptive alt text on images",
+    "Keyboard navigation support",
+    "Sufficient colour contrast (WCAG AA)",
+    "Resizable text without loss of functionality",
+    "Skip-to-content links on every page",
+    "Clear, plain-language content",
+    "Logical heading structure",
+    "Labels and instructions on all form fields"
+  ],
+  "known_limitations__heading": "Known limitations",
+  "known_limitations__text": "We're honest about where we haven't got there yet:",
+  "known_limitations__list": [
+    "Some older PDF resources may not be fully accessible. If you need an accessible version of any document, please [contact us](/contact/) and we'll provide one.",
+    "Third-party embedded forms (Jotform) and payment tools (Stripe) follow their own accessibility standards, which may differ slightly from ours.",
+    "Video content, if added in future, will include captions — please let us know if you find any without."
+  ],
+  "accessibility_at_our_centre__heading": "Accessibility at our centre",
+  "accessibility_at_our_centre__text": "Our centre at 29 Vine Street, Fairfield has:",
+  "accessibility_at_our_centre__list": [
+    "Step-free access to the main entrance",
+    "Accessible parking via the Fairfield RSL car park on the corner of Vine and Bertha Streets",
+    "Staff trained to support people with a range of accessibility needs",
+    "Interpreter services available on request — please let us know when you [contact us](/contact/)"
+  ],
+  "accessibility_at_our_centre__text_2": "If you have specific accessibility requirements for a visit or appointment, please [contact us](/contact/) ahead of time so we can make sure everything is in place.",
+  "need_our_help__heading": "Need our help?",
+  "need_our_help__text": "If you have trouble accessing any part of our website or any of our services, please let us know. We're happy to provide information or support in the format that works best for you — large print, plain text, over the phone, or in person.",
+  "need_our_help__text_2": "Email: [admin@oakdenehouse.org.au](mailto:admin@oakdenehouse.org.au)",
+  "need_our_help__text_3": "Phone: [(02) 8717 0999](tel:+61287170999)",
+  "need_our_help__text_4": "We aim to respond to accessibility feedback within 2 business days.",
+  "reporting_an_issue__heading": "Reporting an issue",
+  "reporting_an_issue__text": "If you encounter an accessibility barrier on our website, please tell us:",
+  "reporting_an_issue__list": [
+    "The page you were on (the URL is helpful)",
+    "What you were trying to do",
+    "What happened",
+    "The assistive technology or device you were using, if relevant"
+  ],
+  "reporting_an_issue__text_2": "We take accessibility seriously and will work to fix issues as quickly as we can."
+}

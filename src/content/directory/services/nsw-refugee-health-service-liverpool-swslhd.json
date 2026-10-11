@@ -1,0 +1,29 @@
+{
+  "serviceName": "NSW Refugee Health Service - Liverpool",
+  "organisation": "SWSLHD",
+  "category": "Health",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Refugee health screening / referral",
+  "contact": {
+    "phone": "(02) 8778 0770",
+    "email": "swsrhs@health.nsw.gov.au",
+    "website": "https://www.swslhd.health.nsw.gov.au/refugee/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/SouthWesternSydneyLocalHealthDistrict/"
+  },
+  "location": {
+    "suburb": "Liverpool",
+    "lga": "Liverpool",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "NSW Health (SWSLHD)"
+}

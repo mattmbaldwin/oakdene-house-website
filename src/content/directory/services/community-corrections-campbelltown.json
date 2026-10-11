@@ -1,0 +1,27 @@
+{
+  "serviceName": "Community Corrections Campbelltown",
+  "organisation": "Community Corrections Campbelltown",
+  "category": "Legal / Justice",
+  "categoryGroup": "Legal & Justice",
+  "serviceType": "Legal / Justice Support",
+  "contact": {
+    "phone": "02 4627 7200",
+    "email": "communityCorrections.campbelltown@dcj.nsw.gov.au",
+    "website": "https://www.dcj.nsw.gov.au/justice-housing-and-homelessness/corrective-services-nsw/community-corrections.html"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Campbelltown",
+    "lga": "Campbelltown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

@@ -1,0 +1,30 @@
+{
+  "serviceName": "Bilingual Hospital to Home",
+  "organisation": "One Door",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9199 6185",
+    "email": "bilingualH2H@onedoor.org.au",
+    "website": "https://www.onedoor.org.au/our-services/mental-health-supports/bilingual-support-services"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/OneDoorMentalHealth/",
+    "linkedin": "https://www.linkedin.com/company/one-door-mental-health/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "71 002 442 248",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=One%20Door%20Mental%20Health"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

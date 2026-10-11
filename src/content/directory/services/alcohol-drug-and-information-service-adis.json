@@ -1,0 +1,27 @@
+{
+  "serviceName": "Alcohol Drug and Information Service (ADIS)",
+  "organisation": "Alcohol Drug and Information Service (ADIS)",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1800 250 015",
+    "email": null,
+    "website": "https://yourroom.health.nsw.gov.au/getting-help/Pages/adis.aspx"
+  },
+  "social": {},
+  "location": {
+    "suburb": "N/A - National service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Alcohol%20Drug%20and%20Information%20Service%20%28ADIS%29"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

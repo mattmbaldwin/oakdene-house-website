@@ -1,22 +1,19 @@
 ---
+import programs from '../../content/programs.json';
+import { inline } from '../../lib/format';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import InfoTable from '../../components/InfoTable.astro';
 import CTABand from '../../components/CTABand.astro';
+import pageText from '../../content/pages/services-financial-counselling.json';
 
-const serviceRows = [
-  { label: 'Cost', value: 'Free' },
-  { label: 'Access', value: 'By appointment — no referral needed' },
-  { label: 'Location', value: 'Oakdene Centre, 29 Vine Street, Fairfield' },
-  { label: 'Phone', value: '<a href="tel:0287170999">(02) 8717 0999</a>' },
-  { label: 'Email', value: '<a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a>' },
-];
+const serviceRows = programs.financial_counselling.rows.map((row) => ({ label: row.label, value: inline(row.value) }));
 
 ---
 
 <BaseLayout
-  title="Financial Counselling — Oakdene House Foundation"
-  description="Free financial counselling at Oakdene House for people experiencing hardship. Help with debt, bills, expenses and financial planning in Fairfield, Western Sydney."
-  ogImage="/images/generic/colour-business-man_distress.png"
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
+  ogImage="/images/generic/colour-business-man_distress.jpg"
 >
 
   <!-- HERO -->
@@ -30,8 +27,8 @@ const serviceRows = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">Financial Counselling</span>
       </nav>
-      <h1>Financial Counselling</h1>
-      <p class="fc-hero__lead">Free guidance for people experiencing financial hardship.</p>
+      <h1>{pageText.hero__title}</h1>
+      <p class="fc-hero__lead">{pageText.hero__intro}</p>
     </div>
   </section>
 
@@ -41,41 +38,32 @@ const serviceRows = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">The Service</p>
-            <h2 id="fc-overview-heading">Practical help for financial pressure</h2>
+            <p class="section-heading__eyebrow">{pageText.overview__eyebrow}</p>
+            <h2 id="fc-overview-heading">{pageText.overview__heading}</h2>
           </div>
-          <p>At Oakdene House Foundation, we understand that financial stress and mental health are often deeply connected. Money worries can affect sleep, relationships, confidence, physical health, and recovery from addiction or gambling harm. For many people, financial pressure becomes one of the biggest barriers to stability and wellbeing.</p>
+          <p>{pageText.overview__text}</p>
 
-          <p>Our Financial Counselling Service provides free, confidential support from a qualified Financial Counsellor for individuals and families experiencing financial hardship, debt stress, gambling-related financial impacts, housing insecurity, or difficulty managing day-to-day costs.</p>
+          <p>{pageText.overview__text_2}</p>
 
-          <p>This is not a budgeting app or a quick advice session. Financial counselling is a professional support service focused on helping people understand their situation, reduce pressure, and regain a sense of control.</p>
+          <p>{pageText.overview__text_3}</p>
 
-          <h3 class="section-subhead">What a Financial Counsellor can help with</h3>
+          <h3 class="section-subhead">{pageText.overview__subheading}</h3>
 
           <ul class="offer-list">
-            <li>Debt and overdue bills</li>
-            <li>Gambling-related financial harm</li>
-            <li>Rent or mortgage stress</li>
-            <li>Utility disconnections and payment plans</li>
-            <li>Credit cards, personal loans, and buy-now-pay-later debt</li>
-            <li>Centrelink and financial hardship issues</li>
-            <li>Negotiating with creditors</li>
-            <li>Financial stress linked to addiction or mental health challenges</li>
-            <li>Creating practical financial plans</li>
-            <li>Referrals to emergency relief and community supports</li>
-          </ul>
+{pageText.overview__list.map((item) => <li>{item}</li>)}
+</ul>
 
           <div class="access-note">
-            <h3>How to access</h3>
-            <p>You can access financial counselling through a referral form, by phone, or by email. No prior referral from another service is required.</p>
+            <h3>{pageText.overview__subheading_2}</h3>
+            <p>{pageText.overview__text_4}</p>
             <div class="btn-group">
-              <a href="/services/referral/" class="btn btn--primary">Submit a Request</a><!-- TODO: Replace with live Jotform URL -->
-              <a href="/contact/" class="btn btn--secondary">Contact Us</a>
+              <a href="/services/referral/" class="btn btn--primary">{pageText.overview__button}</a><!-- TODO: Replace with live Jotform URL -->
+              <a href="/contact/" class="btn btn--secondary">{pageText.overview__button_2}</a>
             </div>
           </div>
         </div>
         <div>
-          <InfoTable rows={serviceRows} caption="Service details" />
+          <InfoTable rows={serviceRows} caption={pageText.overview__caption} />
         </div>
       </div>
     </div>
@@ -86,24 +74,24 @@ const serviceRows = [
     <div class="container">
       <div class="what-inner">
         <div class="section-heading">
-          <p class="section-heading__eyebrow">A Practical and Compassionate Approach</p>
-          <h2 id="approach-heading">Support without lectures or judgement</h2>
+          <p class="section-heading__eyebrow">{pageText.our_approach_fca_accreditation__eyebrow}</p>
+          <h2 id="approach-heading">{pageText.our_approach_fca_accreditation__heading}</h2>
         </div>
 
         <div class="approach-content">
-          <p>Financial counselling at Oakdene is delivered in a respectful, non-judgemental way. Many people avoid seeking help because of shame, embarrassment, or fear about their financial situation. Our role is not to lecture or criticise. It is to help reduce pressure, improve understanding, and support practical next steps.</p>
+          <p>{pageText.our_approach_fca_accreditation__text}</p>
 
-          <p>Where needed, financial counselling can also work alongside our counselling, recovery, and support programs to provide more holistic care. This is particularly important for people affected by gambling harm, addiction, relationship breakdown, or periods of significant emotional distress.</p>
+          <p>{pageText.our_approach_fca_accreditation__text_2}</p>
 
-          <h3 class="section-subhead">Qualified and Professional Support</h3>
+          <h3 class="section-subhead">{pageText.our_approach_fca_accreditation__subheading}</h3>
 
-          <p>All financial counselling services at Oakdene House Foundation are delivered by a qualified Financial Counsellor with experience supporting people facing complex financial and personal challenges. Our Financial Counsellor is professionally registered and operates in line with Australian financial counselling standards and ethical requirements.</p>
+          <p>{pageText.our_approach_fca_accreditation__text_3}</p>
 
-          <p>Financial counsellors work independently and in the best interests of the client, providing free, confidential, and non-judgemental support. Financial counselling in Australia is supported nationally by Financial Counselling Australia (FCA), the peak body representing the profession.</p>
+          <p>{pageText.our_approach_fca_accreditation__text_4}</p>
 
           <div class="fca-credit">
-            <p>Accredited member of</p>
-            <img src="/images/logos/partners/fca-logo-slim.png" alt="Financial Counselling Australia" class="fca-credit__logo" />
+            <p>{pageText.our_approach_fca_accreditation__text_5}</p>
+            <img src="/images/logos/partners/fca-logo-slim.png" alt={pageText.our_approach_fca_accreditation__image_alt} class="fca-credit__logo" />
           </div>
         </div>
       </div>
@@ -112,10 +100,10 @@ const serviceRows = [
 
   <!-- CTA -->
   <CTABand
-    heading="Need help with finances?"
-    subheading="Get in touch to arrange a session. We will start from where you are."
-    primaryBtn={{ text: 'Submit a Request', href: '/services/referral/' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={pageText.cta__heading}
+    subheading={pageText.cta__subheading}
+    primaryBtn={pageText.cta__primarybtn}
+    secondaryBtn={pageText.cta__secondarybtn}
     dark={true}
   />
 
@@ -125,11 +113,17 @@ const serviceRows = [
   .fc-hero {
     position: relative;
     min-height: 380px;
-    background-image: url('/images/generic/colour-business-man_distress.png');
+    background-image: url('/images/generic/colour-business-man_distress.jpg');
     background-size: cover;
     background-position: center top;
     display: flex;
     align-items: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    .fc-hero {
+      background-image: url('/images/generic/colour-business-man_distress-1080.jpg');
+    }
   }
 
   .fc-hero__overlay {

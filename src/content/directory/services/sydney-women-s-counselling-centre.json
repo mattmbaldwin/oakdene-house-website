@@ -1,0 +1,27 @@
+{
+  "serviceName": "Sydney Women's Counselling Centre",
+  "organisation": "Sydney Women's Counselling Centre",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "02 9718 1955",
+    "email": "help@womenscounselling.com.au",
+    "website": "https://www.womenscounselling.com.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Campsie",
+    "lga": "Canterbury-Bankstown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Sydney%20Women%27s%20Counselling%20Centre"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,29 @@
+{
+  "serviceName": "Domestic Family Sexual Violence (DFSV) Counselling",
+  "organisation": "Domestic Violence Service Management",
+  "category": "Domestic Violence",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "(02) 9621 0800",
+    "email": "dfsvcounselling@dvnswsm.org.au",
+    "website": "https://dvnswsm.org.au/dfsv-specialist-counselling-service/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/DVServiceManagement/"
+  },
+  "location": {
+    "suburb": "Blacktown",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "37 437 014 720",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Domestic%20Violence%20Service%20Management"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

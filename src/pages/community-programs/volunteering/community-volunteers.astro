@@ -1,26 +1,17 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CTABand from '../../../components/CTABand.astro';
+import pageText from '../../../content/pages/community-programs-volunteering-community-volunteers.json';
 
-const roles = [
-  'Kitchen support',
-  'Boutique support',
-  'Laundrette support',
-  'General community program assistance',
-  'Event and activity support',
-];
+const roles = pageText.data__roles;
 
-const lookFor = [
-  'A respectful and reliable approach',
-  'A willingness to contribute in a team environment',
-  'A commitment to Oakdene\'s values and community focus',
-];
+const lookFor = pageText.data__look_for;
 ---
 
 <BaseLayout
-  title="Community Volunteers — Oakdene House Foundation"
-  description="Volunteer in the community at Oakdene House Foundation — supporting the Kitchen, Boutique, Laundrette and community programs in Fairfield, Western Sydney."
-  ogImage="/images/volunteers/oakdene-volunteer-kitchen-1a.png"
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
+  ogImage="/images/volunteers/oakdene-volunteer-kitchen-1a.jpg"
 >
 
   <!-- HERO -->
@@ -36,8 +27,8 @@ const lookFor = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">Community Volunteers</span>
       </nav>
-      <h1>Community Volunteers</h1>
-      <p class="cv-hero__lead">A direct and practical way to give back to your community.</p>
+      <h1>{pageText.hero__title}</h1>
+      <p class="cv-hero__lead">{pageText.hero__intro}</p>
     </div>
   </section>
 
@@ -47,23 +38,23 @@ const lookFor = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">About This Role</p>
-            <h2 id="cv-overview-heading">Part of the day-to-day</h2>
+            <p class="section-heading__eyebrow">{pageText.overview__eyebrow}</p>
+            <h2 id="cv-overview-heading">{pageText.overview__heading}</h2>
           </div>
-          <p>Community volunteers are part of the day-to-day life of Oakdene House. They support practical service delivery, help create a welcoming atmosphere and bring energy and connection to our programs.</p>
-          <p>Volunteering here is hands-on, meaningful, and valued by the people we support.</p>
+          <p>{pageText.overview__text}</p>
+          <p>{pageText.overview__text_2}</p>
 
-          <h3 class="roles-heading">Possible volunteer roles</h3>
+          <h3 class="roles-heading">{pageText.overview__subheading}</h3>
           <ul class="item-list">
             {roles.map(r => <li>{r}</li>)}
           </ul>
         </div>
         <div>
           <div class="cv-image">
-            <img src="/images/kitchen/oakdene-kitchen-volunteer-serving-with-smile.jpg" alt="Smiling volunteer serving food at Oakdene Kitchen" loading="lazy" />
+            <img src="/images/kitchen/oakdene-kitchen-volunteer-serving-with-smile.jpg" alt={pageText.overview__image_alt} loading="lazy" />
           </div>
           <div class="cv-image cv-image--second">
-            <img src="/images/kitchen/oakdene-kitchen-volunteers-with-food.jpg" alt="Volunteers preparing food at Oakdene" loading="lazy" />
+            <img src="/images/kitchen/oakdene-kitchen-volunteers-wrappimg-bread.jpg" alt={pageText.overview__image_alt_2} loading="lazy" />
           </div>
         </div>
       </div>
@@ -75,8 +66,8 @@ const lookFor = [
     <div class="container">
       <div class="lookfor-inner">
         <div class="section-heading section-heading--center">
-          <p class="section-heading__eyebrow">Who We're Looking For</p>
-          <h2 id="lookfor-heading">What we look for in volunteers</h2>
+          <p class="section-heading__eyebrow">{pageText.what_we_look_for__eyebrow}</p>
+          <h2 id="lookfor-heading">{pageText.what_we_look_for__heading}</h2>
         </div>
         <div class="lookfor-items">
           {lookFor.map(item => (
@@ -90,8 +81,8 @@ const lookFor = [
         </div>
 
         <div class="apply-note">
-          <p>No formal qualifications are required. A genuine interest in supporting people and a respectful attitude are what matter most.</p>
-          <a href="/community-programs/volunteering/" class="btn btn--primary">Apply to Volunteer</a><!-- TODO: Replace with live Jotform URL -->
+          <p>{pageText.what_we_look_for__text}</p>
+          <a href="/community-programs/volunteering/" class="btn btn--primary">{pageText.what_we_look_for__button}</a><!-- TODO: Replace with live Jotform URL -->
         </div>
       </div>
     </div>
@@ -99,10 +90,10 @@ const lookFor = [
 
   <!-- CTA -->
   <CTABand
-    heading="Ready to apply?"
-    subheading="Submit an application and our team will be in touch to discuss next steps."
-    primaryBtn={{ text: 'Apply to Volunteer', href: '/community-programs/volunteering/' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={pageText.cta__heading}
+    subheading={pageText.cta__subheading}
+    primaryBtn={pageText.cta__primarybtn}
+    secondaryBtn={pageText.cta__secondarybtn}
     dark={true}
   />
 
@@ -112,11 +103,17 @@ const lookFor = [
   .cv-hero {
     position: relative;
     min-height: 380px;
-    background-image: url('/images/volunteers/oakdene-volunteer-kitchen-1a.png');
+    background-image: url('/images/volunteers/oakdene-volunteer-kitchen-1a.jpg');
     background-size: cover;
     background-position: center;
     display: flex;
     align-items: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    .cv-hero {
+      background-image: url('/images/volunteers/oakdene-volunteer-kitchen-1a-1080.jpg');
+    }
   }
 
   .cv-hero__overlay {

@@ -1,0 +1,30 @@
+{
+  "serviceName": "The Buttery",
+  "organisation": "The Buttery",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Residential Rehabilitation",
+  "contact": {
+    "phone": "1300 851 277",
+    "email": "info@buttery.org.au",
+    "website": "https://buttery.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/TheButteryAustralia/",
+    "linkedin": "https://www.linkedin.com/company/the-buttery/"
+  },
+  "location": {
+    "suburb": "Northern NSW",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "85 002 678 994",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=The%20Buttery"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (ABN 85 002 678 994); NSW Health AOD service directory"
+}

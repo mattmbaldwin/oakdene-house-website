@@ -1,0 +1,31 @@
+{
+  "serviceName": "headspace Mount Druitt",
+  "organisation": "Uniting",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "1800 683 784",
+    "email": "headspacemtdruitt@uniting.org",
+    "website": "https://headspace.org.au/headspace-centres/mount-druitt/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/headspaceAustralia/",
+    "instagram": "https://www.instagram.com/headspace_aus/",
+    "linkedin": "https://www.linkedin.com/company/headspace-national-youth-mental-health-foundation/"
+  },
+  "location": {
+    "suburb": "Mount Druitt",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "26 137 533 843",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=headspace%20National%20Youth%20Mental%20Health%20Foundation"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

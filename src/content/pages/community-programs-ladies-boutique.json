@@ -1,0 +1,76 @@
+{
+  "seo__browser_title": "Ladies Boutique — Oakdene House Foundation",
+  "seo__search_description": "Oakdene Ladies Boutique offers clothing, salon services and a private, supportive space for women doing it tough. By appointment only.",
+  "hero__title": "Oakdene Ladies Boutique",
+  "hero__intro": "A warm, private and supportive space for women who are doing it tough.",
+  "hero__button": "Submit Referral",
+  "hero__button_2": "Make an Enquiry",
+  "intro_details__eyebrow": "About the Boutique",
+  "intro_details__heading": "Support for women, by women",
+  "intro_details__text": "The Oakdene Ladies Boutique is a warm, private and supportive space designed for women who are doing it tough. We offer more than just clothing — we offer an experience that treats women with dignity and care.",
+  "intro_details__text_2": "Access is by referral only.",
+  "intro_details__text_3": "Support for Women by Women",
+  "intro_details__caption": "Service details",
+  "what_we_offer__eyebrow": "What We Offer",
+  "what_we_offer__heading": "Everything in one welcoming space",
+  "boutique_images__image_alt": "Inside the Oakdene Ladies Boutique",
+  "boutique_images__image_alt_2": "Salon area at the Oakdene Ladies Boutique",
+  "boutique_images__image_alt_3": "Clothing shelves inside the boutique",
+  "boutique_images__image_alt_4": "Looking down the boutique floor",
+  "eligibility__eyebrow": "Who Can Access",
+  "eligibility__heading": "Eligibility and access",
+  "eligibility__subheading": "Automatic eligibility",
+  "eligibility__text": "You are automatically eligible if you meet any of these:",
+  "eligibility__list": [
+    "Receiving Centrelink under $1,200/fortnight **and** hold a concession card",
+    "You have been referred by a service or professional",
+    "You are in crisis"
+  ],
+  "eligibility__subheading_2": "Financial stress assessment",
+  "eligibility__text_2": "We will chat with you if 2 or more of these apply:",
+  "eligibility__text_3": "Maximum **2 visits per 12 months per household**. Emergency override possible with staff approval.",
+  "eligibility__subheading_3": "How to access",
+  "eligibility__text_4": "You can be referred from services, health professionals, schools, or DV services. Referral only.",
+  "access_promise__text": "Our access promise",
+  "access_promise__text_2": "We believe in access. If cost is a barrier, please speak with us. **No woman will be turned away due to financial difficulty.**",
+  "referral_form__eyebrow": "Make a Referral",
+  "referral_form__heading": "Submit a referral",
+  "cta__heading": "Ready to visit or make a referral?",
+  "cta__primarybtn": {
+    "text": "Submit Referral",
+    "href": "#referral-form"
+  },
+  "cta__secondarybtn": {
+    "text": "Make an Enquiry",
+    "href": "/contact/"
+  },
+  "data__offerings": [
+    {
+      "heading": "Clothing Hub",
+      "description": "A real shopping experience with quality clothing and accessories selected with care.",
+      "icon": "clothing"
+    },
+    {
+      "heading": "Salon Services",
+      "description": "Professional wash, cut, and blow-dry. No colouring or styling.",
+      "icon": "salon"
+    },
+    {
+      "heading": "Private Space",
+      "description": "A private fitting space where you can browse and try items in comfort.",
+      "icon": "private"
+    },
+    {
+      "heading": "Community",
+      "description": "Connection with other women and staff in a supportive environment.",
+      "icon": "community"
+    }
+  ],
+  "data__financial_indicators": [
+    "Behind on rent",
+    "Skipping meals",
+    "3 or more children",
+    "Disability caring burden",
+    "Limited disposable income"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "serviceName": "The Salvation Army",
+  "organisation": "The Salvation Army",
+  "category": "Addiction",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Recovery services",
+  "contact": {
+    "phone": "(02) 9393 9800",
+    "email": "headfyrst@salvationarmy.org.au",
+    "website": "https://www.salvationarmy.org.au/youthlink/headfyrst/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/SalvosAustralia/",
+    "instagram": "https://www.instagram.com/salvosaustralia/",
+    "linkedin": "https://www.linkedin.com/company/the-salvation-army-australia/"
+  },
+  "location": {
+    "suburb": "Castle Hill",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "64 472 238 127",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=The%20Salvation%20Army%20Australia%20Territory"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

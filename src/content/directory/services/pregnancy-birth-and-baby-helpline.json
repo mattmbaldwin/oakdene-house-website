@@ -1,0 +1,30 @@
+{
+  "serviceName": "Pregnancy, Birth and Baby Helpline",
+  "organisation": "Pregnancy, Birth and Baby Helpline",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "1800 882 436",
+    "email": "enquiries@pregnancybirthbaby.org.au",
+    "website": "https://www.pregnancybirthbaby.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/pregnancybirthbaby/",
+    "instagram": "https://www.instagram.com/pregnancybirthbaby/"
+  },
+  "location": {
+    "suburb": "N/A — National service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Pregnancy%2C%20Birth%20and%20Baby%20Helpline"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": "healthdirect (operating org)"
+}

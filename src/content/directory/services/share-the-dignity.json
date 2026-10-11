@@ -1,0 +1,31 @@
+{
+  "serviceName": "Share the Dignity",
+  "organisation": "Share the Dignity",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Material Aid / Resource Support",
+  "contact": {
+    "phone": null,
+    "email": "info@sharethedignity.org.au",
+    "website": "https://www.sharethedignity.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/ShareTheDignity/",
+    "instagram": "@sharethedigni ty",
+    "linkedin": "https://www.linkedin.com/company/share-the-dignity/"
+  },
+  "location": {
+    "suburb": null,
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "80 605 113 595",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Share%20the%20Dignity"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (ABN 80 605 113 595); Ask Izzy"
+}

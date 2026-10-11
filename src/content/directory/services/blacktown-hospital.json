@@ -1,0 +1,27 @@
+{
+  "serviceName": "Blacktown Hospital",
+  "organisation": "Blacktown Hospital",
+  "category": "Health",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Public hospital",
+  "contact": {
+    "phone": "(02) 8881 8888",
+    "email": "blacktown@wslhd.health.nsw.gov.au",
+    "website": "https://www.wslhd.health.nsw.gov.au/services/hospitals/blacktown"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Blacktown",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

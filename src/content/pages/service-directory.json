@@ -1,0 +1,21 @@
+{
+  "seo__browser_title": "Community Service Directory — Oakdene House Foundation",
+  "hero__title": "Community service directory",
+  "filter_bar__label": "Search",
+  "filter_bar__label_2": "Category",
+  "filter_bar__label_3": "Location",
+  "service_cards__heading": "Service listings",
+  "empty_state__text": "No services match those filters. Try widening your search, or browse the [wider directories below](#other-directories).",
+  "other_directories__eyebrow": "Going Further",
+  "other_directories__heading": "Can't find what you need? Try these wider directories.",
+  "other_directories__intro": "When a service isn't in our directory, these registers and finders can help. Many of our listed services cross-reference these.",
+  "cta__heading": "Need help working out where to start?",
+  "cta__primarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "cta__secondarybtn": {
+    "text": "Get Support",
+    "href": "/forms/"
+  }
+}

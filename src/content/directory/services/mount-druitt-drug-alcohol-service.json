@@ -1,0 +1,27 @@
+{
+  "serviceName": "Mount Druitt Drug & Alcohol Service",
+  "organisation": "Mount Druitt Drug & Alcohol Service",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community treatment",
+  "contact": {
+    "phone": "02 9831 3000",
+    "email": "inquiry@wslhd.health.nsw.gov.au",
+    "website": "https://www.wslhd.health.nsw.gov.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Mount Druitt",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Mount%20Druitt%20Drug%20%26%20Alcohol%20Service"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,298 @@
+{
+  "oakdene_kitchen": {
+    "title": "Oakdene Kitchen",
+    "rows": [
+      {
+        "label": "Days",
+        "value": "Tuesday, Wednesday, Thursday"
+      },
+      {
+        "label": "Hours",
+        "value": "12pm–2pm"
+      },
+      {
+        "label": "Location",
+        "value": "9/2 Dale Street, Fairfield"
+      },
+      {
+        "label": "Cost",
+        "value": "Free"
+      },
+      {
+        "label": "Email",
+        "value": "kitchen@oakdenehouse.org.au"
+      },
+      {
+        "label": "Phone",
+        "value": "0415 156 100"
+      }
+    ]
+  },
+  "staple_food_packs": {
+    "title": "Staple Food Packs",
+    "rows": [
+      {
+        "label": "Day",
+        "value": "Every Friday"
+      },
+      {
+        "label": "Hours",
+        "value": "12pm–1pm"
+      },
+      {
+        "label": "Cost",
+        "value": "Free"
+      },
+      {
+        "label": "Email",
+        "value": "kitchen@oakdenehouse.org.au"
+      },
+      {
+        "label": "Phone",
+        "value": "0415 156 100"
+      }
+    ]
+  },
+  "oakdene_laundrette": {
+    "title": "Oakdene Laundrette",
+    "rows": [
+      {
+        "label": "Days",
+        "value": "Tuesday to Thursday"
+      },
+      {
+        "label": "Hours",
+        "value": "12pm–2:30pm"
+      },
+      {
+        "label": "Last entry",
+        "value": "1pm"
+      },
+      {
+        "label": "Location",
+        "value": "1 Dale Street, Fairfield"
+      },
+      {
+        "label": "Cost",
+        "value": "Free"
+      },
+      {
+        "label": "Email",
+        "value": "kitchen@oakdenehouse.org.au"
+      },
+      {
+        "label": "Phone",
+        "value": "0415 156 100"
+      }
+    ]
+  },
+  "used_clothing_store": {
+    "title": "Used Clothing Store",
+    "rows": [
+      {
+        "label": "Days",
+        "value": "Tuesday, Wednesday, Thursday"
+      },
+      {
+        "label": "Hours",
+        "value": "12pm–2pm"
+      },
+      {
+        "label": "Location",
+        "value": "Inside the Laundrette, 1 Dale Street, Fairfield"
+      },
+      {
+        "label": "Cost",
+        "value": "Free"
+      },
+      {
+        "label": "Email",
+        "value": "kitchen@oakdenehouse.org.au"
+      },
+      {
+        "label": "Phone",
+        "value": "0415 156 100"
+      }
+    ]
+  },
+  "ladies_boutique": {
+    "title": "Ladies Boutique",
+    "rows": [
+      {
+        "label": "Days",
+        "value": "By appointment only"
+      },
+      {
+        "label": "Hours",
+        "value": "By appointment only"
+      },
+      {
+        "label": "Access",
+        "value": "By appointment only"
+      },
+      {
+        "label": "Cost",
+        "value": "Gold Coin Donation"
+      },
+      {
+        "label": "Email",
+        "value": "boutique@oakdenehouse.org.au"
+      },
+      {
+        "label": "Phone",
+        "value": "0415 156 100"
+      }
+    ]
+  },
+  "group_dbt_therapy": {
+    "title": "Group DBT Therapy",
+    "rows": [
+      {
+        "label": "Cost",
+        "value": "Free"
+      },
+      {
+        "label": "Access",
+        "value": "By appointment — contact to discuss suitability"
+      },
+      {
+        "label": "Location",
+        "value": "Oakdene Centre, 29 Vine Street, Fairfield"
+      },
+      {
+        "label": "Phone",
+        "value": "(02) 8717 0999"
+      },
+      {
+        "label": "Email",
+        "value": "admin@oakdenehouse.org.au"
+      }
+    ]
+  },
+  "financial_counselling": {
+    "title": "Financial Counselling",
+    "rows": [
+      {
+        "label": "Cost",
+        "value": "Free"
+      },
+      {
+        "label": "Access",
+        "value": "By appointment — no referral needed"
+      },
+      {
+        "label": "Location",
+        "value": "Oakdene Centre, 29 Vine Street, Fairfield"
+      },
+      {
+        "label": "Phone",
+        "value": "(02) 8717 0999"
+      },
+      {
+        "label": "Email",
+        "value": "admin@oakdenehouse.org.au"
+      }
+    ]
+  },
+  "our_centre": {
+    "title": "Our Centre (visiting details)",
+    "rows": [
+      {
+        "label": "Address",
+        "value": "29 Vine St, Fairfield NSW 2165"
+      },
+      {
+        "label": "Phone",
+        "value": "(02) 8717 0999"
+      },
+      {
+        "label": "Email",
+        "value": "admin@oakdenehouse.org.au"
+      },
+      {
+        "label": "Parking",
+        "value": "Open air car park, corner of Vine & Bertha Streets"
+      }
+    ]
+  },
+  "contact_hours": {
+    "title": "Contact page: program hours table",
+    "rows": [
+      {
+        "label": "Oakdene Kitchen",
+        "value": "Tuesday–Thursday, 12pm–2pm"
+      },
+      {
+        "label": "Staple Food Packs",
+        "value": "Every Friday, 12pm–1pm (commencing 17 April 2026)"
+      },
+      {
+        "label": "Oakdene Laundrette",
+        "value": "Tuesday–Thursday, 12pm–2:30pm (last entry 1pm)"
+      },
+      {
+        "label": "Used Clothing Store",
+        "value": "Tuesday–Thursday, 12pm–2pm"
+      },
+      {
+        "label": "Ladies Boutique",
+        "value": "By appointment only"
+      },
+      {
+        "label": "Counselling",
+        "value": "By appointment"
+      },
+      {
+        "label": "Life Choices Program",
+        "value": "See [program page](/services/life-choices-program/) for full schedule"
+      }
+    ]
+  },
+  "life_choices": {
+    "title": "Life Choices Program: weekly sessions",
+    "schedule": [
+      {
+        "day": "Monday",
+        "time": "11:00am – 12:15pm",
+        "format": "In-person",
+        "audience": ""
+      },
+      {
+        "day": "Tuesday",
+        "time": "11:00am – 12:15pm",
+        "format": "In-person",
+        "audience": "Ladies Only"
+      },
+      {
+        "day": "Tuesday",
+        "time": "1:00pm – 2:15pm",
+        "format": "In-person",
+        "audience": "Men Only"
+      },
+      {
+        "day": "Tuesday",
+        "time": "4:00pm – 5:30pm",
+        "format": "Online / Zoom Only",
+        "audience": ""
+      },
+      {
+        "day": "Wednesday",
+        "time": "11:00am – 12:30pm",
+        "format": "In-person",
+        "audience": ""
+      },
+      {
+        "day": "Thursday",
+        "time": "11:00am – 12:30pm",
+        "format": "In-person",
+        "audience": ""
+      },
+      {
+        "day": "Friday",
+        "time": "5:00pm – 6:30pm",
+        "format": "In-person",
+        "audience": ""
+      }
+    ]
+  }
+}

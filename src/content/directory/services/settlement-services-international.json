@@ -1,0 +1,30 @@
+{
+  "serviceName": "Settlement Services International",
+  "organisation": "Settlement Services International",
+  "category": "Migrant Support",
+  "categoryGroup": "Migrant & Multicultural",
+  "serviceType": "Settlement / Multicultural Support",
+  "contact": {
+    "phone": "02 8799 6700",
+    "email": "info@ssi.org.au",
+    "website": "https://www.ssi.org.au"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/ssiaustralia/",
+    "linkedin": "https://www.linkedin.com/company/settlement-services-international/"
+  },
+  "location": {
+    "suburb": "Western Sydney",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "47 138 588 226",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Settlement%20Services%20International"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,27 @@
+{
+  "serviceName": "Minds Together Family, Friends and Carers Program",
+  "organisation": "Evermind",
+  "category": "Health / Community Service",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "02 4924 6900",
+    "email": "Not provided",
+    "website": "https://everymind.org.au/programs/families-and-caregivers-programs/minds-together"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Newcastle",
+    "lga": null,
+    "coverage": "Other NSW"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

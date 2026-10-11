@@ -1,0 +1,29 @@
+{
+  "serviceName": "Continuing Coordinated Care Program (CCCP)",
+  "organisation": "NSW Health",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "02 8093 6778",
+    "email": "vinnies@vinnies.org.au",
+    "website": "https://www.health.nsw.gov.au/aod/resources/Factsheets/ccc-program-factsheet.pdf\n\nhttps://www.vinnies.org.au/nsw/find-help/cccp/continuing-coordinated-care-program-western-sydney"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/NSWHealth/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

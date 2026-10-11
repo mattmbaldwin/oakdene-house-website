@@ -1,0 +1,27 @@
+{
+  "serviceName": "The Sydney Clinic – Addiction Program",
+  "organisation": "The Sydney Clinic – Addiction Program",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Inpatient addiction treatment",
+  "contact": {
+    "phone": "02 9369 0000",
+    "email": "info@sydneyclinic.com.au",
+    "website": "https://www.sydneyclinic.com.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Bronte",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

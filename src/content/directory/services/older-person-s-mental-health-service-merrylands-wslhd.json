@@ -1,0 +1,29 @@
+{
+  "serviceName": "Older Person's Mental Health Service Merrylands",
+  "organisation": "WSLHD",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "02 9860 9800",
+    "email": "Not provided",
+    "website": "https://www.wslhd.health.nsw.gov.au/Mental-Health-Services/How-we-help/Community-Services/older-people-s-mental-health-service-opmh-community-service-wslhd"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/WesternSydneyLocalHealthDistrict/"
+  },
+  "location": {
+    "suburb": "Merrylands",
+    "lga": "Cumberland",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

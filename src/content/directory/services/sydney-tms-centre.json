@@ -1,0 +1,27 @@
+{
+  "serviceName": "Sydney TMS Centre",
+  "organisation": "Sydney TMS Centre",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1300 177 144",
+    "email": "info@sydneytms.com.au",
+    "website": "https://www.sydneytms.com.au/tms-clinic/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Castle Hill",
+    "lga": "The Hills",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

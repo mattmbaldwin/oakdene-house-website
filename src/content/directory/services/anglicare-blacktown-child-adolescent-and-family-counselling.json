@@ -1,0 +1,27 @@
+{
+  "serviceName": "Anglicare Blacktown Child Adolescent and Family Counselling",
+  "organisation": "Anglicare",
+  "category": "Health / Community Service",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "1300 651 728",
+    "email": "counselling@anglicare.org.au",
+    "website": "https://www.anglicare.org.au/community/family-relationship-services/youth-support/#:~:text=Blacktown%20Child%20Adolescent%20and%20Family,under%20Targeted%20Earlier%20Intervention%20funding."
+  },
+  "social": {},
+  "location": {
+    "suburb": "Mt Druitt",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Anglicare"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

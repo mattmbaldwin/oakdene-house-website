@@ -1,0 +1,29 @@
+{
+  "serviceName": "Healthdirect Australia",
+  "organisation": "Healthdirect Australia",
+  "category": "Health Advice",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Health referral line",
+  "contact": {
+    "phone": "1800 022 222",
+    "email": "support@healthdirect.gov.au",
+    "website": "https://www.healthdirect.gov.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/healthdirectAU/"
+  },
+  "location": {
+    "suburb": "N/A — National service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

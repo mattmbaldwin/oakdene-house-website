@@ -1,0 +1,29 @@
+{
+  "serviceName": "Liverpool Neighbourhood Connections",
+  "organisation": "Liverpool Neighbourhood Connections",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community and social support programs",
+  "contact": {
+    "phone": "(02) 8802 0988",
+    "email": "admin@lnc.org.au",
+    "website": "https://www.lnc.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/LpoolNC/"
+  },
+  "location": {
+    "suburb": "Liverpool",
+    "lga": "Multi-LGA (South Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Liverpool%20Neighbourhood%20Connections"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

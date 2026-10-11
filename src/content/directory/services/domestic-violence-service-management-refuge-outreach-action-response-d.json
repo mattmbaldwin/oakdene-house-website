@@ -1,0 +1,29 @@
+{
+  "serviceName": "Domestic Violence Service Management| Refuge Outreach Action Response (DVSM ROAR)",
+  "organisation": "Domestic Violence Service Management| Refuge Outreach Action Response (DVSM ROAR)",
+  "category": "Domestic Violence",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9621 0800",
+    "email": "roar@dvnswsm.org.au",
+    "website": "https://dvnswsm.org.au/roar/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/DVServiceManagement/"
+  },
+  "location": {
+    "suburb": "Blacktown",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "37 437 014 720",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Domestic%20Violence%20Service%20Management"
+  },
+  "flags": {
+    "aod": true,
+    "legal": true
+  },
+  "listedIn": null
+}

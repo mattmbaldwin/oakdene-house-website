@@ -1,0 +1,29 @@
+{
+  "serviceName": "Auburn Diversity Services (ADSi)",
+  "organisation": "Auburn Diversity Services Inc",
+  "category": "Migrant Support",
+  "categoryGroup": "Migrant & Multicultural",
+  "serviceType": "Settlement / Multicultural Support",
+  "contact": {
+    "phone": "(02) 9649 6955",
+    "email": "reception@adsi.org.au",
+    "website": "https://www.adsi.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/AuburnDiversityServicesInc/"
+  },
+  "location": {
+    "suburb": "Auburn",
+    "lga": "Cumberland",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Auburn%20Diversity%20Services%20Inc"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC; Settlement Services Programme"
+}

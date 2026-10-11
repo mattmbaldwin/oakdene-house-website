@@ -1,0 +1,27 @@
+{
+  "serviceName": "Blacktown Drug Health Service",
+  "organisation": "Blacktown Drug Health Service",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community treatment",
+  "contact": {
+    "phone": "(02) 9881 1230",
+    "email": null,
+    "website": "https://www.wslhd.health.nsw.gov.au/Drug-Health"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Blacktown",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Blacktown%20Drug%20Health%20Service"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

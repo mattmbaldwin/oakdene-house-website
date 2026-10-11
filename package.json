@@ -9,10 +9,13 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "images": "node scripts/image-sizes.mjs",
+    "cms:pages": "node scripts/cms-pages.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
-    "astro": "^6.1.5"
+    "astro": "^6.1.5",
+    "marked": "^15.0.12"
   }
 }

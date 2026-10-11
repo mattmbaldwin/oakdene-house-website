@@ -1,0 +1,31 @@
+{
+  "serviceName": "Mission Australia - Macarthur",
+  "organisation": "Mission Australia",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community programs / family support",
+  "contact": {
+    "phone": "1800 88 88 68",
+    "email": "askus@missionaustralia.com.au",
+    "website": "https://www.missionaustralia.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/MissionAust/",
+    "linkedin": "https://www.linkedin.com/company/mission-australia/",
+    "instagram": "https://www.instagram.com/mission_aust/"
+  },
+  "location": {
+    "suburb": "Campbelltown",
+    "lga": "Campbelltown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "15 000 002 522",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Mission%20Australia"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (ABN 15 000 002 522)"
+}

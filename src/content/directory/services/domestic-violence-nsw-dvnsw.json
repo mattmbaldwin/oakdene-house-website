@@ -1,0 +1,30 @@
+{
+  "serviceName": "Domestic Violence NSW",
+  "organisation": "DVNSW",
+  "category": "Domestic Violence",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Peak body / sector advocacy",
+  "contact": {
+    "phone": "(02) 9698 7669",
+    "email": "admin@dvnsw.org.au",
+    "website": "https://www.dvnsw.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/DVNSW/",
+    "linkedin": "https://www.linkedin.com/company/domestic-violence-nsw/"
+  },
+  "location": {
+    "suburb": "Strawberry Hills",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "26 561 904 798",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Domestic%20Violence%20NSW"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC; NCOSS member"
+}

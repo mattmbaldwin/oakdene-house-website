@@ -1,0 +1,29 @@
+{
+  "serviceName": "Jarrah House",
+  "organisation": "Jarrah House",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Residential Rehabilitation",
+  "contact": {
+    "phone": "(02) 9661 6555",
+    "email": "info@jarrahhouse.com.au",
+    "website": "https://www.jarrahhouse.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/jarrahhouse/"
+  },
+  "location": {
+    "suburb": "Sydney",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "71 002 970 466",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Jarrah%20House"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (ABN 71 002 970 466); NSW Health AOD service directory"
+}

@@ -1,0 +1,30 @@
+{
+  "serviceName": "Odyssey House NSW",
+  "organisation": "Odyssey House NSW",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Residential Rehabilitation",
+  "contact": {
+    "phone": "1800 397 739",
+    "email": "referral@odysseyhouse.com.au",
+    "website": "https://www.odysseyhouse.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/OdysseyHouseNSW/",
+    "linkedin": "https://www.linkedin.com/company/odyssey-house-nsw/"
+  },
+  "location": {
+    "suburb": "Sydney",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "84 002 075 250",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Odyssey%20House%20NSW"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

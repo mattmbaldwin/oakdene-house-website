@@ -1,0 +1,27 @@
+{
+  "serviceName": "St John of God Richmond Hospital – Addiction Services",
+  "organisation": "St John of God Richmond Hospital – Addiction Services",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Detox Unit",
+  "contact": {
+    "phone": "02 4570 6000",
+    "email": "richmondhosp@sjog.org.au",
+    "website": "https://www.sjog.org.au"
+  },
+  "social": {},
+  "location": {
+    "suburb": "North Richmond",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

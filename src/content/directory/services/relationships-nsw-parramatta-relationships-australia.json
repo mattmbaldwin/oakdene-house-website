@@ -1,0 +1,30 @@
+{
+  "serviceName": "Relationships NSW Parramatta",
+  "organisation": "Relationships Australia",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1300 364 277",
+    "email": "enquiries@ransw.org.au",
+    "website": "https://www.relationshipsnsw.org.au/locations/parramatta/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/RelationshipsNSW/",
+    "linkedin": "https://www.linkedin.com/company/relationships-australia-nsw/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "73 000 094 380",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Relationships%20Australia%20NSW"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

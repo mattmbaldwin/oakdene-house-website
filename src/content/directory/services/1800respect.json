@@ -1,0 +1,30 @@
+{
+  "serviceName": "1800Respect",
+  "organisation": "1800Respect",
+  "category": "Domestic Violence",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Crisis Counselling",
+  "contact": {
+    "phone": "1800 737 732",
+    "email": "1800respect@medibankhealth.com.au",
+    "website": "https://1800respect.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/1800RESPECT/",
+    "instagram": "https://www.instagram.com/1800respect/"
+  },
+  "location": {
+    "suburb": "Australia",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "DSS Service Finder; healthdirect; Ask Izzy"
+}

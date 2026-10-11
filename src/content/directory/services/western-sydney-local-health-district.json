@@ -1,0 +1,29 @@
+{
+  "serviceName": "Western Sydney Local Health District",
+  "organisation": "Western Sydney Local Health District",
+  "category": "Hospital / Health",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Public health services",
+  "contact": {
+    "phone": "02 9881 8111",
+    "email": "lhd-communications@wslhd.health.nsw.gov.au",
+    "website": "https://www.wslhd.health.nsw.gov.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/WesternSydneyLocalHealthDistrict/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,31 @@
+{
+  "serviceName": "13YARN",
+  "organisation": "Lifeline",
+  "category": "Aboriginal Health",
+  "categoryGroup": "Aboriginal Services",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "13 92 76",
+    "email": "info@13yarn.org.au",
+    "website": "https://www.13yarn.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/13yarn",
+    "instagram": "https://www.instagram.com/13yarn/",
+    "linkedin": "https://www.linkedin.com/company/lifeline-australia/"
+  },
+  "location": {
+    "suburb": "N/A — National service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "84 081 031 263",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Lifeline%20Australia"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": "ACNC (via Lifeline); healthdirect; NACCHO directory"
+}

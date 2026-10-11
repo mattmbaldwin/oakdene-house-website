@@ -1,0 +1,29 @@
+{
+  "serviceName": "Western Sydney Community Legal Centre",
+  "organisation": "Western Sydney Community Legal Centre",
+  "category": "Legal / Justice",
+  "categoryGroup": "Legal & Justice",
+  "serviceType": "Legal / Justice Support",
+  "contact": {
+    "phone": "General Legal Enquiry - (02) 8833 0911",
+    "email": "admin@wsclc.org.au",
+    "website": "https://www.wsclc.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/WSCLC/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Western%20Sydney%20Community%20Legal%20Centre"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

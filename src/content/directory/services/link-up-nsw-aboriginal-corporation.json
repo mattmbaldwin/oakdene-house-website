@@ -1,0 +1,29 @@
+{
+  "serviceName": "Link-Up (NSW) Aboriginal Corporation",
+  "organisation": "Link-Up (NSW) Aboriginal Corporation",
+  "category": "Aboriginal Health",
+  "categoryGroup": "Aboriginal Services",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9212 4100",
+    "email": "info@linkup.org.au",
+    "website": "https://www.linkup.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/LinkUpNSW/"
+  },
+  "location": {
+    "suburb": "Darlinghurst",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "27 067 999 158",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Link-Up%20%28NSW%29%20Aboriginal%20Corporation"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

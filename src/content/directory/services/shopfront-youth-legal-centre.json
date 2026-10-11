@@ -1,0 +1,29 @@
+{
+  "serviceName": "Shopfront Youth Legal Centre",
+  "organisation": "Shopfront Youth Legal Centre",
+  "category": "Legal / Justice",
+  "categoryGroup": "Legal & Justice",
+  "serviceType": "Legal / Justice Support",
+  "contact": {
+    "phone": "02 9360 0060",
+    "email": "legal@shopfront.org.au",
+    "website": "https://www.shopfront.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/ShopfrontYLC/"
+  },
+  "location": {
+    "suburb": "Darlinghurst",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "78 463 218 619",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Shopfront%20Youth%20Legal%20Centre"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

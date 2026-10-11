@@ -1,0 +1,30 @@
+{
+  "serviceName": "Good360 Australia",
+  "organisation": "Good360 Australia",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Material Aid / Resource Support",
+  "contact": {
+    "phone": "(02) 9635 0000",
+    "email": "info@good360.org.au",
+    "website": "https://www.good360.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/Good360Australia/",
+    "linkedin": "https://www.linkedin.com/company/good360-australia/"
+  },
+  "location": {
+    "suburb": "Wetherill Park",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "98 161 165 416",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Good360%20Australia"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

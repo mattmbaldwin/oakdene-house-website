@@ -1,0 +1,30 @@
+{
+  "serviceName": "Dementia Australia - Blacktown",
+  "organisation": "Dementia Australia",
+  "category": "Health / Community Service",
+  "categoryGroup": "Other Support",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "02 9805 0100",
+    "email": "Western.Sydney@dementia.org.au",
+    "website": "https://www.dementia.org.au/about-us/contact-us/locations/blacktown"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/DementiaAustralia/",
+    "linkedin": "https://www.linkedin.com/company/dementia-australia/"
+  },
+  "location": {
+    "suburb": "Blacktown",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "79 625 582 771",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Dementia%20Australia"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

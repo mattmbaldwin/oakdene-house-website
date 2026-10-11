@@ -1,0 +1,27 @@
+{
+  "serviceName": "Bankstown Drug & Alcohol Service",
+  "organisation": "Bankstown Drug & Alcohol Service",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community treatment",
+  "contact": {
+    "phone": "(02) 9780 2777",
+    "email": null,
+    "website": "https://www.swslhd.health.nsw.gov.au/drughealth/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Bankstown",
+    "lga": "Multi-LGA (South Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Bankstown%20Drug%20%26%20Alcohol%20Service"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

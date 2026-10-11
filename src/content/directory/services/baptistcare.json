@@ -1,0 +1,30 @@
+{
+  "serviceName": "BaptistCare",
+  "organisation": "BaptistCare",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Family services",
+  "contact": {
+    "phone": "(02) 9875 9200",
+    "email": "enquiries@baptistcare.com.au",
+    "website": "https://www.baptistcare.com.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/BaptistCareNSWACT/",
+    "linkedin": "https://www.linkedin.com/company/baptistcare-nsw-act/"
+  },
+  "location": {
+    "suburb": "Sydney",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "90 000 049 525",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=BaptistCare%20NSW%20%26%20ACT"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

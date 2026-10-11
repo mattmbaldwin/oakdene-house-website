@@ -1,0 +1,29 @@
+{
+  "serviceName": "The Gender Centre",
+  "organisation": "The Gender Centre",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "02 9519 7599 or (02) 9569 2366",
+    "email": "reception@gendercentre.org.au",
+    "website": "https://gendercentre.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/GenderCentre/"
+  },
+  "location": {
+    "suburb": "Marrickville",
+    "lga": "Inner West",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "47 133 057 791",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=The%20Gender%20Centre%20Inc."
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

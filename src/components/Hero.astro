@@ -1,4 +1,6 @@
 ---
+import imageSizes from '../content/image-sizes.json';
+
 interface Button {
   text: string;
   href: string;
@@ -20,9 +22,13 @@ const {
   imageAlt = '',
   buttons = [],
 } = Astro.props;
+
+// Phones get the 1080px copy of the photo when there is one (npm run images).
+const sizes = (imageSizes as Record<string, { variants: Record<string, string> }>)[image];
+const smallImage = sizes?.variants['1080'] ?? image;
 ---
 
-<section class="hero" style={`--hero-image: url('${image}')`} aria-label={heading}>
+<section class="hero" style={`--hero-image: url('${image}'); --hero-image-small: url('${smallImage}')`} aria-label={heading}>
   <div class="hero__overlay" aria-hidden="true"></div>
   <div class="container hero__content">
     <h1 class="hero__heading">{heading}</h1>
@@ -48,6 +54,12 @@ const {
     background-position: center;
     display: flex;
     align-items: center;
+  }
+
+  @media (max-width: 768px) {
+    .hero {
+      background-image: var(--hero-image-small);
+    }
   }
 
   .hero__overlay {

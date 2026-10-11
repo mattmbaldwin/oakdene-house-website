@@ -1,0 +1,30 @@
+{
+  "serviceName": "Western Sydney Community Forum",
+  "organisation": "Western Sydney Community Forum",
+  "category": "Referral Directory",
+  "categoryGroup": "Other Support",
+  "serviceType": "Peak body / sector capacity building",
+  "contact": {
+    "phone": "(02) 9687 9669",
+    "email": "info@wscf.org.au",
+    "website": "https://wscf.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/WSCommunityForum/",
+    "linkedin": "https://www.linkedin.com/company/western-sydney-community-forum/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Western%20Sydney%20Community%20Forum"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC; NCOSS member"
+}

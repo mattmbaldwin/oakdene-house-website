@@ -1,0 +1,29 @@
+{
+  "serviceName": "Cumberland Women's Health Centre",
+  "organisation": "Cumberland Women's Health Centre",
+  "category": "Health / Community Service",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9689 3044",
+    "email": "adminworker@cwhc.org.au",
+    "website": "https://www.cwhc.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/cumberlandwomenshealth/"
+  },
+  "location": {
+    "suburb": "Harris Park",
+    "lga": "Cumberland",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Cumberland%20Women%27s%20Health%20Centre"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

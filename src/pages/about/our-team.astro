@@ -1,94 +1,15 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
+import people from '../../content/team.json';
+import pageText from '../../content/pages/about-our-team.json';
 
-const team = [
-  {
-    name: 'Simon Jarvis',
-    role: 'CEO',
-    initials: 'SJ',
-    photo: '/images/team/simon-jarvis-ceo.png',
-    bio: 'Simon is a community focused leader with deep experience across the health and nonprofit sectors. His work has centred on strengthening mental health services, building partnerships, and creating programs that give people practical support when life becomes difficult. He is passionate about ensuring that everyone who walks through Oakdene House feels respected and supported.',
-  },
-  {
-    name: 'Souri Hayati',
-    role: 'Financial Counsellor and Office Manager',
-    initials: 'SH',
-    photo: '/images/team/colour-souri-website.jpg',
-    bio: 'Souri started at Oakdene House in 2011, the year we opened. Bringing a wealth of experience from her years working to support migrants, refugees and indigenous youth, Souri has spent the majority of her working life in the service of others. As Financial Counsellor and Office Manager, she keeps the centre running, facilitates our Life Choices Program, and provides crisis support and financial counselling for our clients.',
-  },
-  {
-    name: 'Mark Henson',
-    role: 'Lead Counsellor',
-    initials: 'MH',
-    photo: '/images/team/colour-mark-facing-camera.jpg',
-    bio: 'Mark has worked in the recovery services sector for over 20 years. Starting out with the Salvation Army as an outreach and detox worker before moving into education, counselling and client assessment. Mark has been instrumental in helping many of our clients through their rehabilitation with his dedication and empathy.',
-  },
-  {
-    name: 'Anne Maree Durnan',
-    role: 'Reception and Administration',
-    initials: 'AD',
-    photo: '/images/team/colour-anne-marie.jpg',
-    bio: 'After various roles in the corporate world, Anne Maree moved into areas of personal interest and helping others. Working for Anglicare with aged care and dementia patients for 10 years before joining the team at Oakdene House in 2020. Anne Maree provides a welcome to all on arrival and assists clients through the assessment process.',
-  },
-  {
-    name: 'Fabiana Barbosa Pechincha',
-    role: 'Addiction Counsellor',
-    initials: 'FB',
-    photo: '/images/team/fabiana-colour-side-on.jpg',
-    bio: 'Originating from Brazil, Fabiana came to Australia as a student in 1999 before returning to reside here permanently. Working with both students and immigrants as a counsellor and education mentor, Fabiana is now utilising her experience to support the clients at Oakdene.',
-  },
-  {
-    name: 'Jason Den-Toll',
-    role: 'Addiction Counsellor (AOD)',
-    initials: 'JD',
-    photo: '/images/team/colour-jason-website.jpg',
-    bio: 'Jason has worked in the field of human development, psychology and sports education for over 30 years. He combined that experience with his own personal recovery and ongoing training in trauma and life coaching to complete his Masters in Counselling before finding Oakdene House in 2022.',
-  },
-  {
-    name: 'Suzan Ogde',
-    role: 'Administration and Front Desk Officer',
-    initials: 'SO',
-    photo: '/images/team/suzan-ogde.png',
-    bio: 'Suzan is a dedicated support professional with experience assisting people facing alcohol and gambling addiction, homelessness, domestic violence, and complex social challenges. She works closely with a range of community services to ensure clients receive coordinated care, and is currently completing a Master of Business Administration with a focus on leadership and community-focused service delivery.',
-  },
-  {
-    name: 'Pauline Sahyoun',
-    role: 'Community Programs Coordinator',
-    initials: 'PS',
-    photo: '/images/team/pauline-sayhoun.png',
-    bio: 'Pauline has extensive experience across education, forensic medicine, and healthcare. A certified interpreter fluent in spoken and written Arabic, she helps bridge communication gaps and foster cultural understanding within the community. In her role as Programs Coordinator, Pauline develops and delivers programs that create positive outcomes and strengthen community engagement.',
-  },
-  {
-    name: 'Carolyn Farrugia',
-    role: 'Counsellor',
-    initials: 'CF',
-    photo: '/images/team/carolyn-farrugia.png',
-    bio: 'Carolyn is a Registered Counsellor with the Australian Counselling Association, with fifteen years of experience in mental health. She facilitates groups focused on addiction recovery and abstinence, and delivers Dialectical Behaviour Therapy for behaviour change. In one-on-one work, Carolyn takes a person-centred approach drawing on solution-focused, positive psychology, and strength-based therapies.',
-  },
-];
-
-const patrons = [
-  {
-    name: 'Dr Bo Bernhard',
-    role: 'Patron — Vice President of Economic Development, Professor at University of Nevada Las Vegas',
-    initials: 'BB',
-    photo: '/images/team/bo-bernhard-headshot2.jpg',
-    bio: 'Dr Bo Bernhard is one of the world\'s leading figures in the study of gambling addiction, with over 25 years experience researching and teaching at UNLV where he serves as Executive Director of the International Gaming Institute. Dr Bernhard is looking forward to sharing information and working towards supporting gamblers as they seek to overcome their addiction.',
-  },
-  {
-    name: 'Deacon Thomas A Roberts',
-    role: 'Patron — Deacon at Holy Spirit Roman Catholic Church, President and CEO of Catholic Charities of Southern Nevada',
-    initials: 'TR',
-    photo: '/images/patrons/colour-tom-roberts-1.jpg',
-    bio: 'Deacon Tom Roberts was ordained as a Permanent Deacon in the Diocese of Las Vegas in 2011 and has served as President and CEO of Catholic Charities of Southern Nevada since 2013. He brings more than 27 years of executive management, operations and leadership experience to his role as patron of Oakdene House Foundation.',
-  },
-];
+const { team, patrons } = people;
 ---
 
 <BaseLayout
-  title="Our Team — Oakdene House Foundation"
-  description="Meet the Oakdene House Foundation team — dedicated people working across counselling, program delivery, operations and practical support in Fairfield, Western Sydney."
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
   ogImage="/images/team/colour-mark-facing-camera.jpg"
 >
 
@@ -102,8 +23,8 @@ const patrons = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">Our Team</span>
       </nav>
-      <h1>Our Team</h1>
-      <p class="team-hero__lead">The people behind the work at Oakdene House.</p>
+      <h1>{pageText.hero__title}</h1>
+      <p class="team-hero__lead">{pageText.hero__intro}</p>
     </div>
   </section>
 
@@ -111,10 +32,10 @@ const patrons = [
   <section class="section" aria-labelledby="team-intro-heading">
     <div class="container intro-container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">The People</p>
-        <h2 id="team-intro-heading">Experienced, caring and community-focused</h2>
+        <p class="section-heading__eyebrow">{pageText.intro__eyebrow}</p>
+        <h2 id="team-intro-heading">{pageText.intro__heading}</h2>
       </div>
-      <p class="intro-lead">Our team brings together care, experience and a deep commitment to community. We work across counselling, program delivery, operations and practical support, with a shared focus on creating a safe and respectful environment for every person who walks through our doors.</p>
+      <p class="intro-lead">{pageText.intro__intro}</p>
     </div>
   </section>
 
@@ -152,8 +73,8 @@ const patrons = [
   <section class="section" aria-labelledby="patrons-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Our Patrons</p>
-        <h2 id="patrons-heading">Our Patrons</h2>
+        <p class="section-heading__eyebrow">{pageText.patrons__eyebrow}</p>
+        <h2 id="patrons-heading">{pageText.patrons__heading}</h2>
       </div>
       <div class="patrons-grid">
         {patrons.map(patron => (
@@ -179,17 +100,17 @@ const patrons = [
   <!-- CLOSING -->
   <section class="section section--tint" aria-labelledby="team-closing-heading">
     <div class="container closing-container">
-      <h2 id="team-closing-heading" class="visually-hidden">Closing statement</h2>
-      <p class="closing-text">Behind every Oakdene service is a team that believes support should feel human, respectful and real. We are proud to walk alongside the people and families we serve.</p>
+      <h2 id="team-closing-heading" class="visually-hidden">{pageText.closing__heading}</h2>
+      <p class="closing-text">{pageText.closing__text}</p>
     </div>
   </section>
 
   <!-- CTA -->
   <CTABand
-    heading="Get in touch with our team"
-    subheading="We are here to help. Reach out and we will find the right next step together."
-    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
-    secondaryBtn={{ text: 'Get Support', href: '/contact/' }}
+    heading={pageText.cta__heading}
+    subheading={pageText.cta__subheading}
+    primaryBtn={pageText.cta__primarybtn}
+    secondaryBtn={pageText.cta__secondarybtn}
     dark={true}
   />
 

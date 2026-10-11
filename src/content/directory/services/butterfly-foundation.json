@@ -1,0 +1,30 @@
+{
+  "serviceName": "Butterfly Foundation",
+  "organisation": "Butterfly Foundation",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1800 33 4673",
+    "email": "support@butterfly.org.au",
+    "website": "https://butterfly.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/butterflyfoundation/",
+    "instagram": "https://www.instagram.com/butterflyfoundation/"
+  },
+  "location": {
+    "suburb": "Melbourne",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "11 117 765 461",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Butterfly%20Foundation"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": "ACNC; healthdirect; National Eating Disorders Collaboration"
+}

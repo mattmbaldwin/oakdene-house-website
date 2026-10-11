@@ -1,0 +1,29 @@
+{
+  "serviceName": "Penrith City Council",
+  "organisation": "Penrith City Council",
+  "category": "Community Services",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community programs",
+  "contact": {
+    "phone": "(02) 4732 7777",
+    "email": "council@penrith.nsw.gov.au",
+    "website": "https://www.penrith.nsw.gov.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/PenrithCityCouncil/"
+  },
+  "location": {
+    "suburb": "Penrith",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

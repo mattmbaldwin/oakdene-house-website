@@ -1,0 +1,27 @@
+{
+  "serviceName": "Fairfield Drug Health Service",
+  "organisation": "Fairfield Drug Health Service",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community treatment",
+  "contact": {
+    "phone": "(02) 9794 1300",
+    "email": null,
+    "website": "https://www.swslhd.health.nsw.gov.au/drughealth/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Fairfield",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Fairfield%20Drug%20Health%20Service"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

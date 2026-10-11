@@ -1,0 +1,30 @@
+{
+  "serviceName": "Uniting Youth2home: Wiyanga",
+  "organisation": "Uniting",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "02 8880 8222 (Intake); 1800 864 846 (Main number)",
+    "email": "youth2home@uniting.org",
+    "website": "https://www.uniting.org/services/housing-and-homelessness/facility/youth2home-wiyanga"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/unitingnswact/",
+    "linkedin": "https://www.linkedin.com/company/uniting-nsw-act/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "78 722 562 218",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Uniting%20NSW.ACT"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

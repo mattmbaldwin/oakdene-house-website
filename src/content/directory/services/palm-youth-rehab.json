@@ -1,0 +1,27 @@
+{
+  "serviceName": "Palm Youth Rehab",
+  "organisation": "Palm Youth Rehab",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Residential Rehabilitation",
+  "contact": {
+    "phone": "(02) 8843 7400",
+    "email": null,
+    "website": "https://www.health.nsw.gov.au/aod/Pages/aod-services.aspx"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Westmead",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Palm%20Youth%20Rehab"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

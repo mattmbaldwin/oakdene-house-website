@@ -1,0 +1,29 @@
+{
+  "serviceName": "Legal Aid NSW – Liverpool Office",
+  "organisation": "Legal Aid NSW – Liverpool Office",
+  "category": "Legal / Justice",
+  "categoryGroup": "Legal & Justice",
+  "serviceType": "Legal / Justice Support",
+  "contact": {
+    "phone": "02 9066 6046 (Friends & Family), 1300 888 529 (Prisoners, via Legal Aid)",
+    "email": "PLS@legalaid.nsw.gov.au",
+    "website": "https://www.legalaid.nsw.gov.au/my-problem-is-about/my-right-as-a/prisoner/prisoners-legal-service#accordion-a1579b0fc8-item-8bc1c47d2f"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/legalaidnsw/"
+  },
+  "location": {
+    "suburb": "Liverpool",
+    "lga": "Multi-LGA (South Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

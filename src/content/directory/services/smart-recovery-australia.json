@@ -1,0 +1,29 @@
+{
+  "serviceName": "SMART Recovery Australia",
+  "organisation": "SMART Recovery Australia",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Peer support program",
+  "contact": {
+    "phone": "1300 787 339",
+    "email": "contact@smartrecovery.org.au",
+    "website": "https://www.smartrecovery.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/SMARTRecoveryAustralia/"
+  },
+  "location": {
+    "suburb": "Multiple",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "67 142 035 882",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=SMART%20Recovery%20Australia"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

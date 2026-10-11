@@ -1,0 +1,29 @@
+{
+  "serviceName": "Redfern Legal Centre",
+  "organisation": "Redfern Legal Centre",
+  "category": "Legal / Justice",
+  "categoryGroup": "Legal & Justice",
+  "serviceType": "Legal / Justice Support",
+  "contact": {
+    "phone": "02 8316 4555",
+    "email": "info@redfernlegal.org.au",
+    "website": "https://www.redfernlegal.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/RedfernLegalCentre/"
+  },
+  "location": {
+    "suburb": "Redfern",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "31 001 442 039",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Redfern%20Legal%20Centre"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

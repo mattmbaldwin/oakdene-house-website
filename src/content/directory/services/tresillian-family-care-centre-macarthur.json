@@ -1,0 +1,31 @@
+{
+  "serviceName": "Tresillian Family Care Centre - Macarthur",
+  "organisation": "Tresillian",
+  "category": "Family Support",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Parenting / early childhood support",
+  "contact": {
+    "phone": "1300 272 736",
+    "email": "info@tresillian.org.au",
+    "website": "https://www.tresillian.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/Tresillian/",
+    "instagram": "https://www.instagram.com/tresillianfamilycare/",
+    "linkedin": "https://www.linkedin.com/company/tresillian-family-care-centres/"
+  },
+  "location": {
+    "suburb": "Campbelltown",
+    "lga": "Campbelltown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "56 168 198 167",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Tresillian%20Family%20Care%20Centres"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC; healthdirect"
+}

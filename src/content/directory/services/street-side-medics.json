@@ -1,0 +1,29 @@
+{
+  "serviceName": "Street Side Medics",
+  "organisation": "Street Side Medics",
+  "category": "Housing / Homelessness",
+  "categoryGroup": "Housing & Homelessness",
+  "serviceType": "Housing / Homelessness Support",
+  "contact": {
+    "phone": "0430 400 884",
+    "email": "contact@streetsidemedics.com.au",
+    "website": "https://streetsidemedics.com.au"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/StreetSideMedics/"
+  },
+  "location": {
+    "suburb": "Western Sydney",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": "84 638 311 060",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Street%20Side%20Medics"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

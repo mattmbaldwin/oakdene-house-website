@@ -1,0 +1,29 @@
+{
+  "seo__browser_title": "The Oakdene Story — Oakdene House Foundation",
+  "seo__search_description": "The Oakdene is an evergreen Holm Oak in Fairfield planted in 1842 — struck by lightning yet still growing. The living symbol of hardship, endurance and healing behind Oakdene House Foundation.",
+  "hero__title": "The Oakdene Story",
+  "hero__intro": "A story of hardship, endurance and healing — rooted in Fairfield since 1842.",
+  "story__eyebrow": "The Oak",
+  "story__heading": "A tree that endured",
+  "story__text": "The Oakdene is an evergreen Holm Oak in Fairfield, planted in 1842. During a storm, the tree was split down the middle by lightning. It is visibly divided into two parts, but continues to grow evergreen. The story of the Oakdene is one of hardship, endurance and healing. It shows that difficult times and broken pasts can be overcome, and that we can all continue to grow.",
+  "story__text_2": "Oakdene House was built on a simple idea — that people facing addiction, hardship and social disconnection deserve a place where they can be welcomed, supported and treated with dignity.",
+  "story__text_3": "Over time, Oakdene has grown into a community hub that blends professional support with practical care. What began as a place of help has become a place of belonging for many people who need stability, encouragement and a pathway forward.",
+  "story__text_4": "Today, Oakdene House supports individuals and families through addiction services, counselling, group programs and community-based supports. Our work reflects the needs of the local community and continues to evolve through partnership, listening and lived experience.",
+  "story__image_alt": "Sunlight through the leaves of the Oakdene tree in Fairfield",
+  "watch_our_story__eyebrow": "Our Film",
+  "watch_our_story__heading": "Watch our story",
+  "watch_our_story__intro": "People in recovery, our counsellors and our founding chairman talk about what support at Oakdene House means to them.",
+  "watch_our_story__label": "Play video: Oakdene House Foundation, our story",
+  "watch_our_story__button": "Watch with the full transcript",
+  "why_this_matters__eyebrow": "Why It Matters",
+  "why_this_matters__text": "\"Many people do not need more judgement. They need a door that is open, a person who will listen and support that makes sense in real life. Oakdene aims to be that place.\"",
+  "cta__heading": "Learn more about our services",
+  "cta__primarybtn": {
+    "text": "Explore Services",
+    "href": "/services/"
+  },
+  "cta__secondarybtn": {
+    "text": "About Oakdene",
+    "href": "/about/"
+  }
+}

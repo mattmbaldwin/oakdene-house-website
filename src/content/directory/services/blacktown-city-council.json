@@ -1,0 +1,29 @@
+{
+  "serviceName": "Blacktown City Council",
+  "organisation": "Blacktown City Council",
+  "category": "Community Services",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community programs",
+  "contact": {
+    "phone": "(02) 9871 8000",
+    "email": "council@blacktown.nsw.gov.au",
+    "website": "https://www.blacktown.nsw.gov.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/BlacktownCityCouncil/"
+  },
+  "location": {
+    "suburb": "Blacktown",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

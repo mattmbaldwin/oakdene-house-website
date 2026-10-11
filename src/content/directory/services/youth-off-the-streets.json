@@ -1,0 +1,30 @@
+{
+  "serviceName": "Youth Off The Streets",
+  "organisation": "Youth Off The Streets",
+  "category": "Housing / Homelessness",
+  "categoryGroup": "Housing & Homelessness",
+  "serviceType": "Housing / Homelessness Support",
+  "contact": {
+    "phone": "(02) 9721 5714",
+    "email": "dunlea@youthoffthestreets.com.au",
+    "website": "https://youthoffthestreets.com.au/get-support/alcohol-and-other-drugs/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/YouthOffTheStreets/",
+    "linkedin": "https://www.linkedin.com/company/youth-off-the-streets/"
+  },
+  "location": {
+    "suburb": "Blacktown",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "53 050 060 920",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Youth%20Off%20The%20Streets"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

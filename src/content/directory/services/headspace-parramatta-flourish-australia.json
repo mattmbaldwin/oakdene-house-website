@@ -1,0 +1,30 @@
+{
+  "serviceName": "headspace Parramatta",
+  "organisation": "Flourish Australia",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Youth Mental Health Centre",
+  "contact": {
+    "phone": "1300 737 616",
+    "email": "headspace.parramatta@flourishaustralia.org.au",
+    "website": "https://headspace.org.au/headspace-centres/parramatta/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/FlourishAustraliaMH/",
+    "linkedin": "https://www.linkedin.com/company/flourish-australia/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "28 002 095 332",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Flourish%20Australia"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

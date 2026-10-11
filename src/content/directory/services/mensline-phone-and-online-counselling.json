@@ -1,0 +1,27 @@
+{
+  "serviceName": "MensLine Phone and Online Counselling",
+  "organisation": "MensLine Phone and Online Counselling",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "1300 78 99 78",
+    "email": null,
+    "website": "https://mensline.org.au/"
+  },
+  "social": {},
+  "location": {
+    "suburb": "N/A — National service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=MensLine%20Phone%20and%20Online%20Counselling"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

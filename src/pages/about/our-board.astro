@@ -1,10 +1,16 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import board from '../../content/board.json';
+import pageText from '../../content/pages/about-our-board.json';
+
+// Board profiles are added in the content editor. Until there are any,
+// the page shows the holding message.
+const members: { name: string; role: string; photo?: string; bio?: string }[] = board.members;
 ---
 
 <BaseLayout
-  title="Our Board — Oakdene House Foundation"
-  description="Oakdene House Foundation is guided by a committed Board providing governance, oversight and strategic direction for our community charity in Fairfield, Western Sydney."
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
   ogImage="/images/centre/exterior-exterior-1-img_2651.jpg"
   noindex={true}
 >
@@ -19,17 +25,40 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">Our Board</span>
       </nav>
-      <h1>Our Board</h1>
+      <h1>{pageText.hero__title}</h1>
     </div>
   </section>
 
-  <!-- HOLDING MESSAGE -->
+  <!-- BOARD PROFILES, or a holding message until profiles are added -->
+  {members.length > 0 ? (
+  <section class="section section--tint" aria-label="Board profiles">
+    <div class="container">
+      <div class="board-grid">
+        {members.map(member => (
+          <article class="board-card">
+            {member.photo && (
+              <div class="board-card__photo">
+                <img src={member.photo} alt={`${member.name}, ${member.role}`} loading="lazy" />
+              </div>
+            )}
+            <div class="board-card__body">
+              <h2 class="board-card__name">{member.name}</h2>
+              <p class="board-card__role">{member.role}</p>
+              {member.bio && <p class="board-card__bio">{member.bio}</p>}
+            </div>
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+  ) : (
   <section class="section" aria-label="Board profiles">
     <div class="container holding-container">
       <h2>Board profiles</h2>
       <p>Our Board profiles are currently being updated. For Board enquiries, please contact us at <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a> or call <a href="tel:+61287170999">(02) 8717 0999</a>.</p>
     </div>
   </section>
+  )}
 
 </BaseLayout>
 
@@ -60,14 +89,63 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
     color: var(--color-text);
   }
 
-  .holding-container a {
+  .holding-container :global(a) {
     color: var(--color-primary);
     text-decoration: underline;
     text-underline-offset: 2px;
     transition: color var(--transition);
   }
 
-  .holding-container a:hover {
+  .holding-container :global(a:hover) {
     color: var(--color-link-hover);
+  }
+
+  /* Board profiles */
+  .board-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 28px;
+  }
+
+  .board-card {
+    background-color: var(--color-white);
+    border-radius: var(--radius-card);
+    box-shadow: var(--shadow-card);
+    overflow: hidden;
+    transition: box-shadow var(--transition);
+  }
+
+  .board-card:hover {
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  .board-card__photo img {
+    width: 100%;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    display: block;
+  }
+
+  .board-card__body {
+    padding: 24px;
+  }
+
+  .board-card__name {
+    font-size: 1.25rem;
+    margin-bottom: 4px;
+  }
+
+  .board-card__role {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 12px;
+  }
+
+  .board-card__bio {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+    color: var(--color-text);
+    margin-bottom: 0;
   }
 </style>

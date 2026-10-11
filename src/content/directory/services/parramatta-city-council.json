@@ -1,0 +1,29 @@
+{
+  "serviceName": "Parramatta City Council",
+  "organisation": "Parramatta City Council",
+  "category": "Community Services",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community programs",
+  "contact": {
+    "phone": "(02) 9806 5050",
+    "email": "council@parramatta.nsw.gov.au",
+    "website": "https://www.parramatta.nsw.gov.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/CityOfParramatta/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

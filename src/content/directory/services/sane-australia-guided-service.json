@@ -1,0 +1,30 @@
+{
+  "serviceName": "SANE Australia Guided Service",
+  "organisation": "SANE Australia",
+  "category": "Mental Health",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1800 187 263",
+    "email": "referral@sane.org",
+    "website": "https://www.sane.org/get-support/guided-service"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/SANEAustralia/",
+    "instagram": "https://www.instagram.com/saneaustralia/"
+  },
+  "location": {
+    "suburb": "N/A — Telehealth",
+    "lga": null,
+    "coverage": "Telehealth"
+  },
+  "identifiers": {
+    "abn": "92 006 533 606",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=SANE%20Australia"
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

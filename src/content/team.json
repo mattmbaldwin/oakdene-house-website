@@ -1,0 +1,83 @@
+{
+  "team": [
+    {
+      "name": "Simon Jarvis",
+      "role": "CEO",
+      "initials": "SJ",
+      "photo": "/images/team/simon-jarvis-ceo-web.jpg",
+      "bio": "Simon is a community focused leader with deep experience across the health and nonprofit sectors. His work has centred on strengthening mental health services, building partnerships, and creating programs that give people practical support when life becomes difficult. He is passionate about ensuring that everyone who walks through Oakdene House feels respected and supported."
+    },
+    {
+      "name": "Souri Hayati",
+      "role": "Financial Counsellor and Office Manager",
+      "initials": "SH",
+      "photo": "/images/team/colour-souri-website.jpg",
+      "bio": "Souri started at Oakdene House in 2011, the year we opened. Bringing a wealth of experience from her years working to support migrants, refugees and indigenous youth, Souri has spent the majority of her working life in the service of others. As Financial Counsellor and Office Manager, she keeps the centre running, facilitates our Life Choices Program, and provides crisis support and financial counselling for our clients."
+    },
+    {
+      "name": "Mark Henson",
+      "role": "Lead Counsellor",
+      "initials": "MH",
+      "photo": "/images/team/colour-mark-facing-camera.jpg",
+      "bio": "Mark has worked in the recovery services sector for over 20 years. Starting out with the Salvation Army as an outreach and detox worker before moving into education, counselling and client assessment. Mark has been instrumental in helping many of our clients through their rehabilitation with his dedication and empathy."
+    },
+    {
+      "name": "Anne Maree Durnan",
+      "role": "Reception and Administration",
+      "initials": "AD",
+      "photo": "/images/team/colour-anne-marie.jpg",
+      "bio": "After various roles in the corporate world, Anne Maree moved into areas of personal interest and helping others. Working for Anglicare with aged care and dementia patients for 10 years before joining the team at Oakdene House in 2020. Anne Maree provides a welcome to all on arrival and assists clients through the assessment process."
+    },
+    {
+      "name": "Fabiana Barbosa Pechincha",
+      "role": "Addiction Counsellor",
+      "initials": "FB",
+      "photo": "/images/team/fabiana-colour-side-on.jpg",
+      "bio": "Originating from Brazil, Fabiana came to Australia as a student in 1999 before returning to reside here permanently. Working with both students and immigrants as a counsellor and education mentor, Fabiana is now utilising her experience to support the clients at Oakdene."
+    },
+    {
+      "name": "Jason Den-Toll",
+      "role": "Addiction Counsellor (AOD)",
+      "initials": "JD",
+      "photo": "/images/team/colour-jason-website.jpg",
+      "bio": "Jason has worked in the field of human development, psychology and sports education for over 30 years. He combined that experience with his own personal recovery and ongoing training in trauma and life coaching to complete his Masters in Counselling before finding Oakdene House in 2022."
+    },
+    {
+      "name": "Suzan Ogde",
+      "role": "Administration and Front Desk Officer",
+      "initials": "SO",
+      "photo": "/images/team/suzan-ogde.jpg",
+      "bio": "Suzan is a dedicated support professional with experience assisting people facing alcohol and gambling addiction, homelessness, domestic violence, and complex social challenges. She works closely with a range of community services to ensure clients receive coordinated care, and is currently completing a Master of Business Administration with a focus on leadership and community-focused service delivery."
+    },
+    {
+      "name": "Pauline Sahyoun",
+      "role": "Community Programs Coordinator",
+      "initials": "PS",
+      "photo": "/images/team/pauline-sayhoun.jpg",
+      "bio": "Pauline has extensive experience across education, forensic medicine, and healthcare. A certified interpreter fluent in spoken and written Arabic, she helps bridge communication gaps and foster cultural understanding within the community. In her role as Programs Coordinator, Pauline develops and delivers programs that create positive outcomes and strengthen community engagement."
+    },
+    {
+      "name": "Carolyn Farrugia",
+      "role": "Counsellor",
+      "initials": "CF",
+      "photo": "/images/team/carolyn-farrugia.jpg",
+      "bio": "Carolyn is a Registered Counsellor with the Australian Counselling Association, with fifteen years of experience in mental health. She facilitates groups focused on addiction recovery and abstinence, and delivers Dialectical Behaviour Therapy for behaviour change. In one-on-one work, Carolyn takes a person-centred approach drawing on solution-focused, positive psychology, and strength-based therapies."
+    }
+  ],
+  "patrons": [
+    {
+      "name": "Dr Bo Bernhard",
+      "role": "Patron — Vice President of Economic Development, Professor at University of Nevada Las Vegas",
+      "initials": "BB",
+      "photo": "/images/team/bo-bernhard-headshot2.jpg",
+      "bio": "Dr Bo Bernhard is one of the world's leading figures in the study of gambling addiction, with over 25 years experience researching and teaching at UNLV where he serves as Executive Director of the International Gaming Institute. Dr Bernhard is looking forward to sharing information and working towards supporting gamblers as they seek to overcome their addiction."
+    },
+    {
+      "name": "Deacon Thomas A Roberts",
+      "role": "Patron — Deacon at Holy Spirit Roman Catholic Church, President and CEO of Catholic Charities of Southern Nevada",
+      "initials": "TR",
+      "photo": "/images/patrons/colour-tom-roberts-1.jpg",
+      "bio": "Deacon Tom Roberts was ordained as a Permanent Deacon in the Diocese of Las Vegas in 2011 and has served as President and CEO of Catholic Charities of Southern Nevada since 2013. He brings more than 27 years of executive management, operations and leadership experience to his role as patron of Oakdene House Foundation."
+    }
+  ]
+}

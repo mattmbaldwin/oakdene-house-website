@@ -1,0 +1,27 @@
+{
+  "serviceName": "Gambling Help NSW",
+  "organisation": "Gambling Help NSW",
+  "category": "Gambling Support",
+  "categoryGroup": "Other Support",
+  "serviceType": "Gambling Counselling",
+  "contact": {
+    "phone": "1800 858 858",
+    "email": null,
+    "website": "https://www.gamblinghelp.nsw.gov.au"
+  },
+  "social": {},
+  "location": {
+    "suburb": "NSW",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

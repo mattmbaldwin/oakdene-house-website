@@ -1,0 +1,29 @@
+{
+  "serviceName": "Higher Ground",
+  "organisation": "Higher Ground",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Residential Rehabilitation",
+  "contact": {
+    "phone": "(02) 9743 8081",
+    "email": null,
+    "website": "https://www.salvationarmy.org.au/aod/services/higher-ground/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/SalvosAustralia/"
+  },
+  "location": {
+    "suburb": "Hunter Region",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Higher%20Ground"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "Run by The Salvation Army Australia"
+}

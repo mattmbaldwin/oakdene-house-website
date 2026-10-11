@@ -1,0 +1,495 @@
+{
+  "/images/about/bandw-oakdene-tree-bottom.jpg": {
+    "width": 1920,
+    "height": 1280,
+    "variants": {
+      "640": "/images/about/bandw-oakdene-tree-bottom-640.jpg",
+      "1080": "/images/about/bandw-oakdene-tree-bottom-1080.jpg"
+    }
+  },
+  "/images/about/bandw-oakdene-tree-leaves-and-base.jpg": {
+    "width": 1280,
+    "height": 853,
+    "variants": {
+      "640": "/images/about/bandw-oakdene-tree-leaves-and-base-640.jpg",
+      "1080": "/images/about/bandw-oakdene-tree-leaves-and-base-1080.jpg"
+    }
+  },
+  "/images/about/bandwoakdene-tree-panorama.jpg": {
+    "width": 1920,
+    "height": 299,
+    "variants": {
+      "640": "/images/about/bandwoakdene-tree-panorama-640.jpg",
+      "1080": "/images/about/bandwoakdene-tree-panorama-1080.jpg"
+    }
+  },
+  "/images/about/colour-oakdene-tree-panorama.jpg": {
+    "width": 1920,
+    "height": 299,
+    "variants": {
+      "640": "/images/about/colour-oakdene-tree-panorama-640.jpg",
+      "1080": "/images/about/colour-oakdene-tree-panorama-1080.jpg"
+    }
+  },
+  "/images/about/oakdene-tree-hero-colour.jpg": {
+    "width": 1920,
+    "height": 700,
+    "variants": {
+      "640": "/images/about/oakdene-tree-hero-colour-640.jpg",
+      "1080": "/images/about/oakdene-tree-hero-colour-1080.jpg"
+    }
+  },
+  "/images/about/oakdene-tree-sunlight.jpg": {
+    "width": 1920,
+    "height": 1280,
+    "variants": {
+      "640": "/images/about/oakdene-tree-sunlight-640.jpg",
+      "1080": "/images/about/oakdene-tree-sunlight-1080.jpg"
+    }
+  },
+  "/images/boutique/boutique-interior-1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "variants": {
+      "640": "/images/boutique/boutique-interior-1-640.jpg",
+      "1080": "/images/boutique/boutique-interior-1-1080.jpg"
+    }
+  },
+  "/images/boutique/boutique-interior-close-up-bag-warmer.jpg": {
+    "width": 1920,
+    "height": 1439,
+    "variants": {
+      "640": "/images/boutique/boutique-interior-close-up-bag-warmer-640.jpg",
+      "1080": "/images/boutique/boutique-interior-close-up-bag-warmer-1080.jpg"
+    }
+  },
+  "/images/boutique/boutique-interior-clothing-rack.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "variants": {
+      "640": "/images/boutique/boutique-interior-clothing-rack-640.jpg",
+      "1080": "/images/boutique/boutique-interior-clothing-rack-1080.jpg"
+    }
+  },
+  "/images/boutique/boutique-interior-hair-area.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "variants": {
+      "640": "/images/boutique/boutique-interior-hair-area-640.jpg",
+      "1080": "/images/boutique/boutique-interior-hair-area-1080.jpg"
+    }
+  },
+  "/images/boutique/boutique-interior-looking-down-shop-with-people.jpg": {
+    "width": 1195,
+    "height": 896,
+    "variants": {
+      "640": "/images/boutique/boutique-interior-looking-down-shop-with-people-640.jpg",
+      "1080": "/images/boutique/boutique-interior-looking-down-shop-with-people-1080.jpg"
+    }
+  },
+  "/images/boutique/boutique-interior-looking-down-shop.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "variants": {
+      "640": "/images/boutique/boutique-interior-looking-down-shop-640.jpg",
+      "1080": "/images/boutique/boutique-interior-looking-down-shop-1080.jpg"
+    }
+  },
+  "/images/boutique/boutique-interior-shelves-clothing.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "variants": {
+      "640": "/images/boutique/boutique-interior-shelves-clothing-640.jpg",
+      "1080": "/images/boutique/boutique-interior-shelves-clothing-1080.jpg"
+    }
+  },
+  "/images/boutique/ladies-boutique-edited.jpg": {
+    "width": 1920,
+    "height": 1439,
+    "variants": {
+      "640": "/images/boutique/ladies-boutique-edited-640.jpg",
+      "1080": "/images/boutique/ladies-boutique-edited-1080.jpg"
+    }
+  },
+  "/images/centre/exterior-exterior-1-img_2651.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "variants": {
+      "640": "/images/centre/exterior-exterior-1-img_2651-640.jpg",
+      "1080": "/images/centre/exterior-exterior-1-img_2651-1080.jpg"
+    }
+  },
+  "/images/centre/exterior-exterior-2-img_2649-with-people.jpg": {
+    "width": 1920,
+    "height": 1439,
+    "variants": {
+      "640": "/images/centre/exterior-exterior-2-img_2649-with-people-640.jpg",
+      "1080": "/images/centre/exterior-exterior-2-img_2649-with-people-1080.jpg"
+    }
+  },
+  "/images/centre/interior-img_2655-with-people.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "variants": {
+      "640": "/images/centre/interior-img_2655-with-people-640.jpg",
+      "1080": "/images/centre/interior-img_2655-with-people-1080.jpg"
+    }
+  },
+  "/images/centre/interior-img_2655.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "variants": {
+      "640": "/images/centre/interior-img_2655-640.jpg",
+      "1080": "/images/centre/interior-img_2655-1080.jpg"
+    }
+  },
+  "/images/centre/interior-interior-1-with-people-img_2654.jpg": {
+    "width": 896,
+    "height": 1195,
+    "variants": {
+      "640": "/images/centre/interior-interior-1-with-people-img_2654-640.jpg"
+    }
+  },
+  "/images/centre/interior-interior-2-img_2656-with-people-2.jpg": {
+    "width": 1920,
+    "height": 1439,
+    "variants": {
+      "640": "/images/centre/interior-interior-2-img_2656-with-people-2-640.jpg",
+      "1080": "/images/centre/interior-interior-2-img_2656-with-people-2-1080.jpg"
+    }
+  },
+  "/images/centre/interior-interior-2-img_2656-with-people.jpg": {
+    "width": 1920,
+    "height": 1439,
+    "variants": {
+      "640": "/images/centre/interior-interior-2-img_2656-with-people-640.jpg",
+      "1080": "/images/centre/interior-interior-2-img_2656-with-people-1080.jpg"
+    }
+  },
+  "/images/centre/interior-meetings-1-img_2657-v2.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "variants": {
+      "640": "/images/centre/interior-meetings-1-img_2657-v2-640.jpg",
+      "1080": "/images/centre/interior-meetings-1-img_2657-v2-1080.jpg"
+    }
+  },
+  "/images/centre/interior-meetings-1-img_2657.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "variants": {
+      "640": "/images/centre/interior-meetings-1-img_2657-640.jpg",
+      "1080": "/images/centre/interior-meetings-1-img_2657-1080.jpg"
+    }
+  },
+  "/images/centre/outside-meeting-2.jpg": {
+    "width": 1920,
+    "height": 1439,
+    "variants": {
+      "640": "/images/centre/outside-meeting-2-640.jpg",
+      "1080": "/images/centre/outside-meeting-2-1080.jpg"
+    }
+  },
+  "/images/centre/outside-meeting.jpg": {
+    "width": 1448,
+    "height": 1086,
+    "variants": {
+      "640": "/images/centre/outside-meeting-640.jpg",
+      "1080": "/images/centre/outside-meeting-1080.jpg"
+    }
+  },
+  "/images/dbt/dbt-hero-photo.jpg": {
+    "width": 1920,
+    "height": 1439,
+    "variants": {
+      "640": "/images/dbt/dbt-hero-photo-640.jpg",
+      "1080": "/images/dbt/dbt-hero-photo-1080.jpg"
+    }
+  },
+  "/images/gambling/gambling-counselling.jpg": {
+    "width": 860,
+    "height": 645,
+    "variants": {
+      "640": "/images/gambling/gambling-counselling-640.jpg"
+    }
+  },
+  "/images/generic/bandw-distressed-woman.jpeg": {
+    "width": 1920,
+    "height": 1357,
+    "variants": {
+      "640": "/images/generic/bandw-distressed-woman-640.jpeg",
+      "1080": "/images/generic/bandw-distressed-woman-1080.jpeg"
+    }
+  },
+  "/images/generic/bandw-forset-sun-beam.jpeg": {
+    "width": 1920,
+    "height": 1357,
+    "variants": {
+      "640": "/images/generic/bandw-forset-sun-beam-640.jpeg",
+      "1080": "/images/generic/bandw-forset-sun-beam-1080.jpeg"
+    }
+  },
+  "/images/generic/colour-business-man_distress.jpg": {
+    "width": 1358,
+    "height": 1920,
+    "variants": {
+      "640": "/images/generic/colour-business-man_distress-640.jpg",
+      "1080": "/images/generic/colour-business-man_distress-1080.jpg"
+    }
+  },
+  "/images/generic/colour-distressed-woman.jpg": {
+    "width": 1920,
+    "height": 1355,
+    "variants": {
+      "640": "/images/generic/colour-distressed-woman-640.jpg",
+      "1080": "/images/generic/colour-distressed-woman-1080.jpg"
+    }
+  },
+  "/images/hero/hero-centre-1.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "variants": {
+      "640": "/images/hero/hero-centre-1-640.jpg",
+      "1080": "/images/hero/hero-centre-1-1080.jpg"
+    }
+  },
+  "/images/hero/hero-centre-2.jpg": {
+    "width": 1920,
+    "height": 1439,
+    "variants": {
+      "640": "/images/hero/hero-centre-2-640.jpg",
+      "1080": "/images/hero/hero-centre-2-1080.jpg"
+    }
+  },
+  "/images/hero/hero-centre-3-with-people.jpg": {
+    "width": 1280,
+    "height": 1707,
+    "variants": {
+      "640": "/images/hero/hero-centre-3-with-people-640.jpg",
+      "1080": "/images/hero/hero-centre-3-with-people-1080.jpg"
+    }
+  },
+  "/images/hero/hero-support-us.jpg": {
+    "width": 1000,
+    "height": 375,
+    "variants": {
+      "640": "/images/hero/hero-support-us-640.jpg"
+    }
+  },
+  "/images/kitchen/kitchen-3x-staff-serving.jpg": {
+    "width": 1200,
+    "height": 673,
+    "variants": {
+      "640": "/images/kitchen/kitchen-3x-staff-serving-640.jpg",
+      "1080": "/images/kitchen/kitchen-3x-staff-serving-1080.jpg"
+    }
+  },
+  "/images/kitchen/oakdene-kitchen-around-table.jpg": {
+    "width": 769,
+    "height": 511,
+    "variants": {
+      "640": "/images/kitchen/oakdene-kitchen-around-table-640.jpg"
+    }
+  },
+  "/images/kitchen/oakdene-kitchen-exterior-line-up-final.jpg": {
+    "width": 900,
+    "height": 675,
+    "variants": {
+      "640": "/images/kitchen/oakdene-kitchen-exterior-line-up-final-640.jpg"
+    }
+  },
+  "/images/kitchen/oakdene-kitchen-exterior-line-up.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "variants": {
+      "640": "/images/kitchen/oakdene-kitchen-exterior-line-up-640.jpg",
+      "1080": "/images/kitchen/oakdene-kitchen-exterior-line-up-1080.jpg"
+    }
+  },
+  "/images/kitchen/oakdene-kitchen-interior-volunteer-serving.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "variants": {
+      "640": "/images/kitchen/oakdene-kitchen-interior-volunteer-serving-640.jpg",
+      "1080": "/images/kitchen/oakdene-kitchen-interior-volunteer-serving-1080.jpg"
+    }
+  },
+  "/images/kitchen/oakdene-kitchen-interior-with-food-stacks.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "variants": {
+      "640": "/images/kitchen/oakdene-kitchen-interior-with-food-stacks-640.jpg",
+      "1080": "/images/kitchen/oakdene-kitchen-interior-with-food-stacks-1080.jpg"
+    }
+  },
+  "/images/kitchen/oakdene-kitchen-volunteer-serving-with-smile.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "variants": {
+      "640": "/images/kitchen/oakdene-kitchen-volunteer-serving-with-smile-640.jpg",
+      "1080": "/images/kitchen/oakdene-kitchen-volunteer-serving-with-smile-1080.jpg"
+    }
+  },
+  "/images/kitchen/oakdene-kitchen-volunteers-wrappimg-bread.jpg": {
+    "width": 1920,
+    "height": 1440,
+    "variants": {
+      "640": "/images/kitchen/oakdene-kitchen-volunteers-wrappimg-bread-640.jpg",
+      "1080": "/images/kitchen/oakdene-kitchen-volunteers-wrappimg-bread-1080.jpg"
+    }
+  },
+  "/images/kitchen/staple-food-packs-header.jpg": {
+    "width": 850,
+    "height": 637,
+    "variants": {
+      "640": "/images/kitchen/staple-food-packs-header-640.jpg"
+    }
+  },
+  "/images/laundrette/anthony-sobb-oakdene-laundrette-1.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "variants": {
+      "640": "/images/laundrette/anthony-sobb-oakdene-laundrette-1-640.jpg",
+      "1080": "/images/laundrette/anthony-sobb-oakdene-laundrette-1-1080.jpg"
+    }
+  },
+  "/images/laundrette/laundrette-interior-1-with-people.jpg": {
+    "width": 1280,
+    "height": 1707,
+    "variants": {
+      "640": "/images/laundrette/laundrette-interior-1-with-people-640.jpg",
+      "1080": "/images/laundrette/laundrette-interior-1-with-people-1080.jpg"
+    }
+  },
+  "/images/laundrette/laundrette-interior-1.jpg": {
+    "width": 1280,
+    "height": 1707,
+    "variants": {
+      "640": "/images/laundrette/laundrette-interior-1-640.jpg",
+      "1080": "/images/laundrette/laundrette-interior-1-1080.jpg"
+    }
+  },
+  "/images/laundrette/laundrette-interior-3-washing-machines.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "variants": {
+      "640": "/images/laundrette/laundrette-interior-3-washing-machines-640.jpg",
+      "1080": "/images/laundrette/laundrette-interior-3-washing-machines-1080.jpg"
+    }
+  },
+  "/images/logos/partners/ozharvest-logo-yellow.jpeg": {
+    "width": 1079,
+    "height": 607,
+    "variants": {
+      "640": "/images/logos/partners/ozharvest-logo-yellow-640.jpeg"
+    }
+  },
+  "/images/patrons/colour-tom-roberts-1.jpg": {
+    "width": 700,
+    "height": 1050,
+    "variants": {
+      "640": "/images/patrons/colour-tom-roberts-1-640.jpg"
+    }
+  },
+  "/images/team/bo-bernhard-headshot2.jpg": {
+    "width": 765,
+    "height": 1024,
+    "variants": {
+      "640": "/images/team/bo-bernhard-headshot2-640.jpg"
+    }
+  },
+  "/images/team/colour-anne-marie.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "variants": {
+      "640": "/images/team/colour-anne-marie-640.jpg",
+      "1080": "/images/team/colour-anne-marie-1080.jpg"
+    }
+  },
+  "/images/team/colour-jason-website.jpg": {
+    "width": 1280,
+    "height": 1706,
+    "variants": {
+      "640": "/images/team/colour-jason-website-640.jpg",
+      "1080": "/images/team/colour-jason-website-1080.jpg"
+    }
+  },
+  "/images/team/colour-mark-facing-camera.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "variants": {
+      "640": "/images/team/colour-mark-facing-camera-640.jpg",
+      "1080": "/images/team/colour-mark-facing-camera-1080.jpg"
+    }
+  },
+  "/images/team/colour-souri-website.jpg": {
+    "width": 1673,
+    "height": 1920,
+    "variants": {
+      "640": "/images/team/colour-souri-website-640.jpg",
+      "1080": "/images/team/colour-souri-website-1080.jpg"
+    }
+  },
+  "/images/team/fabiana-colour-side-on.jpg": {
+    "width": 1440,
+    "height": 1920,
+    "variants": {
+      "640": "/images/team/fabiana-colour-side-on-640.jpg",
+      "1080": "/images/team/fabiana-colour-side-on-1080.jpg"
+    }
+  },
+  "/images/video/oakdene-video-thumb.jpg": {
+    "width": 1280,
+    "height": 720,
+    "variants": {
+      "640": "/images/video/oakdene-video-thumb-640.jpg",
+      "1080": "/images/video/oakdene-video-thumb-1080.jpg"
+    }
+  },
+  "/images/video/one-day-at-a-time-01-thumb.jpg": {
+    "width": 1280,
+    "height": 720,
+    "variants": {
+      "640": "/images/video/one-day-at-a-time-01-thumb-640.jpg",
+      "1080": "/images/video/one-day-at-a-time-01-thumb-1080.jpg"
+    }
+  },
+  "/images/volunteers/oakdene-volunteer-kitchen-1.jpg": {
+    "width": 860,
+    "height": 572,
+    "variants": {
+      "640": "/images/volunteers/oakdene-volunteer-kitchen-1-640.jpg"
+    }
+  },
+  "/images/volunteers/oakdene-volunteer-kitchen-1a.jpg": {
+    "width": 1920,
+    "height": 1439,
+    "variants": {
+      "640": "/images/volunteers/oakdene-volunteer-kitchen-1a-640.jpg",
+      "1080": "/images/volunteers/oakdene-volunteer-kitchen-1a-1080.jpg"
+    }
+  },
+  "/images/volunteers/oakdene-volunteer-kitchen-2.jpg": {
+    "width": 1920,
+    "height": 1439,
+    "variants": {
+      "640": "/images/volunteers/oakdene-volunteer-kitchen-2-640.jpg",
+      "1080": "/images/volunteers/oakdene-volunteer-kitchen-2-1080.jpg"
+    }
+  },
+  "/images/volunteers/oakdene-volunteer-kitchen-3.jpg": {
+    "width": 800,
+    "height": 640,
+    "variants": {
+      "640": "/images/volunteers/oakdene-volunteer-kitchen-3-640.jpg"
+    }
+  },
+  "/images/volunteers/oakdene-volunteer-kitchen-3a.jpg": {
+    "width": 1920,
+    "height": 1439,
+    "variants": {
+      "640": "/images/volunteers/oakdene-volunteer-kitchen-3a-640.jpg",
+      "1080": "/images/volunteers/oakdene-volunteer-kitchen-3a-1080.jpg"
+    }
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "seo__browser_title": "Individual Counselling — Oakdene House Foundation",
+  "seo__search_description": "Confidential, one-on-one counselling at Oakdene House for people affected by addiction and related challenges. Free. Fairfield, Western Sydney.",
+  "hero__title": "Individual Counselling",
+  "hero__intro": "Confidential, one-on-one counselling for people affected by addiction and related challenges.",
+  "overview__eyebrow": "The Service",
+  "overview__heading": "A space to talk openly",
+  "overview__text": "Oakdene House offers individual counselling for people affected by addiction and related challenges. Counselling provides a confidential space to talk openly, understand what is happening and work toward realistic next steps. **Our counsellors specialise in gambling and alcohol dependency, alongside support for related life challenges.**",
+  "overview__text_2": "All counselling sessions are free of charge.",
+  "overview__subheading": "What counselling can support",
+  "overview__subheading_2": "Our approach",
+  "overview__text_3": "We aim to provide counselling that is respectful, practical and responsive to the person in front of us. Support is shaped around individual needs, not a fixed script.",
+  "overview__text_4": "Cost",
+  "overview__text_5": "Free",
+  "overview__text_6": "Access",
+  "overview__text_7": "By phone, email, or form",
+  "overview__text_8": "Confidential",
+  "overview__text_9": "Yes — all conversations are private",
+  "overview__button": "admin@oakdenehouse.org.au",
+  "what_to_expect__eyebrow": "What to Expect",
+  "what_to_expect__heading": "Counselling with you, not at you",
+  "what_to_expect__subheading": "Listened to",
+  "what_to_expect__text": "Your counsellor takes time to understand your situation before suggesting anything.",
+  "what_to_expect__subheading_2": "Confidential",
+  "what_to_expect__text_2": "Everything you share stays private. Confidentiality is fundamental to our practice.",
+  "what_to_expect__subheading_3": "Practical",
+  "what_to_expect__text_3": "Support is focused on realistic next steps and tangible progress — not just insight.",
+  "what_to_expect__subheading_4": "Non-judgmental",
+  "what_to_expect__text_4": "You will not be judged for your choices or circumstances. We start from where you are.",
+  "cta__heading": "Want to arrange a counselling session?",
+  "cta__primarybtn": {
+    "text": "Counselling Referral",
+    "href": "/services/referral/"
+  },
+  "cta__secondarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "data__supports": [
+    "Addiction and recovery-related concerns",
+    "Emotional wellbeing and coping",
+    "Goal setting and change planning",
+    "Support during difficult periods of transition or stress"
+  ]
+}

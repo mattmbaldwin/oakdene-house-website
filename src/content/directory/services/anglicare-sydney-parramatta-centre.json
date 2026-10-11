@@ -1,0 +1,30 @@
+{
+  "serviceName": "Anglicare Sydney - Parramatta Centre",
+  "organisation": "Anglicare Sydney",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Family / community / aged care",
+  "contact": {
+    "phone": "(02) 9890 6800",
+    "email": "ask@anglicare.org.au",
+    "website": "https://www.anglicare.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/AnglicareSydney/",
+    "linkedin": "https://www.linkedin.com/company/anglicare-sydney/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "39 922 553 215",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Anglicare%20Sydney"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (ABN 39 922 553 215); My Aged Care"
+}

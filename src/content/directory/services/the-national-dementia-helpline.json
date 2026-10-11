@@ -1,0 +1,27 @@
+{
+  "serviceName": "The National Dementia Helpline",
+  "organisation": "The National Dementia Helpline",
+  "category": "Health / Community Service",
+  "categoryGroup": "Other Support",
+  "serviceType": "Counselling / Mental Health Support",
+  "contact": {
+    "phone": "1800 100 500",
+    "email": "helpline@dementia.org.au",
+    "website": "https://www.dementia.org.au/get-support/counselling"
+  },
+  "social": {},
+  "location": {
+    "suburb": "N/A — National service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "79 625 582 771",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Dementia%20Australia"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

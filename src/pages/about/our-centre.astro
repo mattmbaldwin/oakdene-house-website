@@ -1,32 +1,21 @@
 ---
+import programs from '../../content/programs.json';
+import { inline } from '../../lib/format';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import InfoTable from '../../components/InfoTable.astro';
 import CTABand from '../../components/CTABand.astro';
+import pageText from '../../content/pages/about-our-centre.json';
 
-const locationRows = [
-  { label: 'Address', value: '29 Vine St, Fairfield NSW 2165' },
-  { label: 'Phone',   value: '<a href="tel:0287170999">(02) 8717 0999</a>' },
-  { label: 'Email',   value: '<a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a>' },
-  { label: 'Parking', value: 'Open air car park, corner of Vine &amp; Bertha Streets' },
-];
+const locationRows = programs.our_centre.rows.map((row) => ({ label: row.label, value: inline(row.value) }));
 
-const gallery = [
-  { src: '/images/centre/exterior-exterior-2-img_2649-with-people.png', alt: 'Oakdene House centre exterior side view' },
-  { src: '/images/centre/interior-interior-1-with-people-img_2654.jpg',  alt: 'Oakdene House centre interior main space' },
-  { src: '/images/centre/interior-meetings-1-img_2657-v2.png', alt: 'Oakdene House centre meeting room' },
-];
+const gallery = pageText.data__gallery;
 
-const whatToExpect = [
-  'A warm and respectful environment',
-  'Private spaces for individual support',
-  'Group areas for programs and peer connection',
-  'Community service areas including the kitchen, laundrette and boutique',
-];
+const whatToExpect = pageText.data__what_to_expect;
 ---
 
 <BaseLayout
-  title="Our Centre — Oakdene House Foundation"
-  description="Oakdene House is a safe, welcoming and practical space in Fairfield, Western Sydney bringing together counselling rooms, group spaces and community services all in one place."
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
   ogImage="/images/centre/exterior-exterior-1-img_2651.jpg"
 >
 
@@ -41,8 +30,8 @@ const whatToExpect = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">Our Centre</span>
       </nav>
-      <h1>Our Centre</h1>
-      <p class="centre-hero__lead">A safe, welcoming and practical space in Fairfield where people can access help in one place.</p>
+      <h1>{pageText.hero__title}</h1>
+      <p class="centre-hero__lead">{pageText.hero__intro}</p>
     </div>
   </section>
 
@@ -52,19 +41,19 @@ const whatToExpect = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">The Space</p>
-            <h2 id="centre-intro-heading">A space built around people</h2>
+            <p class="section-heading__eyebrow">{pageText.intro_what_to_expect__eyebrow}</p>
+            <h2 id="centre-intro-heading">{pageText.intro_what_to_expect__heading}</h2>
           </div>
-          <p>Oakdene House is designed to be a safe, welcoming and practical space for people seeking support. Our centre brings together counselling rooms, group spaces and community service areas so people can access help in one place.</p>
-          <h3 class="expect-heading">What visitors can expect</h3>
+          <p>{pageText.intro_what_to_expect__text}</p>
+          <h3 class="expect-heading">{pageText.intro_what_to_expect__subheading}</h3>
           <ul class="expect-list">
             {whatToExpect.map(item => <li>{item}</li>)}
           </ul>
         </div>
         <div class="split__image">
           <img
-            src="/images/centre/interior-img_2655-with-people.png"
-            alt="Inside Oakdene House Foundation centre"
+            src="/images/centre/interior-img_2655-with-people.jpg"
+            alt={pageText.intro_what_to_expect__image_alt}
             loading="lazy"
           />
         </div>
@@ -76,8 +65,8 @@ const whatToExpect = [
   <section class="section section--tint" aria-labelledby="gallery-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">The Building</p>
-        <h2 id="gallery-heading">Inside and outside our centre</h2>
+        <p class="section-heading__eyebrow">{pageText.gallery__eyebrow}</p>
+        <h2 id="gallery-heading">{pageText.gallery__heading}</h2>
       </div>
       <div class="centre-gallery">
         {gallery.map((img, i) => (
@@ -109,14 +98,12 @@ const whatToExpect = [
             target="_blank"
             rel="noopener noreferrer"
             class="maps-link"
-          >
-            Open in Google Maps
-          </a>
+          >{pageText.location__button}</a>
         </div>
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">Find Us</p>
-            <h2 id="location-heading">Location and Access</h2>
+            <p class="section-heading__eyebrow">{pageText.location__eyebrow}</p>
+            <h2 id="location-heading">{pageText.location__heading}</h2>
           </div>
           <InfoTable rows={locationRows} />
         </div>
@@ -128,21 +115,19 @@ const whatToExpect = [
   <section class="directions-download">
     <div class="container">
       <div class="directions-card">
-        <h3>Finding us can be tricky</h3>
-        <p>Oakdene House sits behind Fairfield RSL — easy to miss if you don't know where to look. Download our directions guide for photos, maps, and step-by-step instructions.</p>
-        <a href="/downloads/getting-to-oakdene-house.pdf" class="btn btn--primary" download>
-          Download directions (PDF)
-        </a>
+        <h3>{pageText.directions_download__subheading}</h3>
+        <p>{pageText.directions_download__text}</p>
+        <a href="/downloads/getting-to-oakdene-house.pdf" class="btn btn--primary" download>{pageText.directions_download__button}</a>
       </div>
     </div>
   </section>
 
   <!-- CTA -->
   <CTABand
-    heading="Ready to visit or get in touch?"
-    subheading="Our team is here to help. Contact us to arrange a visit or to ask any questions."
-    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
-    secondaryBtn={{ text: 'Get Support', href: '/contact/' }}
+    heading={pageText.cta__heading}
+    subheading={pageText.cta__subheading}
+    primaryBtn={pageText.cta__primarybtn}
+    secondaryBtn={pageText.cta__secondarybtn}
     dark={true}
   />
 
@@ -158,6 +143,12 @@ const whatToExpect = [
     background-position: center;
     display: flex;
     align-items: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    .centre-hero {
+      background-image: url('/images/centre/exterior-exterior-1-img_2651-1080.jpg');
+    }
   }
 
   .centre-hero__overlay {

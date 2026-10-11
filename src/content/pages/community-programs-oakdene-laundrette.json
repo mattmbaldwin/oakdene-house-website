@@ -1,0 +1,50 @@
+{
+  "seo__browser_title": "Oakdene Laundrette — Oakdene House Foundation",
+  "seo__search_description": "Free community laundry service at 1 Dale Street, Fairfield. Open Tuesday to Thursday, 12pm–2:30pm. Last entry 1pm.",
+  "hero__title": "Oakdene Laundrette",
+  "hero__intro": "A free community laundry service for people doing it tough.",
+  "intro_details__eyebrow": "The Service",
+  "intro_details__heading": "Clean clothes, no cost",
+  "intro_details__text": "The Oakdene Laundrette provides free laundry facilities for people experiencing hardship. Whether it's a temporary situation or ongoing difficulty, everyone deserves clean clothes.",
+  "intro_details__subheading": "What's included each visit",
+  "intro_details__caption": "Service details",
+  "laundrette_images__image_alt": "Washing machines inside the Oakdene Laundrette",
+  "laundrette_images__image_alt_2": "Inside the Oakdene Laundrette",
+  "laundrette_images__image_alt_3": "Oakdene Laundrette in use",
+  "how_it_works__eyebrow": "Your Visit",
+  "how_it_works__heading": "How it works",
+  "how_it_works__subheading": "Eligibility",
+  "how_it_works__text": "The same eligibility applies as the Oakdene Kitchen. Bring a current Centrelink Income Statement and photo ID. Your statement must show income under **$1,200 per fortnight**.",
+  "group_bookings__eyebrow": "For Organisations",
+  "group_bookings__heading": "Group laundry bookings",
+  "group_bookings__text": "We offer group laundry bookings outside public hours, available Tuesday to Thursday, for non-profits supporting homelessness, shelters, and group homes.",
+  "group_bookings__text_2": "Must be booked by a support worker who attends in person",
+  "group_bookings__text_3": "2-hour sessions",
+  "group_bookings__text_4": "4 professional-grade machines available",
+  "group_bookings__text_5": "Detergent provided — free of charge",
+  "group_bookings__button": "Book a Session",
+  "cta__heading": "Ready to visit or need more information?",
+  "cta__primarybtn": {
+    "text": "Get Support",
+    "href": "/contact/"
+  },
+  "cta__secondarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "data__per_visit": [
+    "One load of washing",
+    "One load of drying",
+    "Laundry detergent provided",
+    "A clean, private space",
+    "Support from staff or volunteers"
+  ],
+  "data__steps": [
+    "Check in with staff or security on arrival",
+    "Receive a washing tablet and number tag matching your machine",
+    "Load your clothes, place the tablet in the drum and press Start",
+    "When the wash finishes, move items to the dryer",
+    "Stay nearby while cycles run — visit Oakdene Kitchen while you wait",
+    "Return your number tag when finished"
+  ]
+}

@@ -3,32 +3,25 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import CTABand from '../components/CTABand.astro';
 import StatsGrid from '../components/StatsGrid.astro';
+import pageText from '../content/pages/about.json';
 
 // About page impact figures. The homepage uses a different, also confirmed, set.
-const stats = [
-  { number: '5,000+', label: 'People supported each year' },
-  { number: '100+', label: 'Community events and workshops' },
-  { number: '1,000+', label: 'Hours of one-to-one support' },
-  { number: '5,000+', label: 'Meals and practical supports delivered' },
-];
+const stats = pageText.data__stats;
 ---
 
 <BaseLayout
-  title="About Oakdene House Foundation"
-  description="Oakdene House Foundation is a Western Sydney charity supporting people and families affected by addiction, hardship and homelessness through practical help, counselling and community connection."
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
   ogImage="/images/centre/exterior-exterior-1-img_2651.jpg"
 >
 
   <!-- HERO -->
   <Hero
-    heading="About Oakdene House Foundation"
-    subheading="A community charity grounded in practical support, dignity, connection, and real pathways forward."
+    heading={pageText.hero__heading}
+    subheading={pageText.hero__subheading}
     image="/images/centre/exterior-exterior-1-img_2651.jpg"
-    imageAlt="Oakdene House Foundation centre exterior"
-    buttons={[
-      { text: 'Meet Our Team', href: '/about/our-team/', variant: 'white' },
-      { text: 'Contact Us',    href: '/contact/',        variant: 'white-outline' },
-    ]}
+    imageAlt={pageText.hero__image_alt}
+    buttons={pageText.hero__buttons}
   />
 
   <!-- SUBPAGE NAVIGATION -->
@@ -38,34 +31,34 @@ const stats = [
 
         <a href="/about/the-oakdene-story/" class="subpage-nav-card">
           <div class="subpage-nav-card__image-wrap">
-            <img src="/images/about/oakdene-tree-hero-colour.jpg" alt="The Oakdene tree" loading="lazy" />
+            <img src="/images/about/oakdene-tree-hero-colour.jpg" alt={pageText.subpage_navigation__image_alt} loading="lazy" />
           </div>
           <div class="subpage-nav-card__body">
-            <h2>The Oakdene Story</h2>
-            <p>Where we come from and what the oak tree means to us.</p>
-            <span class="subpage-nav-card__arrow" aria-hidden="true">Read the story &rarr;</span>
+            <h2>{pageText.subpage_navigation__heading}</h2>
+            <p>{pageText.subpage_navigation__text}</p>
+            <span class="subpage-nav-card__arrow" aria-hidden="true">{pageText.subpage_navigation__text_2}</span>
           </div>
         </a>
 
         <a href="/about/our-team/" class="subpage-nav-card">
           <div class="subpage-nav-card__image-wrap">
-            <img src="/images/team/colour-mark-facing-camera.jpg" alt="Oakdene team member" loading="lazy" style="object-position: center 30%;" />
+            <img src="/images/team/colour-mark-facing-camera.jpg" alt={pageText.subpage_navigation__image_alt_2} loading="lazy" style="object-position: center 30%;" />
           </div>
           <div class="subpage-nav-card__body">
-            <h2>Our Team</h2>
-            <p>The people behind the work at Oakdene House.</p>
-            <span class="subpage-nav-card__arrow" aria-hidden="true">Meet the team &rarr;</span>
+            <h2>{pageText.subpage_navigation__heading_2}</h2>
+            <p>{pageText.subpage_navigation__text_3}</p>
+            <span class="subpage-nav-card__arrow" aria-hidden="true">{pageText.subpage_navigation__text_4}</span>
           </div>
         </a>
 
         <a href="/about/our-centre/" class="subpage-nav-card">
           <div class="subpage-nav-card__image-wrap">
-            <img src="/images/centre/interior-interior-1-with-people-img_2654.jpg" alt="Oakdene House centre interior" loading="lazy" />
+            <img src="/images/centre/interior-interior-1-with-people-img_2654.jpg" alt={pageText.subpage_navigation__image_alt_3} loading="lazy" />
           </div>
           <div class="subpage-nav-card__body">
-            <h2>Our Centre</h2>
-            <p>A welcoming space in Fairfield for support, connection and community.</p>
-            <span class="subpage-nav-card__arrow" aria-hidden="true">See our centre &rarr;</span>
+            <h2>{pageText.subpage_navigation__heading_3}</h2>
+            <p>{pageText.subpage_navigation__text_5}</p>
+            <span class="subpage-nav-card__arrow" aria-hidden="true">{pageText.subpage_navigation__text_6}</span>
           </div>
         </a>
 
@@ -77,10 +70,10 @@ const stats = [
   <section class="section" aria-labelledby="who-heading">
     <div class="container who-container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Who We Are</p>
-        <h2 id="who-heading">A community charity built around real life</h2>
+        <p class="section-heading__eyebrow">{pageText.who_we_are__eyebrow}</p>
+        <h2 id="who-heading">{pageText.who_we_are__heading}</h2>
       </div>
-      <p class="who-lead">Oakdene House Foundation is based in Western Sydney but supports people and families across the greater Sydney region affected by addiction, hardship, homelessness, and other life challenges. Our work is shaped by the belief that support should be respectful, practical, and accessible, especially when life feels unstable or overwhelming.</p>
+      <p class="who-lead">{pageText.who_we_are__intro}</p>
     </div>
   </section>
 
@@ -88,8 +81,8 @@ const stats = [
   <section class="section section--dark" aria-labelledby="impact-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Our Impact</p>
-        <h2 id="impact-heading">Our year in numbers</h2>
+        <p class="section-heading__eyebrow">{pageText.impact__eyebrow}</p>
+        <h2 id="impact-heading">{pageText.impact__heading}</h2>
       </div>
       <StatsGrid stats={stats} />
     </div>
@@ -99,50 +92,50 @@ const stats = [
   <section class="section section--tint" aria-labelledby="mvv-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">What Drives Us</p>
-        <h2 id="mvv-heading">Mission, Vision and Values</h2>
+        <p class="section-heading__eyebrow">{pageText.mission_vision_values__eyebrow}</p>
+        <h2 id="mvv-heading">{pageText.mission_vision_values__heading}</h2>
       </div>
 
       <div class="mvv-top">
         <div class="mvv-card mvv-card--dark">
-          <p class="mvv-card__label">Our Mission</p>
-          <p class="mvv-card__text">To support people and families through practical help, connection, and pathways that strengthen wellbeing, dignity, and community belonging.</p>
+          <p class="mvv-card__label">{pageText.mission_vision_values__text}</p>
+          <p class="mvv-card__text">{pageText.mission_vision_values__text_2}</p>
         </div>
         <div class="mvv-card mvv-card--light">
-          <p class="mvv-card__label">Our Vision</p>
-          <p class="mvv-card__text">A community where people facing hardship are met with respect, support, and genuine opportunities to move forward.</p>
+          <p class="mvv-card__label">{pageText.mission_vision_values__text_3}</p>
+          <p class="mvv-card__text">{pageText.mission_vision_values__text_4}</p>
         </div>
       </div>
 
-      <h3 class="values-subheading">Our Values</h3>
+      <h3 class="values-subheading">{pageText.mission_vision_values__subheading}</h3>
       <div class="values-grid">
         <div class="value-card">
           <div class="value-card__icon" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
           </div>
-          <h4>Dignity</h4>
-          <p>We treat every person with respect and without judgment.</p>
+          <h4>{pageText.mission_vision_values__subheading_2}</h4>
+          <p>{pageText.mission_vision_values__text_5}</p>
         </div>
         <div class="value-card">
           <div class="value-card__icon" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
           </div>
-          <h4>Practical Support</h4>
-          <p>We focus on what helps in real life, not just what sounds good on paper.</p>
+          <h4>{pageText.mission_vision_values__subheading_3}</h4>
+          <p>{pageText.mission_vision_values__text_6}</p>
         </div>
         <div class="value-card">
           <div class="value-card__icon" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
           </div>
-          <h4>Connection</h4>
-          <p>We believe people do better when they feel seen, supported, and part of a community.</p>
+          <h4>{pageText.mission_vision_values__subheading_4}</h4>
+          <p>{pageText.mission_vision_values__text_7}</p>
         </div>
         <div class="value-card">
           <div class="value-card__icon" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z" stroke="none" fill="none"/><path d="M8 12s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/><circle cx="12" cy="12" r="10"/></svg>
           </div>
-          <h4>Hope</h4>
-          <p>We stay focused on progress, possibilities, and the next step.</p>
+          <h4>{pageText.mission_vision_values__subheading_5}</h4>
+          <p>{pageText.mission_vision_values__text_8}</p>
         </div>
       </div>
     </div>
@@ -154,16 +147,16 @@ const stats = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">How We Work</p>
-            <h2 id="approach-heading">Our Approach</h2>
+            <p class="section-heading__eyebrow">{pageText.our_approach__eyebrow}</p>
+            <h2 id="approach-heading">{pageText.our_approach__heading}</h2>
           </div>
-          <p>Oakdene works in a way that is practical, person-centred, and community-based. We meet people where they are, help respond to immediate needs, and create pathways into longer-term support where needed.</p>
-          <p>We do not see people as problems to be fixed. We see people as capable of change when they have the right support, the right environment and the right relationships around them.</p>
+          <p>{pageText.our_approach__text}</p>
+          <p>{pageText.our_approach__text_2}</p>
         </div>
         <div class="split__image">
           <img
             src="/images/centre/interior-meetings-1-img_2657.jpg"
-            alt="Inside Oakdene House Foundation centre"
+            alt={pageText.our_approach__image_alt}
             loading="lazy"
           />
         </div>
@@ -177,26 +170,21 @@ const stats = [
       <div class="split split--image-right">
         <div class="split__image">
           <img
-            src="/images/centre/interior-interior-2-img_2656-with-people.png"
-            alt="Oakdene House Foundation community space"
+            src="/images/centre/interior-interior-2-img_2656-with-people.jpg"
+            alt={pageText.what_we_do__image_alt}
             loading="lazy"
           />
         </div>
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">Our Work</p>
-            <h2 id="whatwedo-heading">What We Do</h2>
+            <p class="section-heading__eyebrow">{pageText.what_we_do__eyebrow}</p>
+            <h2 id="whatwedo-heading">{pageText.what_we_do__heading}</h2>
           </div>
           <ul class="what-list">
-            <li>Addiction counselling and recovery-focused support</li>
-            <li>The Life Choices group program</li>
-            <li>Peer support through GA and AA meetings</li>
-            <li>Community access through Oakdene Kitchen, Oakdene Laundrette and Oakdene Boutique</li>
-            <li>Volunteer pathways for people who want to give back</li>
-            <li>Financial counselling</li>
-          </ul>
+{pageText.what_we_do__list.map((item) => <li>{item}</li>)}
+</ul>
           <div class="btn-group" style="margin-top: 28px;">
-            <a href="/services/" class="btn btn--primary">Explore Our Services</a>
+            <a href="/services/" class="btn btn--primary">{pageText.what_we_do__button}</a>
           </div>
         </div>
       </div>
@@ -205,9 +193,9 @@ const stats = [
 
   <!-- CTA -->
   <CTABand
-    heading="Want to know more?"
-    primaryBtn={{ text: 'Explore Our Services', href: '/services/' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={pageText.cta__heading}
+    primaryBtn={pageText.cta__primarybtn}
+    secondaryBtn={pageText.cta__secondarybtn}
     dark={true}
   />
 

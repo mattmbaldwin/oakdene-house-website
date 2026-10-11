@@ -1,11 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
+import ResourceList from '../../components/ResourceList.astro';
+import resources from '../../content/resources.json';
+import pageText from '../../content/pages/resources-information-sheets.json';
+
+// Added in the content editor. Until there are any, the page says they are coming soon.
+const items: { title: string; description?: string; file: string }[] = resources.information_sheets;
 ---
 
 <BaseLayout
-  title="Information Sheets — Oakdene House Foundation"
-  description="Oakdene House Foundation information sheets about services and support. Contact us for specific service information."
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
 >
 
   <section class="simple-hero" aria-label="Information Sheets">
@@ -17,13 +23,16 @@ import CTABand from '../../components/CTABand.astro';
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">Information Sheets</span>
       </nav>
-      <h1>Information Sheets</h1>
-      <p class="simple-hero__lead">Detailed service information and guides for clients and referrers.</p>
+      <h1>{pageText.information_sheets__title}</h1>
+      <p class="simple-hero__lead">{pageText.information_sheets__intro}</p>
     </div>
   </section>
 
   <section class="section" aria-labelledby="info-heading">
     <div class="container">
+      {items.length > 0 ? (
+        <ResourceList items={items} label="Information sheets" />
+      ) : (
       <div class="placeholder-content">
         <div class="placeholder-icon" aria-hidden="true">
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
@@ -35,14 +44,15 @@ import CTABand from '../../components/CTABand.astro';
           <a href="/resources/" class="btn btn--secondary">Back to Resources</a>
         </div>
       </div>
+      )}
     </div>
   </section>
 
   <CTABand
-    heading="Looking for specific service information?"
-    subheading="Our team can answer any questions about our programs and services."
-    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
-    secondaryBtn={{ text: 'Browse Services', href: '/services/' }}
+    heading={pageText.information_sheets__heading}
+    subheading={pageText.information_sheets__subheading}
+    primaryBtn={pageText.information_sheets__primarybtn}
+    secondaryBtn={pageText.information_sheets__secondarybtn}
     dark={true}
   />
 

@@ -1,11 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
+import ResourceList from '../../components/ResourceList.astro';
+import resources from '../../content/resources.json';
+import pageText from '../../content/pages/resources-flyers-and-brochures.json';
+
+// Added in the content editor. Until there are any, the page says they are coming soon.
+const items: { title: string; description?: string; file: string }[] = resources.flyers;
 ---
 
 <BaseLayout
-  title="Flyers and Brochures — Oakdene House Foundation"
-  description="Oakdene House Foundation flyers and brochures. Contact us for printed materials."
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
 >
 
   <section class="simple-hero" aria-label="Flyers and Brochures">
@@ -17,13 +23,16 @@ import CTABand from '../../components/CTABand.astro';
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">Flyers and Brochures</span>
       </nav>
-      <h1>Flyers and Brochures</h1>
-      <p class="simple-hero__lead">Printed and digital materials about Oakdene House services.</p>
+      <h1>{pageText.flyers_and_brochures__title}</h1>
+      <p class="simple-hero__lead">{pageText.flyers_and_brochures__intro}</p>
     </div>
   </section>
 
   <section class="section" aria-labelledby="flyers-heading">
     <div class="container">
+      {items.length > 0 ? (
+        <ResourceList items={items} label="Flyers and brochures" />
+      ) : (
       <div class="placeholder-content">
         <div class="placeholder-icon" aria-hidden="true">
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
@@ -35,13 +44,14 @@ import CTABand from '../../components/CTABand.astro';
           <a href="/resources/" class="btn btn--secondary">Back to Resources</a>
         </div>
       </div>
+      )}
     </div>
   </section>
 
   <CTABand
-    heading="Need printed materials?"
-    subheading="Contact our team and we will arrange what you need."
-    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={pageText.flyers_and_brochures__heading}
+    subheading={pageText.flyers_and_brochures__subheading}
+    primaryBtn={pageText.flyers_and_brochures__primarybtn}
     dark={true}
   />
 

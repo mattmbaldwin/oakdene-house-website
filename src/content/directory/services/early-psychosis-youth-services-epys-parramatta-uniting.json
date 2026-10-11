@@ -1,0 +1,27 @@
+{
+  "serviceName": "Early Psychosis Youth Services (EPYS) Parramatta",
+  "organisation": "Uniting",
+  "category": "Health / Community Service",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1800 437 628",
+    "email": "matt@uniting@.org",
+    "website": "https://www.uniting.org/services/mental-health/facility/headspace-early-psychosis-parramatta"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Parramatta",
+    "lga": "Parramatta",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,29 @@
+{
+  "serviceName": "Lisa Harnum Foundation",
+  "organisation": "Lisa Harnum Foundation",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1300 732 848",
+    "email": "info@lisahf.org.au",
+    "website": "https://www.lisahf.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/lisaharnumfoundation/"
+  },
+  "location": {
+    "suburb": "Castle Hill",
+    "lga": "The Hills",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Lisa%20Harnum%20Foundation"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

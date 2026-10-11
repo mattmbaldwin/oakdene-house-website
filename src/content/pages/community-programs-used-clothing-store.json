@@ -1,0 +1,39 @@
+{
+  "seo__browser_title": "Used Clothing Store — Oakdene House Foundation",
+  "seo__search_description": "Free men's and women's clothing, shoes and accessories at Oakdene's Used Clothing Store, inside the Laundrette at 1 Dale Street, Fairfield.",
+  "hero__title": "Oakdene Used Clothing Store",
+  "hero__intro": "Free clothing for people doing it tough.",
+  "intro_details__eyebrow": "The Service",
+  "intro_details__heading": "Clothing with dignity",
+  "intro_details__text": "The Oakdene Used Clothing Store offers free men's and women's clothing, shoes, and accessories to people experiencing hardship. The store is located inside our Laundrette at 1 Dale Street, Fairfield.",
+  "intro_details__text_2": "We believe access to clean, decent clothing is a basic necessity, and we are here to help without judgment.",
+  "intro_details__subheading": "Visit guidelines",
+  "intro_details__caption": "Service details",
+  "intro_details__subheading_2": "Eligibility",
+  "intro_details__text_3": "The same eligibility applies as the Oakdene Kitchen and Laundrette — a current Centrelink Income Statement and photo ID showing income under $1,200 per fortnight.",
+  "clothing_images__image_alt": "Clothing rack at the Oakdene Used Clothing Store",
+  "clothing_images__image_alt_2": "Close up view of clothing at Oakdene",
+  "also_available_note__text": "Also on the same days",
+  "also_available_note__text_2": "The Oakdene Laundrette and Oakdene Kitchen operate on the same days and hours. You can access all three services on a single visit.",
+  "also_available_note__button": "Laundrette",
+  "also_available_note__button_2": "Kitchen",
+  "cta__heading": "Have questions about the store?",
+  "cta__primarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "cta__secondarybtn": {
+    "text": "Get Support",
+    "href": "/contact/"
+  },
+  "data__guidelines": [
+    "3 items per visit",
+    "One visit per month",
+    "Clothing cannot be tried on",
+    "No returns once taken",
+    "One person in the room at a time",
+    "Door must remain open",
+    "Access will be managed by the staff onsite",
+    "Items are not available by request and based on donations received"
+  ]
+}

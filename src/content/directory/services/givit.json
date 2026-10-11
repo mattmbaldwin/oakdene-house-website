@@ -1,0 +1,30 @@
+{
+  "serviceName": "GIVIT",
+  "organisation": "GIVIT",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Donation matching platform for charities",
+  "contact": {
+    "phone": "(02) 8319 1800",
+    "email": "info@givit.org.au",
+    "website": "https://www.givit.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/GIVIT.org.au/",
+    "instagram": "https://www.instagram.com/givit_au/"
+  },
+  "location": {
+    "suburb": "Sydney",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "53 142 013 412",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=GIVIT"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

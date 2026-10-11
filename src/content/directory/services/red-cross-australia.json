@@ -1,0 +1,31 @@
+{
+  "serviceName": "Red Cross Australia",
+  "organisation": "Red Cross Australia",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Emergency support",
+  "contact": {
+    "phone": "1300 300 981",
+    "email": "enquiries@redcross.org.au",
+    "website": "https://www.redcross.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/AustralianRedCross/",
+    "instagram": "https://www.instagram.com/australianredcross/",
+    "linkedin": "https://www.linkedin.com/company/australian-red-cross/"
+  },
+  "location": {
+    "suburb": "N/A — National service",
+    "lga": null,
+    "coverage": "National"
+  },
+  "identifiers": {
+    "abn": "50 169 561 394",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Australian%20Red%20Cross"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

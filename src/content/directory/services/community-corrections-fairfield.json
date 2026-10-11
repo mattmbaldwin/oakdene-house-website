@@ -1,0 +1,27 @@
+{
+  "serviceName": "Community Corrections Fairfield",
+  "organisation": "Community Corrections Fairfield",
+  "category": "Legal / Justice",
+  "categoryGroup": "Legal & Justice",
+  "serviceType": "Legal / Justice Support",
+  "contact": {
+    "phone": "02 9723 4500",
+    "email": null,
+    "website": "https://www.dcj.nsw.gov.au/justice-housing-and-homelessness/corrective-services-nsw/community-corrections.html"
+  },
+  "social": {},
+  "location": {
+    "suburb": "Fairfield",
+    "lga": "Multi-LGA (Western Sydney)",
+    "coverage": "Regional"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

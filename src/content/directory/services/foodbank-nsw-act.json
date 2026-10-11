@@ -1,0 +1,30 @@
+{
+  "serviceName": "Foodbank NSW & ACT",
+  "organisation": "Foodbank NSW & ACT",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Material Aid / Resource Support",
+  "contact": {
+    "phone": "(02) 9821 8633",
+    "email": "contact@foodbank.org.au",
+    "website": "https://www.foodbank.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/FoodbankNSWACT/",
+    "instagram": "https://www.instagram.com/foodbanknswact/"
+  },
+  "location": {
+    "suburb": "Auburn",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "30 097 776 481",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Foodbank%20NSW%20%26%20ACT"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

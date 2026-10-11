@@ -1,11 +1,13 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import pageText from '../../content/pages/services-gambling-counselling.json';
+import { inlineMarkdown } from '../../lib/format';
 import CTABand from '../../components/CTABand.astro';
 ---
 
 <BaseLayout
-  title="Gambling Counselling — Oakdene House Foundation"
-  description="Free, confidential gambling counselling at Oakdene House, provided by Catholic Care. By appointment. Fairfield, Western Sydney."
+  title={pageText.seo__browser_title}
+  description={pageText.seo__search_description}
   ogImage="/images/generic/bandw-distressed-woman.jpeg"
 >
 
@@ -20,8 +22,8 @@ import CTABand from '../../components/CTABand.astro';
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <span aria-current="page">Gambling Counselling</span>
       </nav>
-      <h1>Gambling Counselling</h1>
-      <p class="gc-hero__lead">Free, confidential one-on-one counselling for people affected by gambling.</p>
+      <h1>{pageText.hero__title}</h1>
+      <p class="gc-hero__lead">{pageText.hero__intro}</p>
     </div>
   </section>
 
@@ -31,24 +33,24 @@ import CTABand from '../../components/CTABand.astro';
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">About this service</p>
-            <h2 id="gc-overview-heading">Support without judgment</h2>
+            <p class="section-heading__eyebrow">{pageText.overview__eyebrow}</p>
+            <h2 id="gc-overview-heading">{pageText.overview__heading}</h2>
           </div>
-          <p>Oakdene offers free, confidential one-on-one gambling counselling delivered by our team. Our counsellors are specially trained and experienced in addiction counselling, supporting people affected by gambling and helping them work through their challenges with dignity and respect.</p>
-          <p>Counselling is delivered by appointment on a one-to-one basis. All conversations are confidential and non-judgmental.</p>
+          <p>{pageText.overview__text}</p>
+          <p>{pageText.overview__text_2}</p>
 
           <div class="service-facts">
             <div class="service-fact">
-              <span class="service-fact__label">Cost</span>
-              <span class="service-fact__value">Free</span>
+              <span class="service-fact__label">{pageText.overview__text_3}</span>
+              <span class="service-fact__value">{pageText.overview__text_4}</span>
             </div>
             <div class="service-fact">
-              <span class="service-fact__label">Access</span>
-              <span class="service-fact__value">By appointment</span>
+              <span class="service-fact__label">{pageText.overview__text_5}</span>
+              <span class="service-fact__value">{pageText.overview__text_6}</span>
             </div>
             <div class="service-fact">
-              <span class="service-fact__label">Confidential</span>
-              <span class="service-fact__value">Yes — all sessions are private</span>
+              <span class="service-fact__label">{pageText.overview__text_7}</span>
+              <span class="service-fact__value">{pageText.overview__text_8}</span>
             </div>
           </div>
 
@@ -57,21 +59,21 @@ import CTABand from '../../components/CTABand.astro';
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
               (02) 8717 0999
             </a>
-            <a href="mailto:admin@oakdenehouse.org.au" class="contact-email">admin@oakdenehouse.org.au</a>
+            <a href="mailto:admin@oakdenehouse.org.au" class="contact-email">{pageText.overview__button}</a>
           </div>
         </div>
         <div class="gc-right">
           <div class="gc-image">
-            <img src="/images/gambling/gambling-counselling.png" alt="Person finding support through counselling" loading="lazy" />
+            <img src="/images/gambling/gambling-counselling.jpg" alt={pageText.overview__image_alt} loading="lazy" />
           </div>
           <div class="helpline-box">
             <div class="helpline-box__icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
             </div>
             <div>
-              <p class="helpline-box__heading">24-hour support line</p>
-              <p>If you need to talk right now, the Gambling Help Line is free and available 24 hours a day.</p>
-              <a href="tel:1800858858" class="helpline-number">1800 858 858</a>
+              <p class="helpline-box__heading">{pageText.overview__text_9}</p>
+              <p>{pageText.overview__text_10}</p>
+              <a href="tel:1800858858" class="helpline-number">{pageText.overview__button_2}</a>
             </div>
           </div>
         </div>
@@ -84,26 +86,26 @@ import CTABand from '../../components/CTABand.astro';
     <div class="container">
       <div class="address-inner">
         <div class="section-heading section-heading--center">
-          <p class="section-heading__eyebrow">How We Help</p>
-          <h2 id="address-heading">Understanding the impact of gambling</h2>
-          <p class="section-heading__lead">Gambling can affect every part of a person's life. Our counsellors work with you across all of it.</p>
+          <p class="section-heading__eyebrow">{pageText.what_we_address__eyebrow}</p>
+          <h2 id="address-heading">{pageText.what_we_address__heading}</h2>
+          <p class="section-heading__lead">{pageText.what_we_address__intro}</p>
         </div>
         <div class="impact-grid">
           <div class="impact-item">
-            <h3>Financial pressure</h3>
-            <p>Debt, loss of income, and financial instability are common consequences. Counselling helps you understand your options and plan ahead. Our <a href="/services/financial-counselling/">Financial Counselling</a> service can also help with gambling-related financial harm, debt, and money stress.</p>
+            <h3>{pageText.what_we_address__subheading}</h3>
+            <p set:html={inlineMarkdown(pageText.what_we_address__text)}></p>
           </div>
           <div class="impact-item">
-            <h3>Relationships</h3>
-            <p>Gambling can strain family and personal relationships. We support honest conversations and rebuilding trust.</p>
+            <h3>{pageText.what_we_address__subheading_2}</h3>
+            <p>{pageText.what_we_address__text_2}</p>
           </div>
           <div class="impact-item">
-            <h3>Mental wellbeing</h3>
-            <p>Shame, anxiety and depression often accompany problem gambling. Counselling provides a space to process these experiences.</p>
+            <h3>{pageText.what_we_address__subheading_3}</h3>
+            <p>{pageText.what_we_address__text_3}</p>
           </div>
           <div class="impact-item">
-            <h3>Recovery planning</h3>
-            <p>We help you identify goals, build strategies and develop a personalised path forward.</p>
+            <h3>{pageText.what_we_address__subheading_4}</h3>
+            <p>{pageText.what_we_address__text_4}</p>
           </div>
         </div>
       </div>
@@ -112,10 +114,10 @@ import CTABand from '../../components/CTABand.astro';
 
   <!-- CTA -->
   <CTABand
-    heading="Take the first step"
-    subheading="You do not have to figure this out alone. Reach out and we will arrange an appointment."
-    primaryBtn={{ text: 'Counselling Referral', href: '/services/referral/' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={pageText.cta__heading}
+    subheading={pageText.cta__subheading}
+    primaryBtn={pageText.cta__primarybtn}
+    secondaryBtn={pageText.cta__secondarybtn}
     dark={true}
   />
 
@@ -130,6 +132,12 @@ import CTABand from '../../components/CTABand.astro';
     background-position: center top;
     display: flex;
     align-items: flex-end;
+  }
+
+  @media (max-width: 768px) {
+    .gc-hero {
+      background-image: url('/images/generic/bandw-distressed-woman-1080.jpeg');
+    }
   }
 
   .gc-hero__overlay {
@@ -308,7 +316,7 @@ import CTABand from '../../components/CTABand.astro';
   }
 
   /* Links inside paragraph text need more than colour to stand out */
-  p a:not(.btn) {
+  p :global(a:not(.btn)) {
     text-decoration: underline;
     text-underline-offset: 3px;
   }

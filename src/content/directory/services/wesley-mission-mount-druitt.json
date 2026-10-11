@@ -1,0 +1,30 @@
+{
+  "serviceName": "Wesley Mission - Mount Druitt",
+  "organisation": "Wesley Mission",
+  "category": "Community Support",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community services / counselling",
+  "contact": {
+    "phone": "(02) 9263 5555",
+    "email": "enquiries@wesleymission.org.au",
+    "website": "https://www.wesleymission.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/wesleymission/",
+    "linkedin": "https://www.linkedin.com/company/wesley-mission/"
+  },
+  "location": {
+    "suburb": "Mount Druitt",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "42 164 655 145",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Wesley%20Mission"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "ACNC (ABN 42 164 655 145)"
+}

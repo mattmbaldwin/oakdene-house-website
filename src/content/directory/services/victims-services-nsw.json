@@ -1,0 +1,29 @@
+{
+  "serviceName": "Victims Services NSW",
+  "organisation": "Victims Services NSW",
+  "category": "Legal / Justice",
+  "categoryGroup": "Legal & Justice",
+  "serviceType": "Legal / Justice Support",
+  "contact": {
+    "phone": "1800 633 063",
+    "email": null,
+    "website": "https://www.victimsservices.nsw.gov.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/CommunitiesAndJustice/"
+  },
+  "location": {
+    "suburb": "Parramatta",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": null
+  },
+  "flags": {
+    "aod": false,
+    "legal": true
+  },
+  "listedIn": null
+}

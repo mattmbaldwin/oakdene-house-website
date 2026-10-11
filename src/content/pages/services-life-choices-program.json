@@ -1,0 +1,54 @@
+{
+  "seo__browser_title": "Life Choices Program — Oakdene House Foundation",
+  "seo__search_description": "A 6-week group program at Oakdene House to understand addiction, build life skills and connect with others. Multiple sessions available in-person and online.",
+  "hero__title": "Life Choices Program",
+  "hero__intro": "A 6-week group program to help you understand addiction and build life skills.",
+  "overview__eyebrow": "Program Overview",
+  "overview__heading": "Life Choices",
+  "overview__text": "The Life Choices Program is a practical, 6-week group experience designed to help people understand addiction, learn coping strategies, build life skills, and connect with others on a similar journey.",
+  "overview__text_2": "We meet regularly, share experiences, and work toward recovery in a supportive environment.",
+  "overview__subheading": "What participants can expect",
+  "overview__text_3": "Who it's for",
+  "overview__text_4": "Life Choices is suitable for people who are ready to engage in a group-based program that supports change, accountability and future planning.",
+  "overview__image_alt": "Group meeting room at Oakdene House",
+  "schedule__eyebrow": "Session Times",
+  "schedule__heading": "Program schedule",
+  "schedule__intro": "Sessions run across the week with both in-person and online options available.",
+  "schedule__cell": "Day",
+  "schedule__cell_2": "Time",
+  "schedule__cell_3": "Format",
+  "schedule__cell_4": "Audience",
+  "how_to_join__eyebrow": "Getting Started",
+  "how_to_join__heading": "How to join",
+  "how_to_join__button": "(02) 8717 0999",
+  "how_to_join__button_2": "admin@oakdenehouse.org.au",
+  "cta__heading": "Interested in Life Choices?",
+  "cta__primarybtn": {
+    "text": "Program Interest",
+    "href": "/contact/?reason=program-interest"
+  },
+  "cta__secondarybtn": {
+    "text": "Make an Enquiry",
+    "href": "/contact/"
+  },
+  "data__what_to_expect": [
+    "A structured group environment",
+    "Topics that support reflection, responsibility and personal growth",
+    "Practical strategies that can be applied in everyday life",
+    "A respectful setting that values participation, not perfection"
+  ],
+  "data__join_steps": [
+    {
+      "heading": "Get in Touch",
+      "body": "Call or email Oakdene to express your interest."
+    },
+    {
+      "heading": "Have a Chat",
+      "body": "A team member will have a short conversation with you to see if the program is a good fit."
+    },
+    {
+      "heading": "Come to First Session",
+      "body": "Join us at the first session. You will meet the group and get started."
+    }
+  ]
+}

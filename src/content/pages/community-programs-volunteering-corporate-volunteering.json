@@ -1,0 +1,40 @@
+{
+  "seo__browser_title": "Corporate Volunteering — Oakdene House Foundation",
+  "seo__search_description": "Bring your team to Oakdene House Foundation for corporate volunteering days or community partnerships. Based in Fairfield, Western Sydney.",
+  "hero__title": "Corporate Volunteering",
+  "hero__intro": "A practical way for organisations to support the local community with purpose and impact.",
+  "overview__eyebrow": "About This Program",
+  "overview__heading": "Make it meaningful for your team",
+  "overview__text": "Corporate volunteering offers organisations a practical way to support the local community while building team connection and purpose. Oakdene House can work with businesses and groups to create volunteering opportunities that are useful, well-organised and meaningful.",
+  "overview__text_2": "Whether it is a one-day volunteering event or an ongoing partnership, we will work with you to find the right fit.",
+  "overview__subheading": "Potential opportunities",
+  "overview__image_alt": "Volunteers working together at Oakdene",
+  "overview__subheading_2": "Get in touch",
+  "overview__text_3": "If your organisation is interested in supporting Oakdene House through volunteering or partnership, please contact us to discuss suitable options.",
+  "overview__button": "Partnership Enquiry",
+  "overview__button_2": "Contact Us",
+  "why_partner_with_oakdene__eyebrow": "Why Oakdene?",
+  "why_partner_with_oakdene__heading": "A genuine community impact",
+  "why_partner_with_oakdene__subheading": "Trusted local charity",
+  "why_partner_with_oakdene__text": "Oakdene House has served the Fairfield community since 2011, with a strong track record of practical and respectful support.",
+  "why_partner_with_oakdene__subheading_2": "Structured and purposeful",
+  "why_partner_with_oakdene__text_2": "We work with your organisation to ensure volunteering days are well-organised, rewarding, and genuinely useful.",
+  "why_partner_with_oakdene__subheading_3": "Team connection",
+  "why_partner_with_oakdene__text_3": "Working together on something meaningful builds team morale and a shared sense of purpose beyond the workplace.",
+  "cta__heading": "Interested in a corporate partnership?",
+  "cta__subheading": "Contact our team to discuss how your organisation can get involved.",
+  "cta__primarybtn": {
+    "text": "Partnership Enquiry",
+    "href": "/contact/"
+  },
+  "cta__secondarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "data__opportunities": [
+    "Team volunteering days",
+    "Support for community program activities",
+    "Donation drives or practical project support",
+    "Partnership opportunities linked to skills or service delivery"
+  ]
+}

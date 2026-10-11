@@ -1,0 +1,27 @@
+{
+  "serviceName": "Drug & Alcohol Clinical Advisory Service (DACAS)",
+  "organisation": "Drug & Alcohol Clinical Advisory Service (DACAS)",
+  "category": "Drug & Alcohol",
+  "categoryGroup": "Mental Health & AOD",
+  "serviceType": "Clinical advice service",
+  "contact": {
+    "phone": "(02) 9361 8006",
+    "email": null,
+    "website": "https://www.health.nsw.gov.au/aod/Pages/dacas.aspx"
+  },
+  "social": {},
+  "location": {
+    "suburb": "NSW",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": null,
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Drug%20%26%20Alcohol%20Clinical%20Advisory%20Service%20%28DACAS%29"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

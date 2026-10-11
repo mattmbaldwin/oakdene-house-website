@@ -1,0 +1,30 @@
+{
+  "serviceName": "Wesley Mission Gambling Counselling",
+  "organisation": "Wesley Mission",
+  "category": "Gambling Support",
+  "categoryGroup": "Other Support",
+  "serviceType": "Gambling Counselling",
+  "contact": {
+    "phone": "(02) 9211 2000",
+    "email": "info@wesleymission.org.au",
+    "website": "https://www.wesleymission.org.au"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/wesleymission/",
+    "linkedin": "https://www.linkedin.com/company/wesley-mission/"
+  },
+  "location": {
+    "suburb": "Sydney",
+    "lga": null,
+    "coverage": "Statewide"
+  },
+  "identifiers": {
+    "abn": "42 164 655 145",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Wesley%20Mission"
+  },
+  "flags": {
+    "aod": true,
+    "legal": false
+  },
+  "listedIn": null
+}

@@ -1,0 +1,29 @@
+{
+  "serviceName": "Bears of Hope - North West Sydney (Castle Hill)",
+  "organisation": "Bears of Hope - North West Sydney (Castle Hill)",
+  "category": "Health / Community Service",
+  "categoryGroup": "Health & Community",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1300 11 BEAR for General Enquiries\n 1300 11 HOPE for Grief Support",
+    "email": "Contact@bearsofhope.org.au for General Enquiries\nSupport@bearsofhope.org.au for Grief Support",
+    "website": "https://www.bearsofhope.org.au/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/BearsofHopePregnancyandInfantLossSupport/"
+  },
+  "location": {
+    "suburb": "Castle Hill",
+    "lga": "The Hills",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "16 122 335 822",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=Bears%20of%20Hope%20Pregnancy%20%26%20Infant%20Loss%20Support"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}

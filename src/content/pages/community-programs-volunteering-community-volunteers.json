@@ -1,0 +1,39 @@
+{
+  "seo__browser_title": "Community Volunteers — Oakdene House Foundation",
+  "seo__search_description": "Volunteer in the community at Oakdene House Foundation — supporting the Kitchen, Boutique, Laundrette and community programs in Fairfield, Western Sydney.",
+  "hero__title": "Community Volunteers",
+  "hero__intro": "A direct and practical way to give back to your community.",
+  "overview__eyebrow": "About This Role",
+  "overview__heading": "Part of the day-to-day",
+  "overview__text": "Community volunteers are part of the day-to-day life of Oakdene House. They support practical service delivery, help create a welcoming atmosphere and bring energy and connection to our programs.",
+  "overview__text_2": "Volunteering here is hands-on, meaningful, and valued by the people we support.",
+  "overview__subheading": "Possible volunteer roles",
+  "overview__image_alt": "Smiling volunteer serving food at Oakdene Kitchen",
+  "overview__image_alt_2": "Volunteers preparing food at Oakdene",
+  "what_we_look_for__eyebrow": "Who We're Looking For",
+  "what_we_look_for__heading": "What we look for in volunteers",
+  "what_we_look_for__text": "No formal qualifications are required. A genuine interest in supporting people and a respectful attitude are what matter most.",
+  "what_we_look_for__button": "Apply to Volunteer",
+  "cta__heading": "Ready to apply?",
+  "cta__subheading": "Submit an application and our team will be in touch to discuss next steps.",
+  "cta__primarybtn": {
+    "text": "Apply to Volunteer",
+    "href": "/community-programs/volunteering/"
+  },
+  "cta__secondarybtn": {
+    "text": "Contact Us",
+    "href": "/contact/"
+  },
+  "data__roles": [
+    "Kitchen support",
+    "Boutique support",
+    "Laundrette support",
+    "General community program assistance",
+    "Event and activity support"
+  ],
+  "data__look_for": [
+    "A respectful and reliable approach",
+    "A willingness to contribute in a team environment",
+    "A commitment to Oakdene's values and community focus"
+  ]
+}

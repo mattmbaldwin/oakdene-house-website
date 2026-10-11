@@ -1,0 +1,30 @@
+{
+  "serviceName": "Carer Gateway",
+  "organisation": "The Benevolent Society",
+  "category": "Health / Community Service",
+  "categoryGroup": "Family, Children & DV",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "1800 422 737",
+    "email": "RDPintake@benevolent.org.au",
+    "website": "https://www.benevolent.org.au/services-and-programs/support-for-carers"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/CarerGatewayAU/",
+    "linkedin": "https://www.linkedin.com/company/the-benevolent-society/"
+  },
+  "location": {
+    "suburb": "Glebe",
+    "lga": "Sydney",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "95 084 695 045",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=The%20Benevolent%20Society"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": "DSS Service Finder; healthdirect"
+}

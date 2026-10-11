@@ -1,0 +1,126 @@
+---
+// Downloadable resources (flyers, information sheets) added in the content
+// editor. Files live in public/downloads/; the size is read at build time.
+import fs from 'node:fs';
+import path from 'node:path';
+
+interface Resource {
+  title: string;
+  description?: string;
+  file: string;
+}
+
+interface Props {
+  items: Resource[];
+  label: string;
+}
+
+const { items, label } = Astro.props;
+
+function fileInfo(file: string): string {
+  const type = path.extname(file).replace('.', '').toUpperCase() || 'File';
+  try {
+    const bytes = fs.statSync(path.join(process.cwd(), 'public', file)).size;
+    const size = bytes >= 1048576 ? `${(bytes / 1048576).toFixed(1)} MB` : `${Math.max(1, Math.round(bytes / 1024))} KB`;
+    return `${type}, ${size}`;
+  } catch {
+    return type;
+  }
+}
+---
+
+<ul class="resource-list" aria-label={label}>
+  {items.map(item => (
+    <li class="resource-item">
+      <span class="resource-item__icon" aria-hidden="true">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </span>
+      <div class="resource-item__body">
+        <h2 class="resource-item__title">{item.title}</h2>
+        {item.description && <p class="resource-item__desc">{item.description}</p>}
+      </div>
+      <a class="btn btn--secondary resource-item__link" href={item.file} download>
+        Download<span class="visually-hidden"> {item.title}</span> <span class="resource-item__meta">({fileInfo(item.file)})</span>
+      </a>
+    </li>
+  ))}
+</ul>
+
+<style>
+  .resource-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 880px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .resource-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 24px 28px;
+    background-color: var(--color-white);
+    border: 1px solid var(--color-secondary);
+    border-radius: var(--radius-card);
+    transition: box-shadow var(--transition);
+  }
+
+  .resource-item:hover {
+    box-shadow: var(--shadow-card);
+  }
+
+  .resource-item__icon {
+    flex-shrink: 0;
+    color: var(--color-primary);
+  }
+
+  .resource-item__body {
+    flex: 1;
+  }
+
+  .resource-item__title {
+    font-size: 1.125rem;
+    margin-bottom: 4px;
+  }
+
+  .resource-item__desc {
+    font-size: 0.9375rem;
+    color: var(--color-muted);
+    margin-bottom: 0;
+  }
+
+  .resource-item__link {
+    gap: 4px;
+  }
+
+  .resource-item__meta {
+    font-weight: 400;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  @media (max-width: 640px) {
+    .resource-item {
+      flex-wrap: wrap;
+      padding: 20px;
+    }
+
+    .resource-item__link {
+      width: 100%;
+      justify-content: center;
+    }
+  }
+</style>

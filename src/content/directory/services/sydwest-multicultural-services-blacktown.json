@@ -1,0 +1,29 @@
+{
+  "serviceName": "SydWest Multicultural Services - Blacktown",
+  "organisation": "SydWest",
+  "category": "Migrant Support",
+  "categoryGroup": "Migrant & Multicultural",
+  "serviceType": "Community Support",
+  "contact": {
+    "phone": "(02) 9621 6633",
+    "email": "info@sydwestms.org.au",
+    "website": "https://sydwestms.org.au/our-offices/blacktown/"
+  },
+  "social": {
+    "facebook": "https://www.facebook.com/SydWestMS/"
+  },
+  "location": {
+    "suburb": "Blacktown",
+    "lga": "Blacktown",
+    "coverage": "Local"
+  },
+  "identifiers": {
+    "abn": "37 459 091 480",
+    "acncLink": "https://www.acnc.gov.au/charity?search_text=SydWest%20Multicultural%20Services"
+  },
+  "flags": {
+    "aod": false,
+    "legal": false
+  },
+  "listedIn": null
+}
