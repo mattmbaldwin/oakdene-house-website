@@ -1,0 +1,35 @@
+name: Sync service directory from HubEasy
+
+# Staff maintain the service directory in HubEasy, the single source (decision 7 Nov 2026). Every 30 minutes
+# this rebuilds src/content/oakdene-service-directory.json from HubEasy's public directory feed and commits it if
+# anything changed; the push then rebuilds the site as usual. See docs/service-directory-sync.md.
+on:
+  schedule:
+    - cron: '7,37 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-service-directory
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Rebuild the directory file from HubEasy
+        run: node scripts/sync-service-directory.mjs
+      - name: Commit and push if it changed
+        run: |
+          if git diff --quiet -- src/content/oakdene-service-directory.json; then echo "No change."; exit 0; fi
+          git config user.name "Oakdene directory sync"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/content/oakdene-service-directory.json
+          git commit -m "Service directory: sync from HubEasy"
+          git push
