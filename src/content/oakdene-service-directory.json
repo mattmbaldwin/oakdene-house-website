@@ -1,8 +1,8 @@
 {
   "meta": {
     "version": "v6",
-    "lastVerified": "2026-11-09",
-    "generatedAt": "2026-11-13",
+    "lastVerified": "2026-11-17",
+    "generatedAt": "2026-11-18",
     "totalServices": 322,
     "source": "HubEasy service directory, synced automatically",
     "description": "ABN + ACNC links + complete socials",
@@ -2972,7 +2972,7 @@
       "serviceType": "Material Aid / Resource Support",
       "contact": {
         "phone": "1800 773 456",
-        "email": null,
+        "email": "info@dfsnswact.org",
         "website": "https://nswact.dressforsuccess.org/"
       },
       "social": {
@@ -3495,7 +3495,7 @@
       "serviceType": "Gambling Counselling",
       "contact": {
         "phone": "1800 858 858",
-        "email": null,
+        "email": "info@responsiblegambling.nsw.gov.au",
         "website": "https://www.gambleaware.nsw.gov.au/"
       },
       "social": {
@@ -4581,7 +4581,7 @@
       "serviceType": "Residential Rehabilitation",
       "contact": {
         "phone": "(02) 4222 1800",
-        "email": null,
+        "email": "admissions@kedesh.com.au",
         "website": "https://www.kedesh.com.au/"
       },
       "social": {
@@ -5423,7 +5423,7 @@
       "serviceType": "Community Support",
       "contact": {
         "phone": "02 4924 6900",
-        "email": null,
+        "email": "everymind@health.nsw.gov.au",
         "website": "https://everymind.org.au/programs/family-friends-and-carers/minds-together"
       },
       "social": {
@@ -7837,7 +7837,7 @@
       "serviceType": "Emergency assistance",
       "contact": {
         "phone": "13 18 12",
-        "email": null,
+        "email": "vinnies@vinnies.org.au",
         "website": "https://www.vinnies.org.au/"
       },
       "social": {
@@ -7902,7 +7902,7 @@
       "serviceType": "Community Support",
       "contact": {
         "phone": "1300 727 247",
-        "email": null,
+        "email": "national@standbysupport.com.au",
         "website": "https://standbysupport.com.au/"
       },
       "social": {
@@ -8524,7 +8524,7 @@
       "serviceType": "Residential Rehabilitation",
       "contact": {
         "phone": "(02) 4388 6360",
-        "email": null,
+        "email": "intake@theglencentre.org.au",
         "website": "https://theglencentre.org.au/"
       },
       "social": {
@@ -8840,7 +8840,7 @@
       "serviceType": "Community Support",
       "contact": {
         "phone": "02 8416 1130",
-        "email": null,
+        "email": "merrylands@neaminational.org.au",
         "website": "https://www.neaminational.org.au/programs/the-way-back/"
       },
       "social": {
