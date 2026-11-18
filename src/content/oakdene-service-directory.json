@@ -1,9 +1,9 @@
 {
   "meta": {
     "version": "v6",
-    "lastVerified": "2026-11-17",
+    "lastVerified": "2026-11-18",
     "generatedAt": "2026-11-18",
-    "totalServices": 322,
+    "totalServices": 320,
     "source": "HubEasy service directory, synced automatically",
     "description": "ABN + ACNC links + complete socials",
     "notes": [
@@ -50,7 +50,7 @@
         "Health / Community Service",
         "Community Support"
       ],
-      "count": 31
+      "count": 29
     },
     {
       "name": "Legal & Justice",
@@ -115,7 +115,7 @@
     {
       "name": "National",
       "definition": "Australia-wide service / national helpline",
-      "count": 47
+      "count": 45
     },
     {
       "name": "Telehealth",
@@ -166,7 +166,7 @@
     {
       "name": "<empty>",
       "description": "No specific LGA — service is national/statewide/online",
-      "count": 33
+      "count": 30
     },
     {
       "name": "Blacktown",
@@ -181,7 +181,7 @@
     {
       "name": "Parramatta",
       "description": "Western Sydney — central CBD",
-      "count": 36
+      "count": 35
     },
     {
       "name": "Sydney",
@@ -255,7 +255,7 @@
     },
     {
       "name": "Anywhere",
-      "count": 10
+      "count": 11
     },
     {
       "name": "Australia-wide",
@@ -271,7 +271,7 @@
     },
     {
       "name": "Australia",
-      "count": 18
+      "count": 17
     },
     {
       "name": "Liverpool",
@@ -312,6 +312,10 @@
     {
       "name": "The Hills Shire",
       "count": 1
+    },
+    {
+      "name": "Across Western Sydney",
+      "count": 2
     }
   ],
   "otherDirectories": [
@@ -2232,7 +2236,7 @@
         "linkedin": "https://www.linkedin.com/company/uniting_nsw-act"
       },
       "location": {
-        "suburb": "Sydney",
+        "suburb": "Oatlands",
         "lga": "Parramatta",
         "coverage": "Local"
       },
@@ -5196,7 +5200,7 @@
         "facebook": "https://www.facebook.com/marist180"
       },
       "location": {
-        "suburb": "Blacktown",
+        "suburb": "Hebersham",
         "lga": "Blacktown",
         "coverage": "Local"
       },
@@ -6522,7 +6526,7 @@
       },
       "location": {
         "suburb": "Canterbury",
-        "lga": null,
+        "lga": "Across Western Sydney",
         "coverage": "Regional"
       },
       "identifiers": {
@@ -7063,36 +7067,6 @@
         "legal": false
       },
       "listedIn": "ACNC; Community Legal Centres NSW"
-    },
-    {
-      "serviceName": "Relationships Australia",
-      "organisation": "Relationships Australia",
-      "category": "Family Support",
-      "categoryGroup": "Family, Children & DV",
-      "serviceType": "Counselling / Mental Health Support",
-      "contact": {
-        "phone": "(02) 8811 0099",
-        "email": "enquiries@ransw.org.au",
-        "website": "https://www.relationshipsnsw.org.au/locations/blacktown/"
-      },
-      "social": {
-        "facebook": "https://www.facebook.com/RelationshipsNSW/",
-        "linkedin": "https://www.linkedin.com/company/relationships-australia-nsw/"
-      },
-      "location": {
-        "suburb": "Blacktown",
-        "lga": "Australia",
-        "coverage": "National"
-      },
-      "identifiers": {
-        "abn": null,
-        "acncLink": null
-      },
-      "flags": {
-        "aod": false,
-        "legal": false
-      },
-      "listedIn": null
     },
     {
       "serviceName": "Relationships Australia NSW - Blacktown",
@@ -8041,7 +8015,7 @@
       },
       "location": {
         "suburb": null,
-        "lga": null,
+        "lga": "Anywhere",
         "coverage": "National"
       },
       "identifiers": {
@@ -8409,7 +8383,7 @@
       },
       "location": {
         "suburb": "Parramatta",
-        "lga": null,
+        "lga": "Across Western Sydney",
         "coverage": "Regional"
       },
       "identifiers": {
@@ -9171,39 +9145,6 @@
       },
       "flags": {
         "aod": false,
-        "legal": false
-      },
-      "listedIn": null
-    },
-    {
-      "serviceName": "Uniting",
-      "organisation": "Uniting",
-      "category": "Health / Community Service",
-      "categoryGroup": "Family, Children & DV",
-      "serviceType": "Family services",
-      "contact": {
-        "phone": "(02)85994840",
-        "email": "cps@uniting.org",
-        "website": "https://www.uniting.org/services/mental-health/facility/commonwealth-psychosocial-support-program"
-      },
-      "social": {
-        "facebook": "https://www.facebook.com/unitingnswact/",
-        "instagram": "https://www.instagram.com/weareuniting/",
-        "linkedin": "https://www.linkedin.com/company/uniting-nsw-act/",
-        "youtube": "https://www.youtube.com/UnitingCareNSWACT",
-        "tiktok": "https://www.tiktok.com/@weareuniting"
-      },
-      "location": {
-        "suburb": "Oatlands",
-        "lga": "Parramatta",
-        "coverage": "National"
-      },
-      "identifiers": {
-        "abn": "78 722 539 923",
-        "acncLink": "https://www.acnc.gov.au/charity?search_text=78722539923"
-      },
-      "flags": {
-        "aod": true,
         "legal": false
       },
       "listedIn": null
