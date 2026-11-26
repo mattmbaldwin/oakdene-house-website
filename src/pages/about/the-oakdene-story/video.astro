@@ -1,11 +1,20 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import VideoPlayer from '../../../components/VideoPlayer.astro';
+import Prose from '../../../components/Prose.astro';
+import { pageContent, fieldSource } from '../../../lib/pages';
 
 // Single source of truth for the video launch lives in docs/video-launch/content/.
 // docs/ is read at build time only and is never published.
 import video from '../../../../docs/video-launch/content/video.json';
 import transcriptRaw from '../../../../docs/video-launch/content/transcript.txt?raw';
+
+// Words: src/content/pages/about--the-oakdene-story--video.yaml (edited in /admin).
+// The video, its details, the structured data and the transcript stay in code and docs/video-launch.
+const ID = 'about--the-oakdene-story--video';
+const page = await pageContent(ID, 'the-oakdene-story-video');
+const { seo, hero, breadcrumbParent, watch, transcript } = page;
+const src = (path: string) => fieldSource(ID, path);
 
 const siteUrl = 'https://oakdenehouse.org.au';
 const thumbnail = video.thumbnail_path.replace(/^public/, '');
@@ -33,6 +42,7 @@ for (const line of transcriptRaw.split(/\r?\n/)) {
 const minutes = Math.floor(video.duration_seconds / 60);
 const seconds = video.duration_seconds % 60;
 const durationText = `${minutes} minutes ${seconds} seconds`;
+const watchMeta = watch.meta.replace('{duration}', durationText);
 
 // VideoObject structured data, built from video.json.
 const chapters = video.chapters;
@@ -70,8 +80,8 @@ const jsonLdHtml = JSON.stringify(jsonLd).replace(/</g, '\\u003c');
 ---
 
 <BaseLayout
-  title="Our story | Oakdene House Foundation, Fairfield"
-  description="Watch how Oakdene House supports people affected by addiction and gambling harm in Fairfield, Western Sydney, with free counselling, group programs and community services."
+  title={seo.title}
+  description={seo.description}
   ogImage={thumbnail}
   ogType="video.other"
 >
@@ -85,12 +95,12 @@ const jsonLdHtml = JSON.stringify(jsonLd).replace(/</g, '\\u003c');
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <a href="/about/">About</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <a href="/about/the-oakdene-story/">The Oakdene Story</a>
+        <a href="/about/the-oakdene-story/">{breadcrumbParent}</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">Our story</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1>Our story</h1>
-      <p class="page-hero__lead">Oakdene House offers free counselling and practical support to people affected by addiction and gambling harm in Fairfield. In this short film, people in recovery, our counsellors and our founding chairman talk about what that support means.</p>
+      <h1>{hero.heading}</h1>
+      <p class="page-hero__lead"><Prose md={hero.lead} source={src('hero.lead')} /></p>
     </div>
   </section>
 
@@ -101,19 +111,19 @@ const jsonLdHtml = JSON.stringify(jsonLd).replace(/</g, '\\u003c');
         youtubeId={video.youtube_id}
         title={video.title}
         thumbnail={thumbnail}
-        label="Play video: Oakdene House Foundation, our story"
+        label={watch.playLabel}
         loading="eager"
       />
-      <p class="watch-meta">Length {durationText}. Captions are on when the video plays, and you can read the full transcript below.</p>
+      <p class="watch-meta">{watchMeta}</p>
 
       <figure class="watch-quote">
         <blockquote>
-          <p>"It's like the chains have been cut and they get to be the best version of themselves again."</p>
+          <p>"{watch.quote}"</p>
         </blockquote>
-        <figcaption>Anne Marie Durnan</figcaption>
+        <figcaption>{watch.quoteBy}</figcaption>
       </figure>
 
-      <p class="watch-credit">Video produced by Lead Story.</p>
+      <p class="watch-credit">{watch.credit}</p>
     </div>
   </section>
 
@@ -121,12 +131,12 @@ const jsonLdHtml = JSON.stringify(jsonLd).replace(/</g, '\\u003c');
   <section class="section section--tint" aria-labelledby="transcript-heading">
     <div class="container watch-container">
       <div class="section-heading">
-        <h2 id="transcript-heading">Transcript</h2>
+        <h2 id="transcript-heading">{transcript.heading}</h2>
       </div>
       <details class="transcript-toggle">
         <summary class="transcript-toggle__summary">
-          <span class="transcript-toggle__show">Show transcript</span>
-          <span class="transcript-toggle__hide">Hide transcript</span>
+          <span class="transcript-toggle__show">{transcript.show}</span>
+          <span class="transcript-toggle__hide">{transcript.hide}</span>
           <svg class="transcript-toggle__chevron" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
         </summary>
         <div class="transcript">
@@ -141,8 +151,8 @@ const jsonLdHtml = JSON.stringify(jsonLd).replace(/</g, '\\u003c');
       </details>
 
       <div class="btn-group watch-actions">
-        <a href="/services/referral/" class="btn btn--primary">Get support</a>
-        <a href="/contact/" class="btn btn--secondary">Contact us</a>
+        <a href={transcript.primary.href} class={`btn btn--${transcript.primary.style}`}>{transcript.primary.label}</a>
+        <a href={transcript.secondary.href} class={`btn btn--${transcript.secondary.style}`}>{transcript.secondary.label}</a>
       </div>
     </div>
   </section>

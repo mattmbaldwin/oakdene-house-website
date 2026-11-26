@@ -6970,6 +6970,1227 @@ collections:
                     pattern:
                       - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
                       - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+      - name: about
+        label: About
+        file: src/content/pages/about.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: about
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: heading
+                label: Page heading
+                widget: string
+              - name: subheading
+                label: Line under the heading
+                widget: string
+              - name: image
+                label: Banner photo
+                widget: object
+                fields:
+                  - name: src
+                    label: Image file
+                    widget: image
+                    choose_url: false
+                  - name: alt
+                    label: Alt text
+                    hint: Describes the image for people who use screen readers.
+                    widget: string
+              - name: primary
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: secondary
+                label: Second button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+          - name: subpages
+            label: Section cards
+            widget: list
+            summary: "{{fields.heading}}"
+            label_singular: Card
+            fields:
+              - name: href
+                label: Goes to
+                hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                widget: string
+                pattern:
+                  - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: image
+                label: Photo
+                widget: object
+                fields:
+                  - name: src
+                    label: Image file
+                    widget: image
+                    choose_url: false
+                  - name: alt
+                    label: Alt text
+                    hint: Describes the image for people who use screen readers.
+                    widget: string
+              - name: heading
+                label: Heading
+                widget: string
+              - name: text
+                label: Text
+                widget: string
+              - name: cta
+                label: Link text
+                hint: The arrow after it is added automatically.
+                widget: string
+          - name: who
+            label: Who we are
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: lead
+                label: Paragraph
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - name: impact
+            label: Our year in numbers
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: stats
+                label: Figures
+                widget: list
+                summary: "{{fields.number}} {{fields.label}}"
+                label_singular: Figure
+                fields:
+                  - name: number
+                    label: Figure
+                    widget: string
+                  - name: label
+                    label: Label
+                    widget: string
+          - name: drivers
+            label: Mission, vision and values
+            hint: Each value keeps its own icon, so the four cannot be reordered.
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: mission
+                label: Mission
+                widget: object
+                fields:
+                  - name: label
+                    label: Label
+                    widget: string
+                  - name: text
+                    label: Text
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+              - name: vision
+                label: Vision
+                widget: object
+                fields:
+                  - name: label
+                    label: Label
+                    widget: string
+                  - name: text
+                    label: Text
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+              - name: valuesHeading
+                label: "\"Our Values\" heading"
+                widget: string
+              - name: dignity
+                label: First value
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: text
+                    label: Text
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+              - name: practicalSupport
+                label: Second value
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: text
+                    label: Text
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+              - name: connection
+                label: Third value
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: text
+                    label: Text
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+              - name: hope
+                label: Fourth value
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: text
+                    label: Text
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+          - name: approach
+            label: Our approach
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: paragraphs
+                label: Paragraphs
+                hint: Bold, italic and links only. One entry per paragraph.
+                widget: list
+                label_singular: Paragraph
+                field:
+                  name: item
+                  label: Paragraph
+                  widget: markdown
+                  buttons:
+                    - bold
+                    - italic
+                    - link
+                  editor_components: []
+              - name: image
+                label: Image
+                widget: object
+                fields:
+                  - name: src
+                    label: Image file
+                    widget: image
+                    choose_url: false
+                  - name: alt
+                    label: Alt text
+                    hint: Describes the image for people who use screen readers.
+                    widget: string
+          - name: work
+            label: What we do
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: items
+                label: What we do
+                hint: Bold, italic and links only. One entry per point.
+                widget: list
+                label_singular: Item
+                field:
+                  name: item
+                  label: Item
+                  widget: markdown
+                  buttons:
+                    - bold
+                    - italic
+                    - link
+                  editor_components: []
+              - name: button
+                label: Button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - name: style
+                    label: Style
+                    hint: primary (filled), secondary (outline) or white.
+                    widget: select
+                    options:
+                      - primary
+                      - secondary
+                      - white
+              - name: image
+                label: Image
+                widget: object
+                fields:
+                  - name: src
+                    label: Image file
+                    widget: image
+                    choose_url: false
+                  - name: alt
+                    label: Alt text
+                    hint: Describes the image for people who use screen readers.
+                    widget: string
+          - name: cta
+            label: Call to action band
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: primary
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: secondary
+                label: Second button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+      - name: about--our-board
+        label: "About: Our Board"
+        file: src/content/pages/about--our-board.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: our-board
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: breadcrumb
+                label: Breadcrumb
+                hint: The last item in the "Home / About / …" trail.
+                widget: string
+              - name: heading
+                label: Page heading
+                widget: string
+          - name: holding
+            label: Board profiles message
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: message
+                label: Message
+                hint: Bold, italic and links only. Keep the two links as links.
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+      - name: about--our-centre
+        label: "About: Our Centre"
+        file: src/content/pages/about--our-centre.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: our-centre
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: breadcrumb
+                label: Breadcrumb
+                hint: The last item in the "Home / About / …" trail.
+                widget: string
+              - name: heading
+                label: Page heading
+                widget: string
+              - name: lead
+                label: Line under the heading
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - name: intro
+            label: The space
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: paragraphs
+                label: Paragraphs
+                hint: Bold, italic and links only. One entry per paragraph.
+                widget: list
+                label_singular: Paragraph
+                field:
+                  name: item
+                  label: Paragraph
+                  widget: markdown
+                  buttons:
+                    - bold
+                    - italic
+                    - link
+                  editor_components: []
+              - name: expectHeading
+                label: "\"What visitors can expect\" heading"
+                widget: string
+              - name: expectItems
+                label: What visitors can expect
+                hint: Bold, italic and links only. One entry per point.
+                widget: list
+                label_singular: Item
+                field:
+                  name: item
+                  label: Item
+                  widget: markdown
+                  buttons:
+                    - bold
+                    - italic
+                    - link
+                  editor_components: []
+              - name: image
+                label: Image
+                widget: object
+                fields:
+                  - name: src
+                    label: Image file
+                    widget: image
+                    choose_url: false
+                  - name: alt
+                    label: Alt text
+                    hint: Describes the image for people who use screen readers.
+                    widget: string
+          - name: gallery
+            label: Gallery
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: images
+                label: Photos
+                widget: list
+                summary: "{{fields.alt}}"
+                label_singular: Photo
+                fields:
+                  - name: src
+                    label: Image file
+                    widget: image
+                    choose_url: false
+                  - name: alt
+                    label: Alt text
+                    hint: Describes the image for people who use screen readers.
+                    widget: string
+          - name: location
+            label: Location and access
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: mapTitle
+                label: Map description
+                hint: Read by screen readers for the embedded Google map. The map itself stays in the page.
+                widget: string
+              - name: mapLink
+                label: Link under the map
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: address
+                label: Address
+                widget: string
+              - name: phone
+                label: Phone link
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: email
+                label: Email link
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: parking
+                label: Parking
+                widget: string
+          - name: directions
+            label: Directions download
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: text
+                label: Text
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+              - name: button
+                label: Download button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+          - name: cta
+            label: Call to action band
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: subheading
+                label: Line under the heading
+                widget: text
+              - name: primary
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: secondary
+                label: Second button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+      - name: about--our-team
+        label: "About: Our Team"
+        file: src/content/pages/about--our-team.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: our-team
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: breadcrumb
+                label: Breadcrumb
+                hint: The last item in the "Home / About / …" trail.
+                widget: string
+              - name: heading
+                label: Page heading
+                widget: string
+              - name: lead
+                label: Line under the heading
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - name: intro
+            label: Introduction
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: lead
+                label: Paragraph
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - name: team
+            label: Team members
+            widget: list
+            summary: "{{fields.name}}"
+            label_singular: Team member
+            fields:
+              - name: name
+                label: Name
+                widget: string
+              - name: role
+                label: Role
+                widget: string
+              - name: photo
+                label: Photo
+                widget: object
+                fields:
+                  - name: src
+                    label: Image file
+                    widget: image
+                    choose_url: false
+                  - name: alt
+                    label: Alt text
+                    hint: Describes the image for people who use screen readers.
+                    widget: string
+              - name: bio
+                label: Biography
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - name: patrons
+            label: Our Patrons
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: people
+                label: Patrons
+                widget: list
+                summary: "{{fields.name}}"
+                label_singular: Patron
+                fields:
+                  - name: name
+                    label: Name
+                    widget: string
+                  - name: role
+                    label: Role
+                    widget: string
+                  - name: photo
+                    label: Photo
+                    widget: object
+                    fields:
+                      - name: src
+                        label: Image file
+                        widget: image
+                        choose_url: false
+                      - name: alt
+                        label: Alt text
+                        hint: Describes the image for people who use screen readers.
+                        widget: string
+                  - name: bio
+                    label: Biography
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+          - name: closing
+            label: Closing statement
+            widget: object
+            fields:
+              - name: heading
+                label: Hidden heading
+                hint: Read by screen readers only; not shown on the page.
+                widget: string
+              - name: text
+                label: Closing statement
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - name: cta
+            label: Call to action band
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: subheading
+                label: Line under the heading
+                widget: text
+              - name: primary
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: secondary
+                label: Second button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+      - name: about--the-oakdene-story
+        label: "About: The Oakdene Story"
+        file: src/content/pages/about--the-oakdene-story.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: the-oakdene-story
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: breadcrumb
+                label: Breadcrumb
+                hint: The last item in the "Home / About / …" trail.
+                widget: string
+              - name: heading
+                label: Page heading
+                widget: string
+              - name: lead
+                label: Line under the heading
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - name: story
+            label: The story
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: paragraphs
+                label: Paragraphs
+                hint: Bold, italic and links only. One entry per paragraph.
+                widget: list
+                label_singular: Paragraph
+                field:
+                  name: item
+                  label: Paragraph
+                  widget: markdown
+                  buttons:
+                    - bold
+                    - italic
+                    - link
+                  editor_components: []
+              - name: image
+                label: Image
+                widget: object
+                fields:
+                  - name: src
+                    label: Image file
+                    widget: image
+                    choose_url: false
+                  - name: alt
+                    label: Alt text
+                    hint: Describes the image for people who use screen readers.
+                    widget: string
+          - name: strip
+            label: Black and white photo strip
+            hint: Decorative photos, hidden from screen readers.
+            widget: list
+            label_singular: Photo
+            field:
+              name: item
+              label: Photo
+              widget: image
+              choose_url: false
+          - name: film
+            label: Watch our story
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: lead
+                    label: Line under the heading
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+              - name: playLabel
+                label: Play button label
+                hint: Read by screen readers.
+                widget: string
+              - name: transcriptLink
+                label: Transcript link text
+                widget: string
+          - name: why
+            label: Why it matters
+            widget: object
+            fields:
+              - name: label
+                label: Small label above the quote
+                widget: string
+              - name: quote
+                label: Quote
+                hint: The quotation marks are added automatically.
+                widget: string
+          - name: cta
+            label: Call to action band
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: primary
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: secondary
+                label: Second button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+      - name: about--the-oakdene-story--video
+        label: "About: Our story video"
+        file: src/content/pages/about--the-oakdene-story--video.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: the-oakdene-story-video
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: breadcrumb
+                label: Breadcrumb
+                hint: The last item in the "Home / About / …" trail.
+                widget: string
+              - name: heading
+                label: Page heading
+                widget: string
+              - name: lead
+                label: Line under the heading
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - name: breadcrumbParent
+            label: Middle breadcrumb
+            hint: The "The Oakdene Story" step in the trail; it links back to that page.
+            widget: string
+          - name: watch
+            label: Video
+            widget: object
+            fields:
+              - name: playLabel
+                label: Play button label
+                hint: Read by screen readers.
+                widget: string
+              - name: meta
+                label: Line under the video
+                hint: Keep {duration} where the film length should appear; it is filled in automatically.
+                widget: string
+                pattern:
+                  - \{duration\}
+                  - Must match \{duration\}
+              - name: quote
+                label: Pull quote
+                hint: The quotation marks are added automatically.
+                widget: string
+              - name: quoteBy
+                label: Quote attribution
+                widget: string
+              - name: credit
+                label: Video credit
+                widget: string
+          - name: transcript
+            label: Transcript
+            hint: The transcript text comes from docs/video-launch and is not edited here.
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: show
+                label: "\"Show\" button label"
+                widget: string
+              - name: hide
+                label: "\"Hide\" button label"
+                widget: string
+              - name: primary
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - name: style
+                    label: Style
+                    hint: primary (filled), secondary (outline) or white.
+                    widget: select
+                    options:
+                      - primary
+                      - secondary
+                      - white
+              - name: secondary
+                label: Second button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - name: style
+                    label: Style
+                    hint: primary (filled), secondary (outline) or white.
+                    widget: select
+                    options:
+                      - primary
+                      - secondary
+                      - white
   - name: site
     label: Site-wide text
     format: yaml

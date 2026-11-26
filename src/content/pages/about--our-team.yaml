@@ -1,0 +1,99 @@
+# Words and images for /about/our-team/. Layout: src/pages/about/our-team.astro.
+layout: our-team
+seo:
+  title: Our Team — Oakdene House Foundation
+  description: Meet the Oakdene House Foundation team — dedicated people working across counselling, program delivery, operations and practical support in Fairfield, Western Sydney.
+  image: /images/team/colour-mark-facing-camera.jpg
+hero:
+  breadcrumb: Our Team
+  heading: Our Team
+  lead: The people behind the work at Oakdene House.
+intro:
+  heading:
+    eyebrow: The People
+    heading: Experienced, caring and community-focused
+  lead: Our team brings together care, experience and a deep commitment to community. We work across counselling, program delivery, operations and practical support, with a shared focus on creating a safe and respectful environment for every person who walks through our doors.
+team:
+  - name: Simon Jarvis
+    role: CEO
+    photo:
+      src: /images/team/simon-jarvis-ceo.png
+      alt: Simon Jarvis — CEO
+    bio: Simon is a community focused leader with deep experience across the health and nonprofit sectors. His work has centred on strengthening mental health services, building partnerships, and creating programs that give people practical support when life becomes difficult. He is passionate about ensuring that everyone who walks through Oakdene House feels respected and supported.
+  - name: Souri Hayati
+    role: Financial Counsellor and Office Manager
+    photo:
+      src: /images/team/colour-souri-website.jpg
+      alt: Souri Hayati — Financial Counsellor and Office Manager
+    bio: Souri started at Oakdene House in 2011, the year we opened. Bringing a wealth of experience from her years working to support migrants, refugees and indigenous youth, Souri has spent the majority of her working life in the service of others. As Financial Counsellor and Office Manager, she keeps the centre running, facilitates our Life Choices Program, and provides crisis support and financial counselling for our clients.
+  - name: Mark Henson
+    role: Lead Counsellor
+    photo:
+      src: /images/team/colour-mark-facing-camera.jpg
+      alt: Mark Henson — Lead Counsellor
+    bio: Mark has worked in the recovery services sector for over 20 years. Starting out with the Salvation Army as an outreach and detox worker before moving into education, counselling and client assessment. Mark has been instrumental in helping many of our clients through their rehabilitation with his dedication and empathy.
+  - name: Anne Maree Durnan
+    role: Reception and Administration
+    photo:
+      src: /images/team/colour-anne-marie.jpg
+      alt: Anne Maree Durnan — Reception and Administration
+    bio: After various roles in the corporate world, Anne Maree moved into areas of personal interest and helping others. Working for Anglicare with aged care and dementia patients for 10 years before joining the team at Oakdene House in 2020. Anne Maree provides a welcome to all on arrival and assists clients through the assessment process.
+  - name: Fabiana Barbosa Pechincha
+    role: Addiction Counsellor
+    photo:
+      src: /images/team/fabiana-colour-side-on.jpg
+      alt: Fabiana Barbosa Pechincha — Addiction Counsellor
+    bio: Originating from Brazil, Fabiana came to Australia as a student in 1999 before returning to reside here permanently. Working with both students and immigrants as a counsellor and education mentor, Fabiana is now utilising her experience to support the clients at Oakdene.
+  - name: Jason Den-Toll
+    role: Addiction Counsellor (AOD)
+    photo:
+      src: /images/team/colour-jason-website.jpg
+      alt: Jason Den-Toll — Addiction Counsellor (AOD)
+    bio: Jason has worked in the field of human development, psychology and sports education for over 30 years. He combined that experience with his own personal recovery and ongoing training in trauma and life coaching to complete his Masters in Counselling before finding Oakdene House in 2022.
+  - name: Suzan Ogde
+    role: Administration and Front Desk Officer
+    photo:
+      src: /images/team/suzan-ogde.png
+      alt: Suzan Ogde — Administration and Front Desk Officer
+    bio: Suzan is a dedicated support professional with experience assisting people facing alcohol and gambling addiction, homelessness, domestic violence, and complex social challenges. She works closely with a range of community services to ensure clients receive coordinated care, and is currently completing a Master of Business Administration with a focus on leadership and community-focused service delivery.
+  - name: Pauline Sahyoun
+    role: Community Programs Coordinator
+    photo:
+      src: /images/team/pauline-sayhoun.png
+      alt: Pauline Sahyoun — Community Programs Coordinator
+    bio: Pauline has extensive experience across education, forensic medicine, and healthcare. A certified interpreter fluent in spoken and written Arabic, she helps bridge communication gaps and foster cultural understanding within the community. In her role as Programs Coordinator, Pauline develops and delivers programs that create positive outcomes and strengthen community engagement.
+  - name: Carolyn Farrugia
+    role: Counsellor
+    photo:
+      src: /images/team/carolyn-farrugia.png
+      alt: Carolyn Farrugia — Counsellor
+    bio: Carolyn is a Registered Counsellor with the Australian Counselling Association, with fifteen years of experience in mental health. She facilitates groups focused on addiction recovery and abstinence, and delivers Dialectical Behaviour Therapy for behaviour change. In one-on-one work, Carolyn takes a person-centred approach drawing on solution-focused, positive psychology, and strength-based therapies.
+patrons:
+  heading:
+    eyebrow: Our Patrons
+    heading: Our Patrons
+  people:
+    - name: Dr Bo Bernhard
+      role: Patron — Vice President of Economic Development, Professor at University of Nevada Las Vegas
+      photo:
+        src: /images/team/bo-bernhard-headshot2.jpg
+        alt: Dr Bo Bernhard
+      bio: Dr Bo Bernhard is one of the world's leading figures in the study of gambling addiction, with over 25 years experience researching and teaching at UNLV where he serves as Executive Director of the International Gaming Institute. Dr Bernhard is looking forward to sharing information and working towards supporting gamblers as they seek to overcome their addiction.
+    - name: Deacon Thomas A Roberts
+      role: Patron — Deacon at Holy Spirit Roman Catholic Church, President and CEO of Catholic Charities of Southern Nevada
+      photo:
+        src: /images/patrons/colour-tom-roberts-1.jpg
+        alt: Deacon Thomas A Roberts
+      bio: Deacon Tom Roberts was ordained as a Permanent Deacon in the Diocese of Las Vegas in 2011 and has served as President and CEO of Catholic Charities of Southern Nevada since 2013. He brings more than 27 years of executive management, operations and leadership experience to his role as patron of Oakdene House Foundation.
+closing:
+  heading: Closing statement
+  text: Behind every Oakdene service is a team that believes support should feel human, respectful and real. We are proud to walk alongside the people and families we serve.
+cta:
+  heading: Get in touch with our team
+  subheading: We are here to help. Reach out and we will find the right next step together.
+  primary:
+    label: Contact Us
+    href: /contact/
+  secondary:
+    label: Get Support
+    href: /contact/

@@ -2,32 +2,30 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import InfoTable from '../../components/InfoTable.astro';
 import CTABand from '../../components/CTABand.astro';
+import Prose from '../../components/Prose.astro';
+import { pageContent, fieldSource } from '../../lib/pages';
 
+// Words and images: src/content/pages/about--our-centre.yaml (edited in /admin).
+const ID = 'about--our-centre';
+const page = await pageContent(ID, 'our-centre');
+const { seo, hero, intro, gallery, location, directions, cta } = page;
+const src = (path: string) => fieldSource(ID, path);
+
+// InfoTable shows its values as HTML, so plain text from the editor is escaped before it goes in.
+const esc = (t: string) => t.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const attr = (t: string) => esc(t).replace(/"/g, '&quot;');
 const locationRows = [
-  { label: 'Address', value: '29 Vine St, Fairfield NSW 2165' },
-  { label: 'Phone',   value: '<a href="tel:0287170999">(02) 8717 0999</a>' },
-  { label: 'Email',   value: '<a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a>' },
-  { label: 'Parking', value: 'Open air car park, corner of Vine &amp; Bertha Streets' },
-];
-
-const gallery = [
-  { src: '/images/centre/exterior-exterior-2-img_2649-with-people.png', alt: 'Oakdene House centre exterior side view' },
-  { src: '/images/centre/interior-interior-1-with-people-img_2654.jpg',  alt: 'Oakdene House centre interior main space' },
-  { src: '/images/centre/interior-meetings-1-img_2657-v2.png', alt: 'Oakdene House centre meeting room' },
-];
-
-const whatToExpect = [
-  'A warm and respectful environment',
-  'Private spaces for individual support',
-  'Group areas for programs and peer connection',
-  'Community service areas including the kitchen, laundrette and boutique',
+  { label: 'Address', value: esc(location.address) },
+  { label: 'Phone',   value: `<a href="${attr(location.phone.href)}">${esc(location.phone.label)}</a>` },
+  { label: 'Email',   value: `<a href="${attr(location.email.href)}">${esc(location.email.label)}</a>` },
+  { label: 'Parking', value: esc(location.parking) },
 ];
 ---
 
 <BaseLayout
-  title="Our Centre — Oakdene House Foundation"
-  description="Oakdene House is a safe, welcoming and practical space in Fairfield, Western Sydney bringing together counselling rooms, group spaces and community services all in one place."
-  ogImage="/images/centre/exterior-exterior-1-img_2651.jpg"
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.image}
 >
 
   <!-- HERO -->
@@ -39,10 +37,10 @@ const whatToExpect = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <a href="/about/">About</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">Our Centre</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1>Our Centre</h1>
-      <p class="centre-hero__lead">A safe, welcoming and practical space in Fairfield where people can access help in one place.</p>
+      <h1>{hero.heading}</h1>
+      <p class="centre-hero__lead"><Prose md={hero.lead} source={src('hero.lead')} /></p>
     </div>
   </section>
 
@@ -52,19 +50,19 @@ const whatToExpect = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">The Space</p>
-            <h2 id="centre-intro-heading">A space built around people</h2>
+            <p class="section-heading__eyebrow">{intro.heading.eyebrow}</p>
+            <h2 id="centre-intro-heading">{intro.heading.heading}</h2>
           </div>
-          <p>Oakdene House is designed to be a safe, welcoming and practical space for people seeking support. Our centre brings together counselling rooms, group spaces and community service areas so people can access help in one place.</p>
-          <h3 class="expect-heading">What visitors can expect</h3>
+          {intro.paragraphs.map((p, i) => <>{i > 0 && ' '}<p><Prose md={p} source={src(`intro.paragraphs.${i}`)} /></p></>)}
+          <h3 class="expect-heading">{intro.expectHeading}</h3>
           <ul class="expect-list">
-            {whatToExpect.map(item => <li>{item}</li>)}
+            {intro.expectItems.map((item, i) => <li><Prose md={item} source={src(`intro.expectItems.${i}`)} /></li>)}
           </ul>
         </div>
         <div class="split__image">
           <img
-            src="/images/centre/interior-img_2655-with-people.png"
-            alt="Inside Oakdene House Foundation centre"
+            src={intro.image.src}
+            alt={intro.image.alt}
             loading="lazy"
           />
         </div>
@@ -76,11 +74,11 @@ const whatToExpect = [
   <section class="section section--tint" aria-labelledby="gallery-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">The Building</p>
-        <h2 id="gallery-heading">Inside and outside our centre</h2>
+        <p class="section-heading__eyebrow">{gallery.heading.eyebrow}</p>
+        <h2 id="gallery-heading">{gallery.heading.heading}</h2>
       </div>
       <div class="centre-gallery">
-        {gallery.map((img, i) => (
+        {gallery.images.map((img, i) => (
           <div class={`gallery-item gallery-item--${i + 1}`}>
             <img src={img.src} alt={img.alt} loading="lazy" />
           </div>
@@ -102,21 +100,21 @@ const whatToExpect = [
             allowfullscreen=""
             loading="lazy"
             referrerpolicy="no-referrer-when-downgrade"
-            title="Oakdene House Foundation — 29 Vine St, Fairfield NSW 2165"
+            title={location.mapTitle}
           ></iframe>
           <a
-            href="https://maps.google.com/?q=29+Vine+St+Fairfield+NSW+2165"
+            href={location.mapLink.href}
             target="_blank"
             rel="noopener noreferrer"
             class="maps-link"
           >
-            Open in Google Maps
+            {location.mapLink.label}
           </a>
         </div>
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">Find Us</p>
-            <h2 id="location-heading">Location and Access</h2>
+            <p class="section-heading__eyebrow">{location.heading.eyebrow}</p>
+            <h2 id="location-heading">{location.heading.heading}</h2>
           </div>
           <InfoTable rows={locationRows} />
         </div>
@@ -128,10 +126,10 @@ const whatToExpect = [
   <section class="directions-download">
     <div class="container">
       <div class="directions-card">
-        <h3>Finding us can be tricky</h3>
-        <p>Oakdene House sits behind Fairfield RSL — easy to miss if you don't know where to look. Download our directions guide for photos, maps, and step-by-step instructions.</p>
-        <a href="/downloads/getting-to-oakdene-house.pdf" class="btn btn--primary" download>
-          Download directions (PDF)
+        <h3>{directions.heading}</h3>
+        <p><Prose md={directions.text} source={src('directions.text')} /></p>
+        <a href={directions.button.href} class="btn btn--primary" download>
+          {directions.button.label}
         </a>
       </div>
     </div>
@@ -139,10 +137,10 @@ const whatToExpect = [
 
   <!-- CTA -->
   <CTABand
-    heading="Ready to visit or get in touch?"
-    subheading="Our team is here to help. Contact us to arrange a visit or to ask any questions."
-    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
-    secondaryBtn={{ text: 'Get Support', href: '/contact/' }}
+    heading={cta.heading}
+    subheading={cta.subheading}
+    primaryBtn={{ text: cta.primary.label, href: cta.primary.href }}
+    secondaryBtn={{ text: cta.secondary.label, href: cta.secondary.href }}
     dark={true}
   />
 
