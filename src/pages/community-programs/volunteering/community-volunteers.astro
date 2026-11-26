@@ -1,26 +1,20 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CTABand from '../../../components/CTABand.astro';
+import Prose from '../../../components/Prose.astro';
+import { pageContent, fieldSource } from '../../../lib/pages';
 
-const roles = [
-  'Kitchen support',
-  'Boutique support',
-  'Laundrette support',
-  'General community program assistance',
-  'Event and activity support',
-];
-
-const lookFor = [
-  'A respectful and reliable approach',
-  'A willingness to contribute in a team environment',
-  'A commitment to Oakdene\'s values and community focus',
-];
+// Words and images: src/content/pages/community-programs--volunteering--community-volunteers.yaml (edited in /admin).
+const ID = 'community-programs--volunteering--community-volunteers';
+const page = await pageContent(ID, 'community-volunteers');
+const { seo, hero, overview, lookFor, cta } = page;
+const src = (path: string) => fieldSource(ID, path);
 ---
 
 <BaseLayout
-  title="Community Volunteers — Oakdene House Foundation"
-  description="Volunteer in the community at Oakdene House Foundation — supporting the Kitchen, Boutique, Laundrette and community programs in Fairfield, Western Sydney."
-  ogImage="/images/volunteers/oakdene-volunteer-kitchen-1a.png"
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.image}
 >
 
   <!-- HERO -->
@@ -34,10 +28,10 @@ const lookFor = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <a href="/community-programs/volunteering/">Volunteering</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">Community Volunteers</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1>Community Volunteers</h1>
-      <p class="cv-hero__lead">A direct and practical way to give back to your community.</p>
+      <h1>{hero.heading}</h1>
+      <p class="cv-hero__lead"><Prose md={hero.lead} source={src('hero.lead')} /></p>
     </div>
   </section>
 
@@ -47,23 +41,22 @@ const lookFor = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">About This Role</p>
-            <h2 id="cv-overview-heading">Part of the day-to-day</h2>
+            <p class="section-heading__eyebrow">{overview.heading.eyebrow}</p>
+            <h2 id="cv-overview-heading">{overview.heading.heading}</h2>
           </div>
-          <p>Community volunteers are part of the day-to-day life of Oakdene House. They support practical service delivery, help create a welcoming atmosphere and bring energy and connection to our programs.</p>
-          <p>Volunteering here is hands-on, meaningful, and valued by the people we support.</p>
+          {overview.paragraphs.map((p, i) => <>{i > 0 && ' '}<p><Prose md={p} source={src(`overview.paragraphs.${i}`)} /></p></>)}
 
-          <h3 class="roles-heading">Possible volunteer roles</h3>
+          <h3 class="roles-heading">{overview.rolesHeading}</h3>
           <ul class="item-list">
-            {roles.map(r => <li>{r}</li>)}
+            {overview.roles.map((r, i) => <li><Prose md={r} source={src(`overview.roles.${i}`)} /></li>)}
           </ul>
         </div>
         <div>
           <div class="cv-image">
-            <img src="/images/kitchen/oakdene-kitchen-volunteer-serving-with-smile.jpg" alt="Smiling volunteer serving food at Oakdene Kitchen" loading="lazy" />
+            <img src={overview.photos[0].src} alt={overview.photos[0].alt} loading="lazy" />
           </div>
           <div class="cv-image cv-image--second">
-            <img src="/images/kitchen/oakdene-kitchen-volunteers-with-food.jpg" alt="Volunteers preparing food at Oakdene" loading="lazy" />
+            <img src={overview.photos[1].src} alt={overview.photos[1].alt} loading="lazy" />
           </div>
         </div>
       </div>
@@ -75,23 +68,23 @@ const lookFor = [
     <div class="container">
       <div class="lookfor-inner">
         <div class="section-heading section-heading--center">
-          <p class="section-heading__eyebrow">Who We're Looking For</p>
-          <h2 id="lookfor-heading">What we look for in volunteers</h2>
+          <p class="section-heading__eyebrow">{lookFor.heading.eyebrow}</p>
+          <h2 id="lookfor-heading">{lookFor.heading.heading}</h2>
         </div>
         <div class="lookfor-items">
-          {lookFor.map(item => (
+          {lookFor.items.map((item, i) => (
             <div class="lookfor-item">
               <div class="lookfor-item__check" aria-hidden="true">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
               </div>
-              <p>{item}</p>
+              <p><Prose md={item} source={src(`lookFor.items.${i}`)} /></p>
             </div>
           ))}
         </div>
 
         <div class="apply-note">
-          <p>No formal qualifications are required. A genuine interest in supporting people and a respectful attitude are what matter most.</p>
-          <a href="/community-programs/volunteering/" class="btn btn--primary">Apply to Volunteer</a><!-- TODO: Replace with live Jotform URL -->
+          <p><Prose md={lookFor.note} source={src('lookFor.note')} /></p>
+          <a href={lookFor.button.href} class="btn btn--primary">{lookFor.button.label}</a><!-- TODO: Replace with live Jotform URL -->
         </div>
       </div>
     </div>
@@ -99,10 +92,10 @@ const lookFor = [
 
   <!-- CTA -->
   <CTABand
-    heading="Ready to apply?"
-    subheading="Submit an application and our team will be in touch to discuss next steps."
-    primaryBtn={{ text: 'Apply to Volunteer', href: '/community-programs/volunteering/' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={cta.heading}
+    subheading={cta.subheading}
+    primaryBtn={{ text: cta.primary.label, href: cta.primary.href }}
+    secondaryBtn={{ text: cta.secondary.label, href: cta.secondary.href }}
     dark={true}
   />
 

@@ -2,33 +2,28 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import InfoTable from '../../components/InfoTable.astro';
 import CTABand from '../../components/CTABand.astro';
+import Prose from '../../components/Prose.astro';
 import hours from '../../content/opening-hours.json';
+import { pageContent, fieldSource } from '../../lib/pages';
+import { detailRows } from '../../lib/service-details';
 
-const serviceRows = [
-  { label: 'Days', value: hours.clothingStore.days },
-  { label: 'Hours', value: hours.clothingStore.hours },
-  { label: 'Location', value: 'Inside the Laundrette, 1 Dale Street, Fairfield' },
-  { label: 'Cost', value: 'Free' },
-  { label: 'Email', value: '<a href="mailto:kitchen@oakdenehouse.org.au">kitchen@oakdenehouse.org.au</a>' },
-  { label: 'Phone', value: '<a href="tel:0415156100">0415 156 100</a>' },
-];
+// Words and images: src/content/pages/community-programs--used-clothing-store.yaml (edited in /admin).
+// The days and hours come from src/content/opening-hours.json.
+const ID = 'community-programs--used-clothing-store';
+const page = await pageContent(ID, 'used-clothing-store');
+const { seo, hero, intro, photos, also, cta } = page;
+const src = (path: string) => fieldSource(ID, path);
 
-const guidelines = [
-  '3 items per visit',
-  'One visit per month',
-  'Clothing cannot be tried on',
-  'No returns once taken',
-  'One person in the room at a time',
-  'Door must remain open',
-  'Access will be managed by the staff onsite',
-  'Items are not available by request and based on donations received',
-];
+const serviceRows = detailRows(ID, intro.details, [
+  ['days', hours.clothingStore.days],
+  ['hours', hours.clothingStore.hours],
+]);
 ---
 
 <BaseLayout
-  title="Used Clothing Store — Oakdene House Foundation"
-  description="Free men's and women's clothing, shoes and accessories at Oakdene's Used Clothing Store, inside the Laundrette at 1 Dale Street, Fairfield."
-  ogImage="/images/boutique/boutique-interior-clothing-rack.jpg"
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.image}
 >
 
   <!-- HERO -->
@@ -40,10 +35,10 @@ const guidelines = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <a href="/community-programs/">Community Programs</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">Used Clothing Store</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1>Oakdene Used Clothing Store</h1>
-      <p class="clothing-hero__lead">Free clothing for people doing it tough.</p>
+      <h1>{hero.heading}</h1>
+      <p class="clothing-hero__lead"><Prose md={hero.lead} source={src('hero.lead')} /></p>
     </div>
   </section>
 
@@ -53,24 +48,23 @@ const guidelines = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">The Service</p>
-            <h2 id="clothing-intro-heading">Clothing with dignity</h2>
+            <p class="section-heading__eyebrow">{intro.heading.eyebrow}</p>
+            <h2 id="clothing-intro-heading">{intro.heading.heading}</h2>
           </div>
-          <p>The Oakdene Used Clothing Store offers free men's and women's clothing, shoes, and accessories to people experiencing hardship. The store is located inside our Laundrette at 1 Dale Street, Fairfield.</p>
-          <p>We believe access to clean, decent clothing is a basic necessity, and we are here to help without judgment.</p>
+          {intro.paragraphs.map((p, i) => <>{i > 0 && ' '}<p><Prose md={p} source={src(`intro.paragraphs.${i}`)} /></p></>)}
 
           <div class="guidelines-card">
-            <h3>Visit guidelines</h3>
+            <h3>{intro.guidelinesHeading}</h3>
             <ul class="guidelines-list">
-              {guidelines.map(g => <li>{g}</li>)}
+              {intro.guidelines.map((g, i) => <li><Prose md={g} source={src(`intro.guidelines.${i}`)} /></li>)}
             </ul>
           </div>
         </div>
         <div>
-          <InfoTable rows={serviceRows} caption="Service details" />
+          <InfoTable rows={serviceRows} caption={intro.details.caption} />
           <div class="eligibility-box">
-            <h3>Eligibility</h3>
-            <p>The same eligibility applies as the Oakdene Kitchen and Laundrette — a current Centrelink Income Statement and photo ID showing income under $1,200 per fortnight.</p>
+            <h3>{intro.eligibility.heading}</h3>
+            <p><Prose md={intro.eligibility.text} source={src('intro.eligibility.text')} /></p>
           </div>
         </div>
       </div>
@@ -81,10 +75,10 @@ const guidelines = [
   <section class="clothing-images" aria-label="Clothing store photos">
     <div class="image-pair">
       <div class="image-pair__item">
-        <img src="/images/boutique/boutique-interior-looking-down-shop-with-people.png" alt="Clothing rack at the Oakdene Used Clothing Store" loading="lazy" />
+        <img src={photos[0].src} alt={photos[0].alt} loading="lazy" />
       </div>
       <div class="image-pair__item">
-        <img src="/images/boutique/boutique-interior-close-up-bag-warmer.png" alt="Close up view of clothing at Oakdene" loading="lazy" />
+        <img src={photos[1].src} alt={photos[1].alt} loading="lazy" />
       </div>
     </div>
   </section>
@@ -97,11 +91,11 @@ const guidelines = [
           <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
         </div>
         <div>
-          <p class="also-available__heading">Also on the same days</p>
-          <p>The Oakdene Laundrette and Oakdene Kitchen operate on the same days and hours. You can access all three services on a single visit.</p>
+          <p class="also-available__heading">{also.heading}</p>
+          <p><Prose md={also.text} source={src('also.text')} /></p>
           <div class="btn-group">
-            <a href="/community-programs/oakdene-laundrette/" class="btn btn--secondary">Laundrette</a>
-            <a href="/community-programs/oakdene-kitchen/" class="btn btn--secondary">Kitchen</a>
+            <a href={also.primary.href} class="btn btn--secondary">{also.primary.label}</a>
+            <a href={also.secondary.href} class="btn btn--secondary">{also.secondary.label}</a>
           </div>
         </div>
       </div>
@@ -110,9 +104,9 @@ const guidelines = [
 
   <!-- CTA -->
   <CTABand
-    heading="Have questions about the store?"
-    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
-    secondaryBtn={{ text: 'Get Support', href: '/contact/' }}
+    heading={cta.heading}
+    primaryBtn={{ text: cta.primary.label, href: cta.primary.href }}
+    secondaryBtn={{ text: cta.secondary.label, href: cta.secondary.href }}
     dark={true}
   />
 

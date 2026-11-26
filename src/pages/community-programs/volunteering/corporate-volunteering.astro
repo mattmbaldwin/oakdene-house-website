@@ -1,19 +1,20 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CTABand from '../../../components/CTABand.astro';
+import Prose from '../../../components/Prose.astro';
+import { pageContent, fieldSource } from '../../../lib/pages';
 
-const opportunities = [
-  'Team volunteering days',
-  'Support for community program activities',
-  'Donation drives or practical project support',
-  'Partnership opportunities linked to skills or service delivery',
-];
+// Words and images: src/content/pages/community-programs--volunteering--corporate-volunteering.yaml (edited in /admin).
+const ID = 'community-programs--volunteering--corporate-volunteering';
+const page = await pageContent(ID, 'corporate-volunteering');
+const { seo, hero, overview, why, cta } = page;
+const src = (path: string) => fieldSource(ID, path);
 ---
 
 <BaseLayout
-  title="Corporate Volunteering — Oakdene House Foundation"
-  description="Bring your team to Oakdene House Foundation for corporate volunteering days or community partnerships. Based in Fairfield, Western Sydney."
-  ogImage="/images/volunteers/oakdene-volunteer-kitchen-3a.png"
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.image}
 >
 
   <!-- HERO -->
@@ -27,10 +28,10 @@ const opportunities = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <a href="/community-programs/volunteering/">Volunteering</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">Corporate Volunteering</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1>Corporate Volunteering</h1>
-      <p class="corp-hero__lead">A practical way for organisations to support the local community with purpose and impact.</p>
+      <h1>{hero.heading}</h1>
+      <p class="corp-hero__lead"><Prose md={hero.lead} source={src('hero.lead')} /></p>
     </div>
   </section>
 
@@ -40,27 +41,26 @@ const opportunities = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">About This Program</p>
-            <h2 id="corp-overview-heading">Make it meaningful for your team</h2>
+            <p class="section-heading__eyebrow">{overview.heading.eyebrow}</p>
+            <h2 id="corp-overview-heading">{overview.heading.heading}</h2>
           </div>
-          <p>Corporate volunteering offers organisations a practical way to support the local community while building team connection and purpose. Oakdene House can work with businesses and groups to create volunteering opportunities that are useful, well-organised and meaningful.</p>
-          <p>Whether it is a one-day volunteering event or an ongoing partnership, we will work with you to find the right fit.</p>
+          {overview.paragraphs.map((p, i) => <>{i > 0 && ' '}<p><Prose md={p} source={src(`overview.paragraphs.${i}`)} /></p></>)}
 
-          <h3 class="opps-heading">Potential opportunities</h3>
+          <h3 class="opps-heading">{overview.oppsHeading}</h3>
           <ul class="opps-list">
-            {opportunities.map(o => <li>{o}</li>)}
+            {overview.opportunities.map((o, i) => <li><Prose md={o} source={src(`overview.opportunities.${i}`)} /></li>)}
           </ul>
         </div>
         <div class="corp-aside">
           <div class="corp-image">
-            <img src="/images/kitchen/oakdene-kitchen-volunteers-wrappimg-bread.jpg" alt="Volunteers working together at Oakdene" loading="lazy" />
+            <img src={overview.image.src} alt={overview.image.alt} loading="lazy" />
           </div>
           <div class="contact-prompt">
-            <h3>Get in touch</h3>
-            <p>If your organisation is interested in supporting Oakdene House through volunteering or partnership, please contact us to discuss suitable options.</p>
+            <h3>{overview.contact.heading}</h3>
+            <p><Prose md={overview.contact.text} source={src('overview.contact.text')} /></p>
             <div class="btn-group">
-              <a href="/contact/" class="btn btn--primary">Partnership Enquiry</a><!-- TODO: Replace with live Jotform URL -->
-              <a href="/contact/" class="btn btn--secondary">Contact Us</a>
+              <a href={overview.contact.primary.href} class="btn btn--primary">{overview.contact.primary.label}</a><!-- TODO: Replace with live Jotform URL -->
+              <a href={overview.contact.secondary.href} class="btn btn--secondary">{overview.contact.secondary.label}</a>
             </div>
           </div>
         </div>
@@ -73,30 +73,30 @@ const opportunities = [
     <div class="container">
       <div class="why-inner">
         <div class="section-heading section-heading--center">
-          <p class="section-heading__eyebrow">Why Oakdene?</p>
-          <h2 id="why-heading">A genuine community impact</h2>
+          <p class="section-heading__eyebrow">{why.heading.eyebrow}</p>
+          <h2 id="why-heading">{why.heading.heading}</h2>
         </div>
         <div class="why-grid">
           <div class="why-item">
             <div class="why-item__icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </div>
-            <h3>Trusted local charity</h3>
-            <p>Oakdene House has served the Fairfield community since 2011, with a strong track record of practical and respectful support.</p>
+            <h3>{why.items[0].heading}</h3>
+            <p><Prose md={why.items[0].body} source={src('why.items.0.body')} /></p>
           </div>
           <div class="why-item">
             <div class="why-item__icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
             </div>
-            <h3>Structured and purposeful</h3>
-            <p>We work with your organisation to ensure volunteering days are well-organised, rewarding, and genuinely useful.</p>
+            <h3>{why.items[1].heading}</h3>
+            <p><Prose md={why.items[1].body} source={src('why.items.1.body')} /></p>
           </div>
           <div class="why-item">
             <div class="why-item__icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             </div>
-            <h3>Team connection</h3>
-            <p>Working together on something meaningful builds team morale and a shared sense of purpose beyond the workplace.</p>
+            <h3>{why.items[2].heading}</h3>
+            <p><Prose md={why.items[2].body} source={src('why.items.2.body')} /></p>
           </div>
         </div>
       </div>
@@ -105,10 +105,10 @@ const opportunities = [
 
   <!-- CTA -->
   <CTABand
-    heading="Interested in a corporate partnership?"
-    subheading="Contact our team to discuss how your organisation can get involved."
-    primaryBtn={{ text: 'Partnership Enquiry', href: '/contact/' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={cta.heading}
+    subheading={cta.subheading}
+    primaryBtn={{ text: cta.primary.label, href: cta.primary.href }}
+    secondaryBtn={{ text: cta.secondary.label, href: cta.secondary.href }}
     dark={true}
   />
 

@@ -1,0 +1,51 @@
+# Words and images for /community-programs/volunteering/community-volunteers/.
+# Layout: src/pages/community-programs/volunteering/community-volunteers.astro.
+layout: community-volunteers
+seo:
+  title: Community Volunteers — Oakdene House Foundation
+  description: Volunteer in the community at Oakdene House Foundation — supporting the Kitchen, Boutique, Laundrette and community programs in Fairfield, Western Sydney.
+  image: /images/volunteers/oakdene-volunteer-kitchen-1a.png
+hero:
+  breadcrumb: Community Volunteers
+  heading: Community Volunteers
+  lead: A direct and practical way to give back to your community.
+overview:
+  heading:
+    eyebrow: About This Role
+    heading: Part of the day-to-day
+  paragraphs:
+    - Community volunteers are part of the day-to-day life of Oakdene House. They support practical service delivery, help create a welcoming atmosphere and bring energy and connection to our programs.
+    - Volunteering here is hands-on, meaningful, and valued by the people we support.
+  rolesHeading: Possible volunteer roles
+  roles:
+    - Kitchen support
+    - Boutique support
+    - Laundrette support
+    - General community program assistance
+    - Event and activity support
+  photos:
+    - src: /images/kitchen/oakdene-kitchen-volunteer-serving-with-smile.jpg
+      alt: Smiling volunteer serving food at Oakdene Kitchen
+    - src: /images/kitchen/oakdene-kitchen-volunteers-with-food.jpg
+      alt: Volunteers preparing food at Oakdene
+lookFor:
+  heading:
+    eyebrow: Who We're Looking For
+    heading: What we look for in volunteers
+  items:
+    - A respectful and reliable approach
+    - A willingness to contribute in a team environment
+    - A commitment to Oakdene's values and community focus
+  note: No formal qualifications are required. A genuine interest in supporting people and a respectful attitude are what matter most.
+  button:
+    label: Apply to Volunteer
+    href: /community-programs/volunteering/
+cta:
+  heading: Ready to apply?
+  subheading: Submit an application and our team will be in touch to discuss next steps.
+  primary:
+    label: Apply to Volunteer
+    href: /community-programs/volunteering/
+  secondary:
+    label: Contact Us
+    href: /contact/

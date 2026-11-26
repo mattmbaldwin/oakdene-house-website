@@ -1,36 +1,20 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CTABand from '../../../components/CTABand.astro';
+import Prose from '../../../components/Prose.astro';
+import { pageContent, fieldSource } from '../../../lib/pages';
 
-const reasons = [
-  'Be part of a local charity making a practical difference',
-  'Support people and families in your community',
-  'Join a welcoming, values-led environment',
-  'Use your time and skills in ways that matter',
-];
-
-const types = [
-  {
-    heading: 'Community Volunteering',
-    description: 'Join our day-to-day operations — supporting the Kitchen, Boutique, Laundrette, and programs. Open to individuals who want to make a direct local contribution.',
-    href: '/community-programs/volunteering/community-volunteers/',
-    image: '/images/volunteers/oakdene-volunteer-kitchen-2.png',
-    imageAlt: 'Volunteer serving food at Oakdene Kitchen',
-  },
-  {
-    heading: 'Corporate Volunteering',
-    description: 'Bring your team to Oakdene for structured volunteering days or partnership programs. A meaningful way to give back and build team purpose.',
-    href: '/community-programs/volunteering/corporate-volunteering/',
-    image: '/images/volunteers/oakdene-volunteer-kitchen-3.png',
-    imageAlt: 'Volunteers at Oakdene wrapping food',
-  },
-];
+// Words and images: src/content/pages/community-programs--volunteering.yaml (edited in /admin).
+const ID = 'community-programs--volunteering';
+const page = await pageContent(ID, 'volunteering');
+const { seo, hero, why, types, expect, form, cta } = page;
+const src = (path: string) => fieldSource(ID, path);
 ---
 
 <BaseLayout
-  title="Volunteering — Oakdene House Foundation"
-  description="Volunteer with Oakdene House Foundation in Fairfield, Western Sydney. Community and corporate volunteering opportunities available."
-  ogImage="/images/volunteers/oakdene-volunteer-kitchen-1.png"
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.image}
 >
 
   <!-- HERO -->
@@ -42,10 +26,10 @@ const types = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <a href="/community-programs/">Community Programs</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">Volunteering</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1 id="vol-hero-heading">Volunteer with Oakdene House Foundation</h1>
-      <p class="vol-hero__lead">Volunteers play an important role at Oakdene House. They help create a welcoming environment, support practical programs and strengthen our connection to the community.</p>
+      <h1 id="vol-hero-heading">{hero.heading}</h1>
+      <p class="vol-hero__lead"><Prose md={hero.lead} source={src('hero.lead')} /></p>
     </div>
   </section>
 
@@ -55,18 +39,18 @@ const types = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">Why Volunteer</p>
-            <h2 id="why-heading">Make a real contribution</h2>
+            <p class="section-heading__eyebrow">{why.heading.eyebrow}</p>
+            <h2 id="why-heading">{why.heading.heading}</h2>
           </div>
-          <p>Volunteering at Oakdene is practical, welcoming, and meaningful. Every volunteer who walks through our doors becomes part of a community that is working to make a genuine difference.</p>
+          <p><Prose md={why.paragraph} source={src('why.paragraph')} /></p>
           <ul class="reasons-list">
-            {reasons.map(r => <li>{r}</li>)}
+            {why.reasons.map((r, i) => <li><Prose md={r} source={src(`why.reasons.${i}`)} /></li>)}
           </ul>
-          <a href="#volunteer-form" class="btn btn--primary">Apply to Volunteer</a>
+          <a href={why.button.href} class="btn btn--primary">{why.button.label}</a>
         </div>
         <div>
           <div class="vol-image">
-            <img src="/images/kitchen/oakdene-kitchen-interior-with-food-stacks.jpg" alt="Volunteer at Oakdene Kitchen serving food" loading="lazy" />
+            <img src={why.image.src} alt={why.image.alt} loading="lazy" />
           </div>
         </div>
       </div>
@@ -77,19 +61,19 @@ const types = [
   <section class="section section--tint" aria-labelledby="types-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">How You Can Volunteer</p>
-        <h2 id="types-heading">Two ways to get involved</h2>
+        <p class="section-heading__eyebrow">{types.heading.eyebrow}</p>
+        <h2 id="types-heading">{types.heading.heading}</h2>
       </div>
       <div class="types-grid">
-        {types.map(t => (
+        {types.cards.map((t, i) => (
           <article class="type-card">
             <div class="type-card__image">
-              <img src={t.image} alt={t.imageAlt} loading="lazy" />
+              <img src={t.image.src} alt={t.image.alt} loading="lazy" />
             </div>
             <div class="type-card__body">
               <h3 class="type-card__heading">{t.heading}</h3>
-              <p class="type-card__desc">{t.description}</p>
-              <a href={t.href} class="btn btn--secondary">Learn More</a>
+              <p class="type-card__desc"><Prose md={t.description} source={src(`types.cards.${i}.description`)} /></p>
+              <a href={t.href} class="btn btn--secondary">{types.learnMoreLabel}</a>
             </div>
           </article>
         ))}
@@ -102,29 +86,29 @@ const types = [
     <div class="container">
       <div class="expect-inner">
         <div class="section-heading section-heading--center">
-          <p class="section-heading__eyebrow">What to Expect</p>
-          <h2 id="expect-heading">Volunteering at Oakdene</h2>
+          <p class="section-heading__eyebrow">{expect.heading.eyebrow}</p>
+          <h2 id="expect-heading">{expect.heading.heading}</h2>
         </div>
         <div class="expect-grid">
           <div class="expect-item">
             <div class="expect-item__number" aria-hidden="true">01</div>
-            <h3>Apply</h3>
-            <p>Submit a volunteer application through our form or contact us directly.</p>
+            <h3>{expect.steps[0].heading}</h3>
+            <p><Prose md={expect.steps[0].body} source={src('expect.steps.0.body')} /></p>
           </div>
           <div class="expect-item">
             <div class="expect-item__number" aria-hidden="true">02</div>
-            <h3>Meet the team</h3>
-            <p>We will have a brief conversation to understand your availability and interests.</p>
+            <h3>{expect.steps[1].heading}</h3>
+            <p><Prose md={expect.steps[1].body} source={src('expect.steps.1.body')} /></p>
           </div>
           <div class="expect-item">
             <div class="expect-item__number" aria-hidden="true">03</div>
-            <h3>Get started</h3>
-            <p>You will be welcomed into your role with support and guidance from our team.</p>
+            <h3>{expect.steps[2].heading}</h3>
+            <p><Prose md={expect.steps[2].body} source={src('expect.steps.2.body')} /></p>
           </div>
           <div class="expect-item">
             <div class="expect-item__number" aria-hidden="true">04</div>
-            <h3>Make a difference</h3>
-            <p>Your time and energy directly support people and families in the Fairfield community.</p>
+            <h3>{expect.steps[3].heading}</h3>
+            <p><Prose md={expect.steps[3].body} source={src('expect.steps.3.body')} /></p>
           </div>
         </div>
       </div>
@@ -135,8 +119,8 @@ const types = [
   <section class="section section--tint" id="volunteer-form" aria-labelledby="vol-form-heading">
     <div class="container">
       <div class="vol-form-inner">
-        <h2 id="vol-form-heading">Apply to volunteer</h2>
-        <p class="vol-form-intro">We'd love to hear from you. Fill in the form below and we'll get back to you within 2 business days to arrange a quick conversation about your interests and availability. You don't need prior experience — we value willingness, reliability, and a caring approach more than anything else.</p>
+        <h2 id="vol-form-heading">{form.heading}</h2>
+        <p class="vol-form-intro"><Prose md={form.intro} source={src('form.intro')} /></p>
         <iframe
           id="JotFormIFrame-260837985458072"
           title="Volunteer application — Oakdene House Foundation"
@@ -154,9 +138,9 @@ const types = [
 
   <!-- CTA -->
   <CTABand
-    heading="Ready to get involved?"
-    primaryBtn={{ text: 'Apply to Volunteer', href: '#volunteer-form' }}
-    secondaryBtn={{ text: 'Partnership Enquiry', href: '/contact/' }}
+    heading={cta.heading}
+    primaryBtn={{ text: cta.primary.label, href: cta.primary.href }}
+    secondaryBtn={{ text: cta.secondary.label, href: cta.secondary.href }}
     dark={true}
   />
 

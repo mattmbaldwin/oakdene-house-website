@@ -1,0 +1,56 @@
+# Words and images for /community-programs/volunteering/corporate-volunteering/.
+# Layout: src/pages/community-programs/volunteering/corporate-volunteering.astro.
+layout: corporate-volunteering
+seo:
+  title: Corporate Volunteering — Oakdene House Foundation
+  description: Bring your team to Oakdene House Foundation for corporate volunteering days or community partnerships. Based in Fairfield, Western Sydney.
+  image: /images/volunteers/oakdene-volunteer-kitchen-3a.png
+hero:
+  breadcrumb: Corporate Volunteering
+  heading: Corporate Volunteering
+  lead: A practical way for organisations to support the local community with purpose and impact.
+overview:
+  heading:
+    eyebrow: About This Program
+    heading: Make it meaningful for your team
+  paragraphs:
+    - Corporate volunteering offers organisations a practical way to support the local community while building team connection and purpose. Oakdene House can work with businesses and groups to create volunteering opportunities that are useful, well-organised and meaningful.
+    - Whether it is a one-day volunteering event or an ongoing partnership, we will work with you to find the right fit.
+  oppsHeading: Potential opportunities
+  opportunities:
+    - Team volunteering days
+    - Support for community program activities
+    - Donation drives or practical project support
+    - Partnership opportunities linked to skills or service delivery
+  image:
+    src: /images/kitchen/oakdene-kitchen-volunteers-wrappimg-bread.jpg
+    alt: Volunteers working together at Oakdene
+  contact:
+    heading: Get in touch
+    text: If your organisation is interested in supporting Oakdene House through volunteering or partnership, please contact us to discuss suitable options.
+    primary:
+      label: Partnership Enquiry
+      href: /contact/
+    secondary:
+      label: Contact Us
+      href: /contact/
+why:
+  heading:
+    eyebrow: Why Oakdene?
+    heading: A genuine community impact
+  items:
+    - heading: Trusted local charity
+      body: Oakdene House has served the Fairfield community since 2011, with a strong track record of practical and respectful support.
+    - heading: Structured and purposeful
+      body: We work with your organisation to ensure volunteering days are well-organised, rewarding, and genuinely useful.
+    - heading: Team connection
+      body: Working together on something meaningful builds team morale and a shared sense of purpose beyond the workplace.
+cta:
+  heading: Interested in a corporate partnership?
+  subheading: Contact our team to discuss how your organisation can get involved.
+  primary:
+    label: Partnership Enquiry
+    href: /contact/
+  secondary:
+    label: Contact Us
+    href: /contact/

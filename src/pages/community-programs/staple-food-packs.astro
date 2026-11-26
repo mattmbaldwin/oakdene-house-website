@@ -2,29 +2,28 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import InfoTable from '../../components/InfoTable.astro';
 import CTABand from '../../components/CTABand.astro';
+import Prose from '../../components/Prose.astro';
 import hours from '../../content/opening-hours.json';
+import { pageContent, fieldSource } from '../../lib/pages';
+import { detailRows, fillHours } from '../../lib/service-details';
 
-const serviceRows = [
-  { label: 'Day', value: hours.staplePacks.day },
-  { label: 'Hours', value: hours.staplePacks.hours },
-  { label: 'Cost', value: 'Free' },
-  { label: 'Email', value: '<a href="mailto:kitchen@oakdenehouse.org.au">kitchen@oakdenehouse.org.au</a>' },
-  { label: 'Phone', value: '<a href="tel:0415156100">0415 156 100</a>' },
-];
+// Words and images: src/content/pages/community-programs--staple-food-packs.yaml (edited in /admin).
+// The day and hours come from src/content/opening-hours.json.
+const ID = 'community-programs--staple-food-packs';
+const page = await pageContent(ID, 'staple-food-packs');
+const { seo, hero, intro, banner, rules, cta } = page;
+const src = (path: string) => fieldSource(ID, path);
 
-const included = [
-  'Fresh fruit and vegetables',
-  'Canned goods',
-  'Long life milk',
-  'Cereal',
-  'Hygiene items — women\'s health, child/baby, dental (subject to availability)',
-];
+const serviceRows = detailRows(ID, intro.details, [
+  ['day', hours.staplePacks.day],
+  ['hours', hours.staplePacks.hours],
+]);
 ---
 
 <BaseLayout
-  title="Staple Food Packs — Oakdene House Foundation"
-  description={`Free take-home grocery packs ${hours.staplePacks.seoDay} at Oakdene House, Fairfield. Includes fresh produce, pantry staples and hygiene items.`}
-  ogImage="/images/kitchen/oakdene-kitchen-interior-with-food-stacks.jpg"
+  title={seo.title}
+  description={fillHours(seo.description, hours.staplePacks.seoDay)}
+  ogImage={seo.image}
 >
 
   <!-- HERO -->
@@ -36,10 +35,10 @@ const included = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <a href="/community-programs/">Community Programs</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">Staple Food Packs</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1>Staple Food Packs</h1>
-      <p class="packs-hero__lead">Take-home grocery packs for people doing it tough.</p>
+      <h1>{hero.heading}</h1>
+      <p class="packs-hero__lead"><Prose md={hero.lead} source={src('hero.lead')} /></p>
     </div>
   </section>
 
@@ -49,23 +48,23 @@ const included = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">About this service</p>
-            <h2 id="packs-intro-heading">Essentials to take home</h2>
+            <p class="section-heading__eyebrow">{intro.heading.eyebrow}</p>
+            <h2 id="packs-intro-heading">{intro.heading.heading}</h2>
           </div>
-          <p>In collaboration with OzHarvest, we provide free staple food packs to people experiencing financial hardship. Packs include fresh produce, pantry essentials and hygiene items where available.</p>
-          <p>Packs are distributed {hours.staplePacks.distributionDay}.</p>
+          <p><Prose md={intro.paragraph} source={src('intro.paragraph')} /></p>
+          <p><Prose md={fillHours(intro.distribution, hours.staplePacks.distributionDay)} source={src('intro.distribution')} /></p>
 
-          <h3 class="section-subhead">What's included</h3>
+          <h3 class="section-subhead">{intro.includedHeading}</h3>
           <ul class="offer-list">
-            {included.map(item => <li>{item}</li>)}
+            {intro.includedItems.map((item, i) => <li><Prose md={item} source={src(`intro.includedItems.${i}`)} /></li>)}
           </ul>
           <div class="ozharvest-credit">
-            <p>Supplied through</p>
-            <img src="/images/logos/partners/ozharvest-logo-yellow.jpeg" alt="OzHarvest" class="ozharvest-credit__logo" />
+            <p>{intro.creditLabel}</p>
+            <img src={intro.creditLogo.src} alt={intro.creditLogo.alt} class="ozharvest-credit__logo" />
           </div>
         </div>
         <div>
-          <InfoTable rows={serviceRows} caption="Service details" />
+          <InfoTable rows={serviceRows} caption={intro.details.caption} />
         </div>
       </div>
     </div>
@@ -73,7 +72,7 @@ const included = [
 
   <!-- FOOD IMAGE -->
   <div class="food-image-banner">
-    <img src="/images/kitchen/kitchen-3x-staff-serving.png" alt="Oakdene Kitchen staff serving a meal" loading="lazy" />
+    <img src={banner.src} alt={banner.alt} loading="lazy" />
   </div>
 
   <!-- RULES + ELIGIBILITY -->
@@ -81,32 +80,28 @@ const included = [
     <div class="container">
       <div class="narrow">
         <div class="section-heading">
-          <p class="section-heading__eyebrow">Important Information</p>
-          <h2 id="rules-heading">Rules and eligibility</h2>
+          <p class="section-heading__eyebrow">{rules.heading.eyebrow}</p>
+          <h2 id="rules-heading">{rules.heading.heading}</h2>
         </div>
 
         <div class="rules-grid">
           <div class="rules-card">
-            <h3>Pack rules</h3>
+            <h3>{rules.packRules.heading}</h3>
             <ul class="rules-list">
-              <li>One pack per household</li>
-              <li>Packs are limited — once given out, none are available until next week</li>
+              {rules.packRules.items.map((item, i) => <>{i > 0 && ' '}<li><Prose md={item} source={src(`rules.packRules.items.${i}`)} /></li></>)}
             </ul>
           </div>
           <div class="rules-card">
-            <h3>Eligibility</h3>
-            <p>The same eligibility applies as the Oakdene Kitchen:</p>
+            <h3>{rules.eligibility.heading}</h3>
+            <p><Prose md={rules.eligibility.intro} source={src('rules.eligibility.intro')} /></p>
             <ul class="rules-list">
-              <li>Current Centrelink Income Statement</li>
-              <li>Photo ID (passport or drivers licence)</li>
-              <li>Income under $1,200 per fortnight</li>
-              <li>Statement must be updated monthly</li>
+              {rules.eligibility.items.map((item, i) => <>{i > 0 && ' '}<li><Prose md={item} source={src(`rules.eligibility.items.${i}`)} /></li></>)}
             </ul>
           </div>
         </div>
 
         <div class="also-note">
-          <p>Also running on {hours.staplePacks.alsoRunningDay} — if you need further support, speak with a team member about other Oakdene services including the <a href="/community-programs/oakdene-kitchen/">Kitchen</a>, <a href="/community-programs/oakdene-laundrette/">Laundrette</a> and <a href="/services/individual-counselling/">Counselling</a>.</p>
+          <p><Prose md={fillHours(rules.also, hours.staplePacks.alsoRunningDay)} source={src('rules.also')} /></p>
         </div>
       </div>
     </div>
@@ -114,9 +109,9 @@ const included = [
 
   <!-- CTA -->
   <CTABand
-    heading="Need to get in touch?"
-    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
-    secondaryBtn={{ text: 'Get Support', href: '/contact/' }}
+    heading={cta.heading}
+    primaryBtn={{ text: cta.primary.label, href: cta.primary.href }}
+    secondaryBtn={{ text: cta.secondary.label, href: cta.secondary.href }}
     dark={true}
   />
 

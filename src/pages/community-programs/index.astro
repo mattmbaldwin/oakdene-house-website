@@ -1,119 +1,47 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
+import Prose from '../../components/Prose.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
 import hours from '../../content/opening-hours.json';
+import { pageContent, fieldSource } from '../../lib/pages';
+import { fillHours } from '../../lib/service-details';
 
-const programs = [
-  {
-    heading: 'Community Support Programs',
-    description: 'Activities and supports that create routine, stability, and a sense of belonging.',
-    icon: 'people',
-  },
-  {
-    heading: 'Recovery-Focused Group Programs',
-    description: 'Programs that support reflection, accountability, practical coping, and shared progress.',
-    icon: 'heart',
-  },
-  {
-    heading: 'Practical Support Initiatives',
-    description: 'Community responses that meet real needs with care, dignity, and consistency.',
-    icon: 'hands',
-  },
-  {
-    heading: 'Volunteer and Community Engagement',
-    description: 'Opportunities for people to participate, contribute, and stay connected.',
-    icon: 'star',
-  },
-];
+// Words and images: src/content/pages/community-programs--index.yaml (edited in /admin).
+// The Kitchen card's opening days come from src/content/opening-hours.json.
+const ID = 'community-programs--index';
+const page = await pageContent(ID, 'community-programs');
+const { seo, hero, why, gains: gainsContent, testimonials, services, involvement: involvementContent, cta } = page;
+const src = (path: string) => fieldSource(ID, path);
 
-const gains = [
-  { label: 'Stronger routine', icon: 'clock' },
-  { label: 'Greater confidence', icon: 'arrow' },
-  { label: 'Community connection', icon: 'people' },
-  { label: 'Practical progress', icon: 'check' },
-];
+// The icons belong to the design, one per card in order.
+const programIcons = ['people', 'heart', 'hands', 'star'];
+const programs = page.programs.cards.map((c, i) => ({ ...c, icon: programIcons[i] }));
 
-const practicalServices = [
-  {
-    title: 'Oakdene Kitchen',
-    summary: `Free hot lunches in a safe and welcoming community space, ${hours.kitchen.programsSummary}.`,
-    href: '/community-programs/oakdene-kitchen/',
-    image: '/images/kitchen/kitchen-3x-staff-serving.png',
-    imageAlt: 'Oakdene Kitchen staff serving meals',
-    eyebrow: 'Practical Assistance',
-  },
-  {
-    title: 'Staple Food Packs',
-    summary: 'Weekly take-home grocery packs with fresh produce, pantry essentials and hygiene items.',
-    href: '/community-programs/staple-food-packs/',
-    image: '/images/kitchen/oakdene-kitchen-interior-with-food-stacks.jpg',
-    imageAlt: 'Stacked food supplies at Oakdene Kitchen',
-    eyebrow: 'Practical Assistance',
-  },
-  {
-    title: 'Oakdene Laundrette',
-    summary: 'Free community laundry service with washing, drying and detergent provided.',
-    href: '/community-programs/oakdene-laundrette/',
-    image: '/images/laundrette/laundrette-interior-1.jpg',
-    imageAlt: 'Inside the Oakdene Laundrette',
-    eyebrow: 'Practical Assistance',
-  },
-  {
-    title: 'Used Clothing Store',
-    summary: "Free men's and women's clothing, shoes and accessories — three items per visit.",
-    href: '/community-programs/used-clothing-store/',
-    image: '/images/boutique/boutique-interior-clothing-rack.jpg',
-    imageAlt: 'Clothing rack at the Oakdene Used Clothing Store',
-    eyebrow: 'Practical Assistance',
-  },
-  {
-    title: 'Ladies Boutique',
-    summary: 'A warm, private space offering quality clothing, salon services and community connection for women.',
-    href: '/community-programs/ladies-boutique/',
-    image: '/images/boutique/ladies-boutique-edited.png',
-    imageAlt: 'Oakdene Ladies Boutique',
-    eyebrow: 'Community Support',
-  },
-];
+const gainIcons = ['clock', 'arrow', 'people', 'check'];
+const gains = gainsContent.items.map((label, i) => ({ label, icon: gainIcons[i] }));
 
-const involvement = [
-  {
-    heading: 'Join a program',
-    body: 'Express interest directly or contact Oakdene to find out which program fits best.',
-    href: '/contact/?reason=program-interest',
-    linkText: 'Express Interest',
-  },
-  {
-    heading: 'Refer someone',
-    body: 'Workers and family members can refer using the referral form or by contacting us directly.',
-    href: '/services/referral/',
-    linkText: 'Submit Referral',
-  },
-  {
-    heading: 'Volunteer',
-    body: 'Want to contribute your time? We would love to hear from you.',
-    href: '/community-programs/volunteering/',
-    linkText: 'Learn About Volunteering',
-  },
-];
+const practicalServices = services.cards.map((c, i) => ({
+  ...c,
+  summary: i === 0 ? fillHours(c.summary, hours.kitchen.programsSummary) : c.summary,
+}));
 ---
 
 <BaseLayout
-  title="Community Programs — Oakdene House Foundation"
-  description="Oakdene House community programs build connection, confidence and routine for people in Fairfield, Western Sydney. Recovery groups, practical initiatives and community engagement."
-  ogImage="/images/generic/bandw-forset-sun-beam.jpeg"
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.image}
 >
 
   <!-- HERO -->
   <section class="cp-hero" aria-label="Community Programs">
     <div class="cp-hero__overlay" aria-hidden="true"></div>
     <div class="container cp-hero__content">
-      <h1>Community programs that build connection, confidence, and forward movement</h1>
-      <p class="cp-hero__lead">Oakdene's programs are designed to bring people into safe, practical, community-based spaces where support feels real and participation matters.</p>
+      <h1>{hero.heading}</h1>
+      <p class="cp-hero__lead"><Prose md={hero.lead} source={src('hero.lead')} /></p>
       <div class="btn-group">
-        <a href="/services/" class="btn btn--white">Explore Programs</a>
-        <a href="/contact/" class="btn btn--white-outline">General Enquiry</a><!-- TODO: Replace with live Jotform URL -->
+        <a href={hero.primary.href} class="btn btn--white">{hero.primary.label}</a>
+        <a href={hero.secondary.href} class="btn btn--white-outline">{hero.secondary.label}</a><!-- TODO: Replace with live Jotform URL -->
       </div>
     </div>
   </section>
@@ -122,12 +50,12 @@ const involvement = [
   <section class="section" aria-labelledby="programs-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">What We Offer</p>
-        <h2 id="programs-heading">Our programs</h2>
-        <p class="section-heading__lead">Oakdene runs a range of programs across four interconnected areas of community support.</p>
+        <p class="section-heading__eyebrow">{page.programs.heading.eyebrow}</p>
+        <h2 id="programs-heading">{page.programs.heading.heading}</h2>
+        <p class="section-heading__lead"><Prose md={page.programs.heading.lead} source={src('programs.heading.lead')} /></p>
       </div>
       <div class="programs-grid">
-        {programs.map(p => (
+        {programs.map((p, i) => (
           <div class="program-card">
             <div class="program-card__icon" aria-hidden="true">
               {p.icon === 'people' && (
@@ -144,7 +72,7 @@ const involvement = [
               )}
             </div>
             <h3 class="program-card__heading">{p.heading}</h3>
-            <p class="program-card__desc">{p.description}</p>
+            <p class="program-card__desc"><Prose md={p.description} source={src(`programs.cards.${i}.description`)} /></p>
           </div>
         ))}
       </div>
@@ -156,16 +84,15 @@ const involvement = [
     <div class="container">
       <div class="split">
         <div class="why-image">
-          <img src="/images/centre/interior-meetings-1-img_2657.jpg" alt="People in community program session at Oakdene House" loading="lazy" />
+          <img src={why.image.src} alt={why.image.alt} loading="lazy" />
         </div>
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">Why Programs Matter</p>
-            <h2 id="why-heading">More than crisis response</h2>
+            <p class="section-heading__eyebrow">{why.heading.eyebrow}</p>
+            <h2 id="why-heading">{why.heading.heading}</h2>
           </div>
-          <p class="why-text">Programs matter because support is not only about crisis response. It is also about belonging, confidence, consistency, and having spaces where people can keep turning up, reconnecting, and building a stronger everyday life.</p>
-          <p class="why-text">When people have somewhere to go and something meaningful to contribute to, they move forward.</p>
-          <a href="/services/" class="btn btn--primary">View All Services</a>
+          {why.paragraphs.map((p, i) => <>{i > 0 && ' '}<p class="why-text"><Prose md={p} source={src(`why.paragraphs.${i}`)} /></p></>)}
+          <a href={why.button.href} class="btn btn--primary">{why.button.label}</a>
         </div>
       </div>
     </div>
@@ -175,8 +102,8 @@ const involvement = [
   <section class="section" aria-labelledby="gains-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">The Difference</p>
-        <h2 id="gains-heading">What people gain from programs</h2>
+        <p class="section-heading__eyebrow">{gainsContent.heading.eyebrow}</p>
+        <h2 id="gains-heading">{gainsContent.heading.heading}</h2>
       </div>
       <div class="gains-grid">
         {gains.map(g => (
@@ -206,20 +133,15 @@ const involvement = [
   <section class="section section--tint" aria-labelledby="testimonials-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">In Their Words</p>
-        <h2 id="testimonials-heading">What participants say</h2>
+        <p class="section-heading__eyebrow">{testimonials.heading.eyebrow}</p>
+        <h2 id="testimonials-heading">{testimonials.heading.heading}</h2>
       </div>
       <div class="quotes-grid">
-        <blockquote class="quote-card">
+        {testimonials.quotes.map((q, i) => <>{i > 0 && ' '}<blockquote class="quote-card">
           <div class="quote-card__mark" aria-hidden="true">"</div>
-          <p>Being around others and having somewhere to go helped me get some structure back. It made a bigger difference than I expected.</p>
-          <footer class="quote-card__attribution">— Program Participant</footer>
-        </blockquote>
-        <blockquote class="quote-card">
-          <div class="quote-card__mark" aria-hidden="true">"</div>
-          <p>It felt practical and real. Not a lecture, just support that helped me keep moving.</p>
-          <footer class="quote-card__attribution">— Community Member</footer>
-        </blockquote>
+          <p><Prose md={q.text} source={src(`testimonials.quotes.${i}.text`)} /></p>
+          <footer class="quote-card__attribution">{q.attribution}</footer>
+        </blockquote></>)}
       </div>
     </div>
   </section>
@@ -228,9 +150,9 @@ const involvement = [
   <section class="section section--tint" aria-labelledby="practical-services-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Open to the Community</p>
-        <h2 id="practical-services-heading">Practical support services</h2>
-        <p class="section-heading__lead">Free, accessible services that meet everyday needs with dignity and care — no referral required.</p>
+        <p class="section-heading__eyebrow">{services.heading.eyebrow}</p>
+        <h2 id="practical-services-heading">{services.heading.heading}</h2>
+        <p class="section-heading__lead"><Prose md={services.heading.lead} source={src('services.heading.lead')} /></p>
       </div>
       <div class="card-grid">
         {practicalServices.map(s => (
@@ -238,8 +160,8 @@ const involvement = [
             title={s.title}
             summary={s.summary}
             href={s.href}
-            image={s.image}
-            imageAlt={s.imageAlt}
+            image={s.image.src}
+            imageAlt={s.image.alt}
             eyebrow={s.eyebrow}
           />
         ))}
@@ -251,15 +173,15 @@ const involvement = [
   <section class="section" aria-labelledby="involved-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Get Involved</p>
-        <h2 id="involved-heading">How to take part</h2>
+        <p class="section-heading__eyebrow">{involvementContent.heading.eyebrow}</p>
+        <h2 id="involved-heading">{involvementContent.heading.heading}</h2>
       </div>
       <div class="involvement-grid">
-        {involvement.map(item => (
+        {involvementContent.cards.map((item, i) => (
           <div class="involvement-card">
             <h3 class="involvement-card__heading">{item.heading}</h3>
-            <p class="involvement-card__body">{item.body}</p>
-            <a href={item.href} class="btn btn--secondary">{item.linkText}</a><!-- TODO: Replace with live Jotform URL if applicable -->
+            <p class="involvement-card__body"><Prose md={item.body} source={src(`involvement.cards.${i}.body`)} /></p>
+            <a href={item.button.href} class="btn btn--secondary">{item.button.label}</a><!-- TODO: Replace with live Jotform URL if applicable -->
           </div>
         ))}
       </div>
@@ -268,9 +190,9 @@ const involvement = [
 
   <!-- CTA -->
   <CTABand
-    heading="Be part of something real"
-    primaryBtn={{ text: 'Express Interest', href: '/contact/?reason=program-interest' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={cta.heading}
+    primaryBtn={{ text: cta.primary.label, href: cta.primary.href }}
+    secondaryBtn={{ text: cta.secondary.label, href: cta.secondary.href }}
     dark={true}
   />
 

@@ -2,29 +2,28 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import InfoTable from '../../components/InfoTable.astro';
 import CTABand from '../../components/CTABand.astro';
+import Prose from '../../components/Prose.astro';
 import hours from '../../content/opening-hours.json';
+import { pageContent, fieldSource } from '../../lib/pages';
+import { detailRows, fillHours } from '../../lib/service-details';
 
-const serviceRows = [
-  { label: 'Days', value: hours.kitchen.days },
-  { label: 'Hours', value: hours.kitchen.hours },
-  { label: 'Location', value: '9/2 Dale Street, Fairfield' },
-  { label: 'Cost', value: 'Free' },
-  { label: 'Email', value: '<a href="mailto:kitchen@oakdenehouse.org.au">kitchen@oakdenehouse.org.au</a>' },
-  { label: 'Phone', value: '<a href="tel:0415156100">0415 156 100</a>' },
-];
+// Words and images: src/content/pages/community-programs--oakdene-kitchen.yaml (edited in /admin).
+// The days and hours come from src/content/opening-hours.json.
+const ID = 'community-programs--oakdene-kitchen';
+const page = await pageContent(ID, 'oakdene-kitchen');
+const { seo, hero, intro, photos, how, volunteer, cta } = page;
+const src = (path: string) => fieldSource(ID, path);
 
-const whatWeOffer = [
-  'Free hot lunch',
-  'Friendly, safe space to eat together',
-  'Connection with staff, volunteers and community supports',
-  'Information about other Oakdene programs',
-];
+const serviceRows = detailRows(ID, intro.details, [
+  ['days', hours.kitchen.days],
+  ['hours', hours.kitchen.hours],
+]);
 ---
 
 <BaseLayout
-  title="Oakdene Kitchen — Oakdene House Foundation"
-  description={`Free hot lunches ${hours.kitchen.seoDays} at Oakdene Kitchen, 9/2 Dale Street, Fairfield. Open to people experiencing hardship.`}
-  ogImage="/images/kitchen/oakdene-kitchen-exterior-line-up.jpg"
+  title={seo.title}
+  description={fillHours(seo.description, hours.kitchen.seoDays)}
+  ogImage={seo.image}
 >
 
   <!-- HERO -->
@@ -36,13 +35,13 @@ const whatWeOffer = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <a href="/community-programs/">Community Programs</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">Oakdene Kitchen</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1>Oakdene Kitchen</h1>
-      <p class="kitchen-hero__lead">Hot, nutritious meals in a safe and welcoming space.</p>
+      <h1>{hero.heading}</h1>
+      <p class="kitchen-hero__lead"><Prose md={hero.lead} source={src('hero.lead')} /></p>
       <div class="btn-group">
-        <a href="/contact/" class="btn btn--white">Request Help</a><!-- TODO: Replace with live Jotform URL -->
-        <a href="/community-programs/volunteering/" class="btn btn--white-outline">Volunteer</a>
+        <a href={hero.primary.href} class="btn btn--white">{hero.primary.label}</a><!-- TODO: Replace with live Jotform URL -->
+        <a href={hero.secondary.href} class="btn btn--white-outline">{hero.secondary.label}</a>
       </div>
     </div>
   </section>
@@ -53,22 +52,22 @@ const whatWeOffer = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">About the Kitchen</p>
-            <h2 id="kitchen-intro-heading">A welcoming meal and a friendly face</h2>
+            <p class="section-heading__eyebrow">{intro.heading.eyebrow}</p>
+            <h2 id="kitchen-intro-heading">{intro.heading.heading}</h2>
           </div>
-          <p>The Oakdene Kitchen provides free hot lunches to people doing it tough. We believe everyone deserves access to a warm, nutritious meal in a safe environment — and a chance to connect with others.</p>
-          <p class="who-label">Who it's for</p>
-          <p>People experiencing food insecurity, on low income, homeless or at risk, or anyone doing it tough.</p>
+          <p><Prose md={intro.paragraph} source={src('intro.paragraph')} /></p>
+          <p class="who-label">{intro.whoLabel}</p>
+          <p><Prose md={intro.whoText} source={src('intro.whoText')} /></p>
 
-          <h3 class="offer-heading">What we offer</h3>
+          <h3 class="offer-heading">{intro.offerHeading}</h3>
           <ul class="offer-list">
-            {whatWeOffer.map(item => <li>{item}</li>)}
+            {intro.offerItems.map((item, i) => <li><Prose md={item} source={src(`intro.offerItems.${i}`)} /></li>)}
           </ul>
         </div>
         <div>
-          <InfoTable rows={serviceRows} caption="Service details" />
+          <InfoTable rows={serviceRows} caption={intro.details.caption} />
           <div class="motto-box">
-            <p>"Feed the people, stay alive"</p>
+            <p>{intro.motto}</p>
           </div>
         </div>
       </div>
@@ -80,13 +79,13 @@ const whatWeOffer = [
     <div class="container">
       <div class="image-strip">
         <div class="image-strip__item">
-          <img src="/images/kitchen/kitchen-3x-staff-serving.png" alt="Oakdene Kitchen volunteers with prepared food" loading="lazy" />
+          <img src={photos[0].src} alt={photos[0].alt} loading="lazy" />
         </div>
         <div class="image-strip__item">
-          <img src="/images/kitchen/oakdene-kitchen-community-table.png" alt="Inside the Oakdene Kitchen dining room" loading="lazy" />
+          <img src={photos[1].src} alt={photos[1].alt} loading="lazy" />
         </div>
         <div class="image-strip__item">
-          <img src="/images/kitchen/oakdene-kitchen-interior-volunteer-serving.jpg" alt="Volunteer serving meals at Oakdene Kitchen" loading="lazy" />
+          <img src={photos[2].src} alt={photos[2].alt} loading="lazy" />
         </div>
       </div>
     </div>
@@ -97,18 +96,16 @@ const whatWeOffer = [
     <div class="container">
       <div class="narrow">
         <div class="section-heading">
-          <p class="section-heading__eyebrow">Your First Visit</p>
-          <h2 id="how-heading">How it works</h2>
+          <p class="section-heading__eyebrow">{how.heading.eyebrow}</p>
+          <h2 id="how-heading">{how.heading.heading}</h2>
         </div>
-        <p>On your first visit, one of our team members will sit down with you to find out more about your situation and needs so we can understand how to support you best.</p>
+        <p><Prose md={how.intro} source={src('how.intro')} /></p>
 
         <!-- ELIGIBILITY -->
         <div class="eligibility-box">
-          <h3>Eligibility</h3>
+          <h3>{how.eligibility.heading}</h3>
           <ul class="offer-list">
-            <li>Current Centrelink statement showing total income below $1,200 per fortnight, including any other subsidies or rental support shown on the statement</li>
-            <li>Proof of ID with photo-based evidence (driver's licence, passport, etc.)</li>
-            <li>Updated statement to be provided monthly showing any changes to income or benefits</li>
+            {how.eligibility.items.map((item, i) => <>{i > 0 && ' '}<li><Prose md={item} source={src(`how.eligibility.items.${i}`)} /></li></>)}
           </ul>
         </div>
 
@@ -118,15 +115,15 @@ const whatWeOffer = [
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
           </div>
           <div>
-            <p class="callout-box__heading">Important note</p>
-            <p>If you choose to use Oakdene Kitchen support, you will no longer be able to be a member of Fairfield RSL.</p>
+            <p class="callout-box__heading">{how.note.heading}</p>
+            <p><Prose md={how.note.text} source={src('how.note.text')} /></p>
           </div>
         </div>
 
         <!-- COMMUNITY GUIDELINES -->
         <div class="guidelines-box">
-          <h3>Community guidelines</h3>
-          <p>We ask that you treat others with respect. Aggressive or abusive behaviour is not accepted. Staff may refuse entry if guidelines are not followed.</p>
+          <h3>{how.guidelines.heading}</h3>
+          <p><Prose md={how.guidelines.text} source={src('how.guidelines.text')} /></p>
         </div>
       </div>
     </div>
@@ -137,18 +134,17 @@ const whatWeOffer = [
     <div class="container">
       <div class="volunteer-split">
         <div class="volunteer-image">
-          <img src="/images/volunteers/oakdene-volunteer-kitchen-2.png" alt="Oakdene Kitchen volunteer" loading="lazy" />
+          <img src={volunteer.image.src} alt={volunteer.image.alt} loading="lazy" />
         </div>
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">Get Involved</p>
-            <h2 id="volunteer-heading">Volunteer with the Kitchen</h2>
+            <p class="section-heading__eyebrow">{volunteer.heading.eyebrow}</p>
+            <h2 id="volunteer-heading">{volunteer.heading.heading}</h2>
           </div>
-          <p>We are always looking for volunteers to help us run the Kitchen. Whether it is helping prepare food, serving meals, or providing a friendly presence — every contribution makes a real difference.</p>
-          <p>If you would like to get involved, please get in touch.</p>
+          {volunteer.paragraphs.map((p, i) => <>{i > 0 && ' '}<p><Prose md={p} source={src(`volunteer.paragraphs.${i}`)} /></p></>)}
           <div class="btn-group">
-            <a href="/community-programs/volunteering/" class="btn btn--primary">Learn About Volunteering</a>
-            <a href="/contact/" class="btn btn--secondary">Contact Us</a>
+            <a href={volunteer.primary.href} class="btn btn--primary">{volunteer.primary.label}</a>
+            <a href={volunteer.secondary.href} class="btn btn--secondary">{volunteer.secondary.label}</a>
           </div>
         </div>
       </div>
@@ -157,9 +153,9 @@ const whatWeOffer = [
 
   <!-- CTA -->
   <CTABand
-    heading="Want to get involved?"
-    primaryBtn={{ text: 'Volunteer', href: '/community-programs/volunteering/' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={cta.heading}
+    primaryBtn={{ text: cta.primary.label, href: cta.primary.href }}
+    secondaryBtn={{ text: cta.secondary.label, href: cta.secondary.href }}
     dark={true}
   />
 

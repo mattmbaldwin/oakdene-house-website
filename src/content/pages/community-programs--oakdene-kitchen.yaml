@@ -1,0 +1,93 @@
+# Words and images for /community-programs/oakdene-kitchen/. Layout: src/pages/community-programs/oakdene-kitchen.astro.
+# The days and hours come from src/content/opening-hours.json. {hours} in the search description is filled in from it.
+layout: oakdene-kitchen
+seo:
+  title: Oakdene Kitchen — Oakdene House Foundation
+  description: Free hot lunches {hours} at Oakdene Kitchen, 9/2 Dale Street, Fairfield. Open to people experiencing hardship.
+  image: /images/kitchen/oakdene-kitchen-exterior-line-up.jpg
+hero:
+  breadcrumb: Oakdene Kitchen
+  heading: Oakdene Kitchen
+  lead: Hot, nutritious meals in a safe and welcoming space.
+  primary:
+    label: Request Help
+    href: /contact/
+  secondary:
+    label: Volunteer
+    href: /community-programs/volunteering/
+intro:
+  heading:
+    eyebrow: About the Kitchen
+    heading: A welcoming meal and a friendly face
+  paragraph: The Oakdene Kitchen provides free hot lunches to people doing it tough. We believe everyone deserves access to a warm, nutritious meal in a safe environment — and a chance to connect with others.
+  whoLabel: Who it's for
+  whoText: People experiencing food insecurity, on low income, homeless or at risk, or anyone doing it tough.
+  offerHeading: What we offer
+  offerItems:
+    - Free hot lunch
+    - Friendly, safe space to eat together
+    - Connection with staff, volunteers and community supports
+    - Information about other Oakdene programs
+  details:
+    caption: Service details
+    hoursLabels:
+      days: Days
+      hours: Hours
+    rows:
+      - label: Location
+        value: 9/2 Dale Street, Fairfield
+      - label: Cost
+        value: Free
+      - label: Email
+        value: "[kitchen@oakdenehouse.org.au](mailto:kitchen@oakdenehouse.org.au)"
+      - label: Phone
+        value: "[0415 156 100](tel:0415156100)"
+  motto: '"Feed the people, stay alive"'
+photos:
+  - src: /images/kitchen/kitchen-3x-staff-serving.png
+    alt: Oakdene Kitchen volunteers with prepared food
+  - src: /images/kitchen/oakdene-kitchen-community-table.png
+    alt: Inside the Oakdene Kitchen dining room
+  - src: /images/kitchen/oakdene-kitchen-interior-volunteer-serving.jpg
+    alt: Volunteer serving meals at Oakdene Kitchen
+how:
+  heading:
+    eyebrow: Your First Visit
+    heading: How it works
+  intro: On your first visit, one of our team members will sit down with you to find out more about your situation and needs so we can understand how to support you best.
+  eligibility:
+    heading: Eligibility
+    items:
+      - Current Centrelink statement showing total income below $1,200 per fortnight, including any other subsidies or rental support shown on the statement
+      - Proof of ID with photo-based evidence (driver's licence, passport, etc.)
+      - Updated statement to be provided monthly showing any changes to income or benefits
+  note:
+    heading: Important note
+    text: If you choose to use Oakdene Kitchen support, you will no longer be able to be a member of Fairfield RSL.
+  guidelines:
+    heading: Community guidelines
+    text: We ask that you treat others with respect. Aggressive or abusive behaviour is not accepted. Staff may refuse entry if guidelines are not followed.
+volunteer:
+  image:
+    src: /images/volunteers/oakdene-volunteer-kitchen-2.png
+    alt: Oakdene Kitchen volunteer
+  heading:
+    eyebrow: Get Involved
+    heading: Volunteer with the Kitchen
+  paragraphs:
+    - We are always looking for volunteers to help us run the Kitchen. Whether it is helping prepare food, serving meals, or providing a friendly presence — every contribution makes a real difference.
+    - If you would like to get involved, please get in touch.
+  primary:
+    label: Learn About Volunteering
+    href: /community-programs/volunteering/
+  secondary:
+    label: Contact Us
+    href: /contact/
+cta:
+  heading: Want to get involved?
+  primary:
+    label: Volunteer
+    href: /community-programs/volunteering/
+  secondary:
+    label: Contact Us
+    href: /contact/

@@ -1,0 +1,69 @@
+# Words and images for /community-programs/staple-food-packs/. Layout: src/pages/community-programs/staple-food-packs.astro.
+# The day and hours come from src/content/opening-hours.json. {hours} marks where it is filled in.
+layout: staple-food-packs
+seo:
+  title: Staple Food Packs — Oakdene House Foundation
+  description: Free take-home grocery packs {hours} at Oakdene House, Fairfield. Includes fresh produce, pantry staples and hygiene items.
+  image: /images/kitchen/oakdene-kitchen-interior-with-food-stacks.jpg
+hero:
+  breadcrumb: Staple Food Packs
+  heading: Staple Food Packs
+  lead: Take-home grocery packs for people doing it tough.
+intro:
+  heading:
+    eyebrow: About this service
+    heading: Essentials to take home
+  paragraph: In collaboration with OzHarvest, we provide free staple food packs to people experiencing financial hardship. Packs include fresh produce, pantry essentials and hygiene items where available.
+  distribution: Packs are distributed {hours}.
+  includedHeading: What's included
+  includedItems:
+    - Fresh fruit and vegetables
+    - Canned goods
+    - Long life milk
+    - Cereal
+    - Hygiene items — women's health, child/baby, dental (subject to availability)
+  creditLabel: Supplied through
+  creditLogo:
+    src: /images/logos/partners/ozharvest-logo-yellow.jpeg
+    alt: OzHarvest
+  details:
+    caption: Service details
+    hoursLabels:
+      day: Day
+      hours: Hours
+    rows:
+      - label: Cost
+        value: Free
+      - label: Email
+        value: "[kitchen@oakdenehouse.org.au](mailto:kitchen@oakdenehouse.org.au)"
+      - label: Phone
+        value: "[0415 156 100](tel:0415156100)"
+banner:
+  src: /images/kitchen/kitchen-3x-staff-serving.png
+  alt: Oakdene Kitchen staff serving a meal
+rules:
+  heading:
+    eyebrow: Important Information
+    heading: Rules and eligibility
+  packRules:
+    heading: Pack rules
+    items:
+      - One pack per household
+      - Packs are limited — once given out, none are available until next week
+  eligibility:
+    heading: Eligibility
+    intro: "The same eligibility applies as the Oakdene Kitchen:"
+    items:
+      - Current Centrelink Income Statement
+      - Photo ID (passport or drivers licence)
+      - Income under $1,200 per fortnight
+      - Statement must be updated monthly
+  also: Also running on {hours} — if you need further support, speak with a team member about other Oakdene services including the [Kitchen](/community-programs/oakdene-kitchen/), [Laundrette](/community-programs/oakdene-laundrette/) and [Counselling](/services/individual-counselling/).
+cta:
+  heading: Need to get in touch?
+  primary:
+    label: Contact Us
+    href: /contact/
+  secondary:
+    label: Get Support
+    href: /contact/
