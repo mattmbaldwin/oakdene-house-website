@@ -1,0 +1,66 @@
+# Words and images for /services/individual-counselling/. Layout: src/pages/services/individual-counselling.astro.
+# The icon on each "What to expect" card is picked here; the icons themselves stay in the page.
+layout: individual-counselling
+seo:
+  title: Individual Counselling — Oakdene House Foundation
+  description: Confidential, one-on-one counselling at Oakdene House for people affected by addiction and related challenges. Free. Fairfield, Western Sydney.
+  image: /images/generic/bandw-oakdene-hands.jpg
+hero:
+  breadcrumb: Individual Counselling
+  heading: Individual Counselling
+  lead: Confidential, one-on-one counselling for people affected by addiction and related challenges.
+overview:
+  heading:
+    eyebrow: The Service
+    heading: A space to talk openly
+  paragraphs:
+    - Oakdene House offers individual counselling for people affected by addiction and related challenges. Counselling provides a confidential space to talk openly, understand what is happening and work toward realistic next steps. **Our counsellors specialise in gambling and alcohol dependency, alongside support for related life challenges.**
+    - All counselling sessions are free of charge.
+  supportHeading: What counselling can support
+  supports:
+    - Addiction and recovery-related concerns
+    - Emotional wellbeing and coping
+    - Goal setting and change planning
+    - Support during difficult periods of transition or stress
+  approach:
+    heading: Our approach
+    text: We aim to provide counselling that is respectful, practical and responsive to the person in front of us. Support is shaped around individual needs, not a fixed script.
+    facts:
+      - label: Cost
+        value: Free
+      - label: Access
+        value: By phone, email, or form
+      - label: Confidential
+        value: Yes — all conversations are private
+    contact:
+      phone:
+        label: (02) 8717 0999
+        href: tel:0287170999
+      email:
+        label: admin@oakdenehouse.org.au
+        href: mailto:admin@oakdenehouse.org.au
+expect:
+  heading:
+    eyebrow: What to Expect
+    heading: Counselling with you, not at you
+  items:
+    - icon: chat
+      heading: Listened to
+      body: Your counsellor takes time to understand your situation before suggesting anything.
+    - icon: lock
+      heading: Confidential
+      body: Everything you share stays private. Confidentiality is fundamental to our practice.
+    - icon: pulse
+      heading: Practical
+      body: Support is focused on realistic next steps and tangible progress — not just insight.
+    - icon: shield
+      heading: Non-judgmental
+      body: You will not be judged for your choices or circumstances. We start from where you are.
+cta:
+  heading: Want to arrange a counselling session?
+  primary:
+    label: Counselling Referral
+    href: /services/referral/
+  secondary:
+    label: Contact Us
+    href: /contact/

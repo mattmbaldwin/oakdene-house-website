@@ -1,0 +1,20 @@
+# Words and images for /services/referral/thank-you/. Layout: src/pages/services/referral/thank-you.astro.
+layout: referral-thank-you
+seo:
+  title: Referral Received — Oakdene House Foundation
+  description: Your referral to Oakdene House Foundation has been received. Someone from the team will be in touch within 2 business days.
+  image: /images/generic/bandw-forset-sun-beam.jpeg
+hero:
+  parentBreadcrumb: Make a Referral
+  breadcrumb: Thank You
+  heading: Thanks — we've received your referral
+body:
+  text: Someone from the Oakdene team will be in touch within 2 business days. If the situation changes or becomes urgent, please call us on [(02) 8717 0999](tel:0287170999) during business hours. For 24-hour crisis support, visit our [Need Help Now](/need-help-now/) page.
+  primary:
+    label: Back to Home
+    href: /
+    style: primary
+  secondary:
+    label: Need Help Now
+    href: /need-help-now/
+    style: secondary

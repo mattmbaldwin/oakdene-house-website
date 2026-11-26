@@ -1,21 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
+import Prose from '../../components/Prose.astro';
+import { pageContent, fieldSource } from '../../lib/pages';
 
-const offerings = [
-  'One-on-one counselling',
-  'Group sessions',
-  '12-step support',
-  'Peer support',
-  'All delivered by accredited AOD and mental health counsellors',
-  'All services are free',
-];
+// Words and images: src/content/pages/services--outpatients-program.yaml (edited in /admin).
+const ID = 'services--outpatients-program';
+const page = await pageContent(ID, 'outpatients-program');
+const { seo, hero, overview, approach, cta } = page;
+const src = (path: string) => fieldSource(ID, path);
 ---
 
 <BaseLayout
-  title="Outpatients Program — Oakdene House Foundation"
-  description="Structured rehabilitation support at Oakdene House — counselling, group sessions, 12-step and peer support, delivered by accredited AOD and mental health counsellors. Free."
-  ogImage="/images/centre/interior-img_2655.jpg"
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.image}
 >
 
   <!-- HERO -->
@@ -27,10 +26,10 @@ const offerings = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <a href="/services/">Services</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">Outpatients Program</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1>Outpatients Program</h1>
-      <p class="op-hero__lead">A structured rehabilitation program committed to recovery.</p>
+      <h1>{hero.heading}</h1>
+      <p class="op-hero__lead"><Prose md={hero.lead} source={src('hero.lead')} /></p>
     </div>
   </section>
 
@@ -40,32 +39,31 @@ const offerings = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">About the Program</p>
-            <h2 id="op-overview-heading">Structured support for recovery</h2>
+            <p class="section-heading__eyebrow">{overview.heading.eyebrow}</p>
+            <h2 id="op-overview-heading">{overview.heading.heading}</h2>
           </div>
-          <p>The Outpatients Program is designed for people looking for structured rehabilitation support while maintaining their living situation. Our experienced counsellors provide comprehensive, evidence-based support focused on recovery and wellbeing.</p>
-          <p>All support is delivered by accredited AOD (Alcohol and Other Drugs) and mental health counsellors, and is completely free of charge.</p>
+          {overview.paragraphs.map((p, i) => <>{i > 0 && ' '}<p><Prose md={p} source={src(`overview.paragraphs.${i}`)} /></p></>)}
 
-          <h3 class="section-subhead">What we offer</h3>
+          <h3 class="section-subhead">{overview.offerHeading}</h3>
           <ul class="offer-list">
-            {offerings.map(item => <li>{item}</li>)}
+            {overview.offerings.map((item, i) => <li><Prose md={item} source={src(`overview.offerings.${i}`)} /></li>)}
           </ul>
         </div>
         <div>
           <div class="program-image">
-            <img src="/images/centre/interior-interior-2-img_2656-with-people.png" alt="Support space inside Oakdene House" loading="lazy" />
+            <img src={overview.image.src} alt={overview.image.alt} loading="lazy" />
           </div>
           <div class="contact-card">
-            <h3>Get in touch</h3>
+            <h3>{overview.contact.heading}</h3>
             <div class="contact-card__item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
-              <a href="tel:0287170999">(02) 8717 0999</a>
+              <a href={overview.contact.phone.href}>{overview.contact.phone.label}</a>
             </div>
             <div class="contact-card__item">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a>
+              <a href={overview.contact.email.href}>{overview.contact.email.label}</a>
             </div>
-            <a href="/contact/" class="btn btn--primary contact-btn">Get Support</a><!-- TODO: Replace with live Jotform URL -->
+            <a href={overview.contact.button.href} class={`btn btn--${overview.contact.button.style} contact-btn`}>{overview.contact.button.label}</a><!-- TODO: Replace with live Jotform URL -->
           </div>
         </div>
       </div>
@@ -77,31 +75,25 @@ const offerings = [
     <div class="container">
       <div class="approach-inner">
         <div class="section-heading section-heading--center">
-          <p class="section-heading__eyebrow">Our Approach</p>
-          <h2 id="approach-heading">Recovery on your terms</h2>
+          <p class="section-heading__eyebrow">{approach.heading.eyebrow}</p>
+          <h2 id="approach-heading">{approach.heading.heading}</h2>
         </div>
         <div class="approach-grid">
-          <div class="approach-item">
+          {approach.items.map((item, i) => <>{i > 0 && ' '}<div class="approach-item">
             <div class="approach-item__icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              {item.icon === 'shield' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              )}
+              {item.icon === 'people' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              )}
+              {item.icon === 'clock' && (
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+              )}
             </div>
-            <h3>Evidence-based</h3>
-            <p>All counselling and group work is grounded in proven, accredited practice for addiction and recovery.</p>
-          </div>
-          <div class="approach-item">
-            <div class="approach-item__icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h3>Community-centred</h3>
-            <p>You stay in your home and community. Peer connection is built alongside professional support.</p>
-          </div>
-          <div class="approach-item">
-            <div class="approach-item__icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
-            </div>
-            <h3>Flexible timing</h3>
-            <p>The program is structured but designed to work around the reality of your life — not the other way around.</p>
-          </div>
+            <h3>{item.heading}</h3>
+            <p><Prose md={item.body} source={src(`approach.items.${i}.body`)} /></p>
+          </div></>)}
         </div>
       </div>
     </div>
@@ -109,9 +101,9 @@ const offerings = [
 
   <!-- CTA -->
   <CTABand
-    heading="Ready to take the next step?"
-    primaryBtn={{ text: 'Get Support', href: '/contact/' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={cta.heading}
+    primaryBtn={{ text: cta.primary.label, href: cta.primary.href }}
+    secondaryBtn={{ text: cta.secondary.label, href: cta.secondary.href }}
     dark={true}
   />
 

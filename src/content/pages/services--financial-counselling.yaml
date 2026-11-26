@@ -1,0 +1,79 @@
+# Words and images for /services/financial-counselling/. Layout: src/pages/services/financial-counselling.astro.
+layout: financial-counselling
+seo:
+  title: Financial Counselling — Oakdene House Foundation
+  description: Free financial counselling at Oakdene House for people experiencing hardship. Help with debt, bills, expenses and financial planning in Fairfield, Western Sydney.
+  image: /images/generic/colour-business-man_distress.png
+hero:
+  breadcrumb: Financial Counselling
+  heading: Financial Counselling
+  lead: Free guidance for people experiencing financial hardship.
+overview:
+  heading:
+    eyebrow: The Service
+    heading: Practical help for financial pressure
+  paragraphs:
+    - At Oakdene House Foundation, we understand that financial stress and mental health are often deeply connected. Money worries can affect sleep, relationships, confidence, physical health, and recovery from addiction or gambling harm. For many people, financial pressure becomes one of the biggest barriers to stability and wellbeing.
+    - Our Financial Counselling Service provides free, confidential support from a qualified Financial Counsellor for individuals and families experiencing financial hardship, debt stress, gambling-related financial impacts, housing insecurity, or difficulty managing day-to-day costs.
+    - This is not a budgeting app or a quick advice session. Financial counselling is a professional support service focused on helping people understand their situation, reduce pressure, and regain a sense of control.
+  helpHeading: What a Financial Counsellor can help with
+  helpItems:
+    - Debt and overdue bills
+    - Gambling-related financial harm
+    - Rent or mortgage stress
+    - Utility disconnections and payment plans
+    - Credit cards, personal loans, and buy-now-pay-later debt
+    - Centrelink and financial hardship issues
+    - Negotiating with creditors
+    - Financial stress linked to addiction or mental health challenges
+    - Creating practical financial plans
+    - Referrals to emergency relief and community supports
+  access:
+    heading: How to access
+    text: You can access financial counselling through a referral form, by phone, or by email. No prior referral from another service is required.
+    primary:
+      label: Submit a Request
+      href: /services/referral/
+      style: primary
+    secondary:
+      label: Contact Us
+      href: /contact/
+      style: secondary
+  details:
+    caption: Service details
+    rows:
+      - label: Cost
+        value: Free
+      - label: Access
+        value: By appointment — no referral needed
+      - label: Location
+        value: Oakdene Centre, 29 Vine Street, Fairfield
+      - label: Phone
+        value: '[(02) 8717 0999](tel:0287170999)'
+      - label: Email
+        value: '[admin@oakdenehouse.org.au](mailto:admin@oakdenehouse.org.au)'
+approach:
+  heading:
+    eyebrow: A Practical and Compassionate Approach
+    heading: Support without lectures or judgement
+  paragraphs:
+    - Financial counselling at Oakdene is delivered in a respectful, non-judgemental way. Many people avoid seeking help because of shame, embarrassment, or fear about their financial situation. Our role is not to lecture or criticise. It is to help reduce pressure, improve understanding, and support practical next steps.
+    - Where needed, financial counselling can also work alongside our counselling, recovery, and support programs to provide more holistic care. This is particularly important for people affected by gambling harm, addiction, relationship breakdown, or periods of significant emotional distress.
+  qualifiedHeading: Qualified and Professional Support
+  qualifiedParagraphs:
+    - All financial counselling services at Oakdene House Foundation are delivered by a qualified Financial Counsellor with experience supporting people facing complex financial and personal challenges. Our Financial Counsellor is professionally registered and operates in line with Australian financial counselling standards and ethical requirements.
+    - Financial counsellors work independently and in the best interests of the client, providing free, confidential, and non-judgemental support. Financial counselling in Australia is supported nationally by Financial Counselling Australia (FCA), the peak body representing the profession.
+  accredited:
+    text: Accredited member of
+    logo:
+      src: /images/logos/partners/fca-logo-slim.png
+      alt: Financial Counselling Australia
+cta:
+  heading: Need help with finances?
+  subheading: Get in touch to arrange a session. We will start from where you are.
+  primary:
+    label: Submit a Request
+    href: /services/referral/
+  secondary:
+    label: Contact Us
+    href: /contact/
