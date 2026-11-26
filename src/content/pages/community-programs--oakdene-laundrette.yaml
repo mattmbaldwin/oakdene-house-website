@@ -1,0 +1,80 @@
+# Words and images for /community-programs/oakdene-laundrette/. Layout: src/pages/community-programs/oakdene-laundrette.astro.
+# The days, hours and last entry come from src/content/opening-hours.json. {hours} marks where it is filled in.
+layout: oakdene-laundrette
+seo:
+  title: Oakdene Laundrette — Oakdene House Foundation
+  description: Free community laundry service at 1 Dale Street, Fairfield. {hours}
+  image: /images/laundrette/laundrette-interior-1.jpg
+hero:
+  breadcrumb: Oakdene Laundrette
+  heading: Oakdene Laundrette
+  lead: A free community laundry service for people doing it tough.
+intro:
+  heading:
+    eyebrow: The Service
+    heading: Clean clothes, no cost
+  paragraph: The Oakdene Laundrette provides free laundry facilities for people experiencing hardship. Whether it's a temporary situation or ongoing difficulty, everyone deserves clean clothes.
+  includedHeading: What's included each visit
+  includedItems:
+    - One load of washing
+    - One load of drying
+    - Laundry detergent provided
+    - A clean, private space
+    - Support from staff or volunteers
+  details:
+    caption: Service details
+    hoursLabels:
+      days: Days
+      hours: Hours
+      lastEntry: Last entry
+    rows:
+      - label: Location
+        value: 1 Dale Street, Fairfield
+      - label: Cost
+        value: Free
+      - label: Email
+        value: "[kitchen@oakdenehouse.org.au](mailto:kitchen@oakdenehouse.org.au)"
+      - label: Phone
+        value: "[0415 156 100](tel:0415156100)"
+photos:
+  - src: /images/laundrette/laundrette-interior-3-washing-machines.jpg
+    alt: Washing machines inside the Oakdene Laundrette
+  - src: /images/laundrette/laundrette-interior-1-with-people.jpg
+    alt: Inside the Oakdene Laundrette
+  - src: /images/laundrette/anthony-sobb-oakdene-laundrette-1.jpg
+    alt: Oakdene Laundrette in use
+how:
+  heading:
+    eyebrow: Your Visit
+    heading: How it works
+  steps:
+    - Check in with staff or security on arrival
+    - Receive a washing tablet and number tag matching your machine
+    - Load your clothes, place the tablet in the drum and press Start
+    - When the wash finishes, move items to the dryer
+    - Stay nearby while cycles run — visit Oakdene Kitchen while you wait
+    - Return your number tag when finished
+  eligibility:
+    heading: Eligibility
+    text: The same eligibility applies as the Oakdene Kitchen. Bring a current Centrelink Income Statement and photo ID. Your statement must show income under **$1,200 per fortnight**.
+group:
+  heading:
+    eyebrow: For Organisations
+    heading: Group laundry bookings
+  text: We offer group laundry bookings outside public hours, available {hours}, for non-profits supporting homelessness, shelters, and group homes.
+  points:
+    - Must be booked by a support worker who attends in person
+    - 2-hour sessions
+    - 4 professional-grade machines available
+    - Detergent provided — free of charge
+  button:
+    label: Book a Session
+    href: /contact/
+cta:
+  heading: Ready to visit or need more information?
+  primary:
+    label: Get Support
+    href: /contact/
+  secondary:
+    label: Contact Us
+    href: /contact/

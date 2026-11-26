@@ -1,0 +1,67 @@
+# Words and images for /community-programs/used-clothing-store/. Layout: src/pages/community-programs/used-clothing-store.astro.
+# The days and hours in the details table come from src/content/opening-hours.json.
+layout: used-clothing-store
+seo:
+  title: Used Clothing Store — Oakdene House Foundation
+  description: Free men's and women's clothing, shoes and accessories at Oakdene's Used Clothing Store, inside the Laundrette at 1 Dale Street, Fairfield.
+  image: /images/boutique/boutique-interior-clothing-rack.jpg
+hero:
+  breadcrumb: Used Clothing Store
+  heading: Oakdene Used Clothing Store
+  lead: Free clothing for people doing it tough.
+intro:
+  heading:
+    eyebrow: The Service
+    heading: Clothing with dignity
+  paragraphs:
+    - The Oakdene Used Clothing Store offers free men's and women's clothing, shoes, and accessories to people experiencing hardship. The store is located inside our Laundrette at 1 Dale Street, Fairfield.
+    - We believe access to clean, decent clothing is a basic necessity, and we are here to help without judgment.
+  guidelinesHeading: Visit guidelines
+  guidelines:
+    - 3 items per visit
+    - One visit per month
+    - Clothing cannot be tried on
+    - No returns once taken
+    - One person in the room at a time
+    - Door must remain open
+    - Access will be managed by the staff onsite
+    - Items are not available by request and based on donations received
+  details:
+    caption: Service details
+    hoursLabels:
+      days: Days
+      hours: Hours
+    rows:
+      - label: Location
+        value: Inside the Laundrette, 1 Dale Street, Fairfield
+      - label: Cost
+        value: Free
+      - label: Email
+        value: "[kitchen@oakdenehouse.org.au](mailto:kitchen@oakdenehouse.org.au)"
+      - label: Phone
+        value: "[0415 156 100](tel:0415156100)"
+  eligibility:
+    heading: Eligibility
+    text: The same eligibility applies as the Oakdene Kitchen and Laundrette — a current Centrelink Income Statement and photo ID showing income under $1,200 per fortnight.
+photos:
+  - src: /images/boutique/boutique-interior-looking-down-shop-with-people.png
+    alt: Clothing rack at the Oakdene Used Clothing Store
+  - src: /images/boutique/boutique-interior-close-up-bag-warmer.png
+    alt: Close up view of clothing at Oakdene
+also:
+  heading: Also on the same days
+  text: The Oakdene Laundrette and Oakdene Kitchen operate on the same days and hours. You can access all three services on a single visit.
+  primary:
+    label: Laundrette
+    href: /community-programs/oakdene-laundrette/
+  secondary:
+    label: Kitchen
+    href: /community-programs/oakdene-kitchen/
+cta:
+  heading: Have questions about the store?
+  primary:
+    label: Contact Us
+    href: /contact/
+  secondary:
+    label: Get Support
+    href: /contact/

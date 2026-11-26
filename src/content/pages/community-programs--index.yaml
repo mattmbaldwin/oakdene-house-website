@@ -1,0 +1,130 @@
+# Words and images for /community-programs/. Layout: src/pages/community-programs/index.astro.
+# The Kitchen card's opening days come from src/content/opening-hours.json: keep {hours} in its summary.
+layout: community-programs
+seo:
+  title: Community Programs — Oakdene House Foundation
+  description: Oakdene House community programs build connection, confidence and routine for people in Fairfield, Western Sydney. Recovery groups, practical initiatives and community engagement.
+  image: /images/generic/bandw-forset-sun-beam.jpeg
+hero:
+  heading: Community programs that build connection, confidence, and forward movement
+  lead: Oakdene's programs are designed to bring people into safe, practical, community-based spaces where support feels real and participation matters.
+  primary:
+    label: Explore Programs
+    href: /services/
+  secondary:
+    label: General Enquiry
+    href: /contact/
+programs:
+  heading:
+    eyebrow: What We Offer
+    heading: Our programs
+    lead: Oakdene runs a range of programs across four interconnected areas of community support.
+  cards:
+    - heading: Community Support Programs
+      description: Activities and supports that create routine, stability, and a sense of belonging.
+    - heading: Recovery-Focused Group Programs
+      description: Programs that support reflection, accountability, practical coping, and shared progress.
+    - heading: Practical Support Initiatives
+      description: Community responses that meet real needs with care, dignity, and consistency.
+    - heading: Volunteer and Community Engagement
+      description: Opportunities for people to participate, contribute, and stay connected.
+why:
+  image:
+    src: /images/centre/interior-meetings-1-img_2657.jpg
+    alt: People in community program session at Oakdene House
+  heading:
+    eyebrow: Why Programs Matter
+    heading: More than crisis response
+  paragraphs:
+    - Programs matter because support is not only about crisis response. It is also about belonging, confidence, consistency, and having spaces where people can keep turning up, reconnecting, and building a stronger everyday life.
+    - When people have somewhere to go and something meaningful to contribute to, they move forward.
+  button:
+    label: View All Services
+    href: /services/
+gains:
+  heading:
+    eyebrow: The Difference
+    heading: What people gain from programs
+  items:
+    - Stronger routine
+    - Greater confidence
+    - Community connection
+    - Practical progress
+testimonials:
+  heading:
+    eyebrow: In Their Words
+    heading: What participants say
+  quotes:
+    - text: Being around others and having somewhere to go helped me get some structure back. It made a bigger difference than I expected.
+      attribution: — Program Participant
+    - text: It felt practical and real. Not a lecture, just support that helped me keep moving.
+      attribution: — Community Member
+services:
+  heading:
+    eyebrow: Open to the Community
+    heading: Practical support services
+    lead: Free, accessible services that meet everyday needs with dignity and care — no referral required.
+  cards:
+    - title: Oakdene Kitchen
+      summary: Free hot lunches in a safe and welcoming community space, {hours}.
+      href: /community-programs/oakdene-kitchen/
+      image:
+        src: /images/kitchen/kitchen-3x-staff-serving.png
+        alt: Oakdene Kitchen staff serving meals
+      eyebrow: Practical Assistance
+    - title: Staple Food Packs
+      summary: Weekly take-home grocery packs with fresh produce, pantry essentials and hygiene items.
+      href: /community-programs/staple-food-packs/
+      image:
+        src: /images/kitchen/oakdene-kitchen-interior-with-food-stacks.jpg
+        alt: Stacked food supplies at Oakdene Kitchen
+      eyebrow: Practical Assistance
+    - title: Oakdene Laundrette
+      summary: Free community laundry service with washing, drying and detergent provided.
+      href: /community-programs/oakdene-laundrette/
+      image:
+        src: /images/laundrette/laundrette-interior-1.jpg
+        alt: Inside the Oakdene Laundrette
+      eyebrow: Practical Assistance
+    - title: Used Clothing Store
+      summary: Free men's and women's clothing, shoes and accessories — three items per visit.
+      href: /community-programs/used-clothing-store/
+      image:
+        src: /images/boutique/boutique-interior-clothing-rack.jpg
+        alt: Clothing rack at the Oakdene Used Clothing Store
+      eyebrow: Practical Assistance
+    - title: Ladies Boutique
+      summary: A warm, private space offering quality clothing, salon services and community connection for women.
+      href: /community-programs/ladies-boutique/
+      image:
+        src: /images/boutique/ladies-boutique-edited.png
+        alt: Oakdene Ladies Boutique
+      eyebrow: Community Support
+involvement:
+  heading:
+    eyebrow: Get Involved
+    heading: How to take part
+  cards:
+    - heading: Join a program
+      body: Express interest directly or contact Oakdene to find out which program fits best.
+      button:
+        label: Express Interest
+        href: /contact/?reason=program-interest
+    - heading: Refer someone
+      body: Workers and family members can refer using the referral form or by contacting us directly.
+      button:
+        label: Submit Referral
+        href: /services/referral/
+    - heading: Volunteer
+      body: Want to contribute your time? We would love to hear from you.
+      button:
+        label: Learn About Volunteering
+        href: /community-programs/volunteering/
+cta:
+  heading: Be part of something real
+  primary:
+    label: Express Interest
+    href: /contact/?reason=program-interest
+  secondary:
+    label: Contact Us
+    href: /contact/

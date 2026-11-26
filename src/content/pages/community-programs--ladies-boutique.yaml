@@ -1,0 +1,101 @@
+# Words and images for /community-programs/ladies-boutique/. Layout: src/pages/community-programs/ladies-boutique.astro.
+# The referral form is a Jotform and is not here. The Boutique shows no times, so it does not use Opening hours.
+layout: ladies-boutique
+seo:
+  title: Ladies Boutique — Oakdene House Foundation
+  description: Oakdene Ladies Boutique offers clothing, salon services and a private, supportive space for women doing it tough. By appointment only.
+  image: /images/boutique/ladies-boutique-edited.png
+hero:
+  breadcrumb: Ladies Boutique
+  heading: Oakdene Ladies Boutique
+  lead: A warm, private and supportive space for women who are doing it tough.
+  primary:
+    label: Submit Referral
+    href: "#referral-form"
+  secondary:
+    label: Make an Enquiry
+    href: /contact/
+intro:
+  heading:
+    eyebrow: About the Boutique
+    heading: Support for women, by women
+  paragraphs:
+    - The Oakdene Ladies Boutique is a warm, private and supportive space designed for women who are doing it tough. We offer more than just clothing — we offer an experience that treats women with dignity and care.
+    - Access is by referral only.
+  motto: Support for Women by Women
+  details:
+    caption: Service details
+    rows:
+      - label: Days
+        value: By appointment only
+      - label: Hours
+        value: By appointment only
+      - label: Access
+        value: By appointment only
+      - label: Cost
+        value: Gold Coin Donation
+      - label: Email
+        value: "[boutique@oakdenehouse.org.au](mailto:boutique@oakdenehouse.org.au)"
+      - label: Phone
+        value: "[0415 156 100](tel:0415156100)"
+offerings:
+  heading:
+    eyebrow: What We Offer
+    heading: Everything in one welcoming space
+  cards:
+    - heading: Clothing Hub
+      description: A real shopping experience with quality clothing and accessories selected with care.
+    - heading: Salon Services
+      description: Professional wash, cut, and blow-dry. No colouring or styling.
+    - heading: Private Space
+      description: A private fitting space where you can browse and try items in comfort.
+    - heading: Community
+      description: Connection with other women and staff in a supportive environment.
+gallery:
+  - src: /images/boutique/boutique-interior-1.jpg
+    alt: Inside the Oakdene Ladies Boutique
+  - src: /images/boutique/boutique-interior-hair-area.jpg
+    alt: Salon area at the Oakdene Ladies Boutique
+  - src: /images/boutique/boutique-interior-shelves-clothing.jpg
+    alt: Clothing shelves inside the boutique
+  - src: /images/boutique/boutique-interior-looking-down-shop.jpg
+    alt: Looking down the boutique floor
+eligibility:
+  heading:
+    eyebrow: Who Can Access
+    heading: Eligibility and access
+  automatic:
+    heading: Automatic eligibility
+    intro: "You are automatically eligible if you meet any of these:"
+    items:
+      - Receiving Centrelink under $1,200/fortnight **and** hold a concession card
+      - You have been referred by a service or professional
+      - You are in crisis
+  stress:
+    heading: Financial stress assessment
+    intro: "We will chat with you if 2 or more of these apply:"
+    items:
+      - Behind on rent
+      - Skipping meals
+      - 3 or more children
+      - Disability caring burden
+      - Limited disposable income
+  visitNote: Maximum **2 visits per 12 months per household**. Emergency override possible with staff approval.
+  how:
+    heading: How to access
+    text: You can be referred from services, health professionals, schools, or DV services. Referral only.
+  promise:
+    heading: Our access promise
+    text: We believe in access. If cost is a barrier, please speak with us. **No woman will be turned away due to financial difficulty.**
+referral:
+  heading:
+    eyebrow: Make a Referral
+    heading: Submit a referral
+cta:
+  heading: Ready to visit or make a referral?
+  primary:
+    label: Submit Referral
+    href: "#referral-form"
+  secondary:
+    label: Make an Enquiry
+    href: /contact/

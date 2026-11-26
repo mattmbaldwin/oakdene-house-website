@@ -599,6 +599,463 @@ export const referralThankYouLayout = z
   .meta({ title: 'Referral thank-you page' });
 // --- end W8 ---------------------------------------------------------------------------------------------------
 
+// ===============================================================================================================
+// BEGIN W9 (issue #17): Community Programs layouts (src/pages/community-programs/**).
+// Other batches add their own marked blocks; keep this one together so merges stay small.
+// ===============================================================================================================
+
+const HOURS_TOKEN = '{hours}';
+const HOURS_HINT = 'Keep {hours} where the opening hours go. It is filled in from Opening hours.';
+const needsHours = (s) => s.includes(HOURS_TOKEN);
+const HOURS_MESSAGE = 'must keep {hours}, the place the opening hours from Opening hours are filled in';
+
+/** One-line text that must keep the {hours} marker. */
+const hoursText = (title, description = HOURS_HINT) =>
+  z.string().min(1).refine(needsHours, { message: HOURS_MESSAGE }).meta(meta(title, description));
+
+/** Prose that must keep the {hours} marker. */
+const hoursProse = (title, description = HOURS_HINT) =>
+  z.string().min(1).refine(needsHours, { message: HOURS_MESSAGE }).meta({ ...meta(title, description), cms: { widget: 'markdown' } });
+
+/** Search details where the description holds the {hours} marker. */
+const seoWithHours = () =>
+  z
+    .strictObject({
+      title: text('Page title', 'Shown in the browser tab and as the search result heading.'),
+      description: z
+        .string()
+        .min(1)
+        .refine(needsHours, { message: HOURS_MESSAGE })
+        .meta({ title: 'Search description', description: `The summary search engines show. ${HOURS_HINT}`, cms: { widget: 'text' } }),
+      image: imagePath('Sharing image', 'The picture shown when the page is shared on social media.').optional(),
+    })
+    .meta({ title: 'Search and sharing' });
+
+/** The top banner with two buttons under the line (their look is fixed by the banner). */
+const heroWithButtons = ({ breadcrumb = true } = {}) => {
+  const fields = {};
+  if (breadcrumb) fields.breadcrumb = text('Breadcrumb', 'The last item in the "Home / Community Programs / …" trail.');
+  fields.heading = heading('Page heading');
+  fields.lead = prose('Line under the heading');
+  fields.primary = link('First button');
+  fields.secondary = link('Second button');
+  return z.strictObject(fields).meta({ title: 'Banner' });
+};
+
+/** A fixed-length list (the page's design has a set number of slots, each with its own icon or number). */
+const slots = (item, n, title, description) =>
+  z.array(item).length(n).meta({ ...meta(title, description), cms: { summary: '{{fields.heading}}' } });
+
+/** A row of photos: each one a file and its alt text. */
+const photos = (n, title = 'Photos') => z.array(image('Photo')).length(n).meta(meta(title, `${n} photos, shown in this order.`));
+
+/**
+ * The "Service details" table. `hoursRows` are the labels of the rows whose value comes from Opening hours (always
+ * first); `rows` are the rest, with links written in prose, e.g. [name@x.org](mailto:name@x.org).
+ */
+const serviceDetails = (hoursRows = []) => {
+  const fields = { caption: text('Table caption') };
+  if (hoursRows.length) {
+    fields.hoursLabels = z
+      .strictObject(Object.fromEntries(hoursRows.map((k) => [k, text(`Label for ${k}`)])))
+      .meta({ title: 'Opening hours row labels', description: 'The values come from Opening hours and are not edited here.' });
+  }
+  fields.rows = z
+    .array(z.strictObject({ label: text('Label'), value: prose('Value') }).meta({ title: 'Row' }))
+    .min(1)
+    .meta({ title: 'Rows', cms: { summary: '{{fields.label}}' } });
+  return z.strictObject(fields).meta({ title: 'Service details table' });
+};
+
+const callout = () => z.strictObject({ heading: heading(), text: prose('Text') });
+
+// Layout: community-programs/index.astro
+export const communityProgramsLayout = z
+  .strictObject({
+    layout: layoutField('community-programs'),
+    seo: seo(),
+    hero: heroWithButtons({ breadcrumb: false }),
+    programs: z
+      .strictObject({
+        heading: sectionHeading({ lead: true }),
+        cards: slots(
+          z.strictObject({ heading: heading(), description: prose('Text') }).meta({ title: 'Card' }),
+          4,
+          'Program areas',
+          'Four cards, each with its own icon.',
+        ),
+      })
+      .meta({ title: 'Our programs' }),
+    why: z
+      .strictObject({
+        image: image(),
+        heading: sectionHeading(),
+        paragraphs: paragraphs(),
+        button: link('Button'),
+      })
+      .meta({ title: 'Why programs matter' }),
+    gains: z
+      .strictObject({
+        heading: sectionHeading(),
+        items: z.array(text('Label')).length(4).meta({ title: 'Labels', description: 'Four items, each with its own icon.' }),
+      })
+      .meta({ title: 'What people gain' }),
+    testimonials: z
+      .strictObject({
+        heading: sectionHeading(),
+        quotes: z
+          .array(z.strictObject({ text: prose('Quote'), attribution: text('Attribution') }).meta({ title: 'Quote' }))
+          .min(1)
+          .meta({ title: 'Quotes', cms: { summary: '{{fields.attribution}}' } }),
+      })
+      .meta({ title: 'What participants say' }),
+    services: z
+      .strictObject({
+        heading: sectionHeading({ lead: true }),
+        cards: z
+          .array(
+            z
+              .strictObject({
+                title: heading('Title'),
+                summary: text('Summary'),
+                href: href('Goes to'),
+                image: image(),
+                eyebrow: text('Small label'),
+              })
+              .meta({ title: 'Service card' }),
+          )
+          .min(1)
+          .meta({ title: 'Cards', cms: { summary: '{{fields.title}}' } }),
+      })
+      .refine((v) => needsHours(v.cards[0].summary), {
+        message: `must keep {hours} (the Kitchen opening days are filled in from Opening hours)`,
+        path: ['cards', 0, 'summary'],
+      })
+      .meta({ title: 'Practical support services', description: 'The first card (Oakdene Kitchen) must keep {hours} in its summary.' }),
+    involvement: z
+      .strictObject({
+        heading: sectionHeading(),
+        cards: slots(
+          z.strictObject({ heading: heading(), body: prose('Text'), button: link('Button') }).meta({ title: 'Card' }),
+          3,
+          'Cards',
+        ),
+      })
+      .meta({ title: 'How to take part' }),
+    cta: ctaBand(),
+  })
+  .meta({ title: 'Community Programs page' });
+
+// Layout: community-programs/ladies-boutique.astro
+export const ladiesBoutiqueLayout = z
+  .strictObject({
+    layout: layoutField('ladies-boutique'),
+    seo: seo(),
+    hero: heroWithButtons(),
+    intro: z
+      .strictObject({
+        heading: sectionHeading(),
+        paragraphs: paragraphs(),
+        motto: text('Motto'),
+        details: serviceDetails(),
+      })
+      .meta({ title: 'Introduction' }),
+    offerings: z
+      .strictObject({
+        heading: sectionHeading(),
+        cards: slots(
+          z.strictObject({ heading: heading(), description: prose('Text') }).meta({ title: 'Card' }),
+          4,
+          'Cards',
+          'Four cards, each with its own icon.',
+        ),
+      })
+      .meta({ title: 'What we offer' }),
+    gallery: photos(4),
+    eligibility: z
+      .strictObject({
+        heading: sectionHeading(),
+        automatic: z
+          .strictObject({ heading: heading(), intro: prose('Introduction'), items: listItems('Conditions') })
+          .meta({ title: 'Automatic eligibility' }),
+        stress: z
+          .strictObject({ heading: heading(), intro: prose('Introduction'), items: listItems('Indicators') })
+          .meta({ title: 'Financial stress assessment' }),
+        visitNote: prose('Visit limit note'),
+        how: z
+          .strictObject({ heading: heading(), text: prose('Text') })
+          .meta({ title: 'How to access' }),
+        promise: z
+          .strictObject({ heading: heading(), text: prose('Text') })
+          .meta({ title: 'Access promise' }),
+      })
+      .meta({ title: 'Eligibility and access' }),
+    referral: z
+      .strictObject({ heading: sectionHeading() })
+      .meta({ title: 'Referral form', description: 'The form itself is a Jotform and is not edited here.' }),
+    cta: ctaBand(),
+  })
+  .meta({ title: 'Ladies Boutique page' });
+
+// Layout: community-programs/oakdene-kitchen.astro
+export const oakdeneKitchenLayout = z
+  .strictObject({
+    layout: layoutField('oakdene-kitchen'),
+    seo: seoWithHours(),
+    hero: heroWithButtons(),
+    intro: z
+      .strictObject({
+        heading: sectionHeading(),
+        paragraph: prose('Introduction'),
+        whoLabel: text('"Who it\'s for" label'),
+        whoText: prose('"Who it\'s for" text'),
+        offerHeading: heading('"What we offer" heading'),
+        offerItems: listItems('What we offer'),
+        details: serviceDetails(['days', 'hours']),
+        motto: text('Motto', 'Shown word for word, quote marks included.'),
+      })
+      .meta({ title: 'Introduction' }),
+    photos: photos(3),
+    how: z
+      .strictObject({
+        heading: sectionHeading(),
+        intro: prose('Introduction'),
+        eligibility: z.strictObject({ heading: heading(), items: listItems('Requirements') }).meta({ title: 'Eligibility' }),
+        note: callout().meta({ title: 'Important note' }),
+        guidelines: callout().meta({ title: 'Community guidelines' }),
+      })
+      .meta({ title: 'How it works' }),
+    volunteer: z
+      .strictObject({
+        image: image(),
+        heading: sectionHeading(),
+        paragraphs: paragraphs(),
+        primary: link('First button'),
+        secondary: link('Second button'),
+      })
+      .meta({ title: 'Volunteer with the Kitchen' }),
+    cta: ctaBand(),
+  })
+  .meta({ title: 'Oakdene Kitchen page' });
+
+// Layout: community-programs/oakdene-laundrette.astro
+export const oakdeneLaundretteLayout = z
+  .strictObject({
+    layout: layoutField('oakdene-laundrette'),
+    seo: seoWithHours(),
+    hero: hero(),
+    intro: z
+      .strictObject({
+        heading: sectionHeading(),
+        paragraph: prose('Introduction'),
+        includedHeading: heading('"What\'s included" heading'),
+        includedItems: listItems("What's included"),
+        details: serviceDetails(['days', 'hours', 'lastEntry']),
+      })
+      .meta({ title: 'Introduction' }),
+    photos: photos(3),
+    how: z
+      .strictObject({
+        heading: sectionHeading(),
+        steps: z.array(prose('Step')).min(1).meta({ title: 'Steps', description: 'Numbered 1, 2, 3 … in this order.' }),
+        eligibility: z.strictObject({ heading: heading(), text: prose('Text') }).meta({ title: 'Eligibility' }),
+      })
+      .meta({ title: 'How it works' }),
+    group: z
+      .strictObject({
+        heading: sectionHeading(),
+        text: hoursProse('Introduction'),
+        points: z.array(prose('Point')).length(4).meta({ title: 'Booking details', description: 'Four points, each with its own icon.' }),
+        button: link('Button'),
+      })
+      .meta({ title: 'Group laundry bookings' }),
+    cta: ctaBand(),
+  })
+  .meta({ title: 'Oakdene Laundrette page' });
+
+// Layout: community-programs/staple-food-packs.astro
+export const stapleFoodPacksLayout = z
+  .strictObject({
+    layout: layoutField('staple-food-packs'),
+    seo: seoWithHours(),
+    hero: hero(),
+    intro: z
+      .strictObject({
+        heading: sectionHeading(),
+        paragraph: prose('Introduction'),
+        distribution: hoursProse('Distribution sentence'),
+        includedHeading: heading('"What\'s included" heading'),
+        includedItems: listItems("What's included"),
+        creditLabel: text('Supplier credit'),
+        creditLogo: image('Supplier logo'),
+        details: serviceDetails(['day', 'hours']),
+      })
+      .meta({ title: 'Introduction' }),
+    banner: image('Photo'),
+    rules: z
+      .strictObject({
+        heading: sectionHeading(),
+        packRules: z.strictObject({ heading: heading(), items: listItems('Rules') }).meta({ title: 'Pack rules' }),
+        eligibility: z
+          .strictObject({ heading: heading(), intro: prose('Introduction'), items: listItems('Requirements') })
+          .meta({ title: 'Eligibility' }),
+        also: hoursProse('Note under the cards'),
+      })
+      .meta({ title: 'Rules and eligibility' }),
+    cta: ctaBand(),
+  })
+  .meta({ title: 'Staple Food Packs page' });
+
+// Layout: community-programs/used-clothing-store.astro
+export const usedClothingStoreLayout = z
+  .strictObject({
+    layout: layoutField('used-clothing-store'),
+    seo: seo(),
+    hero: hero(),
+    intro: z
+      .strictObject({
+        heading: sectionHeading(),
+        paragraphs: paragraphs(),
+        guidelinesHeading: heading('Visit guidelines heading'),
+        guidelines: listItems('Visit guidelines'),
+        details: serviceDetails(['days', 'hours']),
+        eligibility: z.strictObject({ heading: heading(), text: prose('Text') }).meta({ title: 'Eligibility' }),
+      })
+      .meta({ title: 'Introduction' }),
+    photos: photos(2),
+    also: z
+      .strictObject({
+        heading: heading(),
+        text: prose('Text'),
+        primary: link('First button'),
+        secondary: link('Second button'),
+      })
+      .meta({ title: 'Also on the same days' }),
+    cta: ctaBand(),
+  })
+  .meta({ title: 'Used Clothing Store page' });
+
+// Layout: community-programs/volunteering/index.astro
+export const volunteeringLayout = z
+  .strictObject({
+    layout: layoutField('volunteering'),
+    seo: seo(),
+    hero: hero(),
+    why: z
+      .strictObject({
+        heading: sectionHeading(),
+        paragraph: prose('Introduction'),
+        reasons: listItems('Reasons'),
+        button: link('Button'),
+        image: image(),
+      })
+      .meta({ title: 'Why volunteer' }),
+    types: z
+      .strictObject({
+        heading: sectionHeading(),
+        learnMoreLabel: text('Card button text'),
+        cards: z
+          .array(
+            z
+              .strictObject({ heading: heading(), description: prose('Text'), href: href('Goes to'), image: image() })
+              .meta({ title: 'Card' }),
+          )
+          .min(1)
+          .meta({ title: 'Cards', cms: { summary: '{{fields.heading}}' } }),
+      })
+      .meta({ title: 'Ways to volunteer' }),
+    expect: z
+      .strictObject({
+        heading: sectionHeading(),
+        steps: slots(
+          z.strictObject({ heading: heading(), body: prose('Text') }).meta({ title: 'Step' }),
+          4,
+          'Steps',
+          'Numbered 01 to 04 in this order.',
+        ),
+      })
+      .meta({ title: 'What to expect' }),
+    form: z
+      .strictObject({ heading: heading('Heading'), intro: prose('Introduction') })
+      .meta({ title: 'Application form', description: 'The form itself is a Jotform and is not edited here.' }),
+    cta: ctaBand(),
+  })
+  .meta({ title: 'Volunteering page' });
+
+// Layout: community-programs/volunteering/community-volunteers.astro
+export const communityVolunteersLayout = z
+  .strictObject({
+    layout: layoutField('community-volunteers'),
+    seo: seo(),
+    hero: hero(),
+    overview: z
+      .strictObject({
+        heading: sectionHeading(),
+        paragraphs: paragraphs(),
+        rolesHeading: heading('"Possible volunteer roles" heading'),
+        roles: listItems('Roles'),
+        photos: photos(2),
+      })
+      .meta({ title: 'Overview' }),
+    lookFor: z
+      .strictObject({
+        heading: sectionHeading(),
+        items: listItems('What we look for'),
+        note: prose('Note'),
+        button: link('Button'),
+      })
+      .meta({ title: 'What we look for' }),
+    cta: ctaBand({ subheading: true }),
+  })
+  .meta({ title: 'Community Volunteers page' });
+
+// Layout: community-programs/volunteering/corporate-volunteering.astro
+export const corporateVolunteeringLayout = z
+  .strictObject({
+    layout: layoutField('corporate-volunteering'),
+    seo: seo(),
+    hero: hero(),
+    overview: z
+      .strictObject({
+        heading: sectionHeading(),
+        paragraphs: paragraphs(),
+        oppsHeading: heading('"Potential opportunities" heading'),
+        opportunities: listItems('Opportunities'),
+        image: image(),
+        contact: z
+          .strictObject({ heading: heading(), text: prose('Text'), primary: link('First button'), secondary: link('Second button') })
+          .meta({ title: 'Get in touch' }),
+      })
+      .meta({ title: 'Overview' }),
+    why: z
+      .strictObject({
+        heading: sectionHeading(),
+        items: slots(
+          z.strictObject({ heading: heading(), body: prose('Text') }).meta({ title: 'Reason' }),
+          3,
+          'Reasons',
+          'Three cards, each with its own icon.',
+        ),
+      })
+      .meta({ title: 'Why Oakdene' }),
+    cta: ctaBand({ subheading: true }),
+  })
+  .meta({ title: 'Corporate Volunteering page' });
+
+// Layout: community-programs/volunteering/thank-you.astro
+export const volunteerThankYouLayout = z
+  .strictObject({
+    layout: layoutField('volunteer-thank-you'),
+    seo: seo(),
+    hero: z.strictObject({ breadcrumb: text('Breadcrumb'), heading: heading('Page heading') }).meta({ title: 'Banner' }),
+    body: z
+      .strictObject({ text: prose('Message'), primary: link('First button'), secondary: link('Second button') })
+      .meta({ title: 'Message' }),
+  })
+  .meta({ title: 'Volunteer thank-you page' });
+
+// END W9
+
 /** Every page layout, by the value of its `layout:` field. */
 export const pageLayouts = {
   'life-choices-program': lifeChoicesProgramLayout,
@@ -612,6 +1069,18 @@ export const pageLayouts = {
   'outpatients-program': outpatientsProgramLayout,
   referral: referralLayout,
   'referral-thank-you': referralThankYouLayout,
+
+  // W9
+  'community-programs': communityProgramsLayout,
+  'ladies-boutique': ladiesBoutiqueLayout,
+  'oakdene-kitchen': oakdeneKitchenLayout,
+  'oakdene-laundrette': oakdeneLaundretteLayout,
+  'staple-food-packs': stapleFoodPacksLayout,
+  'used-clothing-store': usedClothingStoreLayout,
+  'volunteering': volunteeringLayout,
+  'community-volunteers': communityVolunteersLayout,
+  'corporate-volunteering': corporateVolunteeringLayout,
+  'volunteer-thank-you': volunteerThankYouLayout,
 };
 
 /** Any page file: the schema is chosen by its `layout:` field. Used by the Astro `pages` collection. */
@@ -631,6 +1100,18 @@ export const pageFiles = [
   { name: 'services--outpatients-program', label: 'Outpatients Program', layout: 'outpatients-program' },
   { name: 'services--referral', label: 'Make a Referral', layout: 'referral' },
   { name: 'services--referral--thank-you', label: 'Referral thank-you', layout: 'referral-thank-you' },
+
+  // W9
+  { name: 'community-programs--index', label: 'Community Programs', layout: 'community-programs' },
+  { name: 'community-programs--ladies-boutique', label: 'Community Programs: Ladies Boutique', layout: 'ladies-boutique' },
+  { name: 'community-programs--oakdene-kitchen', label: 'Community Programs: Oakdene Kitchen', layout: 'oakdene-kitchen' },
+  { name: 'community-programs--oakdene-laundrette', label: 'Community Programs: Oakdene Laundrette', layout: 'oakdene-laundrette' },
+  { name: 'community-programs--staple-food-packs', label: 'Community Programs: Staple Food Packs', layout: 'staple-food-packs' },
+  { name: 'community-programs--used-clothing-store', label: 'Community Programs: Used Clothing Store', layout: 'used-clothing-store' },
+  { name: 'community-programs--volunteering', label: 'Volunteering', layout: 'volunteering' },
+  { name: 'community-programs--volunteering--community-volunteers', label: 'Volunteering: Community Volunteers', layout: 'community-volunteers' },
+  { name: 'community-programs--volunteering--corporate-volunteering', label: 'Volunteering: Corporate Volunteering', layout: 'corporate-volunteering' },
+  { name: 'community-programs--volunteering--thank-you', label: 'Volunteering: Thank You', layout: 'volunteer-thank-you' },
 ];
 
 // ---------------------------------------------------------------------------------------------------------------
