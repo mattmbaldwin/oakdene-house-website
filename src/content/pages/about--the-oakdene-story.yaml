@@ -1,22 +1,36 @@
-# Words and images for /about/the-oakdene-story/. Layout: src/pages/about/the-oakdene-story.astro.
 layout: the-oakdene-story
 seo:
-  title: The Oakdene Story — Oakdene House Foundation
-  description: The Oakdene is an evergreen Holm Oak in Fairfield planted in 1842 — struck by lightning yet still growing. The living symbol of hardship, endurance and healing behind Oakdene House Foundation.
+  title: Oakdene's Story
+  description: The Oakdene is an evergreen Holm Oak in Fairfield planted in 1842 —
+    struck by lightning yet still growing. The living symbol of hardship,
+    endurance and healing behind Oakdene House Foundation.
   image: /images/about/colour-oakdene-tree-panorama.jpg
 hero:
-  breadcrumb: The Oakdene Story
-  heading: The Oakdene Story
+  breadcrumb: Oakdene's Story
+  heading: Oakdene's Story
   lead: A story of hardship, endurance and healing — rooted in Fairfield since 1842.
 story:
   heading:
     eyebrow: The Oak
     heading: A tree that endured
   paragraphs:
-    - The Oakdene is an evergreen Holm Oak in Fairfield, planted in 1842. During a storm, the tree was split down the middle by lightning. It is visibly divided into two parts, but continues to grow evergreen. The story of the Oakdene is one of hardship, endurance and healing. It shows that difficult times and broken pasts can be overcome, and that we can all continue to grow.
-    - Oakdene House was built on a simple idea — that people facing addiction, hardship and social disconnection deserve a place where they can be welcomed, supported and treated with dignity.
-    - Over time, Oakdene has grown into a community hub that blends professional support with practical care. What began as a place of help has become a place of belonging for many people who need stability, encouragement and a pathway forward.
-    - Today, Oakdene House supports individuals and families through addiction services, counselling, group programs and community-based supports. Our work reflects the needs of the local community and continues to evolve through partnership, listening and lived experience.
+    - The Oakdene is an evergreen Holm Oak in Fairfield, planted in 1842. During
+      a storm, the tree was split down the middle by lightning. It is visibly
+      divided into two parts, but continues to grow evergreen. The story of the
+      Oakdene is one of hardship, endurance and healing. It shows that difficult
+      times and broken pasts can be overcome, and that we can all continue to
+      grow.
+    - Oakdene House was built on a simple idea — that people facing addiction,
+      hardship and social disconnection deserve a place where they can be
+      welcomed, supported and treated with dignity.
+    - Over time, Oakdene has grown into a community hub that blends professional
+      support with practical care. What began as a place of help has become a
+      place of belonging for many people who need stability, encouragement and a
+      pathway forward.
+    - Today, Oakdene House supports individuals and families through addiction
+      services, counselling, group programs and community-based supports. Our
+      work reflects the needs of the local community and continues to evolve
+      through partnership, listening and lived experience.
   image:
     src: /images/about/oakdene-tree-sunlight.jpg
     alt: Sunlight through the leaves of the Oakdene tree in Fairfield
@@ -28,12 +42,15 @@ film:
   heading:
     eyebrow: Our Film
     heading: Watch our story
-    lead: People in recovery, our counsellors and our founding chairman talk about what support at Oakdene House means to them.
-  playLabel: 'Play video: Oakdene House Foundation, our story'
+    lead: People in recovery, our counsellors and our founding chairman talk about
+      what support at Oakdene House means to them.
+  playLabel: "Play video: Oakdene House Foundation, our story"
   transcriptLink: Watch with the full transcript
 why:
   label: Why It Matters
-  quote: Many people do not need more judgement. They need a door that is open, a person who will listen and support that makes sense in real life. Oakdene aims to be that place.
+  quote: Many people do not need more judgement. They need a door that is open, a
+    person who will listen and support that makes sense in real life. Oakdene
+    aims to be that place.
 cta:
   heading: Learn more about our services
   primary:
