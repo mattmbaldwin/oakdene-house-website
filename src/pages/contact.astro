@@ -3,77 +3,85 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import InfoTable from '../components/InfoTable.astro';
 import CTABand from '../components/CTABand.astro';
+import Prose from '../components/Prose.astro';
 import hours from '../content/opening-hours.json';
+import { renderProse } from '../lib/prose.ts';
+import { pageContent, fieldSource } from '../lib/pages';
 
+// Words and images: src/content/pages/contact.yaml (edited in /admin).
+const ID = 'contact';
+const page = await pageContent(ID, 'contact');
+const { seo, hero, cards, serviceContacts, extra, map, form, cta } = page;
+const src = (path: string) => fieldSource(ID, path);
+
+// Hours come from src/content/opening-hours.json; the labels and the other rows from contact.yaml.
 const hoursRows = [
-  { label: 'Oakdene Kitchen',       value: hours.kitchen.contactSummary },
-  { label: 'Staple Food Packs',     value: hours.staplePacks.contactSummary },
-  { label: 'Oakdene Laundrette',    value: hours.laundrette.contactSummary },
-  { label: 'Used Clothing Store',   value: hours.clothingStore.contactSummary },
-  { label: 'Ladies Boutique',       value: 'By appointment only' },
-  { label: 'Counselling',           value: 'By appointment' },
-  { label: 'Life Choices Program',  value: 'See <a href="/services/life-choices-program/">program page</a> for full schedule' },
+  { label: page.hours.kitchen,       value: hours.kitchen.contactSummary },
+  { label: page.hours.staplePacks,   value: hours.staplePacks.contactSummary },
+  { label: page.hours.laundrette,    value: hours.laundrette.contactSummary },
+  { label: page.hours.clothingStore, value: hours.clothingStore.contactSummary },
+  { label: page.hours.boutique.label,    value: page.hours.boutique.value },
+  { label: page.hours.counselling.label, value: page.hours.counselling.value },
+  { label: page.hours.lifeChoices.label, value: renderProse(page.hours.lifeChoices.value, src('hours.lifeChoices.value')) },
 ];
 ---
 
 <BaseLayout
-  title="Contact Us | Oakdene House Foundation"
-  description="Get in touch with Oakdene House Foundation in Fairfield, Western Sydney. Call (02) 8717 0999 or email admin@oakdenehouse.org.au"
-  ogImage="/images/centre/exterior-exterior-1-img_2651.jpg"
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.image}
 >
 
   <!-- HERO -->
   <Hero
-    heading="Contact Oakdene House Foundation"
-    subheading="Whether you are looking for support, information, a referral pathway, or community connection — we are here to help."
-    image="/images/centre/exterior-exterior-2-img_2649-with-people.png"
-    imageAlt="Oakdene House Foundation centre exterior"
-    buttons={[
-      { text: 'Need Help Now', href: '/need-help-now/', variant: 'white-outline' },
-    ]}
+    heading={hero.heading}
+    subheading={hero.subheading}
+    image={hero.image.src}
+    imageAlt={hero.image.alt}
+    buttons={hero.buttons.map(b => ({ text: b.label, href: b.href, variant: b.style }))}
   />
 
   <!-- CONTACT CARDS -->
   <section class="section" aria-labelledby="contact-options-heading">
     <div class="container">
-      <h2 id="contact-options-heading" class="visually-hidden">Contact options</h2>
+      <h2 id="contact-options-heading" class="visually-hidden">{cards.srHeading}</h2>
       <div class="contact-cards">
 
         <div class="contact-card">
           <div class="contact-card__icon" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
           </div>
-          <p class="contact-card__heading">Phone</p>
-          <a href="tel:0287170999" class="contact-card__detail">(02) 8717 0999</a>
-          <p class="contact-card__note">Give us a call during business hours</p>
+          <p class="contact-card__heading">{cards.phone.heading}</p>
+          <a href={cards.phone.link.href} class="contact-card__detail">{cards.phone.link.label}</a>
+          <p class="contact-card__note">{cards.phone.note}</p>
         </div>
 
         <div class="contact-card">
           <div class="contact-card__icon" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           </div>
-          <p class="contact-card__heading">Email</p>
-          <a href="mailto:admin@oakdenehouse.org.au" class="contact-card__detail contact-card__detail--small">admin@oakdenehouse.org.au</a>
-          <p class="contact-card__note">Send us an email and we will get back to you</p>
+          <p class="contact-card__heading">{cards.email.heading}</p>
+          <a href={cards.email.link.href} class="contact-card__detail contact-card__detail--small">{cards.email.link.label}</a>
+          <p class="contact-card__note">{cards.email.note}</p>
         </div>
 
         <div class="contact-card">
           <div class="contact-card__icon" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </div>
-          <p class="contact-card__heading">Visit Us</p>
-          <p class="contact-card__detail contact-card__detail--small">29 Vine St, Fairfield NSW 2165</p>
-          <p class="contact-card__note">Parking via Fairfield RSL open air car park, corner of Vine and Bertha Streets</p>
+          <p class="contact-card__heading">{cards.visit.heading}</p>
+          <p class="contact-card__detail contact-card__detail--small">{cards.visit.address}</p>
+          <p class="contact-card__note">{cards.visit.note}</p>
         </div>
 
         <div class="contact-card">
           <div class="contact-card__icon" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
-          <p class="contact-card__heading">Opening Hours</p>
+          <p class="contact-card__heading">{cards.hours.heading}</p>
           <p class="contact-card__detail contact-card__detail--small">{hours.office.days}</p>
           <p class="contact-card__note">{hours.office.hours}</p>
-          <p class="contact-card__note">Some programs run outside these hours. Check each program page for times.</p>
+          <p class="contact-card__note">{cards.hours.note}</p>
         </div>
 
       </div>
@@ -84,36 +92,23 @@ const hoursRows = [
   <section class="section section--tint" aria-labelledby="service-contacts-heading">
     <div class="container">
       <div class="section-heading">
-        <p class="section-heading__eyebrow">Service Contacts</p>
-        <h2 id="service-contacts-heading">Service-specific contacts</h2>
+        <p class="section-heading__eyebrow">{serviceContacts.heading.eyebrow}</p>
+        <h2 id="service-contacts-heading">{serviceContacts.heading.heading}</h2>
       </div>
       <div class="service-contacts">
-        <div class="service-contact-card">
-          <h3>Kitchen, Food Packs, Laundrette &amp; Used Clothing Store</h3>
+        {serviceContacts.cards.map((c, i) => <>{i > 0 && ' '}<div class="service-contact-card">
+          <h3>{c.title}</h3>
           <div class="service-contact-card__links">
-            <a href="mailto:kitchen@oakdenehouse.org.au">
+            <a href={c.email.href}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              kitchen@oakdenehouse.org.au
+              {c.email.label}
             </a>
-            <a href="tel:0415156100">
+            <a href={c.phone.href}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
-              0415 156 100
+              {c.phone.label}
             </a>
           </div>
-        </div>
-        <div class="service-contact-card">
-          <h3>Ladies Boutique</h3>
-          <div class="service-contact-card__links">
-            <a href="mailto:boutique@oakdenehouse.org.au">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              boutique@oakdenehouse.org.au
-            </a>
-            <a href="tel:0415156100">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
-              0415 156 100
-            </a>
-          </div>
-        </div>
+        </div></>)}
       </div>
     </div>
   </section>
@@ -122,8 +117,8 @@ const hoursRows = [
   <section class="section" aria-labelledby="hours-heading">
     <div class="container hours-container">
       <div class="section-heading">
-        <p class="section-heading__eyebrow">When We're Open</p>
-        <h2 id="hours-heading">Service hours</h2>
+        <p class="section-heading__eyebrow">{page.hours.heading.eyebrow}</p>
+        <h2 id="hours-heading">{page.hours.heading.heading}</h2>
       </div>
       <InfoTable rows={hoursRows} />
     </div>
@@ -132,24 +127,24 @@ const hoursRows = [
   <!-- LANGUAGE SUPPORT + POSTAL + ABN -->
   <section class="section section--tint" aria-labelledby="extra-info-heading">
     <div class="container">
-      <h2 id="extra-info-heading" class="visually-hidden">Additional information</h2>
+      <h2 id="extra-info-heading" class="visually-hidden">{extra.srHeading}</h2>
       <div class="extra-info-grid">
 
         <div class="extra-info-card">
           <div class="extra-info-card__icon" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
           </div>
-          <h3>Language Support</h3>
-          <p>We offer support in multiple languages. If you need an interpreter, please let us know when you contact us and we will arrange one for you.</p>
+          <h3>{extra.language.heading}</h3>
+          <p>{extra.language.text}</p>
         </div>
 
         <div class="extra-info-card">
           <div class="extra-info-card__icon" aria-hidden="true">
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
           </div>
-          <h3>Postal Address</h3>
-          <p>PO Box 988<br />Fairfield NSW 1860</p>
-          <p class="abn-line">ABN: 90 151 950 926 &nbsp;|&nbsp; Registered Charity</p>
+          <h3>{extra.postal.heading}</h3>
+          <p>{extra.postal.line1}<br />{extra.postal.line2}</p>
+          <p class="abn-line">{extra.postal.abn}</p>
         </div>
 
       </div>
@@ -160,16 +155,16 @@ const hoursRows = [
   <section class="section" aria-labelledby="map-heading">
     <div class="container">
       <div class="section-heading">
-        <p class="section-heading__eyebrow">Find Us</p>
-        <h2 id="map-heading">Getting here</h2>
+        <p class="section-heading__eyebrow">{map.heading.eyebrow}</p>
+        <h2 id="map-heading">{map.heading.heading}</h2>
       </div>
       <iframe
         src="https://maps.google.com/maps?q=29+Vine+St+Fairfield+NSW+2165&output=embed&z=16"
         class="contact-map"
         loading="lazy"
         referrerpolicy="no-referrer-when-downgrade"
-        title="Map showing Oakdene House Foundation at 29 Vine Street, Fairfield NSW 2165"
-        aria-label="Interactive map showing Oakdene House Foundation at 29 Vine Street, Fairfield NSW 2165"
+        title={map.title}
+        aria-label={map.label}
       ></iframe>
       <div class="map-directions">
         <a
@@ -179,7 +174,7 @@ const hoursRows = [
           class="map-directions__link"
         >
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-          Get directions
+          {map.directionsLabel}
         </a>
       </div>
     </div>
@@ -189,13 +184,13 @@ const hoursRows = [
   <section class="section section--tint" aria-labelledby="form-heading">
     <div class="container form-container">
 
-      <h2 id="form-heading">We'd love to hear from you</h2>
-      <p class="form-intro">Whether you're looking for support, interested in one of our programs, considering a partnership, or just want to know more about Oakdene — send us a message and we'll be in touch within 2 business days.</p>
+      <h2 id="form-heading">{form.heading}</h2>
+      <p class="form-intro"><Prose md={form.intro} source={src('form.intro')} /></p>
 
       <!-- Success state -->
       <div class="form-success" id="form-success" hidden tabindex="-1">
-        <p class="form-success__heading"><strong>Thanks — your message has been sent. We'll be in touch within 2 business days.</strong></p>
-        <p>If you need support urgently, please call us on <a href="tel:+61287170999">(02) 8717 0999</a> during business hours, or visit our <a href="/need-help-now/">Need Help Now</a> page for 24/7 support.</p>
+        <p class="form-success__heading"><strong>{form.successHeading}</strong></p>
+        <p><Prose md={form.successText} source={src('form.successText')} /></p>
       </div>
 
       <!-- Form-level error banner (populated by JS; hidden via :empty when blank) -->
@@ -205,13 +200,13 @@ const hoursRows = [
 
         <!-- Honeypot: hidden from sighted users and screen readers; bots fill it in -->
         <div class="contact-honeypot" aria-hidden="true">
-          <label for="website">Leave this blank</label>
+          <label for="website">{form.honeypotLabel}</label>
           <input type="text" id="website" name="website" tabindex="-1" autocomplete="off" />
         </div>
 
         <div class="form-row">
           <div class="form-field" id="field-first-name">
-            <label for="first-name">First name <span class="form-field__req" aria-hidden="true">*</span></label>
+            <label for="first-name">{form.firstName} <span class="form-field__req" aria-hidden="true">*</span></label>
             <input
               id="first-name"
               name="first_name"
@@ -223,7 +218,7 @@ const hoursRows = [
             <p class="form-field__error" id="first-name-error" role="alert"></p>
           </div>
           <div class="form-field" id="field-last-name">
-            <label for="last-name">Last name <span class="form-field__req" aria-hidden="true">*</span></label>
+            <label for="last-name">{form.lastName} <span class="form-field__req" aria-hidden="true">*</span></label>
             <input
               id="last-name"
               name="last_name"
@@ -238,7 +233,7 @@ const hoursRows = [
 
         <div class="form-row">
           <div class="form-field" id="field-email">
-            <label for="email">Email <span class="form-field__req" aria-hidden="true">*</span></label>
+            <label for="email">{form.email} <span class="form-field__req" aria-hidden="true">*</span></label>
             <input
               id="email"
               name="email"
@@ -250,7 +245,7 @@ const hoursRows = [
             <p class="form-field__error" id="email-error" role="alert"></p>
           </div>
           <div class="form-field">
-            <label for="phone">Phone <span class="form-field__optional">(optional)</span></label>
+            <label for="phone">{form.phone} <span class="form-field__optional">{form.optional}</span></label>
             <input
               id="phone"
               name="phone"
@@ -261,29 +256,29 @@ const hoursRows = [
         </div>
 
         <div class="form-field" id="field-reason">
-          <label for="reason">Reason for enquiry <span class="form-field__req" aria-hidden="true">*</span></label>
+          <label for="reason">{form.reason} <span class="form-field__req" aria-hidden="true">*</span></label>
           <select
             id="reason"
             name="reason"
             aria-required="true"
             aria-describedby="reason-error"
           >
-            <option value="" disabled selected>Select a reason…</option>
-            <option value="general">General enquiry</option>
-            <option value="counselling">Counselling or support</option>
-            <option value="community-programs">Community programs</option>
-            <option value="program-interest">Program interest — I'd like to join a program</option>
-            <option value="volunteering">Volunteering</option>
-            <option value="partnership">Partnership or organisation enquiry</option>
-            <option value="donation">Donation or fundraising</option>
-            <option value="media">Media enquiry</option>
-            <option value="other">Other</option>
+            <option value="" disabled selected>{form.reasonPlaceholder}</option>
+            <option value="general">{form.reasons.general}</option>
+            <option value="counselling">{form.reasons.counselling}</option>
+            <option value="community-programs">{form.reasons.communityPrograms}</option>
+            <option value="program-interest">{form.reasons.programInterest}</option>
+            <option value="volunteering">{form.reasons.volunteering}</option>
+            <option value="partnership">{form.reasons.partnership}</option>
+            <option value="donation">{form.reasons.donation}</option>
+            <option value="media">{form.reasons.media}</option>
+            <option value="other">{form.reasons.other}</option>
           </select>
           <p class="form-field__error" id="reason-error" role="alert"></p>
         </div>
 
         <div class="form-field" id="field-message">
-          <label for="message">Message <span class="form-field__req" aria-hidden="true">*</span></label>
+          <label for="message">{form.message} <span class="form-field__req" aria-hidden="true">*</span></label>
           <textarea
             id="message"
             name="message"
@@ -303,7 +298,7 @@ const hoursRows = [
               aria-required="true"
               aria-describedby="consent-error"
             />
-            <label for="consent">I understand my enquiry will be handled in line with Oakdene's <a href="/privacy-policy/">privacy policy</a>.</label>
+            <label for="consent"><Prose md={form.consent} source={src('form.consent')} /></label>
           </div>
           <p class="form-field__error" id="consent-error" role="alert"></p>
         </div>
@@ -313,7 +308,7 @@ const hoursRows = [
         </div>
 
         <div class="form-actions">
-          <button type="submit" id="submit-btn" class="btn btn--primary">Send message</button>
+          <button type="submit" id="submit-btn" class="btn btn--primary">{form.submit}</button>
         </div>
 
       </form>
@@ -322,10 +317,10 @@ const hoursRows = [
 
   <!-- CTA -->
   <CTABand
-    heading="Need support right now?"
-    subheading="If you need immediate help, visit our Need Help Now page for crisis lines and emergency contacts."
-    primaryBtn={{ text: 'Need Help Now', href: '/need-help-now/' }}
-    secondaryBtn={{ text: 'Get Support', href: '/contact/' }}
+    heading={cta.heading}
+    subheading={cta.subheading}
+    primaryBtn={{ text: cta.primary.label, href: cta.primary.href }}
+    secondaryBtn={{ text: cta.secondary.label, href: cta.secondary.href }}
     dark={true}
   />
 

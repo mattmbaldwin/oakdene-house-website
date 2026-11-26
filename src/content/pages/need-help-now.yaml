@@ -1,0 +1,82 @@
+# Words for /need-help-now/. Layout: src/pages/need-help-now.astro.
+# The "Our team is available …" hours come from opening-hours.json.
+layout: need-help-now
+seo:
+  title: Need Help Now? | Oakdene House Foundation
+  description: If you need support right now, help is available. Crisis lines, emergency contacts, and Oakdene House contact details.
+banner:
+  ariaLabel: Need help now
+  heading: Need help right now?
+  lead: You are not alone. Help is available 24 hours a day.
+emergency:
+  label: If you are in immediate danger
+  callPrefix: Call
+  number:
+    label: '000'
+    href: tel:000
+helplines:
+  heading: Crisis support lines
+  lead: These services are available around the clock, any day of the year.
+  items:
+    - name: Lifeline
+      description: 24/7 crisis and suicide prevention
+      phone: 13 11 14
+      href: tel:131114
+    - name: Suicide Call Back Service
+      description: 24/7 for anyone affected by suicide
+      phone: 1300 659 467
+      href: tel:1300659467
+    - name: Beyond Blue
+      description: 24/7 anxiety, depression, mental health
+      phone: 1300 22 4636
+      href: tel:1300224636
+    - name: Kids Helpline
+      description: 24/7 counselling for ages 5–25
+      phone: 1800 55 1800
+      href: tel:1800551800
+    - name: MensLine Australia
+      description: 24/7 support for men
+      phone: 1300 78 99 78
+      href: tel:1300789978
+    - name: 13YARN
+      description: 24/7 Aboriginal & Torres Strait Islander support
+      phone: 13 92 76
+      href: tel:139276
+    - name: 1800RESPECT
+      description: 24/7 family and domestic violence
+      phone: 1800 737 732
+      href: tel:1800737732
+    - name: NSW Mental Health Line
+      description: 24/7 mental health triage
+      phone: 1800 011 511
+      href: tel:1800011511
+    - name: Gambling Help
+      description: 24/7 gambling counselling
+      phone: 1800 858 858
+      href: tel:1800858858
+    - name: AA Helpline
+      description: Alcoholics Anonymous
+      phone: 1300 222 222
+      href: tel:1300222222
+    - name: Salvo Connect
+      description: Emergency support and practical assistance
+      phone: 1300 36 36 22
+      href: tel:1300363622
+talk:
+  heading: Talk to Oakdene
+  intro: If you need to speak with someone at Oakdene during business hours, please call us directly. We can help connect you with the right support.
+  phone:
+    label: (02) 8717 0999
+    href: tel:0287170999
+  phoneAriaLabel: Call Oakdene House Foundation on (02) 8717 0999
+  emailLabel: 'Email:'
+  email:
+    label: admin@oakdenehouse.org.au
+    href: mailto:admin@oakdenehouse.org.au
+  languageNote: We also offer support in multiple languages. If you need an interpreter, please let us know when you call.
+  hoursHeading: Business hours
+  availabilityLead: Our team is available
+  outsideHours: For outside-hours support please use the crisis lines listed on this page.
+note:
+  ariaLabel: Important note about Oakdene services
+  text: Oakdene House is not a crisis line. For immediate emergencies always call **000**. For 24-hour crisis support, please use the helplines above.

@@ -1,24 +1,28 @@
 ---
+import { siteContent } from '../lib/site';
+
+// Words: src/content/site.yaml (edited in /admin). Addresses and menu structure stay here.
+const { header: site } = await siteContent();
 const pathname = Astro.url.pathname;
 
 const servicesLinks = [
-  { label: 'Individual Counselling',  href: '/services/individual-counselling/' },
-  { label: 'Gambling Counselling',    href: '/services/gambling-counselling/' },
-  { label: 'Life Choices Program',    href: '/services/life-choices-program/' },
-  { label: 'Group DBT Therapy',       href: '/services/group-dbt-therapy/' },
-  { label: 'Outpatients Program',     href: '/services/outpatients-program/' },
-  { label: 'AA & GA Meetings',        href: '/services/aa-ga-meetings/' },
-  { label: 'Financial Counselling',   href: '/services/financial-counselling/' },
+  { label: site.servicesMenu.individualCounselling, href: '/services/individual-counselling/' },
+  { label: site.servicesMenu.gamblingCounselling, href: '/services/gambling-counselling/' },
+  { label: site.servicesMenu.lifeChoices, href: '/services/life-choices-program/' },
+  { label: site.servicesMenu.groupDbt, href: '/services/group-dbt-therapy/' },
+  { label: site.servicesMenu.outpatients, href: '/services/outpatients-program/' },
+  { label: site.servicesMenu.aaGa, href: '/services/aa-ga-meetings/' },
+  { label: site.servicesMenu.financialCounselling, href: '/services/financial-counselling/' },
 ];
 
 const communityLinks = [
-  { label: 'Oakdene Kitchen',         href: '/community-programs/oakdene-kitchen/' },
-  { label: 'Staple Food Packs',       href: '/community-programs/staple-food-packs/' },
-  { label: 'Oakdene Laundrette',      href: '/community-programs/oakdene-laundrette/' },
-  { label: 'Ladies Boutique',         href: '/community-programs/ladies-boutique/' },
-  { label: 'Used Clothing Store',     href: '/community-programs/used-clothing-store/' },
+  { label: site.communityMenu.kitchen, href: '/community-programs/oakdene-kitchen/' },
+  { label: site.communityMenu.staplePacks, href: '/community-programs/staple-food-packs/' },
+  { label: site.communityMenu.laundrette, href: '/community-programs/oakdene-laundrette/' },
+  { label: site.communityMenu.boutique, href: '/community-programs/ladies-boutique/' },
+  { label: site.communityMenu.clothingStore, href: '/community-programs/used-clothing-store/' },
   { separator: true as const },
-  { label: 'Volunteering',            href: '/community-programs/volunteering/' },
+  { label: site.communityMenu.volunteering, href: '/community-programs/volunteering/' },
 ];
 
 type DropdownItem = { label: string; href: string } | { separator: true };
@@ -29,13 +33,13 @@ const navLinks: Array<{
   id?: string;
   dropdown?: DropdownItem[];
 }> = [
-  { label: 'Home',               href: '/' },
-  { label: 'About',              href: '/about/' },
-  { label: 'Addiction Support',   href: '/services/',         id: 'services',   dropdown: servicesLinks },
-  { label: 'Community Programs', href: '/community-programs/', id: 'community', dropdown: communityLinks },
-  { label: 'Resources',          href: '/resources/' },
-  { label: 'Service Directory',  href: '/service-directory/' },
-  { label: 'Contact',            href: '/contact/' },
+  { label: site.nav.home, href: '/' },
+  { label: site.nav.about, href: '/about/' },
+  { label: site.nav.services, href: '/services/',         id: 'services',   dropdown: servicesLinks },
+  { label: site.nav.community, href: '/community-programs/', id: 'community', dropdown: communityLinks },
+  { label: site.nav.resources, href: '/resources/' },
+  { label: site.nav.directory, href: '/service-directory/' },
+  { label: site.nav.contact, href: '/contact/' },
 ];
 
 function isActive(href: string) {
@@ -46,10 +50,10 @@ function isActive(href: string) {
 
 <header class="site-header" id="site-header">
   <div class="header-inner container">
-    <a href="/" class="header-logo" aria-label="Oakdene House Foundation — home">
+    <a href="/" class="header-logo" aria-label={site.logo.homeLabel}>
       <img
         src="/images/logos/oakdene-hero-logo.png"
-        alt="Oakdene House Foundation"
+        alt={site.logo.alt}
         height="56"
       />
     </a>
@@ -97,8 +101,8 @@ function isActive(href: string) {
     </nav>
 
     <div class="header-ctas">
-      <a href="/services/referral/" class="btn btn--primary btn--sm">Get Support</a>
-      <a href="/need-help-now/" class="btn btn--secondary btn--sm">Need Help Now</a>
+      <a href="/services/referral/" class="btn btn--primary btn--sm">{site.buttons.getSupport}</a>
+      <a href="/need-help-now/" class="btn btn--secondary btn--sm">{site.buttons.needHelp}</a>
     </div>
 
     <button
@@ -158,8 +162,8 @@ function isActive(href: string) {
       </ul>
     </nav>
     <div class="mobile-drawer__ctas">
-      <a href="/services/referral/" class="btn btn--primary">Get Support</a>
-      <a href="/need-help-now/" class="btn btn--secondary">Need Help Now</a>
+      <a href="/services/referral/" class="btn btn--primary">{site.buttons.getSupport}</a>
+      <a href="/need-help-now/" class="btn btn--secondary">{site.buttons.needHelp}</a>
     </div>
   </div>
 </div>

@@ -1,0 +1,80 @@
+# Site-wide words: header, footer. Link addresses and menu structure stay in src/components/Header.astro and Footer.astro.
+header:
+  logo:
+    alt: Oakdene House Foundation
+    homeLabel: Oakdene House Foundation — home
+  nav:
+    home: Home
+    about: About
+    services: Addiction Support
+    community: Community Programs
+    resources: Resources
+    directory: Service Directory
+    contact: Contact
+  servicesMenu:
+    individualCounselling: Individual Counselling
+    gamblingCounselling: Gambling Counselling
+    lifeChoices: Life Choices Program
+    groupDbt: Group DBT Therapy
+    outpatients: Outpatients Program
+    aaGa: AA & GA Meetings
+    financialCounselling: Financial Counselling
+  communityMenu:
+    kitchen: Oakdene Kitchen
+    staplePacks: Staple Food Packs
+    laundrette: Oakdene Laundrette
+    boutique: Ladies Boutique
+    clothingStore: Used Clothing Store
+    volunteering: Volunteering
+  buttons:
+    getSupport: Get Support
+    needHelp: Need Help Now
+footer:
+  about:
+    heading: About
+    aboutUs: About Us
+    ourStory: Our Story
+    ourTeam: Our Team
+    ourCentre: Our Centre
+  services:
+    heading: Services
+    individualCounselling: Individual Counselling
+    lifeChoices: Life Choices Program
+    groupDbt: Group DBT Therapy
+    gamblingCounselling: Gambling Counselling
+    outpatients: Outpatients Program
+    aaGa: AA & GA Meetings
+    all: All Services
+  community:
+    heading: Community Programs
+    kitchen: Oakdene Kitchen
+    laundrette: Oakdene Laundrette
+    boutique: Ladies Boutique
+    staplePacks: Staple Food Packs
+    volunteering: Volunteering
+    all: All Community Programs
+  help:
+    heading: Get Help
+    contact: Contact
+    needHelp: Need Help Now
+    referral: Make a Referral
+    faq: FAQ
+  contact:
+    heading: Contact
+    phone:
+      label: (02) 8717 0999
+      href: tel:+61287170999
+    email:
+      label: admin@oakdenehouse.org.au
+      href: mailto:admin@oakdenehouse.org.au
+    address: 29 Vine Street, Fairfield NSW 2165
+    poBox: PO Box 988, Fairfield NSW 1860
+  legal:
+    abn: ABN 90 151 950 926
+    charity: Registered Charity
+    privacy: Privacy Policy
+    terms: Terms of Use
+    accessibility: Accessibility
+  copyright: Oakdene House Foundation. All rights reserved.
+  logoAlt: Oakdene House Foundation
+  logoLabel: Oakdene House Foundation — home

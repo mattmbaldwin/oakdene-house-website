@@ -1,0 +1,136 @@
+# Words and images for the home page (/). Layout: src/pages/index.astro.
+# The Kitchen card also shows opening hours from opening-hours.json; the questions come from faqs.yaml; the quotes from testimonials.json.
+layout: home
+seo:
+  title: Oakdene House Foundation — Real Support for Real Life
+  description: Oakdene House Foundation supports people and families in Fairfield, Western Sydney affected by addiction, hardship and homelessness. Free counselling, community programs, kitchen and more.
+hero:
+  heading: Practical support, real connection, and a place to take the next step.
+  subheading: Oakdene House Foundation supports people and families facing addiction, hardship, homelessness, and life challenges through practical help, counselling, community programs, and connection to the right support.
+  image:
+    src: /images/hero/hero-centre-2.jpg
+    alt: Oakdene House Foundation centre exterior
+  buttons:
+    - label: Get Support
+      href: /contact/
+      style: white
+    - label: Explore Services
+      href: /services/
+      style: white-outline
+pathways:
+  heading: How can we help?
+  items:
+    - title: Counselling
+      summary: Talk with someone about support, recovery, and your next steps.
+      href: /services/
+    - title: Community Programs
+      summary: Explore practical programs that build connection, confidence, and consistency.
+      href: /community-programs/
+    - title: Resources
+      summary: Access guides, information, and support tools you can use straight away.
+      href: /resources/
+    - title: Service Directory
+      summary: Browse other services and supports in the community.
+      href: /service-directory/
+mission:
+  heading: Support that meets people where they are
+  paragraphs:
+    - Oakdene is a community charity based in Fairfield, Western Sydney. We work alongside people and families with practical support, connection, and pathways to further help.
+    - At Oakdene House, we believe real change happens when people feel safe, seen and supported. Our work brings together counselling, peer connection and practical care so people can access help that feels human, local and achievable.
+    - From individual counselling and group recovery programs to our kitchen, laundrette and boutique, every part of Oakdene is built around restoring hope and creating pathways forward.
+  button:
+    label: Learn More About Us
+    href: /about/
+  image:
+    src: /images/hero/hero-centre-3-with-people.png
+    alt: Oakdene House Foundation centre building exterior
+impact:
+  ariaLabel: Our impact in numbers
+  eyebrow: Our Impact
+  heading: Making a difference every day
+  stats:
+    - number: 5,000+
+      label: Meals and food packs delivered annually
+    - number: $250,000
+      label: Value of supplies provided annually
+    - number: 5,000+
+      label: Individuals impacted
+    - number: '25'
+      label: Local organisation partnerships
+  note: Over 60% of participants seek continued assistance after treatment or counselling at our addiction centre.
+services:
+  heading:
+    eyebrow: Our Services
+    heading: Support that makes a difference
+  counselling:
+    title: Counselling and Support
+    summary: One-on-one support to help you understand what you are facing and find a path forward that feels achievable.
+    href: /services/individual-counselling/
+    image:
+      src: /images/centre/interior-meetings-1-img_2657.jpg
+      alt: Oakdene Centre meeting room
+  lifeChoices:
+    title: Life Choices Program
+    summary: A 6-week group program focused on recovery, connection and building practical life skills in a supportive environment.
+    href: /services/life-choices-program/
+    image:
+      src: /images/centre/interior-interior-1-with-people-img_2654.jpg
+      alt: Oakdene Centre interior
+  kitchen:
+    title: Oakdene Kitchen
+    summary: Free nutritious meals for eligible community members
+    href: /community-programs/oakdene-kitchen/
+    image:
+      src: /images/kitchen/oakdene-kitchen-around-table.png
+      alt: Oakdene Kitchen interior dining room
+  boutique:
+    title: Ladies Boutique
+    summary: A welcoming space offering affordable clothing and salon support for women. No woman is turned away due to financial difficulty.
+    href: /community-programs/ladies-boutique/
+    image:
+      src: /images/boutique/boutique-interior-looking-down-shop-with-people.png
+      alt: Oakdene Boutique interior
+  button:
+    label: View All Services
+    href: /services/
+steps:
+  heading:
+    eyebrow: Our Approach
+    heading: How support works
+  listLabel: How support works at Oakdene
+  items:
+    - title: Connect
+      body: Reach out online, by phone, or in person.
+    - title: Talk
+      body: We listen, understand what is happening, and help identify needs.
+    - title: Support
+      body: We provide direct support where we can and link to other services where needed.
+    - title: Next Steps
+      body: We help people move forward with clearer options and stronger connection.
+  image:
+    src: /images/centre/interior-interior-2-img_2656-with-people.png
+    alt: Oakdene House Foundation centre interior
+testimonials:
+  heading:
+    eyebrow: Community Voices
+    heading: What people say
+faq:
+  heading:
+    eyebrow: Questions
+    heading: Common questions
+video:
+  heading:
+    eyebrow: Watch
+    heading: Our story
+    lead: Hear from people in recovery, our counsellors and the people who started Oakdene House.
+  playLabel: 'Play video: Oakdene House Foundation, our story'
+  transcriptLabel: Watch with transcript
+cta:
+  heading: Need support or not sure where to start?
+  subheading: Reach out to the Oakdene team and we will help you work out the best next step.
+  primary:
+    label: Get Support
+    href: /contact/
+  secondary:
+    label: Contact Us
+    href: /contact/

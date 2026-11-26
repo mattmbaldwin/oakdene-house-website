@@ -37,9 +37,9 @@ test('backend and workflow settings', () => {
   assert.equal(config.public_folder, '/images/uploads');
 });
 
-test('collections: opening hours, FAQs and pages; program schedules are not exposed', () => {
+test('collections: opening hours, FAQs, pages and site-wide text; program schedules are not exposed', () => {
   const config = buildConfig(cmsCollections);
-  assert.deepEqual(config.collections.map((c) => c.name), ['opening-hours', 'faqs', 'pages']);
+  assert.deepEqual(config.collections.map((c) => c.name), ['opening-hours', 'faqs', 'pages', 'site']);
   const all = JSON.stringify(config);
   assert.ok(!/program-schedules/i.test(all), 'no collection reads the schedules file');
   // W4 pages have section headings named "schedule", so the word itself is allowed; the schedule rows' own time
@@ -123,7 +123,7 @@ test('content that does not match its schema is reported; a missing file only wa
   // File collections only: page files are covered by scripts/page-content.test.mjs.
   const fileCollections = cmsCollections.filter((c) => c.kind === 'file');
   const { problems, missing } = await validateContent(fileCollections, dir);
-  assert.deepEqual(missing, ['src/content/faqs.yaml']);
+  assert.deepEqual(missing, ['src/content/faqs.yaml', 'src/content/site.yaml']);
   assert.equal(problems.length, 1, problems.join('\n'));
   assert.match(problems[0], /^src\/content\/opening-hours\.json: office: Unrecognized key/);
 

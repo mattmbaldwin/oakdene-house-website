@@ -1,24 +1,32 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
+import Prose from '../../components/Prose.astro';
+import { pageContent, fieldSource } from '../../lib/pages';
+
+// Words: src/content/pages/resources--information-sheets.yaml (edited in /admin).
+const ID = 'resources--information-sheets';
+const page = await pageContent(ID, 'information-sheets');
+const src = (path: string) => fieldSource(ID, path);
+const { seo, hero, comingSoon, cta } = page;
 ---
 
 <BaseLayout
-  title="Information Sheets — Oakdene House Foundation"
-  description="Oakdene House Foundation information sheets about services and support. Contact us for specific service information."
+  title={seo.title}
+  description={seo.description}
 >
 
-  <section class="simple-hero" aria-label="Information Sheets">
+  <section class="simple-hero" aria-label={hero.breadcrumb}>
     <div class="container simple-hero__content">
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <a href="/resources/">Resources</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">Information Sheets</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1>Information Sheets</h1>
-      <p class="simple-hero__lead">Detailed service information and guides for clients and referrers.</p>
+      <h1>{hero.heading}</h1>
+      <p class="simple-hero__lead"><Prose md={hero.lead} source={src('hero.lead')} /></p>
     </div>
   </section>
 
@@ -28,21 +36,21 @@ import CTABand from '../../components/CTABand.astro';
         <div class="placeholder-icon" aria-hidden="true">
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
         </div>
-        <h2 id="info-heading">Coming soon</h2>
-        <p>Information sheets will be available here. If you need specific information about our services in the meantime, please contact our team directly and we will help.</p>
+        <h2 id="info-heading">{comingSoon.heading}</h2>
+        <p>{comingSoon.text}</p>
         <div class="btn-group">
-          <a href="/contact/" class="btn btn--primary">Contact Us</a>
-          <a href="/resources/" class="btn btn--secondary">Back to Resources</a>
+          <a href={comingSoon.contact.href} class="btn btn--primary">{comingSoon.contact.label}</a>
+          <a href={comingSoon.back.href} class="btn btn--secondary">{comingSoon.back.label}</a>
         </div>
       </div>
     </div>
   </section>
 
   <CTABand
-    heading="Looking for specific service information?"
-    subheading="Our team can answer any questions about our programs and services."
-    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
-    secondaryBtn={{ text: 'Browse Services', href: '/services/' }}
+    heading={cta.heading}
+    subheading={cta.subheading}
+    primaryBtn={{ text: cta.primary.label, href: cta.primary.href }}
+    secondaryBtn={{ text: cta.secondary.label, href: cta.secondary.href }}
     dark={true}
   />
 
