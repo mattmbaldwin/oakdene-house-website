@@ -1,12 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
+import Prose from '../../components/Prose.astro';
+import { pageContent, fieldSource } from '../../lib/pages';
+
+// Words and images: src/content/pages/services--referral.yaml (edited in /admin).
+const ID = 'services--referral';
+const page = await pageContent(ID, 'referral');
+const { seo, hero, form, urgent, call, cta } = page;
+const src = (path: string) => fieldSource(ID, path);
 ---
 
 <BaseLayout
-  title="Make a Referral — Oakdene House Foundation"
-  description="Self-referral, family referral, or professional referral to Oakdene House Foundation. We'll be in touch within 2 business days."
-  ogImage="/images/generic/bandw-forset-sun-beam.jpeg"
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.image}
 >
 
   <!-- HERO -->
@@ -18,10 +26,10 @@ import CTABand from '../../components/CTABand.astro';
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <a href="/services/">Services</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">Make a Referral</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1>Make a referral to Oakdene House</h1>
-      <p class="referral-hero__lead">Self-referral, family referral, or professional referral — we'll be in touch within 2 business days.</p>
+      <h1>{hero.heading}</h1>
+      <p class="referral-hero__lead"><Prose md={hero.lead} source={src('hero.lead')} /></p>
     </div>
   </section>
 
@@ -32,8 +40,8 @@ import CTABand from '../../components/CTABand.astro';
 
         <!-- Main column -->
         <div class="referral-main">
-          <p class="referral-intro">This form is for anyone referring someone to Oakdene — whether you're referring yourself, a family member, or a client as a professional worker. Complete the form below and our team will review your referral and be in touch within 2 business days. If the situation is urgent, please also call us on <a href="tel:0287170999">(02) 8717 0999</a>.</p>
-          <p class="referral-intro referral-intro--privacy"><em>Everything you share is confidential and handled in line with our <a href="/privacy-policy/">privacy policy</a>.</em></p>
+          <p class="referral-intro"><Prose md={form.intro} source={src('form.intro')} /></p>
+          <p class="referral-intro referral-intro--privacy"><Prose md={form.privacy} source={src('form.privacy')} /></p>
 
           <!-- Jotform embed — referral form ID 253010226998054 -->
           <iframe
@@ -55,17 +63,17 @@ import CTABand from '../../components/CTABand.astro';
             <div class="urgent-box__icon" aria-hidden="true">
               <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
             </div>
-            <h2>Need urgent help?</h2>
-            <p>If you or someone else is in crisis right now, please don't wait for this referral to be processed. Visit our <a href="/need-help-now/">Need Help Now page</a> for 24-hour crisis support lines.</p>
-            <a href="/need-help-now/" class="btn btn--primary btn--block">Need Help Now</a>
+            <h2>{urgent.heading}</h2>
+            <p><Prose md={urgent.text} source={src('urgent.text')} /></p>
+            <a href={urgent.button.href} class={`btn btn--${urgent.button.style} btn--block`}>{urgent.button.label}</a>
           </div>
 
           <div class="contact-box">
-            <h2>Prefer to call?</h2>
-            <p>Our team is available during business hours to take your call.</p>
-            <a href="tel:0287170999" class="contact-box__phone">(02) 8717 0999</a>
-            <p class="contact-box__or">or email</p>
-            <a href="mailto:admin@oakdenehouse.org.au" class="contact-box__email">admin@oakdenehouse.org.au</a>
+            <h2>{call.heading}</h2>
+            <p><Prose md={call.text} source={src('call.text')} /></p>
+            <a href={call.phone.href} class="contact-box__phone">{call.phone.label}</a>
+            <p class="contact-box__or">{call.orLabel}</p>
+            <a href={call.email.href} class="contact-box__email">{call.email.label}</a>
           </div>
         </aside>
 
@@ -75,10 +83,10 @@ import CTABand from '../../components/CTABand.astro';
 
   <!-- CTA -->
   <CTABand
-    heading="Not sure if you need a referral?"
-    subheading="Contact us directly and we'll help you work out the best way to access support."
-    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
-    secondaryBtn={{ text: 'Need Help Now', href: '/need-help-now/' }}
+    heading={cta.heading}
+    subheading={cta.subheading}
+    primaryBtn={{ text: cta.primary.label, href: cta.primary.href }}
+    secondaryBtn={{ text: cta.secondary.label, href: cta.secondary.href }}
     dark={true}
   />
 

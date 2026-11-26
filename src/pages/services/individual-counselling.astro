@@ -1,19 +1,20 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
+import Prose from '../../components/Prose.astro';
+import { pageContent, fieldSource } from '../../lib/pages';
 
-const supports = [
-  'Addiction and recovery-related concerns',
-  'Emotional wellbeing and coping',
-  'Goal setting and change planning',
-  'Support during difficult periods of transition or stress',
-];
+// Words and images: src/content/pages/services--individual-counselling.yaml (edited in /admin).
+const ID = 'services--individual-counselling';
+const page = await pageContent(ID, 'individual-counselling');
+const { seo, hero, overview, expect, cta } = page;
+const src = (path: string) => fieldSource(ID, path);
 ---
 
 <BaseLayout
-  title="Individual Counselling — Oakdene House Foundation"
-  description="Confidential, one-on-one counselling at Oakdene House for people affected by addiction and related challenges. Free. Fairfield, Western Sydney."
-  ogImage="/images/generic/bandw-oakdene-hands.jpg"
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.image}
 >
 
   <!-- HERO -->
@@ -25,10 +26,10 @@ const supports = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <a href="/services/">Services</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">Individual Counselling</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1>Individual Counselling</h1>
-      <p class="ic-hero__lead">Confidential, one-on-one counselling for people affected by addiction and related challenges.</p>
+      <h1>{hero.heading}</h1>
+      <p class="ic-hero__lead"><Prose md={hero.lead} source={src('hero.lead')} /></p>
     </div>
   </section>
 
@@ -38,15 +39,14 @@ const supports = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">The Service</p>
-            <h2 id="ic-overview-heading">A space to talk openly</h2>
+            <p class="section-heading__eyebrow">{overview.heading.eyebrow}</p>
+            <h2 id="ic-overview-heading">{overview.heading.heading}</h2>
           </div>
-          <p>Oakdene House offers individual counselling for people affected by addiction and related challenges. Counselling provides a confidential space to talk openly, understand what is happening and work toward realistic next steps. <strong>Our counsellors specialise in gambling and alcohol dependency, alongside support for related life challenges.</strong></p>
-          <p>All counselling sessions are free of charge.</p>
+          {overview.paragraphs.map((p, i) => <>{i > 0 && ' '}<p><Prose md={p} source={src(`overview.paragraphs.${i}`)} /></p></>)}
 
-          <h3 class="section-subhead">What counselling can support</h3>
+          <h3 class="section-subhead">{overview.supportHeading}</h3>
           <ul class="support-list">
-            {supports.map(item => <li>{item}</li>)}
+            {overview.supports.map((item, i) => <li><Prose md={item} source={src(`overview.supports.${i}`)} /></li>)}
           </ul>
         </div>
         <div>
@@ -54,30 +54,22 @@ const supports = [
             <div class="approach-card__icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
             </div>
-            <h3>Our approach</h3>
-            <p>We aim to provide counselling that is respectful, practical and responsive to the person in front of us. Support is shaped around individual needs, not a fixed script.</p>
+            <h3>{overview.approach.heading}</h3>
+            <p><Prose md={overview.approach.text} source={src('overview.approach.text')} /></p>
 
             <div class="approach-facts">
-              <div class="approach-fact">
-                <span class="approach-fact__label">Cost</span>
-                <span class="approach-fact__value">Free</span>
-              </div>
-              <div class="approach-fact">
-                <span class="approach-fact__label">Access</span>
-                <span class="approach-fact__value">By phone, email, or form</span>
-              </div>
-              <div class="approach-fact">
-                <span class="approach-fact__label">Confidential</span>
-                <span class="approach-fact__value">Yes — all conversations are private</span>
-              </div>
+              {overview.approach.facts.map((fact, i) => <>{i > 0 && ' '}<div class="approach-fact">
+                <span class="approach-fact__label">{fact.label}</span>
+                <span class="approach-fact__value">{fact.value}</span>
+              </div></>)}
             </div>
 
             <div class="approach-contact">
-              <a href="tel:0287170999" class="approach-contact__phone">
+              <a href={overview.approach.contact.phone.href} class="approach-contact__phone">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
-                (02) 8717 0999
+                {overview.approach.contact.phone.label}
               </a>
-              <a href="mailto:admin@oakdenehouse.org.au" class="approach-contact__email">admin@oakdenehouse.org.au</a>
+              <a href={overview.approach.contact.email.href} class="approach-contact__email">{overview.approach.contact.email.label}</a>
             </div>
           </div>
         </div>
@@ -90,37 +82,28 @@ const supports = [
     <div class="container">
       <div class="expect-inner">
         <div class="section-heading section-heading--center">
-          <p class="section-heading__eyebrow">What to Expect</p>
-          <h2 id="expect-heading">Counselling with you, not at you</h2>
+          <p class="section-heading__eyebrow">{expect.heading.eyebrow}</p>
+          <h2 id="expect-heading">{expect.heading.heading}</h2>
         </div>
         <div class="expect-grid">
-          <div class="expect-item">
+          {expect.items.map((item, i) => <>{i > 0 && ' '}<div class="expect-item">
             <div class="expect-item__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              {item.icon === 'chat' && (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+              )}
+              {item.icon === 'lock' && (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+              )}
+              {item.icon === 'pulse' && (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              )}
+              {item.icon === 'shield' && (
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              )}
             </div>
-            <h3>Listened to</h3>
-            <p>Your counsellor takes time to understand your situation before suggesting anything.</p>
-          </div>
-          <div class="expect-item">
-            <div class="expect-item__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
-            </div>
-            <h3>Confidential</h3>
-            <p>Everything you share stays private. Confidentiality is fundamental to our practice.</p>
-          </div>
-          <div class="expect-item">
-            <div class="expect-item__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-            </div>
-            <h3>Practical</h3>
-            <p>Support is focused on realistic next steps and tangible progress — not just insight.</p>
-          </div>
-          <div class="expect-item">
-            <div class="expect-item__icon" aria-hidden="true">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            </div>
-            <h3>Non-judgmental</h3>
-            <p>You will not be judged for your choices or circumstances. We start from where you are.</p>
+            <h3>{item.heading}</h3>
+            <p><Prose md={item.body} source={src(`expect.items.${i}.body`)} /></p>
+          </div></>)}
           </div>
         </div>
       </div>
@@ -129,9 +112,9 @@ const supports = [
 
   <!-- CTA -->
   <CTABand
-    heading="Want to arrange a counselling session?"
-    primaryBtn={{ text: 'Counselling Referral', href: '/services/referral/' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={cta.heading}
+    primaryBtn={{ text: cta.primary.label, href: cta.primary.href }}
+    secondaryBtn={{ text: cta.secondary.label, href: cta.secondary.href }}
     dark={true}
   />
 

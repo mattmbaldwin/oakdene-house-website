@@ -1,11 +1,19 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Prose from '../../../components/Prose.astro';
+import { pageContent, fieldSource } from '../../../lib/pages';
+
+// Words and images: src/content/pages/services--referral--thank-you.yaml (edited in /admin).
+const ID = 'services--referral--thank-you';
+const page = await pageContent(ID, 'referral-thank-you');
+const { seo, hero, body } = page;
+const src = (path: string) => fieldSource(ID, path);
 ---
 
 <BaseLayout
-  title="Referral Received — Oakdene House Foundation"
-  description="Your referral to Oakdene House Foundation has been received. Someone from the team will be in touch within 2 business days."
-  ogImage="/images/generic/bandw-forset-sun-beam.jpeg"
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.image}
 >
 
   <!-- HERO -->
@@ -17,11 +25,11 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <a href="/services/">Services</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <a href="/services/referral/">Make a Referral</a>
+        <a href="/services/referral/">{hero.parentBreadcrumb}</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">Thank You</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1>Thanks — we've received your referral</h1>
+      <h1>{hero.heading}</h1>
     </div>
   </section>
 
@@ -29,10 +37,10 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
   <section class="section" aria-label="What happens next">
     <div class="container">
       <div class="ty-body">
-        <p>Someone from the Oakdene team will be in touch within 2 business days. If the situation changes or becomes urgent, please call us on <a href="tel:0287170999">(02) 8717 0999</a> during business hours. For 24-hour crisis support, visit our <a href="/need-help-now/">Need Help Now</a> page.</p>
+        <p><Prose md={body.text} source={src('body.text')} /></p>
         <div class="ty-actions">
-          <a href="/" class="btn btn--primary">Back to Home</a>
-          <a href="/need-help-now/" class="btn btn--secondary">Need Help Now</a>
+          <a href={body.primary.href} class={`btn btn--${body.primary.style}`}>{body.primary.label}</a>
+          <a href={body.secondary.href} class={`btn btn--${body.secondary.style}`}>{body.secondary.label}</a>
         </div>
       </div>
     </div>

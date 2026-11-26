@@ -1,0 +1,40 @@
+# Words and images for /services/referral/. Layout: src/pages/services/referral.astro.
+# The referral form is embedded from Jotform and is not edited here.
+layout: referral
+seo:
+  title: Make a Referral — Oakdene House Foundation
+  description: Self-referral, family referral, or professional referral to Oakdene House Foundation. We'll be in touch within 2 business days.
+  image: /images/generic/bandw-forset-sun-beam.jpeg
+hero:
+  breadcrumb: Make a Referral
+  heading: Make a referral to Oakdene House
+  lead: Self-referral, family referral, or professional referral — we'll be in touch within 2 business days.
+form:
+  intro: This form is for anyone referring someone to Oakdene — whether you're referring yourself, a family member, or a client as a professional worker. Complete the form below and our team will review your referral and be in touch within 2 business days. If the situation is urgent, please also call us on [(02) 8717 0999](tel:0287170999).
+  privacy: '*Everything you share is confidential and handled in line with our [privacy policy](/privacy-policy/).*'
+urgent:
+  heading: Need urgent help?
+  text: If you or someone else is in crisis right now, please don't wait for this referral to be processed. Visit our [Need Help Now page](/need-help-now/) for 24-hour crisis support lines.
+  button:
+    label: Need Help Now
+    href: /need-help-now/
+    style: primary
+call:
+  heading: Prefer to call?
+  text: Our team is available during business hours to take your call.
+  phone:
+    label: (02) 8717 0999
+    href: tel:0287170999
+  orLabel: or email
+  email:
+    label: admin@oakdenehouse.org.au
+    href: mailto:admin@oakdenehouse.org.au
+cta:
+  heading: Not sure if you need a referral?
+  subheading: Contact us directly and we'll help you work out the best way to access support.
+  primary:
+    label: Contact Us
+    href: /contact/
+  secondary:
+    label: Need Help Now
+    href: /need-help-now/

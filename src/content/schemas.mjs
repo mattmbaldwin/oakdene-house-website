@@ -364,11 +364,254 @@ export const groupDbtTherapyLayout = z
   })
   .meta({ title: 'Group DBT Therapy page' });
 
+// --- W8 (issue #16): Services pages ---------------------------------------------------------------------------
+// services, financial-counselling, gambling-counselling, individual-counselling, outpatients-program,
+// referral and referral/thank-you. Add further batches' layouts in their own marked block, not inside this one.
+
+/** A label and a value shown as a pair, e.g. "Cost" / "Free". */
+const fact = () => z.strictObject({ label: text('Label'), value: text('Value') }).meta({ title: 'Fact' });
+
+/** A heading and a sentence or two under it (an icon card). */
+const textCard = (icon) => {
+  const fields = {};
+  if (icon) fields.icon = z.enum(icon).meta({ title: 'Icon', description: 'Pick one of the site icons.' });
+  fields.heading = heading();
+  fields.body = prose('Text');
+  return z.strictObject(fields).meta({ title: 'Card' });
+};
+
+const cards = (icon, title = 'Cards') =>
+  z.array(textCard(icon)).min(1).meta({ title, cms: { summary: '{{fields.heading}}' } });
+
+// Layout: services.astro
+export const servicesLayout = z
+  .strictObject({
+    layout: layoutField('services'),
+    seo: seo(),
+    hero: z
+      .strictObject({ heading: heading('Page heading'), lead: prose('Line under the heading'), button: button() })
+      .meta({ title: 'Banner' }),
+    categories: z
+      .strictObject({
+        heading: sectionHeading({ lead: true }),
+        items: cards(['heart', 'people', 'arrow'], 'Categories'),
+      })
+      .meta({ title: 'What we offer' }),
+    services: z
+      .strictObject({
+        heading: sectionHeading(),
+        items: z
+          .array(
+            z
+              .strictObject({
+                title: text('Service name'),
+                summary: text('Summary'),
+                href: href('Goes to'),
+                eyebrow: text('Small label above the name'),
+                image: image(),
+              })
+              .meta({ title: 'Service' }),
+          )
+          .min(1)
+          .meta({ title: 'Service cards', cms: { summary: '{{fields.title}}' } }),
+      })
+      .meta({ title: 'All services' }),
+    steps: z
+      .strictObject({
+        heading: sectionHeading({ lead: true }),
+        items: z
+          .array(z.strictObject({ heading: heading(), body: prose('Text') }).meta({ title: 'Step' }))
+          .min(1)
+          .meta({ title: 'Steps', description: 'Numbered 01, 02, 03 … in this order.', cms: { summary: '{{fields.heading}}' } }),
+      })
+      .meta({ title: 'How to get started' }),
+    who: z
+      .strictObject({ heading: sectionHeading(), paragraphs: paragraphs(), button: button() })
+      .meta({ title: 'Who we support' }),
+    cta: ctaBand(),
+  })
+  .meta({ title: 'Services page' });
+
+// Layout: services/financial-counselling.astro
+export const financialCounsellingLayout = z
+  .strictObject({
+    layout: layoutField('financial-counselling'),
+    seo: seo(),
+    hero: hero(),
+    overview: z
+      .strictObject({
+        heading: sectionHeading(),
+        paragraphs: paragraphs(),
+        helpHeading: heading('"What a Financial Counsellor can help with" heading'),
+        helpItems: listItems('What a Financial Counsellor can help with'),
+        access: z
+          .strictObject({ heading: heading(), text: prose('Text'), primary: button('First button'), secondary: button('Second button') })
+          .meta({ title: 'How to access' }),
+        details: z
+          .strictObject({
+            caption: text('Table caption'),
+            rows: z
+              .array(z.strictObject({ label: text('Label'), value: prose('Value', 'Bold, italic and links only.') }).meta({ title: 'Row' }))
+              .min(1)
+              .meta({ title: 'Rows', cms: { summary: '{{fields.label}}' } }),
+          })
+          .meta({ title: 'Service details table' }),
+      })
+      .meta({ title: 'Overview' }),
+    approach: z
+      .strictObject({
+        heading: sectionHeading(),
+        paragraphs: paragraphs(),
+        qualifiedHeading: heading('"Qualified and Professional Support" heading'),
+        qualifiedParagraphs: paragraphs('Paragraphs under that heading'),
+        accredited: z
+          .strictObject({ text: text('Text'), logo: image('Logo') })
+          .meta({ title: 'Accreditation badge' }),
+      })
+      .meta({ title: 'Our approach' }),
+    cta: ctaBand({ subheading: true }),
+  })
+  .meta({ title: 'Financial Counselling page' });
+
+// Layout: services/gambling-counselling.astro
+export const gamblingCounsellingLayout = z
+  .strictObject({
+    layout: layoutField('gambling-counselling'),
+    seo: seo(),
+    hero: hero(),
+    overview: z
+      .strictObject({
+        heading: sectionHeading(),
+        paragraphs: paragraphs(),
+        facts: z.array(fact()).min(1).meta({ title: 'Key facts', cms: { summary: '{{fields.label}}' } }),
+        contact: contactLinks(),
+        image: image(),
+        helpline: z
+          .strictObject({ heading: text('Heading'), text: prose('Text'), number: link('Phone number') })
+          .meta({ title: '24-hour support line box' }),
+      })
+      .meta({ title: 'Overview' }),
+    impact: z
+      .strictObject({ heading: sectionHeading({ lead: true }), items: cards(null, 'Areas of impact') })
+      .meta({ title: 'How we help' }),
+    cta: ctaBand({ subheading: true }),
+  })
+  .meta({ title: 'Gambling Counselling page' });
+
+// Layout: services/individual-counselling.astro
+export const individualCounsellingLayout = z
+  .strictObject({
+    layout: layoutField('individual-counselling'),
+    seo: seo(),
+    hero: hero(),
+    overview: z
+      .strictObject({
+        heading: sectionHeading(),
+        paragraphs: paragraphs(),
+        supportHeading: heading('"What counselling can support" heading'),
+        supports: listItems('What counselling can support'),
+        approach: z
+          .strictObject({
+            heading: heading(),
+            text: prose('Text'),
+            facts: z.array(fact()).min(1).meta({ title: 'Key facts', cms: { summary: '{{fields.label}}' } }),
+            contact: contactLinks(),
+          })
+          .meta({ title: '"Our approach" card' }),
+      })
+      .meta({ title: 'Overview' }),
+    expect: z
+      .strictObject({ heading: sectionHeading(), items: cards(['chat', 'lock', 'pulse', 'shield'], 'What to expect') })
+      .meta({ title: 'What to expect' }),
+    cta: ctaBand(),
+  })
+  .meta({ title: 'Individual Counselling page' });
+
+// Layout: services/outpatients-program.astro
+export const outpatientsProgramLayout = z
+  .strictObject({
+    layout: layoutField('outpatients-program'),
+    seo: seo(),
+    hero: hero(),
+    overview: z
+      .strictObject({
+        heading: sectionHeading(),
+        paragraphs: paragraphs(),
+        offerHeading: heading('"What we offer" heading'),
+        offerings: listItems('What we offer'),
+        image: image(),
+        contact: z
+          .strictObject({ heading: heading(), phone: link('Phone link'), email: link('Email link'), button: button() })
+          .meta({ title: '"Get in touch" card' }),
+      })
+      .meta({ title: 'Overview' }),
+    approach: z
+      .strictObject({ heading: sectionHeading(), items: cards(['shield', 'people', 'clock'], 'Approach points') })
+      .meta({ title: 'Our approach' }),
+    cta: ctaBand(),
+  })
+  .meta({ title: 'Outpatients Program page' });
+
+// Layout: services/referral.astro (the referral form itself is embedded from Jotform and is not edited here)
+export const referralLayout = z
+  .strictObject({
+    layout: layoutField('referral'),
+    seo: seo(),
+    hero: hero(),
+    form: z
+      .strictObject({
+        intro: prose('Introduction'),
+        privacy: prose('Privacy note'),
+      })
+      .meta({ title: 'Above the form', description: 'The form itself is embedded from Jotform and is not edited here.' }),
+    urgent: z
+      .strictObject({ heading: heading(), text: prose('Text'), button: button() })
+      .meta({ title: '"Need urgent help?" box' }),
+    call: z
+      .strictObject({
+        heading: heading(),
+        text: prose('Text'),
+        phone: link('Phone link'),
+        orLabel: text('Word between phone and email'),
+        email: link('Email link'),
+      })
+      .meta({ title: '"Prefer to call?" box' }),
+    cta: ctaBand({ subheading: true }),
+  })
+  .meta({ title: 'Make a Referral page' });
+
+// Layout: services/referral/thank-you.astro
+export const referralThankYouLayout = z
+  .strictObject({
+    layout: layoutField('referral-thank-you'),
+    seo: seo(),
+    hero: z
+      .strictObject({
+        parentBreadcrumb: text('Breadcrumb: previous page', 'The "Make a Referral" link in the "Home / Services / …" trail.'),
+        breadcrumb: text('Breadcrumb', 'The last item in the trail.'),
+        heading: heading('Page heading'),
+      })
+      .meta({ title: 'Banner' }),
+    body: z
+      .strictObject({ text: prose('Text'), primary: button('First button'), secondary: button('Second button') })
+      .meta({ title: 'Message' }),
+  })
+  .meta({ title: 'Referral thank-you page' });
+// --- end W8 ---------------------------------------------------------------------------------------------------
+
 /** Every page layout, by the value of its `layout:` field. */
 export const pageLayouts = {
   'life-choices-program': lifeChoicesProgramLayout,
   'aa-ga-meetings': aaGaMeetingsLayout,
   'group-dbt-therapy': groupDbtTherapyLayout,
+  // W8
+  services: servicesLayout,
+  'financial-counselling': financialCounsellingLayout,
+  'gambling-counselling': gamblingCounsellingLayout,
+  'individual-counselling': individualCounsellingLayout,
+  'outpatients-program': outpatientsProgramLayout,
+  referral: referralLayout,
+  'referral-thank-you': referralThankYouLayout,
 };
 
 /** Any page file: the schema is chosen by its `layout:` field. Used by the Astro `pages` collection. */
@@ -380,6 +623,14 @@ export const pageFiles = [
   { name: 'services--life-choices-program', label: 'Life Choices Program', layout: 'life-choices-program' },
   { name: 'services--aa-ga-meetings', label: 'AA & GA Meetings', layout: 'aa-ga-meetings' },
   { name: 'services--group-dbt-therapy', label: 'Group DBT Therapy', layout: 'group-dbt-therapy' },
+  // W8
+  { name: 'services', label: 'Services (overview)', layout: 'services' },
+  { name: 'services--financial-counselling', label: 'Financial Counselling', layout: 'financial-counselling' },
+  { name: 'services--gambling-counselling', label: 'Gambling Counselling', layout: 'gambling-counselling' },
+  { name: 'services--individual-counselling', label: 'Individual Counselling', layout: 'individual-counselling' },
+  { name: 'services--outpatients-program', label: 'Outpatients Program', layout: 'outpatients-program' },
+  { name: 'services--referral', label: 'Make a Referral', layout: 'referral' },
+  { name: 'services--referral--thank-you', label: 'Referral thank-you', layout: 'referral-thank-you' },
 ];
 
 // ---------------------------------------------------------------------------------------------------------------
