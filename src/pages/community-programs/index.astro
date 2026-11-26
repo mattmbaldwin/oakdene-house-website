@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
 import ServiceCard from '../../components/ServiceCard.astro';
+import hours from '../../content/opening-hours.json';
 
 const programs = [
   {
@@ -36,7 +37,7 @@ const gains = [
 const practicalServices = [
   {
     title: 'Oakdene Kitchen',
-    summary: 'Free hot lunches in a safe and welcoming community space, Tuesday to Thursday.',
+    summary: `Free hot lunches in a safe and welcoming community space, ${hours.kitchen.programsSummary}.`,
     href: '/community-programs/oakdene-kitchen/',
     image: '/images/kitchen/kitchen-3x-staff-serving.png',
     imageAlt: 'Oakdene Kitchen staff serving meals',

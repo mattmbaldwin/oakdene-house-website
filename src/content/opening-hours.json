@@ -1,0 +1,36 @@
+{
+  "kitchen": {
+    "days": "Tuesday, Wednesday, Thursday",
+    "hours": "12pm–2pm",
+    "seoDays": "Tuesday to Thursday",
+    "homeSummary": "every Tuesday, Wednesday and Thursday, 12pm–2pm",
+    "programsSummary": "Tuesday to Thursday",
+    "contactSummary": "Tuesday–Thursday, 12pm–2pm"
+  },
+  "laundrette": {
+    "days": "Tuesday to Thursday",
+    "hours": "12pm–2:30pm",
+    "lastEntry": "1pm",
+    "seoDescription": "Open Tuesday to Thursday, 12pm–2:30pm. Last entry 1pm.",
+    "groupBookingDays": "Tuesday to Thursday",
+    "contactSummary": "Tuesday–Thursday, 12pm–2:30pm (last entry 1pm)"
+  },
+  "staplePacks": {
+    "day": "Every Friday",
+    "hours": "12pm–1pm",
+    "seoDay": "every Friday",
+    "distributionDay": "every Friday",
+    "alsoRunningDay": "Fridays",
+    "contactSummary": "Every Friday, 12pm–1pm (commencing 17 April 2026)"
+  },
+  "clothingStore": {
+    "days": "Tuesday, Wednesday, Thursday",
+    "hours": "12pm–2pm",
+    "contactSummary": "Tuesday–Thursday, 12pm–2pm"
+  },
+  "office": {
+    "days": "Monday to Friday",
+    "hours": "9:00am – 5:00pm",
+    "availability": "Monday to Friday during business hours"
+  }
+}

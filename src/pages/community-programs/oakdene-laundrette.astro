@@ -2,11 +2,12 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import InfoTable from '../../components/InfoTable.astro';
 import CTABand from '../../components/CTABand.astro';
+import hours from '../../content/opening-hours.json';
 
 const serviceRows = [
-  { label: 'Days', value: 'Tuesday to Thursday' },
-  { label: 'Hours', value: '12pm–2:30pm' },
-  { label: 'Last entry', value: '1pm' },
+  { label: 'Days', value: hours.laundrette.days },
+  { label: 'Hours', value: hours.laundrette.hours },
+  { label: 'Last entry', value: hours.laundrette.lastEntry },
   { label: 'Location', value: '1 Dale Street, Fairfield' },
   { label: 'Cost', value: 'Free' },
   { label: 'Email', value: '<a href="mailto:kitchen@oakdenehouse.org.au">kitchen@oakdenehouse.org.au</a>' },
@@ -33,7 +34,7 @@ const steps = [
 
 <BaseLayout
   title="Oakdene Laundrette — Oakdene House Foundation"
-  description="Free community laundry service at 1 Dale Street, Fairfield. Open Tuesday to Thursday, 12pm–2:30pm. Last entry 1pm."
+  description={`Free community laundry service at 1 Dale Street, Fairfield. ${hours.laundrette.seoDescription}`}
   ogImage="/images/laundrette/laundrette-interior-1.jpg"
 >
 
@@ -127,7 +128,7 @@ const steps = [
             <p class="section-heading__eyebrow">For Organisations</p>
             <h2 id="group-heading">Group laundry bookings</h2>
           </div>
-          <p>We offer group laundry bookings outside public hours, available Tuesday to Thursday, for non-profits supporting homelessness, shelters, and group homes.</p>
+          <p>We offer group laundry bookings outside public hours, available {hours.laundrette.groupBookingDays}, for non-profits supporting homelessness, shelters, and group homes.</p>
         </div>
         <div class="group-details">
           <div class="group-detail-item">

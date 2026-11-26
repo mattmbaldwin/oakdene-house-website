@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import hours from '../content/opening-hours.json';
 
 const helplines = [
   {
@@ -146,7 +147,7 @@ const helplines = [
         <div class="contact-card-aside">
           <div class="hours-reminder">
             <h3>Business hours</h3>
-            <p>Our team is available Monday to Friday during business hours.</p>
+            <p>Our team is available {hours.office.availability}.</p>
             <p>For outside-hours support please use the crisis lines listed on this page.</p>
           </div>
         </div>
