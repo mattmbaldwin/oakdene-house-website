@@ -13,6 +13,9 @@
 //   .meta({ description })  the hint shown under the field
 //   prose()                 a text field that accepts bold, italic and links only (see src/lib/prose.ts)
 //   longText()              a multi-line plain-text box
+//   cms: { hidden: true }   a technical field (ids, order, show/hide switches, styles, icons): kept in the file but
+//                           not shown, so the editor changes words only. A list whose items hold one cannot have
+//                           items added, removed or reordered in the editor; that stays a code change.
 // Objects are strict: a key in the data file that the schema does not list fails the build, so every value in an
 // editable file is always reachable from the editor.
 //
@@ -107,7 +110,7 @@ export const faqsSchema = z
             id: z
               .string()
               .regex(/^[a-z][a-z0-9-]*$/)
-              .meta({ title: 'Section id', description: 'Lower-case letters, digits or hyphens. FAQs refer to it.' }),
+              .meta({ title: 'Section id', description: 'Lower-case letters, digits or hyphens. FAQs refer to it.', cms: { hidden: true } }),
             heading: text('Heading', 'The section heading on the FAQ page.'),
           })
           .meta({ title: 'Section' }),
@@ -121,13 +124,13 @@ export const faqsSchema = z
             answer: prose('Answer', 'Bold, italic and links only. Press Shift+Enter for a line break, not Enter.'),
             section: z
               .string()
-              .meta({ title: 'Section id', description: 'One of the section ids above, e.g. "general".' }),
-            showOnFaqPage: z.boolean().meta({ title: 'Show on the FAQ page' }),
-            showOnHome: z.boolean().meta({ title: 'Show on the home page' }),
+              .meta({ title: 'Section id', description: 'One of the section ids above, e.g. "general".', cms: { hidden: true } }),
+            showOnFaqPage: z.boolean().meta({ title: 'Show on the FAQ page', cms: { hidden: true } }),
+            showOnHome: z.boolean().meta({ title: 'Show on the home page', cms: { hidden: true } }),
             order: z
               .number()
               .int()
-              .meta({ title: 'Order', description: 'Lower numbers show first, within a section and on the home page.' }),
+              .meta({ title: 'Order', description: 'Lower numbers show first, within a section and on the home page.', cms: { hidden: true } }),
           })
           .meta({ title: 'FAQ' }),
       )
@@ -185,7 +188,7 @@ export const button = (title = 'Button') =>
     .strictObject({
       label: text('Text'),
       href: href('Goes to'),
-      style: z.enum(BUTTON_STYLES).meta({ title: 'Style', description: 'primary (filled), secondary (outline) or white.' }),
+      style: z.enum(BUTTON_STYLES).meta({ title: 'Style', description: 'primary (filled), secondary (outline) or white.', cms: { hidden: true } }),
     })
     .meta({ title });
 
@@ -374,7 +377,7 @@ const fact = () => z.strictObject({ label: text('Label'), value: text('Value') }
 /** A heading and a sentence or two under it (an icon card). */
 const textCard = (icon) => {
   const fields = {};
-  if (icon) fields.icon = z.enum(icon).meta({ title: 'Icon', description: 'Pick one of the site icons.' });
+  if (icon) fields.icon = z.enum(icon).meta({ title: 'Icon', description: 'Pick one of the site icons.', cms: { hidden: true } });
   fields.heading = heading();
   fields.body = prose('Text');
   return z.strictObject(fields).meta({ title: 'Card' });
@@ -1072,7 +1075,7 @@ const heroBanner = () =>
             .strictObject({
               label: text('Text'),
               href: href('Goes to'),
-              style: z.enum(['white', 'white-outline']).meta({ title: 'Style', description: 'white (filled) or white-outline.' }),
+              style: z.enum(['white', 'white-outline']).meta({ title: 'Style', description: 'white (filled) or white-outline.', cms: { hidden: true } }),
             })
             .meta({ title: 'Button' }),
         )
@@ -1385,7 +1388,7 @@ export const resourcesLayout = z
               .strictObject({
                 title: heading('Title'),
                 description: longText('Description'),
-                icon: z.enum(['book', 'share', 'map', 'heart']).meta({ title: 'Icon' }),
+                icon: z.enum(['book', 'share', 'map', 'heart']).meta({ title: 'Icon', cms: { hidden: true } }),
               })
               .meta({ title: 'Resource' }),
           )
@@ -1901,7 +1904,7 @@ const legalSection = ({ withAnchor }) => {
     fields.id = z
       .string()
       .regex(/^[a-z][a-z0-9-]*$/)
-      .meta({ title: 'Link anchor', description: 'Used in #links to this section. Change it only if you also change the links.' });
+      .meta({ title: 'Link anchor', description: 'Used in #links to this section. Change it only if you also change the links.', cms: { hidden: true } });
   }
   fields.heading = heading('Section heading');
   fields.blocks = z
