@@ -189,11 +189,15 @@ All images are in public/images/ and served from /images/
 
 ### Life Choices Program
 - Format: 6-week group program
-- Tuesday 12:00pm–1:30pm in-person
-- Tuesday 5:00pm–6:30pm Zoom
-- Wednesday 12:00pm–1:30pm in-person
+- Monday 11:00am–12:15pm in-person
+- Tuesday 11:00am–12:15pm Ladies Only, online / Zoom only
+- Tuesday 1:00pm–2:15pm Men Only, in-person
+- Tuesday 4:00pm–5:30pm online / Zoom only
+- Wednesday 11:00am–12:30pm in-person
 - Thursday 11:00am–12:30pm in-person
-- Friday 5:00pm–6:30pm Zoom
+- Friday 5:00pm–6:30pm in-person
+- Source of truth: the `schedule` array in src/pages/services/life-choices-program.astro. If this list and the page disagree, the page is right; update this list.
+- AA and GA meeting times live in `aaSchedule` and `gaSchedule` in src/pages/services/aa-ga-meetings.astro. Do not copy them here.
 
 ## Impact stats — use these exact numbers
 Both sets are confirmed by Simon. Updated 9 October 2026: individuals figure is 5,000+ on both the homepage and About page.
