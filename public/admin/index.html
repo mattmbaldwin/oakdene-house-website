@@ -1,0 +1,26 @@
+<!doctype html>
+<!--
+  Oakdene website editor (Decap CMS), stage W7, issue #15. Only Simon signs in; every save becomes a cms/* branch
+  and pull request, and nothing reaches the live site until it is published (merged).
+  Decap is pinned to an exact version with a subresource-integrity hash. To upgrade: change the version in both
+  the src URL and the Content-Security-Policy in public/_headers, and replace the integrity hash with
+  sha384 of the new file:  curl -sSfL <url> | openssl dgst -sha384 -binary | openssl base64 -A
+  Config: public/admin/config.yml, generated from src/content/schemas.mjs (npm run build:cms).
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Oakdene website editor</title>
+    <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
+  </head>
+  <body>
+    <script
+      src="https://unpkg.com/decap-cms@3.18.0/dist/decap-cms.js"
+      integrity="sha384-Vu0vdYOBhK+2KywHCtNZ9sCqpzkwx358AT6pCSg8om/clLoDzpWYF41jrtEk/WMM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
