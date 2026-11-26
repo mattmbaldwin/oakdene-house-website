@@ -1,6 +1,8 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
+import programSchedules from '../../content/program-schedules.json';
+import { formatRange, sortRows } from '../../lib/schedule';
 
 const meetingTypes = [
   'Alcoholics Anonymous (AA) meetings',
@@ -15,17 +17,9 @@ const whatToExpect = [
   'A confidential space focused on recovery and accountability',
 ];
 
-const gaSchedule = [
-  { day: 'Monday', time: '1:00pm – 2:00pm', notes: 'Starts 15 June 2026' },
-  { day: 'Tuesday', time: '7:00pm – 8:30pm', notes: '' },
-  { day: 'Friday', time: '12:00pm – 1:30pm', notes: '' },
-];
+const gaSchedule = sortRows(programSchedules.sections.ga);
 
-const aaSchedule = [
-  { day: 'Tuesday', time: '5:00pm – 6:30pm', notes: 'Spanish Speaking' },
-  { day: 'Thursday', time: '1:00pm – 2:30pm', notes: '' },
-  { day: 'Friday', time: '10:00am – 11:30am', notes: '' },
-];
+const aaSchedule = sortRows(programSchedules.sections.aa);
 ---
 
 <BaseLayout
@@ -152,7 +146,7 @@ const aaSchedule = [
                 {gaSchedule.map(row => (
                   <tr>
                     <td>{row.day}</td>
-                    <td>{row.time}</td>
+                    <td>{formatRange(row.start, row.end)}</td>
                     <td>{row.notes}</td>
                   </tr>
                 ))}
@@ -178,7 +172,7 @@ const aaSchedule = [
                 {aaSchedule.map(row => (
                   <tr>
                     <td>{row.day}</td>
-                    <td>{row.time}</td>
+                    <td>{formatRange(row.start, row.end)}</td>
                     <td>{row.notes}</td>
                   </tr>
                 ))}
