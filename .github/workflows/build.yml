@@ -1,0 +1,27 @@
+name: Build
+
+# Every pull request, including Decap editor saves (cms/**) and HubEasy sync PRs (sync/**), must still build.
+# The zero-difference self-tests run here too, so the check itself cannot rot unnoticed.
+on:
+  pull_request:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: build-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - name: Self-tests (scripts/*.test.mjs)
+        run: npm test

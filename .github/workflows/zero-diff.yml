@@ -1,0 +1,41 @@
+name: Zero difference
+
+# Website-editor rule: a stage changes HOW the site is edited, never WHAT it shows. This builds the PR's
+# merge-base with main and the PR head, and fails if any page differs as a parsed DOM.
+# See scripts/check-zero-diff.mjs for exactly what is normalised.
+#
+# Skipped for Decap editor saves (cms/**) and HubEasy sync PRs (sync/**): those change content on purpose.
+# GitHub's branch filters only match the base branch, so the head-branch skip is the job's `if`.
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+concurrency:
+  group: zero-diff-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  zero-diff:
+    if: ${{ !startsWith(github.head_ref, 'cms/') && !startsWith(github.head_ref, 'sync/') }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Compare merge-base with PR head
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          BASE=$(git merge-base "$BASE_SHA" "$HEAD_SHA")
+          echo "Baseline (merge-base): $BASE"
+          node scripts/check-zero-diff.mjs "$BASE" "$HEAD_SHA"

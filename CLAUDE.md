@@ -30,10 +30,11 @@ Adding the Oakdene video (produced by Lead Story) to the homepage and a new watc
 - No database and no server-side rendering. The only server code is the Cloudflare Pages Function in functions/api/contact.js
 
 ## Build and deploy
-- The live site is published by the Cloudflare Pages project `oakdene-house-website` in Matt Baldwin's Cloudflare account (the account that also holds the oakdenehouse.org.au domain). That project builds from mattmbaldwin/oakdene-house-website, main branch. This repository, Simon-HubEasy/oakdene-house-website, is a fork of it
-- To publish: merge work into main here, then open a pull request from Simon-HubEasy:main into mattmbaldwin/oakdene-house-website main. Matt merges it (Simon has no write access there), and Cloudflare publishes automatically within a few minutes. Merging into main here does not change the live site on its own
-- A second Pages project, `oakdene-house-website-exk` in Simon's own Cloudflare account, builds this repository and posts preview links on pull requests (oakdene-house-website-exk.pages.dev). It is a test copy only and serves no custom domains. A Pages project can only use the apex domain if it is in the same Cloudflare account as the domain
-- Build command: npm run build. Output folder: dist/. Framework preset: Astro. No wrangler.toml and no CI workflow in the repo
+- The live site is published by the Cloudflare Pages project `oakdene-house-website` in Matt Baldwin's Cloudflare account (the account that also holds the oakdenehouse.org.au domain). That project builds from this repository, mattmbaldwin/oakdene-house-website, main branch
+- Simon is a collaborator with write access here. To publish: work on a branch in this repository (not a fork), open a pull request into main, and Simon reviews and merges it. Cloudflare publishes automatically within a few minutes of the merge. Simon-HubEasy/oakdene-house-website is an old fork and is no longer used for publishing
+- Zero-difference rule (website-editor project): a stage that changes how the site is edited must not change what it shows. The Zero difference workflow builds the PR's merge-base and head and compares every page as a parsed DOM with scripts/check-zero-diff.mjs; run it by hand with `node scripts/check-zero-diff.mjs origin/main HEAD`. It skips head branches cms/** (Decap editor saves) and sync/** (HubEasy sync PRs), which change content on purpose
+- A second Pages project, `oakdene-house-website-exk` in Simon's own Cloudflare account, builds Simon's old fork and posts preview links on pull requests (oakdene-house-website-exk.pages.dev). It is a test copy only and serves no custom domains. A Pages project can only use the apex domain if it is in the same Cloudflare account as the domain
+- Build command: npm run build. Output folder: dist/. Framework preset: Astro. No wrangler.toml. Pull requests run two GitHub workflows: Build (npm ci, npm run build, npm test, on every PR) and Zero difference (see above)
 - Create Pages projects through Workers & Pages > Create application > Pages (Import an existing Git repository). The default Create flow makes a Worker, which runs `wrangler deploy` and does not run functions/api/contact.js
 - public/_redirects holds the 301 redirects for moved pages
 - Sitemap: @astrojs/sitemap builds sitemap-index.xml and sitemap-0.xml from every page. Pages left out are listed in SITEMAP_EXCLUDE in astro.config.mjs. Any new noindex, thank-you or error page must be added there
@@ -49,7 +50,7 @@ Node 22.12 or later.
 - npm run preview (serves dist/)
 
 ## Checks
-- There are no test, lint or type check scripts. npm run build is the only automated check today
+- npm test runs the zero-difference check's self-tests (node:test, scripts/*.test.mjs). There are no lint or type check scripts
 - For each video build, the test step runs ad hoc checks through npx: Lighthouse and @axe-core/cli against the preview server, using the pre-installed Chromium
 - Never report a build as done without running npm run build and the build's test step
 
