@@ -37,11 +37,23 @@ test('backend and workflow settings', () => {
   assert.equal(config.public_folder, '/images/uploads');
 });
 
-test('collections: opening hours and FAQs only; program schedules are not exposed', () => {
+test('collections: opening hours, FAQs and pages; program schedules are not exposed', () => {
   const config = buildConfig(cmsCollections);
-  assert.deepEqual(config.collections.map((c) => c.name), ['opening-hours', 'faqs']);
+  assert.deepEqual(config.collections.map((c) => c.name), ['opening-hours', 'faqs', 'pages']);
   const all = JSON.stringify(config);
-  assert.ok(!/program-schedules|schedule/i.test(all), 'no schedule collection or field');
+  assert.ok(!/program-schedules/i.test(all), 'no collection reads the schedules file');
+  // W4 pages have section headings named "schedule", so the word itself is allowed; the schedule rows' own time
+  // fields (start, end) must not appear anywhere in the editor. ("day" is a legitimate opening-hours field.)
+  const names = [];
+  const walk = (fields) => {
+    for (const f of fields ?? []) {
+      names.push(f.name);
+      walk(f.fields);
+      if (f.field) walk([f.field]);
+    }
+  };
+  for (const c of config.collections) for (const f of c.files ?? [{ fields: c.fields }]) walk(f.fields);
+  for (const row of ['start', 'end']) assert.ok(!names.includes(row), `no "${row}" field`);
 });
 
 test('every markdown field is limited to bold, italic and link with no editor components', () => {
@@ -80,6 +92,7 @@ test('--check fails when config.yml is stale, and passes once regenerated', asyn
   await mkdir(join(dir, 'public/admin'), { recursive: true });
   await cp(join(ROOT, 'scripts/build-cms-config.mjs'), join(dir, 'scripts/build-cms-config.mjs'));
   await cp(join(ROOT, CONFIG_PATH), join(dir, CONFIG_PATH));
+  await cp(join(ROOT, 'src/content/pages'), join(dir, 'src/content/pages'), { recursive: true });
   const schemas = await readFile(join(ROOT, 'src/content/schemas.mjs'), 'utf8');
   const edited = schemas.replace(/\n\s*showOnHome: z\.boolean\(\)\.meta\(\{ title: 'Show on the home page' \}\),/, '');
   assert.notEqual(edited, schemas, 'test fixture: the showOnHome line was found and removed');
@@ -107,7 +120,9 @@ test('content that does not match its schema is reported; a missing file only wa
     office: { days: 'd', hours: 'h', availability: 'a', notInSchema: 'x' },
   };
   await writeFile(join(dir, 'src/content/opening-hours.json'), JSON.stringify(hours));
-  const { problems, missing } = await validateContent(cmsCollections, dir);
+  // File collections only: page files are covered by scripts/page-content.test.mjs.
+  const fileCollections = cmsCollections.filter((c) => c.kind === 'file');
+  const { problems, missing } = await validateContent(fileCollections, dir);
   assert.deepEqual(missing, ['src/content/faqs.yaml']);
   assert.equal(problems.length, 1, problems.join('\n'));
   assert.match(problems[0], /^src\/content\/opening-hours\.json: office: Unrecognized key/);
@@ -115,7 +130,7 @@ test('content that does not match its schema is reported; a missing file only wa
   delete hours.office.notInSchema;
   hours.kitchen.hours = '';
   await writeFile(join(dir, 'src/content/opening-hours.json'), JSON.stringify(hours));
-  const second = await validateContent(cmsCollections, dir);
+  const second = await validateContent(fileCollections, dir);
   assert.equal(second.problems.length, 1);
   assert.match(second.problems[0], /kitchen\.hours/);
 });

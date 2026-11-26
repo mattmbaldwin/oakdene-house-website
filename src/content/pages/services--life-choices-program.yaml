@@ -1,0 +1,60 @@
+# Words and images for /services/life-choices-program/. Layout: src/pages/services/life-choices-program.astro.
+# The schedule table is not here: it comes from src/content/program-schedules.json (HubEasy).
+layout: life-choices-program
+seo:
+  title: Life Choices Program — Oakdene House Foundation
+  description: A 6-week group program at Oakdene House to understand addiction, build life skills and connect with others. Multiple sessions available in-person and online.
+  image: /images/centre/outside-meeting-2.png
+hero:
+  breadcrumb: Life Choices Program
+  heading: Life Choices Program
+  lead: A 6-week group program to help you understand addiction and build life skills.
+overview:
+  heading:
+    eyebrow: Program Overview
+    heading: Life Choices
+  paragraphs:
+    - The Life Choices Program is a practical, 6-week group experience designed to help people understand addiction, learn coping strategies, build life skills, and connect with others on a similar journey.
+    - We meet regularly, share experiences, and work toward recovery in a supportive environment.
+  expectHeading: What participants can expect
+  expectItems:
+    - A structured group environment
+    - Topics that support reflection, responsibility and personal growth
+    - Practical strategies that can be applied in everyday life
+    - A respectful setting that values participation, not perfection
+  whoLabel: Who it's for
+  whoText: Life Choices is suitable for people who are ready to engage in a group-based program that supports change, accountability and future planning.
+  image:
+    src: /images/centre/interior-meetings-1-img_2657-v2.png
+    alt: Group meeting room at Oakdene House
+schedule:
+  heading:
+    eyebrow: Session Times
+    heading: Program schedule
+    lead: Sessions run across the week with both in-person and online options available.
+join:
+  heading:
+    eyebrow: Getting Started
+    heading: How to join
+  steps:
+    - heading: Get in Touch
+      body: Call or email Oakdene to express your interest.
+    - heading: Have a Chat
+      body: A team member will have a short conversation with you to see if the program is a good fit.
+    - heading: Come to First Session
+      body: Join us at the first session. You will meet the group and get started.
+  contact:
+    phone:
+      label: (02) 8717 0999
+      href: tel:0287170999
+    email:
+      label: admin@oakdenehouse.org.au
+      href: mailto:admin@oakdenehouse.org.au
+cta:
+  heading: Interested in Life Choices?
+  primary:
+    label: Program Interest
+    href: /contact/?reason=program-interest
+  secondary:
+    label: Make an Enquiry
+    href: /contact/

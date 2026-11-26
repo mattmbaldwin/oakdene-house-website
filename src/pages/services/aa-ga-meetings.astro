@@ -1,21 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
+import Prose from '../../components/Prose.astro';
 import programSchedules from '../../content/program-schedules.json';
 import { formatRange, sortRows } from '../../lib/schedule';
+import { pageContent, fieldSource } from '../../lib/pages';
 
-const meetingTypes = [
-  'Alcoholics Anonymous (AA) meetings',
-  'Gamblers Anonymous (GA) meetings',
-  'Spanish-speaking AA meetings',
-  '12 Step meetings',
-];
-
-const whatToExpect = [
-  'A supportive peer environment',
-  'Shared experience and mutual encouragement',
-  'A confidential space focused on recovery and accountability',
-];
+// Words and images: src/content/pages/services--aa-ga-meetings.yaml (edited in /admin).
+const ID = 'services--aa-ga-meetings';
+const page = await pageContent(ID, 'aa-ga-meetings');
+const { seo, hero, overview, about, cta } = page;
+const note = overview.scheduleNote;
+const src = (path: string) => fieldSource(ID, path);
 
 const gaSchedule = sortRows(programSchedules.sections.ga);
 
@@ -23,9 +19,9 @@ const aaSchedule = sortRows(programSchedules.sections.aa);
 ---
 
 <BaseLayout
-  title="AA & GA Meetings — Oakdene House Foundation"
-  description="Alcoholics Anonymous and Gamblers Anonymous meetings at Oakdene House, Fairfield — including Spanish-speaking sessions. Free and open to all."
-  ogImage="/images/centre/interior-meetings-1-img_2657.jpg"
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.image}
 >
 
   <!-- HERO -->
@@ -37,10 +33,10 @@ const aaSchedule = sortRows(programSchedules.sections.aa);
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <a href="/services/">Services</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">AA &amp; GA Meetings</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1>AA &amp; GA Meetings</h1>
-      <p class="aa-hero__lead">Alcoholics Anonymous and Gamblers Anonymous meetings at Oakdene House.</p>
+      <h1>{hero.heading}</h1>
+      <p class="aa-hero__lead"><Prose md={hero.lead} source={src('hero.lead')} /></p>
     </div>
   </section>
 
@@ -50,45 +46,44 @@ const aaSchedule = sortRows(programSchedules.sections.aa);
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">What We Host</p>
-            <h2 id="aa-overview-heading">A space for recovery and connection</h2>
+            <p class="section-heading__eyebrow">{overview.heading.eyebrow}</p>
+            <h2 id="aa-overview-heading">{overview.heading.heading}</h2>
           </div>
-          <p>We provide a safe, supportive space for people in recovery. Meetings are facilitated by experienced members and follow AA and GA traditions.</p>
+          {overview.paragraphs.map((p, i) => <>{i > 0 && ' '}<p><Prose md={p} source={src(`overview.paragraphs.${i}`)} /></p></>)}
 
-          <h3 class="section-subhead">Meetings hosted at Oakdene</h3>
+          <h3 class="section-subhead">{overview.meetingsHeading}</h3>
           <ul class="meeting-list">
-            {meetingTypes.map(m => <li>{m}</li>)}
+            {overview.meetings.map((m, i) => <li><Prose md={m} source={src(`overview.meetings.${i}`)} /></li>)}
           </ul>
 
-          <h3 class="section-subhead">What to expect</h3>
+          <h3 class="section-subhead">{overview.expectHeading}</h3>
           <ul class="expect-list">
-            {whatToExpect.map(e => <li>{e}</li>)}
+            {overview.expectItems.map((e, i) => <li><Prose md={e} source={src(`overview.expectItems.${i}`)} /></li>)}
           </ul>
 
-          <h3 class="section-subhead">Find help outside Oakdene</h3>
-          <p>If you'd like to reach AA or GA directly — outside our meeting times, or before coming along — you can contact them here:</p>
+          <h3 class="section-subhead">{overview.helpHeading}</h3>
+          <p><Prose md={overview.helpIntro} source={src('overview.helpIntro')} /></p>
           <ul class="expect-list">
-            <li><strong>Alcoholics Anonymous (AA) Australia</strong> — website: <a href="https://aa.org.au" target="_blank" rel="noopener noreferrer">aa.org.au</a> — 24-hour helpline: <a href="tel:1300222222">1300 22 22 22</a></li>
-            <li><strong>Gamblers Anonymous (GA) NSW</strong> — website: <a href="https://ga.nsw.org.au" target="_blank" rel="noopener noreferrer">ga.nsw.org.au</a> — phone: <a href="tel:0455717543">0455 717 543</a></li>
+            {overview.helpItems.map((item, i) => <>{i > 0 && ' '}<li><Prose md={item} source={src(`overview.helpItems.${i}`)} /></li></>)}
           </ul>
         </div>
         <div>
           <div class="meetings-image">
-            <img src="/images/centre/interior-meetings-1-img_2657.jpg" alt="Meeting room at Oakdene House" loading="lazy" />
+            <img src={overview.image.src} alt={overview.image.alt} loading="lazy" />
           </div>
           <div class="schedule-note">
             <div class="schedule-note__icon" aria-hidden="true">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
             </div>
             <div>
-              <p class="schedule-note__heading">Current schedule</p>
-              <p>See the full schedule of meetings below. New members are welcome and walk-ins are accepted.</p>
+              <p class="schedule-note__heading">{note.heading}</p>
+              <p><Prose md={note.text} source={src('overview.scheduleNote.text')} /></p>
               <div class="schedule-contact">
-                <a href="tel:0287170999" class="schedule-phone">
+                <a href={note.contact.phone.href} class="schedule-phone">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
-                  (02) 8717 0999
+                  {note.contact.phone.label}
                 </a>
-                <a href="mailto:admin@oakdenehouse.org.au" class="schedule-email">admin@oakdenehouse.org.au</a>
+                <a href={note.contact.email.href} class="schedule-email">{note.contact.email.label}</a>
               </div>
             </div>
           </div>
@@ -102,20 +97,14 @@ const aaSchedule = sortRows(programSchedules.sections.aa);
     <div class="container">
       <div class="about-inner">
         <div class="section-heading section-heading--center">
-          <p class="section-heading__eyebrow">About the Programs</p>
-          <h2 id="about-heading">12-step peer support</h2>
+          <p class="section-heading__eyebrow">{about.heading.eyebrow}</p>
+          <h2 id="about-heading">{about.heading.heading}</h2>
         </div>
         <div class="about-grid">
-          <div class="about-card">
-            <h3>Alcoholics Anonymous (AA)</h3>
-            <p>AA is a fellowship of people who share their experience, strength and hope with each other to solve their common problem and help others to recover from alcoholism. Membership is open to anyone with a desire to stop drinking.</p>
-            <p>We host both English and Spanish-speaking AA meetings at Oakdene.</p>
-          </div>
-          <div class="about-card">
-            <h3>Gamblers Anonymous (GA)</h3>
-            <p>GA is a fellowship of people who share their experience, strength and hope with each other so they may solve their common problem and help others to recover from a gambling problem.</p>
-            <p>GA meetings provide a structured peer environment built on the 12-step model of recovery.</p>
-          </div>
+          {about.cards.map((card, c) => <>{c > 0 && ' '}<div class="about-card">
+            <h3>{card.heading}</h3>
+            {card.paragraphs.map((p, i) => <>{i > 0 && ' '}<p><Prose md={p} source={src(`about.cards.${c}.paragraphs.${i}`)} /></p></>)}
+          </div></>)}
         </div>
       </div>
     </div>
@@ -125,13 +114,13 @@ const aaSchedule = sortRows(programSchedules.sections.aa);
   <section class="section section--tint meetings-schedule" aria-labelledby="schedule-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Schedule</p>
-        <h2 id="schedule-heading">Meeting times at Oakdene</h2>
-        <p class="section-heading__lead">New members are welcome and walk-ins are accepted. Meetings run weekly except where noted.</p>
+        <p class="section-heading__eyebrow">{page.schedule.heading.eyebrow}</p>
+        <h2 id="schedule-heading">{page.schedule.heading.heading}</h2>
+        <p class="section-heading__lead"><Prose md={page.schedule.heading.lead} source={src('schedule.heading.lead')} /></p>
       </div>
 
       <div class="schedule-block">
-        <h3 class="schedule-block__heading">Gamblers Anonymous (GA)</h3>
+        <h3 class="schedule-block__heading">{page.schedule.gaHeading}</h3>
         <div class="schedule-scroll">
           <div class="schedule-table-wrap">
             <table class="schedule-table" aria-label="GA meeting schedule">
@@ -157,7 +146,7 @@ const aaSchedule = sortRows(programSchedules.sections.aa);
       </div>
 
       <div class="schedule-block">
-        <h3 class="schedule-block__heading">Alcoholics Anonymous (AA)</h3>
+        <h3 class="schedule-block__heading">{page.schedule.aaHeading}</h3>
         <div class="schedule-scroll">
           <div class="schedule-table-wrap">
             <table class="schedule-table" aria-label="AA meeting schedule">
@@ -186,9 +175,9 @@ const aaSchedule = sortRows(programSchedules.sections.aa);
 
   <!-- CTA -->
   <CTABand
-    heading="Want to find out more?"
-    primaryBtn={{ text: 'Contact Us', href: '/contact/' }}
-    secondaryBtn={{ text: 'Get Support', href: '/contact/' }}
+    heading={cta.heading}
+    primaryBtn={{ text: cta.primary.label, href: cta.primary.href }}
+    secondaryBtn={{ text: cta.secondary.label, href: cta.secondary.href }}
     dark={true}
   />
 

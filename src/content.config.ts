@@ -6,12 +6,12 @@
 //
 // (Astro 6 reads collections from src/content.config.ts; the older src/content/config.ts location is an error.)
 import { defineCollection } from 'astro:content';
-import type { Loader } from 'astro/loaders';
+import { glob, type Loader } from 'astro/loaders';
 import { readFile } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { resolve } from 'node:path';
 import yaml from 'js-yaml';
-import { cmsCollections } from './content/schemas.mjs';
+import { cmsCollections, pageSchema, PAGES_FOLDER } from './content/schemas.mjs';
 
 /** Load one JSON or YAML file as a single entry. A file that does not exist yet loads as an empty collection. */
 function wholeFile(file: string, format: 'json' | 'yaml'): Loader {
@@ -34,8 +34,20 @@ function wholeFile(file: string, format: 'json' | 'yaml'): Loader {
   };
 }
 
-export const collections = Object.fromEntries(
-  cmsCollections
-    .filter((c) => c.kind === 'file')
-    .map((c) => [c.name, defineCollection({ loader: wholeFile(c.file, c.format), schema: c.schema })]),
-);
+export const collections = {
+  ...Object.fromEntries(
+    cmsCollections
+      .filter((c) => c.kind === 'file')
+      .map((c) => [c.name, defineCollection({ loader: wholeFile(c.file, c.format), schema: c.schema })]),
+  ),
+  // Stage W4, issue #12: one YAML file per page. The entry id is the file name without ".yaml"
+  // (services--aa-ga-meetings), and the schema is picked by the file's `layout:` field.
+  pages: defineCollection({
+    loader: glob({
+      pattern: '*.yaml',
+      base: PAGES_FOLDER,
+      generateId: ({ entry }) => entry.replace(/\.yaml$/, ''),
+    }),
+    schema: pageSchema,
+  }),
+};
