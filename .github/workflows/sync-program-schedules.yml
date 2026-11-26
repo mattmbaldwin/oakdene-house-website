@@ -1,0 +1,60 @@
+name: Sync program schedules from HubEasy (by pull request)
+
+# Staff keep program times in HubEasy; only Simon publishes the site (decision D6). Every 30 minutes this compares
+# HubEasy's public programs feed with src/content/program-schedules.json. It never pushes to main: a change goes to
+# the branch sync/program-schedules and one pull request listing the changes in plain English, which Simon merges or
+# closes. A feed problem posts one comment (edited on later runs). See docs/program-schedule-sync.md.
+#
+# Scheduled runs are off until the repository variable PROGRAM_SYNC_ENABLED is set to "true" (after the HubEasy feed
+# is live, HubEasy#1103). "Run workflow" works at any time.
+on:
+  schedule:
+    - cron: '7,37 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+  issues: write
+
+concurrency:
+  group: content-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    if: github.event_name == 'workflow_dispatch' || vars.PROGRAM_SYNC_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    env:
+      BRANCH: sync/program-schedules
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Compare HubEasy with the website
+        id: sync
+        run: node scripts/sync-program-schedules.mjs
+      - name: Update the sync branch (never main)
+        if: steps.sync.outputs.outcome == 'changed'
+        run: |
+          # Skip the push when the branch already holds this exact file on top of the current main, so an open
+          # pull request is not re-pushed every half hour.
+          if git fetch --quiet origin "refs/heads/$BRANCH" \
+             && git merge-base --is-ancestor HEAD FETCH_HEAD \
+             && git diff --quiet FETCH_HEAD -- src/content/program-schedules.json; then
+            echo "The sync branch already has these changes."
+            exit 0
+          fi
+          git config user.name "Oakdene program sync"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C "$BRANCH"
+          git add src/content/program-schedules.json
+          git commit -m "Program times: sync from HubEasy"
+          git push --force origin "HEAD:refs/heads/$BRANCH"
+      - name: Open or update the pull request, or post the guard comment
+        run: node scripts/program-sync-publish.mjs "${{ steps.sync.outputs.outcome }}"

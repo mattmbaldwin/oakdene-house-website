@@ -1,0 +1,26 @@
+{
+  "sections": {
+    "life-choices": [
+      { "day": "Monday", "start": "11:00", "end": "12:15", "format": "In-person", "audience": "", "notes": "" },
+      { "day": "Tuesday", "start": "11:00", "end": "12:15", "format": "Online / Zoom Only", "audience": "Ladies Only", "notes": "" },
+      { "day": "Tuesday", "start": "13:00", "end": "14:15", "format": "In-person", "audience": "Men Only", "notes": "" },
+      { "day": "Tuesday", "start": "16:00", "end": "17:30", "format": "Online / Zoom Only", "audience": "", "notes": "" },
+      { "day": "Wednesday", "start": "11:00", "end": "12:30", "format": "In-person", "audience": "", "notes": "" },
+      { "day": "Thursday", "start": "11:00", "end": "12:30", "format": "In-person", "audience": "", "notes": "" },
+      { "day": "Friday", "start": "17:00", "end": "18:30", "format": "In-person", "audience": "", "notes": "" }
+    ],
+    "aa": [
+      { "day": "Tuesday", "start": "17:00", "end": "18:30", "format": "", "audience": "", "notes": "Spanish Speaking" },
+      { "day": "Thursday", "start": "13:00", "end": "14:30", "format": "", "audience": "", "notes": "" },
+      { "day": "Friday", "start": "10:00", "end": "11:30", "format": "", "audience": "", "notes": "" }
+    ],
+    "ga": [
+      { "day": "Monday", "start": "13:00", "end": "14:00", "format": "", "audience": "", "notes": "Starts 15 June 2026" },
+      { "day": "Tuesday", "start": "19:00", "end": "20:30", "format": "", "audience": "", "notes": "" },
+      { "day": "Friday", "start": "12:00", "end": "13:30", "format": "", "audience": "", "notes": "" }
+    ],
+    "dbt": [
+      { "day": "Wednesday", "start": "13:00", "end": "14:15", "format": "", "audience": "", "notes": "Starts 13 May 2026" }
+    ]
+  }
+}

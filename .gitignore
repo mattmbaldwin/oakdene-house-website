@@ -25,3 +25,7 @@ pnpm-debug.log*
 .idea/
 assets-original/
 .wrangler/
+
+# Program schedule sync output (scripts/sync-program-schedules.mjs)
+sync-report.md
+sync-guard.md
