@@ -1864,6 +1864,146 @@ export const oakdeneStoryVideoLayout = z
   })
   .meta({ title: 'Our story video page' });
 // ===== W11 (issue #19): About pages — END =====
+// ===============================================================================================================
+// W12 (issue #20): privacy policy, terms of use, accessibility statement, thank-you and 404 pages. Own block so
+// other batches' edits to this file do not collide.
+
+/** A boxed note (`doc-address`): a bold heading line, then one line per <p>. */
+const docBox = (title) =>
+  z
+    .strictObject({
+      heading: text('Bold heading line'),
+      lines: z.array(prose('Line')).min(1).meta({ title: 'Lines', description: 'Bold, italic and links only. One entry per line.' }),
+    })
+    .meta({ title });
+
+/**
+ * One piece of a legal section, in page order. Exactly one of the four fields is filled in:
+ * a paragraph, a bulleted list, a boxed note or the contact card.
+ */
+const legalBlock = () =>
+  z
+    .strictObject({
+      paragraph: prose('Paragraph', 'Fill in only one of Paragraph, List, Boxed note or Contact card.').optional(),
+      items: z.array(prose('Item')).min(1).meta({ title: 'List', description: 'Bulleted list. One entry per point.' }).optional(),
+      callout: docBox('Boxed note').optional(),
+      contactCard: docBox('Contact card').optional(),
+    })
+    .refine((b) => Object.values(b).filter((v) => v !== undefined).length === 1, {
+      message: 'fill in exactly one of paragraph, items, callout or contactCard',
+    })
+    .meta({ title: 'Block' });
+
+/** A numbered or titled section of a legal page. `anchor` is the #link target some pages use; leave it as it is. */
+const legalSection = ({ withAnchor }) => {
+  const fields = {};
+  if (withAnchor) {
+    fields.id = z
+      .string()
+      .regex(/^[a-z][a-z0-9-]*$/)
+      .meta({ title: 'Link anchor', description: 'Used in #links to this section. Change it only if you also change the links.' });
+  }
+  fields.heading = heading('Section heading');
+  fields.blocks = z
+    .array(legalBlock())
+    .min(1)
+    .meta({ title: 'Content', description: 'Paragraphs, lists and notes, in the order they appear.', cms: { summary: '{{fields.heading}}' } });
+  return z.strictObject(fields).meta({ title: 'Section' });
+};
+
+/** The banner of a legal page: breadcrumb label and heading only. */
+const legalHero = () =>
+  z.strictObject({ breadcrumb: text('Breadcrumb', 'The last item in the "Home / …" trail.'), heading: heading('Page heading') }).meta({ title: 'Banner' });
+
+// Layout: privacy-policy.astro
+export const privacyPolicyLayout = z
+  .strictObject({
+    layout: layoutField('privacy-policy'),
+    seo: seo(),
+    hero: legalHero(),
+    notice: z
+      .strictObject({ label: text('Notice title'), text: prose('Line under the title') })
+      .meta({ title: 'Opening notice' }),
+    version: text('Version line', 'Shown in italics, e.g. "Version: April 2026".'),
+    sections: z
+      .array(legalSection({ withAnchor: false }))
+      .min(1)
+      .meta({ title: 'Sections', cms: { summary: '{{fields.heading}}' } }),
+    contactCard: docBox('Privacy Officer contact card'),
+    closing: prose('Closing line'),
+  })
+  .meta({ title: 'Privacy Policy page' });
+
+// Layout: terms-of-use.astro
+export const termsOfUseLayout = z
+  .strictObject({
+    layout: layoutField('terms-of-use'),
+    seo: seo(),
+    hero: legalHero(),
+    effective: text('Effective date line', 'Shown in italics.'),
+    abn: text('ABN line', 'Shown in italics.'),
+    contentsHeading: text('Contents list heading'),
+    sections: z
+      .array(legalSection({ withAnchor: true }))
+      .min(1)
+      .meta({
+        title: 'Sections',
+        description: 'The contents list at the top is built from these section headings, in this order.',
+        cms: { summary: '{{fields.heading}}' },
+      }),
+  })
+  .meta({ title: 'Terms of Use page' });
+
+// Layout: accessibility.astro
+export const accessibilityLayout = z
+  .strictObject({
+    layout: layoutField('accessibility'),
+    seo: seo(),
+    hero: legalHero(),
+    lastUpdated: text('Last updated line', 'Shown in italics.'),
+    intro: prose('Opening paragraph'),
+    sections: z
+      .array(legalSection({ withAnchor: true }))
+      .min(1)
+      .meta({ title: 'Sections', cms: { summary: '{{fields.heading}}' } }),
+  })
+  .meta({ title: 'Accessibility page' });
+
+// Layout: thankyou.astro (the opening hours in its second paragraph come from src/content/opening-hours.json)
+export const thankYouLayout = z
+  .strictObject({
+    layout: layoutField('thankyou'),
+    seo: seo(),
+    heading: heading('Page heading'),
+    sub: text('Line under the heading'),
+    urgent: prose('Urgent enquiries paragraph', 'Ends with a full stop. The sentence about when the team is available follows it.'),
+    availabilityLead: text(
+      'Words before the office hours',
+      'The hours themselves are edited under Opening hours, not here: "Our team is available <hours>."',
+    ),
+    steps: z
+      .strictObject({
+        heading: heading('"What happens next" heading'),
+        items: z.array(prose('Step')).min(1).meta({ title: 'Steps', description: 'Numbered 1, 2, 3 … in this order.' }),
+      })
+      .meta({ title: 'What happens next' }),
+    buttons: z.array(button()).min(1).meta({ title: 'Buttons', cms: { summary: '{{fields.label}}' } }),
+  })
+  .meta({ title: 'Thank-you page' });
+
+// Layout: 404.astro
+export const notFoundLayout = z
+  .strictObject({
+    layout: layoutField('not-found'),
+    seo: seo(),
+    code: text('Large number', 'The faint "404" above the heading.'),
+    heading: heading('Page heading'),
+    sub: text('Line under the heading'),
+    body: text('Explanation'),
+    buttons: z.array(button()).min(1).meta({ title: 'Buttons', cms: { summary: '{{fields.label}}' } }),
+  })
+  .meta({ title: '404 page' });
+// ===== end W12 ===============================================================================================
 
 /** Every page layout, by the value of its `layout:` field. */
 export const pageLayouts = {
@@ -1898,6 +2038,12 @@ export const pageLayouts = {
   'our-team': ourTeamLayout,
   'the-oakdene-story': oakdeneStoryLayout,
   'the-oakdene-story-video': oakdeneStoryVideoLayout,
+  // W12
+  'privacy-policy': privacyPolicyLayout,
+  'terms-of-use': termsOfUseLayout,
+  accessibility: accessibilityLayout,
+  thankyou: thankYouLayout,
+  'not-found': notFoundLayout,
 };
 
 /** Any page file: the schema is chosen by its `layout:` field. Used by the Astro `pages` collection. */
@@ -1937,6 +2083,12 @@ export const pageFiles = [
   { name: 'about--our-team', label: 'About: Our Team', layout: 'our-team' },
   { name: 'about--the-oakdene-story', label: 'About: The Oakdene Story', layout: 'the-oakdene-story' },
   { name: 'about--the-oakdene-story--video', label: 'About: Our story video', layout: 'the-oakdene-story-video' },
+  // W12
+  { name: 'privacy-policy', label: 'Privacy Policy', layout: 'privacy-policy' },
+  { name: 'terms-of-use', label: 'Terms of Use', layout: 'terms-of-use' },
+  { name: 'accessibility', label: 'Accessibility', layout: 'accessibility' },
+  { name: 'thankyou', label: 'Thank-you page', layout: 'thankyou' },
+  { name: '404', label: '404 (page not found)', layout: 'not-found' },
 ];
 
 // ---------------------------------------------------------------------------------------------------------------

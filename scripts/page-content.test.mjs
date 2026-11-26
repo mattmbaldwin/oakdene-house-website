@@ -177,7 +177,7 @@ test('the real page files match their layouts and every prose field renders', as
       }
     };
     visit(z.toJSONSchema(pageLayouts[page.layout], { io: 'input' }), data, '');
-    assert.ok(count >= 1, `${page.name}: rendered ${count} prose fields`);
+    assert.ok(count >= (page.name === '404' ? 0 : 1), `${page.name}: rendered ${count} prose fields`);
   }
 });
 

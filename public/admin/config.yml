@@ -8191,6 +8191,611 @@ collections:
                       - primary
                       - secondary
                       - white
+      - name: privacy-policy
+        label: Privacy Policy
+        file: src/content/pages/privacy-policy.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: privacy-policy
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: breadcrumb
+                label: Breadcrumb
+                hint: The last item in the "Home / …" trail.
+                widget: string
+              - name: heading
+                label: Page heading
+                widget: string
+          - name: notice
+            label: Opening notice
+            widget: object
+            fields:
+              - name: label
+                label: Notice title
+                widget: string
+              - name: text
+                label: Line under the title
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - name: version
+            label: Version line
+            hint: "Shown in italics, e.g. \"Version: April 2026\"."
+            widget: string
+          - name: sections
+            label: Sections
+            widget: list
+            summary: "{{fields.heading}}"
+            label_singular: Section
+            fields:
+              - name: heading
+                label: Section heading
+                widget: string
+              - name: blocks
+                label: Content
+                hint: Paragraphs, lists and notes, in the order they appear.
+                widget: list
+                summary: "{{fields.heading}}"
+                label_singular: Block
+                fields:
+                  - name: paragraph
+                    label: Paragraph
+                    hint: Fill in only one of Paragraph, List, Boxed note or Contact card.
+                    required: false
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+                  - name: items
+                    label: List
+                    hint: Bulleted list. One entry per point.
+                    required: false
+                    widget: list
+                    label_singular: Item
+                    field:
+                      name: item
+                      label: Item
+                      widget: markdown
+                      buttons:
+                        - bold
+                        - italic
+                        - link
+                      editor_components: []
+                  - name: callout
+                    label: Boxed note
+                    required: false
+                    widget: object
+                    fields:
+                      - name: heading
+                        label: Bold heading line
+                        widget: string
+                      - name: lines
+                        label: Lines
+                        hint: Bold, italic and links only. One entry per line.
+                        widget: list
+                        label_singular: Line
+                        field:
+                          name: item
+                          label: Line
+                          widget: markdown
+                          buttons:
+                            - bold
+                            - italic
+                            - link
+                          editor_components: []
+                  - name: contactCard
+                    label: Contact card
+                    required: false
+                    widget: object
+                    fields:
+                      - name: heading
+                        label: Bold heading line
+                        widget: string
+                      - name: lines
+                        label: Lines
+                        hint: Bold, italic and links only. One entry per line.
+                        widget: list
+                        label_singular: Line
+                        field:
+                          name: item
+                          label: Line
+                          widget: markdown
+                          buttons:
+                            - bold
+                            - italic
+                            - link
+                          editor_components: []
+          - name: contactCard
+            label: Privacy Officer contact card
+            widget: object
+            fields:
+              - name: heading
+                label: Bold heading line
+                widget: string
+              - name: lines
+                label: Lines
+                hint: Bold, italic and links only. One entry per line.
+                widget: list
+                label_singular: Line
+                field:
+                  name: item
+                  label: Line
+                  widget: markdown
+                  buttons:
+                    - bold
+                    - italic
+                    - link
+                  editor_components: []
+          - name: closing
+            label: Closing line
+            widget: markdown
+            buttons:
+              - bold
+              - italic
+              - link
+            editor_components: []
+      - name: terms-of-use
+        label: Terms of Use
+        file: src/content/pages/terms-of-use.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: terms-of-use
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: breadcrumb
+                label: Breadcrumb
+                hint: The last item in the "Home / …" trail.
+                widget: string
+              - name: heading
+                label: Page heading
+                widget: string
+          - name: effective
+            label: Effective date line
+            hint: Shown in italics.
+            widget: string
+          - name: abn
+            label: ABN line
+            hint: Shown in italics.
+            widget: string
+          - name: contentsHeading
+            label: Contents list heading
+            widget: string
+          - name: sections
+            label: Sections
+            hint: The contents list at the top is built from these section headings, in this order.
+            widget: list
+            summary: "{{fields.heading}}"
+            label_singular: Section
+            fields:
+              - name: id
+                label: Link anchor
+                hint: "Used in #links to this section. Change it only if you also change the links."
+                widget: string
+                pattern:
+                  - ^[a-z][a-z0-9-]*$
+                  - Must match ^[a-z][a-z0-9-]*$
+              - name: heading
+                label: Section heading
+                widget: string
+              - name: blocks
+                label: Content
+                hint: Paragraphs, lists and notes, in the order they appear.
+                widget: list
+                summary: "{{fields.heading}}"
+                label_singular: Block
+                fields:
+                  - name: paragraph
+                    label: Paragraph
+                    hint: Fill in only one of Paragraph, List, Boxed note or Contact card.
+                    required: false
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+                  - name: items
+                    label: List
+                    hint: Bulleted list. One entry per point.
+                    required: false
+                    widget: list
+                    label_singular: Item
+                    field:
+                      name: item
+                      label: Item
+                      widget: markdown
+                      buttons:
+                        - bold
+                        - italic
+                        - link
+                      editor_components: []
+                  - name: callout
+                    label: Boxed note
+                    required: false
+                    widget: object
+                    fields:
+                      - name: heading
+                        label: Bold heading line
+                        widget: string
+                      - name: lines
+                        label: Lines
+                        hint: Bold, italic and links only. One entry per line.
+                        widget: list
+                        label_singular: Line
+                        field:
+                          name: item
+                          label: Line
+                          widget: markdown
+                          buttons:
+                            - bold
+                            - italic
+                            - link
+                          editor_components: []
+                  - name: contactCard
+                    label: Contact card
+                    required: false
+                    widget: object
+                    fields:
+                      - name: heading
+                        label: Bold heading line
+                        widget: string
+                      - name: lines
+                        label: Lines
+                        hint: Bold, italic and links only. One entry per line.
+                        widget: list
+                        label_singular: Line
+                        field:
+                          name: item
+                          label: Line
+                          widget: markdown
+                          buttons:
+                            - bold
+                            - italic
+                            - link
+                          editor_components: []
+      - name: accessibility
+        label: Accessibility
+        file: src/content/pages/accessibility.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: accessibility
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: breadcrumb
+                label: Breadcrumb
+                hint: The last item in the "Home / …" trail.
+                widget: string
+              - name: heading
+                label: Page heading
+                widget: string
+          - name: lastUpdated
+            label: Last updated line
+            hint: Shown in italics.
+            widget: string
+          - name: intro
+            label: Opening paragraph
+            widget: markdown
+            buttons:
+              - bold
+              - italic
+              - link
+            editor_components: []
+          - name: sections
+            label: Sections
+            widget: list
+            summary: "{{fields.heading}}"
+            label_singular: Section
+            fields:
+              - name: id
+                label: Link anchor
+                hint: "Used in #links to this section. Change it only if you also change the links."
+                widget: string
+                pattern:
+                  - ^[a-z][a-z0-9-]*$
+                  - Must match ^[a-z][a-z0-9-]*$
+              - name: heading
+                label: Section heading
+                widget: string
+              - name: blocks
+                label: Content
+                hint: Paragraphs, lists and notes, in the order they appear.
+                widget: list
+                summary: "{{fields.heading}}"
+                label_singular: Block
+                fields:
+                  - name: paragraph
+                    label: Paragraph
+                    hint: Fill in only one of Paragraph, List, Boxed note or Contact card.
+                    required: false
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+                  - name: items
+                    label: List
+                    hint: Bulleted list. One entry per point.
+                    required: false
+                    widget: list
+                    label_singular: Item
+                    field:
+                      name: item
+                      label: Item
+                      widget: markdown
+                      buttons:
+                        - bold
+                        - italic
+                        - link
+                      editor_components: []
+                  - name: callout
+                    label: Boxed note
+                    required: false
+                    widget: object
+                    fields:
+                      - name: heading
+                        label: Bold heading line
+                        widget: string
+                      - name: lines
+                        label: Lines
+                        hint: Bold, italic and links only. One entry per line.
+                        widget: list
+                        label_singular: Line
+                        field:
+                          name: item
+                          label: Line
+                          widget: markdown
+                          buttons:
+                            - bold
+                            - italic
+                            - link
+                          editor_components: []
+                  - name: contactCard
+                    label: Contact card
+                    required: false
+                    widget: object
+                    fields:
+                      - name: heading
+                        label: Bold heading line
+                        widget: string
+                      - name: lines
+                        label: Lines
+                        hint: Bold, italic and links only. One entry per line.
+                        widget: list
+                        label_singular: Line
+                        field:
+                          name: item
+                          label: Line
+                          widget: markdown
+                          buttons:
+                            - bold
+                            - italic
+                            - link
+                          editor_components: []
+      - name: thankyou
+        label: Thank-you page
+        file: src/content/pages/thankyou.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: thankyou
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: heading
+            label: Page heading
+            widget: string
+          - name: sub
+            label: Line under the heading
+            widget: string
+          - name: urgent
+            label: Urgent enquiries paragraph
+            hint: Ends with a full stop. The sentence about when the team is available follows it.
+            widget: markdown
+            buttons:
+              - bold
+              - italic
+              - link
+            editor_components: []
+          - name: availabilityLead
+            label: Words before the office hours
+            hint: "The hours themselves are edited under Opening hours, not here: \"Our team is available <hours>.\""
+            widget: string
+          - name: steps
+            label: What happens next
+            widget: object
+            fields:
+              - name: heading
+                label: "\"What happens next\" heading"
+                widget: string
+              - name: items
+                label: Steps
+                hint: Numbered 1, 2, 3 … in this order.
+                widget: list
+                label_singular: Step
+                field:
+                  name: item
+                  label: Step
+                  widget: markdown
+                  buttons:
+                    - bold
+                    - italic
+                    - link
+                  editor_components: []
+          - name: buttons
+            label: Buttons
+            widget: list
+            summary: "{{fields.label}}"
+            label_singular: Button
+            fields:
+              - name: label
+                label: Text
+                widget: string
+              - name: href
+                label: Goes to
+                hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                widget: string
+                pattern:
+                  - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: style
+                label: Style
+                hint: primary (filled), secondary (outline) or white.
+                widget: select
+                options:
+                  - primary
+                  - secondary
+                  - white
+      - name: "404"
+        label: 404 (page not found)
+        file: src/content/pages/404.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: not-found
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: code
+            label: Large number
+            hint: The faint "404" above the heading.
+            widget: string
+          - name: heading
+            label: Page heading
+            widget: string
+          - name: sub
+            label: Line under the heading
+            widget: string
+          - name: body
+            label: Explanation
+            widget: string
+          - name: buttons
+            label: Buttons
+            widget: list
+            summary: "{{fields.label}}"
+            label_singular: Button
+            fields:
+              - name: label
+                label: Text
+                widget: string
+              - name: href
+                label: Goes to
+                hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                widget: string
+                pattern:
+                  - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: style
+                label: Style
+                hint: primary (filled), secondary (outline) or white.
+                widget: select
+                options:
+                  - primary
+                  - secondary
+                  - white
   - name: site
     label: Site-wide text
     format: yaml
