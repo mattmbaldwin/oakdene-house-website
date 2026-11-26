@@ -1,0 +1,42 @@
+# Words for /service-directory/. Layout: src/pages/service-directory.astro.
+# The listing and the wider directories come from oakdene-service-directory.json (written by the directory sync).
+# Keep {total} and {date}: the page replaces them with the number of services and the last-verified date.
+layout: service-directory
+seo:
+  title: Community Service Directory — Oakdene House Foundation
+  description: Browse 318 support services across Western Sydney and beyond — counselling, housing, legal, family, AOD, mental health and more. Curated by Oakdene House Foundation.
+hero:
+  ariaLabel: Service directory
+  heading: Community service directory
+  lead: Browse {total} support services across Western Sydney and beyond, or contact Oakdene if you'd like help working out the best fit.
+filter:
+  ariaLabel: Filter services
+  searchLabel: Search
+  searchPlaceholder: Search by name, organisation or service type…
+  categoryLabel: Category
+  allCategories: All categories ({total})
+  locationLabel: Location
+  allLocations: All locations
+cards:
+  srHeading: Service listings
+  byPrefix: by
+  noContact: Contact details unavailable
+  website: Visit website
+  acnc: Verify on ACNC →
+  emptyState: No services match those filters. Try widening your search, or browse the [wider directories below](#other-directories).
+disclaimer:
+  ariaLabel: Directory disclaimer
+  text: Service details can change over time. Please contact the listed service directly to confirm current eligibility, opening hours, and referral requirements. Oakdene does not endorse any specific service. Directory last verified {date}.
+otherDirectories:
+  heading:
+    eyebrow: Going Further
+    heading: Can't find what you need? Try these wider directories.
+    lead: When a service isn't in our directory, these registers and finders can help. Many of our listed services cross-reference these.
+cta:
+  heading: Need help working out where to start?
+  primary:
+    label: Contact Us
+    href: /contact/
+  secondary:
+    label: Get Support
+    href: /forms/

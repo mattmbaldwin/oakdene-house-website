@@ -5061,3 +5061,2183 @@ collections:
                     pattern:
                       - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
                       - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+      - name: index
+        label: Home
+        file: src/content/pages/index.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: home
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: heading
+                label: Page heading
+                widget: string
+              - name: subheading
+                label: Line under the heading
+                widget: text
+              - name: image
+                label: Background image
+                widget: object
+                fields:
+                  - name: src
+                    label: Image file
+                    widget: image
+                    choose_url: false
+                  - name: alt
+                    label: Alt text
+                    hint: Describes the image for people who use screen readers.
+                    widget: string
+              - name: buttons
+                label: Buttons
+                widget: list
+                summary: "{{fields.label}}"
+                label_singular: Button
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - name: style
+                    label: Style
+                    hint: white (filled) or white-outline.
+                    widget: select
+                    options:
+                      - white
+                      - white-outline
+          - name: pathways
+            label: Quick links
+            widget: object
+            fields:
+              - name: heading
+                label: "\"How can we help?\" heading"
+                widget: string
+              - name: items
+                label: Quick links
+                widget: list
+                summary: "{{fields.title}}"
+                label_singular: Item
+                fields:
+                  - name: title
+                    label: Title
+                    widget: string
+                  - name: summary
+                    label: Summary
+                    widget: text
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+          - name: mission
+            label: Mission
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: paragraphs
+                label: Paragraphs
+                hint: Bold, italic and links only. One entry per paragraph.
+                widget: list
+                label_singular: Paragraph
+                field:
+                  name: item
+                  label: Paragraph
+                  widget: markdown
+                  buttons:
+                    - bold
+                    - italic
+                    - link
+                  editor_components: []
+              - name: button
+                label: Button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: image
+                label: Image
+                widget: object
+                fields:
+                  - name: src
+                    label: Image file
+                    widget: image
+                    choose_url: false
+                  - name: alt
+                    label: Alt text
+                    hint: Describes the image for people who use screen readers.
+                    widget: string
+          - name: impact
+            label: Our impact
+            widget: object
+            fields:
+              - name: ariaLabel
+                label: Section label for screen readers
+                widget: string
+              - name: eyebrow
+                label: Small label above the heading
+                widget: string
+              - name: heading
+                label: Heading
+                widget: string
+              - name: stats
+                label: Figures
+                widget: list
+                summary: "{{fields.number}}"
+                label_singular: Figure
+                fields:
+                  - name: number
+                    label: Number
+                    widget: string
+                  - name: label
+                    label: Label
+                    widget: string
+              - name: note
+                label: Note under the figures
+                widget: text
+          - name: services
+            label: Services
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: counselling
+                label: First card
+                widget: object
+                fields:
+                  - name: title
+                    label: Title
+                    widget: string
+                  - name: summary
+                    label: Summary
+                    widget: text
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - name: image
+                    label: Image
+                    widget: object
+                    fields:
+                      - name: src
+                        label: Image file
+                        widget: image
+                        choose_url: false
+                      - name: alt
+                        label: Alt text
+                        hint: Describes the image for people who use screen readers.
+                        widget: string
+              - name: lifeChoices
+                label: Second card
+                widget: object
+                fields:
+                  - name: title
+                    label: Title
+                    widget: string
+                  - name: summary
+                    label: Summary
+                    widget: text
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - name: image
+                    label: Image
+                    widget: object
+                    fields:
+                      - name: src
+                        label: Image file
+                        widget: image
+                        choose_url: false
+                      - name: alt
+                        label: Alt text
+                        hint: Describes the image for people who use screen readers.
+                        widget: string
+              - name: kitchen
+                label: Third card
+                widget: object
+                fields:
+                  - name: title
+                    label: Title
+                    widget: string
+                  - name: summary
+                    label: Summary
+                    hint: The Oakdene Kitchen opening hours (from Opening hours) and a full stop are added after this text.
+                    widget: text
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - name: image
+                    label: Image
+                    widget: object
+                    fields:
+                      - name: src
+                        label: Image file
+                        widget: image
+                        choose_url: false
+                      - name: alt
+                        label: Alt text
+                        hint: Describes the image for people who use screen readers.
+                        widget: string
+              - name: boutique
+                label: Fourth card
+                widget: object
+                fields:
+                  - name: title
+                    label: Title
+                    widget: string
+                  - name: summary
+                    label: Summary
+                    widget: text
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - name: image
+                    label: Image
+                    widget: object
+                    fields:
+                      - name: src
+                        label: Image file
+                        widget: image
+                        choose_url: false
+                      - name: alt
+                        label: Alt text
+                        hint: Describes the image for people who use screen readers.
+                        widget: string
+              - name: button
+                label: Button under the cards
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+          - name: steps
+            label: How support works
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: listLabel
+                label: List label for screen readers
+                widget: string
+              - name: items
+                label: Steps
+                hint: Numbered 1, 2, 3 … in this order.
+                widget: list
+                summary: "{{fields.title}}"
+                label_singular: Step
+                fields:
+                  - name: title
+                    label: Title
+                    widget: string
+                  - name: body
+                    label: Text
+                    widget: text
+              - name: image
+                label: Image
+                widget: object
+                fields:
+                  - name: src
+                    label: Image file
+                    widget: image
+                    choose_url: false
+                  - name: alt
+                    label: Alt text
+                    hint: Describes the image for people who use screen readers.
+                    widget: string
+          - name: testimonials
+            label: Testimonials
+            hint: The quotes come from testimonials.json and are not edited here.
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+          - name: faq
+            label: Questions
+            hint: The questions come from the FAQs form.
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+          - name: video
+            label: Video
+            hint: The video itself comes from the video launch pack and is not edited here.
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: lead
+                    label: Line under the heading
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+              - name: playLabel
+                label: Play button label for screen readers
+                widget: string
+              - name: transcriptLabel
+                label: Transcript button
+                widget: string
+          - name: cta
+            label: Call to action band
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: subheading
+                label: Line under the heading
+                widget: text
+              - name: primary
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: secondary
+                label: Second button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+      - name: contact
+        label: Contact
+        file: src/content/pages/contact.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: contact
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: heading
+                label: Page heading
+                widget: string
+              - name: subheading
+                label: Line under the heading
+                widget: text
+              - name: image
+                label: Background image
+                widget: object
+                fields:
+                  - name: src
+                    label: Image file
+                    widget: image
+                    choose_url: false
+                  - name: alt
+                    label: Alt text
+                    hint: Describes the image for people who use screen readers.
+                    widget: string
+              - name: buttons
+                label: Buttons
+                widget: list
+                summary: "{{fields.label}}"
+                label_singular: Button
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - name: style
+                    label: Style
+                    hint: white (filled) or white-outline.
+                    widget: select
+                    options:
+                      - white
+                      - white-outline
+          - name: cards
+            label: Contact cards
+            widget: object
+            fields:
+              - name: srHeading
+                label: Hidden heading for screen readers
+                widget: string
+              - name: phone
+                label: Phone card
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: link
+                    label: Phone link
+                    widget: object
+                    fields:
+                      - name: label
+                        label: Text
+                        widget: string
+                      - name: href
+                        label: Goes to
+                        hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                        widget: string
+                        pattern:
+                          - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                          - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - name: note
+                    label: Note
+                    widget: string
+              - name: email
+                label: Email card
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: link
+                    label: Email link
+                    widget: object
+                    fields:
+                      - name: label
+                        label: Text
+                        widget: string
+                      - name: href
+                        label: Goes to
+                        hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                        widget: string
+                        pattern:
+                          - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                          - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - name: note
+                    label: Note
+                    widget: string
+              - name: visit
+                label: Visit card
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: address
+                    label: Address
+                    widget: string
+                  - name: note
+                    label: Note
+                    widget: string
+              - name: hours
+                label: Opening hours card
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: note
+                    label: Note under the hours
+                    hint: The days and hours come from Opening hours.
+                    widget: string
+          - name: serviceContacts
+            label: Service-specific contacts
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: cards
+                label: Contacts
+                widget: list
+                summary: "{{fields.title}}"
+                label_singular: Contact
+                fields:
+                  - name: title
+                    label: Heading
+                    widget: string
+                  - name: email
+                    label: Email link
+                    widget: object
+                    fields:
+                      - name: label
+                        label: Text
+                        widget: string
+                      - name: href
+                        label: Goes to
+                        hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                        widget: string
+                        pattern:
+                          - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                          - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - name: phone
+                    label: Phone link
+                    widget: object
+                    fields:
+                      - name: label
+                        label: Text
+                        widget: string
+                      - name: href
+                        label: Goes to
+                        hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                        widget: string
+                        pattern:
+                          - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                          - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+          - name: hours
+            label: Service hours
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: kitchen
+                label: Kitchen label
+                hint: Its hours come from Opening hours.
+                widget: string
+              - name: staplePacks
+                label: Staple Food Packs label
+                hint: Its hours come from Opening hours.
+                widget: string
+              - name: laundrette
+                label: Laundrette label
+                hint: Its hours come from Opening hours.
+                widget: string
+              - name: clothingStore
+                label: Used Clothing Store label
+                hint: Its hours come from Opening hours.
+                widget: string
+              - name: boutique
+                label: Ladies Boutique
+                widget: object
+                fields:
+                  - name: label
+                    label: Label
+                    widget: string
+                  - name: value
+                    label: Hours
+                    widget: string
+              - name: counselling
+                label: Counselling
+                widget: object
+                fields:
+                  - name: label
+                    label: Label
+                    widget: string
+                  - name: value
+                    label: Hours
+                    widget: string
+              - name: lifeChoices
+                label: Life Choices Program
+                widget: object
+                fields:
+                  - name: label
+                    label: Label
+                    widget: string
+                  - name: value
+                    label: Hours
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+          - name: extra
+            label: Additional information
+            widget: object
+            fields:
+              - name: srHeading
+                label: Hidden heading for screen readers
+                widget: string
+              - name: language
+                label: Language support
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: text
+                    label: Text
+                    widget: text
+              - name: postal
+                label: Postal address
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: line1
+                    label: Address line 1
+                    widget: string
+                  - name: line2
+                    label: Address line 2
+                    widget: string
+                  - name: abn
+                    label: ABN line
+                    widget: string
+          - name: map
+            label: Map
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: title
+                label: Map title for screen readers
+                widget: string
+              - name: label
+                label: Map label for screen readers
+                widget: string
+              - name: directionsLabel
+                label: Directions link
+                widget: string
+          - name: form
+            label: Enquiry form
+            hint: Error messages shown by the form are not edited here.
+            widget: object
+            fields:
+              - name: heading
+                label: Form heading
+                widget: string
+              - name: intro
+                label: Introduction
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+              - name: successHeading
+                label: Message after sending
+                widget: string
+              - name: successText
+                label: Text under the message after sending
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+              - name: honeypotLabel
+                label: Hidden spam-trap label
+                hint: Not shown to visitors. Leave as is unless asked.
+                widget: string
+              - name: firstName
+                label: First name label
+                widget: string
+              - name: lastName
+                label: Last name label
+                widget: string
+              - name: email
+                label: Email label
+                widget: string
+              - name: phone
+                label: Phone label
+                widget: string
+              - name: optional
+                label: "\"Optional\" marker"
+                widget: string
+              - name: reason
+                label: Reason label
+                widget: string
+              - name: reasonPlaceholder
+                label: Reason placeholder
+                widget: string
+              - name: reasons
+                label: Reasons for enquiry
+                widget: object
+                fields:
+                  - name: general
+                    label: General enquiry
+                    widget: string
+                  - name: counselling
+                    label: Counselling or support
+                    widget: string
+                  - name: communityPrograms
+                    label: Community programs
+                    widget: string
+                  - name: programInterest
+                    label: Program interest
+                    widget: string
+                  - name: volunteering
+                    label: Volunteering
+                    widget: string
+                  - name: partnership
+                    label: Partnership or organisation enquiry
+                    widget: string
+                  - name: donation
+                    label: Donation or fundraising
+                    widget: string
+                  - name: media
+                    label: Media enquiry
+                    widget: string
+                  - name: other
+                    label: Other
+                    widget: string
+              - name: message
+                label: Message label
+                widget: string
+              - name: consent
+                label: Consent tick box
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+              - name: submit
+                label: Send button
+                hint: After a failed send the form script puts the words "Send message" back on the button; that is not editable here.
+                widget: string
+          - name: cta
+            label: Call to action band
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: subheading
+                label: Line under the heading
+                widget: text
+              - name: primary
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: secondary
+                label: Second button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+      - name: support-us
+        label: Support Us
+        file: src/content/pages/support-us.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: support-us
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: heading
+                label: Page heading
+                widget: string
+              - name: subheading
+                label: Line under the heading
+                widget: text
+              - name: image
+                label: Background image
+                widget: object
+                fields:
+                  - name: src
+                    label: Image file
+                    widget: image
+                    choose_url: false
+                  - name: alt
+                    label: Alt text
+                    hint: Describes the image for people who use screen readers.
+                    widget: string
+              - name: buttons
+                label: Buttons
+                widget: list
+                summary: "{{fields.label}}"
+                label_singular: Button
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - name: style
+                    label: Style
+                    hint: white (filled) or white-outline.
+                    widget: select
+                    options:
+                      - white
+                      - white-outline
+          - name: intro
+            label: Introduction
+            widget: object
+            fields:
+              - name: srHeading
+                label: Hidden heading for screen readers
+                widget: string
+              - name: text
+                label: Text
+                widget: text
+          - name: donate
+            label: Donate
+            widget: object
+            fields:
+              - name: srHeading
+                label: Hidden heading for screen readers
+                widget: string
+              - name: heading
+                label: Donation box heading
+                widget: string
+          - name: otherWays
+            label: Other ways to give
+            widget: object
+            fields:
+              - name: ariaLabel
+                label: Section label for screen readers
+                widget: string
+              - name: heading
+                label: Heading
+                widget: string
+              - name: directDeposit
+                label: Direct deposit
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: rows
+                    label: Details
+                    widget: list
+                    summary: "{{fields.label}}"
+                    label_singular: Row
+                    fields:
+                      - name: label
+                        label: Label
+                        widget: string
+                      - name: value
+                        label: Value
+                        widget: string
+              - name: cheque
+                label: Cheque
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: text
+                    label: Text
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+              - name: workplace
+                label: Workplace giving
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: text
+                    label: Text
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+              - name: will
+                label: Gift in your will
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: text
+                    label: Text
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+              - name: corporate
+                label: Corporate partnership
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: text
+                    label: Text
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+          - name: assurance
+            label: Assurance
+            widget: object
+            fields:
+              - name: srHeading
+                label: Hidden heading for screen readers
+                widget: string
+              - name: lines
+                label: Lines (shown in italics)
+                widget: list
+                label_singular: Line
+                field:
+                  name: item
+                  label: Line
+                  widget: text
+              - name: credentials
+                label: Credentials line
+                widget: string
+          - name: faq
+            label: Questions about donations
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: items
+                label: Questions
+                widget: list
+                summary: "{{fields.question}}"
+                label_singular: Question
+                fields:
+                  - name: question
+                    label: Question
+                    widget: string
+                  - name: answer
+                    label: Answer
+                    widget: text
+          - name: cta
+            label: Call to action band
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: subheading
+                label: Line under the heading
+                widget: text
+              - name: primary
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+      - name: need-help-now
+        label: Need Help Now
+        file: src/content/pages/need-help-now.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: need-help-now
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: banner
+            label: Banner
+            widget: object
+            fields:
+              - name: ariaLabel
+                label: Section label for screen readers
+                widget: string
+              - name: heading
+                label: Page heading
+                widget: string
+              - name: lead
+                label: Line under the heading
+                widget: text
+          - name: emergency
+            label: Immediate danger
+            widget: object
+            fields:
+              - name: label
+                label: Label
+                widget: string
+              - name: callPrefix
+                label: Word before the number
+                widget: string
+              - name: number
+                label: Emergency number
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+          - name: helplines
+            label: Crisis support lines
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: lead
+                label: Line under the heading
+                widget: text
+              - name: items
+                label: Helplines
+                widget: list
+                summary: "{{fields.name}}"
+                label_singular: Helpline
+                fields:
+                  - name: name
+                    label: Name
+                    widget: string
+                  - name: description
+                    label: Description
+                    widget: string
+                  - name: phone
+                    label: Number as shown
+                    widget: string
+                  - name: href
+                    label: Phone link
+                    hint: "tel: followed by digits only, e.g. tel:131114."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+          - name: talk
+            label: Talk to Oakdene
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: intro
+                label: Introduction
+                widget: text
+              - name: phone
+                label: Phone link
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: phoneAriaLabel
+                label: Phone link label for screen readers
+                widget: string
+              - name: emailLabel
+                label: Word before the email
+                widget: string
+              - name: email
+                label: Email link
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: languageNote
+                label: Language note
+                widget: text
+              - name: hoursHeading
+                label: Hours box heading
+                widget: string
+              - name: availabilityLead
+                label: Hours sentence
+                hint: The opening hours (from Opening hours) and a full stop are added after this text.
+                widget: string
+              - name: outsideHours
+                label: Outside-hours note
+                widget: text
+          - name: note
+            label: Final note
+            widget: object
+            fields:
+              - name: ariaLabel
+                label: Section label for screen readers
+                widget: string
+              - name: text
+                label: Note
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+      - name: resources
+        label: Resources
+        file: src/content/pages/resources.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: resources
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: banner
+            label: Banner
+            widget: object
+            fields:
+              - name: ariaLabel
+                label: Section label for screen readers
+                widget: string
+              - name: heading
+                label: Page heading
+                widget: string
+              - name: lead
+                label: Line under the heading
+                widget: text
+          - name: featured
+            label: Featured resources
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: lead
+                    label: Line under the heading
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+              - name: comingSoon
+                label: "\"Coming soon\" label"
+                widget: string
+              - name: items
+                label: Resources
+                widget: list
+                summary: "{{fields.title}}"
+                label_singular: Resource
+                fields:
+                  - name: title
+                    label: Title
+                    widget: string
+                  - name: description
+                    label: Description
+                    widget: text
+                  - name: icon
+                    label: Icon
+                    widget: select
+                    options:
+                      - book
+                      - share
+                      - map
+                      - heart
+          - name: available
+            label: Available resources
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: links
+                label: Links
+                widget: list
+                summary: "{{fields.label}}"
+                label_singular: Link
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: videosLabel
+                label: Videos drop-down label
+                widget: string
+              - name: ourStory
+                label: Our story video
+                hint: The video itself comes from the video launch pack.
+                widget: object
+                fields:
+                  - name: title
+                    label: Title
+                    widget: string
+                  - name: playLabel
+                    label: Play button label for screen readers
+                    widget: string
+                  - name: blurb
+                    label: Text
+                    widget: text
+                  - name: transcriptLabel
+                    label: Transcript link
+                    widget: string
+              - name: secondVideo
+                label: Second video
+                widget: object
+                fields:
+                  - name: youtubeId
+                    label: YouTube video id
+                    widget: string
+                  - name: title
+                    label: Title
+                    widget: string
+                  - name: thumbnail
+                    label: Thumbnail image
+                    widget: image
+                    choose_url: false
+                  - name: playLabel
+                    label: Play button label for screen readers
+                    widget: string
+              - name: channelLabel
+                label: YouTube channel link
+                widget: string
+              - name: note
+                label: Note under the list
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - name: cta
+            label: Call to action band
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: primary
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: secondary
+                label: Second button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+      - name: resources--flyers-and-brochures
+        label: Flyers and Brochures
+        file: src/content/pages/resources--flyers-and-brochures.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: flyers-and-brochures
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: breadcrumb
+                label: Breadcrumb
+                hint: The last item in the "Home / Services / …" trail.
+                widget: string
+              - name: heading
+                label: Page heading
+                widget: string
+              - name: lead
+                label: Line under the heading
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - name: comingSoon
+            label: Coming soon box
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: text
+                label: Text
+                widget: text
+              - name: contact
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: back
+                label: Second button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+          - name: cta
+            label: Call to action band
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: subheading
+                label: Line under the heading
+                widget: text
+              - name: primary
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+      - name: resources--information-sheets
+        label: Information Sheets
+        file: src/content/pages/resources--information-sheets.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: information-sheets
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: breadcrumb
+                label: Breadcrumb
+                hint: The last item in the "Home / Services / …" trail.
+                widget: string
+              - name: heading
+                label: Page heading
+                widget: string
+              - name: lead
+                label: Line under the heading
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - name: comingSoon
+            label: Coming soon box
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: text
+                label: Text
+                widget: text
+              - name: contact
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: back
+                label: Second button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+          - name: cta
+            label: Call to action band
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: subheading
+                label: Line under the heading
+                widget: text
+              - name: primary
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: secondary
+                label: Second button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+      - name: service-directory
+        label: Service Directory
+        file: src/content/pages/service-directory.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: service-directory
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: ariaLabel
+                label: Section label for screen readers
+                widget: string
+              - name: heading
+                label: Page heading
+                widget: string
+              - name: lead
+                label: Line under the heading
+                hint: "Keep {total}: it is replaced by the number of listed services."
+                widget: text
+          - name: filter
+            label: Search and filters
+            widget: object
+            fields:
+              - name: ariaLabel
+                label: Search bar label for screen readers
+                widget: string
+              - name: searchLabel
+                label: Search label
+                widget: string
+              - name: searchPlaceholder
+                label: Search placeholder
+                widget: string
+              - name: categoryLabel
+                label: Category label
+                widget: string
+              - name: allCategories
+                label: "\"All categories\" choice"
+                hint: "Keep {total}: it is replaced by the number of services."
+                widget: string
+              - name: locationLabel
+                label: Location label
+                widget: string
+              - name: allLocations
+                label: "\"All locations\" choice"
+                widget: string
+          - name: cards
+            label: Service cards
+            widget: object
+            fields:
+              - name: srHeading
+                label: Hidden heading for screen readers
+                widget: string
+              - name: byPrefix
+                label: Word before the organisation
+                widget: string
+              - name: noContact
+                label: No contact details message
+                widget: string
+              - name: website
+                label: Website link
+                widget: string
+              - name: acnc
+                label: Charity register link
+                widget: string
+              - name: emptyState
+                label: Message when no service matches
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - name: disclaimer
+            label: Disclaimer
+            widget: object
+            fields:
+              - name: ariaLabel
+                label: Section label for screen readers
+                widget: string
+              - name: text
+                label: Text
+                hint: "Keep {date}: it is replaced by the date the directory was last verified."
+                widget: text
+          - name: otherDirectories
+            label: Wider directories
+            hint: The list itself comes from the directory sync.
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: lead
+                    label: Line under the heading
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+          - name: cta
+            label: Call to action band
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: primary
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: secondary
+                label: Second button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+  - name: site
+    label: Site-wide text
+    format: yaml
+    editor:
+      preview: false
+    files:
+      - name: site
+        label: Site-wide text
+        file: src/content/site.yaml
+        fields:
+          - name: header
+            label: Header
+            widget: object
+            fields:
+              - name: logo
+                label: Logo
+                widget: object
+                fields:
+                  - name: alt
+                    label: Logo alt text
+                    widget: string
+                  - name: homeLabel
+                    label: Logo link label for screen readers
+                    widget: string
+              - name: nav
+                label: Main menu
+                widget: object
+                fields:
+                  - name: home
+                    label: Home
+                    widget: string
+                  - name: about
+                    label: About
+                    widget: string
+                  - name: services
+                    label: Addiction Support
+                    widget: string
+                  - name: community
+                    label: Community Programs
+                    widget: string
+                  - name: resources
+                    label: Resources
+                    widget: string
+                  - name: directory
+                    label: Service Directory
+                    widget: string
+                  - name: contact
+                    label: Contact
+                    widget: string
+              - name: servicesMenu
+                label: Addiction Support menu
+                widget: object
+                fields:
+                  - name: individualCounselling
+                    label: Individual Counselling
+                    widget: string
+                  - name: gamblingCounselling
+                    label: Gambling Counselling
+                    widget: string
+                  - name: lifeChoices
+                    label: Life Choices Program
+                    widget: string
+                  - name: groupDbt
+                    label: Group DBT Therapy
+                    widget: string
+                  - name: outpatients
+                    label: Outpatients Program
+                    widget: string
+                  - name: aaGa
+                    label: AA & GA Meetings
+                    widget: string
+                  - name: financialCounselling
+                    label: Financial Counselling
+                    widget: string
+              - name: communityMenu
+                label: Community Programs menu
+                widget: object
+                fields:
+                  - name: kitchen
+                    label: Oakdene Kitchen
+                    widget: string
+                  - name: staplePacks
+                    label: Staple Food Packs
+                    widget: string
+                  - name: laundrette
+                    label: Oakdene Laundrette
+                    widget: string
+                  - name: boutique
+                    label: Ladies Boutique
+                    widget: string
+                  - name: clothingStore
+                    label: Used Clothing Store
+                    widget: string
+                  - name: volunteering
+                    label: Volunteering
+                    widget: string
+              - name: buttons
+                label: Header buttons
+                widget: object
+                fields:
+                  - name: getSupport
+                    label: Get Support button
+                    widget: string
+                  - name: needHelp
+                    label: Need Help Now button
+                    widget: string
+          - name: footer
+            label: Footer
+            widget: object
+            fields:
+              - name: about
+                label: About column
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: aboutUs
+                    label: About Us
+                    widget: string
+                  - name: ourStory
+                    label: Our Story
+                    widget: string
+                  - name: ourTeam
+                    label: Our Team
+                    widget: string
+                  - name: ourCentre
+                    label: Our Centre
+                    widget: string
+              - name: services
+                label: Services column
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: individualCounselling
+                    label: Individual Counselling
+                    widget: string
+                  - name: lifeChoices
+                    label: Life Choices Program
+                    widget: string
+                  - name: groupDbt
+                    label: Group DBT Therapy
+                    widget: string
+                  - name: gamblingCounselling
+                    label: Gambling Counselling
+                    widget: string
+                  - name: outpatients
+                    label: Outpatients Program
+                    widget: string
+                  - name: aaGa
+                    label: AA & GA Meetings
+                    widget: string
+                  - name: all
+                    label: All Services
+                    widget: string
+              - name: community
+                label: Community Programs column
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: kitchen
+                    label: Oakdene Kitchen
+                    widget: string
+                  - name: laundrette
+                    label: Oakdene Laundrette
+                    widget: string
+                  - name: boutique
+                    label: Ladies Boutique
+                    widget: string
+                  - name: staplePacks
+                    label: Staple Food Packs
+                    widget: string
+                  - name: volunteering
+                    label: Volunteering
+                    widget: string
+                  - name: all
+                    label: All Community Programs
+                    widget: string
+              - name: help
+                label: Get Help column
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: contact
+                    label: Contact
+                    widget: string
+                  - name: needHelp
+                    label: Need Help Now
+                    widget: string
+                  - name: referral
+                    label: Make a Referral
+                    widget: string
+                  - name: faq
+                    label: FAQ
+                    widget: string
+              - name: contact
+                label: Contact column
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: phone
+                    label: Phone link
+                    widget: object
+                    fields:
+                      - name: label
+                        label: Text
+                        widget: string
+                      - name: href
+                        label: Goes to
+                        hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                        widget: string
+                        pattern:
+                          - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                          - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - name: email
+                    label: Email link
+                    widget: object
+                    fields:
+                      - name: label
+                        label: Text
+                        widget: string
+                      - name: href
+                        label: Goes to
+                        hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                        widget: string
+                        pattern:
+                          - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                          - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - name: address
+                    label: Street address
+                    widget: string
+                  - name: poBox
+                    label: Postal address
+                    widget: string
+              - name: legal
+                label: Bottom row
+                widget: object
+                fields:
+                  - name: abn
+                    label: ABN
+                    widget: string
+                  - name: charity
+                    label: Charity status
+                    widget: string
+                  - name: privacy
+                    label: Privacy Policy
+                    widget: string
+                  - name: terms
+                    label: Terms of Use
+                    widget: string
+                  - name: accessibility
+                    label: Accessibility
+                    widget: string
+              - name: copyright
+                label: Copyright text
+                hint: Shown after "© year". The year is added automatically.
+                widget: string
+              - name: logoAlt
+                label: Logo alt text
+                widget: string
+              - name: logoLabel
+                label: Logo link label for screen readers
+                widget: string

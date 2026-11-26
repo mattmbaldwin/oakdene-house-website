@@ -2,49 +2,29 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import CTABand from '../components/CTABand.astro';
 import VideoPlayer from '../components/VideoPlayer.astro';
+import Prose from '../components/Prose.astro';
 import video from '../../docs/video-launch/content/video.json';
+import { pageContent, fieldSource } from '../lib/pages';
 
-const featured = [
-  {
-    title: 'Getting Support Guide',
-    description: 'A clear guide to understanding what support is available and how to access it.',
-    icon: 'book',
-  },
-  {
-    title: 'Referral Information Pack',
-    description: 'Information for workers, health professionals, and community partners about referring to Oakdene.',
-    icon: 'share',
-  },
-  {
-    title: 'Community Support Guide',
-    description: 'A directory of community services, supports, and resources in Western Sydney.',
-    icon: 'map',
-  },
-  {
-    title: 'Wellbeing and Recovery Tools',
-    description: 'Practical tools, worksheets, and exercises to support your wellbeing and recovery journey.',
-    icon: 'heart',
-  },
-];
-
-const availableResources = [
-  { label: 'Flyers and brochures', href: '/resources/flyers-and-brochures/' },
-  { label: 'Information sheets', href: '/resources/information-sheets/' },
-  { label: 'Referral form', href: '/services/referral/' },
-  { label: 'Volunteer application', href: '/community-programs/volunteering/' },
-];
+// Words and images: src/content/pages/resources.yaml (edited in /admin).
+const ID = 'resources';
+const page = await pageContent(ID, 'resources');
+const { seo, banner, featured: feat, available: avail, cta } = page;
+const featured = feat.items;
+const availableResources = avail.links;
+const src = (path: string) => fieldSource(ID, path);
 ---
 
 <BaseLayout
-  title="Resources — Oakdene House Foundation"
-  description="Browse practical guides, support information, and downloadable resources from Oakdene House Foundation, Fairfield, Western Sydney."
+  title={seo.title}
+  description={seo.description}
 >
 
   <!-- HERO — dark teal, no image -->
-  <section class="res-hero" aria-label="Resources">
+  <section class="res-hero" aria-label={banner.ariaLabel}>
     <div class="container res-hero__content">
-      <h1>Resources that are practical, clear, and easy to use</h1>
-      <p class="res-hero__lead">Browse guides, support information, and helpful materials you can access straight away.</p>
+      <h1>{banner.heading}</h1>
+      <p class="res-hero__lead">{banner.lead}</p>
     </div>
   </section>
 
@@ -52,9 +32,9 @@ const availableResources = [
   <section class="section" aria-labelledby="featured-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Featured Resources</p>
-        <h2 id="featured-heading">Guides and information packs</h2>
-        <p class="section-heading__lead">All resources are free to access and download.</p>
+        <p class="section-heading__eyebrow">{feat.heading.eyebrow}</p>
+        <h2 id="featured-heading">{feat.heading.heading}</h2>
+        <p class="section-heading__lead"><Prose md={feat.heading.lead} source={src('featured.heading.lead')} /></p>
       </div>
       <div class="resources-grid">
         {featured.map(r => (
@@ -75,7 +55,7 @@ const availableResources = [
             </div>
             <h3 class="resource-card__title">{r.title}</h3>
             <p class="resource-card__desc">{r.description}</p>
-            <span class="resource-card__link resource-card__link--disabled" aria-disabled="true">Coming soon</span>
+            <span class="resource-card__link resource-card__link--disabled" aria-disabled="true">{feat.comingSoon}</span>
           </div>
         ))}
       </div>
@@ -87,8 +67,8 @@ const availableResources = [
     <div class="container">
       <div class="available-inner">
         <div class="section-heading">
-          <p class="section-heading__eyebrow">Browse</p>
-          <h2 id="available-heading">Available resources</h2>
+          <p class="section-heading__eyebrow">{avail.heading.eyebrow}</p>
+          <h2 id="available-heading">{avail.heading.heading}</h2>
         </div>
         <ul class="resource-links" role="list">
           {availableResources.map(r => (
@@ -107,7 +87,7 @@ const availableResources = [
                 <span class="resource-link__icon" aria-hidden="true">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
                 </span>
-                Videos
+                {avail.videosLabel}
               </summary>
               <div class="resource-accordion__content">
                 <div class="video-item">
@@ -115,20 +95,20 @@ const availableResources = [
                     youtubeId={video.youtube_id}
                     title={video.title}
                     thumbnail={video.thumbnail_path.replace(/^public/, '')}
-                    label="Play video: Oakdene House Foundation, our story"
+                    label={avail.ourStory.playLabel}
                   />
-                  <p class="video-item__title">Our story</p>
-                  <p class="video-item__meta">Hear from people in recovery, our counsellors and the people who started Oakdene House. <a href={video.watch_page_path}>Watch with transcript</a></p>
+                  <p class="video-item__title">{avail.ourStory.title}</p>
+                  <p class="video-item__meta">{avail.ourStory.blurb} <a href={video.watch_page_path}>{avail.ourStory.transcriptLabel}</a></p>
                 </div>
 
                 <div class="video-item video-item--last">
                   <VideoPlayer
-                    youtubeId="lauQgtpYYGk"
-                    title="One Day at a Time 01: An introduction to Dr Rob Hunter"
-                    thumbnail="/images/video/one-day-at-a-time-01-thumb.jpg"
-                    label="Play video: One Day at a Time 01, an introduction to Dr Rob Hunter"
+                    youtubeId={avail.secondVideo.youtubeId}
+                    title={avail.secondVideo.title}
+                    thumbnail={avail.secondVideo.thumbnail}
+                    label={avail.secondVideo.playLabel}
                   />
-                  <p class="video-item__title">One Day at a Time 01: An introduction to Dr Rob Hunter</p>
+                  <p class="video-item__title">{avail.secondVideo.title}</p>
                 </div>
                 <a
                   href="https://www.youtube.com/@oakdenehousefoundati"
@@ -136,7 +116,7 @@ const availableResources = [
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  See more videos on our YouTube channel
+                  {avail.channelLabel}
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </a>
               </div>
@@ -146,7 +126,7 @@ const availableResources = [
 
         <div class="resource-note">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-          <p>All resources are free. If you cannot find what you are looking for, <a href="/contact/">contact our team</a> and we will help.</p>
+          <p><Prose md={avail.note} source={src('available.note')} /></p>
         </div>
       </div>
     </div>
@@ -154,9 +134,9 @@ const availableResources = [
 
   <!-- CTA -->
   <CTABand
-    heading="Need more support?"
-    primaryBtn={{ text: 'Get Support', href: '/contact/' }}
-    secondaryBtn={{ text: 'Contact Us', href: '/contact/' }}
+    heading={cta.heading}
+    primaryBtn={{ text: cta.primary.label, href: cta.primary.href }}
+    secondaryBtn={{ text: cta.secondary.label, href: cta.secondary.href }}
     dark={true}
   />
 

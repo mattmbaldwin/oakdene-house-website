@@ -1,4 +1,8 @@
 ---
+import { siteContent } from '../lib/site';
+
+// Words: src/content/site.yaml (edited in /admin). Addresses and structure stay here.
+const { footer: site } = await siteContent();
 const currentYear = new Date().getFullYear();
 ---
 
@@ -11,72 +15,72 @@ const currentYear = new Date().getFullYear();
 
         <!-- Column 1: About -->
         <div class="footer-col">
-          <h3 class="footer-col__heading">About</h3>
+          <h3 class="footer-col__heading">{site.about.heading}</h3>
           <ul class="footer-links" role="list">
-            <li><a href="/about/">About Us</a></li>
-            <li><a href="/about/the-oakdene-story/">Our Story</a></li>
-            <li><a href="/about/our-team/">Our Team</a></li>
-            <li><a href="/about/our-centre/">Our Centre</a></li>
+            <li><a href="/about/">{site.about.aboutUs}</a></li>
+            <li><a href="/about/the-oakdene-story/">{site.about.ourStory}</a></li>
+            <li><a href="/about/our-team/">{site.about.ourTeam}</a></li>
+            <li><a href="/about/our-centre/">{site.about.ourCentre}</a></li>
           </ul>
         </div>
 
         <!-- Column 2: Services -->
         <div class="footer-col">
-          <h3 class="footer-col__heading">Services</h3>
+          <h3 class="footer-col__heading">{site.services.heading}</h3>
           <ul class="footer-links" role="list">
-            <li><a href="/services/individual-counselling/">Individual Counselling</a></li>
-            <li><a href="/services/life-choices-program/">Life Choices Program</a></li>
-            <li><a href="/services/group-dbt-therapy/">Group DBT Therapy</a></li>
-            <li><a href="/services/gambling-counselling/">Gambling Counselling</a></li>
-            <li><a href="/services/outpatients-program/">Outpatients Program</a></li>
-            <li><a href="/services/aa-ga-meetings/">AA &amp; GA Meetings</a></li>
-            <li><a href="/services/" class="footer-link--all">All Services</a></li>
+            <li><a href="/services/individual-counselling/">{site.services.individualCounselling}</a></li>
+            <li><a href="/services/life-choices-program/">{site.services.lifeChoices}</a></li>
+            <li><a href="/services/group-dbt-therapy/">{site.services.groupDbt}</a></li>
+            <li><a href="/services/gambling-counselling/">{site.services.gamblingCounselling}</a></li>
+            <li><a href="/services/outpatients-program/">{site.services.outpatients}</a></li>
+            <li><a href="/services/aa-ga-meetings/">{site.services.aaGa}</a></li>
+            <li><a href="/services/" class="footer-link--all">{site.services.all}</a></li>
           </ul>
         </div>
 
         <!-- Column 3: Community Programs -->
         <div class="footer-col">
-          <h3 class="footer-col__heading">Community Programs</h3>
+          <h3 class="footer-col__heading">{site.community.heading}</h3>
           <ul class="footer-links" role="list">
-            <li><a href="/community-programs/oakdene-kitchen/">Oakdene Kitchen</a></li>
-            <li><a href="/community-programs/oakdene-laundrette/">Oakdene Laundrette</a></li>
-            <li><a href="/community-programs/ladies-boutique/">Ladies Boutique</a></li>
-            <li><a href="/community-programs/staple-food-packs/">Staple Food Packs</a></li>
-            <li><a href="/community-programs/volunteering/">Volunteering</a></li>
-            <li><a href="/community-programs/" class="footer-link--all">All Community Programs</a></li>
+            <li><a href="/community-programs/oakdene-kitchen/">{site.community.kitchen}</a></li>
+            <li><a href="/community-programs/oakdene-laundrette/">{site.community.laundrette}</a></li>
+            <li><a href="/community-programs/ladies-boutique/">{site.community.boutique}</a></li>
+            <li><a href="/community-programs/staple-food-packs/">{site.community.staplePacks}</a></li>
+            <li><a href="/community-programs/volunteering/">{site.community.volunteering}</a></li>
+            <li><a href="/community-programs/" class="footer-link--all">{site.community.all}</a></li>
           </ul>
         </div>
 
         <!-- Column 4: Get Help -->
         <div class="footer-col">
-          <h3 class="footer-col__heading">Get Help</h3>
+          <h3 class="footer-col__heading">{site.help.heading}</h3>
           <ul class="footer-links" role="list">
-            <li><a href="/contact/">Contact</a></li>
-            <li><a href="/need-help-now/">Need Help Now</a></li>
-            <li><a href="/services/referral/">Make a Referral</a></li>
-            <li><a href="/faq/">FAQ</a></li>
+            <li><a href="/contact/">{site.help.contact}</a></li>
+            <li><a href="/need-help-now/">{site.help.needHelp}</a></li>
+            <li><a href="/services/referral/">{site.help.referral}</a></li>
+            <li><a href="/faq/">{site.help.faq}</a></li>
           </ul>
         </div>
 
         <!-- Column 5: Contact -->
         <div class="footer-col">
-          <h3 class="footer-col__heading">Contact</h3>
+          <h3 class="footer-col__heading">{site.contact.heading}</h3>
           <ul class="footer-contact" role="list">
             <li>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
-              <a href="tel:+61287170999">(02) 8717 0999</a>
+              <a href={site.contact.phone.href}>{site.contact.phone.label}</a>
             </li>
             <li>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-              <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a>
+              <a href={site.contact.email.href}>{site.contact.email.label}</a>
             </li>
             <li>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-              <span>29 Vine Street, Fairfield NSW 2165</span>
+              <span>{site.contact.address}</span>
             </li>
             <li>
               <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
-              <span>PO Box 988, Fairfield NSW 1860</span>
+              <span>{site.contact.poBox}</span>
             </li>
           </ul>
         </div>
@@ -90,28 +94,28 @@ const currentYear = new Date().getFullYear();
     <div class="container footer-bottom__inner">
 
       <div class="footer-bottom__left">
-        <a href="/" class="footer-bottom-logo" aria-label="Oakdene House Foundation — home">
+        <a href="/" class="footer-bottom-logo" aria-label={site.logoLabel}>
           <img
             src="/images/logos/oakdene-hero-logo.png"
-            alt="Oakdene House Foundation"
+            alt={site.logoAlt}
             height="28"
           />
         </a>
         <div class="footer-bottom__legal">
-          <span>ABN 90 151 950 926</span>
+          <span>{site.legal.abn}</span>
           <span class="footer-dot" aria-hidden="true">&middot;</span>
-          <span>Registered Charity</span>
+          <span>{site.legal.charity}</span>
           <span class="footer-dot" aria-hidden="true">&middot;</span>
-          <a href="/privacy-policy/">Privacy Policy</a>
+          <a href="/privacy-policy/">{site.legal.privacy}</a>
           <span class="footer-dot" aria-hidden="true">&middot;</span>
-          <a href="/terms-of-use/">Terms of Use</a>
+          <a href="/terms-of-use/">{site.legal.terms}</a>
           <span class="footer-dot" aria-hidden="true">&middot;</span>
-          <a href="/accessibility/">Accessibility</a>
+          <a href="/accessibility/">{site.legal.accessibility}</a>
         </div>
       </div>
 
       <div class="footer-bottom__right">
-        <p class="footer-copyright">&copy; {currentYear} Oakdene House Foundation. All rights reserved.</p>
+        <p class="footer-copyright">&copy; {currentYear} {site.copyright}</p>
         <div class="footer-social">
           <a
             href="https://www.facebook.com/profile.php?id=61560176021893"

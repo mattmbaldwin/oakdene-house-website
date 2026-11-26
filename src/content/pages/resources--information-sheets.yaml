@@ -1,0 +1,27 @@
+# Words for /resources/information-sheets/. Layout: src/pages/resources/information-sheets.astro.
+layout: information-sheets
+seo:
+  title: Information Sheets — Oakdene House Foundation
+  description: Oakdene House Foundation information sheets about services and support. Contact us for specific service information.
+hero:
+  breadcrumb: Information Sheets
+  heading: Information Sheets
+  lead: Detailed service information and guides for clients and referrers.
+comingSoon:
+  heading: Coming soon
+  text: Information sheets will be available here. If you need specific information about our services in the meantime, please contact our team directly and we will help.
+  contact:
+    label: Contact Us
+    href: /contact/
+  back:
+    label: Back to Resources
+    href: /resources/
+cta:
+  heading: Looking for specific service information?
+  subheading: Our team can answer any questions about our programs and services.
+  primary:
+    label: Contact Us
+    href: /contact/
+  secondary:
+    label: Browse Services
+    href: /services/

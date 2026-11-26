@@ -1,0 +1,62 @@
+# Words and images for /resources/. Layout: src/pages/resources.astro. The "Our story" video comes from the video launch pack.
+layout: resources
+seo:
+  title: Resources — Oakdene House Foundation
+  description: Browse practical guides, support information, and downloadable resources from Oakdene House Foundation, Fairfield, Western Sydney.
+banner:
+  ariaLabel: Resources
+  heading: Resources that are practical, clear, and easy to use
+  lead: Browse guides, support information, and helpful materials you can access straight away.
+featured:
+  heading:
+    eyebrow: Featured Resources
+    heading: Guides and information packs
+    lead: All resources are free to access and download.
+  comingSoon: Coming soon
+  items:
+    - title: Getting Support Guide
+      description: A clear guide to understanding what support is available and how to access it.
+      icon: book
+    - title: Referral Information Pack
+      description: Information for workers, health professionals, and community partners about referring to Oakdene.
+      icon: share
+    - title: Community Support Guide
+      description: A directory of community services, supports, and resources in Western Sydney.
+      icon: map
+    - title: Wellbeing and Recovery Tools
+      description: Practical tools, worksheets, and exercises to support your wellbeing and recovery journey.
+      icon: heart
+available:
+  heading:
+    eyebrow: Browse
+    heading: Available resources
+  links:
+    - label: Flyers and brochures
+      href: /resources/flyers-and-brochures/
+    - label: Information sheets
+      href: /resources/information-sheets/
+    - label: Referral form
+      href: /services/referral/
+    - label: Volunteer application
+      href: /community-programs/volunteering/
+  videosLabel: Videos
+  ourStory:
+    title: Our story
+    playLabel: 'Play video: Oakdene House Foundation, our story'
+    blurb: Hear from people in recovery, our counsellors and the people who started Oakdene House.
+    transcriptLabel: Watch with transcript
+  secondVideo:
+    youtubeId: lauQgtpYYGk
+    title: 'One Day at a Time 01: An introduction to Dr Rob Hunter'
+    thumbnail: /images/video/one-day-at-a-time-01-thumb.jpg
+    playLabel: 'Play video: One Day at a Time 01, an introduction to Dr Rob Hunter'
+  channelLabel: See more videos on our YouTube channel
+  note: All resources are free. If you cannot find what you are looking for, [contact our team](/contact/) and we will help.
+cta:
+  heading: Need more support?
+  primary:
+    label: Get Support
+    href: /contact/
+  secondary:
+    label: Contact Us
+    href: /contact/

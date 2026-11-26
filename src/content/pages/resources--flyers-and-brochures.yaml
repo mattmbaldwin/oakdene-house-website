@@ -1,0 +1,24 @@
+# Words for /resources/flyers-and-brochures/. Layout: src/pages/resources/flyers-and-brochures.astro.
+layout: flyers-and-brochures
+seo:
+  title: Flyers and Brochures — Oakdene House Foundation
+  description: Oakdene House Foundation flyers and brochures. Contact us for printed materials.
+hero:
+  breadcrumb: Flyers and Brochures
+  heading: Flyers and Brochures
+  lead: Printed and digital materials about Oakdene House services.
+comingSoon:
+  heading: Coming soon
+  text: Flyers and brochures will be available here. Please contact us if you need printed materials — we will be happy to help.
+  contact:
+    label: Contact Us
+    href: /contact/
+  back:
+    label: Back to Resources
+    href: /resources/
+cta:
+  heading: Need printed materials?
+  subheading: Contact our team and we will arrange what you need.
+  primary:
+    label: Contact Us
+    href: /contact/

@@ -1,0 +1,126 @@
+# Words and images for /contact/. Layout: src/pages/contact.astro.
+# The office days and hours and the Service hours table come from opening-hours.json. The form's error messages are in the page code.
+layout: contact
+seo:
+  title: Contact Us | Oakdene House Foundation
+  description: Get in touch with Oakdene House Foundation in Fairfield, Western Sydney. Call (02) 8717 0999 or email admin@oakdenehouse.org.au
+  image: /images/centre/exterior-exterior-1-img_2651.jpg
+hero:
+  heading: Contact Oakdene House Foundation
+  subheading: Whether you are looking for support, information, a referral pathway, or community connection — we are here to help.
+  image:
+    src: /images/centre/exterior-exterior-2-img_2649-with-people.png
+    alt: Oakdene House Foundation centre exterior
+  buttons:
+    - label: Need Help Now
+      href: /need-help-now/
+      style: white-outline
+cards:
+  srHeading: Contact options
+  phone:
+    heading: Phone
+    link:
+      label: (02) 8717 0999
+      href: tel:0287170999
+    note: Give us a call during business hours
+  email:
+    heading: Email
+    link:
+      label: admin@oakdenehouse.org.au
+      href: mailto:admin@oakdenehouse.org.au
+    note: Send us an email and we will get back to you
+  visit:
+    heading: Visit Us
+    address: 29 Vine St, Fairfield NSW 2165
+    note: Parking via Fairfield RSL open air car park, corner of Vine and Bertha Streets
+  hours:
+    heading: Opening Hours
+    note: Some programs run outside these hours. Check each program page for times.
+serviceContacts:
+  heading:
+    eyebrow: Service Contacts
+    heading: Service-specific contacts
+  cards:
+    - title: Kitchen, Food Packs, Laundrette & Used Clothing Store
+      email:
+        label: kitchen@oakdenehouse.org.au
+        href: mailto:kitchen@oakdenehouse.org.au
+      phone:
+        label: 0415 156 100
+        href: tel:0415156100
+    - title: Ladies Boutique
+      email:
+        label: boutique@oakdenehouse.org.au
+        href: mailto:boutique@oakdenehouse.org.au
+      phone:
+        label: 0415 156 100
+        href: tel:0415156100
+hours:
+  heading:
+    eyebrow: When We're Open
+    heading: Service hours
+  kitchen: Oakdene Kitchen
+  staplePacks: Staple Food Packs
+  laundrette: Oakdene Laundrette
+  clothingStore: Used Clothing Store
+  boutique:
+    label: Ladies Boutique
+    value: By appointment only
+  counselling:
+    label: Counselling
+    value: By appointment
+  lifeChoices:
+    label: Life Choices Program
+    value: See [program page](/services/life-choices-program/) for full schedule
+extra:
+  srHeading: Additional information
+  language:
+    heading: Language Support
+    text: We offer support in multiple languages. If you need an interpreter, please let us know when you contact us and we will arrange one for you.
+  postal:
+    heading: Postal Address
+    line1: PO Box 988
+    line2: Fairfield NSW 1860
+    abn: "ABN: 90 151 950 926 \_|\_ Registered Charity"
+map:
+  heading:
+    eyebrow: Find Us
+    heading: Getting here
+  title: Map showing Oakdene House Foundation at 29 Vine Street, Fairfield NSW 2165
+  label: Interactive map showing Oakdene House Foundation at 29 Vine Street, Fairfield NSW 2165
+  directionsLabel: Get directions
+form:
+  heading: We'd love to hear from you
+  intro: Whether you're looking for support, interested in one of our programs, considering a partnership, or just want to know more about Oakdene — send us a message and we'll be in touch within 2 business days.
+  successHeading: Thanks — your message has been sent. We'll be in touch within 2 business days.
+  successText: If you need support urgently, please call us on [(02) 8717 0999](tel:+61287170999) during business hours, or visit our [Need Help Now](/need-help-now/) page for 24/7 support.
+  honeypotLabel: Leave this blank
+  firstName: First name
+  lastName: Last name
+  email: Email
+  phone: Phone
+  optional: (optional)
+  reason: Reason for enquiry
+  reasonPlaceholder: Select a reason…
+  reasons:
+    general: General enquiry
+    counselling: Counselling or support
+    communityPrograms: Community programs
+    programInterest: Program interest — I'd like to join a program
+    volunteering: Volunteering
+    partnership: Partnership or organisation enquiry
+    donation: Donation or fundraising
+    media: Media enquiry
+    other: Other
+  message: Message
+  consent: I understand my enquiry will be handled in line with Oakdene's [privacy policy](/privacy-policy/).
+  submit: Send message
+cta:
+  heading: Need support right now?
+  subheading: If you need immediate help, visit our Need Help Now page for crisis lines and emergency contacts.
+  primary:
+    label: Need Help Now
+    href: /need-help-now/
+  secondary:
+    label: Get Support
+    href: /contact/

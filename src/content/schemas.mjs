@@ -1056,6 +1056,579 @@ export const volunteerThankYouLayout = z
 
 // END W9
 
+// ===== W10 BEGIN (stage W10, issue #18: home, contact, support-us, need-help-now, resources x3, service-directory) =====
+// Kept in one block because other stages edit this file; the only lines W10 adds elsewhere are the three spreads
+// named "w10…" in `pageLayouts` and `pageFiles`, and the `site` entry in `cmsCollections`.
+
+/** The home-style banner (Hero.astro): heading, line under it, background image and buttons. */
+const heroBanner = () =>
+  z
+    .strictObject({
+      heading: heading('Page heading'),
+      subheading: longText('Line under the heading'),
+      image: image('Background image'),
+      buttons: z
+        .array(
+          z
+            .strictObject({
+              label: text('Text'),
+              href: href('Goes to'),
+              style: z.enum(['white', 'white-outline']).meta({ title: 'Style', description: 'white (filled) or white-outline.' }),
+            })
+            .meta({ title: 'Button' }),
+        )
+        .meta({ title: 'Buttons', cms: { summary: '{{fields.label}}' } }),
+    })
+    .meta({ title: 'Banner' });
+
+/** A banner with no image: page heading and the line under it. */
+const plainBanner = () =>
+  z.strictObject({ heading: heading('Page heading'), lead: longText('Line under the heading') }).meta({ title: 'Banner' });
+
+/** The call-to-action band, where a page may leave out the line under the heading or the second button. */
+const ctaBandW10 = ({ subheading = false, secondary = true } = {}) => {
+  const fields = { heading: heading() };
+  if (subheading) fields.subheading = longText('Line under the heading');
+  fields.primary = link('First button');
+  if (secondary) fields.secondary = link('Second button');
+  return z.strictObject(fields).meta({ title: 'Call to action band' });
+};
+
+const cardsOf = (shape, title) =>
+  z.array(z.strictObject(shape).meta({ title: 'Item' })).min(1).meta({ title, cms: { summary: '{{fields.title}}' } });
+
+const SUMMARY_NOTE = 'Shown word for word.';
+
+// Layout: index.astro
+export const homeLayout = z
+  .strictObject({
+    layout: layoutField('home'),
+    seo: seo(),
+    hero: heroBanner(),
+    pathways: z
+      .strictObject({
+        heading: heading('"How can we help?" heading'),
+        items: cardsOf({ title: heading('Title'), summary: longText('Summary'), href: href('Goes to') }, 'Quick links'),
+      })
+      .meta({ title: 'Quick links' }),
+    mission: z
+      .strictObject({
+        heading: heading(),
+        paragraphs: paragraphs(),
+        button: link('Button'),
+        image: image(),
+      })
+      .meta({ title: 'Mission' }),
+    impact: z
+      .strictObject({
+        ariaLabel: text('Section label for screen readers'),
+        eyebrow: text('Small label above the heading'),
+        heading: heading(),
+        stats: z
+          .array(z.strictObject({ number: text('Number'), label: text('Label') }).meta({ title: 'Figure' }))
+          .min(1)
+          .meta({ title: 'Figures', cms: { summary: '{{fields.number}}' } }),
+        note: longText('Note under the figures'),
+      })
+      .meta({ title: 'Our impact' }),
+    services: z
+      .strictObject({
+        heading: sectionHeading(),
+        counselling: z.strictObject({ title: heading('Title'), summary: longText('Summary'), href: href('Goes to'), image: image() }).meta({ title: 'First card' }),
+        lifeChoices: z.strictObject({ title: heading('Title'), summary: longText('Summary'), href: href('Goes to'), image: image() }).meta({ title: 'Second card' }),
+        kitchen: z
+          .strictObject({
+            title: heading('Title'),
+            summary: longText('Summary', 'The Oakdene Kitchen opening hours (from Opening hours) and a full stop are added after this text.'),
+            href: href('Goes to'),
+            image: image(),
+          })
+          .meta({ title: 'Third card' }),
+        boutique: z.strictObject({ title: heading('Title'), summary: longText('Summary'), href: href('Goes to'), image: image() }).meta({ title: 'Fourth card' }),
+        button: link('Button under the cards'),
+      })
+      .meta({ title: 'Services' }),
+    steps: z
+      .strictObject({
+        heading: sectionHeading(),
+        listLabel: text('List label for screen readers'),
+        items: z
+          .array(z.strictObject({ title: heading('Title'), body: longText('Text') }).meta({ title: 'Step' }))
+          .min(1)
+          .meta({ title: 'Steps', description: 'Numbered 1, 2, 3 … in this order.', cms: { summary: '{{fields.title}}' } }),
+        image: image(),
+      })
+      .meta({ title: 'How support works' }),
+    testimonials: z.strictObject({ heading: sectionHeading() }).meta({ title: 'Testimonials', description: 'The quotes come from testimonials.json and are not edited here.' }),
+    faq: z.strictObject({ heading: sectionHeading() }).meta({ title: 'Questions', description: 'The questions come from the FAQs form.' }),
+    video: z
+      .strictObject({
+        heading: sectionHeading({ lead: true }),
+        playLabel: text('Play button label for screen readers'),
+        transcriptLabel: text('Transcript button'),
+      })
+      .meta({ title: 'Video', description: 'The video itself comes from the video launch pack and is not edited here.' }),
+    cta: ctaBandW10({ subheading: true }),
+  })
+  .meta({ title: 'Home page' });
+
+// Layout: contact.astro
+export const contactLayout = z
+  .strictObject({
+    layout: layoutField('contact'),
+    seo: seo(),
+    hero: heroBanner(),
+    cards: z
+      .strictObject({
+        srHeading: text('Hidden heading for screen readers'),
+        phone: z.strictObject({ heading: heading(), link: link('Phone link'), note: text('Note') }).meta({ title: 'Phone card' }),
+        email: z.strictObject({ heading: heading(), link: link('Email link'), note: text('Note') }).meta({ title: 'Email card' }),
+        visit: z.strictObject({ heading: heading(), address: text('Address'), note: text('Note') }).meta({ title: 'Visit card' }),
+        hours: z
+          .strictObject({
+            heading: heading(),
+            note: text('Note under the hours', 'The days and hours come from Opening hours.'),
+          })
+          .meta({ title: 'Opening hours card' }),
+      })
+      .meta({ title: 'Contact cards' }),
+    serviceContacts: z
+      .strictObject({
+        heading: sectionHeading(),
+        cards: z
+          .array(z.strictObject({ title: heading('Heading'), email: link('Email link'), phone: link('Phone link') }).meta({ title: 'Contact' }))
+          .min(1)
+          .meta({ title: 'Contacts', cms: { summary: '{{fields.title}}' } }),
+      })
+      .meta({ title: 'Service-specific contacts' }),
+    hours: z
+      .strictObject({
+        heading: sectionHeading(),
+        kitchen: text('Kitchen label', 'Its hours come from Opening hours.'),
+        staplePacks: text('Staple Food Packs label', 'Its hours come from Opening hours.'),
+        laundrette: text('Laundrette label', 'Its hours come from Opening hours.'),
+        clothingStore: text('Used Clothing Store label', 'Its hours come from Opening hours.'),
+        boutique: z.strictObject({ label: text('Label'), value: text('Hours') }).meta({ title: 'Ladies Boutique' }),
+        counselling: z.strictObject({ label: text('Label'), value: text('Hours') }).meta({ title: 'Counselling' }),
+        lifeChoices: z.strictObject({ label: text('Label'), value: prose('Hours') }).meta({ title: 'Life Choices Program' }),
+      })
+      .meta({ title: 'Service hours' }),
+    extra: z
+      .strictObject({
+        srHeading: text('Hidden heading for screen readers'),
+        language: z.strictObject({ heading: heading(), text: longText('Text') }).meta({ title: 'Language support' }),
+        postal: z
+          .strictObject({
+            heading: heading(),
+            line1: text('Address line 1'),
+            line2: text('Address line 2'),
+            abn: text('ABN line'),
+          })
+          .meta({ title: 'Postal address' }),
+      })
+      .meta({ title: 'Additional information' }),
+    map: z
+      .strictObject({
+        heading: sectionHeading(),
+        title: text('Map title for screen readers'),
+        label: text('Map label for screen readers'),
+        directionsLabel: text('Directions link'),
+      })
+      .meta({ title: 'Map' }),
+    form: z
+      .strictObject({
+        heading: heading('Form heading'),
+        intro: prose('Introduction'),
+        successHeading: text('Message after sending'),
+        successText: prose('Text under the message after sending'),
+        honeypotLabel: text('Hidden spam-trap label', 'Not shown to visitors. Leave as is unless asked.'),
+        firstName: text('First name label'),
+        lastName: text('Last name label'),
+        email: text('Email label'),
+        phone: text('Phone label'),
+        optional: text('"Optional" marker'),
+        reason: text('Reason label'),
+        reasonPlaceholder: text('Reason placeholder'),
+        reasons: z
+          .strictObject({
+            general: text('General enquiry'),
+            counselling: text('Counselling or support'),
+            communityPrograms: text('Community programs'),
+            programInterest: text('Program interest'),
+            volunteering: text('Volunteering'),
+            partnership: text('Partnership or organisation enquiry'),
+            donation: text('Donation or fundraising'),
+            media: text('Media enquiry'),
+            other: text('Other'),
+          })
+          .meta({ title: 'Reasons for enquiry' }),
+        message: text('Message label'),
+        consent: prose('Consent tick box'),
+        submit: text('Send button', 'After a failed send the form script puts the words "Send message" back on the button; that is not editable here.'),
+      })
+      .meta({ title: 'Enquiry form', description: 'Error messages shown by the form are not edited here.' }),
+    cta: ctaBandW10({ subheading: true }),
+  })
+  .meta({ title: 'Contact page' });
+
+// Layout: support-us.astro
+export const supportUsLayout = z
+  .strictObject({
+    layout: layoutField('support-us'),
+    seo: seo(),
+    hero: heroBanner(),
+    intro: z.strictObject({ srHeading: text('Hidden heading for screen readers'), text: longText('Text') }).meta({ title: 'Introduction' }),
+    donate: z.strictObject({ srHeading: text('Hidden heading for screen readers'), heading: heading('Donation box heading') }).meta({ title: 'Donate' }),
+    otherWays: z
+      .strictObject({
+        ariaLabel: text('Section label for screen readers'),
+        heading: heading(),
+        directDeposit: z
+          .strictObject({
+            heading: heading(),
+            rows: z
+              .array(z.strictObject({ label: text('Label'), value: text('Value') }).meta({ title: 'Row' }))
+              .min(1)
+              .meta({ title: 'Details', cms: { summary: '{{fields.label}}' } }),
+          })
+          .meta({ title: 'Direct deposit' }),
+        cheque: z.strictObject({ heading: heading(), text: prose('Text') }).meta({ title: 'Cheque' }),
+        workplace: z.strictObject({ heading: heading(), text: prose('Text') }).meta({ title: 'Workplace giving' }),
+        will: z.strictObject({ heading: heading(), text: prose('Text') }).meta({ title: 'Gift in your will' }),
+        corporate: z.strictObject({ heading: heading(), text: prose('Text') }).meta({ title: 'Corporate partnership' }),
+      })
+      .meta({ title: 'Other ways to give' }),
+    assurance: z
+      .strictObject({
+        srHeading: text('Hidden heading for screen readers'),
+        lines: z.array(longText('Line')).min(1).meta({ title: 'Lines (shown in italics)' }),
+        credentials: text('Credentials line'),
+      })
+      .meta({ title: 'Assurance' }),
+    faq: z
+      .strictObject({
+        heading: heading(),
+        items: z
+          .array(z.strictObject({ question: text('Question'), answer: longText('Answer') }).meta({ title: 'Question' }))
+          .min(1)
+          .meta({ title: 'Questions', cms: { summary: '{{fields.question}}' } }),
+      })
+      .meta({ title: 'Questions about donations' }),
+    cta: ctaBandW10({ subheading: true, secondary: false }),
+  })
+  .meta({ title: 'Support Us page' });
+
+// Layout: need-help-now.astro
+export const needHelpNowLayout = z
+  .strictObject({
+    layout: layoutField('need-help-now'),
+    seo: seo(),
+    banner: z
+      .strictObject({ ariaLabel: text('Section label for screen readers'), heading: heading('Page heading'), lead: longText('Line under the heading') })
+      .meta({ title: 'Banner' }),
+    emergency: z
+      .strictObject({
+        label: text('Label'),
+        callPrefix: text('Word before the number'),
+        number: link('Emergency number'),
+      })
+      .meta({ title: 'Immediate danger' }),
+    helplines: z
+      .strictObject({
+        heading: heading(),
+        lead: longText('Line under the heading'),
+        items: z
+          .array(
+            z
+              .strictObject({
+                name: text('Name'),
+                description: text('Description'),
+                phone: text('Number as shown'),
+                href: href('Phone link', 'tel: followed by digits only, e.g. tel:131114.'),
+              })
+              .meta({ title: 'Helpline' }),
+          )
+          .min(1)
+          .meta({ title: 'Helplines', cms: { summary: '{{fields.name}}' } }),
+      })
+      .meta({ title: 'Crisis support lines' }),
+    talk: z
+      .strictObject({
+        heading: heading(),
+        intro: longText('Introduction'),
+        phone: link('Phone link'),
+        phoneAriaLabel: text('Phone link label for screen readers'),
+        emailLabel: text('Word before the email'),
+        email: link('Email link'),
+        languageNote: longText('Language note'),
+        hoursHeading: text('Hours box heading'),
+        availabilityLead: text('Hours sentence', 'The opening hours (from Opening hours) and a full stop are added after this text.'),
+        outsideHours: longText('Outside-hours note'),
+      })
+      .meta({ title: 'Talk to Oakdene' }),
+    note: z.strictObject({ ariaLabel: text('Section label for screen readers'), text: prose('Note') }).meta({ title: 'Final note' }),
+  })
+  .meta({ title: 'Need Help Now page' });
+
+// Layout: resources.astro
+export const resourcesLayout = z
+  .strictObject({
+    layout: layoutField('resources'),
+    seo: seo(),
+    banner: z.strictObject({ ariaLabel: text('Section label for screen readers'), heading: heading('Page heading'), lead: longText('Line under the heading') }).meta({ title: 'Banner' }),
+    featured: z
+      .strictObject({
+        heading: sectionHeading({ lead: true }),
+        comingSoon: text('"Coming soon" label'),
+        items: z
+          .array(
+            z
+              .strictObject({
+                title: heading('Title'),
+                description: longText('Description'),
+                icon: z.enum(['book', 'share', 'map', 'heart']).meta({ title: 'Icon' }),
+              })
+              .meta({ title: 'Resource' }),
+          )
+          .min(1)
+          .meta({ title: 'Resources', cms: { summary: '{{fields.title}}' } }),
+      })
+      .meta({ title: 'Featured resources' }),
+    available: z
+      .strictObject({
+        heading: sectionHeading(),
+        links: z
+          .array(z.strictObject({ label: text('Text'), href: href('Goes to') }).meta({ title: 'Link' }))
+          .min(1)
+          .meta({ title: 'Links', cms: { summary: '{{fields.label}}' } }),
+        videosLabel: text('Videos drop-down label'),
+        ourStory: z
+          .strictObject({
+            title: text('Title'),
+            playLabel: text('Play button label for screen readers'),
+            blurb: longText('Text'),
+            transcriptLabel: text('Transcript link'),
+          })
+          .meta({ title: 'Our story video', description: 'The video itself comes from the video launch pack.' }),
+        secondVideo: z
+          .strictObject({
+            youtubeId: text('YouTube video id'),
+            title: text('Title'),
+            thumbnail: imagePath('Thumbnail image'),
+            playLabel: text('Play button label for screen readers'),
+          })
+          .meta({ title: 'Second video' }),
+        channelLabel: text('YouTube channel link'),
+        note: prose('Note under the list'),
+      })
+      .meta({ title: 'Available resources' }),
+    cta: ctaBandW10(),
+  })
+  .meta({ title: 'Resources page' });
+
+// Layouts: resources/flyers-and-brochures.astro and resources/information-sheets.astro (same fields, own markup)
+const resourcePlaceholderLayout = (name, title) =>
+  z
+    .strictObject({
+      layout: layoutField(name),
+      seo: seo(),
+      hero: hero(),
+      comingSoon: z
+        .strictObject({
+          heading: heading(),
+          text: longText('Text'),
+          contact: link('First button'),
+          back: link('Second button'),
+        })
+        .meta({ title: 'Coming soon box' }),
+      cta: ctaBandW10({ subheading: true, secondary: name === 'information-sheets' }),
+    })
+    .meta({ title });
+export const flyersAndBrochuresLayout = resourcePlaceholderLayout('flyers-and-brochures', 'Flyers and Brochures page');
+export const informationSheetsLayout = resourcePlaceholderLayout('information-sheets', 'Information Sheets page');
+
+// Layout: service-directory.astro (the listing comes from oakdene-service-directory.json, written by its sync)
+export const serviceDirectoryLayout = z
+  .strictObject({
+    layout: layoutField('service-directory'),
+    seo: seo(),
+    hero: z
+      .strictObject({
+        ariaLabel: text('Section label for screen readers'),
+        heading: heading('Page heading'),
+        lead: longText('Line under the heading', 'Keep {total}: it is replaced by the number of listed services.'),
+      })
+      .meta({ title: 'Banner' }),
+    filter: z
+      .strictObject({
+        ariaLabel: text('Search bar label for screen readers'),
+        searchLabel: text('Search label'),
+        searchPlaceholder: text('Search placeholder'),
+        categoryLabel: text('Category label'),
+        allCategories: text('"All categories" choice', 'Keep {total}: it is replaced by the number of services.'),
+        locationLabel: text('Location label'),
+        allLocations: text('"All locations" choice'),
+      })
+      .meta({ title: 'Search and filters' }),
+    cards: z
+      .strictObject({
+        srHeading: text('Hidden heading for screen readers'),
+        byPrefix: text('Word before the organisation'),
+        noContact: text('No contact details message'),
+        website: text('Website link'),
+        acnc: text('Charity register link'),
+        emptyState: prose('Message when no service matches'),
+      })
+      .meta({ title: 'Service cards' }),
+    disclaimer: z
+      .strictObject({
+        ariaLabel: text('Section label for screen readers'),
+        text: longText('Text', 'Keep {date}: it is replaced by the date the directory was last verified.'),
+      })
+      .meta({ title: 'Disclaimer' }),
+    otherDirectories: z.strictObject({ heading: sectionHeading({ lead: true }) }).meta({ title: 'Wider directories', description: 'The list itself comes from the directory sync.' }),
+    cta: ctaBandW10({ subheading: false }),
+  })
+  .meta({ title: 'Service Directory page' });
+
+const w10Layouts = {
+  home: homeLayout,
+  contact: contactLayout,
+  'support-us': supportUsLayout,
+  'need-help-now': needHelpNowLayout,
+  resources: resourcesLayout,
+  'flyers-and-brochures': flyersAndBrochuresLayout,
+  'information-sheets': informationSheetsLayout,
+  'service-directory': serviceDirectoryLayout,
+};
+const w10PageFiles = [
+  { name: 'index', label: 'Home', layout: 'home' },
+  { name: 'contact', label: 'Contact', layout: 'contact' },
+  { name: 'support-us', label: 'Support Us', layout: 'support-us' },
+  { name: 'need-help-now', label: 'Need Help Now', layout: 'need-help-now' },
+  { name: 'resources', label: 'Resources', layout: 'resources' },
+  { name: 'resources--flyers-and-brochures', label: 'Flyers and Brochures', layout: 'flyers-and-brochures' },
+  { name: 'resources--information-sheets', label: 'Information Sheets', layout: 'information-sheets' },
+  { name: 'service-directory', label: 'Service Directory', layout: 'service-directory' },
+];
+
+// Site-wide text (src/content/site.yaml): header, footer. Link addresses and menu structure stay in the components;
+// only the words are here.
+const navLabel = (title) => text(title);
+export const siteSchema = z
+  .strictObject({
+    header: z
+      .strictObject({
+        logo: z
+          .strictObject({ alt: text('Logo alt text'), homeLabel: text('Logo link label for screen readers') })
+          .meta({ title: 'Logo' }),
+        nav: z
+          .strictObject({
+            home: navLabel('Home'),
+            about: navLabel('About'),
+            services: navLabel('Addiction Support'),
+            community: navLabel('Community Programs'),
+            resources: navLabel('Resources'),
+            directory: navLabel('Service Directory'),
+            contact: navLabel('Contact'),
+          })
+          .meta({ title: 'Main menu' }),
+        servicesMenu: z
+          .strictObject({
+            individualCounselling: navLabel('Individual Counselling'),
+            gamblingCounselling: navLabel('Gambling Counselling'),
+            lifeChoices: navLabel('Life Choices Program'),
+            groupDbt: navLabel('Group DBT Therapy'),
+            outpatients: navLabel('Outpatients Program'),
+            aaGa: navLabel('AA & GA Meetings'),
+            financialCounselling: navLabel('Financial Counselling'),
+          })
+          .meta({ title: 'Addiction Support menu' }),
+        communityMenu: z
+          .strictObject({
+            kitchen: navLabel('Oakdene Kitchen'),
+            staplePacks: navLabel('Staple Food Packs'),
+            laundrette: navLabel('Oakdene Laundrette'),
+            boutique: navLabel('Ladies Boutique'),
+            clothingStore: navLabel('Used Clothing Store'),
+            volunteering: navLabel('Volunteering'),
+          })
+          .meta({ title: 'Community Programs menu' }),
+        buttons: z
+          .strictObject({ getSupport: text('Get Support button'), needHelp: text('Need Help Now button') })
+          .meta({ title: 'Header buttons' }),
+      })
+      .meta({ title: 'Header' }),
+    footer: z
+      .strictObject({
+        about: z
+          .strictObject({
+            heading: heading(),
+            aboutUs: navLabel('About Us'),
+            ourStory: navLabel('Our Story'),
+            ourTeam: navLabel('Our Team'),
+            ourCentre: navLabel('Our Centre'),
+          })
+          .meta({ title: 'About column' }),
+        services: z
+          .strictObject({
+            heading: heading(),
+            individualCounselling: navLabel('Individual Counselling'),
+            lifeChoices: navLabel('Life Choices Program'),
+            groupDbt: navLabel('Group DBT Therapy'),
+            gamblingCounselling: navLabel('Gambling Counselling'),
+            outpatients: navLabel('Outpatients Program'),
+            aaGa: navLabel('AA & GA Meetings'),
+            all: navLabel('All Services'),
+          })
+          .meta({ title: 'Services column' }),
+        community: z
+          .strictObject({
+            heading: heading(),
+            kitchen: navLabel('Oakdene Kitchen'),
+            laundrette: navLabel('Oakdene Laundrette'),
+            boutique: navLabel('Ladies Boutique'),
+            staplePacks: navLabel('Staple Food Packs'),
+            volunteering: navLabel('Volunteering'),
+            all: navLabel('All Community Programs'),
+          })
+          .meta({ title: 'Community Programs column' }),
+        help: z
+          .strictObject({
+            heading: heading(),
+            contact: navLabel('Contact'),
+            needHelp: navLabel('Need Help Now'),
+            referral: navLabel('Make a Referral'),
+            faq: navLabel('FAQ'),
+          })
+          .meta({ title: 'Get Help column' }),
+        contact: z
+          .strictObject({
+            heading: heading(),
+            phone: link('Phone link'),
+            email: link('Email link'),
+            address: text('Street address'),
+            poBox: text('Postal address'),
+          })
+          .meta({ title: 'Contact column' }),
+        legal: z
+          .strictObject({
+            abn: text('ABN'),
+            charity: text('Charity status'),
+            privacy: navLabel('Privacy Policy'),
+            terms: navLabel('Terms of Use'),
+            accessibility: navLabel('Accessibility'),
+          })
+          .meta({ title: 'Bottom row' }),
+        copyright: text('Copyright text', 'Shown after "© year". The year is added automatically.'),
+        logoAlt: text('Logo alt text'),
+        logoLabel: text('Logo link label for screen readers'),
+      })
+      .meta({ title: 'Footer' }),
+  })
+  .meta({ title: 'Site-wide text' });
+// ===== W10 END =====
+
 /** Every page layout, by the value of its `layout:` field. */
 export const pageLayouts = {
   'life-choices-program': lifeChoicesProgramLayout,
@@ -1081,6 +1654,7 @@ export const pageLayouts = {
   'community-volunteers': communityVolunteersLayout,
   'corporate-volunteering': corporateVolunteeringLayout,
   'volunteer-thank-you': volunteerThankYouLayout,
+  ...w10Layouts,
 };
 
 /** Any page file: the schema is chosen by its `layout:` field. Used by the Astro `pages` collection. */
@@ -1112,6 +1686,7 @@ export const pageFiles = [
   { name: 'community-programs--volunteering--community-volunteers', label: 'Volunteering: Community Volunteers', layout: 'community-volunteers' },
   { name: 'community-programs--volunteering--corporate-volunteering', label: 'Volunteering: Corporate Volunteering', layout: 'corporate-volunteering' },
   { name: 'community-programs--volunteering--thank-you', label: 'Volunteering: Thank You', layout: 'volunteer-thank-you' },
+  ...w10PageFiles,
 ];
 
 // ---------------------------------------------------------------------------------------------------------------
@@ -1148,4 +1723,5 @@ export const cmsCollections = [
     layouts: pageLayouts,
     files: pageFiles,
   },
+  { kind: 'file', name: 'site', label: 'Site-wide text', file: 'src/content/site.yaml', format: 'yaml', schema: siteSchema },
 ];

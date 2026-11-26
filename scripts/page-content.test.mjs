@@ -201,3 +201,43 @@ test('the link address rule matches the prose renderer', async () => {
   const literal = prose.match(/^const HREF = \/(.*)\/;$/m)[1];
   assert.equal(new RegExp(HREF_PATTERN).source, new RegExp(literal).source);
 });
+
+// ===== W10 BEGIN (issue #18) =====
+// protects: acceptance criterion 4 for each W10 layout (home, contact, support-us, need-help-now, resources, flyers,
+//           information sheets, service directory): removing a required field fails the check, naming file and field.
+// fails_when: a layout lets a required field be dropped and the page still builds with a gap.
+// no_claim: only seo.title and the page's first heading-like field are removed; it does not prove every field is required.
+const W10_PAGES = [
+  ['index', (d) => delete d.seo.title, 'seo.title'],
+  ['contact', (d) => delete d.form.submit, 'form.submit'],
+  ['support-us', (d) => delete d.otherWays.cheque.text, 'otherWays.cheque.text'],
+  ['need-help-now', (d) => delete d.emergency.number, 'emergency.number'],
+  ['resources', (d) => delete d.available.videosLabel, 'available.videosLabel'],
+  ['resources--flyers-and-brochures', (d) => delete d.comingSoon.heading, 'comingSoon.heading'],
+  ['resources--information-sheets', (d) => delete d.cta.secondary, 'cta.secondary'],
+  ['service-directory', (d) => delete d.filter.searchLabel, 'filter.searchLabel'],
+];
+for (const [name, edit, field] of W10_PAGES) {
+  test(`W10: ${name} without ${field} fails naming the file and the field`, async () => {
+    const dir = await scratchWithPage(name, edit);
+    const { problems } = await validateContent([pagesCollection], dir);
+    assert.equal(problems.length, 1, problems.join('\n'));
+    assert.ok(problems[0].startsWith(`${PAGES_FOLDER}/${name}.yaml: ${field}`), problems[0]);
+  });
+}
+
+// protects: the header and footer words (src/content/site.yaml) are checked like every other editable file.
+// fails_when: a header or footer label can be removed without the build failing.
+// no_claim: does not render the header or footer; the zero-difference check covers what they show.
+test('W10: site.yaml without a footer label fails naming the file and the field', async () => {
+  const site = cmsCollections.find((c) => c.name === 'site');
+  const dir = await mkdtemp(join(tmpdir(), 'site-'));
+  await mkdir(join(dir, 'src/content'), { recursive: true });
+  const data = yaml.load(await readFile(join(ROOT, 'src/content/site.yaml'), 'utf8'));
+  delete data.footer.help.faq;
+  await writeFile(join(dir, 'src/content/site.yaml'), yaml.dump(data));
+  const { problems } = await validateContent([site], dir);
+  assert.equal(problems.length, 1, problems.join('\n'));
+  assert.ok(problems[0].startsWith('src/content/site.yaml: footer.help.faq'), problems[0]);
+});
+// ===== W10 END =====
