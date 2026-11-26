@@ -237,6 +237,7 @@ Second set (available for other pages):
 - All page files: lowercase with hyphens (e.g. life-choices-program.astro)
 - All component files: PascalCase (e.g. ServiceCard.astro)
 - Shared client-side scripts: src/scripts/ (TypeScript modules imported by component and page <script> tags)
+- Page words and images (website editor, stage W4 onwards): one YAML file per page in src/content/pages/, named after the URL path with -- for each / (services--aa-ga-meetings.yaml). Each file names its `layout:`, whose Zod schema is in src/content/schemas.mjs (with the shared field types: heading, prose, link, button, image, seo). The .astro page keeps the markup and reads the file with pageContent() from src/lib/pages.ts; paragraphs go through Prose.astro. After changing a schema run npm run build:cms. Done so far: life-choices-program, aa-ga-meetings, group-dbt-therapy
 - All content files: JSON in src/content/. Exception: the video watch page reads video.json and transcript.txt from docs/video-launch/content/ at build time, so the launch pack stays the single source
 - Images served from /images/ (files live in public/images/)
 - PDFs in public/downloads/
