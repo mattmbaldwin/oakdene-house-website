@@ -1,11 +1,20 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Prose from '../components/Prose.astro';
 import hours from '../content/opening-hours.json';
+import { pageContent, fieldSource } from '../lib/pages';
+
+// Words: src/content/pages/thankyou.yaml (edited in /admin). The office hours come from src/content/opening-hours.json.
+const ID = 'thankyou';
+const page = await pageContent(ID, 'thankyou');
+const { seo, steps, buttons } = page;
+const src = (path: string) => fieldSource(ID, path);
 ---
 
 <BaseLayout
-  title="Thank You — Oakdene House Foundation"
-  description="Thank you for contacting Oakdene House Foundation. We will be in touch as soon as possible."
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.image}
 >
 
   <section class="thankyou" aria-label="Thank you confirmation">
@@ -13,31 +22,19 @@ import hours from '../content/opening-hours.json';
       <div class="thankyou__icon" aria-hidden="true">
         <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
       </div>
-      <h1>Thank you for getting in touch</h1>
-      <p class="thankyou__sub">We have received your message and will be in touch as soon as possible.</p>
-      <p class="thankyou__body">If your enquiry is urgent, please call us directly on <a href="tel:0287170999">(02) 8717 0999</a>. Our team is available {hours.office.availability}.</p>
+      <h1>{page.heading}</h1>
+      <p class="thankyou__sub">{page.sub}</p>
+      <p class="thankyou__body"><Prose md={page.urgent} source={src('urgent')} /> {page.availabilityLead} {hours.office.availability}.</p>
 
       <div class="next-steps" aria-label="What happens next">
-        <h2 class="next-steps__heading">What happens next</h2>
+        <h2 class="next-steps__heading">{steps.heading}</h2>
         <div class="next-steps__list">
-          <div class="next-step">
-            <div class="next-step__number" aria-hidden="true">1</div>
-            <p>We will review your message within 2 business days</p>
-          </div>
-          <div class="next-step">
-            <div class="next-step__number" aria-hidden="true">2</div>
-            <p>A member of our team will contact you to follow up</p>
-          </div>
-          <div class="next-step">
-            <div class="next-step__number" aria-hidden="true">3</div>
-            <p>If you need immediate support, please visit our <a href="/need-help-now/">Need Help Now</a> page</p>
-          </div>
+          {steps.items.map((item, i) => <>{' '}<div class="next-step">{' '}<div class="next-step__number" aria-hidden="true">{i + 1}</div>{' '}<p><Prose md={item} source={src(`steps.items.${i}`)} /></p>{' '}</div></>)}{' '}
         </div>
       </div>
 
       <div class="thankyou__actions">
-        <a href="/" class="btn btn--primary">Back to Home</a>
-        <a href="/need-help-now/" class="btn btn--secondary">Need Help Now</a>
+        {buttons.map((b) => <>{' '}<a href={b.href} class={`btn btn--${b.style}`}>{b.label}</a></>)}{' '}
       </div>
     </div>
   </section>

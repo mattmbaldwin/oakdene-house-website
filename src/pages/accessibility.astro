@@ -1,10 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Prose from '../components/Prose.astro';
+import { pageContent, fieldSource } from '../lib/pages';
+
+// Words: src/content/pages/accessibility.yaml (edited in /admin).
+const ID = 'accessibility';
+const page = await pageContent(ID, 'accessibility');
+const { seo, hero, lastUpdated, intro, sections } = page;
+const src = (path: string) => fieldSource(ID, path);
 ---
 
 <BaseLayout
-  title="Accessibility — Oakdene House Foundation"
-  description="Oakdene House Foundation Accessibility Statement — our commitment to making our website and services accessible to everyone."
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.image}
 >
 
   <!-- HERO -->
@@ -13,9 +22,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">Accessibility</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1>Accessibility</h1>
+      <h1>{hero.heading}</h1>
     </div>
   </section>
 
@@ -26,82 +35,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- Date -->
         <div class="doc-meta">
-          <p><em>Last updated: [Launch date to be inserted]</em></p>
+          <p><em>{lastUpdated}</em></p>
         </div>
 
         <!-- Intro -->
         <div class="doc-section">
-          <p>Oakdene House Foundation is committed to making our website accessible to everyone, including people with disabilities.</p>
+          <p><Prose md={intro} source={src('intro')} /></p>
         </div>
 
-        <!-- Our commitment -->
-        <div class="doc-section" id="our-commitment">
-          <h2>Our commitment</h2>
-          <p>We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards across our website. We are continuously working to improve accessibility and welcome feedback from people who use assistive technologies.</p>
-        </div>
-
-        <!-- What we've done -->
-        <div class="doc-section" id="what-weve-done">
-          <h2>What we've done</h2>
-          <p>Our website includes:</p>
-          <ul>
-            <li>Semantic HTML throughout for better screen reader compatibility</li>
-            <li>Descriptive alt text on images</li>
-            <li>Keyboard navigation support</li>
-            <li>Sufficient colour contrast (WCAG AA)</li>
-            <li>Resizable text without loss of functionality</li>
-            <li>Skip-to-content links on every page</li>
-            <li>Clear, plain-language content</li>
-            <li>Logical heading structure</li>
-            <li>Labels and instructions on all form fields</li>
-          </ul>
-        </div>
-
-        <!-- Known limitations -->
-        <div class="doc-section" id="known-limitations">
-          <h2>Known limitations</h2>
-          <p>We're honest about where we haven't got there yet:</p>
-          <ul>
-            <li>Some older PDF resources may not be fully accessible. If you need an accessible version of any document, please <a href="/contact/">contact us</a> and we'll provide one.</li>
-            <li>Third-party embedded forms (Jotform) and payment tools (Stripe) follow their own accessibility standards, which may differ slightly from ours.</li>
-            <li>Video content, if added in future, will include captions — please let us know if you find any without.</li>
-          </ul>
-        </div>
-
-        <!-- Accessibility at our centre -->
-        <div class="doc-section" id="at-our-centre">
-          <h2>Accessibility at our centre</h2>
-          <p>Our centre at 29 Vine Street, Fairfield has:</p>
-          <ul>
-            <li>Step-free access to the main entrance</li>
-            <li>Accessible parking via the Fairfield RSL car park on the corner of Vine and Bertha Streets</li>
-            <li>Staff trained to support people with a range of accessibility needs</li>
-            <li>Interpreter services available on request — please let us know when you <a href="/contact/">contact us</a></li>
-          </ul>
-          <p>If you have specific accessibility requirements for a visit or appointment, please <a href="/contact/">contact us</a> ahead of time so we can make sure everything is in place.</p>
-        </div>
-
-        <!-- Need our help? -->
-        <div class="doc-section" id="need-our-help">
-          <h2>Need our help?</h2>
-          <p>If you have trouble accessing any part of our website or any of our services, please let us know. We're happy to provide information or support in the format that works best for you — large print, plain text, over the phone, or in person.</p>
-          <p>Email: <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a></p>
-          <p>Phone: <a href="tel:+61287170999">(02) 8717 0999</a></p>
-          <p>We aim to respond to accessibility feedback within 2 business days.</p>
-        </div>
-
-        <!-- Reporting an issue -->
-        <div class="doc-section" id="reporting-an-issue">
-          <h2>Reporting an issue</h2>
-          <p>If you encounter an accessibility barrier on our website, please tell us:</p>
-          <ul>
-            <li>The page you were on (the URL is helpful)</li>
-            <li>What you were trying to do</li>
-            <li>What happened</li>
-            <li>The assistive technology or device you were using, if relevant</li>
-          </ul>
-          <p>We take accessibility seriously and will work to fix issues as quickly as we can.</p>
-        </div>
+        {sections.map((s, si) => <>{' '}<div class="doc-section" id={s.id}>{' '}<h2>{s.heading}</h2>{s.blocks.map((b, bi) => <>{' '}{b.paragraph !== undefined ? <p><Prose md={b.paragraph} source={src(`sections.${si}.blocks.${bi}.paragraph`)} /></p> : b.items ? <ul>{b.items.map((it, ii) => <>{' '}<li><Prose md={it} source={src(`sections.${si}.blocks.${bi}.items.${ii}`)} /></li></>)}{' '}</ul> : b.callout ? <div class="doc-address"><p><strong>{b.callout.heading}</strong></p>{b.callout.lines.map((l, li) => <>{' '}<p><Prose md={l} source={src(`sections.${si}.blocks.${bi}.callout.lines.${li}`)} /></p></>)}{' '}</div> : <div class="doc-address doc-contact-card"><p><strong>{b.contactCard.heading}</strong></p>{b.contactCard.lines.map((l, li) => <>{' '}<p><Prose md={l} source={src(`sections.${si}.blocks.${bi}.contactCard.lines.${li}`)} /></p></>)}{' '}</div>}</>)}{' '}</div></>)}
 
       </div>
     </div>

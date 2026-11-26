@@ -1,10 +1,19 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Prose from '../components/Prose.astro';
+import { pageContent, fieldSource } from '../lib/pages';
+
+// Words: src/content/pages/privacy-policy.yaml (edited in /admin).
+const ID = 'privacy-policy';
+const page = await pageContent(ID, 'privacy-policy');
+const { seo, hero, notice, version, sections, contactCard, closing } = page;
+const src = (path: string) => fieldSource(ID, path);
 ---
 
 <BaseLayout
-  title="Privacy Policy — Oakdene House Foundation"
-  description="Oakdene House Foundation Privacy Policy — how we collect, use, store and protect your personal information in accordance with the Privacy Act 1988 and the Australian Privacy Principles."
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.image}
 >
 
   <!-- HERO -->
@@ -13,9 +22,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <nav class="breadcrumb" aria-label="Breadcrumb">
         <a href="/">Home</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">Privacy Policy</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1>Privacy Policy</h1>
+      <h1>{hero.heading}</h1>
     </div>
   </section>
 
@@ -26,158 +35,26 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 
         <!-- Notice title + intro -->
         <div class="doc-section">
-          <p class="doc-notice-label">Client Privacy Notice</p>
-          <p>Your privacy matters to us. Please read this notice before we begin.</p>
+          <p class="doc-notice-label">{notice.label}</p>
+          <p><Prose md={notice.text} source={src('notice.text')} /></p>
         </div>
 
         <!-- Version -->
         <div class="doc-meta">
-          <p><em>Version: April 2026</em></p>
+          <p><em>{version}</em></p>
         </div>
 
-        <!-- Who we are -->
-        <div class="doc-section">
-          <h2>Who we are</h2>
-          <p>We are Oakdene House Foundation, a charity based in Fairfield, Western Sydney. We support people and families who are going through hard times ,including those affected by addiction, hardship, homelessness, and other challenges.</p>
-          <p>When you use our services, we need to collect some information about you. This notice explains what we collect, why we collect it, and how we keep it safe.</p>
-          <p>If you have questions about any of this, please ask one of our staff. We are happy to explain things in more detail or in a different language.</p>
-        </div>
-
-        <!-- What information -->
-        <div class="doc-section">
-          <h2>What information do we collect?</h2>
-          <p>We collect information to help us support you properly. This may include:</p>
-          <ul>
-            <li>Your name, address, phone number, and email address</li>
-            <li>Your date of birth</li>
-            <li>Information about your situation and the support you need</li>
-            <li>Health and wellbeing information, where it is relevant to your support</li>
-            <li>Emergency contact details</li>
-            <li>Information from referral forms completed by other services on your behalf</li>
-          </ul>
-          <div class="doc-address">
-            <p><strong>About health information</strong></p>
-            <p>Some of the information we collect ,such as details about your physical or mental health, alcohol or drug use, or disability ,is called sensitive or health information. This type of information has extra protections under Australian law. We treat it with the highest level of care and confidentiality.</p>
-          </div>
-        </div>
-
-        <!-- Using our website -->
-        <div class="doc-section">
-          <h2>Using our website</h2>
-          <p>Videos on our website are hosted on YouTube. We use YouTube's privacy-enhanced mode, so nothing loads from YouTube until you press play. Once you play a video, Google handles your information under its own privacy policy.</p>
-          <p>We use Google Analytics, run through Cloudflare, to understand how our website is used, such as which pages are visited and how often our video is played. It does not collect your name or contact details, and we use what it tells us only to improve our website. You can turn it off with your browser's privacy settings or a content blocker.</p>
-        </div>
-
-        <!-- Why collect -->
-        <div class="doc-section">
-          <h2>Why do we collect this information?</h2>
-          <p>We use your information to:</p>
-          <ul>
-            <li>Understand what support you need</li>
-            <li>Provide you with services, counselling, and programs</li>
-            <li>Connect you with other services and supports that may help</li>
-            <li>Keep our records up to date and accurate</li>
-            <li>Meet our legal obligations as a registered charity</li>
-            <li>Report to our funders (usually in a way that does not identify you personally)</li>
-          </ul>
-          <p>We only collect information that we actually need. We will not ask for information that is not relevant to your support.</p>
-        </div>
-
-        <!-- Who can see -->
-        <div class="doc-section">
-          <h2>Who can see your information?</h2>
-          <p>Your information is only seen by people who need it to help you. This may include:</p>
-          <ul>
-            <li>Oakdene staff and volunteers directly involved in your support</li>
-            <li>Other organisations we refer you to ,but only with your permission</li>
-            <li>Government agencies or courts, if we are legally required to share information</li>
-          </ul>
-          <div class="doc-address">
-            <p><strong>We will not share your information without your permission except in limited situations</strong></p>
-            <p>There are some situations where we may need to share information without asking you first ,for example, if we believe your life or someone else's life is at serious risk. We will always try to discuss this with you first where we can.</p>
-          </div>
-          <p>We do not sell your information to anyone. We do not share it for advertising or marketing purposes.</p>
-        </div>
-
-        <!-- Confidential -->
-        <div class="doc-section">
-          <h2>Is my information confidential?</h2>
-          <p>Yes. Everything you share with us is treated as confidential. Our staff are bound by confidentiality obligations and understand how important this is.</p>
-          <p>There are a small number of situations where we may be required to share information. These are:</p>
-          <ul>
-            <li>If we believe you or someone else is at serious risk of harm</li>
-            <li>If we are required to by a court order or other law</li>
-            <li>If you have given us permission to share your information with a specific person or service</li>
-          </ul>
-          <p>In these situations, we will always try to let you know first, unless doing so would put someone at risk.</p>
-        </div>
-
-        <!-- Rights -->
-        <div class="doc-section">
-          <h2>What are your rights?</h2>
-          <p>You have the right to:</p>
-          <ul>
-            <li>Ask to see the information we hold about you</li>
-            <li>Ask us to correct information that is wrong or out of date</li>
-            <li>Ask us to keep some or all of your information private from certain people</li>
-            <li>Withdraw your consent to share your information at any time</li>
-            <li>Make a complaint if you feel your privacy has not been respected</li>
-          </ul>
-          <p>To exercise any of these rights, please speak with a staff member or contact our Privacy Officer directly (contact details are at the end of this notice).</p>
-        </div>
-
-        <!-- Anonymous -->
-        <div class="doc-section">
-          <h2>Can I stay anonymous?</h2>
-          <p>In some cases, you can access information or ask general questions without telling us who you are. However, if you want to use our support services, we will usually need to know some information about you so that we can help safely and effectively.</p>
-          <p>If you have concerns about giving us your name or other details, please talk to us. We will do our best to support you in a way that you are comfortable with.</p>
-        </div>
-
-        <!-- How we keep safe -->
-        <div class="doc-section">
-          <h2>How do we keep your information safe?</h2>
-          <p>We take your privacy seriously. We keep your information safe by:</p>
-          <ul>
-            <li>Storing paper records securely and limiting who can access them</li>
-            <li>Using secure electronic systems with password protection</li>
-            <li>Only allowing staff to access information they need for their role</li>
-            <li>Training our team on how to handle information responsibly</li>
-            <li>Disposing of records securely when we no longer need them</li>
-          </ul>
-        </div>
-
-        <!-- How long -->
-        <div class="doc-section">
-          <h2>How long do we keep your information?</h2>
-          <p>We keep your information for as long as the law requires or as long as it is needed to support you. For most client records, this is at least seven years. For records relating to children or young people, we may keep information for longer.</p>
-          <p>When we no longer need your information, we destroy or de-identify it safely so that it cannot be traced back to you.</p>
-        </div>
-
-        <!-- Concern/complaint -->
-        <div class="doc-section">
-          <h2>What if I have a concern or complaint?</h2>
-          <p>If you are unhappy about the way we have handled your information, please talk to us. You can:</p>
-          <ul>
-            <li>Speak with a staff member directly</li>
-            <li>Contact our Privacy Officer (details below)</li>
-            <li>Contact the Office of the Australian Information Commissioner (OAIC): 1300 363 992 or <a href="https://www.oaic.gov.au" target="_blank" rel="noopener noreferrer">www.oaic.gov.au</a></li>
-            <li>Contact the NSW Privacy Commissioner: 1800 472 679 or <a href="https://www.ipc.nsw.gov.au" target="_blank" rel="noopener noreferrer">www.ipc.nsw.gov.au</a></li>
-          </ul>
-          <p>We take all privacy concerns seriously and will respond promptly.</p>
-        </div>
+        {sections.map((s, si) => <>{' '}<div class="doc-section">{' '}<h2>{s.heading}</h2>{s.blocks.map((b, bi) => <>{' '}{b.paragraph !== undefined ? <p><Prose md={b.paragraph} source={src(`sections.${si}.blocks.${bi}.paragraph`)} /></p> : b.items ? <ul>{b.items.map((it, ii) => <>{' '}<li><Prose md={it} source={src(`sections.${si}.blocks.${bi}.items.${ii}`)} /></li></>)}{' '}</ul> : b.callout ? <div class="doc-address"><p><strong>{b.callout.heading}</strong></p>{b.callout.lines.map((l, li) => <>{' '}<p><Prose md={l} source={src(`sections.${si}.blocks.${bi}.callout.lines.${li}`)} /></p></>)}{' '}</div> : <div class="doc-address doc-contact-card"><p><strong>{b.contactCard.heading}</strong></p>{b.contactCard.lines.map((l, li) => <>{' '}<p><Prose md={l} source={src(`sections.${si}.blocks.${bi}.contactCard.lines.${li}`)} /></p></>)}{' '}</div>}</>)}{' '}</div></>)}
 
         <!-- Contact card -->
         <div class="doc-address doc-contact-card">
-          <p><strong>Contact our Privacy Officer</strong></p>
-          <p>Privacy Officer ,Oakdene House Foundation</p>
-          <p>Address: 29 Vine St, Fairfield NSW 2165</p>
-          <p>Phone: <a href="tel:0287170999">02 8717 0999</a></p>
-          <p>Email: <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a></p>
+          <p><strong>{contactCard.heading}</strong></p>
+          {contactCard.lines.map((l, li) => <>{' '}<p><Prose md={l} source={src(`contactCard.lines.${li}`)} /></p></>)}
         </div>
 
         <!-- Closing -->
         <div class="doc-section">
-          <p>If you need this notice in another language or in a different format, please ask us and we will do our best to help.</p>
+          <p><Prose md={closing} source={src('closing')} /></p>
         </div>
 
       </div>

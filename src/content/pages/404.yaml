@@ -1,0 +1,22 @@
+# Words for the 404 page. Layout: src/pages/404.astro.
+layout: not-found
+seo:
+  title: Page Not Found — Oakdene House Foundation
+  description: The page you were looking for could not be found.
+code: "404"
+heading: Page not found
+sub: Sorry, we could not find the page you were looking for.
+body: It may have been moved or the link may be out of date. Try one of the links below or return to the home page.
+buttons:
+  - label: Back to Home
+    href: /
+    style: primary
+  - label: Services
+    href: /services/
+    style: secondary
+  - label: Contact
+    href: /contact/
+    style: secondary
+  - label: Need Help Now
+    href: /need-help-now/
+    style: secondary

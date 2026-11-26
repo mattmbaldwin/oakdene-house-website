@@ -1,0 +1,63 @@
+layout: accessibility
+seo:
+  title: Accessibility — Oakdene House Foundation
+  description: Oakdene House Foundation Accessibility Statement — our commitment to making our website and services accessible to everyone.
+hero:
+  breadcrumb: Accessibility
+  heading: Accessibility
+lastUpdated: 'Last updated: [Launch date to be inserted]'
+intro: Oakdene House Foundation is committed to making our website accessible to everyone, including people with disabilities.
+sections:
+  - id: our-commitment
+    heading: Our commitment
+    blocks:
+      - paragraph: We aim to meet the Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards across our website. We are continuously working to improve accessibility and welcome feedback from people who use assistive technologies.
+  - id: what-weve-done
+    heading: What we've done
+    blocks:
+      - paragraph: 'Our website includes:'
+      - items:
+          - Semantic HTML throughout for better screen reader compatibility
+          - Descriptive alt text on images
+          - Keyboard navigation support
+          - Sufficient colour contrast (WCAG AA)
+          - Resizable text without loss of functionality
+          - Skip-to-content links on every page
+          - Clear, plain-language content
+          - Logical heading structure
+          - Labels and instructions on all form fields
+  - id: known-limitations
+    heading: Known limitations
+    blocks:
+      - paragraph: 'We''re honest about where we haven''t got there yet:'
+      - items:
+          - Some older PDF resources may not be fully accessible. If you need an accessible version of any document, please [contact us](/contact/) and we'll provide one.
+          - Third-party embedded forms (Jotform) and payment tools (Stripe) follow their own accessibility standards, which may differ slightly from ours.
+          - Video content, if added in future, will include captions — please let us know if you find any without.
+  - id: at-our-centre
+    heading: Accessibility at our centre
+    blocks:
+      - paragraph: 'Our centre at 29 Vine Street, Fairfield has:'
+      - items:
+          - Step-free access to the main entrance
+          - Accessible parking via the Fairfield RSL car park on the corner of Vine and Bertha Streets
+          - Staff trained to support people with a range of accessibility needs
+          - Interpreter services available on request — please let us know when you [contact us](/contact/)
+      - paragraph: If you have specific accessibility requirements for a visit or appointment, please [contact us](/contact/) ahead of time so we can make sure everything is in place.
+  - id: need-our-help
+    heading: Need our help?
+    blocks:
+      - paragraph: If you have trouble accessing any part of our website or any of our services, please let us know. We're happy to provide information or support in the format that works best for you — large print, plain text, over the phone, or in person.
+      - paragraph: 'Email: [admin@oakdenehouse.org.au](mailto:admin@oakdenehouse.org.au)'
+      - paragraph: 'Phone: [(02) 8717 0999](tel:+61287170999)'
+      - paragraph: We aim to respond to accessibility feedback within 2 business days.
+  - id: reporting-an-issue
+    heading: Reporting an issue
+    blocks:
+      - paragraph: 'If you encounter an accessibility barrier on our website, please tell us:'
+      - items:
+          - The page you were on (the URL is helpful)
+          - What you were trying to do
+          - What happened
+          - The assistive technology or device you were using, if relevant
+      - paragraph: We take accessibility seriously and will work to fix issues as quickly as we can.
