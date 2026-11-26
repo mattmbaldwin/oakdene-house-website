@@ -1,17 +1,3 @@
-# Frequently asked questions: the one list for the FAQ page (/faq/) and the home page.
-#
-# Each question has:
-#   question       plain text
-#   answer         prose: **bold**, *italic*, [link text](/address), [link text](https://...){new} for a new tab,
-#                  and line breaks. Anything else stops the build with an error naming this file.
-#   section        the FAQ-page section id (from "sections" below); "general" for home-page-only questions
-#   showOnFaqPage  true to list it on /faq/ under its section
-#   showOnHome     true to list it in "Common questions" on the home page
-#   order          sort position (lower first) within each list it appears in
-#
-# The FAQ page and the home page hold some similar questions, worded differently. They are kept separate on
-# purpose; do not merge them here (website-editor decision 10).
-
 sections:
   - id: a
     heading: A. Getting support
@@ -27,83 +13,105 @@ sections:
     heading: F. Privacy and information
 faqs:
   - question: Who can access Oakdene's services?
-    answer: Anyone facing challenges with addiction, hardship, homelessness, or other life pressures can contact us. You don't need to meet specific criteria — if you're going through a difficult time and want support, we're here.
+    answer: Anyone facing challenges with addiction, hardship, homelessness, or
+      other life pressures can contact us. You don't need to meet specific
+      criteria — if you're going through a difficult time and want support,
+      we're here.
     section: a
     showOnFaqPage: true
     showOnHome: false
     order: 1
   - question: Do I need a referral?
-    answer: Not always. Some services (like the Kitchen, Laundrette, and Boutique) are drop-in and don't need a referral. For counselling and the Life Choices program, a referral helps us understand your situation, but you can also refer yourself directly.
+    answer: Not always. Some services (like the Kitchen, Laundrette, and Boutique)
+      are drop-in and don't need a referral. For counselling and the Life
+      Choices program, a referral helps us understand your situation, but you
+      can also refer yourself directly.
     section: a
     showOnFaqPage: true
     showOnHome: false
     order: 2
   - question: How do I make a referral?
-    answer: Use our online [referral form](/services/referral/) or call [(02) 8717 0999](tel:+61287170999). Referrals can come from the person seeking support, a family member, or a professional (GP, case worker, corrections officer, etc.).
+    answer: Use our online [referral form](/services/referral/) or call [(02) 8717
+      0999](tel:+61287170999). Referrals can come from the person seeking
+      support, a family member, or a professional (GP, case worker, corrections
+      officer, etc.).
     section: a
     showOnFaqPage: true
     showOnHome: false
     order: 3
   - question: How long does it take to hear back after I contact you?
-    answer: We aim to respond to all enquiries within 2 business days. If you need help urgently, please call us directly on [(02) 8717 0999](tel:+61287170999), or see our [Need Help Now page](/need-help-now/) for 24/7 crisis lines.
+    answer: We aim to respond to all enquiries within 2 business days. If you need
+      help urgently, please call us directly on [(02) 8717
+      0999](tel:+61287170999), or see our [Need Help Now page](/need-help-now/)
+      for 24/7 crisis lines.
     section: a
     showOnFaqPage: true
     showOnHome: false
     order: 4
   - question: Is everything confidential?
-    answer: Yes. What you share with an Oakdene counsellor or staff member is confidential, with a few important exceptions we're required by law to disclose (serious risk of harm to yourself or others, subpoena, or child protection concerns). Your counsellor will explain this at your first session.
+    answer: Yes. What you share with an Oakdene counsellor or staff member is
+      confidential, with a few important exceptions we're required by law to
+      disclose (serious risk of harm to yourself or others, subpoena, or child
+      protection concerns). Your counsellor will explain this at your first
+      session.
     section: a
     showOnFaqPage: true
     showOnHome: false
     order: 5
   - question: Is there a cost?
-    answer: Most Oakdene services are free. Some community services (like the Ladies Boutique) ask for a gold coin donation. We'll always be upfront about any cost before you start.
+    answer: Most Oakdene services are free. Some community services (like the Ladies
+      Boutique) ask for a gold coin donation. We'll always be upfront about any
+      cost before you start.
     section: a
     showOnFaqPage: true
     showOnHome: false
     order: 6
   - question: What kind of counselling do you offer?
-    answer: We offer individual counselling, gambling counselling (via Catholic Care), and group programs. Our counsellors have specialist training in addiction, recovery, trauma, and mental health.
+    answer: We offer individual counselling, gambling counselling (via Catholic
+      Care), and group programs. Our counsellors have specialist training in
+      addiction, recovery, trauma, and mental health.
     section: b
     showOnFaqPage: true
     showOnHome: false
     order: 7
   - question: How long are counselling sessions?
-    answer: Typically 50–60 minutes. Your counsellor will talk with you about frequency — weekly, fortnightly, or as needed.
+    answer: Typically 50–60 minutes. Your counsellor will talk with you about
+      frequency — weekly, fortnightly, or as needed.
     section: b
     showOnFaqPage: true
     showOnHome: false
     order: 8
   - question: What is the Life Choices Program?
-    answer: A 6-week group program focused on recovery, life skills, and peer connection. See the [Life Choices page](/services/life-choices-program/) for details.
+    answer: A 6-week group program focused on recovery, life skills, and peer
+      connection. See the [Life Choices page](/services/life-choices-program/)
+      for details.
     section: b
     showOnFaqPage: true
     showOnHome: false
     order: 9
   - question: What is the Outpatients Program?
-    answer: A structured rehabilitation program combining counselling, group sessions, 12-step support, and peer mentoring. See the [Outpatients Program page](/services/outpatients-program/) for details.
+    answer: A structured rehabilitation program combining counselling, group
+      sessions, 12-step support, and peer mentoring. See the [Outpatients
+      Program page](/services/outpatients-program/) for details.
     section: b
     showOnFaqPage: true
     showOnHome: false
     order: 10
   - question: Do you offer support in languages other than English?
-    answer: Yes. Several of our staff speak languages other than English, and we can arrange an interpreter if you let us know when you contact us. Our AA / GA meetings include Spanish-speaking sessions.
+    answer: Yes. Several of our staff speak languages other than English, and we can
+      arrange an interpreter if you let us know when you contact us. Our AA / GA
+      meetings include Spanish-speaking sessions.
     section: b
     showOnFaqPage: true
     showOnHome: false
     order: 11
   - question: When is the Kitchen open?
-    answer: Tuesday, Wednesday, and Thursday, 12pm–2pm. Free nutritious meals are available to eligible community members.
+    answer: Tuesday, Wednesday, and Thursday, 12pm–2pm. Free nutritious meals are
+      available to eligible community members.
     section: c
     showOnFaqPage: true
     showOnHome: false
     order: 12
-  - question: When is the Laundrette open?
-    answer: Tuesday to Thursday, 12pm–2:30pm (last entry 1pm). Washing, drying, and detergent are provided free.
-    section: c
-    showOnFaqPage: true
-    showOnHome: false
-    order: 13
   - question: Can I get food to take home?
     answer: Yes. Staple Food Packs are available every Friday, 12pm–1pm.
     section: c
@@ -111,109 +119,134 @@ faqs:
     showOnHome: false
     order: 14
   - question: What is the Ladies Boutique?
-    answer: A warm, private space offering quality clothing and salon services for women, by appointment. No woman is turned away due to financial difficulty.
+    answer: A warm, private space offering quality clothing and salon services for
+      women, by appointment. No woman is turned away due to financial
+      difficulty.
     section: c
     showOnFaqPage: true
     showOnHome: false
     order: 15
   - question: Do I need to book?
-    answer: Most drop-in community services don't need a booking during open hours. Ladies Boutique and counselling are by appointment.
+    answer: Most drop-in community services don't need a booking during open hours.
+      Ladies Boutique and counselling are by appointment.
     section: c
     showOnFaqPage: true
     showOnHome: false
     order: 16
   - question: How do I apply to volunteer?
-    answer: Submit our [volunteer application form](/community-programs/volunteering/). We'll get back to you within 2 business days to arrange a brief conversation.
+    answer: Submit our [volunteer application
+      form](/community-programs/volunteering/). We'll get back to you within 2
+      business days to arrange a brief conversation.
     section: d
     showOnFaqPage: true
     showOnHome: false
     order: 17
   - question: Do I need experience?
-    answer: No. We value willingness, reliability, and a caring approach more than prior experience. We'll support you in your role.
+    answer: No. We value willingness, reliability, and a caring approach more than
+      prior experience. We'll support you in your role.
     section: d
     showOnFaqPage: true
     showOnHome: false
     order: 18
   - question: Can my workplace / team volunteer together?
-    answer: Yes — we offer structured corporate volunteering days. See the [Corporate Volunteering page](/community-programs/volunteering/corporate-volunteering/) or get in touch.
+    answer: Yes — we offer structured corporate volunteering days. See the
+      [Corporate Volunteering
+      page](/community-programs/volunteering/corporate-volunteering/) or get in
+      touch.
     section: d
     showOnFaqPage: true
     showOnHome: false
     order: 19
   - question: Will I need a police check?
-    answer: For some volunteer roles (especially those involving clients or children), yes. We'll discuss this during your application.
+    answer: For some volunteer roles (especially those involving clients or
+      children), yes. We'll discuss this during your application.
     section: d
     showOnFaqPage: true
     showOnHome: false
     order: 20
   - question: Where are you located?
-    answer: 29 Vine Street, Fairfield NSW 2165. Parking is available via the Fairfield RSL open-air car park at the corner of Vine and Bertha Streets.
+    answer: 29 Vine Street, Fairfield NSW 2165. Parking is available via the
+      Fairfield RSL open-air car park at the corner of Vine and Bertha Streets.
     section: e
     showOnFaqPage: true
     showOnHome: false
     order: 21
   - question: What are your opening hours?
-    answer: The centre is open Monday to Friday during business hours. Individual services have their own hours — see the [Contact page](/contact/) for the full schedule.
+    answer: The centre is open Monday to Friday during business hours. Individual
+      services have their own hours — see the [Contact page](/contact/) for the
+      full schedule.
     section: e
     showOnFaqPage: true
     showOnHome: false
     order: 22
   - question: Are you a registered charity?
-    answer: Yes. Oakdene House Foundation is a registered Australian charity with the ACNC. ABN 90 151 950 926.
+    answer: Yes. Oakdene House Foundation is a registered Australian charity with
+      the ACNC. ABN 90 151 950 926.
     section: e
     showOnFaqPage: true
     showOnHome: false
     order: 23
   - question: Is Oakdene religiously affiliated?
-    answer: Oakdene's services are open to everyone regardless of religion, background, or beliefs.
+    answer: Oakdene's services are open to everyone regardless of religion,
+      background, or beliefs.
     section: e
     showOnFaqPage: true
     showOnHome: false
     order: 24
   - question: How do you handle my personal information?
-    answer: "See our [Privacy Policy](/privacy-policy/). In short: we collect only what we need to support you, keep it secure, and don't share it without your consent except where required by law."
+    answer: "See our [Privacy Policy](/privacy-policy/). In short: we collect only
+      what we need to support you, keep it secure, and don't share it without
+      your consent except where required by law."
     section: f
     showOnFaqPage: true
     showOnHome: false
     order: 25
   - question: Can I see what information you hold about me?
-    answer: Yes — you can request access to your records at any time. Contact us at [admin@oakdenehouse.org.au](mailto:admin@oakdenehouse.org.au).
+    answer: Yes — you can request access to your records at any time. Contact us at
+      [admin@oakdenehouse.org.au](mailto:admin@oakdenehouse.org.au).
     section: f
     showOnFaqPage: true
     showOnHome: false
     order: 26
   - question: Who can contact Oakdene?
-    answer: Anyone looking for support, information, guidance, or help finding the right next step can contact Oakdene.
+    answer: Anyone looking for support, information, guidance, or help finding the
+      right next step can contact Oakdene.
     section: general
     showOnFaqPage: false
     showOnHome: true
     order: 27
   - question: Do I need a formal referral?
-    answer: Not always. Some supports may begin with a simple enquiry, while others may use a referral form.
+    answer: Not always. Some supports may begin with a simple enquiry, while others
+      may use a referral form.
     section: general
     showOnFaqPage: false
     showOnHome: true
     order: 28
   - question: Is there a cost for services?
-    answer: Most of our services are free. Some community services such as the Ladies Boutique involve a small gold coin donation. We will always be upfront about any cost.
+    answer: Most of our services are free. Some community services such as the
+      Ladies Boutique involve a small gold coin donation. We will always be
+      upfront about any cost.
     section: general
     showOnFaqPage: false
     showOnHome: true
     order: 29
   - question: Can Oakdene help me find another service?
-    answer: Yes. If Oakdene is not the right fit, we can help point you toward other services and supports in the community.
+    answer: Yes. If Oakdene is not the right fit, we can help point you toward other
+      services and supports in the community.
     section: general
     showOnFaqPage: false
     showOnHome: true
     order: 30
   - question: Are your services confidential?
-    answer: Yes. We treat everything you share with us in confidence, in line with Australian privacy requirements.
+    answer: Yes. We treat everything you share with us in confidence, in line with
+      Australian privacy requirements.
     section: general
     showOnFaqPage: false
     showOnHome: false
     order: 31
   - question: Do you offer support in other languages?
-    answer: Yes. We offer support in multiple languages. If you need an interpreter, please let us know when you contact us and we will arrange one for you.
+    answer: Yes. We offer support in multiple languages. If you need an interpreter,
+      please let us know when you contact us and we will arrange one for you.
     section: general
     showOnFaqPage: false
     showOnHome: false
