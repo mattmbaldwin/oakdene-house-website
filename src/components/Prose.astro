@@ -1,0 +1,15 @@
+---
+// Renders editor prose (see src/lib/prose.ts) with the calling page's Astro scope attribute on every element,
+// so the page's scoped CSS matches exactly as it would for hand-written markup.
+import { renderProse } from '../lib/prose.ts';
+
+interface Props {
+  md: string;
+  /** Names where the text came from, for build errors (file and field). */
+  source: string;
+}
+
+const { md, source, ...rest } = Astro.props;
+const scopeAttributes = Object.keys(rest).filter((k) => k.startsWith('data-astro-cid-'));
+---
+<Fragment set:html={renderProse(md, source, { scopeAttributes })} />
