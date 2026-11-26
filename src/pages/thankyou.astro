@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import hours from '../content/opening-hours.json';
 ---
 
 <BaseLayout
@@ -14,7 +15,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
       <h1>Thank you for getting in touch</h1>
       <p class="thankyou__sub">We have received your message and will be in touch as soon as possible.</p>
-      <p class="thankyou__body">If your enquiry is urgent, please call us directly on <a href="tel:0287170999">(02) 8717 0999</a>. Our team is available Monday to Friday during business hours.</p>
+      <p class="thankyou__body">If your enquiry is urgent, please call us directly on <a href="tel:0287170999">(02) 8717 0999</a>. Our team is available {hours.office.availability}.</p>
 
       <div class="next-steps" aria-label="What happens next">
         <h2 class="next-steps__heading">What happens next</h2>

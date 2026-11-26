@@ -2,10 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import InfoTable from '../../components/InfoTable.astro';
 import CTABand from '../../components/CTABand.astro';
+import hours from '../../content/opening-hours.json';
 
 const serviceRows = [
-  { label: 'Days', value: 'Tuesday, Wednesday, Thursday' },
-  { label: 'Hours', value: '12pm–2pm' },
+  { label: 'Days', value: hours.kitchen.days },
+  { label: 'Hours', value: hours.kitchen.hours },
   { label: 'Location', value: '9/2 Dale Street, Fairfield' },
   { label: 'Cost', value: 'Free' },
   { label: 'Email', value: '<a href="mailto:kitchen@oakdenehouse.org.au">kitchen@oakdenehouse.org.au</a>' },
@@ -22,7 +23,7 @@ const whatWeOffer = [
 
 <BaseLayout
   title="Oakdene Kitchen — Oakdene House Foundation"
-  description="Free hot lunches Tuesday to Thursday at Oakdene Kitchen, 9/2 Dale Street, Fairfield. Open to people experiencing hardship."
+  description={`Free hot lunches ${hours.kitchen.seoDays} at Oakdene Kitchen, 9/2 Dale Street, Fairfield. Open to people experiencing hardship.`}
   ogImage="/images/kitchen/oakdene-kitchen-exterior-line-up.jpg"
 >
 

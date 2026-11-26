@@ -3,12 +3,13 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import InfoTable from '../components/InfoTable.astro';
 import CTABand from '../components/CTABand.astro';
+import hours from '../content/opening-hours.json';
 
 const hoursRows = [
-  { label: 'Oakdene Kitchen',       value: 'Tuesday–Thursday, 12pm–2pm' },
-  { label: 'Staple Food Packs',     value: 'Every Friday, 12pm–1pm (commencing 17 April 2026)' },
-  { label: 'Oakdene Laundrette',    value: 'Tuesday–Thursday, 12pm–2:30pm (last entry 1pm)' },
-  { label: 'Used Clothing Store',   value: 'Tuesday–Thursday, 12pm–2pm' },
+  { label: 'Oakdene Kitchen',       value: hours.kitchen.contactSummary },
+  { label: 'Staple Food Packs',     value: hours.staplePacks.contactSummary },
+  { label: 'Oakdene Laundrette',    value: hours.laundrette.contactSummary },
+  { label: 'Used Clothing Store',   value: hours.clothingStore.contactSummary },
   { label: 'Ladies Boutique',       value: 'By appointment only' },
   { label: 'Counselling',           value: 'By appointment' },
   { label: 'Life Choices Program',  value: 'See <a href="/services/life-choices-program/">program page</a> for full schedule' },
@@ -70,8 +71,8 @@ const hoursRows = [
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
           </div>
           <p class="contact-card__heading">Opening Hours</p>
-          <p class="contact-card__detail contact-card__detail--small">Monday to Friday</p>
-          <p class="contact-card__note">9:00am – 5:00pm</p>
+          <p class="contact-card__detail contact-card__detail--small">{hours.office.days}</p>
+          <p class="contact-card__note">{hours.office.hours}</p>
           <p class="contact-card__note">Some programs run outside these hours. Check each program page for times.</p>
         </div>
 

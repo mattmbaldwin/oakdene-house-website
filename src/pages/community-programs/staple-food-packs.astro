@@ -2,10 +2,11 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import InfoTable from '../../components/InfoTable.astro';
 import CTABand from '../../components/CTABand.astro';
+import hours from '../../content/opening-hours.json';
 
 const serviceRows = [
-  { label: 'Day', value: 'Every Friday' },
-  { label: 'Hours', value: '12pm–1pm' },
+  { label: 'Day', value: hours.staplePacks.day },
+  { label: 'Hours', value: hours.staplePacks.hours },
   { label: 'Cost', value: 'Free' },
   { label: 'Email', value: '<a href="mailto:kitchen@oakdenehouse.org.au">kitchen@oakdenehouse.org.au</a>' },
   { label: 'Phone', value: '<a href="tel:0415156100">0415 156 100</a>' },
@@ -22,7 +23,7 @@ const included = [
 
 <BaseLayout
   title="Staple Food Packs — Oakdene House Foundation"
-  description="Free take-home grocery packs every Friday at Oakdene House, Fairfield. Includes fresh produce, pantry staples and hygiene items."
+  description={`Free take-home grocery packs ${hours.staplePacks.seoDay} at Oakdene House, Fairfield. Includes fresh produce, pantry staples and hygiene items.`}
   ogImage="/images/kitchen/oakdene-kitchen-interior-with-food-stacks.jpg"
 >
 
@@ -52,7 +53,7 @@ const included = [
             <h2 id="packs-intro-heading">Essentials to take home</h2>
           </div>
           <p>In collaboration with OzHarvest, we provide free staple food packs to people experiencing financial hardship. Packs include fresh produce, pantry essentials and hygiene items where available.</p>
-          <p>Packs are distributed every Friday.</p>
+          <p>Packs are distributed {hours.staplePacks.distributionDay}.</p>
 
           <h3 class="section-subhead">What's included</h3>
           <ul class="offer-list">
@@ -105,7 +106,7 @@ const included = [
         </div>
 
         <div class="also-note">
-          <p>Also running on Fridays — if you need further support, speak with a team member about other Oakdene services including the <a href="/community-programs/oakdene-kitchen/">Kitchen</a>, <a href="/community-programs/oakdene-laundrette/">Laundrette</a> and <a href="/services/individual-counselling/">Counselling</a>.</p>
+          <p>Also running on {hours.staplePacks.alsoRunningDay} — if you need further support, speak with a team member about other Oakdene services including the <a href="/community-programs/oakdene-kitchen/">Kitchen</a>, <a href="/community-programs/oakdene-laundrette/">Laundrette</a> and <a href="/services/individual-counselling/">Counselling</a>.</p>
         </div>
       </div>
     </div>
