@@ -1,0 +1,13 @@
+# Words and images for /about/our-board/. Layout: src/pages/about/our-board.astro.
+# This page is hidden from search engines (noindex); that setting stays in the page file.
+layout: our-board
+seo:
+  title: Our Board — Oakdene House Foundation
+  description: Oakdene House Foundation is guided by a committed Board providing governance, oversight and strategic direction for our community charity in Fairfield, Western Sydney.
+  image: /images/centre/exterior-exterior-1-img_2651.jpg
+hero:
+  breadcrumb: Our Board
+  heading: Our Board
+holding:
+  heading: Board profiles
+  message: Our Board profiles are currently being updated. For Board enquiries, please contact us at [admin@oakdenehouse.org.au](mailto:admin@oakdenehouse.org.au) or call [(02) 8717 0999](tel:+61287170999).

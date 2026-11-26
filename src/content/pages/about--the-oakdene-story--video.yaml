@@ -1,0 +1,29 @@
+# Words and images for /about/the-oakdene-story/video/. Layout: src/pages/about/the-oakdene-story/video.astro.
+# The video, its details and the transcript come from docs/video-launch/content/ and are not edited here.
+layout: the-oakdene-story-video
+seo:
+  title: Our story | Oakdene House Foundation, Fairfield
+  description: Watch how Oakdene House supports people affected by addiction and gambling harm in Fairfield, Western Sydney, with free counselling, group programs and community services.
+hero:
+  breadcrumb: Our story
+  heading: Our story
+  lead: Oakdene House offers free counselling and practical support to people affected by addiction and gambling harm in Fairfield. In this short film, people in recovery, our counsellors and our founding chairman talk about what that support means.
+breadcrumbParent: The Oakdene Story
+watch:
+  playLabel: 'Play video: Oakdene House Foundation, our story'
+  meta: Length {duration}. Captions are on when the video plays, and you can read the full transcript below.
+  quote: It's like the chains have been cut and they get to be the best version of themselves again.
+  quoteBy: Anne Marie Durnan
+  credit: Video produced by Lead Story.
+transcript:
+  heading: Transcript
+  show: Show transcript
+  hide: Hide transcript
+  primary:
+    label: Get support
+    href: /services/referral/
+    style: primary
+  secondary:
+    label: Contact us
+    href: /contact/
+    style: secondary

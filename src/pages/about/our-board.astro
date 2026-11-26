@@ -1,11 +1,19 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import Prose from '../../components/Prose.astro';
+import { pageContent, fieldSource } from '../../lib/pages';
+
+// Words and images: src/content/pages/about--our-board.yaml (edited in /admin).
+const ID = 'about--our-board';
+const page = await pageContent(ID, 'our-board');
+const { seo, hero, holding } = page;
+const src = (path: string) => fieldSource(ID, path);
 ---
 
 <BaseLayout
-  title="Our Board — Oakdene House Foundation"
-  description="Oakdene House Foundation is guided by a committed Board providing governance, oversight and strategic direction for our community charity in Fairfield, Western Sydney."
-  ogImage="/images/centre/exterior-exterior-1-img_2651.jpg"
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.image}
   noindex={true}
 >
 
@@ -17,17 +25,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <a href="/about/">About</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">Our Board</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1>Our Board</h1>
+      <h1>{hero.heading}</h1>
     </div>
   </section>
 
   <!-- HOLDING MESSAGE -->
   <section class="section" aria-label="Board profiles">
     <div class="container holding-container">
-      <h2>Board profiles</h2>
-      <p>Our Board profiles are currently being updated. For Board enquiries, please contact us at <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a> or call <a href="tel:+61287170999">(02) 8717 0999</a>.</p>
+      <h2>{holding.heading}</h2>
+      <p><Prose md={holding.message} source={src('holding.message')} /></p>
     </div>
   </section>
 

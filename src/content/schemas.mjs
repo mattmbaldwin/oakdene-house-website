@@ -599,8 +599,7 @@ export const referralThankYouLayout = z
   .meta({ title: 'Referral thank-you page' });
 // --- end W8 ---------------------------------------------------------------------------------------------------
 
-// ===============================================================================================================
-// BEGIN W9 (issue #17): Community Programs layouts (src/pages/community-programs/**).
+// ========================================================================================================// BEGIN W9 (issue #17): Community Programs layouts (src/pages/community-programs/**).
 // Other batches add their own marked blocks; keep this one together so merges stay small.
 // ===============================================================================================================
 
@@ -1628,6 +1627,243 @@ export const siteSchema = z
   })
   .meta({ title: 'Site-wide text' });
 // ===== W10 END =====
+// ===== W11 (issue #19): About pages — BEGIN =====
+// Layouts for src/pages/about.astro and src/pages/about/*. Keep this block together; other batches edit nearby.
+
+/** The small banner used by the About sub-pages: breadcrumb label, heading and (optionally) the line under it. */
+const aboutHero = ({ lead = true } = {}) => {
+  const fields = { breadcrumb: text('Breadcrumb', 'The last item in the "Home / About / …" trail.'), heading: heading('Page heading') };
+  if (lead) fields.lead = prose('Line under the heading');
+  return z.strictObject(fields).meta({ title: 'Banner' });
+};
+
+/** A person card: name, role, photo with alt text and a short biography. */
+const person = (title) =>
+  z
+    .strictObject({
+      name: text('Name'),
+      role: text('Role'),
+      photo: image('Photo'),
+      bio: prose('Biography'),
+    })
+    .meta({ title });
+
+// Layout: about.astro
+export const aboutLayout = z
+  .strictObject({
+    layout: layoutField('about'),
+    seo: seo(),
+    hero: z
+      .strictObject({
+        heading: heading('Page heading'),
+        subheading: text('Line under the heading'),
+        image: image('Banner photo'),
+        primary: link('First button'),
+        secondary: link('Second button'),
+      })
+      .meta({ title: 'Banner' }),
+    subpages: z
+      .array(
+        z
+          .strictObject({
+            href: href('Goes to'),
+            image: image('Photo'),
+            heading: heading(),
+            text: text('Text'),
+            cta: text('Link text', 'The arrow after it is added automatically.'),
+          })
+          .meta({ title: 'Card' }),
+      )
+      .min(1)
+      .meta({ title: 'Section cards', cms: { summary: '{{fields.heading}}' } }),
+    who: z
+      .strictObject({ heading: sectionHeading(), lead: prose('Paragraph') })
+      .meta({ title: 'Who we are' }),
+    impact: z
+      .strictObject({
+        heading: sectionHeading(),
+        stats: z
+          .array(z.strictObject({ number: text('Figure'), label: text('Label') }).meta({ title: 'Figure' }))
+          .min(1)
+          .meta({ title: 'Figures', cms: { summary: '{{fields.number}} {{fields.label}}' } }),
+      })
+      .meta({ title: 'Our year in numbers' }),
+    drivers: z
+      .strictObject({
+        heading: sectionHeading(),
+        mission: z.strictObject({ label: text('Label'), text: prose('Text') }).meta({ title: 'Mission' }),
+        vision: z.strictObject({ label: text('Label'), text: prose('Text') }).meta({ title: 'Vision' }),
+        valuesHeading: heading('"Our Values" heading'),
+        dignity: z.strictObject({ heading: heading(), text: prose('Text') }).meta({ title: 'First value' }),
+        practicalSupport: z.strictObject({ heading: heading(), text: prose('Text') }).meta({ title: 'Second value' }),
+        connection: z.strictObject({ heading: heading(), text: prose('Text') }).meta({ title: 'Third value' }),
+        hope: z.strictObject({ heading: heading(), text: prose('Text') }).meta({ title: 'Fourth value' }),
+      })
+      .meta({ title: 'Mission, vision and values', description: 'Each value keeps its own icon, so the four cannot be reordered.' }),
+    approach: z
+      .strictObject({ heading: sectionHeading(), paragraphs: paragraphs(), image: image() })
+      .meta({ title: 'Our approach' }),
+    work: z
+      .strictObject({
+        heading: sectionHeading(),
+        items: listItems('What we do'),
+        button: button('Button'),
+        image: image(),
+      })
+      .meta({ title: 'What we do' }),
+    cta: ctaBand(),
+  })
+  .meta({ title: 'About page' });
+
+// Layout: about/our-board.astro (not shown to search engines: the noindex tag stays in the page)
+export const ourBoardLayout = z
+  .strictObject({
+    layout: layoutField('our-board'),
+    seo: seo(),
+    hero: aboutHero({ lead: false }),
+    holding: z
+      .strictObject({
+        heading: heading(),
+        message: prose('Message', 'Bold, italic and links only. Keep the two links as links.'),
+      })
+      .meta({ title: 'Board profiles message' }),
+  })
+  .meta({ title: 'Our Board page' });
+
+// Layout: about/our-centre.astro
+export const ourCentreLayout = z
+  .strictObject({
+    layout: layoutField('our-centre'),
+    seo: seo(),
+    hero: aboutHero(),
+    intro: z
+      .strictObject({
+        heading: sectionHeading(),
+        paragraphs: paragraphs(),
+        expectHeading: heading('"What visitors can expect" heading'),
+        expectItems: listItems('What visitors can expect'),
+        image: image(),
+      })
+      .meta({ title: 'The space' }),
+    gallery: z
+      .strictObject({
+        heading: sectionHeading(),
+        images: z.array(image('Photo')).min(1).meta({ title: 'Photos', cms: { summary: '{{fields.alt}}' } }),
+      })
+      .meta({ title: 'Gallery' }),
+    location: z
+      .strictObject({
+        heading: sectionHeading(),
+        mapTitle: text('Map description', 'Read by screen readers for the embedded Google map. The map itself stays in the page.'),
+        mapLink: link('Link under the map'),
+        address: text('Address'),
+        phone: link('Phone link'),
+        email: link('Email link'),
+        parking: text('Parking'),
+      })
+      .meta({ title: 'Location and access' }),
+    directions: z
+      .strictObject({ heading: heading(), text: prose('Text'), button: link('Download button') })
+      .meta({ title: 'Directions download' }),
+    cta: ctaBand({ subheading: true }),
+  })
+  .meta({ title: 'Our Centre page' });
+
+// Layout: about/our-team.astro
+export const ourTeamLayout = z
+  .strictObject({
+    layout: layoutField('our-team'),
+    seo: seo(),
+    hero: aboutHero(),
+    intro: z.strictObject({ heading: sectionHeading(), lead: prose('Paragraph') }).meta({ title: 'Introduction' }),
+    team: z
+      .array(person('Team member'))
+      .min(1)
+      .meta({ title: 'Team members', cms: { summary: '{{fields.name}}' } }),
+    patrons: z
+      .strictObject({
+        heading: sectionHeading(),
+        people: z
+          .array(person('Patron'))
+          .min(1)
+          .meta({ title: 'Patrons', cms: { summary: '{{fields.name}}' } }),
+      })
+      .meta({ title: 'Our Patrons' }),
+    closing: z
+      .strictObject({
+        heading: heading('Hidden heading', 'Read by screen readers only; not shown on the page.'),
+        text: prose('Closing statement'),
+      })
+      .meta({ title: 'Closing statement' }),
+    cta: ctaBand({ subheading: true }),
+  })
+  .meta({ title: 'Our Team page' });
+
+// Layout: about/the-oakdene-story.astro (the film itself and its details come from docs/video-launch, not here)
+export const oakdeneStoryLayout = z
+  .strictObject({
+    layout: layoutField('the-oakdene-story'),
+    seo: seo(),
+    hero: aboutHero(),
+    story: z
+      .strictObject({ heading: sectionHeading(), paragraphs: paragraphs(), image: image() })
+      .meta({ title: 'The story' }),
+    strip: z
+      .array(imagePath('Photo'))
+      .min(1)
+      .meta({ title: 'Black and white photo strip', description: 'Decorative photos, hidden from screen readers.' }),
+    film: z
+      .strictObject({
+        heading: sectionHeading({ lead: true }),
+        playLabel: text('Play button label', 'Read by screen readers.'),
+        transcriptLink: text('Transcript link text'),
+      })
+      .meta({ title: 'Watch our story' }),
+    why: z
+      .strictObject({
+        label: text('Small label above the quote'),
+        quote: text('Quote', 'The quotation marks are added automatically.'),
+      })
+      .meta({ title: 'Why it matters' }),
+    cta: ctaBand(),
+  })
+  .meta({ title: 'The Oakdene Story page' });
+
+// Layout: about/the-oakdene-story/video.astro (the video, its details and the transcript stay in code and docs/)
+export const oakdeneStoryVideoLayout = z
+  .strictObject({
+    layout: layoutField('the-oakdene-story-video'),
+    seo: seo(),
+    hero: aboutHero(),
+    breadcrumbParent: text('Middle breadcrumb', 'The "The Oakdene Story" step in the trail; it links back to that page.'),
+    watch: z
+      .strictObject({
+        playLabel: text('Play button label', 'Read by screen readers.'),
+        meta: z
+          .string()
+          .min(1)
+          .regex(/\{duration\}/)
+          .meta({
+            title: 'Line under the video',
+            description: 'Keep {duration} where the film length should appear; it is filled in automatically.',
+          }),
+        quote: text('Pull quote', 'The quotation marks are added automatically.'),
+        quoteBy: text('Quote attribution'),
+        credit: text('Video credit'),
+      })
+      .meta({ title: 'Video' }),
+    transcript: z
+      .strictObject({
+        heading: heading(),
+        show: text('"Show" button label'),
+        hide: text('"Hide" button label'),
+        primary: button('First button'),
+        secondary: button('Second button'),
+      })
+      .meta({ title: 'Transcript', description: 'The transcript text comes from docs/video-launch and is not edited here.' }),
+  })
+  .meta({ title: 'Our story video page' });
+// ===== W11 (issue #19): About pages — END =====
 
 /** Every page layout, by the value of its `layout:` field. */
 export const pageLayouts = {
@@ -1655,6 +1891,13 @@ export const pageLayouts = {
   'corporate-volunteering': corporateVolunteeringLayout,
   'volunteer-thank-you': volunteerThankYouLayout,
   ...w10Layouts,
+  // W11 (#19)
+  about: aboutLayout,
+  'our-board': ourBoardLayout,
+  'our-centre': ourCentreLayout,
+  'our-team': ourTeamLayout,
+  'the-oakdene-story': oakdeneStoryLayout,
+  'the-oakdene-story-video': oakdeneStoryVideoLayout,
 };
 
 /** Any page file: the schema is chosen by its `layout:` field. Used by the Astro `pages` collection. */
@@ -1687,6 +1930,13 @@ export const pageFiles = [
   { name: 'community-programs--volunteering--corporate-volunteering', label: 'Volunteering: Corporate Volunteering', layout: 'corporate-volunteering' },
   { name: 'community-programs--volunteering--thank-you', label: 'Volunteering: Thank You', layout: 'volunteer-thank-you' },
   ...w10PageFiles,
+  // W11 (#19)
+  { name: 'about', label: 'About', layout: 'about' },
+  { name: 'about--our-board', label: 'About: Our Board', layout: 'our-board' },
+  { name: 'about--our-centre', label: 'About: Our Centre', layout: 'our-centre' },
+  { name: 'about--our-team', label: 'About: Our Team', layout: 'our-team' },
+  { name: 'about--the-oakdene-story', label: 'About: The Oakdene Story', layout: 'the-oakdene-story' },
+  { name: 'about--the-oakdene-story--video', label: 'About: Our story video', layout: 'the-oakdene-story-video' },
 ];
 
 // ---------------------------------------------------------------------------------------------------------------
