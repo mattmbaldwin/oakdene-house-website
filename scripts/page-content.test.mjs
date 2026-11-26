@@ -86,9 +86,9 @@ test('a button with a style other than primary, secondary or white fails', () =>
   }
   assert.equal(schema.safeParse({ label: 'x', href: 'javascript:alert(1)', style: 'primary' }).success, false);
 
-  // In the editor the style is a drop-down of exactly those three.
+  // In the editor the style is hidden: it is part of the look, which stays in code (decision 15).
   const [, , style] = zodToDecapFields(z.strictObject({ b: button() }))[0].fields;
-  assert.deepEqual(style, { name: 'style', label: 'Style', hint: style.hint, widget: 'select', options: BUTTON_STYLES });
+  assert.deepEqual(style, { name: 'style', label: 'Style', hint: style.hint, widget: 'hidden' });
 });
 
 /** Every key path in a JSON schema, e.g. "overview.paragraphs[]", "seo.image". */

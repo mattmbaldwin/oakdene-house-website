@@ -65,6 +65,11 @@ function toField(name, node, required, path) {
   if (node.description) field.hint = node.description;
   if (!required) field.required = false;
 
+  if (cms.hidden) {
+    // A technical field (an id, order number, show/hide switch, style or icon): kept in the file, not shown.
+    return { ...field, widget: 'hidden' };
+  }
+
   if ('const' in node) {
     // A fixed value, such as a page file's `layout:`. Kept in the file but not shown in the form.
     if (typeof node.const !== 'string') throw new Error(`${where}: only text constants are supported`);
@@ -107,6 +112,10 @@ function toField(name, node, required, path) {
       if (items.title) out.label_singular = items.title;
       if (items.type === 'object') {
         out.fields = objectFields(items, [...path, '[]']);
+        if (holdsHiddenField(out.fields)) {
+          // A new item would get no value for its hidden fields, so the list's shape stays a code change.
+          Object.assign(out, { allow_add: false, allow_remove: false, allow_reorder: false });
+        }
       } else {
         out.field = toField('item', items, true, [...path, '[]']);
       }
@@ -115,6 +124,13 @@ function toField(name, node, required, path) {
     default:
       throw new Error(`${where}: the editor cannot show a field of type ${JSON.stringify(node.type ?? node)}`);
   }
+}
+
+/** True when an item's fields (or an object inside it) include a hidden field that has no default value. */
+function holdsHiddenField(fields) {
+  return fields.some(
+    (f) => (f.widget === 'hidden' && !('default' in f)) || (f.widget === 'object' && holdsHiddenField(f.fields)),
+  );
 }
 
 function objectFields(node, path) {

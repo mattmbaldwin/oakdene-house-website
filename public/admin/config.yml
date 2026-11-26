@@ -160,14 +160,14 @@ collections:
               - name: id
                 label: Section id
                 hint: Lower-case letters, digits or hyphens. FAQs refer to it.
-                widget: string
-                pattern:
-                  - ^[a-z][a-z0-9-]*$
-                  - Must match ^[a-z][a-z0-9-]*$
+                widget: hidden
               - name: heading
                 label: Heading
                 hint: The section heading on the FAQ page.
                 widget: string
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
           - name: faqs
             label: Questions
             widget: list
@@ -189,20 +189,20 @@ collections:
               - name: section
                 label: Section id
                 hint: One of the section ids above, e.g. "general".
-                widget: string
+                widget: hidden
               - name: showOnFaqPage
                 label: Show on the FAQ page
-                widget: boolean
-                default: false
+                widget: hidden
               - name: showOnHome
                 label: Show on the home page
-                widget: boolean
-                default: false
+                widget: hidden
               - name: order
                 label: Order
                 hint: Lower numbers show first, within a section and on the home page.
-                widget: number
-                value_type: int
+                widget: hidden
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
   - name: pages
     label: Pages
     format: yaml
@@ -1058,11 +1058,7 @@ collections:
                   - name: style
                     label: Style
                     hint: primary (filled), secondary (outline) or white.
-                    widget: select
-                    options:
-                      - primary
-                      - secondary
-                      - white
+                    widget: hidden
           - name: categories
             label: What we offer
             widget: object
@@ -1094,11 +1090,7 @@ collections:
                   - name: icon
                     label: Icon
                     hint: Pick one of the site icons.
-                    widget: select
-                    options:
-                      - heart
-                      - people
-                      - arrow
+                    widget: hidden
                   - name: heading
                     label: Heading
                     widget: string
@@ -1110,6 +1102,9 @@ collections:
                       - italic
                       - link
                     editor_components: []
+                allow_add: false
+                allow_remove: false
+                allow_reorder: false
           - name: services
             label: All services
             widget: object
@@ -1243,11 +1238,7 @@ collections:
                   - name: style
                     label: Style
                     hint: primary (filled), secondary (outline) or white.
-                    widget: select
-                    options:
-                      - primary
-                      - secondary
-                      - white
+                    widget: hidden
           - name: cta
             label: Call to action band
             widget: object
@@ -1405,11 +1396,7 @@ collections:
                       - name: style
                         label: Style
                         hint: primary (filled), secondary (outline) or white.
-                        widget: select
-                        options:
-                          - primary
-                          - secondary
-                          - white
+                        widget: hidden
                   - name: secondary
                     label: Second button
                     widget: object
@@ -1427,11 +1414,7 @@ collections:
                       - name: style
                         label: Style
                         hint: primary (filled), secondary (outline) or white.
-                        widget: select
-                        options:
-                          - primary
-                          - secondary
-                          - white
+                        widget: hidden
               - name: details
                 label: Service details table
                 widget: object
@@ -1966,12 +1949,7 @@ collections:
                   - name: icon
                     label: Icon
                     hint: Pick one of the site icons.
-                    widget: select
-                    options:
-                      - chat
-                      - lock
-                      - pulse
-                      - shield
+                    widget: hidden
                   - name: heading
                     label: Heading
                     widget: string
@@ -1983,6 +1961,9 @@ collections:
                       - italic
                       - link
                     editor_components: []
+                allow_add: false
+                allow_remove: false
+                allow_reorder: false
           - name: cta
             label: Call to action band
             widget: object
@@ -2172,11 +2153,7 @@ collections:
                       - name: style
                         label: Style
                         hint: primary (filled), secondary (outline) or white.
-                        widget: select
-                        options:
-                          - primary
-                          - secondary
-                          - white
+                        widget: hidden
           - name: approach
             label: Our approach
             widget: object
@@ -2200,11 +2177,7 @@ collections:
                   - name: icon
                     label: Icon
                     hint: Pick one of the site icons.
-                    widget: select
-                    options:
-                      - shield
-                      - people
-                      - clock
+                    widget: hidden
                   - name: heading
                     label: Heading
                     widget: string
@@ -2216,6 +2189,9 @@ collections:
                       - italic
                       - link
                     editor_components: []
+                allow_add: false
+                allow_remove: false
+                allow_reorder: false
           - name: cta
             label: Call to action band
             widget: object
@@ -2349,11 +2325,7 @@ collections:
                   - name: style
                     label: Style
                     hint: primary (filled), secondary (outline) or white.
-                    widget: select
-                    options:
-                      - primary
-                      - secondary
-                      - white
+                    widget: hidden
           - name: call
             label: "\"Prefer to call?\" box"
             widget: object
@@ -2508,11 +2480,7 @@ collections:
                   - name: style
                     label: Style
                     hint: primary (filled), secondary (outline) or white.
-                    widget: select
-                    options:
-                      - primary
-                      - secondary
-                      - white
+                    widget: hidden
               - name: secondary
                 label: Second button
                 widget: object
@@ -2530,11 +2498,7 @@ collections:
                   - name: style
                     label: Style
                     hint: primary (filled), secondary (outline) or white.
-                    widget: select
-                    options:
-                      - primary
-                      - secondary
-                      - white
+                    widget: hidden
       - name: community-programs--index
         label: Community Programs
         file: src/content/pages/community-programs--index.yaml
@@ -5128,10 +5092,10 @@ collections:
                   - name: style
                     label: Style
                     hint: white (filled) or white-outline.
-                    widget: select
-                    options:
-                      - white
-                      - white-outline
+                    widget: hidden
+                allow_add: false
+                allow_remove: false
+                allow_reorder: false
           - name: pathways
             label: Quick links
             widget: object
@@ -5584,10 +5548,10 @@ collections:
                   - name: style
                     label: Style
                     hint: white (filled) or white-outline.
-                    widget: select
-                    options:
-                      - white
-                      - white-outline
+                    widget: hidden
+                allow_add: false
+                allow_remove: false
+                allow_reorder: false
           - name: cards
             label: Contact cards
             widget: object
@@ -6042,10 +6006,10 @@ collections:
                   - name: style
                     label: Style
                     hint: white (filled) or white-outline.
-                    widget: select
-                    options:
-                      - white
-                      - white-outline
+                    widget: hidden
+                allow_add: false
+                allow_remove: false
+                allow_reorder: false
           - name: intro
             label: Introduction
             widget: object
@@ -6461,12 +6425,10 @@ collections:
                     widget: text
                   - name: icon
                     label: Icon
-                    widget: select
-                    options:
-                      - book
-                      - share
-                      - map
-                      - heart
+                    widget: hidden
+                allow_add: false
+                allow_remove: false
+                allow_reorder: false
           - name: available
             label: Available resources
             widget: object
@@ -7322,11 +7284,7 @@ collections:
                   - name: style
                     label: Style
                     hint: primary (filled), secondary (outline) or white.
-                    widget: select
-                    options:
-                      - primary
-                      - secondary
-                      - white
+                    widget: hidden
               - name: image
                 label: Image
                 widget: object
@@ -8164,11 +8122,7 @@ collections:
                   - name: style
                     label: Style
                     hint: primary (filled), secondary (outline) or white.
-                    widget: select
-                    options:
-                      - primary
-                      - secondary
-                      - white
+                    widget: hidden
               - name: secondary
                 label: Second button
                 widget: object
@@ -8186,11 +8140,7 @@ collections:
                   - name: style
                     label: Style
                     hint: primary (filled), secondary (outline) or white.
-                    widget: select
-                    options:
-                      - primary
-                      - secondary
-                      - white
+                    widget: hidden
       - name: privacy-policy
         label: Privacy Policy
         file: src/content/pages/privacy-policy.yaml
@@ -8419,10 +8369,7 @@ collections:
               - name: id
                 label: Link anchor
                 hint: "Used in #links to this section. Change it only if you also change the links."
-                widget: string
-                pattern:
-                  - ^[a-z][a-z0-9-]*$
-                  - Must match ^[a-z][a-z0-9-]*$
+                widget: hidden
               - name: heading
                 label: Section heading
                 widget: string
@@ -8502,6 +8449,9 @@ collections:
                             - italic
                             - link
                           editor_components: []
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
       - name: accessibility
         label: Accessibility
         file: src/content/pages/accessibility.yaml
@@ -8560,10 +8510,7 @@ collections:
               - name: id
                 label: Link anchor
                 hint: "Used in #links to this section. Change it only if you also change the links."
-                widget: string
-                pattern:
-                  - ^[a-z][a-z0-9-]*$
-                  - Must match ^[a-z][a-z0-9-]*$
+                widget: hidden
               - name: heading
                 label: Section heading
                 widget: string
@@ -8643,6 +8590,9 @@ collections:
                             - italic
                             - link
                           editor_components: []
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
       - name: thankyou
         label: Thank-you page
         file: src/content/pages/thankyou.yaml
@@ -8728,11 +8678,10 @@ collections:
               - name: style
                 label: Style
                 hint: primary (filled), secondary (outline) or white.
-                widget: select
-                options:
-                  - primary
-                  - secondary
-                  - white
+                widget: hidden
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
       - name: "404"
         label: 404 (page not found)
         file: src/content/pages/404.yaml
@@ -8791,11 +8740,10 @@ collections:
               - name: style
                 label: Style
                 hint: primary (filled), secondary (outline) or white.
-                widget: select
-                options:
-                  - primary
-                  - secondary
-                  - white
+                widget: hidden
+            allow_add: false
+            allow_remove: false
+            allow_reorder: false
   - name: site
     label: Site-wide text
     format: yaml

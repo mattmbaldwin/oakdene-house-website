@@ -94,7 +94,7 @@ test('--check fails when config.yml is stale, and passes once regenerated', asyn
   await cp(join(ROOT, CONFIG_PATH), join(dir, CONFIG_PATH));
   await cp(join(ROOT, 'src/content/pages'), join(dir, 'src/content/pages'), { recursive: true });
   const schemas = await readFile(join(ROOT, 'src/content/schemas.mjs'), 'utf8');
-  const edited = schemas.replace(/\n\s*showOnHome: z\.boolean\(\)\.meta\(\{ title: 'Show on the home page' \}\),/, '');
+  const edited = schemas.replace(/\n\s*showOnHome: z\.boolean\(\)\.meta\(\{ title: 'Show on the home page', cms: \{ hidden: true \} \}\),/, '');
   assert.notEqual(edited, schemas, 'test fixture: the showOnHome line was found and removed');
   await writeFile(join(dir, 'src/content/schemas.mjs'), edited);
   await symlink(join(ROOT, 'node_modules'), join(dir, 'node_modules'), 'dir');
@@ -187,4 +187,28 @@ test('folder collections (for the W4 page files) generate a folder entry', () =>
 
 test('opening-hours schema matches the shape W5 writes (one object per service)', () => {
   assert.deepEqual(Object.keys(openingHoursSchema.shape), ['kitchen', 'laundrette', 'staplePacks', 'clothingStore', 'office']);
+});
+
+// fails_when: Simon can see or change an id, order number, show/hide switch, style or icon, or can add a list item
+//             whose hidden fields would be saved empty and break the build.
+test('technical fields are hidden, keep their values, and lock the list they sit in', () => {
+  const faqs = buildConfig(cmsCollections).collections.find((c) => c.name === 'faqs').files[0].fields;
+  const sections = faqs.find((f) => f.name === 'sections');
+  const questions = faqs.find((f) => f.name === 'faqs');
+  const widgets = (list) => Object.fromEntries(list.fields.map((f) => [f.name, f.widget]));
+  assert.deepEqual(widgets(sections), { id: 'hidden', heading: 'string' });
+  assert.deepEqual(widgets(questions), {
+    question: 'string', answer: 'markdown', section: 'hidden', showOnFaqPage: 'hidden', showOnHome: 'hidden', order: 'hidden',
+  });
+  for (const list of [sections, questions]) {
+    assert.equal(list.allow_add, false, list.name);
+    assert.equal(list.allow_remove, false, list.name);
+    assert.equal(list.allow_reorder, false, list.name);
+  }
+  // A hidden technical field has no default: Decap keeps the value already in the file.
+  for (const f of questions.fields.filter((f) => f.widget === 'hidden')) assert.equal('default' in f, false, f.name);
+
+  // A list of plain words (no hidden fields) can still grow and shrink.
+  const words = zodToDecapFields(z.strictObject({ points: z.array(z.strictObject({ text: z.string() })) }))[0];
+  assert.equal('allow_add' in words, false);
 });
