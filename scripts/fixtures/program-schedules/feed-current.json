@@ -1,0 +1,140 @@
+{
+  "source": "HubEasy programs",
+  "generatedAt": "2026-11-26T10:00:00+11:00",
+  "sections": {
+    "life-choices": [
+      {
+        "program": "Life Choices Program",
+        "day": "Monday",
+        "start": "11:00",
+        "end": "12:15",
+        "mode": "face_to_face",
+        "frequency": "weekly",
+        "public_note": ""
+      },
+      {
+        "program": "Life Choices Program",
+        "day": "Tuesday",
+        "start": "11:00",
+        "end": "12:15",
+        "mode": "zoom",
+        "frequency": "weekly",
+        "public_note": "Ladies Only"
+      },
+      {
+        "program": "Life Choices Program",
+        "day": "Tuesday",
+        "start": "13:00",
+        "end": "14:15",
+        "mode": "face_to_face",
+        "frequency": "weekly",
+        "public_note": "Men Only"
+      },
+      {
+        "program": "Life Choices Program",
+        "day": "Tuesday",
+        "start": "16:00",
+        "end": "17:30",
+        "mode": "zoom",
+        "frequency": "weekly",
+        "public_note": ""
+      },
+      {
+        "program": "Life Choices Program",
+        "day": "Wednesday",
+        "start": "11:00",
+        "end": "12:30",
+        "mode": "face_to_face",
+        "frequency": "weekly",
+        "public_note": ""
+      },
+      {
+        "program": "Life Choices Program",
+        "day": "Thursday",
+        "start": "11:00",
+        "end": "12:30",
+        "mode": "face_to_face",
+        "frequency": "weekly",
+        "public_note": ""
+      },
+      {
+        "program": "Life Choices Program",
+        "day": "Friday",
+        "start": "17:00",
+        "end": "18:30",
+        "mode": "face_to_face",
+        "frequency": "weekly",
+        "public_note": ""
+      }
+    ],
+    "aa": [
+      {
+        "program": "AA Meeting",
+        "day": "Tuesday",
+        "start": "17:00",
+        "end": "18:30",
+        "mode": "face_to_face",
+        "frequency": "weekly",
+        "public_note": "Spanish Speaking"
+      },
+      {
+        "program": "AA Meeting",
+        "day": "Thursday",
+        "start": "13:00",
+        "end": "14:30",
+        "mode": "face_to_face",
+        "frequency": "weekly",
+        "public_note": ""
+      },
+      {
+        "program": "AA Meeting",
+        "day": "Friday",
+        "start": "10:00",
+        "end": "11:30",
+        "mode": "face_to_face",
+        "frequency": "weekly",
+        "public_note": ""
+      }
+    ],
+    "ga": [
+      {
+        "program": "GA Meeting",
+        "day": "Monday",
+        "start": "13:00",
+        "end": "14:00",
+        "mode": "face_to_face",
+        "frequency": "weekly",
+        "public_note": "Starts 15 June 2026"
+      },
+      {
+        "program": "GA Meeting",
+        "day": "Tuesday",
+        "start": "19:00",
+        "end": "20:30",
+        "mode": "face_to_face",
+        "frequency": "weekly",
+        "public_note": ""
+      },
+      {
+        "program": "GA Meeting",
+        "day": "Friday",
+        "start": "12:00",
+        "end": "13:30",
+        "mode": "face_to_face",
+        "frequency": "weekly",
+        "public_note": ""
+      }
+    ],
+    "dbt": [
+      {
+        "program": "Group DBT Therapy",
+        "day": "Wednesday",
+        "start": "13:00",
+        "end": "14:15",
+        "mode": "face_to_face",
+        "frequency": "weekly",
+        "public_note": "Starts 13 May 2026"
+      }
+    ]
+  }
+}

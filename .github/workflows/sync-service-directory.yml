@@ -12,7 +12,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: sync-service-directory
+  group: content-sync
   cancel-in-progress: false
 
 jobs:
