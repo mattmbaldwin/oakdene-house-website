@@ -1,38 +1,24 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import CTABand from '../../components/CTABand.astro';
+import Prose from '../../components/Prose.astro';
 import programSchedules from '../../content/program-schedules.json';
 import { formatRange, sortRows } from '../../lib/schedule';
+import { pageContent, fieldSource } from '../../lib/pages';
+
+// Words and images: src/content/pages/services--life-choices-program.yaml (edited in /admin).
+const ID = 'services--life-choices-program';
+const page = await pageContent(ID, 'life-choices-program');
+const { seo, hero, overview, join, cta } = page;
+const src = (path: string) => fieldSource(ID, path);
 
 const schedule = sortRows(programSchedules.sections['life-choices']);
-
-const whatToExpect = [
-  'A structured group environment',
-  'Topics that support reflection, responsibility and personal growth',
-  'Practical strategies that can be applied in everyday life',
-  'A respectful setting that values participation, not perfection',
-];
-
-const joinSteps = [
-  {
-    heading: 'Get in Touch',
-    body: 'Call or email Oakdene to express your interest.',
-  },
-  {
-    heading: 'Have a Chat',
-    body: 'A team member will have a short conversation with you to see if the program is a good fit.',
-  },
-  {
-    heading: 'Come to First Session',
-    body: 'Join us at the first session. You will meet the group and get started.',
-  },
-];
 ---
 
 <BaseLayout
-  title="Life Choices Program — Oakdene House Foundation"
-  description="A 6-week group program at Oakdene House to understand addiction, build life skills and connect with others. Multiple sessions available in-person and online."
-  ogImage="/images/centre/outside-meeting-2.png"
+  title={seo.title}
+  description={seo.description}
+  ogImage={seo.image}
 >
 
   <!-- HERO -->
@@ -44,10 +30,10 @@ const joinSteps = [
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
         <a href="/services/">Services</a>
         <span class="breadcrumb__sep" aria-hidden="true">/</span>
-        <span aria-current="page">Life Choices Program</span>
+        <span aria-current="page">{hero.breadcrumb}</span>
       </nav>
-      <h1>Life Choices Program</h1>
-      <p class="lcp-hero__lead">A 6-week group program to help you understand addiction and build life skills.</p>
+      <h1>{hero.heading}</h1>
+      <p class="lcp-hero__lead"><Prose md={hero.lead} source={src('hero.lead')} /></p>
     </div>
   </section>
 
@@ -57,25 +43,24 @@ const joinSteps = [
       <div class="split">
         <div>
           <div class="section-heading">
-            <p class="section-heading__eyebrow">Program Overview</p>
-            <h2 id="lcp-overview-heading">Life Choices</h2>
+            <p class="section-heading__eyebrow">{overview.heading.eyebrow}</p>
+            <h2 id="lcp-overview-heading">{overview.heading.heading}</h2>
           </div>
-          <p>The Life Choices Program is a practical, 6-week group experience designed to help people understand addiction, learn coping strategies, build life skills, and connect with others on a similar journey.</p>
-          <p>We meet regularly, share experiences, and work toward recovery in a supportive environment.</p>
+          {overview.paragraphs.map((p, i) => <>{i > 0 && ' '}<p><Prose md={p} source={src(`overview.paragraphs.${i}`)} /></p></>)}
 
-          <h3 class="section-subhead">What participants can expect</h3>
+          <h3 class="section-subhead">{overview.expectHeading}</h3>
           <ul class="expect-list">
-            {whatToExpect.map(item => <li>{item}</li>)}
+            {overview.expectItems.map((item, i) => <li><Prose md={item} source={src(`overview.expectItems.${i}`)} /></li>)}
           </ul>
 
           <div class="who-box">
-            <p class="who-box__label">Who it's for</p>
-            <p>Life Choices is suitable for people who are ready to engage in a group-based program that supports change, accountability and future planning.</p>
+            <p class="who-box__label">{overview.whoLabel}</p>
+            <p><Prose md={overview.whoText} source={src('overview.whoText')} /></p>
           </div>
         </div>
         <div>
           <div class="program-image">
-            <img src="/images/centre/interior-meetings-1-img_2657-v2.png" alt="Group meeting room at Oakdene House" loading="lazy" />
+            <img src={overview.image.src} alt={overview.image.alt} loading="lazy" />
           </div>
         </div>
       </div>
@@ -86,9 +71,9 @@ const joinSteps = [
   <section class="section section--tint" aria-labelledby="schedule-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Session Times</p>
-        <h2 id="schedule-heading">Program schedule</h2>
-        <p class="section-heading__lead">Sessions run across the week with both in-person and online options available.</p>
+        <p class="section-heading__eyebrow">{page.schedule.heading.eyebrow}</p>
+        <h2 id="schedule-heading">{page.schedule.heading.heading}</h2>
+        <p class="section-heading__lead"><Prose md={page.schedule.heading.lead} source={src('schedule.heading.lead')} /></p>
       </div>
       <div class="schedule-scroll">
         <div class="schedule-table-wrap">
@@ -125,15 +110,15 @@ const joinSteps = [
   <section class="section" aria-labelledby="join-heading">
     <div class="container">
       <div class="section-heading section-heading--center">
-        <p class="section-heading__eyebrow">Getting Started</p>
-        <h2 id="join-heading">How to join</h2>
+        <p class="section-heading__eyebrow">{join.heading.eyebrow}</p>
+        <h2 id="join-heading">{join.heading.heading}</h2>
       </div>
       <div class="join-steps">
-        {joinSteps.map((step, i) => (
+        {join.steps.map((step, i) => (
           <div class="join-step">
             <div class="join-step__number" aria-hidden="true">{String(i + 1).padStart(2, '0')}</div>
             <h3 class="join-step__heading">{step.heading}</h3>
-            <p class="join-step__body">{step.body}</p>
+            <p class="join-step__body"><Prose md={step.body} source={src(`join.steps.${i}.body`)} /></p>
           </div>
         ))}
       </div>
@@ -141,11 +126,11 @@ const joinSteps = [
       <div class="contact-note">
         <div class="contact-note__item">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.15 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.09 1.18h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.09 8.91a16 16 0 0 0 5.98 5.98l1.28-1.28a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2.02z"/></svg>
-          <a href="tel:0287170999">(02) 8717 0999</a>
+          <a href={join.contact.phone.href}>{join.contact.phone.label}</a>
         </div>
         <div class="contact-note__item">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-          <a href="mailto:admin@oakdenehouse.org.au">admin@oakdenehouse.org.au</a>
+          <a href={join.contact.email.href}>{join.contact.email.label}</a>
         </div>
       </div>
     </div>
@@ -153,9 +138,9 @@ const joinSteps = [
 
   <!-- CTA -->
   <CTABand
-    heading="Interested in Life Choices?"
-    primaryBtn={{ text: 'Program Interest', href: '/contact/?reason=program-interest' }}
-    secondaryBtn={{ text: 'Make an Enquiry', href: '/contact/' }}
+    heading={cta.heading}
+    primaryBtn={{ text: cta.primary.label, href: cta.primary.href }}
+    secondaryBtn={{ text: cta.secondary.label, href: cta.secondary.href }}
     dark={true}
   />
 

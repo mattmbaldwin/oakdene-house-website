@@ -9,7 +9,7 @@
 // The committed config.yml is the file Decap reads. `npm run build` runs --check, so changing a schema without
 // regenerating fails the build instead of shipping an editor that disagrees with the site.
 
-import { readFile, writeFile, mkdir } from 'node:fs/promises';
+import { readFile, writeFile, mkdir, readdir } from 'node:fs/promises';
 import { existsSync } from 'node:fs';
 import { dirname, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
@@ -65,6 +65,12 @@ function toField(name, node, required, path) {
   if (node.description) field.hint = node.description;
   if (!required) field.required = false;
 
+  if ('const' in node) {
+    // A fixed value, such as a page file's `layout:`. Kept in the file but not shown in the form.
+    if (typeof node.const !== 'string') throw new Error(`${where}: only text constants are supported`);
+    return { ...field, widget: 'hidden', default: node.const };
+  }
+
   if (node.enum) {
     if (!node.enum.every((v) => typeof v === 'string')) throw new Error(`${where}: only text options are supported`);
     return { ...field, widget: 'select', options: [...node.enum] };
@@ -73,10 +79,11 @@ function toField(name, node, required, path) {
   switch (node.type) {
     case 'string': {
       const widget = cms.widget ?? 'string';
-      if (!['string', 'text', 'markdown'].includes(widget)) throw new Error(`${where}: unknown text widget "${widget}"`);
+      if (!['string', 'text', 'markdown', 'image'].includes(widget)) throw new Error(`${where}: unknown text widget "${widget}"`);
       const out = { ...field, widget };
       if (widget === 'markdown') Object.assign(out, MARKDOWN_OPTIONS);
-      if (node.pattern) out.pattern = [node.pattern, `Must match ${node.pattern}`];
+      if (node.pattern && widget !== 'image') out.pattern = [node.pattern, `Must match ${node.pattern}`];
+      if (widget === 'image') out.choose_url = false;
       return out;
     }
     case 'boolean':
@@ -127,8 +134,8 @@ export function zodToDecapFields(schema, name = 'schema') {
 }
 
 function toCollection(c) {
-  const fields = zodToDecapFields(c.schema, c.name);
   if (c.kind === 'file') {
+    const fields = zodToDecapFields(c.schema, c.name);
     return {
       name: c.name,
       label: c.label,
@@ -139,9 +146,32 @@ function toCollection(c) {
   }
   if (c.kind === 'folder') {
     const { kind, schema, ...decap } = c;
-    return { ...decap, editor: { preview: false }, fields };
+    return { ...decap, editor: { preview: false }, fields: zodToDecapFields(schema, c.name) };
+  }
+  if (c.kind === 'pages') {
+    return {
+      name: c.name,
+      label: c.label,
+      format: c.format,
+      editor: { preview: false },
+      files: c.files.map((page) => {
+        const schema = c.layouts[page.layout];
+        if (!schema) throw new Error(`collection ${c.name}: page ${page.name} uses unknown layout "${page.layout}"`);
+        return {
+          name: page.name,
+          label: page.label,
+          file: pageFilePath(c, page),
+          fields: zodToDecapFields(schema, `${c.name}.${page.name}`),
+        };
+      }),
+    };
   }
   throw new Error(`collection ${c.name}: unknown kind "${c.kind}"`);
+}
+
+/** src/content/pages/services--aa-ga-meetings.yaml */
+export function pageFilePath(c, page) {
+  return `${c.folder}/${page.name}.${c.format}`;
 }
 
 /** The whole Decap config object for a list of collections. */
@@ -167,6 +197,10 @@ export async function validateContent(collections, root = ROOT) {
   const problems = [];
   const missing = [];
   for (const c of collections) {
+    if (c.kind === 'pages') {
+      problems.push(...(await validatePages(c, root)));
+      continue;
+    }
     if (c.kind !== 'file') continue;
     const full = resolve(root, c.file);
     if (!existsSync(full)) {
@@ -189,6 +223,52 @@ export async function validateContent(collections, root = ROOT) {
     }
   }
   return { problems, missing };
+}
+
+/**
+ * Check a page collection: every listed page file exists and matches its layout's schema, its `layout:` agrees
+ * with the list, and no YAML file in the folder is left off the list (it would be invisible in the editor).
+ * A missing page file is a problem, not a warning: its .astro page cannot render without it.
+ */
+async function validatePages(c, root) {
+  const problems = [];
+  const listed = new Set();
+  for (const page of c.files) {
+    const file = pageFilePath(c, page);
+    listed.add(file);
+    const full = resolve(root, file);
+    if (!existsSync(full)) {
+      problems.push(`${file}: missing (listed in src/content/schemas.mjs)`);
+      continue;
+    }
+    let data;
+    try {
+      data = yaml.load(await readFile(full, 'utf8'));
+    } catch (err) {
+      problems.push(`${file}: cannot be parsed: ${err.message}`);
+      continue;
+    }
+    if (data?.layout !== page.layout) {
+      problems.push(`${file}: layout: expected "${page.layout}", found ${JSON.stringify(data?.layout)}`);
+      continue;
+    }
+    const result = c.layouts[page.layout].safeParse(data);
+    if (!result.success) {
+      for (const issue of result.error.issues) {
+        problems.push(`${file}: ${issue.path.join('.') || '(top level)'}: ${issue.message}`);
+      }
+    }
+  }
+  const dir = resolve(root, c.folder);
+  if (existsSync(dir)) {
+    for (const name of (await readdir(dir)).sort()) {
+      const file = `${c.folder}/${name}`;
+      if (/\.ya?ml$/.test(name) && !listed.has(file)) {
+        problems.push(`${file}: not listed in pageFiles in src/content/schemas.mjs, so the editor cannot show it`);
+      }
+    }
+  }
+  return problems;
 }
 
 async function main(argv) {

@@ -18,7 +18,7 @@
 //
 // Program schedules (src/content/program-schedules.json) are deliberately NOT listed: HubEasy is their source.
 //
-// Later stages (W4, W8 to W12) add page collections here with `kind: 'folder'`.
+// Page files (W4, then W8 to W12) are one `kind: 'pages'` collection; see "Pages" below.
 
 import { z } from 'astro/zod';
 
@@ -136,10 +136,259 @@ export const faqsSchema = z
   .meta({ title: 'Frequently asked questions' });
 
 // ---------------------------------------------------------------------------------------------------------------
+// Pages (stage W4, issue #12): one YAML file per page in src/content/pages/, named after its URL path with "--" for
+// each "/" (services/aa-ga-meetings -> services--aa-ga-meetings.yaml).
+//
+// Each file says which layout it uses (`layout:`), and each layout has its own schema built from the shared field
+// types below. Layout, sections, colours and fonts stay in the .astro page; the YAML holds only words and images.
+// Every batch after W4 (W8 to W12) reuses these field types and adds its layouts to `pageLayouts`.
+
+/** Where a link or button may point. Kept identical to the HREF rule in src/lib/prose.ts. */
+export const HREF_PATTERN = '^(?:https?://[^\\s<>"]+|mailto:[^\\s<>"]+|tel:\\+?[0-9]+|/[^\\s<>"]*|#[^\\s<>"]*)$';
+
+const HREF_HINT = 'A page on this site (/contact/), a web address (https://…), mailto: or tel:.';
+
+/** A heading: required one-line plain text. */
+export const heading = (title = 'Heading', description) => text(title, description);
+
+/** A web address or site path for a link or button. */
+export const href = (title = 'Link', description = HREF_HINT) =>
+  z.string().min(1).regex(new RegExp(HREF_PATTERN)).meta(meta(title, description));
+
+/** A path to an image under public/, e.g. /images/centre/outside.png. Edited with the image picker. */
+export const imagePath = (title = 'Image file', description) =>
+  z
+    .string()
+    .min(1)
+    .regex(/^\/[^\s"<>]+$/)
+    .meta({ ...meta(title, description), cms: { widget: 'image' } });
+
+/** An image shown on the page: the file and its alt text. */
+export const image = (title = 'Image') =>
+  z
+    .strictObject({
+      src: imagePath('Image file'),
+      alt: text('Alt text', 'Describes the image for people who use screen readers.'),
+    })
+    .meta({ title });
+
+/** A text link: what it says and where it goes. */
+export const link = (title = 'Link') =>
+  z.strictObject({ label: text('Text'), href: href('Goes to') }).meta({ title });
+
+/** The button styles the site's CSS defines (`btn btn--primary`, `btn--secondary`, `btn--white`). */
+export const BUTTON_STYLES = ['primary', 'secondary', 'white'];
+
+/** A button link: label, where it goes and which of the site's button styles it uses. */
+export const button = (title = 'Button') =>
+  z
+    .strictObject({
+      label: text('Text'),
+      href: href('Goes to'),
+      style: z.enum(BUTTON_STYLES).meta({ title: 'Style', description: 'primary (filled), secondary (outline) or white.' }),
+    })
+    .meta({ title });
+
+/** Search-engine and social-sharing details for the page. */
+export const seo = () =>
+  z
+    .strictObject({
+      title: text('Page title', 'Shown in the browser tab and as the search result heading.'),
+      description: longText('Search description', 'The summary search engines show under the title.'),
+      image: imagePath('Sharing image', 'The picture shown when the page is shared on social media.').optional(),
+    })
+    .meta({ title: 'Search and sharing' });
+
+/** One or more paragraphs, each rendered as its own <p>. */
+export const paragraphs = (title = 'Paragraphs', description = 'Bold, italic and links only. One entry per paragraph.') =>
+  z.array(prose('Paragraph')).min(1).meta(meta(title, description));
+
+/** A bulleted list: one entry per point. */
+export const listItems = (title = 'List items') =>
+  z.array(prose('Item')).min(1).meta({ ...meta(title, 'Bold, italic and links only. One entry per point.') });
+
+/** The top banner: breadcrumb label, page heading and the line under it. */
+export const hero = () =>
+  z
+    .strictObject({
+      breadcrumb: text('Breadcrumb', 'The last item in the "Home / Services / …" trail.'),
+      heading: heading('Page heading'),
+      lead: prose('Line under the heading'),
+    })
+    .meta({ title: 'Banner' });
+
+/** A section's small label (eyebrow), heading and optional line under it. */
+export const sectionHeading = ({ lead = false } = {}) => {
+  const fields = { eyebrow: text('Small label above the heading'), heading: heading() };
+  if (lead) fields.lead = prose('Line under the heading');
+  return z.strictObject(fields).meta({ title: 'Section heading' });
+};
+
+/** The coloured call-to-action band at the foot of a page. Its button styles are fixed by the band's design. */
+export const ctaBand = ({ subheading = false } = {}) => {
+  const fields = { heading: heading() };
+  if (subheading) fields.subheading = longText('Line under the heading');
+  fields.primary = link('First button');
+  fields.secondary = link('Second button');
+  return z.strictObject(fields).meta({ title: 'Call to action band' });
+};
+
+const layoutField = (name) => z.literal(name).meta({ title: 'Layout' });
+
+/** Contact links (phone and email) shown on a page. */
+const contactLinks = () =>
+  z.strictObject({ phone: link('Phone link'), email: link('Email link') }).meta({ title: 'Contact links' });
+
+// Layout: services/life-choices-program.astro
+export const lifeChoicesProgramLayout = z
+  .strictObject({
+    layout: layoutField('life-choices-program'),
+    seo: seo(),
+    hero: hero(),
+    overview: z
+      .strictObject({
+        heading: sectionHeading(),
+        paragraphs: paragraphs(),
+        expectHeading: heading('"What participants can expect" heading'),
+        expectItems: listItems('What participants can expect'),
+        whoLabel: text('"Who it\'s for" label'),
+        whoText: prose('"Who it\'s for" text'),
+        image: image(),
+      })
+      .meta({ title: 'Overview' }),
+    schedule: z
+      .strictObject({ heading: sectionHeading({ lead: true }) })
+      .meta({ title: 'Session times', description: 'The table itself comes from HubEasy and is not edited here.' }),
+    join: z
+      .strictObject({
+        heading: sectionHeading(),
+        steps: z
+          .array(z.strictObject({ heading: heading(), body: prose('Text') }).meta({ title: 'Step' }))
+          .min(1)
+          .meta({ title: 'Steps', description: 'Numbered 01, 02, 03 … in this order.', cms: { summary: '{{fields.heading}}' } }),
+        contact: contactLinks(),
+      })
+      .meta({ title: 'How to join' }),
+    cta: ctaBand(),
+  })
+  .meta({ title: 'Life Choices Program page' });
+
+// Layout: services/aa-ga-meetings.astro
+export const aaGaMeetingsLayout = z
+  .strictObject({
+    layout: layoutField('aa-ga-meetings'),
+    seo: seo(),
+    hero: hero(),
+    overview: z
+      .strictObject({
+        heading: sectionHeading(),
+        paragraphs: paragraphs(),
+        meetingsHeading: heading('"Meetings hosted" heading'),
+        meetings: listItems('Meetings hosted'),
+        expectHeading: heading('"What to expect" heading'),
+        expectItems: listItems('What to expect'),
+        helpHeading: heading('"Find help outside Oakdene" heading'),
+        helpIntro: prose('"Find help outside Oakdene" introduction'),
+        helpItems: listItems('Outside contacts'),
+        image: image(),
+        scheduleNote: z
+          .strictObject({ heading: heading(), text: prose('Text'), contact: contactLinks() })
+          .meta({ title: 'Meeting times note (beside the image)' }),
+      })
+      .meta({ title: 'Overview' }),
+    about: z
+      .strictObject({
+        heading: sectionHeading(),
+        cards: z
+          .array(z.strictObject({ heading: heading(), paragraphs: paragraphs() }).meta({ title: 'Card' }))
+          .min(1)
+          .meta({ title: 'Cards', cms: { summary: '{{fields.heading}}' } }),
+      })
+      .meta({ title: 'About the programs' }),
+    schedule: z
+      .strictObject({
+        heading: sectionHeading({ lead: true }),
+        gaHeading: heading('Gamblers Anonymous table heading'),
+        aaHeading: heading('Alcoholics Anonymous table heading'),
+      })
+      .meta({ title: 'Meeting times', description: 'The tables themselves come from HubEasy and are not edited here.' }),
+    cta: ctaBand(),
+  })
+  .meta({ title: 'AA & GA Meetings page' });
+
+// Layout: services/group-dbt-therapy.astro
+export const groupDbtTherapyLayout = z
+  .strictObject({
+    layout: layoutField('group-dbt-therapy'),
+    seo: seo(),
+    hero: hero(),
+    overview: z
+      .strictObject({
+        heading: sectionHeading(),
+        paragraphs: paragraphs(),
+        details: z
+          .strictObject({
+            caption: text('Table caption'),
+            rows: z
+              .array(z.strictObject({ label: text('Label'), value: text('Value') }).meta({ title: 'Row' }))
+              .min(1)
+              .meta({ title: 'Rows', cms: { summary: '{{fields.label}}' } }),
+          })
+          .meta({ title: 'Service details table' }),
+      })
+      .meta({ title: 'Overview' }),
+    schedule: z
+      .strictObject({ heading: sectionHeading({ lead: true }) })
+      .meta({ title: 'Group times', description: 'The table itself comes from HubEasy and is not edited here.' }),
+    skills: z
+      .strictObject({
+        heading: sectionHeading({ lead: true }),
+        items: z
+          .array(z.strictObject({ heading: heading(), body: prose('Text') }).meta({ title: 'Skill' }))
+          .min(1)
+          .meta({ title: 'Skill areas', cms: { summary: '{{fields.heading}}' } }),
+      })
+      .meta({ title: 'What the group covers' }),
+    who: z
+      .strictObject({
+        heading: sectionHeading(),
+        intro: prose('Introduction'),
+        items: listItems('Experiences the group may help with'),
+        closing: prose('Closing note'),
+      })
+      .meta({ title: 'Who it can help' }),
+    expect: z
+      .strictObject({ heading: sectionHeading(), paragraphs: paragraphs() })
+      .meta({ title: 'What to expect' }),
+    cta: ctaBand({ subheading: true }),
+  })
+  .meta({ title: 'Group DBT Therapy page' });
+
+/** Every page layout, by the value of its `layout:` field. */
+export const pageLayouts = {
+  'life-choices-program': lifeChoicesProgramLayout,
+  'aa-ga-meetings': aaGaMeetingsLayout,
+  'group-dbt-therapy': groupDbtTherapyLayout,
+};
+
+/** Any page file: the schema is chosen by its `layout:` field. Used by the Astro `pages` collection. */
+export const pageSchema = z.discriminatedUnion('layout', Object.values(pageLayouts));
+
+/** The page files the editor lists, in sidebar order. Every YAML file in PAGES_FOLDER must be listed here. */
+export const PAGES_FOLDER = 'src/content/pages';
+export const pageFiles = [
+  { name: 'services--life-choices-program', label: 'Life Choices Program', layout: 'life-choices-program' },
+  { name: 'services--aa-ga-meetings', label: 'AA & GA Meetings', layout: 'aa-ga-meetings' },
+  { name: 'services--group-dbt-therapy', label: 'Group DBT Therapy', layout: 'group-dbt-therapy' },
+];
+
+// ---------------------------------------------------------------------------------------------------------------
 // The editor's collections, in the order they appear in the sidebar.
 //
 // kind 'file':   one data file edited as one form.        { name, label, file, format, schema }
-// kind 'folder': one data file per entry (W4 page files). { name, label, folder, extension, schema, ...decap }
+// kind 'folder': one data file per entry, all with one schema. { name, label, folder, extension, schema, ...decap }
+// kind 'pages':  one data file per page, each with its own layout schema.
+//                { name, label, folder, format, layouts: { layout: schema }, files: [{ name, label, layout }] }
 
 export const cmsCollections = [
   {
@@ -157,5 +406,14 @@ export const cmsCollections = [
     file: 'src/content/faqs.yaml',
     format: 'yaml',
     schema: faqsSchema,
+  },
+  {
+    kind: 'pages',
+    name: 'pages',
+    label: 'Pages',
+    folder: PAGES_FOLDER,
+    format: 'yaml',
+    layouts: pageLayouts,
+    files: pageFiles,
   },
 ];

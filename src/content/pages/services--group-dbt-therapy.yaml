@@ -1,0 +1,83 @@
+# Words and images for /services/group-dbt-therapy/. Layout: src/pages/services/group-dbt-therapy.astro.
+# The group times table is not here: it comes from src/content/program-schedules.json (HubEasy).
+layout: group-dbt-therapy
+seo:
+  title: Group DBT Therapy — Oakdene House Foundation
+  description: Group Dialectical Behaviour Therapy at Oakdene House Foundation — practical, evidence-based skills for managing emotions, relationships, and recovery.
+  image: /images/dbt/dbt-hero-photo.png
+hero:
+  breadcrumb: Group DBT Therapy
+  heading: Group DBT Therapy
+  lead: Practical skills for managing emotions, relationships, and life's harder moments.
+overview:
+  heading:
+    eyebrow: About this service
+    heading: Skills for the harder moments
+  paragraphs:
+    - At Oakdene House Foundation, our Group Dialectical Behaviour Therapy (DBT) program supports people who feel emotionally overwhelmed, stuck in unhealthy patterns, or constantly pulled between wanting things to change and struggling to know how.
+    - DBT is a practical, evidence-based therapy that helps people build skills to better manage emotions, relationships, stress, impulsive behaviours, and difficult thoughts. It was originally developed to support people experiencing intense emotional distress, but is now widely used across mental health, addiction recovery, trauma support, and wellbeing programs.
+    - Our group program focuses on learning real-world tools in a safe, supportive environment alongside others who are working through similar challenges.
+  details:
+    caption: Service details
+    rows:
+      - label: Cost
+        value: Free
+      - label: Access
+        value: By appointment — contact to discuss suitability
+      - label: Location
+        value: Oakdene Centre, 29 Vine Street, Fairfield
+      - label: Phone
+        value: (02) 8717 0999
+      - label: Email
+        value: admin@oakdenehouse.org.au
+schedule:
+  heading:
+    eyebrow: Schedule
+    heading: Current group details
+    lead: Groups run weekly during term time.
+skills:
+  heading:
+    eyebrow: What the Group Covers
+    heading: Four core skill areas
+    lead: The DBT group focuses on four practical skill areas — each one builds on the others.
+  items:
+    - heading: Mindfulness
+      body: Learning how to slow down, stay present, and become more aware of thoughts, emotions, and reactions without immediately acting on them.
+    - heading: Distress Tolerance
+      body: Building practical ways to get through difficult moments without making things worse through impulsive behaviours, substance use, gambling, anger, or withdrawal.
+    - heading: Emotion Regulation
+      body: Understanding emotions more clearly and learning strategies to reduce emotional overwhelm and increase stability.
+    - heading: Interpersonal Effectiveness
+      body: Developing healthier communication, boundaries, conflict management, and relationship skills.
+who:
+  heading:
+    eyebrow: Who It Can Help
+    heading: You don't need a formal diagnosis to take part
+  intro: "The DBT group may benefit people who are experiencing:"
+  items:
+    - Emotional highs and lows
+    - Anxiety or chronic stress
+    - Anger or frustration that feels hard to control
+    - Addiction or gambling-related struggles
+    - Relationship difficulties
+    - Impulsive behaviours
+    - Feelings of shame, emptiness, or isolation
+    - Difficulty coping during conflict or distress
+  closing: You do not need a formal diagnosis to participate.
+expect:
+  heading:
+    eyebrow: What to Expect
+    heading: Structured, supportive, and practical
+  paragraphs:
+    - Our DBT groups are structured, supportive, and practical. Sessions combine discussion, skill-building, reflection, and guided exercises that can be applied in everyday life.
+    - The focus is not on judgement or forcing people to share more than they are comfortable with. Many people find relief simply being in a room where others understand what it feels like to struggle.
+    - Groups are facilitated by experienced mental health professionals who work from a compassionate, respectful, and person-centred approach.
+cta:
+  heading: Want to know if the DBT group is right for you?
+  subheading: Contact our team to discuss whether the group may be suitable. You don't have to have everything figured out before getting in touch.
+  primary:
+    label: Submit a Request
+    href: /services/referral/
+  secondary:
+    label: Contact Us
+    href: /contact/

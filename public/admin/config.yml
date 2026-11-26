@@ -203,3 +203,800 @@ collections:
                 hint: Lower numbers show first, within a section and on the home page.
                 widget: number
                 value_type: int
+  - name: pages
+    label: Pages
+    format: yaml
+    editor:
+      preview: false
+    files:
+      - name: services--life-choices-program
+        label: Life Choices Program
+        file: src/content/pages/services--life-choices-program.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: life-choices-program
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: breadcrumb
+                label: Breadcrumb
+                hint: The last item in the "Home / Services / …" trail.
+                widget: string
+              - name: heading
+                label: Page heading
+                widget: string
+              - name: lead
+                label: Line under the heading
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - name: overview
+            label: Overview
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: paragraphs
+                label: Paragraphs
+                hint: Bold, italic and links only. One entry per paragraph.
+                widget: list
+                label_singular: Paragraph
+                field:
+                  name: item
+                  label: Paragraph
+                  widget: markdown
+                  buttons:
+                    - bold
+                    - italic
+                    - link
+                  editor_components: []
+              - name: expectHeading
+                label: "\"What participants can expect\" heading"
+                widget: string
+              - name: expectItems
+                label: What participants can expect
+                hint: Bold, italic and links only. One entry per point.
+                widget: list
+                label_singular: Item
+                field:
+                  name: item
+                  label: Item
+                  widget: markdown
+                  buttons:
+                    - bold
+                    - italic
+                    - link
+                  editor_components: []
+              - name: whoLabel
+                label: "\"Who it's for\" label"
+                widget: string
+              - name: whoText
+                label: "\"Who it's for\" text"
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+              - name: image
+                label: Image
+                widget: object
+                fields:
+                  - name: src
+                    label: Image file
+                    widget: image
+                    choose_url: false
+                  - name: alt
+                    label: Alt text
+                    hint: Describes the image for people who use screen readers.
+                    widget: string
+          - name: schedule
+            label: Session times
+            hint: The table itself comes from HubEasy and is not edited here.
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: lead
+                    label: Line under the heading
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+          - name: join
+            label: How to join
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: steps
+                label: Steps
+                hint: Numbered 01, 02, 03 … in this order.
+                widget: list
+                summary: "{{fields.heading}}"
+                label_singular: Step
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: body
+                    label: Text
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+              - name: contact
+                label: Contact links
+                widget: object
+                fields:
+                  - name: phone
+                    label: Phone link
+                    widget: object
+                    fields:
+                      - name: label
+                        label: Text
+                        widget: string
+                      - name: href
+                        label: Goes to
+                        hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                        widget: string
+                        pattern:
+                          - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                          - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                  - name: email
+                    label: Email link
+                    widget: object
+                    fields:
+                      - name: label
+                        label: Text
+                        widget: string
+                      - name: href
+                        label: Goes to
+                        hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                        widget: string
+                        pattern:
+                          - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                          - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+          - name: cta
+            label: Call to action band
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: primary
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: secondary
+                label: Second button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+      - name: services--aa-ga-meetings
+        label: AA & GA Meetings
+        file: src/content/pages/services--aa-ga-meetings.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: aa-ga-meetings
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: breadcrumb
+                label: Breadcrumb
+                hint: The last item in the "Home / Services / …" trail.
+                widget: string
+              - name: heading
+                label: Page heading
+                widget: string
+              - name: lead
+                label: Line under the heading
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - name: overview
+            label: Overview
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: paragraphs
+                label: Paragraphs
+                hint: Bold, italic and links only. One entry per paragraph.
+                widget: list
+                label_singular: Paragraph
+                field:
+                  name: item
+                  label: Paragraph
+                  widget: markdown
+                  buttons:
+                    - bold
+                    - italic
+                    - link
+                  editor_components: []
+              - name: meetingsHeading
+                label: "\"Meetings hosted\" heading"
+                widget: string
+              - name: meetings
+                label: Meetings hosted
+                hint: Bold, italic and links only. One entry per point.
+                widget: list
+                label_singular: Item
+                field:
+                  name: item
+                  label: Item
+                  widget: markdown
+                  buttons:
+                    - bold
+                    - italic
+                    - link
+                  editor_components: []
+              - name: expectHeading
+                label: "\"What to expect\" heading"
+                widget: string
+              - name: expectItems
+                label: What to expect
+                hint: Bold, italic and links only. One entry per point.
+                widget: list
+                label_singular: Item
+                field:
+                  name: item
+                  label: Item
+                  widget: markdown
+                  buttons:
+                    - bold
+                    - italic
+                    - link
+                  editor_components: []
+              - name: helpHeading
+                label: "\"Find help outside Oakdene\" heading"
+                widget: string
+              - name: helpIntro
+                label: "\"Find help outside Oakdene\" introduction"
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+              - name: helpItems
+                label: Outside contacts
+                hint: Bold, italic and links only. One entry per point.
+                widget: list
+                label_singular: Item
+                field:
+                  name: item
+                  label: Item
+                  widget: markdown
+                  buttons:
+                    - bold
+                    - italic
+                    - link
+                  editor_components: []
+              - name: image
+                label: Image
+                widget: object
+                fields:
+                  - name: src
+                    label: Image file
+                    widget: image
+                    choose_url: false
+                  - name: alt
+                    label: Alt text
+                    hint: Describes the image for people who use screen readers.
+                    widget: string
+              - name: scheduleNote
+                label: Meeting times note (beside the image)
+                widget: object
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: text
+                    label: Text
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+                  - name: contact
+                    label: Contact links
+                    widget: object
+                    fields:
+                      - name: phone
+                        label: Phone link
+                        widget: object
+                        fields:
+                          - name: label
+                            label: Text
+                            widget: string
+                          - name: href
+                            label: Goes to
+                            hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                            widget: string
+                            pattern:
+                              - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                              - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - name: email
+                        label: Email link
+                        widget: object
+                        fields:
+                          - name: label
+                            label: Text
+                            widget: string
+                          - name: href
+                            label: Goes to
+                            hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                            widget: string
+                            pattern:
+                              - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                              - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+          - name: about
+            label: About the programs
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: cards
+                label: Cards
+                widget: list
+                summary: "{{fields.heading}}"
+                label_singular: Card
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: paragraphs
+                    label: Paragraphs
+                    hint: Bold, italic and links only. One entry per paragraph.
+                    widget: list
+                    label_singular: Paragraph
+                    field:
+                      name: item
+                      label: Paragraph
+                      widget: markdown
+                      buttons:
+                        - bold
+                        - italic
+                        - link
+                      editor_components: []
+          - name: schedule
+            label: Meeting times
+            hint: The tables themselves come from HubEasy and are not edited here.
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: lead
+                    label: Line under the heading
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+              - name: gaHeading
+                label: Gamblers Anonymous table heading
+                widget: string
+              - name: aaHeading
+                label: Alcoholics Anonymous table heading
+                widget: string
+          - name: cta
+            label: Call to action band
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: primary
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: secondary
+                label: Second button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+      - name: services--group-dbt-therapy
+        label: Group DBT Therapy
+        file: src/content/pages/services--group-dbt-therapy.yaml
+        fields:
+          - name: layout
+            label: Layout
+            widget: hidden
+            default: group-dbt-therapy
+          - name: seo
+            label: Search and sharing
+            widget: object
+            fields:
+              - name: title
+                label: Page title
+                hint: Shown in the browser tab and as the search result heading.
+                widget: string
+              - name: description
+                label: Search description
+                hint: The summary search engines show under the title.
+                widget: text
+              - name: image
+                label: Sharing image
+                hint: The picture shown when the page is shared on social media.
+                required: false
+                widget: image
+                choose_url: false
+          - name: hero
+            label: Banner
+            widget: object
+            fields:
+              - name: breadcrumb
+                label: Breadcrumb
+                hint: The last item in the "Home / Services / …" trail.
+                widget: string
+              - name: heading
+                label: Page heading
+                widget: string
+              - name: lead
+                label: Line under the heading
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - name: overview
+            label: Overview
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: paragraphs
+                label: Paragraphs
+                hint: Bold, italic and links only. One entry per paragraph.
+                widget: list
+                label_singular: Paragraph
+                field:
+                  name: item
+                  label: Paragraph
+                  widget: markdown
+                  buttons:
+                    - bold
+                    - italic
+                    - link
+                  editor_components: []
+              - name: details
+                label: Service details table
+                widget: object
+                fields:
+                  - name: caption
+                    label: Table caption
+                    widget: string
+                  - name: rows
+                    label: Rows
+                    widget: list
+                    summary: "{{fields.label}}"
+                    label_singular: Row
+                    fields:
+                      - name: label
+                        label: Label
+                        widget: string
+                      - name: value
+                        label: Value
+                        widget: string
+          - name: schedule
+            label: Group times
+            hint: The table itself comes from HubEasy and is not edited here.
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: lead
+                    label: Line under the heading
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+          - name: skills
+            label: What the group covers
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: lead
+                    label: Line under the heading
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+              - name: items
+                label: Skill areas
+                widget: list
+                summary: "{{fields.heading}}"
+                label_singular: Skill
+                fields:
+                  - name: heading
+                    label: Heading
+                    widget: string
+                  - name: body
+                    label: Text
+                    widget: markdown
+                    buttons:
+                      - bold
+                      - italic
+                      - link
+                    editor_components: []
+          - name: who
+            label: Who it can help
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: intro
+                label: Introduction
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+              - name: items
+                label: Experiences the group may help with
+                hint: Bold, italic and links only. One entry per point.
+                widget: list
+                label_singular: Item
+                field:
+                  name: item
+                  label: Item
+                  widget: markdown
+                  buttons:
+                    - bold
+                    - italic
+                    - link
+                  editor_components: []
+              - name: closing
+                label: Closing note
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+          - name: expect
+            label: What to expect
+            widget: object
+            fields:
+              - name: heading
+                label: Section heading
+                widget: object
+                fields:
+                  - name: eyebrow
+                    label: Small label above the heading
+                    widget: string
+                  - name: heading
+                    label: Heading
+                    widget: string
+              - name: paragraphs
+                label: Paragraphs
+                hint: Bold, italic and links only. One entry per paragraph.
+                widget: list
+                label_singular: Paragraph
+                field:
+                  name: item
+                  label: Paragraph
+                  widget: markdown
+                  buttons:
+                    - bold
+                    - italic
+                    - link
+                  editor_components: []
+          - name: cta
+            label: Call to action band
+            widget: object
+            fields:
+              - name: heading
+                label: Heading
+                widget: string
+              - name: subheading
+                label: Line under the heading
+                widget: text
+              - name: primary
+                label: First button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+              - name: secondary
+                label: Second button
+                widget: object
+                fields:
+                  - name: label
+                    label: Text
+                    widget: string
+                  - name: href
+                    label: Goes to
+                    hint: "A page on this site (/contact/), a web address (https://…), mailto: or tel:."
+                    widget: string
+                    pattern:
+                      - ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
+                      - Must match ^(?:https?:\/\/[^\s<>"]+|mailto:[^\s<>"]+|tel:\+?[0-9]+|\/[^\s<>"]*|#[^\s<>"]*)$
