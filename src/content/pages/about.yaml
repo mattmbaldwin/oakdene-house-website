@@ -1,12 +1,14 @@
-# Words and images for /about/. Layout: src/pages/about.astro.
 layout: about
 seo:
   title: About Oakdene House Foundation
-  description: Oakdene House Foundation is a Western Sydney charity supporting people and families affected by addiction, hardship and homelessness through practical help, counselling and community connection.
+  description: Oakdene House Foundation is a Western Sydney charity supporting
+    people and families affected by addiction, hardship and homelessness through
+    practical help, counselling and community connection.
   image: /images/centre/exterior-exterior-1-img_2651.jpg
 hero:
   heading: About Oakdene House Foundation
-  subheading: A community charity grounded in practical support, dignity, connection, and real pathways forward.
+  subheading: A community charity grounded in practical support, dignity,
+    connection, and real pathways forward.
   image:
     src: /images/centre/exterior-exterior-1-img_2651.jpg
     alt: Oakdene House Foundation centre exterior
@@ -21,7 +23,7 @@ subpages:
     image:
       src: /images/about/oakdene-tree-hero-colour.jpg
       alt: The Oakdene tree
-    heading: The Oakdene Story
+    heading: Oakdene's Story
     text: Where we come from and what the oak tree means to us.
     cta: Read the story
   - href: /about/our-team/
@@ -42,7 +44,11 @@ who:
   heading:
     eyebrow: Who We Are
     heading: A community charity built around real life
-  lead: Oakdene House Foundation is based in Western Sydney but supports people and families across the greater Sydney region affected by addiction, hardship, homelessness, and other life challenges. Our work is shaped by the belief that support should be respectful, practical, and accessible, especially when life feels unstable or overwhelming.
+  lead: Oakdene House Foundation is based in Western Sydney but supports people
+    and families across the greater Sydney region affected by addiction,
+    hardship, homelessness, and other life challenges. Our work is shaped by the
+    belief that support should be respectful, practical, and accessible,
+    especially when life feels unstable or overwhelming.
 impact:
   heading:
     eyebrow: Our Impact
@@ -62,10 +68,12 @@ drivers:
     heading: Mission, Vision and Values
   mission:
     label: Our Mission
-    text: To support people and families through practical help, connection, and pathways that strengthen wellbeing, dignity, and community belonging.
+    text: To support people and families through practical help, connection, and
+      pathways that strengthen wellbeing, dignity, and community belonging.
   vision:
     label: Our Vision
-    text: A community where people facing hardship are met with respect, support, and genuine opportunities to move forward.
+    text: A community where people facing hardship are met with respect, support,
+      and genuine opportunities to move forward.
   valuesHeading: Our Values
   dignity:
     heading: Dignity
@@ -75,7 +83,8 @@ drivers:
     text: We focus on what helps in real life, not just what sounds good on paper.
   connection:
     heading: Connection
-    text: We believe people do better when they feel seen, supported, and part of a community.
+    text: We believe people do better when they feel seen, supported, and part of a
+      community.
   hope:
     heading: Hope
     text: We stay focused on progress, possibilities, and the next step.
@@ -84,8 +93,12 @@ approach:
     eyebrow: How We Work
     heading: Our Approach
   paragraphs:
-    - Oakdene works in a way that is practical, person-centred, and community-based. We meet people where they are, help respond to immediate needs, and create pathways into longer-term support where needed.
-    - We do not see people as problems to be fixed. We see people as capable of change when they have the right support, the right environment and the right relationships around them.
+    - Oakdene works in a way that is practical, person-centred, and
+      community-based. We meet people where they are, help respond to immediate
+      needs, and create pathways into longer-term support where needed.
+    - We do not see people as problems to be fixed. We see people as capable of
+      change when they have the right support, the right environment and the
+      right relationships around them.
   image:
     src: /images/centre/interior-meetings-1-img_2657.jpg
     alt: Inside Oakdene House Foundation centre
@@ -97,7 +110,8 @@ work:
     - Addiction counselling and recovery-focused support
     - The Life Choices group program
     - Peer support through GA and AA meetings
-    - Community access through Oakdene Kitchen, Oakdene Laundrette and Oakdene Boutique
+    - Community access through Oakdene Kitchen, Oakdene Laundrette and Oakdene
+      Boutique
     - Volunteer pathways for people who want to give back
     - Financial counselling
   button:
