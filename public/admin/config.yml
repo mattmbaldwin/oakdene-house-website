@@ -1,0 +1,205 @@
+# GENERATED FILE. Do not edit by hand.
+# Source: src/content/schemas.mjs. Regenerate with: npm run build:cms
+# npm run build fails if this file does not match the schemas.
+backend:
+  name: github
+  repo: mattmbaldwin/oakdene-house-website
+  branch: main
+  base_url: https://oakdenehouse.org.au
+  auth_endpoint: api/auth
+  auth_scope: public_repo
+  squash_merges: true
+publish_mode: editorial_workflow
+site_url: https://oakdenehouse.org.au
+display_url: https://oakdenehouse.org.au
+media_folder: public/images/uploads
+public_folder: /images/uploads
+collections:
+  - name: opening-hours
+    label: Opening hours
+    format: json
+    editor:
+      preview: false
+    files:
+      - name: opening-hours
+        label: Opening hours
+        file: src/content/opening-hours.json
+        fields:
+          - name: kitchen
+            label: Oakdene Kitchen
+            widget: object
+            fields:
+              - name: days
+                label: Days
+                hint: Shown word for word in the Oakdene Kitchen info panel, e.g. "Tuesday, Wednesday, Thursday".
+                widget: string
+              - name: hours
+                label: Hours
+                hint: Shown word for word in the Oakdene Kitchen info panel, e.g. "12pm–2pm".
+                widget: string
+              - name: seoDays
+                label: Days in the search description
+                hint: Used in the Kitchen page search-engine description.
+                widget: string
+              - name: homeSummary
+                label: Home page summary
+                hint: Shown word for word on the home page Kitchen card.
+                widget: string
+              - name: programsSummary
+                label: Community Programs summary
+                hint: Shown word for word on the Community Programs page card.
+                widget: string
+              - name: contactSummary
+                label: Contact page summary
+                hint: Shown word for word in the Contact page hours table.
+                widget: string
+          - name: laundrette
+            label: Oakdene Laundrette
+            widget: object
+            fields:
+              - name: days
+                label: Days
+                hint: Shown word for word in the Laundrette info panel.
+                widget: string
+              - name: hours
+                label: Hours
+                hint: Shown word for word in the Laundrette info panel.
+                widget: string
+              - name: lastEntry
+                label: Last entry
+                hint: Shown word for word in the Laundrette info panel, e.g. "1pm".
+                widget: string
+              - name: seoDescription
+                label: Search description
+                hint: The Laundrette sentence used in the search-engine description.
+                widget: string
+              - name: groupBookingDays
+                label: Group booking days
+                hint: Shown word for word in the group bookings paragraph.
+                widget: string
+              - name: contactSummary
+                label: Contact page summary
+                hint: Shown word for word in the Contact page hours table.
+                widget: string
+          - name: staplePacks
+            label: Staple Food Packs
+            widget: object
+            fields:
+              - name: day
+                label: Day
+                hint: Shown word for word in the Staple Food Packs info panel, e.g. "Every Friday".
+                widget: string
+              - name: hours
+                label: Hours
+                hint: Shown word for word in the Staple Food Packs info panel.
+                widget: string
+              - name: seoDay
+                label: Day in the search description
+                hint: Used in the Staple Food Packs search-engine description.
+                widget: string
+              - name: distributionDay
+                label: Distribution day
+                hint: Shown word for word in "Packs are distributed …".
+                widget: string
+              - name: alsoRunningDay
+                label: "\"Also running on\" day"
+                hint: Shown word for word in "Also running on …".
+                widget: string
+              - name: contactSummary
+                label: Contact page summary
+                hint: Shown word for word in the Contact page hours table.
+                widget: string
+          - name: clothingStore
+            label: Used Clothing Store
+            widget: object
+            fields:
+              - name: days
+                label: Days
+                hint: Shown word for word in the Used Clothing Store info panel.
+                widget: string
+              - name: hours
+                label: Hours
+                hint: Shown word for word in the Used Clothing Store info panel.
+                widget: string
+              - name: contactSummary
+                label: Contact page summary
+                hint: Shown word for word in the Contact page hours table.
+                widget: string
+          - name: office
+            label: Office
+            widget: object
+            fields:
+              - name: days
+                label: Days
+                hint: Shown word for word on the Contact page office hours card.
+                widget: string
+              - name: hours
+                label: Hours
+                hint: Shown word for word on the Contact page office hours card.
+                widget: string
+              - name: availability
+                label: Availability sentence
+                hint: Shown word for word on the Need Help Now and thank-you pages.
+                widget: string
+  - name: faqs
+    label: FAQs
+    format: yaml
+    editor:
+      preview: false
+    files:
+      - name: faqs
+        label: FAQs
+        file: src/content/faqs.yaml
+        fields:
+          - name: sections
+            label: FAQ page sections
+            widget: list
+            summary: "{{fields.heading}}"
+            label_singular: Section
+            fields:
+              - name: id
+                label: Section id
+                hint: Lower-case letters, digits or hyphens. FAQs refer to it.
+                widget: string
+                pattern:
+                  - ^[a-z][a-z0-9-]*$
+                  - Must match ^[a-z][a-z0-9-]*$
+              - name: heading
+                label: Heading
+                hint: The section heading on the FAQ page.
+                widget: string
+          - name: faqs
+            label: Questions
+            widget: list
+            summary: "{{fields.question}}"
+            label_singular: FAQ
+            fields:
+              - name: question
+                label: Question
+                widget: string
+              - name: answer
+                label: Answer
+                hint: Bold, italic and links only. Press Shift+Enter for a line break, not Enter.
+                widget: markdown
+                buttons:
+                  - bold
+                  - italic
+                  - link
+                editor_components: []
+              - name: section
+                label: Section id
+                hint: One of the section ids above, e.g. "general".
+                widget: string
+              - name: showOnFaqPage
+                label: Show on the FAQ page
+                widget: boolean
+                default: false
+              - name: showOnHome
+                label: Show on the home page
+                widget: boolean
+                default: false
+              - name: order
+                label: Order
+                hint: Lower numbers show first, within a section and on the home page.
+                widget: number
+                value_type: int

@@ -1,0 +1,13 @@
+# Cloudflare Pages response headers. https://developers.cloudflare.com/pages/configuration/headers/
+
+# Website editor (Decap CMS), stage W7 issue #15. Strict CSP: scripts only from this site and the pinned Decap
+# build on unpkg, network calls only to this site and GitHub. Nothing else may load on /admin, so no analytics or
+# third-party script can read Simon's GitHub token. Keep the Decap version here in step with
+# public/admin/index.html.
+/admin/*
+  Content-Security-Policy: default-src 'none'; script-src 'self' https://unpkg.com/decap-cms@3.18.0/dist/; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self' https://api.github.com https://github.com; manifest-src 'self'; frame-src 'self' blob:; worker-src 'self' blob:; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; object-src 'none'
+  X-Robots-Tag: noindex, nofollow
+  X-Frame-Options: DENY
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: no-referrer
+  Cache-Control: no-cache

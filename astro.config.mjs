@@ -3,7 +3,8 @@ import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 
 // Pages left out of the sitemap: error and form thank-you pages, plus pages
-// that already carry a noindex tag (our-board, support-us).
+// that already carry a noindex tag (our-board, support-us). Everything under
+// /admin/ (the website editor, noindex by header) is left out too.
 const SITEMAP_EXCLUDE = [
   '/404/',
   '/thankyou/',
@@ -19,7 +20,10 @@ export default defineConfig({
   devToolbar: { enabled: false },
   integrations: [
     sitemap({
-      filter: (page) => !SITEMAP_EXCLUDE.includes(new URL(page).pathname),
+      filter: (page) => {
+        const { pathname } = new URL(page);
+        return !SITEMAP_EXCLUDE.includes(pathname) && !pathname.startsWith('/admin/');
+      },
     }),
   ],
 });
