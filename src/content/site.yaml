@@ -1,4 +1,3 @@
-# Site-wide words: header, footer. Link addresses and menu structure stay in src/components/Header.astro and Footer.astro.
 header:
   logo:
     alt: Oakdene House Foundation
@@ -30,35 +29,6 @@ header:
     getSupport: Get Support
     needHelp: Need Help Now
 footer:
-  about:
-    heading: About
-    aboutUs: About Us
-    ourStory: Our Story
-    ourTeam: Our Team
-    ourCentre: Our Centre
-  services:
-    heading: Services
-    individualCounselling: Individual Counselling
-    lifeChoices: Life Choices Program
-    groupDbt: Group DBT Therapy
-    gamblingCounselling: Gambling Counselling
-    outpatients: Outpatients Program
-    aaGa: AA & GA Meetings
-    all: All Services
-  community:
-    heading: Community Programs
-    kitchen: Oakdene Kitchen
-    laundrette: Oakdene Laundrette
-    boutique: Ladies Boutique
-    staplePacks: Staple Food Packs
-    volunteering: Volunteering
-    all: All Community Programs
-  help:
-    heading: Get Help
-    contact: Contact
-    needHelp: Need Help Now
-    referral: Make a Referral
-    faq: FAQ
   contact:
     heading: Contact
     phone:
@@ -69,12 +39,41 @@ footer:
       href: mailto:admin@oakdenehouse.org.au
     address: 29 Vine Street, Fairfield NSW 2165
     poBox: PO Box 988, Fairfield NSW 1860
+  help:
+    heading: Get Help
+    contact: Contact
+    needHelp: Need Help Now
+    referral: Make a Referral
+    faq: FAQ
+  copyright: Oakdene House Foundation. All rights reserved.
+  logoLabel: Oakdene House Foundation — home
+  community:
+    heading: Community Programs
+    kitchen: Oakdene Kitchen
+    laundrette: Oakdene Laundrette
+    boutique: Ladies Boutique
+    staplePacks: Staple Food Packs
+    volunteering: Volunteering
+    all: All Community Programs
+  about:
+    heading: About
+    aboutUs: About Us
+    ourStory: Oakdene's Story
+    ourTeam: Our Team
+    ourCentre: Our Centre
   legal:
     abn: ABN 90 151 950 926
     charity: Registered Charity
     privacy: Privacy Policy
     terms: Terms of Use
     accessibility: Accessibility
-  copyright: Oakdene House Foundation. All rights reserved.
+  services:
+    heading: Services
+    individualCounselling: Individual Counselling
+    lifeChoices: Life Choices Program
+    groupDbt: Group DBT Therapy
+    gamblingCounselling: Gambling Counselling
+    outpatients: Outpatients Program
+    aaGa: AA & GA Meetings
+    all: All Services
   logoAlt: Oakdene House Foundation
-  logoLabel: Oakdene House Foundation — home
