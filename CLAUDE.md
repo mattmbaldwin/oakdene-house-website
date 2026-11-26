@@ -255,7 +255,7 @@ Second set (available for other pages):
 - InfoTable.astro accepts: rows array of {label, value} objects, caption (optional)
 - TestimonialBlock.astro accepts: quotes array of {quote, attribution} from testimonials.json
 - StatsGrid.astro accepts: stats array of {number, label}
-- FAQAccordion.astro accepts: faqs array of {question, answer} from faqs.json
+- FAQAccordion.astro accepts: faqs array of {question, answer} (home page: from src/content/faqs.yaml via src/lib/faqs.ts; answers are prose rendered by src/lib/prose.ts)
 - VideoPlayer.astro accepts: youtubeId, title, thumbnail, label (the play button's screen reader label), loading ('lazy' default, 'eager' above the fold). Loads the youtube-nocookie.com player only when the play button is pressed
 
 ## Page structure — current routes

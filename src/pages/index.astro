@@ -9,12 +9,13 @@ import StatsGrid from '../components/StatsGrid.astro';
 import VideoPlayer from '../components/VideoPlayer.astro';
 
 import allTestimonials from '../content/testimonials.json';
-import allFaqs from '../content/faqs.json';
 import hours from '../content/opening-hours.json';
+import faqsYaml from '../content/faqs.yaml?raw';
+import { loadFaqs, homeFaqs } from '../lib/faqs.ts';
 import video from '../../docs/video-launch/content/video.json';
 
 const testimonials = allTestimonials.filter(t => t.page === 'home');
-const faqs = allFaqs.slice(0, 4);
+const faqs = homeFaqs(loadFaqs(faqsYaml));
 
 const stats = [
   { number: '5,000+',    label: 'Meals and food packs delivered annually' },

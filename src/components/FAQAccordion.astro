@@ -2,6 +2,8 @@
 interface FAQ {
   question: string;
   answer: string;
+  /** Rendered prose from src/lib/prose.ts. When given, it is shown instead of the plain `answer`. */
+  answerHtml?: string;
 }
 
 interface Props {
@@ -21,7 +23,7 @@ const { faqs } = Astro.props;
         </svg>
       </summary>
       <div class="faq-item__answer">
-        <p>{faq.answer}</p>
+        {faq.answerHtml !== undefined ? <p set:html={faq.answerHtml} /> : <p>{faq.answer}</p>}
       </div>
     </details>
   ))}
